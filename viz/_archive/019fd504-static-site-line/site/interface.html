@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>统一数据接口 · 孙承泽</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links"><a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a></div></div></nav>
+<section class="wrap pg-hero"><h1>🔌 统一数据接口</h1><p>与各组的契约（预先固定，降低格式错配风险）</p></section>
+<main class="wrap">
+  <div class="grid2">
+    <div class="card">
+      <div class="code"><span class="cm"># AI 组接口（厉今飞 / 洪祖名提供真实模型）</span>
+<span class="kw">def</span> <span class="fn">predict_power</span>(yaw_angle, U_inf):
+    <span class="cm"># 输入：偏航角(°)，风速(m/s)</span>
+    <span class="cm"># 输出：(P1, P2) 单位 kW</span>
+    ...
+    <span class="kw">return</span> P1, P2
+
+<span class="cm"># 优化控制组接口（洪祖名提供真实优化器）</span>
+<span class="kw">def</span> <span class="fn">find_yaw_for_target</span>(target_power, U_inf):
+    <span class="cm"># 输入：目标功率(kW)，风速(m/s)</span>
+    <span class="cm"># 输出：(best_yaw, actual_power, error_pct)</span>
+    ...
+    <span class="kw">return</span> best_yaw, actual_power, error_pct</div>
+    </div>
+    <div class="card"><div class="note" style="margin-top:0">
+      <b>数据文件来源与替换计划：</b><br>
+      • <code>cases.csv</code> / <code>cases_array.csv</code>：我用 FLORIS 生成的占位数据（generate_data / generate_array_data）。<br>
+      • <code>optimizer_result.json</code> / <code>array_independent_result.json</code>：我生成的 FLORIS 结果；<span class="good">未来用洪祖名真实优化器结果覆盖，界面数字自动更新</span>。<br>
+      • <code>fields/</code> 系列：田铭雨 FLORIS 工程尾流（演示数据）；高保真到位后仅换图。<br>
+      • 真实链路：田铭雨 CFD → 袁夫达 NN 训练 → 洪祖名优化 → 我可视化。<br><br>
+      <b>已对齐假期前 PPT 的统一接口规范：</b><br>
+      • <code>optimizer_result.json</code> 字段 = <code>wind_speed, original_yaw, recommended_yaw, power_before, power_after, wake_field</code>（前 5 项已落地，<code>wake_field</code> 待田铭雨 CFD 提供后仅换图）。<br>
+      • <code>cases.csv</code> 最小字段（PPT）= <code>case_id, U_inf, yaw_1, yaw_2, pitch, rpm, power_1, power_2</code>（第一版 pitch/rpm 固定，故暂未含）。
+    </div></div>
+  </div>
+</main>
+<footer class="wrap">孙承泽 · 可视化模块</footer>
+</body></html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>尾流分析 · 孙承泽</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links"><a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a></div></div></nav>
+<section class="wrap pg-hero"><h1>📊 尾流分析</h1><p>交互式速度场云图，代理模型实时预测任意偏航角下的功率输出</p></section>
+<main class="wrap">
+  <div class="card"><div class="gallery">
+    <img src="assets/img/fields/yaw_-30.png" alt="yaw -30"><img src="assets/img/fields/yaw_-15.png" alt="yaw -15">
+    <img src="assets/img/fields/yaw_+00.png" alt="yaw 0"><img src="assets/img/fields/yaw_+15.png" alt="yaw 15">
+    <img src="assets/img/fields/yaw_+30.png" alt="yaw 30">
+  </div>
+  <div class="note">上：不同上游偏航角下的流场速度分布（FLORIS 工程尾流模型）。尾流低速区随偏航角偏移，是功率增益的来源。代理模型 <code>predict_power(yaw, U)</code> 可在浏览器内实时预测任意风况下的 P₁/P₂。</div>
+  <div class="chart" id="wakeChart" style="margin-top:14px"></div>
+  </div>
+</main>
+<footer class="wrap">孙承泽 · 可视化模块</footer>
+<script src="assets/data.js"></script><script src="assets/js/interp.js"></script><script src="assets/js/charts.js"></script>
+<script>const W=window.WIND_DATA;const m=W.multi,i=m.wind_speeds.indexOf(8);
+window.CHARTS.lineChart(document.getElementById("wakeChart"),{xs:m.yaw_angles,
+ series:[{name:"P1",color:"#4a9eff",data:m.p1[i]},{name:"P2",color:"#27ae60",data:m.p2[i]},{name:"Ptot",color:"#f5a623",data:m.ptot[i]}],
+ marks:[{x:m.yaw_angles[m.ptot[i].indexOf(Math.max(...m.ptot[i]))],color:"#e74c3c",label:"最优"}]});</script>
+</body></html>

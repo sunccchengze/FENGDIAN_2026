@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>风玫瑰 · 孙承泽</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links"><a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a></div></div></nav>
+<section class="wrap pg-hero"><h1>🌬️ 风玫瑰</h1><p>各风向下的功率提升幅度 (%)——偏航优化的风向敏感性</p></section>
+<main class="wrap">
+  <div class="card"><div class="chart" id="rose"></div>
+    <div class="note" id="roseNote"></div></div>
+  <div class="note">数据来自 <code>cases_windrose_opt.csv</code>（FLORIS 占位）。各风向平均增益最高处即偏航优化的重点风向。注：袁夫达/田铭雨补齐真实风况后替换数据源即可。</div>
+</main>
+<footer class="wrap">孙承泽 · 可视化模块</footer>
+<script src="assets/data.js"></script><script src="assets/js/charts.js"></script>
+<script>const W=window.WIND_DATA;
+const map={};W.windrose_opt.forEach(r=>{(map[r.wind_direction]=map[r.wind_direction]||[]).push(r.gain_pct);});
+const angles=Object.keys(map).map(Number).sort((a,b)=>a-b);
+const values=angles.map(d=>{const a=map[d];return a.reduce((x,y)=>x+y,0)/a.length;});
+window.CHARTS.polarRose(document.getElementById("rose"),{angles,values});
+const maxG=Math.max(...values),maxD=angles[values.indexOf(maxG)];
+document.getElementById("roseNote").innerHTML=`各风向平均增益：最高约 <b class="good">${maxG.toFixed(1)}%</b>（风向 ${maxD}°）。`;</script>
+</body></html>

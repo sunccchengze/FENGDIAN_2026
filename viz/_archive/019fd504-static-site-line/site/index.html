@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>风电场偏航优化可视化 · 孙承泽</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links">
+<a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a>
+</div></div></nav>
+
+<header class="hero wrap">
+  <div class="hero-tag">西安交通大学 · 大创项目</div>
+  <h1 class="hero-title">风电场偏航优化<br><span>可视化演示系统</span></h1>
+  <p class="hero-sub">融合数据-物理驱动 · FLORIS GCH 尾流模型 · NREL 5MW 基准风机<br>从流场感知到机组协同调控的完整技术链路演示</p>
+  <div class="hero-badges">
+    <span class="badge">两台串列 / 3×3 阵列</span><span class="badge">NREL 5MW</span>
+    <span class="badge">GCH 尾流模型</span><span class="badge">二维插值代理模型</span>
+    <span class="badge">POD 降阶分析</span><span class="badge">网格搜索优化</span><span class="badge">功率需求跟踪</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="stats-bar">
+    <div class="stat-card"><p class="stat-number">14.9<span class="stat-unit">%</span></p><p class="stat-label">3×3 阵列最大功率提升</p></div>
+    <div class="stat-card"><p class="stat-number">2</p><p class="stat-label">POD 模态覆盖 98% 能量</p></div>
+    <div class="stat-card"><p class="stat-number">+25<span class="stat-unit">°</span></p><p class="stat-label">两台串列最优偏航角</p></div>
+    <div class="stat-card"><p class="stat-number">14</p><p class="stat-label">功能页面</p></div>
+  </div>
+
+  <p class="section-title">功能模块</p>
+  <div class="page-grid">
+    <div class="page-card"><div class="ic">📊</div><div class="nm">尾流分析</div><div class="ds">交互式速度场云图，代理模型实时预测任意偏航角下的功率输出</div><span class="page-tag tag-core">CORE</span><div style="margin-top:8px"><a class="btn" href="wake.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">🎯</div><div class="nm">优化结果</div><div class="ds">偏航前后尾流对比、速度差值图、偏航角扫描动画</div><span class="page-tag tag-core">CORE</span><div style="margin-top:8px"><a class="btn" href="optimization.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">📋</div><div class="nm">数据总览</div><div class="ds">全工况功率柱状图、P₁/P₂ 分解曲线、原始数据表格</div><span class="page-tag tag-analysis">ANALYSIS</span><div style="margin-top:8px"><a class="btn" href="overview.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">🌐</div><div class="nm">3D 尾流曲面</div><div class="ds">三维速度曲面可视化，直观感受尾流空间结构</div><span class="page-tag tag-3d">3D</span><div style="margin-top:8px"><a class="btn" href="3d_surface.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">🫧</div><div class="nm">3D 体渲染</div><div class="ds">真实三维尾流低速泡，多高度层叠加渲染</div><span class="page-tag tag-3d">3D</span><div style="margin-top:8px"><a class="btn" href="3d_volume.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">🔥</div><div class="nm">热力矩阵</div><div class="ds">偏航角 × 风速功率增益矩阵，覆盖 6~12 m/s 全风速</div><span class="page-tag tag-analysis">ANALYSIS</span><div style="margin-top:8px"><a class="btn" href="heatmap.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">⚡</div><div class="nm">优化求解器</div><div class="ds">输入任意风速，实时网格搜索最优偏航角</div><span class="page-tag tag-ai">AI·OPT</span><div style="margin-top:8px"><a class="btn" href="solver.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">🔬</div><div class="nm">POD 降阶分析</div><div class="ds">本征正交分解，模态能量分布，流场重构对比</div><span class="page-tag tag-pod">POD·ROM</span><div style="margin-top:8px"><a class="btn" href="pod.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">⚡</div><div class="nm">3×3 阵列优化</div><div class="ds">九台风机协同偏航，全场功率热力图</div><span class="page-tag tag-array">ARRAY</span><div style="margin-top:8px"><a class="btn" href="array.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">🎛️</div><div class="nm">功率需求跟踪</div><div class="ds">输入电网目标功率，自动搜索满足需求的最优偏航角</div><span class="page-tag tag-control">CONTROL</span><div style="margin-top:8px"><a class="btn" href="power_tracking.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">🌬️</div><div class="nm">风玫瑰</div><div class="ds">各风向功率增益分布，偏航优化的风向敏感性</div><span class="page-tag tag-analysis">ANALYSIS</span><div style="margin-top:8px"><a class="btn" href="windrose.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">🎯</div><div class="nm">模型精度</div><div class="ds">厉今飞基线 + 洪祖名 XGBoost 优化质量佐证</div><span class="page-tag tag-ai">AI</span><div style="margin-top:8px"><a class="btn" href="model.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">🔌</div><div class="nm">统一数据接口</div><div class="ds">与各组的契约（predict_power / find_yaw_for_target）</div><span class="page-tag tag-core">CORE</span><div style="margin-top:8px"><a class="btn" href="interface.html">进入 →</a></div></div>
+    <div class="page-card"><div class="ic">🧭</div><div class="nm">Master Dashboard</div><div class="ds">数据-物理-控制闭环审查面板</div><span class="page-tag tag-core">CORE</span><div style="margin-top:8px"><a class="btn" href="dashboard.html">进入 →</a></div></div>
+  </div>
+
+  <div class="tech-bar">
+    <span class="tech-label">TECH STACK</span>
+    <div class="tech-items">
+      <span class="tech-item">纯静态站点</span><span class="tech-item">零依赖</span>
+      <span class="tech-item">原生 SVG 图表</span><span class="tech-item">浏览器内插值</span>
+      <span class="tech-item">Cloudflare Pages</span><span class="tech-item">FLORIS 4.6.6</span>
+      <span class="tech-item">NumPy / Matplotlib（离线渲染）</span>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">数据来源：袁夫达（建模）· 厉今飞（AI/基线）· 洪祖名（优化/模型选择）· 田铭雨（仿真流场）· 孙承泽（可视化）。指导教师：李良星。</footer>
+</body>
+</html>

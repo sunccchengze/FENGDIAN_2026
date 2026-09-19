@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.DS_Store
+# 白皮书 PDF 构建中间切分文件（构建脚本生成）
+pdf/v*.md

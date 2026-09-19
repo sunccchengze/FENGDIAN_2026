@@ -1,0 +1,14 @@
+{
+  "n_episodes": 200,
+  "seed": 1000,
+  "metrics": {
+    "steady_state_mae_pct": 0.523,
+    "steady_state_mae_kw": 10.31,
+    "settling_time_mean_s": 0.944,
+    "settling_time_p95_s": 1.805,
+    "steady_action_rate_deg_per_step": 0.0
+  },
+  "model_file": "ppo_tracking_v3_seed42.pt",
+  "model_sha256": "2c5e6cefaaca62afdc0bdbab3a6674576fcc348ae81d26abb75ead2e47ad706f",
+  "audit_note": "物理可达域 cos^1.88 理论模型下的独立 PPO 闭环验证；汇总值来自 200 个固定测试回合。"
+}

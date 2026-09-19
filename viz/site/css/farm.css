@@ -1,0 +1,30 @@
+/* ===== 3D 风电场（three.js） ===== */
+.farm-card{padding:18px}
+.farm-controls{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.farm-seg{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:4px;gap:2px}
+.farm-seg button{background:transparent;border:none;color:var(--sub);padding:8px 16px;border-radius:9px;
+  font-size:13px;font-weight:600;cursor:pointer;transition:all .18s}
+.farm-seg button:hover{color:var(--txt)}
+.farm-seg button.active{background:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(107,140,174,0.35)}
+
+.farm-stage{position:relative;border-radius:16px;overflow:hidden;
+  background:linear-gradient(180deg,#eef2f6 0%,#e7e0d2 100%);
+  border:1px solid var(--line);height:560px}
+#farm{display:block;width:100%;height:100%}
+
+.farm-legend{position:absolute;left:14px;bottom:14px;display:flex;gap:14px;
+  background:rgba(251,250,246,0.85);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:11.5px;color:var(--sub)}
+.farm-legend span{display:flex;align-items:center;gap:6px}
+.farm-legend i{width:14px;height:14px;border-radius:4px;display:inline-block;border:1px solid rgba(0,0,0,0.08)}
+.farm-hint{position:absolute;right:14px;top:14px;font-size:11.5px;color:var(--sub);
+  background:rgba(251,250,246,0.8);padding:5px 11px;border-radius:999px;border:1px solid var(--line);backdrop-filter:blur(6px)}
+.farm-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:var(--sub);font-size:14px;background:rgba(241,237,230,0.6);transition:opacity .5s;pointer-events:none}
+
+.farm-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+@media(max-width:640px){.farm-kpis{grid-template-columns:1fr}.farm-stage{height:420px}}
+.fkpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.fk-v{font-size:26px;font-weight:800;color:var(--blue-deep);font-variant-numeric:tabular-nums}
+.fk-v.up{color:var(--sage-deep)}.fk-v.down{color:var(--rose)}.fk-v.flat{color:var(--sub)}
+.fk-l{font-size:12px;color:var(--sub);margin-top:4px}

@@ -11,3 +11,6 @@ __pycache__/
 *.pyc
 
 # 证据完整性由 npm run selftest 的 R38 两项守卫负责（0 字节图 / 文档断链）
+
+# Office 锁文件（materials/ 与 viz/ 里的 docx/pptx 打开时生成）
+~$*

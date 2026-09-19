@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>模型精度 · 孙承泽</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links"><a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a></div></div></nav>
+<section class="wrap pg-hero"><h1>🎯 模型精度</h1><p>厉今飞基线 + 洪祖名 XGBoost 优化 · 代理模型质量佐证</p></section>
+<main class="wrap">
+  <div class="card"><div class="img-grid"><img src="assets/img/true_vs_pred_farm_power.png" alt="真实vs预测"><img src="assets/img/residual_gch_xgb_tuned.png" alt="残差"></div>
+    <div class="note">洪祖名在厉今飞 MLP 基线之上做模型选择（XGBoost / GPR / MLP / 两阶段，5-fold CV），最终选定 XGBoost：全场功率 MAE 由 86.5/103.1 kW 降至 <span class="good">7.79 / 10.49 kW</span>（约 11 倍），R² &gt; 0.99996。可视化未来直接加载其 <code>final_models/*.json</code> 即可。</div></div>
+</main>
+<footer class="wrap">孙承泽 · 可视化模块</footer>
+</body></html>

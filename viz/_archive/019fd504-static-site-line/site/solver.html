@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>优化求解器 · 孙承泽</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links"><a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a></div></div></nav>
+<section class="wrap pg-hero"><h1>⚡ 优化求解器</h1><p>输入任意风速，实时网格搜索最优偏航角（argmax P₁+P₂）</p></section>
+<main class="wrap">
+  <div class="card">
+    <div class="controls" id="solU"></div>
+    <div class="chart" id="solChart"></div>
+    <div class="grid3" style="margin-top:12px">
+      <div class="stat"><div class="v blue" id="solYaw">–</div><div class="k">最优偏航角</div></div>
+      <div class="stat"><div class="v green" id="solPow">–</div><div class="k">全场最大功率(kW)</div></div>
+      <div class="stat"><div class="v amber" id="solGain">–</div><div class="k">相对 0° 增益</div></div>
+    </div>
+    <div class="note">网格搜索思路（不急强化学习）：枚举 γ₁∈[−30°,30°]，调代理模型预测 P₁/P₂，选 argmax(P₁+P₂)。开学后接洪祖名真实优化算法（PPO / MADDPG / 贝叶斯）。</div>
+  </div>
+</main>
+<footer class="wrap">孙承泽 · 可视化模块</footer>
+<script src="assets/data.js"></script><script src="assets/js/charts.js"></script>
+<script>const m=window.WIND_DATA.multi,ys=m.yaw_angles,C=window.CHARTS;
+let U=m.wind_speeds[1];
+const box=document.getElementById("solU");
+m.wind_speeds.forEach(u=>{const b=document.createElement("button");b.className="btn"+(u===U?" active":"");b.textContent=u+" m/s";
+  b.onclick=()=>{U=u;[...box.children].forEach(x=>x.classList.remove("active"));b.classList.add("active");render();};box.appendChild(b);});
+function render(){const i=m.wind_speeds.indexOf(U);let bi=0;m.ptot[i].forEach((v,k)=>{if(v>m.ptot[i][bi])bi=k;});
+  C.lineChart(document.getElementById("solChart"),{xs:ys,
+    series:[{name:"P1",color:"#4a9eff",data:m.p1[i]},{name:"P2",color:"#27ae60",data:m.p2[i]},{name:"Ptot",color:"#f5a623",data:m.ptot[i]}],
+    marks:[{x:ys[bi],color:"#e74c3c",label:"最优"}]});
+  const p0=m.ptot[i][ys.indexOf(0)];
+  document.getElementById("solYaw").textContent=ys[bi]+"°";
+  document.getElementById("solPow").textContent=Math.round(m.ptot[i][bi]);
+  document.getElementById("solGain").textContent="+"+((m.ptot[i][bi]-p0)/p0*100).toFixed(1)+"%";}
+render();</script>
+</body></html>

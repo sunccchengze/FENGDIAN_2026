@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="FLORIS 4.6.6 两机串列偏航尾流交互分析：拖动偏航角，联动查看速度场、上下游功率与全场增益。">
+  <title>尾流交互分析 · 风电场偏航优化科研平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="assets/vendor/plotly/plotly-2.35.2.min.js"></script>
+  <style>
+    :root {
+      --vc-primary: #171717;
+      --vc-on-primary: #ffffff;
+      --vc-ink: #171717;
+      --vc-body: #4d4d4d;
+      --vc-mute: #888888;
+      --vc-hairline: #ebebeb;
+      --vc-hairline-strong: #a1a1a1;
+      --vc-canvas: #ffffff;
+      --vc-canvas-soft: #fafafa;
+      --vc-canvas-soft-2: #f5f5f5;
+      --vc-link: #0070f3;
+      --vc-link-deep: #0761d1;
+      --vc-error: #ee0000;
+      --vc-error-soft: #f7d4d6;
+      --vc-warning: #f5a623;
+      --vc-warning-soft: #ffefcf;
+      --vc-violet: #7928ca;
+      --vc-cyan: #50e3c2;
+      --vc-pink: #ff0080;
+      --vc-develop-start: #007cf0;
+      --vc-develop-end: #00dfd8;
+      --vc-preview-start: #7928ca;
+      --vc-preview-end: #ff0080;
+      --vc-ship-start: #ff4d4d;
+      --vc-ship-end: #f9cb28;
+      --vc-sans: "Geist", "DengXian", "等线", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      --vc-serif: "Songti SC Black", "Songti SC", "STSong", "STZhongsong", "SimSun", "宋体-简", serif;
+      --vc-mono: "Geist Mono", "DengXian", "等线", "PingFang SC", "Microsoft YaHei", ui-monospace, monospace;
+      --vc-page: 1240px;
+      --vc-shadow-2: 0 0 0 1px rgba(0,0,0,.08) inset, 0 1px 1px rgba(0,0,0,.02), 0 2px 2px rgba(0,0,0,.04);
+      --vc-shadow-4: 0 0 0 1px rgba(0,0,0,.08) inset, 0 2px 2px rgba(0,0,0,.04), 0 8px 16px -4px rgba(0,0,0,.04);
+      color-scheme: light;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--vc-canvas-soft);
+      color: var(--vc-ink);
+      font-family: var(--vc-sans);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    .num { font-family: var(--vc-mono); font-variant-numeric: tabular-nums; }
+
+    /* 项目统一双行导航，表面与交互采用精密灰阶。 */
+    .t-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: auto;
+      display: block;
+      background: rgba(255,255,255,.92);
+      border-bottom: 1px solid var(--vc-hairline);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+    }
+    .t-nav-inner { width: 100%; margin: 0; padding: 0; display: block; }
+    .t-nav-row1 {
+      max-width: var(--vc-page);
+      margin: 0 auto;
+      padding: 13px 32px 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .t-nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--vc-ink);
+      text-decoration: none;
+      font-family: var(--vc-sans);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -.3px;
+      white-space: nowrap;
+    }
+    .t-nav-badge {
+      border: 1px solid var(--vc-hairline);
+      border-radius: 6px;
+      padding: 3px 8px;
+      background: var(--vc-canvas-soft);
+      color: var(--vc-body);
+      font-family: var(--vc-mono);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+    .t-nav-here {
+      color: var(--vc-mute);
+      font-family: var(--vc-mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+    .t-nav-links { border-top: 1px solid var(--vc-hairline); }
+    .t-nav-links-in {
+      max-width: var(--vc-page);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: stretch;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .t-nav-links-in::-webkit-scrollbar { display: none; }
+    .t-nav-links a {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      padding: 9px 9px 8px;
+      border-bottom: 2px solid transparent;
+      color: var(--vc-body);
+      font-family: var(--vc-sans);
+      font-size: 12px;
+      font-weight: 400;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .t-nav-links a i {
+      color: var(--vc-mute);
+      font-family: var(--vc-mono);
+      font-size: 9.5px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    .t-nav-links a:hover { color: var(--vc-ink); background: var(--vc-canvas-soft-2); }
+    .t-nav-links a.active { color: var(--vc-ink); border-bottom-color: var(--vc-ink); }
+    .t-nav-links a.active i { color: var(--vc-ink); }
+
+    .page-shell { max-width: var(--vc-page); margin: 0 auto; padding: 40px 32px 0; }
+    .page-shell > section { padding: 0; }
+    .section-intro { margin-bottom: 24px; }
+    .section-kicker {
+      margin-bottom: 8px;
+      color: var(--vc-mute);
+      font-family: var(--vc-mono);
+      font-size: 12px;
+    }
+    .section-title {
+      margin: 0;
+      color: var(--vc-ink);
+      font-family: var(--vc-serif);
+      font-size: clamp(25px, 3vw, 32px);
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -1.1px;
+      text-transform: none;
+    }
+    .section-copy { max-width: 760px; margin: 10px 0 0; color: var(--vc-body); font-size: 15px; }
+
+    /* 工作台：白色产品面板、发丝线、多层微阴影。 */
+    .workbench {
+      overflow: hidden;
+      margin-bottom: 64px;
+      border-radius: 12px;
+      background: var(--vc-canvas);
+      box-shadow: var(--vc-shadow-4);
+    }
+    .status-row {
+      min-height: 52px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--vc-hairline);
+      background: var(--vc-canvas-soft);
+    }
+    .status-copy { min-width: 0; color: var(--vc-body); font-size: 13px; }
+    .status-copy strong { color: var(--vc-ink); font-weight: 500; }
+    .status-badge {
+      flex: 0 0 auto;
+      max-width: 100%;
+      padding: 6px 12px;
+      border: 1px solid var(--vc-hairline);
+      border-radius: 999px;
+      background: var(--vc-canvas);
+      color: var(--vc-body);
+      font-family: var(--vc-mono);
+      font-size: 11px;
+      font-weight: 400;
+      white-space: nowrap;
+      transition: color .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-bottom: 1px solid var(--vc-hairline);
+    }
+    .metric {
+      min-width: 0;
+      padding: 28px 24px 24px;
+      border-right: 1px solid var(--vc-hairline);
+    }
+    .metric:last-child { border-right: 0; }
+    .metric-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--vc-mute);
+      font-family: var(--vc-mono);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .metric-label { min-height: 40px; color: var(--vc-body); font-size: 14px; }
+    .metric-value {
+      margin-top: 8px;
+      color: var(--vc-ink);
+      font-family: var(--vc-mono);
+      font-size: clamp(30px, 3.2vw, 40px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -1.5px;
+      font-variant-numeric: tabular-nums;
+    }
+    .metric-detail {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid var(--vc-hairline);
+      color: var(--vc-mute);
+      font-size: 12px;
+      min-height: 31px;
+    }
+    .control-row {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: auto minmax(240px, 1fr) auto;
+      align-items: center;
+      gap: 24px;
+    }
+    .yaw-readout { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+    .yaw-name { color: var(--vc-ink); font-size: 14px; font-weight: 500; }
+    .yaw-value {
+      min-width: 62px;
+      padding: 7px 10px;
+      border: 1px solid var(--vc-hairline);
+      border-radius: 6px;
+      background: var(--vc-canvas-soft);
+      text-align: center;
+      font-family: var(--vc-mono);
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+    input.yaw-range {
+      width: 100%;
+      height: 4px;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--vc-primary) 0 50%, var(--vc-hairline) 50% 100%);
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+    input.yaw-range::-webkit-slider-thumb {
+      width: 18px;
+      height: 18px;
+      border: 4px solid var(--vc-canvas);
+      border-radius: 50%;
+      background: var(--vc-primary);
+      box-shadow: 0 0 0 1px var(--vc-primary);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    input.yaw-range::-moz-range-thumb {
+      width: 10px;
+      height: 10px;
+      border: 4px solid var(--vc-canvas);
+      border-radius: 50%;
+      background: var(--vc-primary);
+      box-shadow: 0 0 0 1px var(--vc-primary);
+    }
+    input.yaw-range:focus-visible { outline: 2px solid var(--vc-link); outline-offset: 8px; }
+    .quick-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .action-button {
+      min-height: 40px;
+      padding: 0 16px;
+      border: 1px solid var(--vc-hairline);
+      border-radius: 100px;
+      background: var(--vc-canvas);
+      color: var(--vc-ink);
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: color .18s ease, background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .action-button:hover { border-color: var(--vc-primary); }
+    .action-button.active { border-color: var(--vc-primary); background: var(--vc-primary); color: var(--vc-on-primary); }
+    .action-button:active { transform: scale(.98); }
+    .action-button:focus-visible { outline: 2px solid var(--vc-link); outline-offset: 2px; }
+
+    .dynamic-section { margin-bottom: 80px; }
+    .plot-card {
+      overflow: hidden;
+      border-radius: 12px;
+      background: var(--vc-canvas);
+      box-shadow: var(--vc-shadow-2);
+    }
+    .plot-card + .plot-card { margin-top: 20px; }
+    .plot-header {
+      min-height: 56px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--vc-hairline);
+    }
+    .plot-name { color: var(--vc-ink); font-size: 14px; font-weight: 500; }
+    .plot-meta { color: var(--vc-mute); font-family: var(--vc-mono); font-size: 11px; white-space: nowrap; }
+    .plot-body { padding: 8px 12px 0; min-width: 0; }
+    .plot-caption { padding: 14px 20px 18px; border-top: 1px solid var(--vc-hairline); color: var(--vc-body); font-size: 12px; line-height: 1.6; }
+    .plot-pair { margin-top: 20px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+
+    .evidence-section {
+      position: relative;
+      isolation: isolate;
+      padding: 80px 0 88px;
+    }
+    .evidence-section::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+      background: var(--vc-canvas);
+      border-top: 1px solid var(--vc-hairline);
+    }
+    .evidence-stack { display: grid; gap: 20px; margin-top: 28px; }
+    .evidence-card {
+      overflow: hidden;
+      border: 1px solid var(--vc-hairline);
+      border-radius: 12px;
+      background: var(--vc-canvas);
+      box-shadow: var(--vc-shadow-2);
+    }
+    .evidence-card img { display: block; width: 100%; height: auto; background: #fff; }
+    .evidence-caption {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      border-top: 1px solid var(--vc-hairline);
+      color: var(--vc-body);
+      font-size: 12px;
+    }
+    .pdf-link { color: var(--vc-link); font-weight: 500; text-decoration: none; white-space: nowrap; }
+    .pdf-link:hover { color: var(--vc-link-deep); text-decoration: underline; }
+    .pdf-link:focus-visible { outline: 2px solid var(--vc-link); outline-offset: 2px; }
+
+    .wake-footer {
+      margin: 0;
+      padding: 56px 32px 64px;
+      border-top: 1px solid var(--vc-hairline);
+      background: var(--vc-canvas-soft);
+      color: var(--vc-body);
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .footer-inner { max-width: 960px; margin: 0 auto; }
+    .footer-title { margin-bottom: 10px; color: var(--vc-ink); font-family: var(--vc-serif); font-size: 15px; font-weight: 600; }
+    .footer-meta { margin-top: 12px; color: var(--vc-mute); font-family: var(--vc-mono); font-size: 10.5px; }
+
+    @media (max-width: 1024px) {
+      .metrics { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .metric:nth-child(2) { border-right: 0; }
+      .metric:nth-child(-n+2) { border-bottom: 1px solid var(--vc-hairline); }
+      .control-row { grid-template-columns: 1fr; gap: 20px; }
+      .quick-actions { justify-content: flex-start; }
+      .plot-pair { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .t-nav-row1, .page-shell { padding-left: 20px; padding-right: 20px; }
+      .t-nav-badge, .t-nav-here { display: none; }
+      .metrics { grid-template-columns: 1fr; }
+      .metric { border-right: 0; border-bottom: 1px solid var(--vc-hairline); }
+      .metric:last-child { border-bottom: 0; }
+      .status-row { align-items: flex-start; flex-direction: column; }
+      .status-badge { white-space: normal; }
+      .control-row { padding: 20px; }
+      .quick-actions { width: 100%; }
+      .action-button { flex: 1 1 auto; }
+      .plot-header, .evidence-caption { align-items: flex-start; flex-direction: column; }
+      .plot-meta { white-space: normal; }
+      .evidence-section { padding-top: 64px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+    }
+  </style>
+  <link rel="stylesheet" href="css/unified-glass.css">
+</head>
+<body>
+<nav class="t-nav">
+  <div class="t-nav-inner">
+    <div class="t-nav-row1">
+      <a href="index.html" class="t-nav-brand">
+        <span>风电场偏航优化平台</span>
+        <span class="t-nav-badge">SUN CHENGZE · VISUALIZATION</span>
+      </a>
+      <span class="t-nav-here" id="tNavHere"></span>
+    </div>
+    <div class="t-nav-links"><div class="t-nav-links-in">
+      <a href="index.html" data-nav-code="00" data-nav-name="首页"><i>00</i>首页</a>
+      <a href="wake.html" data-nav-code="01" data-nav-name="尾流"><i>01</i>尾流</a>
+      <a href="optimization.html" data-nav-code="02" data-nav-name="优化"><i>02</i>优化</a>
+      <a href="solver.html" data-nav-code="03" data-nav-name="求解"><i>03</i>求解</a>
+      <a href="dashboard.html" data-nav-code="04" data-nav-name="看板"><i>04</i>看板</a>
+      <a href="array.html" data-nav-code="05" data-nav-name="阵列"><i>05</i>阵列</a>
+      <a href="heatmap.html" data-nav-code="06" data-nav-name="热力"><i>06</i>热力</a>
+      <a href="pod.html" data-nav-code="07" data-nav-name="POD"><i>07</i>POD</a>
+      <a href="model.html" data-nav-code="08" data-nav-name="精度"><i>08</i>精度</a>
+      <a href="power_tracking.html" data-nav-code="09" data-nav-name="跟踪"><i>09</i>跟踪</a>
+      <a href="3d_farm.html" data-nav-code="10" data-nav-name="3D风场"><i>10</i>3D风场</a>
+      <a href="3d_surface.html" data-nav-code="11" data-nav-name="3D曲面"><i>11</i>3D曲面</a>
+      <a href="3d_volume.html" data-nav-code="12" data-nav-name="3D体"><i>12</i>3D体</a>
+      <a href="interface.html" data-nav-code="13" data-nav-name="契约"><i>13</i>契约</a>
+      <a href="overview.html" data-nav-code="MAP" data-nav-name="系统总览"><i>MAP</i>总览</a>
+    </div></div>
+  </div>
+</nav>
+
+<header class="v-pg-hero t-container">
+  <div class="v-pg-tag">01 / WAKE DEFLECTION ANALYSIS · FLORIS GCH & SURROGATE</div>
+  <h1 class="v-pg-title">偏航让尾流离开下游转子</h1>
+  <p class="v-pg-sub">拖动上游风机偏航角，观察低能尾流的横向偏移，以及上游让利与下游功率回升如何共同改变两机总出力。</p>
+</header>
+
+<main class="page-shell">
+  <section id="interactiveWorkbench" aria-labelledby="workbenchTitle">
+    <div class="section-intro">
+      <div class="section-kicker">交互工作台</div>
+      <h2 class="section-title" id="workbenchTitle">一条滑块，读取四项功率响应。</h2>
+      <p class="section-copy">数据来自两台 NREL 5MW 风机的 5D 串列算例。偏航角范围为 -30°至 +30°，步长 5°；下游风机固定为 0°。</p>
+    </div>
+
+    <div class="workbench">
+      <div class="status-row">
+        <div class="status-copy"><strong>物理关系：</strong>上游主动偏航会降低自身迎风投影，同时把低能尾流侧向推离下游转子。全场收益取决于两者的净效应。</div>
+        <div class="status-badge" id="causePill" aria-live="polite">当前 0°：尾流正对下游</div>
+      </div>
+
+      <div class="metrics">
+        <article class="metric">
+          <div class="metric-meta"><span>上游风机</span><span>P₁ / kW</span></div>
+          <div class="metric-label">主动偏航后的上游出力</div>
+          <div class="metric-value" id="kP1">1754</div>
+          <div class="metric-detail" id="dP1">相对 0°：0 kW（0.0%）</div>
+        </article>
+        <article class="metric">
+          <div class="metric-meta"><span>下游风机</span><span>P₂ / kW</span></div>
+          <div class="metric-label">尾流避让后的下游出力</div>
+          <div class="metric-value" id="kP2">436</div>
+          <div class="metric-detail" id="dP2">相对 0°：0 kW（0.0%）</div>
+        </article>
+        <article class="metric">
+          <div class="metric-meta"><span>串列系统</span><span>P<sub>tot</sub> / kW</span></div>
+          <div class="metric-label">两台风机总出力</div>
+          <div class="metric-value" id="kPtot">2190</div>
+          <div class="metric-detail" id="dPtot">相对 0°：0 kW（0.0%）</div>
+        </article>
+        <article class="metric">
+          <div class="metric-meta"><span>相对收益</span><span>ΔP / %</span></div>
+          <div class="metric-label">相对自然对风基准的增益</div>
+          <div class="metric-value" id="kGain">0.00%</div>
+          <div class="metric-detail" id="dOpt">离散最优 +25°：+8.13%</div>
+        </article>
+      </div>
+
+      <div class="control-row">
+        <div class="yaw-readout">
+          <span class="yaw-name">上游偏航角 γ₁</span>
+          <output class="yaw-value" id="yawBadge" for="yawSlider">0°</output>
+        </div>
+        <input class="yaw-range" type="range" id="yawSlider" min="-30" max="30" value="0" step="5" aria-label="上游风机偏航角">
+        <div class="quick-actions">
+          <button class="action-button active" id="btnZero" type="button">0° 基准</button>
+          <button class="action-button" id="btnOpt" type="button">+25° 最优</button>
+          <button class="action-button" id="btnPlay" type="button" aria-pressed="false">自动扫描</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dynamic-section" aria-labelledby="dynamicTitle">
+    <div class="section-intro">
+      <div class="section-kicker">动态图表</div>
+      <h2 class="section-title" id="dynamicTitle">先看尾流位置，再看功率净收益。</h2>
+      <p class="section-copy">速度场和功率曲线读取同一工况索引。蓝色标记表示离散最优点，黑色标记表示当前滑块工作点。</p>
+    </div>
+
+    <article class="plot-card">
+      <div class="plot-header">
+        <div class="plot-name">轮毂高度水平速度场</div>
+        <div class="plot-meta">128 × 64 原始网格 / 前端 64 × 32 降采样</div>
+      </div>
+      <div class="plot-body"><div id="fieldPlot" style="height:330px"></div></div>
+      <div class="plot-caption">FLORIS 4.6.6 GCH，来流 8 m/s，湍流强度 6%。采用低饱和 BuGn 顺序色阶：低速尾流为森林绿，高速清洁来流逐步过渡至浅薄荷色。</div>
+    </article>
+
+    <div class="plot-pair">
+      <article class="plot-card">
+        <div class="plot-header">
+          <div class="plot-name">两机总功率响应</div>
+          <div class="plot-meta">P₁ + P₂</div>
+        </div>
+        <div class="plot-body"><div id="powerPlot" style="height:330px"></div></div>
+        <div class="plot-caption">总功率在 +25°达到离散峰值 2368.40 kW，相对 0°基准增加 8.13%。</div>
+      </article>
+      <article class="plot-card">
+        <div class="plot-header">
+          <div class="plot-name">上游让利与下游回升</div>
+          <div class="plot-meta">P₁ / P₂ 分解</div>
+        </div>
+        <div class="plot-body"><div id="splitPlot" style="height:330px"></div></div>
+        <div class="plot-caption">+25°时上游 P₁下降约 16.8%，下游 P₂上升约 108.4%，净效应为全场增益。</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="evidence-section" aria-labelledby="evidenceTitle">
+    <div class="section-intro">
+      <div class="section-kicker">静态出版证据</div>
+      <h2 class="section-title" id="evidenceTitle">交互结论由同源出版图复核。</h2>
+      <p class="section-copy">以下图片由仓库中的 CSV 与 NPZ 数据生成。PDF 保留矢量文字和曲线，可用于组会、论文草稿与软著材料。</p>
+    </div>
+    <div class="evidence-stack nature-row nature-row--2">
+      <figure class="evidence-card nature-card nature-card--caption">
+        <img src="assets/img/nature/fig1_tandem_yaw.png" alt="两机串列中P1、P2、总功率与偏航角的关系">
+        <figcaption class="evidence-caption">
+          <span>两机功率权衡：上游让利、下游回升与全场最优点。</span>
+          <a class="pdf-link" href="assets/img/nature/fig1_tandem_yaw.pdf" target="_blank" rel="noopener">打开矢量 PDF</a>
+        </figcaption>
+      </figure>
+      <figure class="evidence-card nature-card nature-card--caption">
+        <img src="assets/img/nature/fig4_wake_contour.png" alt="0度基准与25度最优偏航速度场对比">
+        <figcaption class="evidence-caption">
+          <span>0°与 +25°速度场对照：低速尾流横向移开下游转子。</span>
+          <a class="pdf-link" href="assets/img/nature/fig4_wake_contour.pdf" target="_blank" rel="noopener">打开矢量 PDF</a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="wake-footer">
+  <div class="footer-inner">
+    <div class="footer-title">西安交通大学 · 能源与动力工程学院 · 大学生创新训练项目团队</div>
+    <div>田铭雨（高保真 CFD 流场仿真）· 袁夫达（POD 降阶与代理模型）· 厉今飞（多工况基线）· 洪祖名（PPO 跟踪与优化）· 孙承泽（可视化与交互系统）</div>
+    <div>指导教师：李良星 副教授</div>
+    <div class="footer-meta">数据：cases.csv / fields/*.npz　模型：FLORIS 4.6.6 GCH　门禁：check_contract.py</div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/data_3d.js"></script>
+<script src="assets/js/interp.js"></script>
+<script>
+(function () {
+  const W = window.WIND_DATA;
+  const S = window.SURROGATE;
+  const D3 = window.WIND_3D_DATA;
+  const multi = W.multi;
+  const speedIndex = multi.wind_speeds.indexOf(8);
+  const slider = document.getElementById('yawSlider');
+  const badge = document.getElementById('yawBadge');
+  const playButton = document.getElementById('btnPlay');
+  const sans = '"Geist","DengXian","等线","PingFang SC","Microsoft YaHei",sans-serif';
+  const mono = '"Geist Mono","DengXian","等线","PingFang SC","Microsoft YaHei",monospace';
+  const config = { responsive: true, displayModeBar: false };
+  // ColorBrewer BuGn 9-class reversed: low-speed wake is forest green, clean inflow is pale mint.
+  const fieldScale = [
+    [0.000, '#00441b'], [0.125, '#006d2c'], [0.250, '#238b45'],
+    [0.375, '#41ae76'], [0.500, '#66c2a4'], [0.625, '#99d8c9'],
+    [0.750, '#ccece6'], [0.875, '#e5f5f9'], [1.000, '#f7fcfd']
+  ];
+  const chartHeight = 330;
+  const axis = {
+    color: '#4d4d4d', gridcolor: '#ebebeb', linecolor: '#a1a1a1',
+    zerolinecolor: '#a1a1a1', tickfont: { family: mono, size: 11, color: '#4d4d4d' },
+    title: { font: { family: sans, size: 12, color: '#4d4d4d' } }
+  };
+  const baseLayout = {
+    paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: '#ffffff',
+    font: { family: sans, size: 12, color: '#171717' },
+    hoverlabel: { bgcolor: '#171717', bordercolor: '#171717', font: { color: '#ffffff', family: sans, size: 12 } }
+  };
+
+  const optPower = Math.max(...multi.ptot[speedIndex]);
+  const optYaw = multi.yaw_angles[multi.ptot[speedIndex].indexOf(optPower)];
+  let timer = null;
+  let playing = false;
+
+  function signed(value, digits) {
+    if (Math.abs(value) < Math.pow(10, -digits) / 2) return value.toFixed(digits);
+    return (value > 0 ? '+' : '') + value.toFixed(digits);
+  }
+
+  function setDelta(id, current, baseline) {
+    const delta = current - baseline;
+    const percent = baseline ? delta / baseline * 100 : 0;
+    const el = document.getElementById(id);
+    el.textContent = `相对 0°：${signed(delta, 0)} kW（${signed(percent, 1)}%）`;
+    el.style.color = delta > .5 ? '#0070f3' : delta < -.5 ? '#ee0000' : '#888888';
+  }
+
+  function updateRangeFill(yaw) {
+    const progress = (yaw + 30) / 60 * 100;
+    slider.style.background = `linear-gradient(90deg,#171717 0 ${progress}%,#ebebeb ${progress}% 100%)`;
+  }
+
+  function render() {
+    const yaw = Number(slider.value);
+    const current = S.predict_power(yaw, 8);
+    const baseline = S.predict_power(0, 8);
+    const gain = (current.ptot - baseline.ptot) / baseline.ptot * 100;
+
+    badge.value = `${yaw > 0 ? '+' : ''}${yaw}°`;
+    badge.textContent = badge.value;
+    updateRangeFill(yaw);
+    document.getElementById('btnZero').classList.toggle('active', yaw === 0);
+    document.getElementById('btnOpt').classList.toggle('active', yaw === optYaw);
+
+    document.getElementById('kP1').textContent = Math.round(current.p1);
+    document.getElementById('kP2').textContent = Math.round(current.p2);
+    document.getElementById('kPtot').textContent = Math.round(current.ptot);
+    document.getElementById('kGain').textContent = `${gain > 0 ? '+' : ''}${gain.toFixed(2)}%`;
+    document.getElementById('kP1').style.color = yaw === 0 ? '#171717' : '#ee0000';
+    document.getElementById('kP2').style.color = yaw === 0 ? '#171717' : '#0070f3';
+    document.getElementById('kPtot').style.color = gain > .5 ? '#0070f3' : '#171717';
+    document.getElementById('kGain').style.color = gain > .5 ? '#0070f3' : gain < -.5 ? '#ee0000' : '#171717';
+    setDelta('dP1', current.p1, baseline.p1);
+    setDelta('dP2', current.p2, baseline.p2);
+    setDelta('dPtot', current.ptot, baseline.ptot);
+    document.getElementById('dOpt').textContent = `离散最优 +${optYaw}°：+${((optPower - baseline.ptot) / baseline.ptot * 100).toFixed(2)}%`;
+
+    const status = document.getElementById('causePill');
+    if (yaw === 0) {
+      status.textContent = '当前 0°：尾流正对下游';
+      status.style.background = '#ffffff';
+      status.style.borderColor = '#ebebeb';
+      status.style.color = '#4d4d4d';
+    } else if (yaw === optYaw) {
+      status.textContent = `离散最优 +${yaw}°：总功率 +${gain.toFixed(2)}%`;
+      status.style.background = '#d3e5ff';
+      status.style.borderColor = '#0070f3';
+      status.style.color = '#0761d1';
+    } else if (gain > 0) {
+      status.textContent = `偏航 ${yaw > 0 ? '+' : ''}${yaw}°：总功率 +${gain.toFixed(2)}%`;
+      status.style.background = '#d3e5ff';
+      status.style.borderColor = '#0070f3';
+      status.style.color = '#0761d1';
+    } else {
+      status.textContent = `偏航 ${yaw > 0 ? '+' : ''}${yaw}°：总功率 ${gain.toFixed(2)}%`;
+      status.style.background = '#f7d4d6';
+      status.style.borderColor = '#ee0000';
+      status.style.color = '#c50000';
+    }
+
+    const field = D3 && D3.fields_2d && D3.fields_2d[String(yaw)];
+    if (field) {
+      Plotly.react('fieldPlot', [
+        {
+          type: 'heatmap', x: field.x, y: field.y, z: field.u,
+          colorscale: fieldScale, zmin: 4, zmax: 9,
+          colorbar: { title: { text: 'm/s', side: 'right', font: { family: mono, size: 11 } }, thickness: 12, len: .78, x: 1.01 },
+          hovertemplate: 'x=%{x:.0f} m<br>y=%{y:.0f} m<br>u=%{z:.2f} m/s<extra></extra>'
+        },
+        {
+          type: 'scatter', x: [0, 630], y: [0, 0], mode: 'markers+text',
+          marker: { size: 14, symbol: 'triangle-up', color: ['#171717', '#0070f3'], line: { color: '#fff', width: 2 } },
+          text: [`风机 1　γ₁=${yaw > 0 ? '+' : ''}${yaw}°`, '风机 2　0°'],
+          textposition: 'top center', textfont: { family: sans, size: 11, color: '#171717' },
+          showlegend: false, hoverinfo: 'skip'
+        }
+      ], Object.assign({}, baseLayout, {
+        height: chartHeight,
+        margin: { l: 48, r: 54, t: 18, b: 46 },
+        xaxis: Object.assign({}, axis, { title: { text: '顺风方向 x（m）', font: axis.title.font } }),
+        yaxis: Object.assign({}, axis, { title: { text: '横向 y（m）', font: axis.title.font }, range: [-300, 300] })
+      }), { responsive: true, displayModeBar: 'hover', modeBarButtonsToRemove: ['lasso2d', 'select2d'] });
+    }
+
+    Plotly.react('powerPlot', [
+      {
+        x: multi.yaw_angles, y: multi.ptot[speedIndex], mode: 'lines', name: '总功率',
+        line: { color: '#171717', width: 2.3 },
+        hovertemplate: '偏航 %{x:.0f}°<br>总功率 %{y:.1f} kW<extra></extra>'
+      },
+      {
+        x: [optYaw], y: [optPower], mode: 'markers', name: '离散最优',
+        marker: { size: 12, color: '#0070f3', line: { color: '#fff', width: 2 } }
+      },
+      {
+        x: [yaw], y: [current.ptot], mode: 'markers', name: '当前工作点',
+        marker: { size: 11, color: '#171717', line: { color: '#fff', width: 2 } }
+      }
+    ], Object.assign({}, baseLayout, {
+      height: chartHeight,
+      margin: { l: 50, r: 14, t: 42, b: 46 },
+      xaxis: Object.assign({}, axis, { title: { text: '上游偏航角 γ₁（°）', font: axis.title.font } }),
+      yaxis: Object.assign({}, axis, { title: { text: '总功率（kW）', font: axis.title.font } }),
+      legend: { orientation: 'h', y: 1.18, x: .5, xanchor: 'center', font: { family: sans, size: 11 } }
+    }), config);
+
+    Plotly.react('splitPlot', [
+      {
+        x: multi.yaw_angles, y: multi.p1[speedIndex], mode: 'lines', name: '上游 P₁',
+        line: { color: '#ee0000', width: 2.1 },
+        hovertemplate: 'P₁ %{y:.1f} kW<extra></extra>'
+      },
+      {
+        x: multi.yaw_angles, y: multi.p2[speedIndex], mode: 'lines', name: '下游 P₂',
+        line: { color: '#0070f3', width: 2.1 },
+        hovertemplate: 'P₂ %{y:.1f} kW<extra></extra>'
+      },
+      {
+        x: [yaw, yaw], y: [0, Math.max(...multi.p1[speedIndex]) * 1.05], mode: 'lines',
+        line: { color: '#171717', width: 1, dash: 'dot' }, showlegend: false, hoverinfo: 'skip'
+      }
+    ], Object.assign({}, baseLayout, {
+      height: chartHeight,
+      margin: { l: 50, r: 14, t: 42, b: 46 },
+      xaxis: Object.assign({}, axis, { title: { text: '上游偏航角 γ₁（°）', font: axis.title.font } }),
+      yaxis: Object.assign({}, axis, { title: { text: '单机功率（kW）', font: axis.title.font } }),
+      legend: { orientation: 'h', y: 1.18, x: .5, xanchor: 'center', font: { family: sans, size: 11 } }
+    }), config);
+  }
+
+  function stopScan() {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+    playing = false;
+    playButton.textContent = '自动扫描';
+    playButton.classList.remove('active');
+    playButton.setAttribute('aria-pressed', 'false');
+  }
+
+  slider.addEventListener('input', render);
+  document.getElementById('btnZero').addEventListener('click', function () { slider.value = '0'; render(); });
+  document.getElementById('btnOpt').addEventListener('click', function () { slider.value = String(optYaw); render(); });
+  playButton.addEventListener('click', function () {
+    if (playing) { stopScan(); return; }
+    playing = true;
+    playButton.textContent = '暂停扫描';
+    playButton.classList.add('active');
+    playButton.setAttribute('aria-pressed', 'true');
+    timer = window.setInterval(function () {
+      let next = Number(slider.value) + 5;
+      if (next > 30) next = -30;
+      slider.value = String(next);
+      render();
+    }, 600);
+  });
+  document.addEventListener('visibilitychange', function () { if (document.hidden) stopScan(); });
+  window.addEventListener('pagehide', stopScan);
+
+  render();
+})();
+</script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

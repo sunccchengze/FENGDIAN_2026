@@ -1,0 +1,188 @@
+# wind_farm_viz 原提交 SHA → 迁入 Dachuang-SZLS 后的新 SHA
+# 重写方式：git filter-repo 三步（1. 7 份项目 md 自 技能库&准则/ 归位到 skills-notes/；2. 剔除 技能库&准则/ 全部历史；3. 整树加 viz/ 前缀）
+# 生成于 2026-09-19；原仓库 https://github.com/sunccchengze/wind_farm_viz ；来源 = main(617b179a) + arena/01a083c6(b3f5cc78) + arena/01a0a074(992f6665)
+# 用法：旧文档里出现的 8 位短 SHA，在本表 old_sha 列查到对应 new_sha，再 git show <new_sha>
+old_sha	new_sha	subject
+f15b2314778ad14a7de36c7fda4ca14fc1598be4	9dc5e2ec6b7847b0ab59ea75cc15b462a974b339	Initial commit
+d34b3accde18de1345c5e086428311189ab9affa	11ffaab9050388569fe295981b683e27656b9881	Add files via upload
+0a4739a2c6ac43c7aafc32f5df62ee907a6be69f	8940347b5f153e4e25dbe88706ec727ed922163c	first commit
+4c86269a3268d324629315380d28a857aca63206	7cac69ff1515d83838389da075bbb4ba4fa47a3f	重构为多页面架构
+0a64eda360d99c5de8e1cdb0a58abdc99ac60cc1	6e1900adf4a77fb4fa58526d874251e8f6c777b1	修复requirements.txt冲突标记
+f7f9b44efa3a44ff6a3ea4bd9314df0ced656123	dae2cc5b3c5b1e45054d728c4122a843d590b116	新增3D体渲染、热力矩阵、优化求解器
+2dfd7c63798845fb6b6cd856ae19eb489838735d	39e63e9107accefd3c567508fea68913d6971220	玻璃态主页 + 悬停动效
+eb3764fa6e4a8b19e64f47286933fee5ca930017	e1f90d1a2ad3de50956a358df9cbf0e0a9f88499	新增POD分析页面 + pod_analysis脚本
+bead21a9c1b8b24da27a527f4fd7f307683fc83f	f7e9153e22aa496767b58f97897abbfe7792adda	玻璃主页修复 + 侧边栏深色导航
+573fa02364d8d19b7e5337f735b5cfeb6e0b8b0a	1bed6563ee6d69b7c59079c8206ba77012aad581	新增阵列优化、功率跟踪页面，主页更新至10个模块
+cf8a582335300e8acc0509e2dd49619527b7471f	aed84c877cdf1aa8235b547d281e216371f0075b	更新README，完整记录10个页面和所有数据接口
+9ef645e3ca8a36f11113269f16fc019cff63e2df	bcb81304e11f334b7d197c9d90b3b32e48e7e568	修复3D体渲染30度偏航伪影
+dc05658b8a2c86273fd4d84789f6a5865cf5d908	6fa84c4eb693f5656f2635b3c261667f11256c49	全页面统一加载提示、导出功能、单位规范、utils工具库
+8585d789e6b1bdfa93999f2f836549fa068affe5	e5447de96f8d40e79d22d9d66e657de50a02a0b8	移除__pycache__缓存，添加.gitignore
+efdb50d0ff760264837f9cd7fd06c2377c5c30c1	68f8659a81290029ce0683dff7aa44d7f3c497a0	修复Streamlit Cloud路径兼容性
+a441f6904d2450927c2c6b814db4e618856ccd52	9c6f26aa688c9980dce62d2eae5ad1fc35acd47f	add proposal doc
+0d985c3c11e2d8ecd039cdc5943faf4308eea250	92d61658f59e680be01b909dcaec0d55232c73de	封面设计 + Master Dashboard 试验页面
+b0e63dce949b0ec119ee942c78c036fa45538a65	2b1d517a7b85cce6642820c464193c109b597fc6	fix: plotly template error (plotly_dark + direct colors)
+63651d97dd7176540527aaf6d7e322dcfb4cabb7	0f2400e68440a482c8b19af909cd9dc3651e0b27	Add files via upload
+8efdfe05d13d545cc898c23a3dbead552dbc234e	a89de1afad8753b0c1b90c49bbfcc22b76bb24d5	docs: 整理019fcc85分支内容，补充研究目标说明、沟通日志与问题清单
+2e61da666202781ba6f833f53e55937a7290b2c0	b52ae43c0f29cb3c62e1ee9effbe854935d69d3e	封面设计 + Master Dashboard 试验页面
+5bc02bbe06624bafe580e5d1c27e5db1c6fd5f94	7c3f159b23408fba91171e41ce55af44aa2a386a	fix: plotly template error (plotly_dark + direct colors)
+2af746a6b2a427e17a5daaab9ac279bc43477779	bf9c0d2df95cf0b57818b84d61c73be01c2313eb	Add files via upload
+ccd86e228f41125622d6e1cdc57fb5edb434c268	dedda90aa603e882f4c78c66e22cd917788ff7c1	docs: 重写文档中心——阶段性交付方案、成员清单、研究综述、李良星20问、沟通记录
+6e654b8b1e77fabfabba890fb8097e0f81cd5b43	e06e501f8042161ea01b8294eac81162436b976e	Add files via upload
+119c93b45a48f56bba2e0c80b9009bf768d1386b	d99c6d374367160756ebba0c46190d55e503790d	docs: 消化20260808群聊与洪祖名代理模型交付，重写文档中心
+5c7a8ea608b23f35a9f237e6ee939b7e364e751f	cc8f725738a31919499c5041717c3cd3caf09a22	Add files via upload
+830699bd1949872781c8014a4fc893b2e9e0fbe9	43e522a724b1914f8623d16fe2b2cf63e0bf00b4	可视化重写为纯静态站点(Cloudflare Pages) + 文档重构为孙承泽个人视角
+3af47a747c7c7a0ea156307532d993e83b2260f2	18d9d076176db23da8765512baa934901fdd4d25	消化假期前PPT + 本科生答辩材料；可视化站点对齐PPT统一接口；文档重构为孙承泽个人视角
+6f59830f78bf218a487b4781a20ad04ccc4c290d	0bc365ab331eafec053df4fdc8ac5d316a9881dc	可视化重写为11页多页面静态站，还原原版全部可视化(3D曲面/体渲染/热力矩阵/POD/总览/Dashboard)
+9df0e7ca70f66112c26b0d5b0509650f0d7bb466	44671ab02d2ee97160e330329367ac7e54c369aa	新增3个额外页(风玫瑰/模型精度/接口)并接入全站导航；修复index为着陆页
+fe1dc48050b804a3dc777a35bf47d2d9ab33e7b3	c27a6e87e4f46cfe6cdd90dfc72a860c8cd7ca37	docs: 添加 HANDOFF 交接文档（供下一 agent 接手）
+35f76a837f1e4813cfcb0f354db3e92cb92fc15d	4bd39c4d5c3b081e962b33aea8b89805502c245a	1
+b67b7fc26fb47bb8ebc3c7d23c47619458315689	8361dacde977e72f09e76c457fc957c4608a181f	Muted 500/600级配色+CSS语法修复: 全部400级亮色→500/600级柔色, 消除Etransition/bAorder等错误, 恢复8个被覆盖页面
+756c11d845777f12823c3b9dcd26464b2998cd98	1a41f914c0626a3447566ff7388a1aa437ad8721	feat: sync full skill library from turbine-blade-ai-platform arena/019fe072 branch
+c2602f44f1596a339282ad1e9c0ac74c1c0c8776	b98bb7e71752aaf98bdc13add74f0008279af4c2	feat: rebuild ace presentation deck with zero AI slop and true FLORIS cfd flow field
+4f2ff2ca9ba3764079a6363c24ee507b4a4eba56	5a98f7df7a9aaafbba285450d060bbd19dc09b24	feat: install GPTImage2Skill library with 31 categories and 7 iron rules for prompt engineering
+26f6bc92696b1d36ed10774adec99cca5452ba81	bdf6e76f8e069ff517899913623b54c7fbd6a118	feat: integrate MotionSites and Refero DESIGN.md design system for high-end web interactions
+4c5068b080119b4dccf4cee77b53ef8dfb1f8b63	e96cbc1eef0073a01d91d430c8582f8a5951b49b	feat: establish multi-agent architecture with adversarial review and artifact contract
+43e7b34864528713bc0f04ff1fee5145eef20873	911a6def28e658d711913d9c260b22f631c745f8	feat: integrate Alibaba Open Code Review (ocr v1.8.10) with custom project rules
+3c689b41f7b82522d2d9b190fdcaaad44c97f661	8ae14af94d8ea7068ef84b5a9095ab5d431b3665	feat: digest Bojie Li's AI Agent book (20k stars) into skill library and master roster
+77c7354d31e69b0c4382d6b442a1adf0a20ae0df	a29cc5e9ba60121378df751ee70a2a592889b244	feat: install Codex 10-stage scientific research workflow (Nature Skills suite)
+e8dbe4d7f524bc5ca9311a4abc797adb2d2c1d61	b2fbf72854a818dc43cd82c8c141336b5aa9ecb8	feat: integrate UI UX Pro Max (109k stars) design intelligence guide and pre-delivery checklist
+06dd3e1e919e5975682ffc2d4e6ea9273ec0c09a	fa084d9a87e805adf64d4db78e54f9d74cf74402	feat: archive DigitalPlat FreeDomain documentation and Cloudflare Pages custom domain integration guide
+311613097329dc72844e96199e53079f591fc483	ca4d9a3fde75d71b04ff92f82a11db207917516a	feat: install Agent Reach (69k stars) multi-platform internet connector for Bilibili, XHS, WeChat, etc.
+728a4427e2c26d5e1c6e6067f9380d07b9142479	018268105c8d6f86a49479124dc57f4b8eb72163	docs: comprehensive update of HANDOFF.md, 14_DAYS_MASTER_PLAN.md, and master skill routing table
+956e6e1f2392c53c0357c4f41c7385cc2c8ae97e	01735c8647fc7b79f5aa1a1b767b0fe7b7ebc6f5	refactor: restructure 14-day master plan into 4 concentrated campaign modules
+d863c8bf31b01f69d92568aa56c3d0429d47152f	65a688702e9f9072c90753f6c52144f3c508a0bc	fix(site): restore site/ to exact commit 70c398e (Morandi aesthetic with spinning video background, 3D farm and Songti SC) while keeping all new non-site skills and assets
+2fc1c09b386700a7c46f8079f038085d8bc2a0ad	6785cae25c646519daed77043b80f4f2a1bfec7b	feat(assets): ensure PSD, PPO package and all non-site assets are 100% tracked in git
+d6e56c5d6ee84e4718df85b3481cae7500869e68	3ceb926f32efbe507929f74fc7eda24e7bc6643d	feat: establish 6-tier memory system (.learnings/) for seamless cross-session agent handover
+41e68c5a83079fc4e87b74e78449dbc425aa31e2	b1bd58473c0aaf09a6ad2d6837decaa7bc2bde65	feat(memory): rebuild canonical 6-tier memory system using upstream pskoett/self-improving-agent and Martian-Engineering/agent-memory repos
+7a1eea6153628286728a968524cd7f92a75a7643	fded4be9af1161063504ad0df85734e4f8d5ce94	docs: finalize comprehensive HANDOFF.md with exact session prompt, ground truth physics, and error guardrails
+4f3e6aa6251466a4c1acc76c6177cc64ced967e4	89555982d68e471760655c9dcdf7a509ecb541a4	docs: complete final repository audit and finalize HANDOFF.md for next session
+a3f9a0715a0f2a25ae3d3ae5589d45de1b89fefa	ad441b61cac32367c807b722392d8860c882f633	fix(handoff): enforce mandatory declaration header and correct campaign statuses to prevent hallucinated completion claims
+a259d57a5cd19825a25aa51ce42c189ff51f5247	bf3f54ce67e6bcd6a134764f2364ce0122e5fa6a	docs: streamline handoff instructions, remove confusing jargon, and clarify Morandi-based progressive enhancement
+8893556bf4e3a1307f62ce0ae3dd4dfc2467c628	b37ba4c54cc1a1a2c34576785e9103820de91334	docs(learnings): 记录用户决策偏好(选择题收口)与永不merge到main铁律
+9cd6839971ce5d75bb82ca45da114f8833613b96	db5b84183f3441e6c411b424a9ae30b7c0213f4a	fix(site): 全站数字诚信审计A~H落地——POD口径76.4/21.6/98.0、T2转子平均5.10/6.38、风玫瑰页真实数据重做、求解器表实测化、PPO/XGBoost加来源注记
+44dacabd8c43b4630e56bc10f82ed58cf245aea4	a17eacfe00e393dbb64667d86870a4ab5bf95c6c	docs: 根README双形态重写(静态站现役/Streamlit留档)、requirements按实证环境锁定、site部署分支口径更新
+b6a17de8fec99a48071aa8c4e918373fdcca6e19	10029a08370ecb9bc736c79c91fc2e4109ac480a	feat(windrose): 3×3阵列全风向扫描(7536次求解)+双布局切换页——八扇区结构、等权ΔAEP+8.86%、双通道贪心修正+契约校验扩展
+54a6631cafff2190a6de3138babb0391e8e901d5	7d314576341680d335d6bdb53123c141132d3c9e	fix(site): array页占位骨架化+清除隐藏硬编码伪值(九机图/对比柱图/desc/bage)——统一策略对齐Row1-only锚点口径,json增turbine_powers_unified,Streamlit留档文案与死代码修正
+103954403a0ac00ebc54d437cf880064c785309c	f1c2c4d95ed669381ca224b4c0d0d3ccbf3a3099	chore(ppo): 复现工程中途断点存档——env对齐4维契约、v2训练管线就绪待跑、v1未收敛权重降级DONOTSHIP存档、契约名恢复0B占位+断点文档入库
+edb5711ab224bff11be91f2bb3bcf76f432b0ec6	783ea7c62ae6ce9f70f466b14d9bc1cd8f7a5105	docs(learnings): 冻结复核落印——工作区/远端/进程三方零漂移确认
+c45553b5f0a0fb447497954fbd095fef079eae55	73d93ba70963082a162a062e1b0b01d732ec217b	feat(ppo): 闭环PPO强化学习功率跟踪实证复现(200集实跑MAE=0.523%, 均时0.944s)
+f07f1708803b6879456234915425641ce1802d40	2bd7b77ad42256e7806c416401e0f55fea8b335e	feat(array): 增设前两排接力偏航第4策略卡片(9935kW/+22.72%)丰富阶梯比照
+2e61a4f8d2a97c32899206ed804f8820aba33bc4	6dc33bb7fb7af86812f4278a11bde3ef3ac9b59a	test(site): 16个静态子网页全量自动化端到端质检通过与规范验收
+3fabe915dcb36e65dc82a6cf542c0842ce8d3725	7c7fe7c1a6a7748ab51e4956f3b1da87f6268d31	docs(learnings): 重心全面转入8月23日组会可视化汇报与通识冲刺打底
+7e119aa144651f3c6d10eeded074e1a9d20e54c0	49f5fabfd40bd6b8f09a566b420b7a621d811d4e	docs: 创建8.23组会暑期进展汇报大白话通识与现场口播手册
+fa62f3389411ed3521472abe9b122636ee4c9dfe	830a2765593c4cbc0028c8dc6d26b425b09226a9	docs: 建立8.23组会暑期可视化进展12页PPT大纲与一字一句讲稿
+b92d249e96b0102ce95280d7855de35c9c384bb0	f261d0839931d2d548a37c40b035dd326821e266	feat(site): 构建8.23组会瑞士网格12页静态Web演示Deck(slides_823.html)
+f7c6ccea7b856f6ee291d5e2f07f3b413b1b0918	38be851837610975e3e77e7c4181e67ba8c22d6c	feat(ppt): 生成8.23组会瑞士网格16:9宽屏PowerPoint文件(8.23组会汇报_可视化暑期进展_孙承泽.pptx)
+eb83ee22b5fddacccddf3dcfae17a8c5634e3eb0	2a8aa71240a64b65855eea8a194ed6c02f038578	docs(audit): 开启8.23组会物理原理与可视化底气苏格拉底式质询对练
+da1639e098977176a16667c3c998ab17eb2dbbe6	1d2af7678e8a8a5fa04b7666394f4ec5bcf9aa6f	docs(audit): 归纳8.23组会4大核心问答与口袋金句避坑手卡
+43d5fb8f938821115add3d8a5a27a3de31d74832	432d54122806a3b85f8067328c51e62ddeaf402e	feat(ppt): 将PS顶刊制图与PPT网格体系全量确权纳入8.23暑期成果总结文稿
+368e20f73179f79a1606f92c28dc7cbc0ad5a262	ab50e82da9bc4c1500a5655e60c45037f4e48809	feat(site): 派遣专家团深入叶片平台偷师学艺并落地气动势流避障网格交互引擎(aerodynamic_demo.html)
+cb737b94275ff77488197ea68da58786c4dd328e	16a98b3e2a42ea0a7eb28a6fda93302a6a906213	docs(audit): 制定8.23组会OneMoreThing彩蛋展示四幕动线与操作指引台本
+f68dfa9ef75a4e5d9ec281636d6373186dcf05a9	f8216272748dfb4c8ada8a25999d4046ae926514	docs(audit): 建立跨系统Agent思维碰撞15大硬核命题与我方预构解答大纲
+13400510f8cbad5527bff87831b64bcb44229af4	f8cce7f4e8e32499df6e402c619abb5be26d53a7	docs(audit): 建立能动两机与风电同门红蓝Agent深度思维碰撞与宏微观融合总报告
+5d507c31bff783e7b5e14a384fddd21ada4fea62	bcbabae4bef5c7628f3cc69582bb15aac489d1e9	feat(site): 确立组会汇报纯正风电专一性并重绘主页(site/index.html)为去Emoji瑞士网格布局
+cbf488d0045aef47ac5060af957087f94ba69e3d	eac9663c76a16b1d3d1810c24db3bd33435d6fdf	feat(site): 依Vercel-Inspired设计规范与瑞士网格彻底从零重塑主页(site/index.html)
+37ec975666c2db282cfe3919cacfda73b8da9f3b	5b98e7252afa7af2955c12753cba26990e3c81f5	feat(site): 彻底照抄turbine-blade-ai-platform主页重建site/index.html(钛黑调色盘/阻尼光斑背景/精密终端)
+8eaded60e84395d4ad1104ca8df979c532d9b22b	70323a8465a0474aaa8798b135a2531aab982e64	feat(site): 将主页(site/index.html)彻底重造为莫兰迪工科浅色模式并适配阻尼光斑引擎
+179ef0f81122502d27666d46b67f079b2e5e3caa	d4c6f3fa0e75699917bfa421ed29d9e0ddafbd59	fix(site): 彻底剔除index.html中bg-video.js全屏视频残留并定制中文宋体黑/等线字样
+f991c649e6158fb80914e16282faf670417bb4ba	f9a33a5767d802d829b4436b4b45ec4d3e4be994	fix(site): 响应7项截图反查重造指标带消除重叠与卡片感/更正数字孪生视频口径/定制TasteSkill微动效
+813e6b2a8478700e46d7ba3f853138d1298a8fff	2aa783c130ddba09bf9da1caef5c10f4ed8964a8	fix(site): 将DengXian注入等宽字体栈彻底消除宋体回滚并将段落严密限制为最多两行
+c77235b1a32559a7db2e122ce57024a734689b12	75a89d7cee95bdbf41d8d1179f05ae8fb839f522	docs(audit): 蒸馏世界级前端智囊团提出主页审阅报告并落地5项升维处方
+fe8167b7267cdc163a531edbf5fbd73607416b77	b0b7faf874f8241efe91b6678d1bb5b8b791cf0b	fix(site): 解决主页页脚(footer)不居中痛点实现全量行文垂直对中居中布局
+8a0e63a5e265068b5ab8828fa7b243d63c28ed7d	88311f0b27845a11982a66fb112c599d75c7b142	fix(site): 删除主页顶栏冗余文字并强制约束单行不折行
+4562d13e0a930a24e61d565654e19881bff9fa1c	a1c88d3a0f26fabf45d2a4dee5815d01b8f88810	feat(site): 依瑞士网格与浅色等线宋体分流彻底重构第二站尾流分析页(site/wake.html)
+c2c351322bb1deeac45f0b41c36c9b8948f17a7f	d69c981212b1279fbd30fccbf8d3ae03bae3eb02	fix(site): 订正尾流页说明牌色值并消除多余分割线实现100%笔直左对齐
+d532974e9a9c5f4efd9a87d5e2274deb9eeecad2	d3e7fa7102f74de8db643f65a8ef6e47a84cd000	fix(site): 彻底解决尾流分析页图例与X轴标题重叠痛点(上挪图例至顶部)
+766a35af78f95ca2ec340ec3da66116b4356e968	ca3d8004ba61485a2188524df5b45dd28f8a40d6	fix(site): 彻底解决尾流分析页红框折行问题并实现全界面100%垂直齐平左对齐
+04b2a5328a7955fda06aedeb00804580b05b55ce	8ef1d0f2cbee5e5aff04b1f93618ab46eef748c3	feat(site): 依发丝强线瑞士网格与对准规则彻底改造优化对齐页与实时求解页(site/optimization.html, solver.html)
+cf554c9a5429cec1206e9f496d2f2bfd6edeaa91	9c236de421406bdec1a5284eab425143d2a78302	fix(site): 根据5大视觉及信噪比诊断精制尾流分析页(合并控制台/去色彩泛滥/下标校对)
+9c2a18a214c3cf1fd9acbffa009efe185195a9f5	41e3c3d54790eb40edb293a588004c3de6e9c99c	chore(skills): 装载 019ff854 通用技能底座并内化到本项目路由
+1fc7b8d024ce336492a8e6c99a5b478572212a2c	2074c55d299fcdfbdce5a0fdb937fa20004bf06e	feat(site): 依浅色瑞士网格体系重塑系统总览页(site/overview.html)为模块目录枢纽
+12e283abd2ad1ffc254fca6aea1ac2711ce25eeb	b2119d6398469951ef99231aad27f9fe1981fb68	feat(site): 依浅色瑞士网格体系重塑闭环总控看板(site/dashboard.html)为一体化工作台
+61d2e4de2f18535d298da16ee0a35a9be5146378	016670fd879336d8960ead23b80b47e1154be39c	feat(site): 依浅色瑞士网格体系重塑模型精度验证页(site/model.html)为证据链台账
+b39b53a83d0827f76436c0b649684e6289c260d2	3a3c27f4425fd8e5f5fcdec610981f82cd586a58	feat(site): 依浅色瑞士网格体系重塑POD降阶分析页(site/pod.html)为能量谱工作台
+a4a7523d71dca3269180ede50793f784ba7bc13e	9616543b423a8af746a80df68b8a411561133448	feat(site): 依浅色瑞士网格体系重塑3×3阵列协同优化页(site/array.html)为四策略对比工作台
+a3af2525bb020a70625e7bc99e8d83a5c499dbd5	7136cb99f2c8b89dc3ebc83b8dc127c8ff63b329	feat(site): 依浅色瑞士网格体系重塑热力矩阵页(site/heatmap.html)为三级增益视图
+dc807e2d4889b90139af716b995bb861202ed9f2	ba23395960a2ebfe9a814a3e31bee7257f271034	feat(site): 依浅色瑞士网格体系重塑风玫瑰与AEP页(site/windrose.html)为方向扫描台账
+52a502e7b2def7eb6df8b9120e41f11b85f463b9	996f35c13c9eaaea22b229997a636e34f6c7218a	feat(site): 依浅色瑞士网格体系重塑AGC功率跟踪页(site/power_tracking.html)为逆向求解工作台
+b80eab4e52d99c4b9d80fd4e3d6e198d4b7545d5	dede5e1c024e96f6a78ffc2ad5baef16ac6d177e	feat(site): 依浅色瑞士网格体系重塑数据接口契约页(site/interface.html)为协作规范台账
+67009d9191845280d6bf949405f14d828efd9786	79aef648596f910ff4bed2808fa633f5f43c8561	feat(site): 依浅色瑞士网格体系重塑3D风电场页(site/3d_farm.html)场景外壳与控件
+bb0bb2ced30ea184b4d17c7ce60459bf7b4fcfb6	df9d89dff5c0d1de3d2d00cfa29ff23a621c20ee	feat(site): 依浅色瑞士网格体系重塑3D尾流曲面页(site/3d_surface.html)为探针工作台
+00c2a461719dd385a928a2e31ff00350abdd7dbd	f79a75f3fe3d7b9c00bf9da6a6b67accb2019d0c	feat(site): 依浅色瑞士网格体系重塑3D体渲染页(site/3d_volume.html)为低速泡观测台
+6e349ffced58e7188c04fdf08e8157efe463780c	a8108a616104651f034adf3a56256808f8f564c6	feat(site): 将气动流线演示页(site/aerodynamic_demo.html)转入浅色瑞士网格体系
+2df319d80b2bdf9e93c0ae6e91956e3c92f1347c	9cf2ab912a0a2930617393ed20d04b358091db4b	feat(site): 重塑8.23组会Deck(site/slides_823.html)对齐浅色瑞士网格字体令牌并清除残留口径
+b63bf53cb6f0bf46322e1b58ed17ca2b4a534ce5	6b6823371c68281e9cf1302335bc1d68c03dec9e	fix(site): 剔除主页(site/index.html)遗留nav.js与data-source.js注入避免表情横幅与过期口径
+3d1449a1e61b6b91c2b7f6c55cfc78330c3cdbfe	b4ec3cdde9afe49985945324bda22ad0387f392a	fix(site): 修复全站页眉左右内边距被覆盖导致的32px左移错位(.v-pg-hero仅设上下padding)
+63c45bac52f9d973d03194d9224c867c035a8963	bb044b969f75b6023d561e94923db9da4907c829	feat(site): 全站16页导航统一为双行模块条(固定顺序编号+当前页高亮+CURRENT指示)消除导航指示冲突
+6a82efa436c47a2058065d91e73334c1a761be18	eadf6eb92bf5d0b4188efbed90cc76ae5138e3d2	fix(site): 导航模块条横向滚动收进1240内容列内部,宽屏下与正文同左缘对齐(min-width覆盖max-width根因)
+3715c7c83f658168625d6a9284ce5f94e59cea35	4a635e728b49100f4bbbf156837eb2c9fd0ffae1	fix(site): 修复optimization页左侧380px空白未渲染 — 漏引assets/data_3d.js导致WIND_3D_DATA未定义，2D水平尾流热力云图分支被跳过，补齐数据源链路
+9f8e7e63a902dac0cbd2bb5ff449f72d358e8799	8e78bafde2b3000bbe4c2c62dafcd304d66cac2d	feat(site/index): 将NREL 5MW ARRAY遥测终端转为毛玻璃透光材质(rgba 0.66 + backdrop-blur 22px saturate 180%, 内层高光径向渐变+上沿光栅, 指标格悬浮提亮)
+f55559a54b3652b3fe32c4359a590b6a7f8d2815	6b192ad23115e965cde03f642773e17e19f37ac3	fix(site/index): 重做NREL遥测卡为真透光毛玻璃 — 背景三重径向流体光斑+Canvas网格加浓至0.11/光斑半径380/亮度0.18, 卡体rgba 0.38 blur28px saturate180% 双高光inset, header/metric/pipeline分层透光0.32/0.34/0.30
+3d9f67608226d45ef3288a58fe0cf595aba79648	758589acafc157a4a0d814fa435696ac44a4dfd0	fix(site/index): 背景完全复原至原版var(--v-bg)+Canvas 0.055/130/2.2/0.45/280/0.08, 卡片纯毛玻璃化rgba(255,255,255,0.48) blur(16px) border 0.66 radius12 仅透明模糊不改背景
+2900853f28d69eff3b699818e0801e20bb8a39cf	d4613e96e3c28e0342f560a571d903f2d9636676	fix(site/optimization): 补齐左右边距难看问题 — cause-bar 16px 32px + 边框圆角, ledger-strip加边框圆角取消首列0 padding, v-control-card 28px 32px+边框圆角, 移动端20px, 强制t-container 32px对齐1240栅格
+a7c98bec30dddcceb7996576c1289e57a8bf4dae	940aef70a9911b1846b11d8a33527c27fd689cf2	fix(site/solver): 同步修复03求解页左右贴边 — cause-bar 16px 32px+边框圆角, ledger-strip边框圆角取消首列0 padding, v-control-card 28px 32px+边框圆角, 响应式20px, 与02优化页同标准自查
+577a01f294fa34d7cc0f6e33fa2e4a86a056661b	aeaf87f9d024c07b84caa95ec74842ef8572336c	fix(site): 修复SPEC B等代码块横向溢出 — .grid-plots加min-width:0与子代min-width:0防Grid撑破, .v-plots-container overflow:hidden, pre.code-block改pre-wrap+break-word+anywhere+border-box, 全站9页同步
+d31f655cddb7613f2539e5f16927d27254550052	68056fac0161a31a95001b2372d6f079c320e801	fix(data): 修复+10°流场异常条带 — fields/全部高斯平滑sigma0.8+边界8m/s, case_0009(+10°)用5°与15°平均替代消除544-562m处2m/s跳变(4.394->6.460), 重建data_3d.js 13工况
+0393a55af30fa6926ead8252c6ea14f8cba8ab3a	4baaf505ca525881e78df74c530f2b6d1a79e411	fix(site/dashboard): 修复FIG.B半圆仪表白屏 — 非法type:'path'改为scatter弧线点集bgArc/valArc(180->0/180->angV,80点), arcPoints helper, line width16 spline保留
+baffc31c313057d7578887f5d2f681214b078a8b	abb9a608bc2d1aea5d1ab847dc0b3a0e9aa84d40	fix(site/dashboard): 修复半圆仪表位置不对 — 改上半圆仪表圆心底部cy=30 r=100, y范围0-150, 背景180->0, 数值180->angV, 文本cy+35/65内嵌, 线宽14, 截断问题根因yRange 40-170只露两侧
+66427801995611964e229323ec6ac4618b37c89e	6a3cc1ece7742b5031cd405bc9879718352f2aaa	feat(figures): Nature级科研绘图工厂批量出图17张 — 挖掘-SKILL-库scipilot-figure-skill+nature-figure, 数据盘点cases/multi/array/POD/windrose, 生成fig1-9主工厂+fig10-17扩展疯狂画图, 单栏3.5in双栏7.2in矢量PDF+PNG+灰度预览, 色盲安全Okabe-Ito viridis/RdBu_r
+087428299af0ee6c1a2dbcdffcf99d7d94e11edf	f02dd386067b713017ccaea57929c0fbb6d407cb	refactor(site/dashboard): 移除鸡肋半圆仪表FIG B — 信息冗余(P1/P2/总功率曲线已含增益), 改FIG A全宽360px, 备注引导至Nature静态图Fig3阵列增益与Fig15瀑布, 修复条带数据源已平滑
+c515a76f8315b514b5811a83180dad4ee9a6bfc3	a3fc14286f55a009fd6a4f2e4ab65d875214cc63	feat(site/pod): 嵌入Nature出版级POD图 — fig5_pod(前2阶97.97%偶极子+自恢复)、fig14_pod_coeff系数随偏航、fig10箱线+strip多风速增益，单栏3.5in矢量PDF下载
+10bc9f7113453e3b22d5a1c077ac11311609fa4f	4a2cec7c27edf3b144f664e86b876d27bf2a095f	feat(site/array): 嵌入Nature阵列王牌图 — fig6_array_flow baseline vs independent走廊清除、fig3总功率柱、fig15瀑布9机增益、fig16扫掠，7.2in矢量PDF
+e2d7658b491c373b62b54aa08c84335f8a6763a6	b061cecd8f4f721976f75d83fe922bf2f49be704	feat(site/windrose): 嵌入Nature风玫瑰极坐标图 fig7_windrose — 90°串列最大增益，0°横风0%，单栏3.5in PDF矢量
+880821437468b07494f8594451faf02d9295f030	7320b94746684339ebb17654874d48840d797b2e	feat(site/power_tracking): 嵌入Nature PPO跟踪图 fig9_tracking + fig17_ppo_mae — MAE 0.523% + 5种子稳定性，目标域[0.78,0.98]
+a76e5b7a06dc299e91d43af62956602f23f6db78	41c669bba7abe9a1e5e0e8d23b4d32f5b3ff6b1b	feat(site/overview): 嵌入Nature主图 fig8_main — 4面板综合 Tandem/Array/POD/Wake，Figure 1候选，7.2in矢量
+6f49d73dd4c1b7e599cbe9b841dc399b66480a87	a68b336e815506d1ab3bace9749b68a7b5fcadb7	feat(site/heatmap): 嵌入Nature多风速增益热力 fig2_multi_wind + 3D曲面 fig13_3d_gain — viridis感知均匀，单双栏矢量PDF
+7acd2cf1ecd1c223e6690831c92ac7a6a962471f	9795d6333389218f8f95c95857a980d2c1382dd7	feat(site/model): 嵌入Nature相关性热力 fig11_corr — P1/P2强负相关让利本质，RdBu_r发散，矢量PDF
+a13a9d49d7d612adde6b54dafc2e9ce952686cfe	93bce82686265ff9f3403888bed06672ae2f93d3	feat(site/wake): 嵌入Nature串列出版图 fig1_tandem_yaw + fig4_wake_contour — P1/P2权衡+0°vs25°流场，7.2in矢量PDF
+41d1fa49d103a896b70a15b89d3835a2260a1010	e1caae34c9c5e4ccf8724e2996488221103482e7	fix(site/array): 重做Nature图排版整齐 — 拆1fr1fr错位双图为4个全宽v-plots-container垂直栈，等宽等边距，统一plot-head/plot-note/PDF下载，杜绝高度不齐/标签重复，Swiss-grid 32px/28px对齐
+0578d8c1a05a29fd1416ac26dbbe6af4863d2c48	2725216f61871cea02442b9c0668d865c06c6e44	fix(site/pod): 重做Nature图排版整齐 — 拆1fr1fr双图为3个全宽垂直栈，等宽等边距，统一plot-head/plot-note/PDF，杜绝高度不齐
+b8e330c5f6ef2450de10f1bd4495de0402a1ec77	bce396d7dd28974cb4212874cfbf604f71bade0f	fix(site/power_tracking): 重做Nature双图排版 — 拆1fr1fr错位为2个全宽垂直栈，Fig9跟踪时序+Fig17多种子MAE，等宽等边距，Swiss-grid
+dd52803a55400d01ab3de548624166404b119926	b9a007e3dc5402d1f065cd4ca4caffa0eef7ce14	fix(site/model): 修复左右不协调 — Nature图容器误嵌入workbench-panel内导致左窄右空，移至workbench外全宽独立容器，420px居中，Swiss-grid 32px对齐，统一plot-head/plot-note/PDF
+e82b142d3f64f63963d5363de7e58e8427ca7de3	a40de0fe546032c0c3374915d934e3d2b02bd465	fix(site): 全站Nature图排版整齐重做 — 统拆1fr1fr错位双图为全宽垂直栈，等宽等边距32px/28px，统一plot-head/plot-note/PDF，修复workbench内误嵌入导致左右不协调，Swiss-grid对齐，taste/victor设计技能审计
+fcaa5b9e70ef5dbd5ee0a4859e174e8555a00b5f	1cc42f7bdca9118adf278afb0205111d56acbd7d	Create 建模与数据生成(1).docx
+a0ad9ba823b08980b3552f10645ccc103ae1de07	082fc14899e9abda241168d6c15b92c79015f14e	chore(freeze): 网页彻底收工封板 v1.0-freeze — 双重门禁绿灯, 导航17链, 英雄区32px对齐, 左空白/贴边/溢出/条带/仪表/排版等系统性修复, 16页+Nature图+审计台账+建模docx可交付软著
+bbb80a5d61c4c1f45071a45f570d34f00e9bbf4f	a2117b6ca49bb0b544ad3ddf71b7be9bcd3da4af	feat(site/index_v2): Step0 玻璃白绿母版 — radial三重流体光斑+终端0.38 blur28双高光inset+指标格悬浮提亮+风粒子流72个白绿拖尾+正弦湍流+网格0.11/光斑380/0.18, ledger Bento 1.6fr+3x1fr玻璃12px圆角, 丝滑cubic-bezier(0.16,1,0.3,1)
+2ca083c7e1600bce1deb52e2c4c4bc5727c37725	b6e87f82c2234d0c7e7ca085890d5989a7249e6f	fix(site): 移除不专业抽象资产大扫除 + 3D锥形尾流替换双层高斯截锥真实科研感 + 删除15流线演示页 + Step0玻璃白绿母版(风粒子72+流体光斑+光效流转+Bento1.6fr)正式应用至首页index.html，原frozen版保留为index_v2原型
+6911ce08020150f76ce8e1b1a514c5ce219ebfbc	b948ab880f3ec6d62a624102d3627a52a598dc34	chore(site): 彻底删除15号流线演示页 aerodynamic_demo.html — 玩具势流不专业抽象，与FLORIS数据无关，组长要求删
+01759b139eebf1323cb74c99926aaf6941f963ce	010c76c1acfdddf9d9aae2ba81135ca933ec4d4d	fix(site): 全站动静态重排上动下静 — 滑块控制的动态流场/功率曲线置顶直接可见，Nature静态出版图沉底至</main>前，修复尾流等多页需滚动查看动画的体验问题，8页15个Nature容器已移至底部
+d16d732cd59f2af82a2bb9defb862c9b663b249e	1893c644722b966660e2a603d343ce3090836541	fix(site/3d_farm): 3D尾流前小后大 vs 3D体前大后小矛盾解释与重做 — 前小后大为尾流包络扩张(FLORIS GCH k≈0.08)，前大后小为低速泡等值面阈值收缩(等值面<6.5m/s随恢复而缩小)，双物理量均正确；重做示意图尾流双层截锥加湍流meandering(sin*3.5+随机)非完美圆锥，重建随偏航中心线shift=-sin(yaw)*(x-start)*0.16，模式切换时重建几何，摆脱AI味平滑圆锥
+40c4714b7af54681b59088947e2e8e0e127554d7	383c508bd85b45398de0fe0159d4d6f1a811bf30	fix(site/index): 使花哨玻璃与风粒子效果肉眼可见 — 粒子120个 r2.2-5.0 alpha0.42-0.8 vx1.5-4.0 线宽1.8拖尾0.55/0.85，终端玻璃0.38→0.58 blur22 边框0.92 阴影0.18，Bento 1.6→1.8fr 玻璃0.68，流体光斑0.18→0.28/0.13→0.22/0.08→0.12，解决Preview中看不到变化的不一致
+ca671ed7a76ebd18a74a3b8370bfd940e1c2b8df	ea2c55e1966f6819586e4cc5f073af23b24df51f	feat(site/wake): 完全照抄Vercel DESIGN.md重塑尾流页 — 选Vercel因白绿适配，近黑墨字#171717近白底#fafafa发丝线#ebebeb，Geist 48px/600 -2.4px，黑白药丸按钮100px，卡片12px圆角1px发丝线，4px间距阶梯，L0扁平L2细层阴影，完全运用现有素材data.js/data_3d.js/FieldSeq/GainSeq，无新增依赖
+d09662b4f00daeb640843b937163a5bb5d99bc4d	ee24043d2c45eed2d7d1fbfa22afb17e2020b9e6	fix(site/wake): 重塑尾流页为Vercel设计语言白绿适配版 — Canvas #fafafa Ink #171717 Hairline #ebebeb，Geist 48px/600 -2.4px，黑白药丸按钮100px，卡片12px圆角1px发丝线，4px间距阶梯，L0扁平L2细层阴影，完全复用现有FLORIS真实流场素材，移除所有外露Vercel字样，修复图像空白JS错误
+256a74903755a670f85d698f56a5699e11b8b025	c114c4d1f503a5a13b4e217a16198855b7aa8515	chore(handoff): 收尾回退尾流页至01759b13科研可用版 — 修复Vercel重塑后空白+品牌文案外露，动态置顶Nature沉底，上动下静，准备下一任一次性完成照抄品牌+抽象资产大扫除+玻璃母版落地，附完整开场白  [subject 内嵌 SHA 已由 filter-repo 同步改写]
+af6d9b12290e45c6f7bfb3125ba740a2348dd089	08502b65bbb298ce538e8f487ed73fa1c027cab7	fix(science): replace simulated PPO figures with audited evaluation data
+f81220ea9ed92a89484b7620ae59d5bc65e35587	47c99b8eb8670126636ffad6bbbb7ea0175e4512	fix(platform): restore data provenance and offline quality gates
+69e2b0750834cf973319a156184ff2909c341194	89a4b86d0c8284ae10f2b810f4f444799ae2de20	feat(wake): apply complete precision design language to wake analysis
+699927fc5689035c04103dcf4996fa11786c079b	2711cc46114bec087282f3bf39ea7bb69f3885c0	fix(3d): separate schematic wake geometry from FLORIS data
+888fc0a8b33b49abb7df02753a11eb1edbeef6d8	8d47d4ec8e680a8083a14d1a58a5be7330ee9c85	docs(freeze): retire stale demo claims and seal v1.1 handoff
+e0b568695b4b6027861982ded4b68aff88954c5c	7fdfa44b4eaf9ff51e561b4d80c2a6a7514002ab	test(quality): make wake runtime gate reproducible
+f9f7869ab5f22a3292d784a0540acdf597ada478	0da495ddb777b55a6d2c76a39b28464187844930	feat(design): unify site with restrained glass and fresh flow palette
+16373af13b068f52fb484509baaaff74cbd59969	feeeae7bffa31463defbcbec2936686f898cd633	feat(site): retire windrose and rebalance evidence layouts
+76f9c474b85fe9ad480f03e27809d0b4a25fe6e9	0dee0e4705594bd61178bdfa3b3d53be7afda611	fix(wake): center hero on shared content grid
+df02d262787b33ec9976ac5d936ee8ba0a822507	59d0b48bdc7aa3b5b53e352f6d7c1b796e700786	feat(site): align all Nature figures in equal-height rows
+c83332139b1ad9d5a37d3a670d137f01a7cf3f38	3ca7a23f4a6daf4d1e03b604b1641c4f67bfa4b2	fix(home): unify hero headline typography
+5e13b77b53e7984a73f05859d1544ebbf08a0acd	b6b030955229ca426987a8da9678e79708d2927f	fix(home): lighten hero glows to fresh mint
+63e2dbbb62181ffe3f263c1f2c87af686f367d44	67a52d80195144603c98190fb8a78451ccb0d8c4	feat(home): prototype interactive digital wind tunnel hero
+21a385e11fdd51700bef8f56fa2f5c16ab76241a	b0a3dbaf4083a88cff7dd593255bea11ffc54531	chore(site): harden final release checks and assets
+12f1280037be3527ae5643445ae68ea859f7ec23	56ff112f78b65d127e9f84bf76cc3b29e27addef	docs(handoff): freeze website at v1.3 final
+aba4928a9cede53ccc94da53ac3f016e94853bf1	c29b90b2aacffd5071e19695e5a0412eeaff9efa	docs(presentation): add humanized five-minute summer report
+dec1811f42d1dd83ff1cce1db30bbf1ecd26248a	9879e74e003e2e594a97417a02c7b247020de1e6	docs(presentation): rebalance report toward plotting and PS study
+c806400d900c602783eb5804a1d4c952b9d68095	d27b3f18646be8853abad4cd9b555341c55e6ba7	fix(presentation): restore clear authorship boundaries
+fcc6e030cf477f070e583d6654532546d726f617	5be040dc7f3b92f1f0dd9c4d4c22216b65d552e4	docs(presentation): cover full visualization learning workflow
+d9d959f1297f09b977c69b31c4b900c12616cf76	ddf20b623443d9c173fa85b58ccd68aa268a251c	docs(presentation): finalize first-person summer report
+ccaba391dde53242b0c2b0ecb92a43729501e4bf	a85fb720b9f5cec564a2f0829291075f5699a5c8	fix(presentation): audit voice context and add domain learning
+9b4d113331eed6948e029bc5d7432b62a661827f	063517ebf7c0875dd6ed0b14e9063878584038c1	fix(presentation): distinguish agent skills from personal learning
+353a1112c98df426d15bbad70953032472653ce6	8cb4350360fcb4911a9fbc6cfb26321fd9ce5692	docs(presentation): finalize five-minute summer report
+4391b056881aba8cdd7b96222aea81a65f8f69c0	c0a0d5589bf32bf41c2bb8494b870f11c33764ad	docs(presentation): explain future concepts in plain language
+884b785f16f1443b0b51bc9805d7cbefa70930f4	22476dae1a2d3c3093cea8ce8649c49d785467fe	docs(presentation): deepen future technology explanations
+e9ee8b91a1fe0b1eab0609188ef323cc79204ce6	5f519b06e5c972d5efb9785a824352ba83f37ff0	Add files via upload
+fbba0c539aa9f62575733668249d14f51051bb17	a1eff1b14a64371141d8bae4b03cd73f97915379	merge(union): 并入 019ff8d6 技能底座装载提交
+5dbd23ea46c68a2a7d0615f296c31d9f05819ddf	c2aea874b89f7262b885dbfb761daa251b66e18c	merge(union): 嫁接孤立线A 019fcc85 提交历史
+613138504f3b222b199e1605bff4a493143ce585	ab78836336be1e1eefaf9dee520c2005496bf794	merge(union): 嫁接孤立线B 019fd504 提交历史
+617b179a5381769af9d9ea6aa93daf0ca70f4f8e	aab36f3370f84cb9405ffc6b1f934d91e26b3e7e	archive(union): 孤立线A/B 全量文件树归档至 _archive/，附 MANIFEST 身份卡
+b3f5cc7854aea199144ceeaf4423408447d2fc64	2b89338d9b554b4b4229010baf231c4eeccc41b9	docs(whitepaper): 自学白皮书定稿 + 19 张中文教学图 + 8 册分章 PDF + DeepTutor 练习册
+992f666562ab7bb91a9d4a71f0d0283199ac8c3d	0faeb18a2463a2f23557297c60ae927f1475538e	feat(pocket-orbit): 袖珍轨道站 · 把 9 颗风机捏在手心 (SCZ Pocket Orbit)
+8f75421317ee086a6c7fb4dc4dfe2bb2043aef5d	9f50a17f0034c2e2351426a57ebabcfd554bdf59	merge(union): 并入 arena/01a083c6 —— 自学白皮书定稿 + 19 张教学图 + 8 册 PDF + DeepTutor 练习册
+693ec98e02df8e33ad602c962847a8c078c6a4a6	7da5e8741fbfdc34e087aee2721f86e5f2af8dc3	merge(union): 并入 arena/01a0a074 —— 袖珍轨道站 pocket-orbit（3×3 软体风场交互演示）
+5b02260fa9a7e7a8fda58d9804dcc3acfb5a5fcb	(pruned: 该提交只改动 技能库&准则/，剔除后为空提交)	feat(harness): integrate Self-Harness paradigm (arXiv:2606.09498) into project skill library and runtime orchestration

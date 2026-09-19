@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>3×3 阵列优化 · 孙承泽</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links"><a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a></div></div></nav>
+<section class="wrap pg-hero"><h1>⚡ 3×3 阵列优化</h1><p>九台风机协同偏航，全场功率热力图，两台 vs 阵列增益对比</p></section>
+<main class="wrap">
+  <div class="grid2">
+    <div class="card"><div class="chart" id="arrBar"></div><div class="note" id="arrNote"></div></div>
+    <div class="card"><div class="chart" id="arrLayout"></div><div class="note">箭头=各机推荐偏航角（独立策略），颜色=单机功率（绿高红低）。</div></div>
+  </div>
+  <div class="card"><div class="grid2"><div class="chart" id="pg" style="max-width:320px"></div><div><div class="note">3×3 全场功率热力图（独立偏航策略）。颜色越绿单机功率越高。</div>
+    <div class="note warn">数据来源：<code>array_independent_result.json</code>（FLORIS 占位，未来用洪祖名真实优化器结果覆盖）。</div></div></div></div>
+</main>
+<footer class="wrap">孙承泽 · 可视化模块</footer>
+<script src="assets/data.js"></script><script src="assets/js/charts.js"></script>
+<script>const W=window.WIND_DATA,a=W.array_opt,C=window.CHARTS;
+C.barChart(document.getElementById("arrBar"),{labels:["基准(0°)","统一偏航","独立偏航"],values:[a.power_none,a.power_unified,a.power_independent],colors:["#9fb3d4","#4a9eff","#27ae60"]});
+document.getElementById("arrNote").innerHTML=`3×3 阵列：统一偏航 +<b>${a.gain_unified_pct.toFixed(1)}%</b>，独立偏航 +<b class="good">${a.gain_independent_pct.toFixed(1)}%</b>。`;
+C.arrayLayout(document.getElementById("arrLayout"),{yaws:a.greedy_yaws,powers:a.turbine_powers_independent});
+C.powerGrid(document.getElementById("pg"),{powers:a.turbine_powers_independent});</script>
+</body></html>

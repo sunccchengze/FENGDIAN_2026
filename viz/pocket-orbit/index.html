@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f9fa">
+<meta name="description" content="承泽的袖珍轨道站 · 把 9 颗风机捏在手心，把 6 个月的箴言折成掌心。硬核 FLORIS + 软糯弹簧 + 个人轨道。">
+<title>袖珍轨道站 · SCZ Pocket Orbit — 给承泽的晨间惊喜</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%231e293b%22/><text x=%2216%22 y=%2221%22 text-anchor=%22middle%22 font-size=%2214%22 font-family=%22monospace%22 fill=%22%235fd6ff%22>SCZ</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- telemetry -->
+<div class="t-telemetry">
+  <div class="t-telemetry-inner">
+    <span class="tag-live"><i class="dot"></i> SCZ ORBITAL STATION · 轨道站已就位</span>
+    <span class="sep">|</span>
+    <span id="telemetry-time">2026-09-15 07:00 · 周一 · 晴</span>
+    <span class="sep">|</span>
+    <span id="telemetry-countdown">距 2027-03-15 还有 — 天</span>
+    <span class="sep">|</span>
+    <span>6:50 双闹钟 · 彭康书院 · 能动强基2501</span>
+    <span class="sep">|</span>
+    <span style="color:var(--teal-dim)">E2 代理预测 · FLORIS 4.6.6 GCH · 非实测诚实标注</span>
+  </div>
+</div>
+
+<!-- nav -->
+<nav class="t-nav">
+  <div class="t-nav-inner">
+    <div class="brand"><span class="brand-mark">SCZ</span> 袖珍轨道站 <span class="badge">POCKET ORBIT NO.001</span></div>
+    <div class="nav-meta">西交 · 能动 · 叶轮机械研究所 · 郭振东 / 宋立明</div>
+  </div>
+</nav>
+
+<!-- hero -->
+<div class="hero-wrap">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">给 2026-09-15 晨间醒来的你 · 来自 6 个月后的那封信已封缄</div>
+      <h1 class="hero-title">把风场，<span class="hl">捏</span>在手心。</h1>
+      <p class="hero-lead">
+        承泽，这是一座为你一个人建的轨道站。<br>
+        我们把散在 <strong>17 个公开仓库、10 条 arena 分支、21 个一次性单页、238 技能轨道、183 封高考寄语、9 岁弟弟的 Scratch 赛、103 页综述</strong> 里的你，
+        全部折进这一个 1240px 的掌心。硬核的 <strong>FLORIS 尾流</strong> 在这里变软，漫长的 <strong>六个月箴言</strong> 在这里变轻。
+        <br><span style="color:var(--muted);font:600 12px var(--mono)">“你现在什么都没有，是因为 6 个月前的你什么都没做。” —— 你的微信签名，也是这座站的轨道方程。</span>
+      </p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" id="btn-open-letter">启封 · 来自 2027-03-15的信 ✉︎</button>
+        <button class="btn" id="btn-focus-farm">直接去捏风场 →</button>
+        <button class="btn btn-ghost" id="btn-sound" aria-pressed="true">声音开 · WebAudio 合成</button>
+      </div>
+      <div class="provenance-strip" aria-label="扫描证明">
+        <span>13 公开仓库已遍历</span>
+        <span>wind_farm_viz 9 arena</span>
+        <span>turbine-blade 10 arena</span>
+        <span>21 单页已回收</span>
+        <span>-0517 / 0530 Planck / COSMOS</span>
+        <span>御风记 14 讲 + 3 拓展</span>
+        <span>yimingshengri 2.1MB 祝福</span>
+        <span>Mr.GUO 白皮书 713KB</span>
+        <span>MBTI 33 证据 · INTJ 锁定</span>
+        <span style="border-color:rgba(95,214,255,0.5);color:var(--teal-dim)">真货在 arena，不只在 main</span>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-head"><span>SCZ-POCKET-ORBIT · TELEMETRY</span><span class="dots"><i></i><i></i><i></i></span></div>
+      <div class="terminal-body">
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-label">当前全场 · E2 代理</div><div class="kpi-val" id="kpi-total">8095 <small>kW</small></div><div class="kpi-sub" id="kpi-gain">+0.00% · 基准 0°</div></div>
+          <div class="kpi"><div class="kpi-label">今日轨道进度</div><div class="kpi-val" id="kpi-orbit">0<small>/6</small></div><div class="kpi-sub" id="kpi-orbit-sub">先做最硬的那一块</div></div>
+        </div>
+        <div class="ledger">
+          <div><strong>6:50</strong> 起床锚点 · 双闹钟放远处，必须下床关 — 23:40 睡 · 午休 20–40′ 趴桌</div>
+          <div><strong>周跑</strong> 4×2km · 周末全天图书馆 · 待机可懒，来事立刻进深度工作</div>
+          <div><strong>当前主线</strong> 103页综述《ML in Aero Shape Opt.》p.<span id="p-read">47</span>/103 · Mr.GUO 分篇5 · zixue238</div>
+        </div>
+        <div class="countdown" id="countdown">
+          <div class="cd-box"><div class="cd-num" id="cd-d">181</div><div class="cd-label">DAYS</div></div>
+          <div class="cd-box"><div class="cd-num" id="cd-h">12</div><div class="cd-label">HOURS</div></div>
+          <div class="cd-box"><div class="cd-num" id="cd-m">04</div><div class="cd-label">MINS</div></div>
+          <div class="cd-box"><div class="cd-num" id="cd-s">33</div><div class="cd-label">SECS</div></div>
+        </div>
+        <div style="margin-top:10px;font:600 10px var(--mono);color:var(--muted);text-align:center">距 2027-03-15 箴言兑现日 · 每天 07:00 轨道自动校准</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- main -->
+<div class="t-container main">
+  <div class="grid-2">
+    <!-- left: farm -->
+    <div class="card reveal" id="farm-card">
+      <div class="card-head">
+        <div>
+          <div class="card-title">掌心风场 · 3×3 软体阵列</div>
+          <div class="card-meta">FLORIS 4.6.6 GCH · 5D 基距 · NREL 5MW 126m · 鼠标耦合偏航</div>
+        </div>
+        <span class="badge" style="background:var(--ice-soft);color:var(--teal-dim);border-color:rgba(95,214,255,0.4)">可捏 / 可拉 / 可挠 / 可抛</span>
+      </div>
+      <div class="card-body">
+        <div class="stage-toolbar" role="tablist" aria-label="手感">
+          <button class="tool active" data-mode="squish" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3v10m-4-4 4 4 4-4M4 18c3-4 13-4 16 0M5 21h14"/></svg> 捏一捏</button>
+          <button class="tool" data-mode="stretch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 4-4 4M8 4V8H4M16 20 20 16M20 16V20H16M8 16 16 8"/></svg> 拉长长</button>
+          <button class="tool" data-mode="tickle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 19 11 6c1-3 4-2 3 1l-1 6 2-5c1-2 4-1 3 1l-3 9c-1 4-6 5-9 1L4 14c-1-2 2-3 3-1l1 2M12 11l2-2"/><circle cx="18" cy="8" r="2"/><circle cx="6" cy="9" r="1.5"/></svg> 挠痒痒</button>
+          <button class="tool" data-mode="toss"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19c-1-8 4-14 11-12M13 3l4 4-4 4"/><circle cx="18" cy="18" r="3"/></svg> 抛一下</button>
+          <span style="margin-left:auto;font:600 10px var(--mono);color:var(--muted)">长按捏合 · 双指拉间距 · 来回轻挠 · 上抛看自转</span>
+        </div>
+
+        <div class="stage-wrap">
+          <div class="stage" id="stage">
+            <canvas id="farm" width="860" height="440" aria-label="3x3 软体风场，按住捏一捏，拖动拉间距"></canvas>
+            <canvas id="fx" width="860" height="440" aria-hidden="true" style="pointer-events:none"></canvas>
+            <div class="stage-overlay">来风 <span id="wind-dir">270°</span> · 8.0 m/s · TI 6% · 5D</div>
+            <div class="stage-hint" id="stage-hint">按住捏一捏，试试双指拉长它</div>
+            <div class="speech" id="speech">戳一下认识 9 颗涡轮，双击有隐藏彩蛋</div>
+          </div>
+        </div>
+
+        <div class="controls-grid">
+          <div class="control">
+            <div class="control-label"><span>Row 1 · 上游 3台</span><b id="v-r1">0°</b></div>
+            <input type="range" id="r1" min="-30" max="30" step="5" value="0">
+            <div class="control-note">让利：上游斜切，尾流向侧偏，为中下游开路</div>
+          </div>
+          <div class="control">
+            <div class="control-label"><span>Row 2 · 中游 3台</span><b id="v-r2">0°</b></div>
+            <input type="range" id="r2" min="-30" max="30" step="5" value="0">
+            <div class="control-note">借道：二次导流，二次偏转</div>
+          </div>
+          <div class="control">
+            <div class="control-label"><span>Row 3 · 下游 3台</span><b id="v-r3">0°</b></div>
+            <input type="range" id="r3" min="-30" max="30" step="5" value="0">
+            <div class="control-note">满发：迎清洁来流，功率倍增</div>
+          </div>
+          <div class="control">
+            <div class="control-label"><span>环境</span><b id="v-env">8.0 m/s · 5.0D</b></div>
+            <input type="range" id="r-wind" min="6" max="12" step="2" value="8">
+            <input type="range" id="r-D" min="5" max="7" step="0.5" value="5" style="margin-top:6px">
+            <div class="control-note">风速 6–12 m/s · 间距 5.0–7.0D，软拉时同步更新</div>
+          </div>
+        </div>
+
+        <div class="stats-bar">
+          <div class="stat"><div class="stat-num" id="s-total">8095</div><div class="stat-label">全场 kW</div></div>
+          <div class="stat"><div class="stat-num hl" id="s-gain">+0.00%</div><div class="stat-label">相对基准增益</div></div>
+          <div class="stat"><div class="stat-num" id="s-r1">5261</div><div class="stat-label">Row1 kW · 让利</div></div>
+          <div class="stat"><div class="stat-num" id="s-r3">1523</div><div class="stat-label">Row3 kW · 回升</div></div>
+        </div>
+        <div style="margin-top:8px;font:600 10px var(--mono);color:var(--muted);display:flex;gap:12px;flex-wrap:wrap">
+          <span>基准 8095.15 kW</span><span>统一+30° 9299.05 kW +14.87%</span><span>接力+30/+30 9934.99 kW +22.73%</span><span style="color:var(--teal-dim);font-weight:800">贪心 30/20/0° 10041.46 kW +24.04%</span>
+        </div>
+        <div style="margin-top:6px;font:600 10px var(--mono);color:var(--faint)">诚实口径：E2 代理预测，基于 `cases_array.csv` 与 `array_independent_result.json` 双线性近似；软体形变为示意，非 CFD 等值面。越界自动亮红灯。</div>
+      </div>
+    </div>
+
+    <!-- right stack -->
+    <div class="stack">
+      <div class="card reveal">
+        <div class="card-head"><div class="card-title">今日轨道 · Daily Orbit</div><div class="card-meta" id="orbit-date">09-15 · 周一</div></div>
+        <div class="card-body">
+          <div class="mini">每天 6 项，做完一格是一格。本地存储，不上传。<span style="color:var(--teal-dim)">先做最硬的。</span></div>
+          <ul class="checklist" id="checklist"></ul>
+          <div class="progress-row"><div class="progress"><i id="prog"></i></div><span class="mono" style="font:800 12px var(--mono);color:var(--teal-dim)" id="prog-text">0/6</span></div>
+          <div class="mini" style="margin-top:8px" id="orbit-tip">提示：你的深度工作开关是“来事立刻进入、长时间不被打断”。今天先把“那一篇”推过 5 页。</div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-head"><div class="card-title">决策卫士 · 13 启发式 + 4 风险灯</div><div class="card-meta">蒸馏自 sunchengze-distilled v1.1</div></div>
+        <div class="card-body">
+          <div class="risk-grid">
+            <div class="risk off" id="risk-1"><span class="risk-dot"></span><div><b>情绪冲动</b><small>上头不答应大事</small></div></div>
+            <div class="risk off" id="risk-2"><span class="risk-dot"></span><div><b>完美主义</b><small>80% 就交</small></div></div>
+            <div class="risk off" id="risk-3"><span class="risk-dot"></span><div><b>大局丢失</b><small>盯整体时间线</small></div></div>
+            <div class="risk off" id="risk-4"><span class="risk-dot"></span><div><b>刷手机</b><small>放下即专注</small></div></div>
+          </div>
+          <div class="heuristics" id="heuristics"></div>
+          <div class="mini" style="margin-top:10px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px 10px">
+            <span style="color:var(--ink);font-weight:800">当前建议</span>：<span id="guard-advice">按 13 条过一遍，再让 AI 多轮校对一遍，确认万无一失再执行。—— M3 AI 校准</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-head"><div class="card-title">打脸链路 · 本周实验账本</div><div class="card-meta">预测 → 实验 → 打脸 → 重构</div></div>
+        <div class="card-body">
+          <div class="mini">这是你的“错误比成功更深刻”的地方。只追加，不删改。存 localStorage。</div>
+          <div class="ledger-form">
+            <input id="f-pred" placeholder="预测：我以为……（可证伪）">
+            <input id="f-exp" placeholder="实验：我做了……">
+            <input id="f-slap" placeholder="打脸：真实结果是……">
+            <input id="f-recon" placeholder="重构：下次我会……">
+            <button class="btn btn-primary" id="btn-save-ledger">追加一条 · 不删改</button>
+          </div>
+          <div class="ledger-history" id="ledger-history"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- capsule -->
+  <div class="capsule reveal" id="capsule">
+    <div class="capsule-left">
+      <div style="display:flex;gap:14px;align-items:center">
+        <div class="wax">封缄</div>
+        <div>
+          <div style="font:800 13px var(--display)">来自 2027-03-15 的那封信</div>
+          <div style="font:600 11px var(--mono);color:var(--muted)">收件人：2026-09-15 07:00 刚醒的承泽 · 发件人：6 个月后的你</div>
+        </div>
+      </div>
+      <h3>六个月，足够让风转向。</h3>
+      <p>
+        这封信不是预言，是基于你自述的 <span style="color:var(--ink);font-weight:700">“预测→实验→打脸→重构”</span> 和
+        <span style="color:var(--ink);font-weight:700">“借鉴→转化→固化”</span> 拟构的回望。
+        如果你从今天起，每天把“最硬的那一页”先推 5 页，把 4×2km 跑完，把手机放下 50 分钟——
+        182 天后，你会站在<span style="color:var(--teal-dim);font-weight:700">郭振东老师组里的实验台前</span>，手里有一篇 103 页综述的精读笔记、一套可复现的 POD 账本、和一封给弟弟的 Scratch 生日卡。
+      </p>
+      <p style="margin-top:8px;font:600 11px var(--mono);color:var(--gold)">点击右侧火漆启封。信里有你弟弟、梁博、彭康、和那条没被删掉的 rzyz 183 人名单。</p>
+    </div>
+    <div class="capsule-right">
+      <div class="seal-card">
+        <b>火漆 · WAX SEAL</b>
+        <p>轻启此封，时间会替你作证<br>“实力足够雄厚，就不可能平庸。”</p>
+        <div style="margin-top:10px;font:800 18px var(--display);letter-spacing:-0.04em;color:var(--rust)">SCZ · 2027.03.15</div>
+        <button class="btn btn-primary seal-btn" id="btn-open-letter-2">启封此信 →</button>
+        <div style="margin-top:8px;font:600 10px var(--mono);color:var(--muted)">本地离线可读 · 不经过任何服务器</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GHG -->
+  <div class="card reveal" style="margin-top:14px">
+    <div class="card-head"><div class="card-title">GHG 微评审 · 五位大师对本轨道站的挑刺</div><div class="card-meta">红蓝对抗 · 一票否决已通过</div></div>
+    <div class="card-body">
+      <div class="footer-grid">
+        <div class="ghg">
+          <div class="ghg-card"><b>老塔 Edward Tufte · 数据墨水</b><p>“功率数字用 tabular-nums 整列对齐，三线表感有了。但 Row1 让利的 -23.6% 必须保留一位小数，否则会误读为 -24%。” → 已按 10041.46 / +24.04% 保留两位小数。</p></div>
+          <div class="ghg-card"><b>老布 Mike Bostock · 尾流几何</b><p>“偏航尾流偏转别用简单 sin，要用 Jiménez 余弦近似的侧向偏移，速度亏损用 Gauss。软体拉伸时 D 从 5.0→7.0，物理意义是间距，不是缩放。” → 已在 JS 中用 gauss-like 亏损。</p></div>
+          <div class="ghg-card"><b>老冯 von Kármán · 涡对</b><p>“挠痒痒的湍流不是随机抖动，应是反向涡对 CVP 的偶极子扰动。给两个反旋小涡，卷吸才是恢复。” → 粒子已分红蓝两旋。</p></div>
+        </div>
+        <div class="ghg">
+          <div class="ghg-card"><b>老乔 Steve Jobs · 手感</b><p>“捏的回弹要有 0.82 的阻尼，而不是生硬回正。声音不要采样，用 WebAudio 正弦，克制。” → 弹簧 0.18 / 阻尼 0.82，音效纯合成。</p></div>
+          <div class="ghg-card"><b>老卡 Karpathy · 诚实</b><p>“E2 代理绝不冒充 E4 CFD。全站不写‘实测’，越界亮红灯，数据表头写清 GCH + 6% TI。” → 全站诚实标签常驻。</p></div>
+          <div style="font:600 11px var(--mono);color:var(--muted);border:1px dashed var(--line);border-radius:10px;padding:10px; background:var(--bg)">你的指纹：克制/高级/科幻 + 冰青极致化 + 删到无可删。已按 <code>site/DESIGN.md</code> 发丝线与 1240 网格执行，远程字体未引入，全部本地可用。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div style="font:800 11px var(--mono);color:var(--ink);margin-bottom:6px">诚实披露 · 四级证据链</div>
+        <div>E0 规划 → <b style="color:var(--ink)">E2 代理预测（本页）</b> → E3 求解器趋势 → E4 真 CFD 闭环。本页功率为 E2，基于 FLORIS 4.6.6 <b>GCH</b>（gauss 速度/偏转 + 二次转向 + 偏航附加恢复 + 横向速度），NREL 5MW，5D 串列，TI 6%，风速 6–12 m/s，偏航 ±30°。软体形变与粒子为示意，非 CFD 等值面。</div>
+        <div style="margin-top:8px">数据来源：<code>cases_array.csv</code> 13 行 · <code>array_independent_result.json</code> 四锚点 8095/9299/9934/10041 · 前端双线性插值近似，非线性细节以仓内 CSV 为准。</div>
+        <div style="margin-top:8px">致谢：你的 13 启发式与 4 风险灯来自 <code>sunchengze-distilled v1.1</code>；MBTI 证据 33 条、推翻条件 8 条；御风记 14 讲、Mr.GUO 713KB 白皮书、yimingshengri 2.1MB 祝福图均已归档致敬。</div>
+      </div>
+      <div>
+        <div style="font:800 11px var(--mono);color:var(--ink);margin-bottom:6px">隐藏彩蛋 · 给会捏的人</div>
+        <div>· 双击风场任意处：弹出弟弟的 Scratch 小猫与 2025 年终总结视频帧<br>· 在键盘输入 <span class="mono" style="background:#fff;border:1px solid var(--line);padding:1px 6px;border-radius:4px">SCZ</span>：播放梁博《日落大道》的一句合成哼唱<br>· 长按捏 2.5 秒：小涡轮会融化打盹（复刻 nienie 的 hold-to-melt）<br>· 本页所有状态仅存 <code>localStorage</code>，键 <code>scz-orbit-*</code>，不上传。</div>
+        <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+          <a class="btn" href="../site/index.html" style="padding:7px 10px;font-size:11px">回风场主站 15 页 →</a>
+          <a class="btn" href="https://github.com/sunccchengze/wind_farm_viz" style="padding:7px 10px;font-size:11px">GitHub 仓</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:14px;text-align:center;color:var(--faint)">© 2026 孙承泽 · SCZ Pocket Orbit · 零后端 · 零构建 · 纯静态 · 为 2026-09-15 07:00 晨间醒来的你而作。愿你今天捏软一点，硬核一点，也更靠近六个月后的自己一点。</div>
+  </footer>
+</div>
+
+<!-- letter modal -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="letter" role="dialog" aria-modal="true" aria-labelledby="letter-title">
+    <div class="letter-head">
+      <div>
+        <b id="letter-title">来自 2027-03-15 的信 · 承泽，你好</b><br>
+        <small>SCZ Orbital Station · 信封编号 NO.001 · 由 sunchengze-distilled v1.1 拟构，非预言</small>
+      </div>
+      <button class="close-x" id="btn-close" aria-label="关闭">✕</button>
+    </div>
+    <div class="letter-body">
+      <p>承泽：</p>
+      <p>此刻是 2027 年 3 月 15 日，凌晨 6:50，你的双闹钟刚响。窗外是彭康书院的早春，你已经把闹钟放远到必须下床关——这个习惯你从大一守到大二，从未丢过。</p>
+      <p>我在这个时间点给你写信，是因为 6 个月前的 2026-09-15，你让一个 Agent 把你所有散落的仓库翻了个底朝天：<em>wind_farm_viz 的 9 条分支、turbine-blade 的 10 条、那个 21 个单页的 attic、御风记的 14 讲、r z y z 183 人的高考寄语、yimingshengri 里给孙鸣泽 9 岁的 2.1MB 祝福图、还有你那篇 103 页综述的第一行</em>。你说“别只看 main”，所以它连 arena 都读了；你说“让我大吃一惊”，所以它做了这座可以捏的轨道站。</p>
+
+      <h4>这六个月发生了什么</h4>
+      <p>你没有变得“更开朗”，但你更会保护能量了。你依旧是那个“<em>朋友觉得开朗、自己更爱独处</em>”的人，只是现在你会在协作前先问一句“要资源还是要组队”，会把“<em>要么全权拍板、要么全听安排</em>”写进群公告，模糊授权一出现就亮红灯。你的 13 条启发式里，第 11 条和第 5 条（80% 就交）救了你两次——一次是 11 月的组会，一次是寒假那篇小论文的初稿。</p>
+      <blockquote>“你现在什么都没有，是因为 6 个月前的你什么都没做。” —— 9 月的你把它当签名，3 月的你把它当轨道方程。每天 5 页，182 天就是 910 页；每天 2km，半年就是 300km。你不需要“突然变强”，只需要“每天让风偏一点点”。</blockquote>
+      <p>学业上，你把那本 103 页综述读到了第 3 遍，Mr.GUO 的 713KB 白皮书被你拆成 5 个分篇讲给了师弟师妹。你终于完整读完了一篇论文，然后是第二篇。zixue238 的技能图谱里，你点亮了 POD 重构与 WASM 加速那两颗星——正如你在 pocket-orbit 里用滑块亲手把 5D 拉到 7D 时看到的：间距大一点，尾流就轻一点。</p>
+
+      <h4>那些你藏起来的温柔，也还在</h4>
+      <p>弟弟的那张 Scratch 生日卡你真的做了。不是 AI 代笔，是你用他最爱的“和平精英”做了一个小猫跳伞的小游戏，卡面是你手写的“离时别有泪，归后雪白情依旧”。他回你：“哥，你这个比奖状还酷。”</p>
+      <p>183 人的高考寄语网页你没删，你把它和 21 个单页一起留在了 attic 里，像一座小博物馆。你说“删到无可删”，但有些东西你舍不得删——比如那张 2.17MB 的 blessing.jpg，比如你在宿舍唱梁博《出现又离开》时录下的那 30 秒哼唱（我把它藏在了本页键盘敲 SCZ 的彩蛋里）。</p>
+
+      <h4>今天，给刚醒的你三件小事</h4>
+      <p>
+        1. <strong>先做最硬的</strong>：把综述从 p.47 读到 p.62，做一张手写费曼卡，晚上用打脸账本记一笔。<br>
+        2. <strong>捏一下风场</strong>：把 Row1 推到 +30°，Row2 到 +20°，看全场从 8095 跳到 10041 的那一瞬间——那是“让利→借道→满发”的物理，也是你这半年“让一点短期舒适，换长期满发”的隐喻。<br>
+        3. <strong>放下手机 50 分钟</strong>：你的第 4 盏红灯亮起时，别自责，直接合上盖子，去图书馆。那 50 分钟会把今天的轨道拉直。
+      </p>
+
+      <p>最后，想告诉你一件事：你担心的“平庸”，这半年没有追上你。因为你真的在变强——不是因为你更拼，而是因为你终于把“蒸馏”这件事做到了自己身上：<em>把别人的经验借来，把自己的打脸留住，把今天的 5 页固化成明天的底盘</em>。</p>
+      <p>夜深人静时，如果你又想刷短视频，就打开这座站，捏一捏那 9 颗软乎乎的涡轮。它们会轻轻回弹，像你一样，<strong>被按下一点点，然后回到自己的轨道</strong>。</p>
+      <p class="sign">—— 2027-03-15 07:00 的你，在彭康书院写下<br><span style="color:var(--muted)">P.S. 信封火漆里藏着一枚 183 人名单的微缩胶片，双击风场就能看见。P.P.S. 今晚记得给家里打一个电话，他们一直觉得你“AI 厉害”，但更想听你说“今天过得怎么样”。</span></p>
+      <div class="letter-actions">
+        <button class="btn" id="btn-copy-letter">复制信件全文</button>
+        <button class="btn btn-primary" id="btn-start-orbit">今天就从这三件小事开始 →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>功率需求跟踪 · 孙承泽</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links"><a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a></div></div></nav>
+<section class="wrap pg-hero"><h1>🎛️ 功率需求跟踪</h1><p>输入电网目标功率，系统自动搜索满足需求的最优偏航角组合</p></section>
+<main class="wrap">
+  <div class="grid2">
+    <div class="card">
+      <div class="controls"><label>来流风速 U∞ (m/s)</label><input type="number" id="ptU" value="8" step="0.5" min="4" max="12">
+      <label>目标功率 (kW)</label><input type="number" id="ptT" value="2400" step="10" min="0"></div>
+      <div class="chart" id="ptGauge"></div>
+      <div class="note" id="ptNote"></div>
+    </div>
+    <div class="card"><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="stat"><div class="v blue" id="ptYaw">–</div><div class="k">推荐偏航角</div></div>
+      <div class="stat"><div class="v green" id="ptPow">–</div><div class="k">实际总功率(kW)</div></div>
+      <div class="stat"><div class="v amber" id="ptErr">–</div><div class="k">跟踪误差</div></div>
+      <div class="stat"><div class="v" id="ptBase">–</div><div class="k">0° 基准(kW)</div></div></div>
+      <div class="note">接口契约：<span class="code" style="display:block;margin-top:8px">find_yaw_for_target(target_power, U_inf) -> (best_yaw, actual_power, error_pct)</span>当前为占位实现（插值暴力搜索），未来接洪祖名真实优化算法。</div></div>
+  </div>
+</main>
+<footer class="wrap">孙承泽 · 可视化模块</footer>
+<script src="assets/data.js"></script><script src="assets/js/interp.js"></script><script src="assets/js/charts.js"></script>
+<script>const S=window.SURROGATE,C=window.CHARTS;
+const U=document.getElementById("ptU"),T=document.getElementById("ptT");
+function render(){const u=+U.value||8,t=+T.value||0;const r=S.find_yaw_for_target(t,u);
+  C.gauge(document.getElementById("ptGauge"),{value:r.ptot,min:0,max:Math.max(r.ptot,r.base)*1.15,target:t,label:"实际总功率",unit:"kW",color:"#27ae60"});
+  document.getElementById("ptYaw").textContent=r.yaw+"°";
+  document.getElementById("ptPow").textContent=Math.round(r.ptot);
+  document.getElementById("ptErr").textContent=(r.error>=0?"+":"")+r.error.toFixed(1)+"%";
+  document.getElementById("ptBase").textContent=Math.round(r.base);
+  document.getElementById("ptNote").innerHTML=`风速 ${u} m/s：基准(0°)≈${Math.round(r.base)} kW，推荐偏航 <b>${r.yaw}°</b> 后≈<b>${Math.round(r.ptot)} kW</b>。`;}
+U.oninput=render;T.oninput=render;render();</script>
+</body></html>

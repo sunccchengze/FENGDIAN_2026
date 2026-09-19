@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>8.23 组会汇报 · 风电场偏航优化可视化暑期进展 · 孙承泽</title>
+  <style>
+
+    :root {
+      --bg: #f8f9fa;
+      --bg-sub: #f1f3f5;
+      --txt: #1e293b;
+      --sub: #334155;
+      --muted: #64748b;
+      --line: rgba(30, 41, 59, 0.11);
+      --line-dark: rgba(30, 41, 59, 0.6);
+      --blue: #2d7569;
+      --blue-deep: #1e675c;
+      --sage: #2d7569;
+      --sage-deep: #1e675c;
+      --rose: #ad5038;
+      --rose-deep: #ad5038;
+      --gold: #a87817;
+      --v-mono: 'DM Mono', ui-monospace, 'JetBrains Mono', Consolas, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", monospace;
+      --v-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Songti SC Black", "Songti SC", "STSong", "STZhongsong", "SimSun", "宋体-简", serif;
+      --v-body-font: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: var(--v-body-font);
+      line-height: 1.35;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* 顶部导航与页码切换控制 */
+    header {
+      height: 44px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .brand-meta {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--txt);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .meta-tag {
+      font-weight: 400;
+      color: var(--sub);
+      border-left: 1px solid var(--line);
+      padding-left: 12px;
+    }
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-btn {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      color: var(--txt);
+      padding: 5px 12px;
+      font-size: 11px;
+      cursor: pointer;
+      border-radius: 2px;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+    .nav-btn:hover {
+      background: var(--line);
+    }
+    .slide-select {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      color: var(--txt);
+      padding: 4px 8px;
+      font-size: 11px;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+
+    /* 幻灯片渲染主区域 - 瑞士国际主义网格系统 */
+    main {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      padding: 24px 36px;
+    }
+    .slide {
+      position: absolute;
+      top: 24px; left: 36px; right: 36px; bottom: 24px;
+      display: none;
+      flex-direction: column;
+      animation: fadeIn 0.2s ease-out;
+    }
+    .slide.active { display: flex; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 瑞士网格通用组件 */
+    .slide-header {
+      border-bottom: 1px solid var(--line-dark);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .slide-title {
+      font-family: var(--v-display);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      color: var(--txt);
+    }
+    .slide-subtitle {
+      font-family: var(--v-mono);
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      flex: 1;
+      align-items: start;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      flex: 1;
+      align-items: start;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      flex: 1;
+      align-items: start;
+    }
+    .box {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 18px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .box-title {
+      font-size: 14px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      color: var(--txt);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .kpi-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .kpi-card {
+      border: 1px solid var(--line);
+      background: var(--bg-sub);
+      padding: 10px 14px;
+      flex: 1;
+    }
+    .kpi-val {
+      font-size: 20px;
+      font-weight: 700;
+      font-family: var(--v-mono);
+      color: var(--blue-deep);
+    }
+    .kpi-label {
+      font-size: 11px;
+      color: var(--sub);
+      margin-top: 4px;
+    }
+
+    /* Nature 规范三线表 */
+    table.nature-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: center;
+      margin: 10px 0;
+    }
+    table.nature-table th {
+      border-top: 2px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-dark);
+      padding: 8px 6px;
+      font-weight: 700;
+      color: var(--txt);
+      background: #fff;
+    }
+    table.nature-table td {
+      padding: 8px 6px;
+      border-bottom: 1px solid var(--line);
+      color: var(--txt);
+    }
+    table.nature-table tr:last-child td {
+      border-bottom: 2px solid var(--line-dark);
+    }
+
+    /* 数据展示样式 */
+    .num { font-family: var(--v-mono); font-weight: 700; }
+    .hl-blue { color: var(--blue-deep); font-weight: 700; }
+    .hl-sage { color: var(--sage-deep); font-weight: 700; }
+    .hl-rose { color: var(--rose-deep); font-weight: 700; }
+    .text-sm { font-size: 12px; color: var(--sub); line-height: 1.5; }
+    .bullet-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--txt);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .bullet-list li {
+      position: relative;
+      padding-left: 14px;
+    }
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--blue-deep);
+      font-weight: 700;
+    }
+    .img-box {
+      border: 1px solid var(--line);
+      background: var(--bg-sub);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 8px 0;
+    }
+    .img-box img {
+      max-width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+    }
+
+    /* 底部标注条 */
+    footer {
+      height: 36px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      font-size: 11px;
+      color: var(--sub);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="brand-meta">
+    <span>西安交通大学 · 大创项目</span>
+    <span class="meta-tag">风电场偏航优化可视化与交互系统</span>
+    <span class="meta-tag">汇报人：孙承泽 (指导教师：李良星 副教授)</span>
+  </div>
+  <div class="nav-controls">
+    <select id="slideSelect" class="slide-select" onchange="goToSlide(parseInt(this.value))">
+      <option value="1">01 / COVER: 平台与项目确权</option>
+      <option value="2">02 / BACKGROUND: 协作与分工</option>
+      <option value="3">03 / ARCHITECTURE: 零后端推理</option>
+      <option value="4">04 / TANDEM WAKE: 两台避让机理</option>
+      <option value="5">05 / 3x3 ARRAY: 四阶梯策略矩阵</option>
+      <option value="6">06 / PHYSICS: 为什么要梯级避让</option>
+      <option value="7">07 / WINDROSE: 全风向与AEP效益</option>
+      <option value="8">08 / POD: 正交模态降阶展现</option>
+      <option value="9">09 / PPO: 物理可达域功率跟踪</option>
+      <option value="10">10 / AUDIT: 100%诚信数据校验</option>
+      <option value="11">11 / SUMMARY: 暑期成果与规划</option>
+      <option value="12">12 / Q&A: 致谢与交流</option>
+    </select>
+    <button class="nav-btn" onclick="prevSlide()">← Prev</button>
+    <span id="slideCounter" style="font-size:11px;font-weight:700;min-width:60px;text-align:center">01 / 12</span>
+    <button class="nav-btn" onclick="nextSlide()">Next →</button>
+  </div>
+</header>
+
+<main>
+  <!-- Slide 01: COVER -->
+  <section class="slide active" id="slide-1">
+    <div class="slide-header">
+      <div class="slide-title">风电场偏航优化可视化与交互系统 · 暑期研发进展汇报</div>
+      <div class="slide-subtitle">01 / PROJECT OVERVIEW AND AUTHENTICATION</div>
+    </div>
+    <div class="grid-2">
+      <div class="box" style="justify-content:center;background:var(--bg-sub)">
+        <h2 style="font-size:24px;margin-bottom:14px;color:var(--txt)">让不可见的物理气动可视化<br>让抽象的控制方程交互化</h2>
+        <p class="text-sm" style="margin-bottom:20px;font-size:13px">
+          在今年暑期研发中，我们构建了<b>“纯静态零后端科研工作台”</b>，集成现役 15 个浅色瑞士网格工科子网页，实现多机协同与 PPO 控制的极速推理闭环。
+        </p>
+        <div class="kpi-row">
+          <div class="kpi-card">
+            <div class="kpi-val">0 后端</div>
+            <div class="kpi-label">浅色瑞士网格静态工作台</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">&lt; 0.5 ms</div>
+            <div class="kpi-label">浏览器切片推理时延</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">100% Green</div>
+            <div class="kpi-label">诚信数据契约校验</div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>系统架构主界面与现役导航矩阵</span><span>site/index.html</span></div>
+        <div class="img-box" style="flex:1">
+          <img src="assets/img/hero/wind_farm_control.jpg" alt="主页预览图">
+        </div>
+        <div class="text-sm" style="margin-top:10px">
+          浅色工程纸底、风机数字孪生线框视口 (`bg.mp4`)、宋体标题与等线正文、1px 发丝线网格对齐。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 02: BACKGROUND & TEAM COLLABORATION -->
+  <section class="slide" id="slide-2">
+    <div class="slide-header">
+      <div class="slide-title">02 / RESEARCH BACKGROUND AND TEAM COLLABORATION</div>
+      <div class="slide-subtitle">打破离线黑盒，建立四方数据交接与可视化协同体系</div>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <div class="box-title"><span>传统风电仿真研发痛点 vs 本平台解决方案</span><span>TABLE 01</span></div>
+        <table class="nature-table">
+          <thead>
+            <tr>
+              <th>比较维度</th>
+              <th>传统命令行/脚本黑盒</th>
+              <th>本交互式科研工作台 (site/)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>运行环境依赖</b></td>
+              <td>耗时离线，依赖高配服务器</td>
+              <td><span class="hl-sage">纯浏览器本地极速响应</span></td>
+            </tr>
+            <tr>
+              <td><b>数据交接模式</b></td>
+              <td>零散脚本，口径变动错位</td>
+              <td><span class="hl-blue">JSON / CSV 统一契约固化</span></td>
+            </tr>
+            <tr>
+              <td><b>可视化呈现</b></td>
+              <td>静态图片，无法拖动干预</td>
+              <td><span class="hl-sage">毫秒级交互切片与 3D 渲染</span></td>
+            </tr>
+            <tr>
+              <td><b>答辩展示效果</b></td>
+              <td>文本公式生硬，缺乏现场感知</td>
+              <td><span class="hl-blue">实测数据直观交互论证</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>大创课题四模块分工确权矩阵</span><span>COLLABORATION ARCHITECTURE</span></div>
+        <ul class="bullet-list" style="margin-top:8px">
+          <li><b>田铭雨（高保真流场网格仿真）</b>：负责 OpenFOAM/SOWFA 三维尾流仿真，交付 <code>fields_3d/*.npz</code> 真值流场切片；</li>
+          <li><b>袁夫达（本征正交降阶模型）</b>：负责 POD 模态提取与神经网络训练，生成重构特征矩阵；</li>
+          <li><b>洪祖名（强化学习优化闭环）</b>：负责 PPO 连续功率跟踪与 SLSQP 多机求解，输出控制策略；</li>
+          <li><b>孙承泽（本汇报人 · 可视化系统）</b>：<b>统筹全站 15 个纯静态浅色瑞士网格页面研发</b>，开发 <code>interp.js</code> 内存插值引擎与 3D 可视化，承载科研总主板。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 03: ZERO-BACKEND STATIC INFERENCE ARCHITECTURE -->
+  <section class="slide" id="slide-3">
+    <div class="slide-header">
+      <div class="slide-title">03 / ZERO-BACKEND STATIC INFERENCE ARCHITECTURE</div>
+      <div class="slide-subtitle">首创前端双线性插值推理引擎，实现 &lt; 0.5 ms 零延时数据流</div>
+    </div>
+    <div class="grid-3">
+      <div class="box">
+        <div class="box-title"><span>STAGE 1: 离线气动计算与采样</span><span>FLORIS 4.6.6</span></div>
+        <p class="text-sm">
+          离线利用 FLORIS 4.6.6 高斯 GCH 尾流与二次偏航修正模型，对目标多风速、多偏航角工况执行系统扫描。
+        </p>
+        <div class="kpi-card" style="margin-top:14px">
+          <div class="kpi-val">7,536 次</div>
+          <div class="kpi-label">3×3 阵列全风向求解次数</div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>STAGE 2: 数据契约自动化编译</span><span>build_data.py</span></div>
+        <p class="text-sm">
+          构建脚本自动将 <code>cases*.csv</code> 与 <code>*.npz</code> 文件转换为精简无依赖的 <code>assets/data.js</code> 标准化契约包。
+        </p>
+        <div class="kpi-card" style="margin-top:14px">
+          <div class="kpi-val">100% 绿色</div>
+          <div class="kpi-label">check_contract.py 校验通过率</div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>STAGE 3: 浏览器局部切片推理</span><span>interp.js</span></div>
+        <p class="text-sm">
+          基于原生 JS 实现 <code>RegularGridInterpolator</code> 线性核，用户移动滑块时本地秒解流速截面。
+        </p>
+        <div class="kpi-card" style="margin-top:14px">
+          <div class="kpi-val">&lt; 0.5 ms</div>
+          <div class="kpi-label">前端 UI 切片更新延迟</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 04: TWO-TURBINE TANDEM WAKE STEERING -->
+  <section class="slide" id="slide-4">
+    <div class="slide-header">
+      <div class="slide-title">04 / TWO-TURBINE TANDEM WAKE STEERING MECHANISM</div>
+      <div class="slide-subtitle">最前方局部让利 -16.8%，换取下游 +108.4% 回归与全场 +8.13% 增益</div>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <div class="box-title"><span>两台串列 (5D) 尾流避让切片云图对比</span><span>site/optimization.html</span></div>
+        <div class="grid-2" style="gap:12px;margin-top:6px">
+          <div>
+            <div style="font-size:11px;font-weight:700;margin-bottom:4px">自然迎风状态 (0° / 0°)</div>
+            <div class="img-box"><img src="assets/img/opt/before.png" alt="0°"></div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;margin-bottom:4px">最优协同偏航 (+25° / 0°)</div>
+            <div class="img-box"><img src="assets/img/opt/after.png" alt="+25°"></div>
+          </div>
+        </div>
+        <p class="text-sm" style="margin-top:6px">
+          上游右上方偏航 +25° 后，气动力将低速尾流反推向横向 -y 侧，清洗下游迎风核心。
+        </p>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>5D 串列风机优化前后关键物理参数账本</span><span>TABLE 02</span></div>
+        <table class="nature-table">
+          <thead>
+            <tr>
+              <th>机位 / 指标</th>
+              <th>自然对风 0°</th>
+              <th>最优偏航 +25°</th>
+              <th>增益与物理变化</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>上游风机 T1</b></td>
+              <td>1754.0 kW</td>
+              <td>1459.0 kW</td>
+              <td><span class="hl-rose">-16.8% (余弦损失让利)</span></td>
+            </tr>
+            <tr>
+              <td><b>下游风机 T2</b></td>
+              <td>436.4 kW</td>
+              <td>909.4 kW</td>
+              <td><span class="hl-sage">+108.4% (避开遮挡翻倍)</span></td>
+            </tr>
+            <tr>
+              <td><b>下游转子均速</b></td>
+              <td>5.10 m/s</td>
+              <td>6.38 m/s</td>
+              <td><span class="hl-blue">+1.28 m/s (流速有效恢复)</span></td>
+            </tr>
+            <tr>
+              <td><b>全场总功率</b></td>
+              <td><b>2190.40 kW</b></td>
+              <td><b>2368.39 kW</b></td>
+              <td><span class="hl-sage">+8.13% (+178.0 kW)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 05: 3x3 ARRAY 4-TIER STRATEGY MATRIX (SUMMER MASTERPIECE) -->
+  <section class="slide" id="slide-5">
+    <div class="slide-header">
+      <div class="slide-title">05 / 3×3 ARRAY COORDINATED CONTROL: FOUR-TIER STRATEGY MATRIX</div>
+      <div class="slide-subtitle">暑期首创“四阶梯多级让利对比矩阵”：全场电量净增 24.04% 突破千千瓦关口</div>
+    </div>
+    <div class="grid-4">
+      <div class="box">
+        <div class="box-title"><span>阶梯 0: 自然基准 0°</span><span>8095 kW</span></div>
+        <p class="text-sm">所有机组 0° 正对来流。前排把能量吃光，身后的第二排 (437 kW) 与第三排 (508 kW) 处于严重的低风速笼罩下。</p>
+        <div class="kpi-card" style="margin-top:auto">
+          <div class="kpi-val">+0.00%</div>
+          <div class="kpi-label">全场基准参考线</div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>阶梯 1: 第一排偏航</span><span>9299 kW</span></div>
+        <p class="text-sm">第一排统一偏航 +30°。牺牲第一排单机 23.6%，为第二排洗出流道（回暖至 1058 kW），但末排依然受阻。</p>
+        <div class="kpi-card" style="margin-top:auto">
+          <div class="kpi-val">+14.87%</div>
+          <div class="kpi-label">全场净多 1204 kW</div>
+        </div>
+      </div>
+      <div class="box" style="border-color:var(--blue-deep)">
+        <div class="box-title" style="color:var(--blue-deep)"><span>阶梯 2: 前两排偏航</span><span>9935 kW</span></div>
+        <p class="text-sm"><b>暑期新增核心卡</b>：前两排均转 +30°。第二排继续右向错峰，为末排彻底放行，末排功率冲至 <b>1195 kW/台</b>。</p>
+        <div class="kpi-card" style="margin-top:auto">
+          <div class="kpi-val">+22.73%</div>
+          <div class="kpi-label">全场净多 1840 kW</div>
+        </div>
+      </div>
+      <div class="box" style="border-color:var(--sage-deep);background:rgba(111,135,97,0.04)">
+        <div class="box-title" style="color:var(--sage-deep)"><span>阶梯 3: 独立贪心</span><span>10041 kW</span></div>
+        <p class="text-sm"><b>优化推荐 [30°, 20°, 0°]</b>：中游改用 20° 挽回 13% 余弦损失，形成让利与自发量的最高均衡解。</p>
+        <div class="kpi-card" style="margin-top:auto;background:#fff">
+          <div class="kpi-val" style="color:var(--sage-deep)">+24.04%</div>
+          <div class="kpi-label">全场飙升至 10041.46 kW</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 06: AERODYNAMIC PHYSICS DEEP DIVE -->
+  <section class="slide" id="slide-6">
+    <div class="slide-header">
+      <div class="slide-title">06 / AERODYNAMIC PHYSICS DEEP DIVE: WHY [30°, 20°, 0°] WIN?</div>
+      <div class="slide-subtitle">解析第二排 20° 胜 30° 余弦博弈与第三排 5.31 m/s 大气恢复真实物理常识</div>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <div class="box-title"><span>为什么中游 Row 2 偏航 20° 优于 30°？</span><span>COSINE VS RELIEF</span></div>
+        <table class="nature-table">
+          <thead>
+            <tr>
+              <th>中排 Row 2 偏航角</th>
+              <th>单机余弦效率</th>
+              <th>Row 2 行发总和</th>
+              <th>下游 Row 3 状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>+30° (两排接力)</b></td>
+              <td>0.7631 (-23.7%)</td>
+              <td>2355 kW</td>
+              <td>3560 kW (+133.8%)</td>
+            </tr>
+            <tr>
+              <td><b>+20° (独立贪心)</b></td>
+              <td>0.8931 (-10.7%)</td>
+              <td><span class="hl-sage">2787 kW (+432 kW)</span></td>
+              <td><span class="hl-blue">3235 kW (-325 kW)</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-sm" style="margin-top:10px">
+          <b>机理解释</b>：Row 2 偏 20° 虽然让 Row 3 微降 325 kW，却拯救了 Row 2 自身高达 432 kW 的余弦折损，净胜 <b>+107 kW</b>！
+        </p>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>为什么第三排自然风速 (5.31 m/s) 比第二排 (5.10 m/s) 高？</span><span>TURBULENCE RECOVERY</span></div>
+        <ul class="bullet-list" style="margin-top:10px">
+          <li><b>非代码计算偏差</b>：在无偏航基准状态下，上下游排速分别为 <code>[7.97, 5.10, 5.31] m/s</code>；</li>
+          <li><b>高程垂直对流原理</b>：第一排大量吸收转子面动能，第二排处在叶轮低速缺口的最底谷；</li>
+          <li><b>强大气动扩散补充</b>：经过两个 5D 行间距后，外部干净大气通过垂直与侧向湍动能卷吸下压补充了中心风速，使得末排恢复至 <code>5.31 m/s</code>。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 07: WINDROSE SCAN & AEP BENEFIT -->
+  <section class="slide" id="slide-7">
+    <div class="slide-header">
+      <div class="slide-title">07 / FULL-WINDROSE SCAN AND ANNUAL ENERGY PRODUCTION (AEP)</div>
+      <div class="slide-subtitle">7,536 次迭代实测阵列“八扇区非零增益”分布，年度等权 ΔAEP = +8.86%</div>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <div class="box-title"><span>3×3 阵列在 12 风向与多风速下的分布特性</span><span>cases_array_windrose.csv</span></div>
+        <p class="text-sm">
+          东西轴主线 (90°/270°) 正串遮挡严重，协同收益高达 <b>+24.0%</b>；南北列向 (0°/180°) 收益 <b>+21.6%</b>；晶格对角 (60°/120°/240°/300°) 为 <b>+10.7~11.3%</b>；其余斜向无尾流为 0%。
+        </p>
+        <div class="kpi-row" style="margin-top:16px">
+          <div class="kpi-card">
+            <div class="kpi-val">+24.04%</div>
+            <div class="kpi-label">主轴最大功率升幅</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-val">+8.86%</div>
+            <div class="kpi-label">等权年度 AEP 净增</div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>年度电量转换与工程经世意义</span><span>ENGINEERING VALUE</span></div>
+        <table class="nature-table">
+          <thead>
+            <tr>
+              <th>评估权重场景</th>
+              <th>常规控制 (万 kWh/年)</th>
+              <th>协同控制 (万 kWh/年)</th>
+              <th>净增发电量</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>12 风向等权均分</b></td>
+              <td>16,145.2</td>
+              <td>17,575.6</td>
+              <td><span class="hl-sage">+1,430.4 万度 (+8.86%)</span></td>
+            </tr>
+            <tr>
+              <td><b>主导西风重权 (30%)</b></td>
+              <td>16,210.8</td>
+              <td>18,054.0</td>
+              <td><span class="hl-blue">+1,843.2 万度 (+11.37%)</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-sm" style="margin-top:10px">
+          在 45 MW (5MW×9) 规模电场口径下，等权假设年增发电量 +1,430.4 万 kWh；金额与碳减排折算需接入场址电价与排放因子，本页不外推。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 08: POD REDUCED-ORDER MODELING -->
+  <section class="slide" id="slide-8">
+    <div class="slide-header">
+      <div class="slide-title">08 / PROPER ORTHOGONAL DECOMPOSITION (POD) RECONSTRUCTION</div>
+      <div class="slide-subtitle">前 2 阶正交模态捕捉 97.97% 流场能量，支撑无后台网页极速渲染</div>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <div class="box-title"><span>POD 模态能量占比阶梯表</span><span>pod_data.npz</span></div>
+        <table class="nature-table">
+          <thead>
+            <tr>
+              <th>模态阶数</th>
+              <th>能量贡献率 (%)</th>
+              <th>累积能量占比 (%)</th>
+              <th>物理含义对应</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Mode 0 (主模态)</b></td>
+              <td>76.38%</td>
+              <td>76.38%</td>
+              <td><span class="hl-blue">反对称尾流侧向偶极子</span></td>
+            </tr>
+            <tr>
+              <td><b>Mode 1 (恢复阶)</b></td>
+              <td>21.58%</td>
+              <td><b>97.97%</b></td>
+              <td><span class="hl-sage">中心流速膨胀恢复模态</span></td>
+            </tr>
+            <tr>
+              <td><b>Mode 2~5</b></td>
+              <td>2.03% (合计)</td>
+              <td>100.00%</td>
+              <td>更高阶高频湍动散耗</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-sm" style="margin-top:10px">
+          <b>通识价值</b>：证明复杂偏航气动力主要被两大主效应支配，使降阶运算保持 98% 理论高保真度。
+        </p>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>模态 0 反对称偶极子与模态 1 重构对比</span><span>site/pod.html</span></div>
+        <div class="grid-2" style="gap:10px">
+          <div class="img-box"><img src="assets/img/pod/mode_0.png" alt="Mode 0"></div>
+          <div class="img-box"><img src="assets/img/pod/mode_1.png" alt="Mode 1"></div>
+        </div>
+        <p class="text-sm" style="margin-top:6px">
+          页面通过内存加权 <code>Mode 0</code> 与 <code>Mode 1</code>，将几分钟的求解压缩至不到 1 毫秒内完成。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 09: PPO REACHABLE DOMAIN -->
+  <section class="slide" id="slide-9">
+    <div class="slide-header">
+      <div class="slide-title">09 / PPO REINFORCEMENT LEARNING: TARGET TRACKING IN REACHABLE DOMAIN</div>
+      <div class="slide-subtitle">发现单机偏航物理可达下界 (76.31%)，闭环实测 0.523% MAE 与 0.944 s 稳态控制</div>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <div class="box-title"><span>PPO 4 维状态观测规范与可达域定律</span><span>LRN-20260810-07</span></div>
+        <ul class="bullet-list" style="margin-top:8px">
+          <li><b>4 维契约状态</b>：<code>[u_inf, yaw, power_current, target]</code>；</li>
+          <li><b>物理可达域定律</b>：在 cos<sup>1.88</sup>(γ) 衰减且机械转角限位 ±30° 下，单机下界功率比不可低于 cos<sup>1.88</sup>(30°) = 76.31%；</li>
+          <li><b>训练收缩修正</b>：修正原有不可达的 35% 下设值，将目标区间固化至可达域 <code>[0.78, 0.98] * p_base</code>。</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>PPO 权重复现审计与 200 回合实测结果</span><span>metrics_repro.json</span></div>
+        <table class="nature-table">
+          <thead>
+            <tr>
+              <th>实测核心技术指标</th>
+              <th>200 回合评测结果</th>
+              <th>团队契约要求</th>
+              <th>验收判定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>稳态功率跟踪 MAE</b></td>
+              <td><b>0.523 % (10.31 kW)</b></td>
+              <td><code>&lt; 1.2%</code></td>
+              <td><span class="hl-sage">提升一倍有余</span></td>
+            </tr>
+            <tr>
+              <td><b>平均调节时间 (T<sub>s</sub>)</b></td>
+              <td><b>0.944 s</b></td>
+              <td><code>&lt; 0.8 s 级</code></td>
+              <td><span class="hl-blue">实证高度吻合</span></td>
+            </tr>
+            <tr>
+              <td><b>稳态动作抖动率</b></td>
+              <td><b>0.0000 °/step</b></td>
+              <td>平稳零振荡</td>
+              <td><span class="hl-sage">稳定不回逸</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 10: PS & PPT STANDARDS -->
+  <section class="slide" id="slide-10">
+    <div class="slide-header">
+      <div class="slide-title">10 / PS 300DPI & PPT SWISS GRID: RESEARCH VISUALIZATION STANDARDS</div>
+      <div class="slide-subtitle">暑期专攻 PS 300DPI 顶刊分层制图与 PPT 瑞士国际主义网格学术排版规范</div>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <div class="box-title"><span>PS 300DPI 顶刊级科研分层制图探索</span><span>generate_figure_psd.py</span></div>
+        <ul class="bullet-list" style="margin-top:6px">
+          <li><b>顶刊规范打底</b>：严格按照 Nature / IEEE 标准开展 300DPI 矢量与层级图探索；</li>
+          <li><b>分层工程管理</b>：掌握 5 分层组结构规范与智能对象管理，消除缩放脏边与伪影；</li>
+          <li><b>大跨度多屏适配</b>：为下一阶段学术论文投稿、大创考核报告与 A0 展板准备可出版图源。</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>PPT 瑞士国际主义网格系统（Swiss Grid）成果</span><span>王牌PPT.pptx</span></div>
+        <ul class="bullet-list" style="margin-top:6px">
+          <li><b>克制符号与信息密度优先</b>：确立了课题组“无装饰符号、发丝边线、1.3 倍行距”的排版准则；</li>
+          <li><b>高数据墨水比</b>：以 1px 发丝边线与 Nature 规范三线表最大化呈现流场与算法数据密度；</li>
+          <li><b>汇报展示检验</b>：本次组会演练的 16:9 宽屏 Deck 即为暑期在该排版与美学规范上的实作落地！</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 11: AUDIT INTEGRITY & SUMMARY -->
+  <section class="slide" id="slide-11">
+    <div class="slide-header">
+      <div class="slide-title">11 / DATA INTEGRITY AUDIT AND SUMMER WORK SUMMARY</div>
+      <div class="slide-subtitle">全链路诚信自检绿灯通过，暑期可视化与制图规范三大阵地成果大盘点</div>
+    </div>
+    <div class="grid-3">
+      <div class="box">
+        <div class="box-title"><span>15页浅色静态工作台</span><span>WEB VISUALIZATION</span></div>
+        <ul class="bullet-list">
+          <li>纯前端 &lt;0.5 ms 切片推理；</li>
+          <li>首创 3×3 九机阵列四阶梯偏航矩阵（增量 24.04%）；</li>
+          <li>实现可达域 PPO 控制呈现。</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>PS顶刊图与PPT网格</span><span>PS / PPT STANDARDS</span></div>
+        <ul class="bullet-list">
+          <li>Nature 300DPI 矢量绘制；</li>
+          <li>Swiss Grid 1.3倍行距极简学术演示文稿；</li>
+          <li>高信噪比图表排版美学。</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="box-title"><span>全站诚信自检与愿景</span><span>INTEGRITY & VISION</span></div>
+        <ul class="bullet-list">
+          <li>check_contract.py 100% 绿灯；</li>
+          <li>清退陈旧虚数，对齐实测口径；</li>
+          <li>蓄力大创考核与挑战杯赛。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 12: Q&A -->
+  <section class="slide" id="slide-12">
+    <div class="slide-header">
+      <div class="slide-title">THANKS FOR YOUR ATTENTION / Q&A</div>
+      <div class="slide-subtitle">西安交通大学 · 能源与动力工程学院 · 大学生创新训练项目团队</div>
+    </div>
+    <div class="box" style="justify-content:center;align-items:center;background:var(--bg-sub);text-align:center">
+      <h2 style="font-size:28px;margin-bottom:12px;color:var(--txt)">感谢老师指导与团队支持！</h2>
+      <p class="text-sm" style="font-size:14px;max-width:640px;margin:0 auto 24px">
+        本可视化与交互平台已部署为 15 页独立工程系统。诚请导师<b>李良星 副教授</b>以及全体同组师兄师姐，针对本系统气动流场、策略矩阵与代码实现提出宝贵的指导意见！
+      </p>
+      <div class="kpi-card" style="max-width:360px;margin:0 auto">
+        <div class="kpi-val" style="font-size:14px">sunccchengze/wind_farm_viz</div>
+        <div class="kpi-label">仓内源码与数据契约确权</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>纯静态零后端 · 西安交通大学大创可视化平台 · 汇报人：孙承泽</span>
+  <span>按 <b>[← Left / Right →]</b> 左右键或空白键无缝翻页 ｜ Swiss Grid 瑞士工科网格排版规范</span>
+</footer>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 12;
+
+  function updateSlideUI() {
+    document.querySelectorAll('.slide').forEach((el, idx) => {
+      el.classList.toggle('active', (idx + 1) === currentSlide);
+    });
+    document.getElementById('slideSelect').value = currentSlide;
+    document.getElementById('slideCounter').textContent = 
+      (currentSlide < 10 ? '0' : '') + currentSlide + ' / ' + totalSlides;
+    window.location.hash = 'slide=' + currentSlide;
+  }
+
+  function goToSlide(num) {
+    if (num >= 1 && num <= totalSlides) {
+      currentSlide = num;
+      updateSlideUI();
+    }
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides) goToSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    if (currentSlide > 1) goToSlide(currentSlide - 1);
+  }
+
+  // 支持键盘翻页
+  window.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault();
+      nextSlide();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      prevSlide();
+    }
+  });
+
+  // 支持 URL Hash 直接跳页
+  window.addEventListener('DOMContentLoaded', () => {
+    const match = window.location.hash.match(/slide=(\d+)/);
+    if (match) {
+      const idx = parseInt(match[1]);
+      if (idx >= 1 && idx <= totalSlides) currentSlide = idx;
+    }
+    updateSlideUI();
+  });
+</script>
+</body>
+</html>

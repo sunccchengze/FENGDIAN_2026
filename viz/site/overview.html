@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>系统总览 · 风电场偏航优化科研平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="assets/vendor/plotly/plotly-2.35.2.min.js"></script>
+  <script src="assets/js/plotly-theme.js"></script>
+  <style>
+
+    :root {
+      --v-bg: #f8f9fa;
+      --v-bg-soft: #f1f3f5;
+      --v-bg-subtle: #e9ecef;
+      --v-panel: #ffffff;
+      --v-ink: #1e293b;
+      --v-body: #334155;
+      --v-mute: #64748b;
+      --v-faint: #94a3b8;
+      --v-line: rgba(30, 41, 59, 0.11);
+      --v-line-strong: rgba(30, 41, 59, 0.22);
+      --v-teal: #2d7569;
+      --v-teal-bright: #1e675c;
+      --v-yellow: #a87817;
+      --v-rust: #ad5038;
+      --v-mono: 'DM Mono', ui-monospace, 'JetBrains Mono', Consolas, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", monospace;
+      --v-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Songti SC Black", "Songti SC", "STSong", "STZhongsong", "SimSun", "宋体-简", serif;
+      --v-body-font: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--v-bg);
+      color: var(--v-ink);
+      font-family: var(--v-body-font);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .sec-title, .l-title, .cb-label { font-family: var(--v-display); }
+    .num, .stat-number, .l-val, .mod-idx, .t-nav-badge, .arch-idx {
+      font-family: var(--v-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .t-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--v-line);
+      height: 60px; display: flex; align-items: center;
+    }
+    .t-nav-inner {
+      max-width: 1240px; width: 100%; margin: 0 auto; padding: 0 32px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .t-nav-brand {
+      font-family: var(--v-display); font-size: 16px; font-weight: 700;
+      color: var(--v-ink); letter-spacing: -0.3px;
+      display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+    }
+    .t-nav-badge {
+      font-size: 10.5px; color: var(--v-teal-bright);
+      padding: 3px 8px; border: 1px solid var(--v-line-strong);
+      border-radius: 3px; background: var(--v-bg-soft); font-weight: 700;
+    }
+
+    .t-container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+    .v-pg-hero { padding-top: 44px; padding-bottom: 28px; }
+    .v-pg-tag {
+      font-family: var(--v-mono); font-size: 11px; font-weight: 700;
+      color: var(--v-yellow); letter-spacing: 0.12em; margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .v-pg-title {
+      font-size: clamp(28px, 3.8vw, 40px); font-weight: 800;
+      letter-spacing: -0.8px; color: var(--v-ink); margin-bottom: 8px;
+    }
+    .v-pg-sub { font-size: 14.5px; color: var(--v-body); max-width: 860px; line-height: 1.6; }
+
+    .v-workbench-panel {
+      background: #ffffff; border: 1px solid var(--v-line-strong);
+      border-radius: 4px; overflow: hidden; margin-bottom: 36px;
+    }
+    .cause-bar {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 16px 28px; background: var(--v-bg-soft);
+      border-bottom: 1px solid var(--v-line); flex-wrap: nowrap; width: 100%;
+    }
+    .cb-left { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
+    .cb-label {
+      font-family: var(--v-display) !important; font-size: 11.5px !important; font-weight: 750 !important;
+      color: #ffffff !important; background: var(--v-teal-bright) !important;
+      padding: 5px 12px !important; border-radius: 2px !important; letter-spacing: 0.08em !important;
+      display: inline-block; flex-shrink: 0; white-space: nowrap;
+    }
+    .cb-text { font-size: 13px; color: var(--v-body); line-height: 1.5; flex: 1; min-width: 0; }
+    .cb-pill {
+      font-family: var(--v-mono); font-size: 12px; font-weight: 700;
+      padding: 6px 14px; border-radius: 2px; border: 1px solid var(--v-line-strong);
+      background: #ffffff; white-space: nowrap; flex-shrink: 0; color: var(--v-ink);
+    }
+
+    .ledger-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      background: #ffffff;
+    }
+    .ledger-col {
+      padding: 28px; border-right: 1px solid var(--v-line);
+      display: flex; flex-direction: column; justify-content: space-between;
+      min-width: 0; word-wrap: break-word;
+    }
+    .ledger-col:last-child { border-right: none; }
+    .l-meta {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 8px; font-family: var(--v-mono); font-size: 10.5px;
+      color: var(--v-mute); font-weight: 700; letter-spacing: 0.05em;
+    }
+    .l-title { font-size: 14.5px; font-weight: 750; color: var(--v-ink); margin-bottom: 14px; line-height: 1.35; }
+    .l-val {
+      font-weight: 750; font-size: 34px; line-height: 1;
+      color: var(--v-ink); margin-bottom: 16px;
+    }
+    .l-details {
+      display: flex; flex-direction: column; gap: 6px;
+      padding-top: 14px; border-top: 1px solid var(--v-line);
+      font-size: 12px; color: var(--v-body);
+    }
+
+    /* 技术路线四节点 */
+    .arch-flow {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--v-line);
+    }
+    .arch-node {
+      padding: 22px 28px; border-right: 1px solid var(--v-line);
+      display: flex; flex-direction: column; gap: 8px; min-width: 0;
+      position: relative;
+    }
+    .arch-node:last-child { border-right: none; }
+    .arch-node.terminal { background: rgba(30, 103, 92, 0.05); }
+    .arch-idx { font-size: 11px; font-weight: 700; color: var(--v-faint); letter-spacing: 0.1em; }
+    .arch-node.terminal .arch-idx { color: var(--v-teal-bright); }
+    .arch-title { font-family: var(--v-display); font-size: 15px; font-weight: 750; color: var(--v-ink); line-height: 1.4; }
+    .arch-desc { font-size: 12px; color: var(--v-mute); line-height: 1.6; }
+    .arch-arrow {
+      position: absolute; right: -7px; top: 50%; transform: translateY(-50%);
+      width: 14px; height: 14px; background: #ffffff; z-index: 2;
+      border-top: 1px solid var(--v-line-strong); border-right: 1px solid var(--v-line-strong);
+      rotate: 45deg;
+    }
+
+    /* 模块目录 */
+    .sec-title {
+      font-size: 19px; font-weight: 800; color: var(--v-ink);
+      letter-spacing: -0.3px; margin: 0 0 6px;
+    }
+    .sec-sub { font-size: 12.5px; color: var(--v-mute); margin-bottom: 18px; }
+    .mod-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      background: #ffffff; border: 1px solid var(--v-line-strong); border-radius: 4px;
+      overflow: hidden; margin-bottom: 36px;
+    }
+    .mod-cell {
+      display: flex; flex-direction: column; gap: 6px;
+      padding: 18px 20px; border-right: 1px solid var(--v-line); border-bottom: 1px solid var(--v-line);
+      text-decoration: none; color: inherit; background: #ffffff;
+      transition: background 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      min-width: 0;
+    }
+    .mod-cell:hover { background: var(--v-bg-soft); }
+    .mod-cell:hover .mod-name { color: var(--v-teal-bright); }
+    .mod-top { display: flex; justify-content: space-between; align-items: center; }
+    .mod-idx { font-size: 10.5px; font-weight: 700; color: var(--v-faint); letter-spacing: 0.08em; }
+    .mod-flag {
+      font-family: var(--v-mono); font-size: 9.5px; font-weight: 700; letter-spacing: 0.06em;
+      padding: 2px 6px; border-radius: 2px; border: 1px solid var(--v-line-strong);
+      color: var(--v-mute); background: var(--v-bg-soft); white-space: nowrap;
+    }
+    .mod-flag.core { color: var(--v-teal-bright); background: rgba(30, 103, 92, 0.08); border-color: rgba(30, 103, 92, 0.35); }
+    .mod-name { font-family: var(--v-display); font-size: 14.5px; font-weight: 750; color: var(--v-ink); transition: color 0.2s; }
+    .mod-desc { font-size: 11.5px; color: var(--v-mute); line-height: 1.55; }
+
+    /* 图表与表格 */
+    .v-plots-container {
+      background: #ffffff; border: 1px solid var(--v-line-strong);
+      border-radius: 4px; padding: 28px 32px; margin-bottom: 36px;
+    }
+    .grid-plots { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; min-width: 0;}
+    .grid-plots > div { min-width: 0; }
+    .plot-head {
+      font-family: var(--v-display); font-size: 14.5px; font-weight: 750;
+      color: var(--v-ink); margin-bottom: 12px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .plot-head .tick {
+      font-family: var(--v-mono); font-size: 10px; font-weight: 700; color: var(--v-yellow);
+      letter-spacing: 0.1em;
+    }
+    .plot-note { font-size: 12px; color: var(--v-mute); line-height: 1.6; margin-top: 10px; }
+
+    .v-table-wrap {
+      background: #ffffff; border: 1px solid var(--v-line-strong); border-radius: 4px;
+      overflow: hidden; margin-bottom: 36px;
+    }
+    .v-table-head {
+      padding: 18px 28px 14px; border-bottom: 1px solid var(--v-line);
+      display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap;
+    }
+    .v-table-scroll { max-height: 320px; overflow-y: auto; }
+    table.v-table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: center; }
+    table.v-table thead th {
+      position: sticky; top: 0; background: var(--v-bg-soft);
+      border-bottom: 1px solid var(--v-line-strong);
+      color: var(--v-ink); font-family: var(--v-display); font-weight: 750;
+      padding: 10px 8px; font-size: 12.5px;
+    }
+    table.v-table tbody td { padding: 8px; border-bottom: 1px solid var(--v-line); color: var(--v-body); }
+    table.v-table tbody tr:last-child td { border-bottom: none; }
+
+    .t-footer {
+      border-top: 1px solid var(--v-line-strong); padding: 60px 0; margin-top: 80px;
+      font-size: 12.5px; color: var(--v-body); line-height: 1.8; background: #ffffff; text-align: center;
+    }
+    .footer-inner-centered {
+      max-width: 960px; margin: 0 auto; padding: 0 32px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; gap: 8px;
+    }
+    .footer-brand { color: var(--v-ink); font-weight: 750; font-family: var(--v-display); font-size: 15px; }
+
+    @media (max-width: 1024px) {
+      .ledger-strip { grid-template-columns: repeat(2, 1fr); }
+      .ledger-col { border-bottom: 1px solid var(--v-line); }
+      .arch-flow { grid-template-columns: repeat(2, 1fr); }
+      .arch-node { border-bottom: 1px solid var(--v-line); }
+      .mod-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid-plots { grid-template-columns: 1fr; min-width: 0;}
+    }
+    @media (max-width: 640px) {
+      .ledger-strip { grid-template-columns: 1fr; }
+      .arch-flow { grid-template-columns: 1fr; }
+      .mod-grid { grid-template-columns: 1fr; }
+      .t-nav-inner, .t-container { padding: 0 20px; }
+      .v-plots-container { padding: 20px; }
+    }
+      /* ===== 统一双行导航模块条（系统级覆盖，全站同一套，杜绝指示冲突） ===== */
+    .t-nav { height: auto; }
+    .t-nav-inner { max-width: none; width: 100%; margin: 0; padding: 0; display: block; }
+    .t-nav-row1 { max-width: 1240px; margin: 0 auto; padding: 13px 32px 11px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .t-nav-here { font-family: var(--v-mono); font-size: 11px; font-weight: 700; color: var(--v-mute); letter-spacing: 0.06em; white-space: nowrap; }
+    .t-nav-links { border-top: 1px solid var(--v-line); }
+    .t-nav-links-in { max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: stretch; overflow-x: auto; scrollbar-width: none; }
+    .t-nav-links-in::-webkit-scrollbar { display: none; }
+    .t-nav-links a { font-family: var(--v-body-font); font-size: 12px; font-weight: 600; color: var(--v-mute); text-decoration: none; padding: 9px 9px 8px; white-space: nowrap; border-bottom: 2px solid transparent; display: inline-flex; gap: 6px; align-items: baseline; }
+    .t-nav-links a i { font-style: normal; font-family: var(--v-mono); font-size: 9.5px; font-weight: 700; color: var(--v-faint); letter-spacing: 0.05em; }
+    .t-nav-links a:hover { color: var(--v-ink); background: var(--v-bg-soft); }
+    .t-nav-links a.active { color: var(--v-teal-bright); border-bottom-color: var(--v-teal-bright); }
+    .t-nav-links a.active i { color: var(--v-teal-bright); }
+    @media (max-width: 640px) { .t-nav-row1 { padding: 12px 20px 10px; } }
+  </style>
+  <link rel="stylesheet" href="css/unified-glass.css">
+</head>
+<body>
+
+<nav class="t-nav">
+  <div class="t-nav-inner">
+    <div class="t-nav-row1">
+      <a href="index.html" class="t-nav-brand" style="text-decoration:none;color:inherit">
+        <span>风电场偏航优化平台</span>
+        <span class="t-nav-badge">SUN CHENGZE · VISUALIZATION</span>
+      </a>
+      <span class="t-nav-here" id="tNavHere"></span>
+    </div>
+    <div class="t-nav-links"><div class="t-nav-links-in">
+      <a href="index.html" data-nav-code="00" data-nav-name="首页"><i>00</i>首页</a>
+      <a href="wake.html" data-nav-code="01" data-nav-name="尾流"><i>01</i>尾流</a>
+      <a href="optimization.html" data-nav-code="02" data-nav-name="优化"><i>02</i>优化</a>
+      <a href="solver.html" data-nav-code="03" data-nav-name="求解"><i>03</i>求解</a>
+      <a href="dashboard.html" data-nav-code="04" data-nav-name="看板"><i>04</i>看板</a>
+      <a href="array.html" data-nav-code="05" data-nav-name="阵列"><i>05</i>阵列</a>
+      <a href="heatmap.html" data-nav-code="06" data-nav-name="热力"><i>06</i>热力</a>
+      <a href="pod.html" data-nav-code="07" data-nav-name="POD"><i>07</i>POD</a>
+      <a href="model.html" data-nav-code="08" data-nav-name="精度"><i>08</i>精度</a>
+      <a href="power_tracking.html" data-nav-code="09" data-nav-name="跟踪"><i>09</i>跟踪</a>
+      <a href="3d_farm.html" data-nav-code="10" data-nav-name="3D风场"><i>10</i>3D风场</a>
+      <a href="3d_surface.html" data-nav-code="11" data-nav-name="3D曲面"><i>11</i>3D曲面</a>
+      <a href="3d_volume.html" data-nav-code="12" data-nav-name="3D体"><i>12</i>3D体</a>
+      <a href="interface.html" data-nav-code="13" data-nav-name="契约"><i>13</i>契约</a>      <a href="overview.html" data-nav-code="MAP" data-nav-name="系统总览"><i>MAP</i>总览</a>
+    </div></div>
+  </div>
+</nav>
+
+<header class="v-pg-hero t-container">
+  <div class="v-pg-tag">MODULE MAP · SYSTEM OVERVIEW · DATA LEDGER</div>
+  <h1 class="v-pg-title">项目架构与数据总览</h1>
+  <p class="v-pg-sub">
+    大创项目全景技术路线、十五个可视化模块目录、多风速工况基线与双机功率分解；全部数值由仓内
+    <code style="font-family:var(--v-mono);font-size:12px">data.js / data_3d.js</code> 实时读取，与契约校验脚本同源。
+  </p>
+</header>
+
+<main class="t-container">
+
+  <!-- 核心指标带 -->
+  <div class="v-workbench-panel" style="margin-bottom:36px">
+    <div class="cause-bar">
+      <div class="cb-left">
+        <span class="cb-label">系统账本</span>
+        <span class="cb-text">四项核心成果指标：两机对流增益、九机阵列增益、代理模型拟合优度与 POD 能量覆盖，全部来自仓内数据文件实算。</span>
+      </div>
+      <span class="cb-pill">FLORIS 4.6.6 · GCH</span>
+    </div>
+    <div class="ledger-strip">
+      <div class="ledger-col">
+        <div>
+          <div class="l-meta"><span>01 / TANDEM GAIN</span><span style="color:var(--v-teal-bright)">8 M/S</span></div>
+          <div class="l-title">双机偏航最大增益</div>
+          <div class="l-val">+8.13%</div>
+        </div>
+        <div class="l-details">
+          <div>上游 +25° 最优偏航工况</div>
+          <div style="font-family:var(--v-mono);font-weight:700;color:var(--v-teal-bright)">2190 → 2368 kW</div>
+        </div>
+      </div>
+      <div class="ledger-col">
+        <div>
+          <div class="l-meta"><span>02 / ARRAY GAIN</span><span style="color:var(--v-teal-bright)">3×3 GREEDY</span></div>
+          <div class="l-title">九机阵列独立偏航增益</div>
+          <div class="l-val">+24.04%</div>
+        </div>
+        <div class="l-details">
+          <div>贪心 [30°, 20°, 0°] 梯级协同</div>
+          <div style="font-family:var(--v-mono);font-weight:700;color:var(--v-teal-bright)">8095 → 10041 kW</div>
+        </div>
+      </div>
+      <div class="ledger-col">
+        <div>
+          <div class="l-meta"><span>03 / SURROGATE R²</span><span style="color:var(--v-yellow)">XGBOOST</span></div>
+          <div class="l-title">代理模型拟合决定系数</div>
+          <div class="l-val">&gt; 0.9999</div>
+        </div>
+        <div class="l-details">
+          <div>MAE &lt; 10.5 kW · 推理 &lt; 0.8 ms</div>
+          <div style="font-family:var(--v-mono);font-weight:700;color:var(--v-mute)">队友交付图源 · 仓内脚本待补</div>
+        </div>
+      </div>
+      <div class="ledger-col">
+        <div>
+          <div class="l-meta"><span>04 / POD ENERGY</span><span style="color:var(--v-yellow)">ROM</span></div>
+          <div class="l-title">前 2 阶模态能量覆盖</div>
+          <div class="l-val">98.0%</div>
+        </div>
+        <div class="l-details">
+          <div>Mode 0 76.4% + Mode 1 21.6%</div>
+          <div style="font-family:var(--v-mono);font-weight:700;color:var(--v-teal-bright)">流场评估提速超 1000×</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- 技术路线 -->
+  <div class="v-workbench-panel" style="margin-bottom:36px">
+    <div class="cause-bar">
+      <div class="cb-left">
+        <span class="cb-label">技术路线</span>
+        <span class="cb-text">物理流场建模 → 降阶与代理建模 → 协同优化求解 → 交互可视化：四段式研发链路，四级递进。</span>
+      </div>
+      <span class="cb-pill">PIPELINE · 4 STAGES</span>
+    </div>
+    <div class="arch-flow">
+      <div class="arch-node">
+        <span class="arch-idx">STAGE 1 / PHYSICS</span>
+        <span class="arch-title">物理流场建模</span>
+        <span class="arch-desc">FLORIS 4.6.6 GCH 工程尾流模型，3D 尾流偏转与速度亏损模拟。</span>
+        <span class="arch-arrow"></span>
+      </div>
+      <div class="arch-node">
+        <span class="arch-idx">STAGE 2 / ROM</span>
+        <span class="arch-title">降阶与代理建模</span>
+        <span class="arch-desc">POD 本征正交分解 + XGBoost 高精度代理模型，毫秒级功率预测。</span>
+        <span class="arch-arrow"></span>
+      </div>
+      <div class="arch-node">
+        <span class="arch-idx">STAGE 3 / OPTIMIZE</span>
+        <span class="arch-title">协同优化求解</span>
+        <span class="arch-desc">SLSQP 连续寻优 / 贪心独立偏航，全风速工况 γ* 序列求解。</span>
+        <span class="arch-arrow"></span>
+      </div>
+      <div class="arch-node terminal">
+        <span class="arch-idx">STAGE 4 / DELIVERY</span>
+        <span class="arch-title">交互可视化模块</span>
+        <span class="arch-desc">3D 风电场、闭环看板与答辩交互系统，孙承泽负责（本系统）。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 模块目录 -->
+  <h2 class="sec-title">十五个可视化模块目录</h2>
+  <div class="sec-sub">纯静态边缘渲染，全部模块可在无后端环境直接打开；编号 00–03 为组会主讲主线，其余为支撑与扩展模块。</div>
+  <div class="mod-grid">
+    <a class="mod-cell" href="index.html">
+      <div class="mod-top"><span class="mod-idx">MOD 00</span><span class="mod-flag core">主线</span></div>
+      <span class="mod-name">平台首页</span>
+      <span class="mod-desc">数字孪生视口与项目全景入口</span>
+    </a>
+    <a class="mod-cell" href="wake.html">
+      <div class="mod-top"><span class="mod-idx">MOD 01</span><span class="mod-flag core">主线</span></div>
+      <span class="mod-name">尾流交互分析</span>
+      <span class="mod-desc">两机对流响应与偏航滑块实解</span>
+    </a>
+    <a class="mod-cell" href="optimization.html">
+      <div class="mod-top"><span class="mod-idx">MOD 02</span><span class="mod-flag core">主线</span></div>
+      <span class="mod-name">优化对齐验证</span>
+      <span class="mod-desc">多风速最优偏航角与前后对比</span>
+    </a>
+    <a class="mod-cell" href="solver.html">
+      <div class="mod-top"><span class="mod-idx">MOD 03</span><span class="mod-flag core">主线</span></div>
+      <span class="mod-name">实时求解对比</span>
+      <span class="mod-desc">代理模型 vs FLORIS+SLSQP 测速</span>
+    </a>
+    <a class="mod-cell" href="dashboard.html">
+      <div class="mod-top"><span class="mod-idx">MOD 04</span><span class="mod-flag">闭环</span></div>
+      <span class="mod-name">Master Dashboard</span>
+      <span class="mod-desc">数据–物理–控制闭环总控看板</span>
+    </a>
+    <a class="mod-cell" href="array.html">
+      <div class="mod-top"><span class="mod-idx">MOD 05</span><span class="mod-flag">协同</span></div>
+      <span class="mod-name">3×3 阵列优化</span>
+      <span class="mod-desc">九机四策略协同偏航切换对比</span>
+    </a>
+    <a class="mod-cell" href="heatmap.html">
+      <div class="mod-top"><span class="mod-idx">MOD 06</span><span class="mod-flag">数据</span></div>
+      <span class="mod-name">热力矩阵</span>
+      <span class="mod-desc">偏航 × 风速增益矩阵与 3D 曲面</span>
+    </a>
+    <a class="mod-cell" href="pod.html">
+      <div class="mod-top"><span class="mod-idx">MOD 07</span><span class="mod-flag">降阶</span></div>
+      <span class="mod-name">POD 降阶分析</span>
+      <span class="mod-desc">模态能量分解与毫秒级重构</span>
+    </a>
+    <a class="mod-cell" href="model.html">
+      <div class="mod-top"><span class="mod-idx">MOD 08</span><span class="mod-flag">验证</span></div>
+      <span class="mod-name">模型精度验证</span>
+      <span class="mod-desc">代理模型 R² / MAE 与架构对比</span>
+    </a>
+    <a class="mod-cell" href="power_tracking.html">
+      <div class="mod-top"><span class="mod-idx">MOD 09</span><span class="mod-flag">控制</span></div>
+      <span class="mod-name">功率需求跟踪</span>
+      <span class="mod-desc">AGC 目标功率逆向偏航求解</span>
+    </a>
+    <a class="mod-cell" href="3d_farm.html">
+      <div class="mod-top"><span class="mod-idx">MOD 10</span><span class="mod-flag">3D</span></div>
+      <span class="mod-name">3D 风电场</span>
+      <span class="mod-desc">Three.js 九机协同与真实流场</span>
+    </a>
+    <a class="mod-cell" href="3d_surface.html">
+      <div class="mod-top"><span class="mod-idx">MOD 11</span><span class="mod-flag">3D</span></div>
+      <span class="mod-name">3D 尾流曲面</span>
+      <span class="mod-desc">三维速度曲面与高度切片探针</span>
+    </a>
+    <a class="mod-cell" href="3d_volume.html">
+      <div class="mod-top"><span class="mod-idx">MOD 12</span><span class="mod-flag">3D</span></div>
+      <span class="mod-name">3D 体渲染</span>
+      <span class="mod-desc">尾流低速泡等直面与偏航扫描</span>
+    </a>
+    <a class="mod-cell" href="interface.html">
+      <div class="mod-top"><span class="mod-idx">MOD 13</span><span class="mod-flag">协作</span></div>
+      <span class="mod-name">数据接口契约</span>
+      <span class="mod-desc">团队交付链路与 API 规范固化</span>
+    </a>
+    <a class="mod-cell" href="overview.html" aria-current="page">
+      <div class="mod-top"><span class="mod-idx">MOD MAP</span><span class="mod-flag">总览</span></div>
+      <span class="mod-name">系统与数据总览</span>
+      <span class="mod-desc">模块地图、全工况台账与证据链入口</span>
+    </a>
+  </div>
+
+  <!-- 双图区 -->  <div class="v-plots-container">
+    <div class="grid-plots">
+      <div>
+        <div class="plot-head"><span class="tick">FIG. A</span>全风速工况基准总功率分布 (6 / 8 / 10 / 12 m/s)</div>
+        <div id="barPlot" style="height:320px"></div>
+        <div class="plot-note">展示未偏航基准工况下全场总功率随风速的非线性增长特征，8 m/s 为额定优化参考工况。</div>
+      </div>
+      <div>
+        <div class="plot-head"><span class="tick">FIG. B</span>额定风速 (8 m/s) 下 P₁ / P₂ 功率分解与让利趋势</div>
+        <div id="decompPlot" style="height:320px"></div>
+        <div class="plot-note">上游 P₁ 功率随偏航单调下降（主动让利），下游 P₂ 随偏航显著回升，总功率在 +25° 达峰。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 数据台账 -->
+  <div class="v-table-wrap">
+    <div class="v-table-head">
+      <div>
+        <div class="plot-head" style="margin-bottom:2px"><span class="tick">LEDGER</span>双机全工况功率响应数据集 (8 m/s, cases_multi)</div>
+        <div style="font-size:12px;color:var(--v-mute)">逐偏航角 P₁ / P₂ / 总功率与相对增益，高亮行为推荐最优与 0° 基准。</div>
+      </div>
+      <span class="cb-pill">data.js · WIND_DATA.multi</span>
+    </div>
+    <div class="v-table-scroll">
+      <table class="v-table">
+        <thead>
+          <tr>
+            <th>偏航角 γ₁</th>
+            <th>上游功率 P₁ (kW)</th>
+            <th>下游功率 P₂ (kW)</th>
+            <th>全场总功率 P<sub>tot</sub> (kW)</th>
+            <th>相对 0° 增益</th>
+            <th>工况状态</th>
+          </tr>
+        </thead>
+        <tbody id="tblBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+<div class="nature-row nature-row--1">
+  <div class="v-plots-container nature-card">
+    <div class="plot-head"><span class="plot-tick">NATURE FIG · 01</span>系统总览主图 — 4面板综合 Tandem gain + Array + POD + Wake</div>
+    <img src="assets/img/nature/fig8_main.png" alt="main">
+    <div class="plot-note">Nature主刊Figure 1候选：a Tandem偏航增益，b 阵列总功率三策略，c POD累积能量，d Wake 0°流场。单栏3.5in/双栏7.2in最终尺寸，矢量PDF <a href="assets/img/nature/fig8_main.pdf" target="_blank" rel="noopener" style="font-family:var(--v-mono);font-size:11px;color:var(--v-teal-bright);font-weight:700">→ PDF</a></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="t-footer">
+  <div class="footer-inner-centered">
+    <div class="footer-brand" style="margin-bottom:6px">西安交通大学 · 能源与动力工程学院 · 大学生创新训练项目团队</div>
+    <div style="line-height:1.8;color:var(--v-body);font-size:12.5px;margin-bottom:12px">
+      <b>成员确权：</b>田铭雨（高保真CFD流场仿真）· 袁夫达（POD特征降阶与代理模型）· 厉今飞（多风速工况基线）· 洪祖名（PPO跟踪与优化求解）· 孙承泽（可视化与交互系统负责）<br>
+      <b>指导教师：</b>李良星 副教授 ｜ 审计自检脚本：<code>check_contract.py</code> (100% Exit Code 0 绿灯)
+    </div>
+    <div style="font-family:var(--v-mono);font-size:11px;color:var(--v-mute);letter-spacing:0.06em">
+      <span>SWISS INTERNATIONAL TYPOGRAPHIC STYLE · EDGE INFERENCE · REGULAR GRID INTERPOLATOR</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script>
+(function(){
+  const W = window.WIND_DATA, m = W.multi;
+  const us = m.wind_speeds;
+  const FONT = "'Manrope','DengXian','等线','PingFang SC','Microsoft YaHei',sans-serif";
+  const basePowers = us.map(u => {
+    const i = m.wind_speeds.indexOf(u);
+    return m.ptot[i][m.yaw_angles.indexOf(0)];
+  });
+
+  // 1. 全风速柱状图（基准主色采用钛黑墨色）
+  pr('barPlot', [{
+    type: 'bar',
+    x: us.map(u => u + ' m/s'),
+    y: basePowers.map(v => Math.round(v)),
+    marker: { color: '#334155', line: { color: '#1e293b', width: 1 } },
+    hovertemplate: '%{x} 基准总功率: %{y} kW<extra></extra>'
+  }], {
+    xaxis: { title: '来流风速' },
+    yaxis: { title: '总功率 (kW)' },
+    height: 320,
+    margin: { l: 55, r: 20, t: 15, b: 40 },
+    showlegend: false,
+    font: { family: FONT }
+  });
+
+  // 2. 8 m/s 分解曲线
+  const i8 = m.wind_speeds.indexOf(8);
+  pr('decompPlot', [
+    { x: m.yaw_angles, y: m.ptot[i8], mode: 'lines', name: '全场总功率', line: { color: '#1e675c', width: 2.5 }, fill: 'tozeroy', fillcolor: 'rgba(30, 103, 92, 0.07)' },
+    { x: m.yaw_angles, y: m.p1[i8], mode: 'lines', name: '上游 P₁ (让利)', line: { color: '#64748b', width: 2, dash: 'dot' } },
+    { x: m.yaw_angles, y: m.p2[i8], mode: 'lines', name: '下游 P₂ (回升)', line: { color: '#a87817', width: 2, dash: 'dash' } }
+  ], {
+    xaxis: { title: '偏航角 γ₁ (°)' },
+    yaxis: { title: '功率 (kW)' },
+    height: 320,
+    margin: { l: 55, r: 15, t: 32, b: 40 },
+    legend: { orientation: 'h', y: 1.18, x: 0.5, xanchor: 'center', font: { size: 11 } },
+    font: { family: FONT }
+  });
+
+  // 3. 填充表格
+  const tbody = document.getElementById("tblBody");
+  const p0 = m.ptot[i8][m.yaw_angles.indexOf(0)];
+  m.yaw_angles.forEach((y, k) => {
+    const p1 = m.p1[i8][k], p2 = m.p2[i8][k], ptot = m.ptot[i8][k];
+    const gain = (ptot - p0) / p0 * 100;
+    const isOpt = Math.abs(gain - Math.max(...m.ptot[i8].map(v => (v - p0) / p0 * 100))) < 1e-9;
+    const isBase = y === 0;
+
+    const tr = document.createElement('tr');
+    if (isOpt) tr.style.background = 'rgba(30, 103, 92, 0.07)';
+    if (isBase) tr.style.background = 'rgba(30, 41, 59, 0.045)';
+
+    tr.innerHTML = `
+      <td style="font-weight:700;font-family:var(--v-mono)">${y >= 0 ? '+' : ''}${y}°</td>
+      <td style="color:var(--v-mute)">${Math.round(p1)}</td>
+      <td style="color:var(--v-yellow);font-weight:600">${Math.round(p2)}</td>
+      <td style="font-weight:700;color:var(--v-ink);font-family:var(--v-mono)">${Math.round(ptot)}</td>
+      <td style="font-weight:700;color:${gain > 0.5 ? 'var(--v-teal-bright)' : gain < -0.5 ? 'var(--v-rust)' : 'var(--v-mute)'}">${gain >= 0 ? '+' : ''}${gain.toFixed(2)}%</td>
+      <td style="font-size:11px">${isOpt ? '<span style="color:var(--v-teal-bright);font-weight:700">推荐最优</span>' : isBase ? '<span style="color:var(--v-mute);font-weight:700">0° 基准</span>' : '常规偏航'}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+})();
+</script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

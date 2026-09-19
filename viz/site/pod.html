@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>POD 降阶流场分析 · 风电场偏航优化科研平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="assets/vendor/plotly/plotly-2.35.2.min.js"></script>
+  <script src="assets/js/plotly-theme.js"></script>
+  <style>
+
+    :root {
+      --v-bg: #f8f9fa;
+      --v-bg-soft: #f1f3f5;
+      --v-bg-subtle: #e9ecef;
+      --v-panel: #ffffff;
+      --v-ink: #1e293b;
+      --v-body: #334155;
+      --v-mute: #64748b;
+      --v-faint: #94a3b8;
+      --v-line: rgba(30, 41, 59, 0.11);
+      --v-line-strong: rgba(30, 41, 59, 0.22);
+      --v-teal: #2d7569;
+      --v-teal-bright: #1e675c;
+      --v-yellow: #a87817;
+      --v-rust: #ad5038;
+      --v-mono: 'DM Mono', ui-monospace, 'JetBrains Mono', Consolas, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", monospace;
+      --v-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Songti SC Black", "Songti SC", "STSong", "STZhongsong", "SimSun", "宋体-简", serif;
+      --v-body-font: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--v-bg); color: var(--v-ink);
+      font-family: var(--v-body-font); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .l-title, .cb-label, .step-title { font-family: var(--v-display); }
+    .l-val, .t-nav-badge, .plot-tick, .step-idx { font-family: var(--v-mono); font-variant-numeric: tabular-nums; }
+
+    .t-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--v-line); height: 60px; display: flex; align-items: center;
+    }
+    .t-nav-inner {
+      max-width: 1240px; width: 100%; margin: 0 auto; padding: 0 32px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .t-nav-brand {
+      font-family: var(--v-display); font-size: 16px; font-weight: 700; color: var(--v-ink);
+      letter-spacing: -0.3px; display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+    }
+    .t-nav-badge {
+      font-size: 10.5px; color: var(--v-teal-bright); padding: 3px 8px;
+      border: 1px solid var(--v-line-strong); border-radius: 3px; background: var(--v-bg-soft); font-weight: 700;
+    }
+    .t-container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+    .v-pg-hero { padding-top: 44px; padding-bottom: 28px; }
+    .v-pg-tag {
+      font-family: var(--v-mono); font-size: 11px; font-weight: 700; color: var(--v-yellow);
+      letter-spacing: 0.12em; margin-bottom: 10px; text-transform: uppercase;
+    }
+    .v-pg-title { font-size: clamp(28px, 3.8vw, 40px); font-weight: 800; letter-spacing: -0.8px; color: var(--v-ink); margin-bottom: 8px; }
+    .v-pg-sub { font-size: 14.5px; color: var(--v-body); max-width: 860px; line-height: 1.6; }
+
+    .v-workbench-panel {
+      background: #ffffff; border: 1px solid var(--v-line-strong);
+      border-radius: 4px; overflow: hidden; margin-bottom: 36px;
+    }
+    .cause-bar {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 16px 28px; background: var(--v-bg-soft);
+      border-bottom: 1px solid var(--v-line); flex-wrap: nowrap; width: 100%;
+    }
+    .cb-left { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
+    .cb-label {
+      font-family: var(--v-display) !important; font-size: 11.5px !important; font-weight: 750 !important;
+      color: #ffffff !important; background: var(--v-teal-bright) !important;
+      padding: 5px 12px !important; border-radius: 2px !important; letter-spacing: 0.08em !important;
+      display: inline-block; flex-shrink: 0; white-space: nowrap;
+    }
+    .cb-text { font-size: 13px; color: var(--v-body); line-height: 1.5; flex: 1; min-width: 0; }
+    .cb-pill {
+      font-family: var(--v-mono); font-size: 12px; font-weight: 700;
+      padding: 6px 14px; border-radius: 2px; border: 1px solid var(--v-line-strong);
+      background: #ffffff; white-space: nowrap; flex-shrink: 0; color: var(--v-ink);
+    }
+
+    .ledger-strip { display: grid; grid-template-columns: repeat(4, 1fr); background: #ffffff; }
+    .ledger-col {
+      padding: 28px; border-right: 1px solid var(--v-line);
+      display: flex; flex-direction: column; justify-content: space-between; min-width: 0; word-wrap: break-word;
+    }
+    .ledger-col:last-child { border-right: none; }
+    .l-meta {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+      font-family: var(--v-mono); font-size: 10.5px; color: var(--v-mute); font-weight: 700; letter-spacing: 0.05em;
+    }
+    .l-title { font-size: 14px; font-weight: 750; color: var(--v-ink); margin-bottom: 14px; line-height: 1.35; }
+    .l-val { font-weight: 750; font-size: 34px; line-height: 1; color: var(--v-ink); margin-bottom: 16px; }
+    .l-details {
+      display: flex; flex-direction: column; gap: 6px;
+      padding-top: 14px; border-top: 1px solid var(--v-line); font-size: 12px; color: var(--v-body);
+    }
+
+    .v-plots-container {
+      background: #ffffff; border: 1px solid var(--v-line-strong);
+      border-radius: 4px; padding: 28px 32px; margin-bottom: 36px;
+    }
+    .grid-plots { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; min-width: 0;}
+    .grid-plots > div { min-width: 0; }
+    .plot-head {
+      font-family: var(--v-display); font-size: 14.5px; font-weight: 750; color: var(--v-ink);
+      margin-bottom: 12px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .plot-tick { font-size: 10px; font-weight: 700; color: var(--v-yellow); letter-spacing: 0.1em; }
+    .plot-note { font-size: 12px; color: var(--v-mute); line-height: 1.6; margin-top: 10px; }
+
+    .mode-seg { display: inline-flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+    .mode-seg button {
+      font-family: var(--v-body-font); font-size: 12.5px; font-weight: 700;
+      border: 1px solid var(--v-line-strong); background: var(--v-bg-soft);
+      padding: 7px 14px; border-radius: 3px; color: var(--v-ink); cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); white-space: nowrap;
+    }
+    .mode-seg button:hover { background: var(--v-ink); color: #fff; border-color: var(--v-ink); }
+    .mode-seg button.active { background: var(--v-teal-bright); color: #fff; border-color: var(--v-teal-bright); }
+    .fig-frame {
+      background: var(--v-bg-soft); border: 1px solid var(--v-line); border-radius: 3px;
+      padding: 12px; text-align: center; min-height: 230px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .fig-frame img { max-width: 100%; max-height: 230px; border-radius: 2px; transition: opacity 0.2s; }
+
+    .pipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .pipe-step {
+      padding: 24px 28px; border-right: 1px solid var(--v-line);
+      display: flex; flex-direction: column; gap: 10px; min-width: 0;
+    }
+    .pipe-step:last-child { border-right: none; }
+    .step-idx { font-size: 11px; font-weight: 700; color: var(--v-yellow); letter-spacing: 0.1em; }
+    .step-title { font-size: 15px; font-weight: 750; color: var(--v-ink); line-height: 1.4; }
+    .step-desc { font-size: 12.5px; color: var(--v-mute); line-height: 1.65; }
+
+    .t-footer {
+      border-top: 1px solid var(--v-line-strong); padding: 60px 0; margin-top: 80px;
+      font-size: 12.5px; color: var(--v-body); line-height: 1.8; background: #ffffff; text-align: center;
+    }
+    .footer-inner-centered {
+      max-width: 960px; margin: 0 auto; padding: 0 32px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px;
+    }
+    .footer-brand { color: var(--v-ink); font-weight: 750; font-family: var(--v-display); font-size: 15px; }
+
+    @media (max-width: 1024px) {
+      .ledger-strip { grid-template-columns: repeat(2, 1fr); }
+      .ledger-col { border-bottom: 1px solid var(--v-line); }
+      .grid-plots { grid-template-columns: 1fr; min-width: 0;}
+      .pipe-grid { grid-template-columns: 1fr; }
+      .pipe-step { border-right: none; border-bottom: 1px solid var(--v-line); }
+      .pipe-step:last-child { border-bottom: none; }
+    }
+    @media (max-width: 640px) {
+      .ledger-strip { grid-template-columns: 1fr; }
+      .t-nav-inner, .t-container { padding: 0 20px; }
+      .v-plots-container { padding: 20px; }
+    }
+      /* ===== 统一双行导航模块条（系统级覆盖，全站同一套，杜绝指示冲突） ===== */
+    .t-nav { height: auto; }
+    .t-nav-inner { max-width: none; width: 100%; margin: 0; padding: 0; display: block; }
+    .t-nav-row1 { max-width: 1240px; margin: 0 auto; padding: 13px 32px 11px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .t-nav-here { font-family: var(--v-mono); font-size: 11px; font-weight: 700; color: var(--v-mute); letter-spacing: 0.06em; white-space: nowrap; }
+    .t-nav-links { border-top: 1px solid var(--v-line); }
+    .t-nav-links-in { max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: stretch; overflow-x: auto; scrollbar-width: none; }
+    .t-nav-links-in::-webkit-scrollbar { display: none; }
+    .t-nav-links a { font-family: var(--v-body-font); font-size: 12px; font-weight: 600; color: var(--v-mute); text-decoration: none; padding: 9px 9px 8px; white-space: nowrap; border-bottom: 2px solid transparent; display: inline-flex; gap: 6px; align-items: baseline; }
+    .t-nav-links a i { font-style: normal; font-family: var(--v-mono); font-size: 9.5px; font-weight: 700; color: var(--v-faint); letter-spacing: 0.05em; }
+    .t-nav-links a:hover { color: var(--v-ink); background: var(--v-bg-soft); }
+    .t-nav-links a.active { color: var(--v-teal-bright); border-bottom-color: var(--v-teal-bright); }
+    .t-nav-links a.active i { color: var(--v-teal-bright); }
+    @media (max-width: 640px) { .t-nav-row1 { padding: 12px 20px 10px; } }
+  </style>
+  <link rel="stylesheet" href="css/unified-glass.css">
+</head>
+<body>
+
+<nav class="t-nav">
+  <div class="t-nav-inner">
+    <div class="t-nav-row1">
+      <a href="index.html" class="t-nav-brand" style="text-decoration:none;color:inherit">
+        <span>风电场偏航优化平台</span>
+        <span class="t-nav-badge">SUN CHENGZE · VISUALIZATION</span>
+      </a>
+      <span class="t-nav-here" id="tNavHere"></span>
+    </div>
+    <div class="t-nav-links"><div class="t-nav-links-in">
+      <a href="index.html" data-nav-code="00" data-nav-name="首页"><i>00</i>首页</a>
+      <a href="wake.html" data-nav-code="01" data-nav-name="尾流"><i>01</i>尾流</a>
+      <a href="optimization.html" data-nav-code="02" data-nav-name="优化"><i>02</i>优化</a>
+      <a href="solver.html" data-nav-code="03" data-nav-name="求解"><i>03</i>求解</a>
+      <a href="dashboard.html" data-nav-code="04" data-nav-name="看板"><i>04</i>看板</a>
+      <a href="array.html" data-nav-code="05" data-nav-name="阵列"><i>05</i>阵列</a>
+      <a href="heatmap.html" data-nav-code="06" data-nav-name="热力"><i>06</i>热力</a>
+      <a href="pod.html" data-nav-code="07" data-nav-name="POD"><i>07</i>POD</a>
+      <a href="model.html" data-nav-code="08" data-nav-name="精度"><i>08</i>精度</a>
+      <a href="power_tracking.html" data-nav-code="09" data-nav-name="跟踪"><i>09</i>跟踪</a>
+      <a href="3d_farm.html" data-nav-code="10" data-nav-name="3D风场"><i>10</i>3D风场</a>
+      <a href="3d_surface.html" data-nav-code="11" data-nav-name="3D曲面"><i>11</i>3D曲面</a>
+      <a href="3d_volume.html" data-nav-code="12" data-nav-name="3D体"><i>12</i>3D体</a>
+      <a href="interface.html" data-nav-code="13" data-nav-name="契约"><i>13</i>契约</a>      <a href="overview.html" data-nav-code="MAP" data-nav-name="系统总览"><i>MAP</i>总览</a>
+    </div></div>
+  </div>
+</nav>
+
+<header class="v-pg-hero t-container">
+  <div class="v-pg-tag">07 / POD REDUCED-ORDER MODEL · ENERGY SPECTRUM</div>
+  <h1 class="v-pg-title">POD 本征正交分解降阶分析</h1>
+  <p class="v-pg-sub">
+    流场降阶建模（ROM）：前 2 阶模态覆盖 98.0% 能量，万级网格自由度压缩至三维系数空间，
+    实现毫秒级流场重构与闭环优化提速。
+  </p>
+</header>
+
+<main class="t-container">
+
+  <div class="v-workbench-panel">
+    <div class="cause-bar">
+      <div class="cb-left">
+        <span class="cb-label">降阶账本</span>
+        <span class="cb-text">能量覆盖、自由度压缩比、重构误差与单次评估耗时四项指标，定义 POD 代理的可用边界。</span>
+      </div>
+      <span class="cb-pill">SVD · K=2 MODES</span>
+    </div>
+    <div class="ledger-strip">
+      <div class="ledger-col">
+        <div>
+          <div class="l-meta"><span>01 / ENERGY COVER</span><span style="color:var(--v-teal-bright)">TOP-2</span></div>
+          <div class="l-title">前 2 阶累积能量占比</div>
+          <div class="l-val">98.0%</div>
+        </div>
+        <div class="l-details">
+          <div style="font-family:var(--v-mono);font-weight:700;color:var(--v-mute)">Mode 0 + Mode 1</div>
+        </div>
+      </div>
+      <div class="ledger-col">
+        <div>
+          <div class="l-meta"><span>02 / COMPRESSION</span><span style="color:var(--v-yellow)">DOF</span></div>
+          <div class="l-title">空间自由度压缩比</div>
+          <div class="l-val">&gt; 1500 : 1</div>
+        </div>
+        <div class="l-details">
+          <div style="font-family:var(--v-mono);font-weight:700;color:var(--v-mute)">万级网格 → 3 维系数</div>
+        </div>
+      </div>
+      <div class="ledger-col">
+        <div>
+          <div class="l-meta"><span>03 / RECON RMSE</span><span style="color:var(--v-teal-bright)">FIELD</span></div>
+          <div class="l-title">流场重构均方根误差</div>
+          <div class="l-val">&lt; 0.08 m/s</div>
+        </div>
+        <div class="l-details">
+          <div style="font-family:var(--v-mono);font-weight:700;color:var(--v-mute)">高保真拟合度</div>
+        </div>
+      </div>
+      <div class="ledger-col">
+        <div>
+          <div class="l-meta"><span>04 / EVAL LATENCY</span><span style="color:var(--v-yellow)">SPEEDUP</span></div>
+          <div class="l-title">单次流场评估耗时</div>
+          <div class="l-val">&lt; 1.2 ms</div>
+        </div>
+        <div class="l-details">
+          <div style="font-family:var(--v-mono);font-weight:700;color:var(--v-teal-bright)">提速超 1000×</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+
+  
+
+  
+
+
+  <div class="v-plots-container">
+    <div class="grid-plots">
+      <div>
+        <div class="plot-head"><span class="plot-tick">FIG. A</span>POD 各阶模态能量与累积占比曲线</div>
+        <div id="podEnergyPlot" style="height:350px"></div>
+        <div class="plot-note">奇异值衰减极快，前 2 阶模态即占据绝大部分流场方差，具备极强的低维空间可压缩性。</div>
+      </div>
+      <div>
+        <div class="plot-head"><span class="plot-tick">FIG. B</span>各阶特征空间模态结构云图 (Spatial Modes)</div>
+        <div class="mode-seg" id="modeSeg">
+          <button data-idx="0" class="active">模态 0 (基底平均场)</button>
+          <button data-idx="1">模态 1 (偏航反对称分量)</button>
+          <button data-idx="2">模态 2 (剪切层高阶修正)</button>
+        </div>
+        <div class="fig-frame">
+          <img id="modeImgEl" src="assets/img/pod/mode_0.png" alt="POD 模态云图">
+        </div>
+        <div class="plot-note" id="modeDescText">
+          <b>模态 0（能量占比 76.4%）</b>：呈上下反对称偶极子结构（一侧正加速、一侧负亏损区），主导偏航引起的尾流横向侧偏。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="v-plots-container">
+    <div class="plot-head"><span class="plot-tick">FIG. C</span>全流场重构精度对比 (CFD / FLORIS 真实值 vs POD 降阶重构)</div>
+    <div class="fig-frame" style="min-height:0">
+      <img src="assets/img/pod/recon.png" alt="重构精度对比" style="max-height:none">
+    </div>
+    <div class="plot-note">
+      重构残差主要集中在叶尖强涡系极小局部，全场速度分布与下游机组迎风捕获区速度绝对误差 &lt; 1.5%，满足控制优化精度要求。
+    </div>
+  </div>
+
+  <div class="v-workbench-panel" style="margin-bottom:0">
+    <div class="cause-bar">
+      <div class="cb-left">
+        <span class="cb-label">流水线</span>
+        <span class="cb-text">本征正交分解降阶建模与实时优化流水线：快照分解 → 系数映射 → 线性重构，三步闭环。</span>
+      </div>
+      <span class="cb-pill">ROM PIPELINE · 3 STAGES</span>
+    </div>
+    <div class="pipe-grid">
+      <div class="pipe-step">
+        <span class="step-idx">STEP 1 / SNAPSHOT-SVD</span>
+        <span class="step-title">快照采样与 SVD 分解</span>
+        <span class="step-desc">
+          采集多偏航角 / 风速下的全三维速度场快照矩阵 <b>S</b>，通过奇异值分解（SVD）提取相互正交的空间特征基模态 <b>Φ</b><sub><i>k</i></sub>。
+        </span>
+      </div>
+      <div class="pipe-step">
+        <span class="step-idx">STEP 2 / COEFF MAP</span>
+        <span class="step-title">轻量代理系数映射</span>
+        <span class="step-desc">
+          建立来流条件 (<i>U</i>, γ) 到前 <i>K</i> 阶模态时空系数 <i>a<sub>k</sub></i>(<i>U</i>, γ) 的超快代理回归（神经网络 / 二维插值），舍弃高阶微弱扰动。
+        </span>
+      </div>
+      <div class="pipe-step">
+        <span class="step-idx">STEP 3 / RECONSTRUCT</span>
+        <span class="step-title">毫秒级流场快速重构</span>
+        <span class="step-desc">
+          在线调用线性组合 <b>ũ</b> = <b>ū</b> + ∑ <i>a<sub>k</sub></i> <b>Φ</b><sub><i>k</i></sub>，实现百微秒级全场评估，支撑闭环实时偏航求解。
+        </span>
+      </div>
+    </div>
+  </div>
+
+<div class="nature-row nature-row--3 pod-nature-row">
+  <div class="v-plots-container nature-card pod-nature-card">
+    <div class="plot-head"><span class="plot-tick">NATURE FIG · 01</span>POD 出版级 — 前2阶97.97%能量 + Mode0偶极子76.4% + Mode1自恢复21.6%</div>
+    <img src="assets/img/nature/fig5_pod.png" alt="Nature POD">
+    <div class="plot-note">Nature 单栏 3.5in / 双栏 7.2in 最终尺寸，Okabe-Ito 色盲安全，RdBu_r 感知均匀，字号7-9pt。前2阶累积 <b>97.97%</b> (Mode0偶极子76.38% + Mode1回复21.58%)，自由度8192→2压缩>4000:1。 <a href="assets/img/nature/fig5_pod.pdf" target="_blank" rel="noopener" style="font-family:var(--v-mono);font-size:11px;color:var(--v-teal-bright);font-weight:700">→ PDF</a></div>
+  </div>
+<div class="v-plots-container nature-card pod-nature-card">
+    <div class="plot-head"><span class="plot-tick">NATURE FIG · 02</span>POD 系数随偏航角</div>
+    <img src="assets/img/nature/fig14_pod_coeff.png" alt="coeff">
+    <div class="plot-note">Mode0线性主导侧偏，Mode1非线性修正，展示低维系数流形。</div>
+  </div>
+<div class="v-plots-container nature-card pod-nature-card">
+    <div class="plot-head"><span class="plot-tick">NATURE FIG · 03</span>多风速增益箱线+stripplot</div>
+    <img src="assets/img/nature/fig10_gain_box_strip.png" alt="boxstrip">
+    <div class="plot-note">拦截小n均值柱掩盖分布，箱线+strip直接列点，n=4风速×13偏航，色盲安全viridis。</div>
+  </div>
+
+</div>
+</main>
+
+<footer class="t-footer">
+  <div class="footer-inner-centered">
+    <div class="footer-brand" style="margin-bottom:6px">西安交通大学 · 能源与动力工程学院 · 大学生创新训练项目团队</div>
+    <div style="line-height:1.8;color:var(--v-body);font-size:12.5px;margin-bottom:12px">
+      <b>成员确权：</b>田铭雨（高保真CFD流场仿真）· 袁夫达（POD特征降阶与代理模型）· 厉今飞（多风速工况基线）· 洪祖名（PPO跟踪与优化求解）· 孙承泽（可视化与交互系统负责）<br>
+      <b>指导教师：</b>李良星 副教授 ｜ 审计自检脚本：<code>check_contract.py</code> (100% Exit Code 0 绿灯)
+    </div>
+    <div style="font-family:var(--v-mono);font-size:11px;color:var(--v-mute);letter-spacing:0.06em">
+      <span>SWISS INTERNATIONAL TYPOGRAPHIC STYLE · EDGE INFERENCE · REGULAR GRID INTERPOLATOR</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script>
+(function(){
+  const FONT = "'Manrope','DengXian','等线','PingFang SC','Microsoft YaHei',sans-serif";
+  const modes = ['Mode 0', 'Mode 1', 'Mode 2', 'Mode 3', 'Mode 4'];
+  const energy = [76.4, 21.6, 1.1, 0.5, 0.4];
+  const cumEnergy = [76.4, 98.0, 99.1, 99.6, 100.0];
+
+  pr('podEnergyPlot', [
+    {
+      type: 'bar', name: '单阶模态能量占比 (%)',
+      x: modes, y: energy,
+      marker: { color: '#334155', line: { color: '#1e293b', width: 1 } },
+      yaxis: 'y',
+      hovertemplate: '%{x}: %{y:.1f}% 能量<extra></extra>'
+    },
+    {
+      type: 'scatter', name: '累积能量占比 (%)',
+      x: modes, y: cumEnergy,
+      mode: 'lines+markers',
+      line: { color: '#1e675c', width: 2.8 },
+      marker: { size: 8, color: '#1e675c', line: { color: '#ffffff', width: 1.5 } },
+      yaxis: 'y2',
+      hovertemplate: '前 %{x} 累积: %{y:.1f}%<extra></extra>'
+    }
+  ], {
+    xaxis: { title: 'POD 模态阶数' },
+    yaxis: { title: '单阶能量 (%)', range: [0, 95] },
+    yaxis2: { title: '累积能量 (%)', overlaying: 'y', side: 'right', range: [75, 103], showgrid: false },
+    height: 350,
+    margin: { l: 50, r: 50, t: 32, b: 40 },
+    legend: { orientation: 'h', y: 1.18, x: 0.5, xanchor: 'center', font: { size: 11 } },
+    font: { family: FONT },
+    annotations: [{
+      x: 'Mode 1', y: 98.0, yref: 'y2',
+      text: '前 2 阶达 98.0%',
+      showarrow: true, arrowhead: 2, arrowcolor: '#1e675c',
+      font: { color: '#1e675c', size: 11 }, ax: 20, ay: -28
+    }]
+  });
+
+  const descs = [
+    '<b>模态 0（去均值首要模态，能量占比 76.4%）</b>：流场去均值后的第一阶主特征模态，呈清晰的<b>上下反对称偶极子结构</b>（一侧正加速、一侧负亏损），直接主导偏航引起的尾流横向侧偏。',
+    '<b>模态 1（二次恢复模态，能量占比 21.6%）</b>：第二阶特征模态，主导尾流沿顺风向的纵向恢复、扩散与能量补偿。',
+    '<b>模态 2（高阶剪切微扰，能量占比 1.1%）</b>：叶尖强涡系与近地边界层的高阶微小波动修正。'
+  ];
+
+  document.getElementById('modeSeg').addEventListener('click', e => {
+    if (!e.target.dataset.idx) return;
+    const idx = parseInt(e.target.dataset.idx);
+    [...e.currentTarget.children].forEach(b => b.classList.toggle('active', b === e.target));
+    const imgEl = document.getElementById('modeImgEl');
+    imgEl.style.opacity = '0.2';
+    setTimeout(() => {
+      imgEl.src = `assets/img/pod/mode_${idx}.png`;
+      imgEl.style.opacity = '1';
+    }, 120);
+    document.getElementById('modeDescText').innerHTML = descs[idx];
+  });
+})();
+</script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>3D 体渲染 · 风电场偏航优化科研平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="assets/vendor/plotly/plotly-2.35.2.min.js"></script>
+  <script src="assets/js/plotly-theme.js"></script>
+  <style>
+
+    :root {
+      --v-bg: #f8f9fa;
+      --v-bg-soft: #f1f3f5;
+      --v-ink: #1e293b;
+      --v-body: #334155;
+      --v-mute: #64748b;
+      --v-faint: #94a3b8;
+      --v-line: rgba(30, 41, 59, 0.11);
+      --v-line-strong: rgba(30, 41, 59, 0.22);
+      --v-teal-bright: #1e675c;
+      --v-yellow: #a87817;
+      --v-rust: #ad5038;
+      --v-mono: 'DM Mono', ui-monospace, 'JetBrains Mono', Consolas, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", monospace;
+      --v-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Songti SC Black", "Songti SC", "STSong", "STZhongsong", "SimSun", "宋体-简", serif;
+      --v-body-font: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--v-bg); color: var(--v-ink);
+      font-family: var(--v-body-font); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: var(--v-display); }
+    .t-nav-badge, .plot-tick, .yaw-badge { font-family: var(--v-mono); font-variant-numeric: tabular-nums; }
+
+    .t-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--v-line); height: 60px; display: flex; align-items: center;
+    }
+    .t-nav-inner {
+      max-width: 1240px; width: 100%; margin: 0 auto; padding: 0 32px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .t-nav-brand {
+      font-family: var(--v-display); font-size: 16px; font-weight: 700; color: var(--v-ink);
+      letter-spacing: -0.3px; display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+    }
+    .t-nav-badge {
+      font-size: 10.5px; color: var(--v-teal-bright); padding: 3px 8px;
+      border: 1px solid var(--v-line-strong); border-radius: 3px; background: var(--v-bg-soft); font-weight: 700;
+    }
+    .t-container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+    .v-pg-hero { padding-top: 44px; padding-bottom: 28px; }
+    .v-pg-tag {
+      font-family: var(--v-mono); font-size: 11px; font-weight: 700; color: var(--v-yellow);
+      letter-spacing: 0.12em; margin-bottom: 10px; text-transform: uppercase;
+    }
+    .v-pg-title { font-size: clamp(28px, 3.8vw, 40px); font-weight: 800; letter-spacing: -0.8px; color: var(--v-ink); margin-bottom: 8px; }
+    .v-pg-sub { font-size: 14.5px; color: var(--v-body); max-width: 860px; line-height: 1.6; }
+
+    .v-plots-container {
+      background: #ffffff; border: 1px solid var(--v-line-strong);
+      border-radius: 4px; padding: 28px 32px; margin-bottom: 36px;
+    }
+    .plot-note { font-size: 12px; color: var(--v-mute); line-height: 1.6; margin-top: 12px; }
+
+    .ctl-bar {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      padding-bottom: 18px; margin-bottom: 16px; border-bottom: 1px solid var(--v-line);
+      font-size: 13px; color: var(--v-body);
+    }
+    .ctl-bar label { display: inline-flex; align-items: center; gap: 7px; font-weight: 600; cursor: pointer; }
+    .ctl-bar input[type="range"] { accent-color: var(--v-teal-bright); }
+    .ctl-bar input[type="checkbox"] { accent-color: var(--v-teal-bright); }
+    .ctl-label { font-family: var(--v-display); font-size: 12.5px; font-weight: 750; color: var(--v-ink); }
+    select.v-select {
+      font-family: var(--v-mono); font-size: 12.5px; font-weight: 700;
+      padding: 6px 10px; border: 1px solid var(--v-line-strong); border-radius: 3px;
+      background: var(--v-bg-soft); color: var(--v-ink); cursor: pointer;
+    }
+    .yaw-badge {
+      font-size: 12px; font-weight: 700; padding: 4px 10px;
+      border: 1px solid var(--v-line-strong); border-radius: 2px;
+      background: var(--v-bg-soft); color: var(--v-teal-bright); white-space: nowrap;
+    }
+    .v-btn {
+      font-family: var(--v-body-font); font-size: 12.5px; font-weight: 700;
+      padding: 8px 16px; background: var(--v-bg-soft);
+      border: 1px solid var(--v-line-strong); border-radius: 3px; color: var(--v-ink); cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); white-space: nowrap;
+    }
+    .v-btn:hover { background: var(--v-ink); color: #fff; border-color: var(--v-ink); transform: translateY(-2px); }
+    .v-btn.active { background: var(--v-teal-bright); color: #fff; border-color: var(--v-teal-bright); }
+
+    .t-footer {
+      border-top: 1px solid var(--v-line-strong); padding: 60px 0; margin-top: 80px;
+      font-size: 12.5px; color: var(--v-body); line-height: 1.8; background: #ffffff; text-align: center;
+    }
+    .footer-inner-centered {
+      max-width: 960px; margin: 0 auto; padding: 0 32px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px;
+    }
+    .footer-brand { color: var(--v-ink); font-weight: 750; font-family: var(--v-display); font-size: 15px; }
+
+    @media (max-width: 640px) {
+      .t-nav-inner, .t-container { padding: 0 20px; }
+      .v-plots-container { padding: 20px; }
+    }
+      /* ===== 统一双行导航模块条（系统级覆盖，全站同一套，杜绝指示冲突） ===== */
+    .t-nav { height: auto; }
+    .t-nav-inner { max-width: none; width: 100%; margin: 0; padding: 0; display: block; }
+    .t-nav-row1 { max-width: 1240px; margin: 0 auto; padding: 13px 32px 11px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .t-nav-here { font-family: var(--v-mono); font-size: 11px; font-weight: 700; color: var(--v-mute); letter-spacing: 0.06em; white-space: nowrap; }
+    .t-nav-links { border-top: 1px solid var(--v-line); }
+    .t-nav-links-in { max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: stretch; overflow-x: auto; scrollbar-width: none; }
+    .t-nav-links-in::-webkit-scrollbar { display: none; }
+    .t-nav-links a { font-family: var(--v-body-font); font-size: 12px; font-weight: 600; color: var(--v-mute); text-decoration: none; padding: 9px 9px 8px; white-space: nowrap; border-bottom: 2px solid transparent; display: inline-flex; gap: 6px; align-items: baseline; }
+    .t-nav-links a i { font-style: normal; font-family: var(--v-mono); font-size: 9.5px; font-weight: 700; color: var(--v-faint); letter-spacing: 0.05em; }
+    .t-nav-links a:hover { color: var(--v-ink); background: var(--v-bg-soft); }
+    .t-nav-links a.active { color: var(--v-teal-bright); border-bottom-color: var(--v-teal-bright); }
+    .t-nav-links a.active i { color: var(--v-teal-bright); }
+    @media (max-width: 640px) { .t-nav-row1 { padding: 12px 20px 10px; } }
+  </style>
+  <link rel="stylesheet" href="css/unified-glass.css">
+</head>
+<body>
+
+<nav class="t-nav">
+  <div class="t-nav-inner">
+    <div class="t-nav-row1">
+      <a href="index.html" class="t-nav-brand" style="text-decoration:none;color:inherit">
+        <span>风电场偏航优化平台</span>
+        <span class="t-nav-badge">SUN CHENGZE · VISUALIZATION</span>
+      </a>
+      <span class="t-nav-here" id="tNavHere"></span>
+    </div>
+    <div class="t-nav-links"><div class="t-nav-links-in">
+      <a href="index.html" data-nav-code="00" data-nav-name="首页"><i>00</i>首页</a>
+      <a href="wake.html" data-nav-code="01" data-nav-name="尾流"><i>01</i>尾流</a>
+      <a href="optimization.html" data-nav-code="02" data-nav-name="优化"><i>02</i>优化</a>
+      <a href="solver.html" data-nav-code="03" data-nav-name="求解"><i>03</i>求解</a>
+      <a href="dashboard.html" data-nav-code="04" data-nav-name="看板"><i>04</i>看板</a>
+      <a href="array.html" data-nav-code="05" data-nav-name="阵列"><i>05</i>阵列</a>
+      <a href="heatmap.html" data-nav-code="06" data-nav-name="热力"><i>06</i>热力</a>
+      <a href="pod.html" data-nav-code="07" data-nav-name="POD"><i>07</i>POD</a>
+      <a href="model.html" data-nav-code="08" data-nav-name="精度"><i>08</i>精度</a>
+      <a href="power_tracking.html" data-nav-code="09" data-nav-name="跟踪"><i>09</i>跟踪</a>
+      <a href="3d_farm.html" data-nav-code="10" data-nav-name="3D风场"><i>10</i>3D风场</a>
+      <a href="3d_surface.html" data-nav-code="11" data-nav-name="3D曲面"><i>11</i>3D曲面</a>
+      <a href="3d_volume.html" data-nav-code="12" data-nav-name="3D体"><i>12</i>3D体</a>
+      <a href="interface.html" data-nav-code="13" data-nav-name="契约"><i>13</i>契约</a>      <a href="overview.html" data-nav-code="MAP" data-nav-name="系统总览"><i>MAP</i>总览</a>
+    </div></div>
+  </div>
+</nav>
+
+<header class="v-pg-hero t-container">
+  <div class="v-pg-tag">12 / 3D VOLUME RENDERING · WAKE LOW-SPEED BUBBLE</div>
+  <h1 class="v-pg-title">3D 尾流体渲染</h1>
+  <p class="v-pg-sub">
+    FLORIS 三维数值尾流采用森林绿至浅薄荷等值面渲染，自动环绕展示尾流偏转；
+    偏航扫描循环播放 −30°至 +30°，直观呈现低速核心如何移开下游机组。
+  </p>
+</header>
+
+<main class="t-container">
+  <div class="v-plots-container">
+    <div class="ctl-bar">
+      <span class="ctl-label">偏航角</span>
+      <select id="yawSel" class="v-select"></select>
+      <button class="v-btn" id="sweepBtn">偏航扫描</button>
+      <span class="ctl-label" style="margin-left:6px">风速阈值</span>
+      <input type="range" id="threshR" min="4.5" max="8.0" value="6.5" step="0.1" style="width:140px">
+      <span class="yaw-badge" id="threshV">6.5 m/s</span>
+      <span class="ctl-label" style="margin-left:6px">透明度</span>
+      <input type="range" id="opacR" min="0.1" max="0.9" value="0.55" step="0.05" style="width:100px">
+      <label><input type="checkbox" id="chkSlices" checked> 截面</label>
+      <label><input type="checkbox" id="chkTurbines" checked> 风机</label>
+      <button class="v-btn active" id="spinBtn" style="margin-left:auto">自动环绕</button>
+    </div>
+    <div id="plot3d" style="height:620px"></div>
+    <div class="plot-note">森林绿至浅薄荷半透明区域表示速度层级，深绿对应低速尾流核心；白色圆环为风机转子扫掠面。默认开启自动环绕，可拖拽旋转和滚轮缩放；偏航扫描会循环展示 −30°至 +30°的尾流偏转。</div>
+  </div>
+</main>
+
+<footer class="t-footer">
+  <div class="footer-inner-centered">
+    <div class="footer-brand" style="margin-bottom:6px">西安交通大学 · 能源与动力工程学院 · 大学生创新训练项目团队</div>
+    <div style="line-height:1.8;color:var(--v-body);font-size:12.5px;margin-bottom:12px">
+      <b>成员确权：</b>田铭雨（高保真CFD流场仿真）· 袁夫达（POD特征降阶与代理模型）· 厉今飞（多风速工况基线）· 洪祖名（PPO跟踪与优化求解）· 孙承泽（可视化与交互系统负责）<br>
+      <b>指导教师：</b>李良星 副教授 ｜ 审计自检脚本：<code>check_contract.py</code> (100% Exit Code 0 绿灯)
+    </div>
+    <div style="font-family:var(--v-mono);font-size:11px;color:var(--v-mute);letter-spacing:0.06em">
+      <span>SWISS INTERNATIONAL TYPOGRAPHIC STYLE · EDGE INFERENCE · REGULAR GRID INTERPOLATOR</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/data_3d.js"></script>
+<script>
+(function(){
+  const D3 = window.WIND_3D_DATA;
+  const plot = document.getElementById('plot3d');
+  if (!D3 || !D3.fields_3d || Object.keys(D3.fields_3d).length === 0) {
+    plot.innerHTML = '<p style="color:var(--v-mute);text-align:center;padding:40px">3D 流场数据未就绪</p>'; return;
+  }
+  const keys = Object.keys(D3.fields_3d).sort((a, b) => parseFloat(a) - parseFloat(b));
+  const yawSel = document.getElementById('yawSel');
+  keys.forEach(k => { const o = document.createElement('option'); o.value = k; o.textContent = parseFloat(k) + '°'; yawSel.appendChild(o); });
+  const defKey = keys.find(k => parseFloat(k) === 0) || keys[Math.floor(keys.length / 2)];
+  yawSel.value = defKey;
+
+  const threshR = document.getElementById('threshR'), threshV = document.getElementById('threshV');
+  threshR.oninput = () => { threshV.textContent = threshR.value + ' m/s'; render(); };
+
+  const BASE_EYE = { x: -2.0, y: -1.8, z: 0.9 };
+  let spinning = true, sweepTimer = null, spinAngle = 0, rafId = null;
+
+  function buildTraces(yaw, threshold, opacity, showSlices, showTurb){
+    const fd = D3.fields_3d[yaw];
+    const x = fd.x, y = fd.y, z = fd.z, U = fd.u;
+    const xF = [], yF = [], zF = [], vF = [];
+    for (let iz = 0; iz < z.length; iz++)
+      for (let iy = 0; iy < y.length; iy++)
+        for (let ix = 0; ix < x.length; ix++) {
+          xF.push(x[ix]); yF.push(y[iy]); zF.push(z[iz]); vF.push(U[iz][iy][ix]);
+        }
+    const traces = [];
+    traces.push({
+      type: 'isosurface', x: xF, y: yF, z: zF, value: vF,
+      isomin: 4.0, isomax: threshold, surface_count: 4,
+      colorscale: window.VolumeSeq, showscale: true,
+      colorbar: { title: { text: '风速 (m/s)', side: 'right' }, thickness: 15, len: 0.6, x: 1.02 },
+      opacity: opacity, caps: { x_show: false, y_show: false, z_show: false }, name: '尾流区',
+      hovertemplate: 'x:%{x:.0f} y:%{y:.0f} z:%{z:.0f}<br>u:%{value:.2f} m/s<extra></extra>'
+    });
+    if (showSlices) {
+      const hubZIdx = z.reduce((bi, zi, i) => Math.abs(zi - 90) < Math.abs(z[bi] - 90) ? i : bi, 0);
+      const uHub = U[hubZIdx];
+      traces.push({
+        type: 'surface', x: x, y: y, z: Array.from({ length: y.length }, () => Array.from({ length: x.length }, () => z[hubZIdx])),
+        surfacecolor: uHub, colorscale: window.VolumeSeq, cmin: 4, cmax: 9, showscale: false, opacity: 0.55,
+        name: '轮毂截面 (' + Math.round(z[hubZIdx]) + 'm)', hoverinfo: 'skip'
+      });
+    }
+    if (showTurb) {
+      for (const [tx, lbl] of [[0, '风机1'], [630, '风机2']]) {
+        traces.push({
+          type: 'scatter3d', x: [tx, tx], y: [0, 0], z: [0, 90], mode: 'lines',
+          line: { color: '#1e293b', width: 5 }, showlegend: false, hoverinfo: 'skip'
+        });
+        const nPts = 64, ry = [], rz = [];
+        for (let i = 0; i < nPts; i++) { const a = 2 * Math.PI * i / nPts; ry.push(63 * Math.sin(a)); rz.push(90 + 63 * Math.cos(a)); }
+        traces.push({
+          type: 'scatter3d', x: Array(nPts).fill(tx), y: ry, z: rz, mode: 'lines',
+          line: { color: '#1e293b', width: 2.5 }, showlegend: false, hoverinfo: 'skip'
+        });
+        const yawDeg = (lbl === '风机1') ? parseFloat(yaw) : 0;
+        const aRad = (90 - yawDeg) * Math.PI / 180;
+        traces.push({
+          type: 'scatter3d', x: [tx, tx + 70 * Math.cos(aRad)], y: [0, 70 * Math.sin(aRad)], z: [90, 90], mode: 'lines',
+          line: { color: '#a87817', width: 3 }, showlegend: false, hoverinfo: 'skip'
+        });
+        traces.push({
+          type: 'scatter3d', x: [tx], y: [0], z: [175], mode: 'text', text: [lbl + ' ' + (lbl === '风机1' ? yawDeg + '°' : '(0°)')],
+          textfont: { color: '#1e293b', size: 12 }, showlegend: false, hoverinfo: 'skip'
+        });
+      }
+    }
+    return traces;
+  }
+
+  function layoutFor(yaw, threshold){
+    return {
+      scene: {
+        xaxis: { title: '顺风 x (m)', backgroundcolor: '#f1f3f5', gridcolor: '#e2e6ea', showbackground: true, color: '#64748b' },
+        yaxis: { title: '横向 y (m)', backgroundcolor: '#f1f3f5', gridcolor: '#e2e6ea', showbackground: true, color: '#64748b' },
+        zaxis: { title: '高度 z (m)', backgroundcolor: '#ffffff', gridcolor: '#e2e6ea', showbackground: true, color: '#64748b', range: [0, 200] },
+        bgcolor: 'rgba(0,0,0,0)', aspectmode: 'manual', aspectratio: { x: 3, y: 3, z: 1 },
+        camera: { eye: Object.assign({}, BASE_EYE) }
+      },
+      title: {
+        text: '三维尾流体渲染  |  偏航 = ' + parseFloat(yaw) + '°  |  阈值 < ' + threshold + ' m/s',
+        font: { color: '#1e293b', size: 14 }, x: 0.5
+      },
+      height: 620, margin: { l: 0, r: 0, t: 50, b: 0 },
+      paper_bgcolor: 'rgba(0,0,0,0)', font: { color: '#334155' },
+      hoverlabel: { bgcolor: '#ffffff', bordercolor: '#94a3b8', font: { color: '#1e293b' } }
+    };
+  }
+
+  function render(){
+    if (sweepTimer) return;
+    const yaw = yawSel.value;
+    const threshold = parseFloat(threshR.value);
+    const opacity = parseFloat(document.getElementById('opacR').value);
+    const showSlices = document.getElementById('chkSlices').checked;
+    const showTurb = document.getElementById('chkTurbines').checked;
+    Plotly.react('plot3d', buildTraces(yaw, threshold, opacity, showSlices, showTurb), layoutFor(yaw, threshold),
+      { responsive: true, displayModeBar: 'hover', modeBarButtonsToRemove: ['lasso2d', 'select2d'] });
+  }
+
+  function spinLoop(){
+    if (!spinning) { rafId = null; return; }
+    spinAngle = (spinAngle + 0.0045) % (2 * Math.PI);
+    const r = Math.sqrt(BASE_EYE.x * BASE_EYE.x + BASE_EYE.y * BASE_EYE.y);
+    const eye = { x: r * Math.cos(spinAngle), y: r * Math.sin(spinAngle), z: BASE_EYE.z + 0.12 * Math.sin(spinAngle * 0.5) };
+    Plotly.relayout('plot3d', { 'scene.camera.eye': eye });
+    rafId = requestAnimationFrame(spinLoop);
+  }
+  function setSpin(on){
+    spinning = on;
+    document.getElementById('spinBtn').classList.toggle('active', on);
+    document.getElementById('spinBtn').textContent = on ? '暂停环绕' : '自动环绕';
+    if (on && !rafId) spinLoop();
+    else if (!on && rafId) { cancelAnimationFrame(rafId); rafId = null; }
+  }
+
+  const sweepBtn = document.getElementById('sweepBtn');
+  function startSweep(){
+    if (sweepTimer) { stopSweep(); return; }
+    sweepBtn.textContent = '停止扫描'; sweepBtn.classList.add('active');
+    setSpin(false);
+    const threshold = parseFloat(threshR.value);
+    const opacity = parseFloat(document.getElementById('opacR').value);
+    const showSlices = document.getElementById('chkSlices').checked;
+    const showTurb = document.getElementById('chkTurbines').checked;
+    let idx = 0, dir = 1;
+    Plotly.react('plot3d', buildTraces(keys[0], threshold, opacity, showSlices, showTurb), layoutFor(keys[0], threshold),
+      { responsive: true, displayModeBar: 'hover', modeBarButtonsToRemove: ['lasso2d', 'select2d'] });
+    sweepTimer = setInterval(() => {
+      idx += dir;
+      if (idx >= keys.length - 1) { idx = keys.length - 1; dir = -1; }
+      if (idx <= 0) { idx = 0; dir = 1; }
+      const k = keys[idx];
+      yawSel.value = k;
+      Plotly.react('plot3d', buildTraces(k, threshold, opacity, showSlices, showTurb), layoutFor(k, threshold),
+        { responsive: true, displayModeBar: 'hover', modeBarButtonsToRemove: ['lasso2d', 'select2d'] });
+    }, 420);
+  }
+  function stopSweep(){
+    if (sweepTimer) { clearInterval(sweepTimer); sweepTimer = null; }
+    sweepBtn.textContent = '偏航扫描'; sweepBtn.classList.remove('active');
+    render();
+  }
+
+  yawSel.onchange = () => { if (sweepTimer) stopSweep(); render(); };
+  document.getElementById('opacR').oninput = render;
+  document.getElementById('chkSlices').onchange = render;
+  document.getElementById('chkTurbines').onchange = render;
+  document.getElementById('spinBtn').onclick = () => { if (sweepTimer) stopSweep(); setSpin(!spinning); };
+  sweepBtn.onclick = () => { sweepTimer ? stopSweep() : startSweep(); };
+  plot.addEventListener('mousedown', () => { if (spinning) setSpin(false); });
+
+  render();
+  setSpin(true);
+})();
+</script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

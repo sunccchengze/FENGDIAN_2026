@@ -1,0 +1,455 @@
+/* 全站精密浅色母版：沿用尾流页灰阶、Geist 排版与克制玻璃材质。 */
+:root {
+  --shell-canvas: #fafafa;
+  --shell-panel: rgba(255, 255, 255, 0.78);
+  --shell-panel-solid: rgba(255, 255, 255, 0.92);
+  --shell-panel-soft: rgba(247, 250, 248, 0.78);
+  --shell-ink: #171717;
+  --shell-body: #4d4d4d;
+  --shell-mute: #888888;
+  --shell-line: rgba(23, 23, 23, 0.09);
+  --shell-line-strong: rgba(23, 23, 23, 0.17);
+  --shell-green: #276c55;
+  --shell-green-soft: #d9eee5;
+  --shell-blue: #0070f3;
+  --shell-sans: "Geist", "DengXian", "等线", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --shell-serif: "Songti SC Black", "Songti SC", "STSong", "STZhongsong", "SimSun", "宋体-简", serif;
+  --shell-mono: "Geist Mono", "DengXian", "等线", "PingFang SC", "Microsoft YaHei", ui-monospace, monospace;
+  --shell-glass-shadow:
+    0 0 0 1px rgba(255,255,255,.72) inset,
+    0 0 0 1px rgba(23,23,23,.055),
+    0 2px 2px rgba(23,23,23,.025),
+    0 16px 42px -24px rgba(31,75,60,.24);
+
+  /* 兼容旧页内联变量，让未单独覆盖的组件也进入同一灰阶和语义色。 */
+  --v-bg: #fafafa;
+  --v-bg-soft: #f5f5f5;
+  --v-panel: rgba(255,255,255,.88);
+  --v-ink: #171717;
+  --v-body: #4d4d4d;
+  --v-mute: #888888;
+  --v-faint: #a1a1a1;
+  --v-line: rgba(23,23,23,.09);
+  --v-line-strong: rgba(23,23,23,.17);
+  --v-teal: #0070f3;
+  --v-teal-bright: #0761d1;
+  --v-yellow: #ab570a;
+  --v-rust: #c50000;
+  --v-mono: var(--shell-mono);
+  --v-display: var(--shell-serif);
+  --v-body-font: var(--shell-sans);
+}
+
+html { background: var(--shell-canvas); }
+body {
+  background:
+    radial-gradient(900px 520px at 8% 3%, rgba(78, 179, 142, .13), transparent 62%),
+    radial-gradient(760px 480px at 92% 8%, rgba(0, 124, 240, .075), transparent 62%),
+    radial-gradient(700px 460px at 74% 58%, rgba(121, 40, 202, .035), transparent 68%),
+    linear-gradient(180deg, #f8faf9 0%, #f3f6f4 48%, #f8faf9 100%) !important;
+  background-attachment: fixed !important;
+  color: var(--shell-ink) !important;
+  font-family: var(--shell-sans) !important;
+}
+
+::selection { background: rgba(39,108,85,.18); color: var(--shell-ink); }
+
+/* 首页主标题两行只用颜色区分，字体统一为全站宋体标题栈。 */
+.hero-title,
+.hero-title .hl,
+.hero-title .hero-title-sub {
+  font-family: var(--shell-serif) !important;
+}
+
+/* 双行导航保持全站信息架构，只统一材质和字阶。 */
+.t-nav {
+  background: rgba(255,255,255,.78) !important;
+  border-bottom-color: var(--shell-line) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(145%) !important;
+  backdrop-filter: blur(20px) saturate(145%) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.8) inset !important;
+}
+.t-nav-row1, .t-nav-links-in { max-width: 1240px !important; }
+.t-nav-brand {
+  color: var(--shell-ink) !important;
+  font-family: var(--shell-sans) !important;
+  font-weight: 600 !important;
+}
+.t-nav-badge {
+  border-color: var(--shell-line) !important;
+  border-radius: 6px !important;
+  background: rgba(250,250,250,.68) !important;
+  color: var(--shell-body) !important;
+  font-family: var(--shell-mono) !important;
+  font-weight: 400 !important;
+}
+.t-nav-here, .t-nav-links a i { color: var(--shell-mute) !important; font-family: var(--shell-mono) !important; }
+.t-nav-links { border-top-color: var(--shell-line) !important; }
+.t-nav-links a {
+  color: var(--shell-body) !important;
+  font-family: var(--shell-sans) !important;
+  font-weight: 400 !important;
+}
+.t-nav-links a:hover { background: rgba(245,245,245,.72) !important; color: var(--shell-ink) !important; }
+.t-nav-links a.active { color: var(--shell-ink) !important; border-bottom-color: var(--shell-ink) !important; }
+.t-nav-links a.active i { color: var(--shell-ink) !important; }
+
+.t-container {
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+/* 子页 Hero：少量透明感和一处低饱和 mesh，不把玻璃铺满全页。 */
+.v-pg-hero {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: 0 !important;
+  padding-top: 52px !important;
+  padding-bottom: 44px !important;
+  border: 1px solid rgba(255,255,255,.82) !important;
+  border-top: 0 !important;
+  border-radius: 0 0 18px 18px !important;
+  background: linear-gradient(115deg, rgba(255,255,255,.82), rgba(255,255,255,.48)) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  backdrop-filter: blur(18px) saturate(135%);
+  box-shadow: var(--shell-glass-shadow);
+}
+.v-pg-hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 560px;
+  height: 300px;
+  right: -90px;
+  top: -150px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 24% 54%, rgba(102,194,164,.30), transparent 38%),
+    radial-gradient(circle at 54% 46%, rgba(0,124,240,.17), transparent 42%),
+    radial-gradient(circle at 78% 52%, rgba(121,40,202,.09), transparent 38%);
+  filter: blur(30px) saturate(110%);
+}
+.v-pg-tag {
+  color: var(--shell-body) !important;
+  font-family: var(--shell-mono) !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+.v-pg-title {
+  color: var(--shell-ink) !important;
+  font-family: var(--shell-serif) !important;
+  font-weight: 600 !important;
+  letter-spacing: -1.2px !important;
+}
+.v-pg-sub, .v-pg-note { color: var(--shell-body) !important; font-family: var(--shell-sans) !important; }
+
+/* 玻璃只用于一级工作面；嵌套数据格保持平面，避免玻璃滥用。 */
+.v-workbench-panel,
+.v-control-card,
+.farm-card {
+  border: 1px solid rgba(255,255,255,.84) !important;
+  border-radius: 14px !important;
+  background: var(--shell-panel) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(140%) !important;
+  backdrop-filter: blur(20px) saturate(140%) !important;
+  box-shadow: var(--shell-glass-shadow) !important;
+}
+.v-plots-container {
+  border: 1px solid rgba(255,255,255,.86) !important;
+  border-radius: 14px !important;
+  background: var(--shell-panel-solid) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(125%) !important;
+  backdrop-filter: blur(10px) saturate(125%) !important;
+  box-shadow: var(--shell-glass-shadow) !important;
+}
+
+.cause-bar,
+.ctl-bar,
+.yaw-controls,
+.dash-controls,
+.strat-bar,
+.mode-bar,
+.farm-controls {
+  background: rgba(250,250,250,.56) !important;
+  border-color: var(--shell-line) !important;
+}
+.cb-label {
+  border-radius: 100px !important;
+  background: var(--shell-ink) !important;
+  color: #fff !important;
+  font-family: var(--shell-sans) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+}
+.cb-text, .plot-note, .step-desc, .l-details, .dk-sub { color: var(--shell-body) !important; }
+.cb-pill, .unit-tag, .yaw-badge {
+  border-color: var(--shell-line) !important;
+  border-radius: 100px !important;
+  background: rgba(255,255,255,.72) !important;
+  color: var(--shell-body) !important;
+  font-family: var(--shell-mono) !important;
+}
+
+.ledger-strip {
+  border-color: var(--shell-line) !important;
+  background: transparent !important;
+}
+.ledger-col { border-color: var(--shell-line) !important; background: transparent !important; }
+.l-meta, .plot-tick, .step-idx, .ctl-label { color: var(--shell-mute) !important; font-family: var(--shell-mono) !important; }
+.l-title, .step-title, .plot-head { color: var(--shell-ink) !important; }
+.l-val, .stat-v, .fk-v {
+  color: var(--shell-ink) !important;
+  font-family: var(--shell-mono) !important;
+  font-weight: 500 !important;
+  font-variant-numeric: tabular-nums;
+}
+.kpi-delta.up, .fk-v.up { color: var(--shell-green) !important; }
+.kpi-delta.down, .fk-v.down { color: #c50000 !important; }
+
+.v-btn,
+.action-button,
+.farm-seg button {
+  border: 1px solid var(--shell-line-strong) !important;
+  border-radius: 100px !important;
+  background: rgba(255,255,255,.76) !important;
+  color: var(--shell-ink) !important;
+  font-family: var(--shell-sans) !important;
+  font-weight: 500 !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.7) inset;
+}
+.v-btn:hover,
+.action-button:hover,
+.farm-seg button:hover { border-color: var(--shell-ink) !important; transform: translateY(-1px); }
+.v-btn.active,
+.action-button.active,
+.farm-seg button.active {
+  border-color: var(--shell-ink) !important;
+  background: var(--shell-ink) !important;
+  color: #fff !important;
+}
+.v-btn:focus-visible,
+.action-button:focus-visible,
+.farm-seg button:focus-visible { outline: 2px solid var(--shell-blue) !important; outline-offset: 2px; }
+
+.v-select, .v-input, select, input[type="number"], input[type="text"] {
+  border-color: var(--shell-line-strong) !important;
+  border-radius: 8px !important;
+  background-color: rgba(255,255,255,.78) !important;
+  color: var(--shell-ink) !important;
+}
+
+.plot-head, .v-table-head { border-color: var(--shell-line) !important; }
+.v-table, .nature-table { color: var(--shell-body) !important; }
+.v-table th, .nature-table th { color: var(--shell-ink) !important; background: rgba(250,250,250,.62) !important; }
+.v-table td, .v-table th, .nature-table td, .nature-table th { border-color: var(--shell-line) !important; }
+.code-block, .code {
+  border-color: var(--shell-line) !important;
+  border-radius: 10px !important;
+  background: rgba(245,247,246,.82) !important;
+  color: var(--shell-ink) !important;
+}
+
+/* 首页导览卡统一列宽；分组只负责语义，不再改变卡片宽度。 */
+.dir-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+
+/* 首页本来已有玻璃，只校准材质，不重排内容。 */
+.terminal-panel {
+  border-color: rgba(255,255,255,.86) !important;
+  background-color: rgba(255,255,255,.66) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(150%) !important;
+  backdrop-filter: blur(22px) saturate(150%) !important;
+  box-shadow: var(--shell-glass-shadow) !important;
+}
+.viewport-panel {
+  border-color: rgba(255,255,255,.72) !important;
+  box-shadow: var(--shell-glass-shadow) !important;
+}
+.dir-card, .mod-cell, .arch-node, .team-step, .fig-frame, .stat-cell {
+  border-color: var(--shell-line) !important;
+  background: rgba(255,255,255,.72) !important;
+}
+
+.farm-stage {
+  border-color: var(--shell-line) !important;
+  background: linear-gradient(180deg, rgba(247,250,248,.92), rgba(232,239,235,.9)) !important;
+}
+.farm-legend, .farm-hint { border-color: var(--shell-line) !important; background: rgba(255,255,255,.72) !important; backdrop-filter: blur(12px); }
+.fkpi { background: rgba(250,250,250,.52) !important; border-color: var(--shell-line) !important; }
+
+.t-footer,
+.wake-footer {
+  border-top-color: var(--shell-line) !important;
+  background: rgba(247,250,248,.76) !important;
+  color: var(--shell-body) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  backdrop-filter: blur(16px) saturate(130%);
+}
+.footer-brand, .footer-title { color: var(--shell-ink) !important; font-family: var(--shell-serif) !important; }
+
+/* 尾流页专项：三张动态图同排同高，静态证据区不再切成刺眼纯白。 */
+.workbench {
+  border: 1px solid rgba(255,255,255,.86) !important;
+  background: rgba(255,255,255,.74) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(140%) !important;
+  backdrop-filter: blur(20px) saturate(140%) !important;
+  box-shadow: var(--shell-glass-shadow) !important;
+}
+.status-row { background: rgba(250,250,250,.52) !important; border-color: var(--shell-line) !important; }
+.metric { border-color: var(--shell-line) !important; }
+.metric-detail { border-color: var(--shell-line) !important; }
+.control-row { border-color: var(--shell-line) !important; }
+
+.dynamic-section {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+}
+.dynamic-section > .section-intro { grid-column: 1 / -1; }
+.dynamic-section > .plot-card,
+.dynamic-section > .plot-pair > .plot-card { min-width: 0; height: 100%; }
+.dynamic-section > .plot-pair { display: contents !important; }
+.dynamic-section .plot-card + .plot-card { margin-top: 0 !important; }
+.dynamic-section .plot-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,.88) !important;
+  background: rgba(255,255,255,.88) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  backdrop-filter: blur(10px) saturate(120%);
+  box-shadow: var(--shell-glass-shadow) !important;
+}
+.dynamic-section .plot-body { flex: 1 0 auto; min-width: 0; }
+.dynamic-section .plot-header { min-height: 66px; align-items: flex-start; }
+.dynamic-section .plot-meta { white-space: normal !important; text-align: right; }
+.dynamic-section .plot-caption { min-height: 92px; }
+#fieldPlot, #powerPlot, #splitPlot { height: 330px !important; }
+
+.evidence-section::before {
+  background:
+    radial-gradient(700px 300px at 88% 8%, rgba(102,194,164,.09), transparent 68%),
+    rgba(244,248,246,.82) !important;
+  border-top-color: var(--shell-line) !important;
+}
+.evidence-card {
+  border-color: rgba(255,255,255,.88) !important;
+  background: rgba(255,255,255,.86) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  backdrop-filter: blur(10px) saturate(120%);
+  box-shadow: var(--shell-glass-shadow) !important;
+}
+.evidence-caption { border-color: var(--shell-line) !important; }
+
+/* Nature 出版证据：同页图在桌面端等高横排，统一图窗完整显示原始纵横比。 */
+.nature-row {
+  --nature-media-height: 310px;
+  --nature-title-track: minmax(64px, auto);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+  margin-top: 36px;
+  margin-bottom: 48px;
+}
+.nature-row--1 {
+  --nature-media-height: 460px;
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+}
+.nature-row--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.nature-row--3 {
+  --nature-media-height: 250px;
+  --nature-title-track: minmax(72px, auto);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.nature-row--4 {
+  --nature-media-height: 190px;
+  --nature-title-track: minmax(80px, auto);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.nature-card {
+  min-width: 0;
+  height: 100%;
+  margin: 0 !important;
+  padding: 16px !important;
+  display: grid;
+  grid-template-rows: var(--nature-title-track) var(--nature-media-height) 1fr;
+  align-content: stretch;
+  overflow: hidden;
+}
+.nature-row--compact .nature-card { padding: 14px !important; }
+.nature-card .plot-head {
+  min-width: 0;
+  margin-bottom: 0 !important;
+  padding: 4px 2px 14px !important;
+  line-height: 1.45;
+}
+.nature-card > img {
+  display: block;
+  width: 100% !important;
+  max-width: none !important;
+  height: var(--nature-media-height) !important;
+  margin: 0 auto !important;
+  object-fit: contain;
+  align-self: center;
+  border: 1px solid var(--shell-line) !important;
+  border-radius: 4px;
+  background: rgba(255,255,255,.72);
+}
+.nature-card .plot-note {
+  min-width: 0;
+  margin-top: 0 !important;
+  padding: 14px 2px 2px;
+  border-top: 1px solid var(--shell-line);
+  line-height: 1.6;
+}
+.nature-card--caption {
+  padding: 0 !important;
+  grid-template-rows: var(--nature-media-height) 1fr;
+}
+.nature-card--caption > img {
+  border: 0 !important;
+  border-radius: 0;
+}
+.nature-card--caption .evidence-caption {
+  min-width: 0;
+  align-self: stretch;
+}
+
+@media (max-width: 1100px) {
+  .dynamic-section { grid-template-columns: 1fr !important; }
+  .dynamic-section .plot-caption { min-height: auto; }
+  .dir-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .nature-row--3, .nature-row--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .dir-grid { grid-template-columns: 1fr !important; }
+  .nature-row,
+  .nature-row--1,
+  .nature-row--2,
+  .nature-row--3,
+  .nature-row--4 {
+    --nature-media-height: 250px;
+    --nature-title-track: auto;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px;
+  }
+  .nature-row--1 { --nature-media-height: 320px; }
+  .v-pg-hero { margin-left: 12px !important; margin-right: 12px !important; padding-left: 20px !important; padding-right: 20px !important; }
+  .v-workbench-panel, .v-control-card, .v-plots-container, .farm-card { border-radius: 12px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .v-pg-hero, .v-workbench-panel, .v-control-card, .v-plots-container, .farm-card, .workbench, .plot-card, .evidence-card {
+    background: #fff !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+}

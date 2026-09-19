@@ -1,7 +1,36 @@
-# 0824-2026 · 风电场 3A 数字孪生（方案与设计仓）
+# Dachuang-SZLS · 风电场偏航优化大创项目 · 可视化与数字孪生（唯一仓库）
+
+> 西安交通大学 · 国家重点领域大学生创新训练项目《融合数据-物理驱动的风电流场智能感知与智能调控研究》（2026.04–2027.06）
+> 可视化与数字孪生模块负责人：孙承泽 ｜ 导师：李良星 副教授
+>
+> **2026-09-19 起本仓是项目可视化线的唯一仓库**：前身仓库 `wind_farm_viz`（科研可视化平台，2026-07 底 → 09-14）
+> 已连同全部提交历史迁入 `viz/`，原仓库由用户删除。迁入台账见 [docs/12](docs/12_两仓归一_wind_farm_viz迁入与分支清理.md)。
+
+## 🗂 仓库结构：一条证据链、两套平台
+
+| 目录 | 平台 | 状态 | 入口 |
+|---|---|---|---|
+| [`viz/`](viz/README.md) | **科研可视化平台**（15 页浅色瑞士网格科研台，FLORIS/POD/PPO 真值全量呈现） | **封板 v1.3-final**（2026-08-19），只修 bug/死链/数据错 | `cd viz && python3 -m http.server 8000 --directory site`；线上 [wind-farm-viz.pages.dev](https://wind-farm-viz.pages.dev/)（Pages 需重连本仓，见 docs/12 §4.2） |
+| [`twin/`](twin/README.md) | **AEOLUS TWIN 数字孪生**（影院级深色 3D Web 大屏，申请书阶段五法定交付形态） | 持续迭代（R40）；**当前 3×3，组会决议改单列三机**，3×3 留档 tag `twin-3x3-archive-20260919` | `cd twin && npm install && npm run dev`；改造方案 [docs/13](docs/13_0919组会决议_三风机改造方案与3x3留档.md) |
+| [`materials/`](materials/README.md) | 对外材料（阶段总结 / 答辩 PPT / 申报） | 9 月阶段总结已入库 | — |
+| [`docs/`](docs/) | 数字孪生线文档 01–13 + `research/` 历轮记录与截图证据 | — | — |
+| [`skills/`](skills/README.md) | 精选 27 项技能（来源 `-SKILL-` 仓库） | — | — |
+
+> 科研平台负责"已验证"，孪生平台负责"将被验收"：数据同源、口径全局唯一、钦定数字只有一份出处。
+> 两平台关系的完整表述见 `materials/孙承泽——9月工作阶段总结.docx` §五。
+
+## 🧭 2026-09-19 组会后的三件事
+
+1. **仓库归一**（已完成）：wind_farm_viz 183 提交 → `viz/`；本仓多余分支清理，只留 `main` + 工作分支；
+2. **数字孪生 3×3 → 单列三风机**（方案已出，下一轮动工）：布局可切换、3×3 不删，见 docs/13；
+3. **材料与答辩 PPT**（新增职责）：入口 `materials/`。
+
+---
+
+# 以下为数字孪生线（`twin/`）门面 · 0824-2026 起
 
 > 目标：为西安交大风电场偏航优化项目打造**影院级、深色系、3D Web 数字孪生**（对标 51World/数字冰雹/Omniverse 的观感），部署至 Cloudflare Pages。
-> 现役科研台 [wind-farm-viz.pages.dev](https://wind-farm-viz.pages.dev/) 保持封板不动；本仓是它的**暗色旗舰姊妹篇**。
+> 科研台 `viz/`（原 [wind-farm-viz.pages.dev](https://wind-farm-viz.pages.dev/)）保持封板不动；`twin/` 是它的**暗色旗舰姊妹篇**。
 
 ## 📚 文档导航
 | 文件 | 内容 |
@@ -54,3 +83,6 @@
 | [docs/research/](docs/research/) | 历轮 round*.md（11–38）+ [shots/](docs/research/shots/) 截图证据链 |
 | [HANDOFF_NEXT.md](HANDOFF_NEXT.md) | 当前阶段交接（开放项与红线）；[HANDOFF.md](HANDOFF.md) 为第 2 任历史交接 |
 | [twin/README.md](twin/README.md) | 演示平台运行/自检/调试键/口径说明 |
+| [docs/12_两仓归一_wind_farm_viz迁入与分支清理.md](docs/12_两仓归一_wind_farm_viz迁入与分支清理.md) | **2026-09-19 两仓归一台账**：来源分支、filter-repo 三步、旧 SHA 对照表（附件 tsv）、Cloudflare Pages 重连、分支清理、3×3 留档 tag 用法 |
+| [docs/13_0919组会决议_三风机改造方案与3x3留档.md](docs/13_0919组会决议_三风机改造方案与3x3留档.md) | **9/19 组会决议** + 「3×3 → 单列三风机」逐文件改造清单（布局可切换设计、1×3 oracle、验收门槛） |
+| [materials/README.md](materials/README.md) | 对外材料入口：9 月阶段总结 docx、历史 PPT/讲稿索引、写材料数字口径 |

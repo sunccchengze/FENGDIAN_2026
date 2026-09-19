@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Master Dashboard · 孙承泽</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links"><a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a></div></div></nav>
+<section class="wrap pg-hero"><h1>🧭 Master Dashboard</h1><p>数据-物理-控制闭环审查面板 · 验证 数据→插值代理→优化结果 完整链路</p></section>
+<main class="wrap">
+  <div class="stats-bar" style="grid-template-columns:repeat(5,1fr)">
+    <div class="stat-card"><p class="stat-number" id="k1">–</p><p class="stat-label">工况数</p></div>
+    <div class="stat-card"><p class="stat-number" id="k2">–</p><p class="stat-label">风速范围</p></div>
+    <div class="stat-card"><p class="stat-number" id="k3">–</p><p class="stat-label">偏航角范围</p></div>
+    <div class="stat-card"><p class="stat-number" id="k4">–</p><p class="stat-label">最大总功率</p></div>
+    <div class="stat-card"><p class="stat-number">FLORIS</p><p class="stat-label">数据源</p></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="controls" id="dBu"></div><div class="chart" id="dCurve"></div>
+      <div class="note">接口：predict_power(yaw, U) — 未来 PINN 替换零改动。当前为 FLORIS 插值代理。</div></div>
+    <div class="card"><div style="background:#04070f;border:1px solid var(--line);border-radius:12px;padding:12px;color:#bfe0ff;font-size:12px;white-space:pre-wrap" id="dJson"></div>
+      <div class="note">optimizer_result.json（洪祖名结果覆盖前为 FLORIS 占位）。</div></div>
+  </div>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><img src="assets/img/wake_animation.gif" style="width:100%;border-radius:12px"><div class="note">偏航角扫描动画（现有）。</div></div>
+    <div class="card"><div class="note" style="margin-top:0">
+      <b>数据接口状态</b><br>
+      • <code>cases.csv</code>：单风速(8m/s) ✅<br>
+      • <code>cases_multi.csv</code>：多风速 ✅<br>
+      • <code>fields_3d/</code>：3D 流场 ✅<br>
+      • <code>cases_array.csv</code>：3×3 阵列 ✅<br>
+      • <code>surrogate_model.py</code>：插值接口稳定，待 PINN 替换 ✅<br>
+      • <b>闭环状态</b>：数据已接入 → 插值已运行 → 优化结果待接入 → 可视化完整。
+    </div></div>
+  </div>
+</main>
+<footer class="wrap">孙承泽 · 可视化模块</footer>
+<script src="assets/data.js"></script><script src="assets/js/charts.js"></script>
+<script>const m=window.WIND_DATA,C=window.CHARTS;
+document.getElementById("k1").textContent=m.wind_speeds.length*m.yaw_angles.length;
+document.getElementById("k2").textContent=m.wind_speeds[0]+"~"+m.wind_speeds[m.wind_speeds.length-1]+" m/s";
+document.getElementById("k3").textContent=m.yaw_angles[0]+"°~"+m.yaw_angles[m.yaw_angles.length-1]+"°";
+let maxP=0;m.ptot.forEach(r=>r.forEach(v=>{if(v>maxP)maxP=v;}));
+document.getElementById("k4").textContent=Math.round(maxP);
+let U=m.wind_speeds[1];const box=document.getElementById("dBu");
+m.wind_speeds.forEach(u=>{const b=document.createElement("button");b.className="btn"+(u===U?" active":"");b.textContent=u+" m/s";
+  b.onclick=()=>{U=u;[...box.children].forEach(x=>x.classList.remove("active"));b.classList.add("active");render();};box.appendChild(b);});
+function render(){const i=m.wind_speeds.indexOf(U);
+  C.lineChart(document.getElementById("dCurve"),{xs:m.yaw_angles,series:[{name:"总功率",color:"#00cc96",data:m.ptot[i]}]});}
+render();
+document.getElementById("dJson").textContent=JSON.stringify(window.WIND_DATA.opt,null,2);</script>
+</body></html>

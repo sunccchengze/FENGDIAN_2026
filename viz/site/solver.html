@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>优化求解器 · 风电场偏航优化科研平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="assets/vendor/plotly/plotly-2.35.2.min.js"></script>
+  <script src="assets/js/plotly-theme.js"></script>
+  <style>
+    /* 
+     * 彻彻底底对标 Vercel + Taste-Skill 浅色学术工作台设计系统 (Light Mode)
+     * 极细发丝强线 (1px Line) ➕ 学术精简数据带 (Academic Ledger Strip) ➕ 极致等线/宋体黑分流
+     */
+
+    :root {
+      --v-bg: #f8f9fa;          /* 莫兰迪米白工程纸灰绿底 */
+      --v-bg-soft: #f1f3f5;     /* 面板亚光白灰 */
+      --v-bg-subtle: #e9ecef;   /* 分隔底灰 */
+      --v-panel: #ffffff;       /* 纯白几何板点 */
+      --v-panel-hover: #fcfdfe; /* 丝滑悬浮反光白 */
+      --v-ink: #1e293b;         /* 钛灰深黑墨水主字 */
+      --v-body: #334155;        /* 正文字色 */
+      --v-mute: #64748b;        /* 二级文字与注释 */
+      --v-faint: #94a3b8;       /* 辅助线及底标文本 */
+      --v-line: rgba(30, 41, 59, 0.11);
+      --v-line-strong: rgba(30, 41, 59, 0.22);
+      --v-teal: #2d7569;
+      --v-teal-bright: #1e675c; /* 高饱和深海钛绿高亮 */
+      --v-yellow: #a87817;      /* 暖琥珀金 */
+      --v-rust: #ad5038;        /* 铁砖红阶灰 */
+      --v-mono: 'DM Mono', ui-monospace, 'JetBrains Mono', Consolas, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", monospace;
+      --v-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Songti SC Black", "Songti SC", "STSong", "STZhongsong", "SimSun", "宋体-简", serif;
+      --v-body-font: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--v-bg);
+      color: var(--v-ink);
+      font-family: var(--v-body-font);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .sec-title, .l-title, .cb-label, .yaw-label {
+      font-family: var(--v-display);
+    }
+    body, p, li, td, th, span, div, a, button, .cb-text, .note, .t-footer, .stat-label, .kpi-delta, .l-details {
+      font-family: var(--v-body-font);
+    }
+    .num, .stat-number, .l-val, .yaw-badge, .cb-pill, .step-idx, .t-nav-badge {
+      font-family: var(--v-mono);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* 极简工科导航条 */
+    .t-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--v-line);
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+    .t-nav-inner {
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .t-nav-brand {
+      font-family: var(--v-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--v-ink);
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .t-nav-badge {
+      font-family: var(--v-mono);
+      font-size: 10.5px;
+      color: var(--v-teal-bright);
+      padding: 3px 8px;
+      border: 1px solid var(--v-line-strong);
+      border-radius: 3px;
+      background: var(--v-bg-soft);
+      font-weight: 700;
+    }
+
+    /* 容器控制 */
+    .t-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Hero：瑞士网格去 Emoji 页眉 (无底部多余横线) */
+    .v-pg-hero {
+      padding-top: 48px; padding-bottom: 32px;
+      border-bottom: none;
+    }
+    .v-pg-tag {
+      font-family: var(--v-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--v-yellow);
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .v-pg-title {
+      font-size: clamp(28px, 3.8vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      color: var(--v-ink);
+      margin-bottom: 8px;
+    }
+    .v-pg-sub {
+      font-size: 14.5px;
+      color: var(--v-body);
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    /* 因果说明条 - 瑞士发丝网格 (严格左对齐，单行永不换行) */
+    .cause-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 32px;
+      background: #ffffff;
+      border-top: 1px solid var(--v-line-strong);
+      border-left: 1px solid var(--v-line-strong);
+      border-right: 1px solid var(--v-line-strong);
+      border-bottom: none;
+      border-radius: 6px 6px 0 0;
+      flex-wrap: nowrap;
+      margin: 0;
+      width: 100%;
+    }
+    .cb-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      min-width: 0;
+    }
+    .cb-label {
+      font-family: var(--v-display) !important;
+      font-size: 11.5px !important;
+      font-weight: 750 !important;
+      color: #ffffff !important;
+      background: var(--v-teal-bright) !important;
+      padding: 5px 12px !important;
+      border-radius: 2px !important;
+      letter-spacing: 0.08em !important;
+      display: inline-block;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .cb-text {
+      font-size: 13px;
+      color: var(--v-body);
+      line-height: 1.5;
+      flex: 1;
+      min-width: 0;
+      word-wrap: break-word;
+    }
+    .cb-pill {
+      font-family: var(--v-mono);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 2px;
+      border: 1px solid var(--v-line-strong);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* 学术指标横向精简数据带 (Academic Ledger Strip) */
+    .ledger-strip {
+      border: 1px solid var(--v-line-strong);
+      border-top: none;
+      background: #ffffff;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 0 0 32px 0;
+      border-radius: 0 0 6px 6px;
+      overflow: hidden;
+    }
+    .ledger-col {
+      padding: 32px 28px;
+      border-right: 1px solid var(--v-line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+      word-wrap: break-word;
+    }
+    .ledger-col:last-child { border-right: none; }
+    .l-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-family: var(--v-mono);
+      font-size: 10.5px;
+      color: var(--v-mute);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .l-title {
+      font-size: 15px;
+      font-weight: 750;
+      color: var(--v-ink);
+      margin-bottom: 16px;
+      line-height: 1.35;
+    }
+    .l-val {
+      font-family: var(--v-mono);
+      font-weight: 750;
+      font-size: 38px;
+      line-height: 1;
+      color: var(--v-teal-bright);
+      margin-bottom: 20px;
+    }
+    .l-details {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-top: 14px;
+      border-top: 1px solid var(--v-line);
+      font-size: 12px;
+      color: var(--v-body);
+    }
+
+    /* 控制面板与主图表 - 与正文同 32px 边距对齐 */
+    .v-control-card {
+      background: #ffffff;
+      border: 1px solid var(--v-line-strong);
+      border-radius: 6px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .yaw-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--v-line);
+      margin-bottom: 28px;
+    }
+    .v-btn {
+      font-family: var(--v-body-font);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 8px 16px;
+      background: var(--v-bg-soft);
+      border: 1px solid var(--v-line-strong);
+      border-radius: 3px;
+      color: var(--v-ink);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .v-btn:hover {
+      background: var(--v-ink);
+      color: #fff;
+      border-color: var(--v-ink);
+      transform: translateY(-2px);
+    }
+    .v-btn:active {
+      transform: translateY(0) scale(0.98);
+    }
+    .v-btn:focus-visible {
+      outline: 2px solid var(--v-teal-bright);
+      outline-offset: 2px;
+    }
+    .v-btn.active {
+      background: var(--v-teal-bright);
+      color: #fff;
+      border-color: var(--v-teal-bright);
+    }
+
+    /* Nature 规范三线表 */
+    table.nature-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: center;
+      margin: 14px 0;
+    }
+    table.nature-table th {
+      border-top: 2px solid var(--v-ink);
+      border-bottom: 1px solid var(--v-ink);
+      padding: 10px 8px;
+      font-weight: 750;
+      color: var(--v-ink);
+      background: #fff;
+    }
+    table.nature-table td {
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--v-line);
+      color: var(--v-body);
+    }
+    table.nature-table tr:last-child td {
+      border-bottom: 2px solid var(--v-ink);
+    }
+
+    /* 严谨居中对称页脚 */
+    .t-footer {
+      border-top: 1px solid var(--v-line-strong);
+      padding: 60px 0;
+      margin-top: 80px;
+      font-size: 12.5px;
+      color: var(--v-body);
+      line-height: 1.8;
+      background: #ffffff;
+      text-align: center;
+    }
+    .footer-inner-centered {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 8px;
+    }
+    .footer-brand {
+      color: var(--v-ink);
+      font-weight: 750;
+      font-family: var(--v-display);
+      font-size: 15px;
+    }
+
+    @media (max-width: 1024px) {
+      .ledger-strip { grid-template-columns: repeat(2, 1fr); }
+      .ledger-col { border-bottom: 1px solid var(--v-line); }
+      .ledger-col:last-child { border-bottom: none; }
+    }
+    @media (max-width: 640px) {
+      .ledger-strip { grid-template-columns: 1fr; }
+      .t-nav-inner, .t-container { padding: 0 20px; }
+      .cause-bar { padding: 14px 20px; }
+      .v-control-card { padding: 20px 20px; }
+      .yaw-controls { flex-direction: column; align-items: flex-start; }
+    }
+      /* ===== 统一双行导航模块条（系统级覆盖，全站同一套，杜绝指示冲突） ===== */
+    .t-nav { height: auto; }
+    .t-nav-inner { max-width: none; width: 100%; margin: 0; padding: 0; display: block; }
+    .t-nav-row1 { max-width: 1240px; margin: 0 auto; padding: 13px 32px 11px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .t-nav-here { font-family: var(--v-mono); font-size: 11px; font-weight: 700; color: var(--v-mute); letter-spacing: 0.06em; white-space: nowrap; }
+    .t-nav-links { border-top: 1px solid var(--v-line); }
+    .t-nav-links-in { max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: stretch; overflow-x: auto; scrollbar-width: none; }
+    .t-nav-links-in::-webkit-scrollbar { display: none; }
+    .t-nav-links a { font-family: var(--v-body-font); font-size: 12px; font-weight: 600; color: var(--v-mute); text-decoration: none; padding: 9px 9px 8px; white-space: nowrap; border-bottom: 2px solid transparent; display: inline-flex; gap: 6px; align-items: baseline; }
+    .t-nav-links a i { font-style: normal; font-family: var(--v-mono); font-size: 9.5px; font-weight: 700; color: var(--v-faint); letter-spacing: 0.05em; }
+    .t-nav-links a:hover { color: var(--v-ink); background: var(--v-bg-soft); }
+    .t-nav-links a.active { color: var(--v-teal-bright); border-bottom-color: var(--v-teal-bright); }
+    .t-nav-links a.active i { color: var(--v-teal-bright); }
+    @media (max-width: 640px) { .t-nav-row1 { padding: 12px 20px 10px; } }
+  </style>
+  <link rel="stylesheet" href="css/unified-glass.css">
+</head>
+<body>
+
+<!-- 顶部工科导航条 -->
+<nav class="t-nav">
+  <div class="t-nav-inner">
+    <div class="t-nav-row1">
+      <a href="index.html" class="t-nav-brand" style="text-decoration:none;color:inherit">
+        <span>风电场偏航优化平台</span>
+        <span class="t-nav-badge">SUN CHENGZE · VISUALIZATION</span>
+      </a>
+      <span class="t-nav-here" id="tNavHere"></span>
+    </div>
+    <div class="t-nav-links"><div class="t-nav-links-in">
+      <a href="index.html" data-nav-code="00" data-nav-name="首页"><i>00</i>首页</a>
+      <a href="wake.html" data-nav-code="01" data-nav-name="尾流"><i>01</i>尾流</a>
+      <a href="optimization.html" data-nav-code="02" data-nav-name="优化"><i>02</i>优化</a>
+      <a href="solver.html" data-nav-code="03" data-nav-name="求解"><i>03</i>求解</a>
+      <a href="dashboard.html" data-nav-code="04" data-nav-name="看板"><i>04</i>看板</a>
+      <a href="array.html" data-nav-code="05" data-nav-name="阵列"><i>05</i>阵列</a>
+      <a href="heatmap.html" data-nav-code="06" data-nav-name="热力"><i>06</i>热力</a>
+      <a href="pod.html" data-nav-code="07" data-nav-name="POD"><i>07</i>POD</a>
+      <a href="model.html" data-nav-code="08" data-nav-name="精度"><i>08</i>精度</a>
+      <a href="power_tracking.html" data-nav-code="09" data-nav-name="跟踪"><i>09</i>跟踪</a>
+      <a href="3d_farm.html" data-nav-code="10" data-nav-name="3D风场"><i>10</i>3D风场</a>
+      <a href="3d_surface.html" data-nav-code="11" data-nav-name="3D曲面"><i>11</i>3D曲面</a>
+      <a href="3d_volume.html" data-nav-code="12" data-nav-name="3D体"><i>12</i>3D体</a>
+      <a href="interface.html" data-nav-code="13" data-nav-name="契约"><i>13</i>契约</a>      <a href="overview.html" data-nav-code="MAP" data-nav-name="系统总览"><i>MAP</i>总览</a>
+    </div></div>
+  </div>
+</nav>
+
+<!-- Hero 页眉 -->
+<header class="v-pg-hero t-container">
+  <div class="v-pg-tag">03 / REALTIME OPTIMIZATION SOLVER · REGULAR GRID INTERPOLATOR</div>
+  <h1 class="v-pg-title">实时偏航优化求解与算法评估</h1>
+  <p class="v-pg-sub">
+    实时解算任意进向风速下的全局最优偏航策略，横向评估双线性插值代理与 SLSQP / DE 算法的高阶计算开销对照比。
+  </p>
+</header>
+
+<main class="t-container">
+
+  <!-- 因果说明条 -->
+  <div class="cause-bar">
+    <div class="cb-left">
+      <span class="cb-label">求解常识</span>
+      <span class="cb-text" id="solStatusText">在当前 <b>8.0 m/s</b> 额定进速下，优化器秒解推荐最优偏航角为 <b>+25°</b>；串列总功率达 <b>2368 kW (+8.13% / +178 kW)</b>，较 SLSQP 算法加速 ≈700 倍。</span>
+    </div>
+    <span class="cb-pill" id="solStatusPill" style="background:rgba(30,103,92,0.10);color:var(--v-teal-bright)">双线性极速响应</span>
+  </div>
+
+  <!-- 一体化横向学术精简指标数据带 (.ledger-strip) -->
+  <div class="ledger-strip">
+    <div class="ledger-col">
+      <div>
+        <div class="l-meta"><span>01 / WIND CONDITION</span><span style="color:var(--v-mute)">CURRENT U∞</span></div>
+        <div class="l-title">当前计算环境风速 (m/s)</div>
+        <div class="l-val" id="solWind">8.0</div>
+      </div>
+      <div class="l-details">
+        <div>标定计算来流工况</div>
+        <div id="solWindStatus" style="font-family:var(--v-mono);font-weight:700">6.0 - 12.0 m/s 域</div>
+      </div>
+    </div>
+
+    <div class="ledger-col">
+      <div>
+        <div class="l-meta"><span>02 / OPTIMAL YAW</span><span style="color:var(--v-yellow)">ARGMAX</span></div>
+        <div class="l-title">最优推荐偏航角 γ* (°)</div>
+        <div class="l-val" style="color:var(--v-yellow)" id="solYaw">+25°</div>
+      </div>
+      <div class="l-details">
+        <div>全局功率峰值工况</div>
+        <div style="font-family:var(--v-mono);font-weight:700">argmax (P₁ + P₂)</div>
+      </div>
+    </div>
+
+    <div class="ledger-col">
+      <div>
+        <div class="l-meta"><span>03 / MAX POWER</span><span style="color:var(--v-teal-bright)">PEAK SUM</span></div>
+        <div class="l-title">全场最大协同出电 (kW)</div>
+        <div class="l-val" id="solPow">2368</div>
+      </div>
+      <div class="l-details">
+        <div>相对自然对风 0° 增量</div>
+        <div id="solPwrDelta" style="font-family:var(--v-mono);font-weight:700;color:var(--v-teal-bright)">+178 kW (+8.13%)</div>
+      </div>
+    </div>
+
+    <div class="ledger-col">
+      <div>
+        <div class="l-meta"><span>04 / SOLVER SPEEDUP</span><span style="color:var(--v-rust)">PERFORMANCE</span></div>
+        <div class="l-title">相对 SLSQP 提速比</div>
+        <div class="l-val" style="color:var(--v-rust)">≈700×</div>
+      </div>
+      <div class="l-details">
+        <div>相对差分进化 (DE) 提速</div>
+        <div style="font-family:var(--v-mono);font-weight:700">≈2700× (&lt;0.6 ms)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 实时求解控制台与图表 -->
+  <div class="v-control-card">
+    <div class="yaw-controls">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span class="yaw-label" style="font-size:16px;font-weight:750;color:var(--v-ink)">风速工况预设切换：</span>
+        <div class="yaw-quick" id="solU"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <span class="yaw-label" style="font-size:14.5px;font-weight:700;color:var(--v-body)">连续风速调节：</span>
+        <input type="range" id="uSlider" min="6" max="12" step="0.5" value="8" style="width:180px;accent-color:var(--v-teal-bright);cursor:pointer">
+        <span id="uSliderVal" style="font-family:var(--v-mono);font-weight:750;color:var(--v-teal-bright);font-size:16px">8.0 m/s</span>
+      </div>
+    </div>
+
+    <div id="solChart" style="height:380px"></div>
+    <div style="font-size:12.5px;color:var(--v-mute);margin-top:10px">
+      求解原理说明：遍历上游偏航区间 γ₁ ∈ [−30°, +30°]，调用双线性常规网格节点插值毫秒级测算 (P₁, P₂)，实时捕获总和功率极值。
+    </div>
+  </div>
+
+  <!-- 多优化算法计算开销对比 (Nature 规范三线表) -->
+  <section style="margin:48px 0;border-top:1px solid var(--v-line-strong);padding-top:40px">
+    <div style="margin-bottom:20px">
+      <span style="font:700 11px var(--v-mono);color:var(--v-yellow);text-transform:uppercase">01 / SOLVER PERFORMANCE BENCHMARK · NATURE THREE-LINE STYLE</span>
+      <h2 style="font-size:24px;font-weight:800;color:var(--v-ink);margin-top:4px">多优化算法收敛精度与计算开销横向对标表</h2>
+      <p style="font-size:13px;color:var(--v-body);margin-top:4px;max-width:640px">
+        实测证明：基于数据驱动双线性代理的密集网格搜索在精度 100.0% 保真的前提下，较传统梯度与进化搜索分别提升 ≈700 倍与 ≈2700 倍。
+      </p>
+    </div>
+
+    <table class="nature-table">
+      <thead>
+        <tr>
+          <th>优化算法方案</th>
+          <th>算法类别</th>
+          <th>单次搜索评估次数</th>
+          <th>求解耗时 (实测)</th>
+          <th>收敛精度 (相对最优)</th>
+          <th>工程适用场景</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>FLORIS + SLSQP (序列二次规划)</b></td>
+          <td>连续梯度规划</td>
+          <td>14 次</td>
+          <td><span style="color:var(--v-rust);font-family:var(--v-mono);font-weight:700">0.47 s</span></td>
+          <td>≈100% (达全局极峰)</td>
+          <td>离线高精基准验证</td>
+        </tr>
+        <tr>
+          <td><b>FLORIS + 差分进化 (DE 全局优化)</b></td>
+          <td>无导数进化搜索</td>
+          <td>56 次</td>
+          <td><span style="color:var(--v-rust);font-family:var(--v-mono);font-weight:700">1.77 s</span></td>
+          <td>≈100% (达全局极峰)</td>
+          <td>多峰地形复杂扫描</td>
+        </tr>
+        <tr>
+          <td><b>代理模型 + 密集网格穷举 (本项目)</b></td>
+          <td>数据驱动超快推理</td>
+          <td>61 个离散点</td>
+          <td><span style="color:var(--v-teal-bright);font-family:var(--v-mono);font-weight:800">约 0.6 ms (提速 ≈700× / ≈2700×)</span></td>
+          <td><span style="color:var(--v-teal-bright);font-weight:750">100.0% (精确命中最优)</span></td>
+          <td><span style="color:var(--v-teal-bright);font-weight:750">风电场毫秒级实时闭环</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--v-mute);margin-top:10px">
+      实测基线口径：本地环境 (Python 3.11 · FLORIS 4.6.6 · SciPy；SLSQP ftol=1e-3；DE popsize=10 / maxiter=12 / seed=1)，执行 <code>site/benchmark_solver.py</code> 可独立复跑。
+    </p>
+  </section>
+
+</main>
+
+<!-- 页脚 (百分百居中对称排版，无非正文标语) -->
+<footer class="t-footer">
+  <div class="footer-inner-centered">
+    <div class="footer-brand" style="margin-bottom:6px">西安交通大学 · 能源与动力工程学院 · 大学生创新训练项目团队</div>
+    <div style="line-height:1.8;color:var(--v-body);font-size:12.5px;margin-bottom:12px">
+      <b>成员确权：</b>田铭雨（高保真CFD流场仿真）· 袁夫达（POD特征降阶与代理模型）· 厉今飞（多风速工况基线）· 洪祖名（PPO跟踪与优化求解）· 孙承泽（可视化与交互系统负责）<br>
+      <b>指导教师：</b>李良星 副教授 ｜ 审计自检脚本：<code>check_contract.py</code> (100% Exit Code 0 绿灯)
+    </div>
+    <div style="font-family:var(--v-mono);font-size:11px;color:var(--v-mute);letter-spacing:0.06em">
+      <span>SWISS INTERNATIONAL TYPOGRAPHIC STYLE · EDGE INFERENCE · REGULAR GRID INTERPOLATOR</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/js/interp.js"></script>
+<script>
+(function(){
+  const m = window.WIND_DATA.multi, ys = m.yaw_angles, S = window.SURROGATE;
+  let curU = 8.0;
+  const box = document.getElementById("solU");
+  const uSlider = document.getElementById("uSlider"), uSliderVal = document.getElementById("uSliderVal");
+
+  // 预设风速按钮
+  m.wind_speeds.forEach(u => {
+    const b = document.createElement("button");
+    b.className = "v-btn" + (u === curU ? " active" : "");
+    b.textContent = u + " m/s";
+    b.onclick = () => {
+      curU = u;
+      uSlider.value = u;
+      uSliderVal.textContent = u.toFixed(1) + " m/s";
+      [...box.children].forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      render();
+    };
+    box.appendChild(b);
+  });
+
+  uSlider.oninput = function(){
+    curU = parseFloat(this.value);
+    uSliderVal.textContent = curU.toFixed(1) + " m/s";
+    const near = m.wind_speeds.find(x => Math.abs(x - curU) < 0.1);
+    [...box.children].forEach(x => {
+      x.classList.toggle("active", near !== undefined && parseFloat(x.textContent) === near);
+    });
+    render();
+  };
+
+  function render(){
+    let bestYaw = 0, maxPtot = -1;
+    const p1Arr = [], p2Arr = [], ptotArr = [];
+    ys.forEach(y => {
+      const pred = S.predict_power(y, curU);
+      p1Arr.push(pred.p1);
+      p2Arr.push(pred.p2);
+      ptotArr.push(pred.ptot);
+      if(pred.ptot > maxPtot){
+        maxPtot = pred.ptot;
+        bestYaw = y;
+      }
+    });
+
+    const pred0 = S.predict_power(0, curU);
+    const gainPct = (maxPtot - pred0.ptot) / pred0.ptot * 100;
+    const gainKw = maxPtot - pred0.ptot;
+
+    document.getElementById("solWind").textContent = curU.toFixed(1);
+    document.getElementById("solYaw").textContent = (bestYaw >= 0 ? '+' : '') + bestYaw + '°';
+    document.getElementById("solPow").textContent = Math.round(maxPtot);
+    document.getElementById("solPwrDelta").textContent = '+' + Math.round(gainKw) + ' kW (' + gainPct.toFixed(2) + '%)';
+
+    const stText = document.getElementById("solStatusText");
+    const stPill = document.getElementById("solStatusPill");
+    stText.innerHTML = `在当前 <b>${curU.toFixed(1)} m/s</b> 进流风压下，实时搜索推荐最优偏航为 <b style="color:var(--v-teal-bright)">${bestYaw >= 0 ? '+' : ''}${bestYaw}°</b>；全场总出电从基本态的 <b>${Math.round(pred0.ptot)} kW</b> 跃升至 <b style="color:var(--v-teal-bright)">${Math.round(maxPtot)} kW</b>，收效净多 <b>+${gainPct.toFixed(2)}%</b>。`;
+    stPill.textContent = `提速 ≈700×`;
+
+    Plotly.react('solChart', [{
+      x: ys, y: ptotArr, mode: 'lines', name: '全场总功率 Ptot',
+      line: { color: '#1e675c', width: 3 }, fill: 'tozeroy', fillcolor: 'rgba(30,103,92,0.08)'
+    }, {
+      x: ys, y: p1Arr, mode: 'lines', name: '上游 P₁',
+      line: { color: '#64748b', width: 2, dash: 'dash' }
+    }, {
+      x: ys, y: p2Arr, mode: 'lines', name: '下游 P₂',
+      line: { color: '#a87817', width: 2, dash: 'dash' }
+    }, {
+      x: [bestYaw], y: [maxPtot], mode: 'markers+text', name: '推荐极值 γ*',
+      marker: { size: 14, color: '#1e675c', symbol: 'circle', line: { color: '#fff', width: 2.5 } },
+      text: [`极值为 ${bestYaw >= 0 ? '+' : ''}${bestYaw}° (${Math.round(maxPtot)} kW, +${gainPct.toFixed(1)}%)`],
+      textposition: 'top center', textfont: { size: 12, color: '#1e293b', weight: 700 }
+    }], {
+      xaxis: { title: '上游风机偏航角 γ₁ (°)' },
+      yaxis: { title: '计算输出功率 (kW)' },
+      height: 380, margin: { l: 50, r: 25, t: 32, b: 42 },
+      legend: { orientation: 'h', y: 1.12, x: 0.05, font: { size: 11 } },
+      paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)'
+    }, { responsive: true, displayModeBar: false });
+  }
+
+  render();
+})();
+</script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>数据总览 · 孙承泽</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links"><a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a></div></div></nav>
+<section class="wrap pg-hero"><h1>📋 数据总览</h1><p>全工况功率柱状图、P₁/P₂ 分解曲线、原始数据表格</p></section>
+<main class="wrap">
+  <div class="card"><div class="chart" id="barChart"></div><div class="note">各风速下全场总功率（取偏航 0° 基准工况，kW）。</div></div>
+  <div class="card"><div class="chart" id="decompChart"></div><div class="note">U=8 m/s 时 P₁/P₂ 分解曲线（随上游偏航角）。</div></div>
+  <div class="card"><div style="max-height:320px;overflow:auto"><table id="tbl" style="width:100%;border-collapse:collapse;font-size:12px;color:var(--sub)"></table></div>
+  <div class="note">原始数据表格（cases.csv，U=8 m/s 双机扫掠）。</div></div>
+</main>
+<footer class="wrap">孙承泽 · 可视化模块</footer>
+<script src="assets/data.js"></script><script src="assets/js/charts.js"></script>
+<script>const W=window.WIND_DATA,m=W.multi;
+const us=m.wind_speeds,base=us.map(u=>{const i=m.wind_speeds.indexOf(u);return m.ptot[i][m.yaw_angles.indexOf(0)];});
+window.CHARTS.barChart(document.getElementById("barChart"),{labels:us.map(u=>u+"m/s"),values:base.map(v=>Math.round(v)),colors:["#4a9eff"]});
+const i8=m.wind_speeds.indexOf(8);
+window.CHARTS.lineChart(document.getElementById("decompChart"),{xs:m.yaw_angles,
+ series:[{name:"P1",color:"#4a9eff",data:m.p1[i8]},{name:"P2",color:"#27ae60",data:m.p2[i8]},{name:"Ptot",color:"#f5a623",data:m.ptot[i8]}]});
+const s=W.single,t=document.getElementById("tbl");let h="<tr><th>偏航角</th><th>P1</th><th>P2</th><th>总功率</th></tr>";
+s.yaw_angles.forEach((y,k)=>{h+=`<tr><td>${y}°</td><td>${Math.round(s.p1[k])}</td><td>${Math.round(s.p2[k])}</td><td>${Math.round(s.ptot[k])}</td></tr>`;});
+t.innerHTML=h;</script>
+</body></html>

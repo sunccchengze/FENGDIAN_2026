@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>3D 风电场 · 风电场偏航优化科研平台</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/farm.css">
+  <script type="importmap">
+  { "imports": { "three": "./assets/vendor/three/three.module.js",
+               "three/addons/": "./assets/vendor/three/addons/" } }
+  </script>
+  <style>
+
+    :root {
+      --v-bg: #f8f9fa;
+      --v-bg-soft: #f1f3f5;
+      --v-ink: #1e293b;
+      --v-body: #334155;
+      --v-mute: #64748b;
+      --v-faint: #94a3b8;
+      --v-line: rgba(30, 41, 59, 0.11);
+      --v-line-strong: rgba(30, 41, 59, 0.22);
+      --v-teal-bright: #1e675c;
+      --v-yellow: #a87817;
+      --v-rust: #ad5038;
+      --v-mono: 'DM Mono', ui-monospace, 'JetBrains Mono', Consolas, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", monospace;
+      --v-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Songti SC Black", "Songti SC", "STSong", "STZhongsong", "SimSun", "宋体-简", serif;
+      --v-body-font: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "DengXian", "等线", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--v-bg); color: var(--v-ink);
+      font-family: var(--v-body-font); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: var(--v-display); }
+    .t-nav-badge, .plot-tick { font-family: var(--v-mono); font-variant-numeric: tabular-nums; }
+
+    .t-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--v-line); height: 60px; display: flex; align-items: center;
+    }
+    .t-nav-inner {
+      max-width: 1240px; width: 100%; margin: 0 auto; padding: 0 32px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .t-nav-brand {
+      font-family: var(--v-display); font-size: 16px; font-weight: 700; color: var(--v-ink);
+      letter-spacing: -0.3px; display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+    }
+    .t-nav-badge {
+      font-size: 10.5px; color: var(--v-teal-bright); padding: 3px 8px;
+      border: 1px solid var(--v-line-strong); border-radius: 3px; background: var(--v-bg-soft); font-weight: 700;
+    }
+    .t-container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+    .v-pg-hero { padding-top: 44px; padding-bottom: 28px; }
+    .v-pg-tag {
+      font-family: var(--v-mono); font-size: 11px; font-weight: 700; color: var(--v-yellow);
+      letter-spacing: 0.12em; margin-bottom: 10px; text-transform: uppercase;
+    }
+    .v-pg-title { font-size: clamp(28px, 3.8vw, 40px); font-weight: 800; letter-spacing: -0.8px; color: var(--v-ink); margin-bottom: 8px; }
+    .v-pg-sub { font-size: 14.5px; color: var(--v-body); max-width: 860px; line-height: 1.6; }
+
+    /* ===== 对 farm.css 的浅色瑞士网格覆盖 ===== */
+    .farm-card {
+      background: #ffffff; border: 1px solid var(--v-line-strong); border-radius: 4px;
+      padding: 28px; margin-bottom: 36px;
+    }
+    .farm-controls {
+      gap: 16px; margin-bottom: 18px; padding-bottom: 18px;
+      border-bottom: 1px solid var(--v-line);
+      font-size: 13px; color: var(--v-body);
+    }
+    .farm-controls label { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; cursor: pointer; }
+    .farm-controls input[type="range"] { accent-color: var(--v-teal-bright); }
+    .farm-controls input[type="checkbox"] { accent-color: var(--v-teal-bright); }
+    .farm-controls select {
+      font-family: var(--v-mono); font-size: 12.5px; font-weight: 700;
+      padding: 6px 10px; border: 1px solid var(--v-line-strong); border-radius: 3px;
+      background: var(--v-bg-soft); color: var(--v-ink); cursor: pointer;
+    }
+    .farm-seg {
+      background: var(--v-bg-soft); border: 1px solid var(--v-line-strong);
+      border-radius: 3px; padding: 3px; gap: 3px;
+    }
+    .farm-seg button {
+      background: transparent; border: none; color: var(--v-mute);
+      padding: 7px 14px; border-radius: 2px; font-size: 12.5px; font-weight: 700;
+      font-family: var(--v-body-font); cursor: pointer; transition: all 0.2s; white-space: nowrap;
+    }
+    .farm-seg button:hover { color: var(--v-ink); }
+    .farm-seg button.active {
+      background: var(--v-teal-bright); color: #fff; box-shadow: none;
+    }
+    .farm-stage {
+      border-radius: 4px; border: 1px solid var(--v-line-strong);
+      background: linear-gradient(180deg, #f4f6f8 0%, #e9edf1 100%);
+      height: 560px;
+    }
+    .farm-legend {
+      border-radius: 3px; background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--v-line-strong); color: var(--v-body);
+      font-family: var(--v-body-font);
+    }
+    .farm-hint {
+      border-radius: 3px; background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--v-line-strong); color: var(--v-mute);
+      font-family: var(--v-mono); font-size: 10.5px; letter-spacing: 0.04em;
+    }
+    .farm-load { background: rgba(248, 249, 250, 0.7); color: var(--v-mute); }
+    .farm-kpis { grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 18px; border: 1px solid var(--v-line); border-radius: 3px; overflow: hidden; }
+    .fkpi {
+      background: var(--v-bg-soft); border: none; border-radius: 0;
+      border-right: 1px solid var(--v-line); padding: 16px; text-align: center;
+    }
+    .fkpi:last-child { border-right: none; }
+    .fk-v { font-family: var(--v-mono); font-size: 24px; font-weight: 750; color: var(--v-ink); }
+    .fk-v.up { color: var(--v-teal-bright); }
+    .fk-v.down { color: var(--v-rust); }
+    .fk-v.flat { color: var(--v-mute); }
+    .fk-l { font-size: 12px; color: var(--v-mute); margin-top: 4px; }
+    .plot-note { font-size: 12px; color: var(--v-mute); line-height: 1.6; margin-top: 14px; }
+
+    .t-footer {
+      border-top: 1px solid var(--v-line-strong); padding: 60px 0; margin-top: 80px;
+      font-size: 12.5px; color: var(--v-body); line-height: 1.8; background: #ffffff; text-align: center;
+    }
+    .footer-inner-centered {
+      max-width: 960px; margin: 0 auto; padding: 0 32px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px;
+    }
+    .footer-brand { color: var(--v-ink); font-weight: 750; font-family: var(--v-display); font-size: 15px; }
+
+    @media (max-width: 640px) {
+      .t-nav-inner, .t-container { padding: 0 20px; }
+      .farm-card { padding: 20px; }
+      .farm-stage { height: 420px; }
+    }
+      /* ===== 统一双行导航模块条（系统级覆盖，全站同一套，杜绝指示冲突） ===== */
+    .t-nav { height: auto; }
+    .t-nav-inner { max-width: none; width: 100%; margin: 0; padding: 0; display: block; }
+    .t-nav-row1 { max-width: 1240px; margin: 0 auto; padding: 13px 32px 11px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .t-nav-here { font-family: var(--v-mono); font-size: 11px; font-weight: 700; color: var(--v-mute); letter-spacing: 0.06em; white-space: nowrap; }
+    .t-nav-links { border-top: 1px solid var(--v-line); }
+    .t-nav-links-in { max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: stretch; overflow-x: auto; scrollbar-width: none; }
+    .t-nav-links-in::-webkit-scrollbar { display: none; }
+    .t-nav-links a { font-family: var(--v-body-font); font-size: 12px; font-weight: 600; color: var(--v-mute); text-decoration: none; padding: 9px 9px 8px; white-space: nowrap; border-bottom: 2px solid transparent; display: inline-flex; gap: 6px; align-items: baseline; }
+    .t-nav-links a i { font-style: normal; font-family: var(--v-mono); font-size: 9.5px; font-weight: 700; color: var(--v-faint); letter-spacing: 0.05em; }
+    .t-nav-links a:hover { color: var(--v-ink); background: var(--v-bg-soft); }
+    .t-nav-links a.active { color: var(--v-teal-bright); border-bottom-color: var(--v-teal-bright); }
+    .t-nav-links a.active i { color: var(--v-teal-bright); }
+    @media (max-width: 640px) { .t-nav-row1 { padding: 12px 20px 10px; } }
+  </style>
+  <link rel="stylesheet" href="css/unified-glass.css">
+</head>
+<body>
+
+<nav class="t-nav">
+  <div class="t-nav-inner">
+    <div class="t-nav-row1">
+      <a href="index.html" class="t-nav-brand" style="text-decoration:none;color:inherit">
+        <span>风电场偏航优化平台</span>
+        <span class="t-nav-badge">SUN CHENGZE · VISUALIZATION</span>
+      </a>
+      <span class="t-nav-here" id="tNavHere"></span>
+    </div>
+    <div class="t-nav-links"><div class="t-nav-links-in">
+      <a href="index.html" data-nav-code="00" data-nav-name="首页"><i>00</i>首页</a>
+      <a href="wake.html" data-nav-code="01" data-nav-name="尾流"><i>01</i>尾流</a>
+      <a href="optimization.html" data-nav-code="02" data-nav-name="优化"><i>02</i>优化</a>
+      <a href="solver.html" data-nav-code="03" data-nav-name="求解"><i>03</i>求解</a>
+      <a href="dashboard.html" data-nav-code="04" data-nav-name="看板"><i>04</i>看板</a>
+      <a href="array.html" data-nav-code="05" data-nav-name="阵列"><i>05</i>阵列</a>
+      <a href="heatmap.html" data-nav-code="06" data-nav-name="热力"><i>06</i>热力</a>
+      <a href="pod.html" data-nav-code="07" data-nav-name="POD"><i>07</i>POD</a>
+      <a href="model.html" data-nav-code="08" data-nav-name="精度"><i>08</i>精度</a>
+      <a href="power_tracking.html" data-nav-code="09" data-nav-name="跟踪"><i>09</i>跟踪</a>
+      <a href="3d_farm.html" data-nav-code="10" data-nav-name="3D风场"><i>10</i>3D风场</a>
+      <a href="3d_surface.html" data-nav-code="11" data-nav-name="3D曲面"><i>11</i>3D曲面</a>
+      <a href="3d_volume.html" data-nav-code="12" data-nav-name="3D体"><i>12</i>3D体</a>
+      <a href="interface.html" data-nav-code="13" data-nav-name="契约"><i>13</i>契约</a>      <a href="overview.html" data-nav-code="MAP" data-nav-name="系统总览"><i>MAP</i>总览</a>
+    </div></div>
+  </div>
+</nav>
+
+<header class="v-pg-hero t-container">
+  <div class="v-pg-tag">10 / THREE.JS WIND FARM · COOPERATIVE YAW SCENE</div>
+  <h1 class="v-pg-title">3D 风电场协同偏航场景</h1>
+  <p class="v-pg-sub">
+    九台风机策略模式以确定性几何包络示意协同偏航，并按真实单机功率着色；
+    双机 FLORIS 数据模式读取三维速度网格生成水平截面，半透明流管仅作偏航中心线辅助。
+  </p>
+</header>
+
+<main class="t-container">
+  <div class="farm-card">
+    <div class="farm-controls">
+      <div class="farm-seg" id="viewSeg">
+        <button data-view="schematic" class="active">3×3 策略示意</button>
+        <button data-view="real">双机 FLORIS 数据</button>
+      </div>
+      <div id="modeSeg" class="farm-seg">
+        <button data-mode="none" class="active">基准 0°</button>
+        <button data-mode="unified">统一偏航</button>
+        <button data-mode="independent">独立偏航</button>
+      </div>
+      <div id="yawWrap" style="display:none;align-items:center;gap:8px">
+        <label for="realYaw">偏航角</label>
+        <select id="realYaw" style="width:90px"></select>
+      </div>
+      <label>尾流透明度
+        <input type="range" id="wakeOpacity" min="0" max="0.8" step="0.05" value="0.35" style="width:110px">
+      </label>
+      <label><input type="checkbox" id="chkSpin" checked> 自动环绕</label>
+      <label><input type="checkbox" id="chkRotor" checked> 转子旋转</label>
+    </div>
+    <div class="farm-stage">
+      <canvas id="farm"></canvas>
+      <div class="farm-legend" id="farmLegend"></div>
+      <div class="farm-hint">DRAG ROTATE · SCROLL ZOOM · RIGHT-CLICK PAN</div>
+      <div id="farmLoad" class="farm-load">正在加载 3D 场景…</div>
+    </div>
+    <div class="farm-kpis" id="farmKpis"></div>
+    <div class="plot-note" id="farmNote"><b>3×3 策略示意</b>：九机功率与偏航角来自四策略数据契约，尾流包络为确定性物理启发式几何，不作为 CFD 数值场。切到 <b>双机 FLORIS 数据</b>：水平云图纹理由 <code>data_3d_real.js</code> 三维速度网格采样生成；半透明流管只标示偏航中心线与扩张方向，不冒充速度等值面。</div>
+  </div>
+</main>
+
+<footer class="t-footer">
+  <div class="footer-inner-centered">
+    <div class="footer-brand" style="margin-bottom:6px">西安交通大学 · 能源与动力工程学院 · 大学生创新训练项目团队</div>
+    <div style="line-height:1.8;color:var(--v-body);font-size:12.5px;margin-bottom:12px">
+      <b>成员确权：</b>田铭雨（高保真CFD流场仿真）· 袁夫达（POD特征降阶与代理模型）· 厉今飞（多风速工况基线）· 洪祖名（PPO跟踪与优化求解）· 孙承泽（可视化与交互系统负责）<br>
+      <b>指导教师：</b>李良星 副教授 ｜ 审计自检脚本：<code>check_contract.py</code> (100% Exit Code 0 绿灯)
+    </div>
+    <div style="font-family:var(--v-mono);font-size:11px;color:var(--v-mute);letter-spacing:0.06em">
+      <span>SWISS INTERNATIONAL TYPOGRAPHIC STYLE · EDGE INFERENCE · REGULAR GRID INTERPOLATOR</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/data.js"></script>
+<script src="assets/data_3d_real.js"></script>
+<script type="module" src="assets/js/farm.js"></script>
+<script>
+window.addEventListener('load', () => {
+  const l = document.getElementById('farmLoad');
+  if (l) setTimeout(() => l.style.opacity = '0', 400);
+});
+</script>
+<script src="assets/js/nav.js"></script>
+</body>
+</html>

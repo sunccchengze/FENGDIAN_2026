@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>POD 降阶分析 · 孙承泽</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav><div class="nav-inner"><div class="brand">风电场偏航优化<br><span style="font-size:11px;color:var(--sub)">孙承泽 · 可视化模块</span></div>
+<div class="nav-links"><a href="index.html">首页</a><a href="wake.html">尾流</a><a href="optimization.html">优化</a><a href="overview.html">总览</a><a href="3d_surface.html">3D曲面</a><a href="3d_volume.html">3D体</a><a href="heatmap.html">热力矩阵</a><a href="solver.html">求解器</a><a href="pod.html">POD</a><a href="array.html">阵列</a><a href="power_tracking.html">功率跟踪</a><a href="dashboard.html">Dashboard</a><a href="windrose.html">风玫瑰</a><a href="model.html">模型精度</a><a href="interface.html">接口</a></div></div></nav>
+<section class="wrap pg-hero"><h1>🔬 POD 降阶分析</h1><p>本征正交分解，模态能量分布，流场重构对比，误差定量评估</p></section>
+<main class="wrap">
+  <div class="grid2">
+    <div class="card"><img src="assets/img/pod/energy_cum.png" style="width:100%;border-radius:12px"><div class="note">前 2 个模态即覆盖约 98% 能量 → 对应首页 KPI"2 模态覆盖 98%"。</div></div>
+    <div class="card"><div class="img-grid"><img src="assets/img/pod/mode_0.png"><img src="assets/img/pod/mode_1.png"><img src="assets/img/pod/mode_2.png"></div><div class="note">前 3 阶 POD 模态（流场主结构）。</div></div>
+  </div>
+  <div class="card"><img src="assets/img/pod/recon.png" style="width:100%;border-radius:12px"><div class="note">全模态重构对比：原始 vs POD 重构 vs 误差。POD 为后续 PINN 提供模态基（当前仅用于可视化展示，非 PINN 训练）。</div></div>
+</main>
+<footer class="wrap">孙承泽 · 可视化模块</footer>
+</body></html>
