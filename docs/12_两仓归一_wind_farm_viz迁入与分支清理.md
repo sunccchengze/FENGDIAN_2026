@@ -168,3 +168,23 @@ git checkout twin-3x3-archive-20260919 -- twin/src/scene/terrainUtil.ts   # 只�
 | 09-19 | 打 tag `twin-3x3-archive-20260919` 并推送 | 见 §六 |
 | 09-19 | 删除远端 `arena/01a0ad8e` `arena/01a0adbd` `arena/01a0b993` | 远端只剩 `main` + `arena/01a0b9f8` |
 | 09-19 | wind_farm_viz 远端 | **未做任何写操作**（由用户决定 Archive 或 Delete；见 §4.2） |
+| 09-20 | 沙箱重置为空白克隆 → 自远端 `origin/arena/01a0b9f8` 恢复 | 分支 `70ed46e`、tag、PR #11 均在 GitHub，本地零丢失 |
+| 09-20 | **独立复核**（重新 bare-clone 原仓，与 `viz/` 逐文件比 blob 哈希） | 见 §八 |
+
+## 八、09-20 独立复核（回答"确定都转过来了吗"）
+
+用一份**全新拉取**的 wind_farm_viz bare clone，与本仓 `HEAD:viz/` 逐文件比对（脚本即席执行，结果如下）：
+
+| 检查 | 结果 |
+|---|---|
+| 原仓 4 条分支 tip 文件**并集** | 17,037 个文件，其中技能库 16,470 个（按用户决定不迁，另 7 份 md 归位 `skills-notes/`） |
+| 本仓 `viz/` 文件数 | 574 = 567 项目文件 + 7 份 skills-notes |
+| **缺失**（原仓有、`viz/` 没有） | **0** |
+| **blob 哈希不同** | 2：`.gitignore`（= 白皮书分支加的 `pdf/v*.md` 忽略行，两分支合并后的自然结果）、`README.md`（只在顶部**加**了 8 行迁入说明，unified diff 无删除行；合并提交 `3c9603d` 处的 `viz/README.md` 与原仓 `main:README.md` **逐字节相同**） |
+| `viz/` 多出的文件 | 0 |
+| **全历史路径覆盖**（原仓任何提交里出现过、含后来被删的文件） | 原仓 604 条（剔除技能库）→ 本仓 `viz/` 历史 611 条，**原仓有而本仓没有的：0** |
+| 提交数 | 原仓 181 + 本地 2 个 union 合并 = 183 → 迁入 182；差 1 = `5b02260f`（只改技能库，剔除后为空提交） |
+| 4 条分支 tip 的等价提交 | `617b179a`→`aab36f3`、`b3f5cc78`→`2b89338`、`992f6665`→`0faeb18`（01a06516 = main） |
+| GitHub 侧非 git 内容 | Issues 0 · PR 0 · Release 0 · Wiki 无页面 · 无 description/topics/homepage · 无 LFS · 无 submodule → **没有需要另外搬的东西** |
+
+结论：**除用户明确决定不迁的 `技能库&准则/`（410 MB，-SKILL- 仓库拷贝）外，wind_farm_viz 的每一个文件、每一条历史路径、每一个提交都在本仓里。**
