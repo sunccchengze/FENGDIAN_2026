@@ -142,7 +142,7 @@ python3 site/check_contract.py && python3 site/verify_all_pages.py   # 两道门
 
 ## 六、数字孪生 3×3 状态留档（组会决议：改单列三风机，但 3×3 不删）
 
-- **留档 tag**：`twin-3x3-archive-20260919`（附注 tag，指向本轮收尾提交——`twin/` 仍是 3×3、`selftest` 145/0、lint 0/0、build ✓ 的最后状态）。
+- **留档 tag**：`twin-3x3-archive-20260919`（附注 tag，指向 09-19 收尾提交 `70ed46e`——`twin/` 仍是 3×3、`selftest` 145/0、lint 0/0、build ✓ 的最后状态；其后的 `c2905fe` 与 PR #11 合并提交只改文档，`twin/` 一字未动）。
 - 只要 tag 在，3×3 的每一个文件都随时可取；改造方案本身也要求**布局可切换**而不是删代码（见 [`docs/13`](13_0919组会决议_三风机改造方案与3x3留档.md)）。
 
 ```bash
@@ -170,6 +170,7 @@ git checkout twin-3x3-archive-20260919 -- twin/src/scene/terrainUtil.ts   # 只�
 | 09-19 | wind_farm_viz 远端 | **未做任何写操作**（由用户决定 Archive 或 Delete；见 §4.2） |
 | 09-20 | 沙箱重置为空白克隆 → 自远端 `origin/arena/01a0b9f8` 恢复 | 分支 `70ed46e`、tag、PR #11 均在 GitHub，本地零丢失 |
 | 09-20 | **独立复核**（重新 bare-clone 原仓，与 `viz/` 逐文件比 blob 哈希） | 见 §八 |
+| 09-20 | 收工：PR #11（`arena/01a0b9f8` → `main`，merge commit，不 squash 以保留 182 个迁入提交的图谱） | 合入后远端 = `main` + 会话分支 + 留档 tag |
 
 ## 八、09-20 独立复核（回答"确定都转过来了吗"）
 
