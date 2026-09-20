@@ -151,7 +151,7 @@ npm run verify
 
 ## 远端自动化状态
 
-`.github/workflows/` 已入库 `repo-quality.yml` 和 `twin-quality.yml`，分别覆盖仓库契约和 `twin` 的 lint/selftest/typecheck/build；工作流文件入库**不等于** GitHub 远端已经成功触发或状态检查已经配置。远端权限、Actions 运行记录、labels、Project 和 `main` branch protection 仍需实际配置和验证。
+两份只读工作流草案已提交到 [`ci/workflow-drafts/`](ci/workflow-drafts/)，本地 `.github/workflows/` 也已准备好对应文件；但本次推送被 GitHub App 以缺少 `workflows` 权限拒绝，因此远端当前**尚未**有可执行的 `.github/workflows/` 文件。重新连接具备该权限的 GitHub 后，才能把草案移入 `.github/workflows/` 并验证运行。工作流文件入库也不等于状态检查、labels、Project 和 `main` branch protection 已配置，这些仍需实际验证。
 
 ## 当前阶段
 
