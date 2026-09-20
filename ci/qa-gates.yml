@@ -1,17 +1,16 @@
 # ============================================================
-# QA 门槛（GitHub Actions workflow）
+# 兼容性保留的历史 QA workflow 草案
 #
-# ⚠️ 本文件当前**不在** `.github/workflows/`，所以还不会自动跑：
-#    本仓连接的 GitHub App（arena-ai-coding-agent）没有 `workflows` 权限，
-#    推送 `.github/**` 会被远端拒绝（refusing to allow a GitHub App to create or
-#    update workflow … without `workflows` permission）。因此把 workflow 作为
-#    普通文件入库，由人一条命令启用：
+# 当前 canonical 草案是 `ci/workflow-drafts/twin-quality.yml`；不要同时激活本文件和
+# `twin-quality.yml`，否则会重复运行 lint/selftest/build。此文件保留是为了不丢失
+# R38 以来的 QA 设计和历史审计语境。
 #
-#      mkdir -p .github/workflows
-#      git mv ci/qa-gates.yml .github/workflows/qa-gates.yml && git push
+# 本文件不在 `.github/workflows/`，所以不会自动运行。当前 GitHub App 仍缺少允许
+# 推送 workflow 的权限；激活请遵循 `ci/workflow-drafts/README.md`，不要直接把
+# 本文件移动为第二份 twin workflow。
 #
-#    启用前后都能用**本地等价闸门**（同一口径的四条命令）：
-#      cd twin && npm run verify
+# 启用前后都能用本地等价闸门：
+#   cd twin && npm run verify
 # ============================================================
 # 只跑不需要浏览器的四项（类型检查 / lint / 数据契约与渲染口径自检 / 构建）；
 # 截图类（shot.mjs、perftier 帧时长）依赖 SwiftShader，在 CI 上既慢又不可比，留给本地/沙箱按 SOP 做。
