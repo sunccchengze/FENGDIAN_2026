@@ -55,6 +55,7 @@
 - 三风机改造决议：[`docs/13`](../docs/13_0919组会决议_三风机改造方案与3x3留档.md)；
 - 科研平台冻结口径：[`viz/FREEZE.md`](../viz/FREEZE.md)、[`viz/README.md`](../viz/README.md)；
 - 数字孪生运行和演示口径：[`twin/README.md`](../twin/README.md)、[`HANDOFF_NEXT.md`](../HANDOFF_NEXT.md)；
+- 软件验证证据：[`EVID-2026-001`](../docs/evidence/EVID-2026-001_twin-verify-2026-09-20.md)（仅证明本地门禁，不是现场或物理结论）；
 - 证据总索引：[`docs/evidence/README.md`](../docs/evidence/README.md)。
 
 ### 已有科研平台数字（仅限对应适用范围）

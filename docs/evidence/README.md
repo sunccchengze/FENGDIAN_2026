@@ -26,6 +26,7 @@
 | 两仓迁移历史 | [`docs/12`](../12_两仓归一_wind_farm_viz迁入与分支清理.md) | 来源 commit、路径和风险 |
 | 3×3 留档与 1×3 决议 | [`docs/13`](../13_0919组会决议_三风机改造方案与3x3留档.md) | 工程改造和不可混用的数字口径 |
 | 数字孪生运行验证 | [`twin/README.md`](../../twin/README.md) | 运行、自检、数据分类和已知边界 |
+| EVID-2026-001 软件门禁 | [`EVID-2026-001_twin-verify-2026-09-20.md`](EVID-2026-001_twin-verify-2026-09-20.md) | `twin` lint/selftest/typecheck/build 的本地复现记录 |
 | 科研可视化数据契约 | [`viz/README.md`](../../viz/README.md) | FLORIS/POD/PPO 数据、来源和复现脚本 |
 | 对外材料数字 | [`materials/README.md`](../../materials/README.md) | 写材料前必须先核对此处和其引用 |
 
