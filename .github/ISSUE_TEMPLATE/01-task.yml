@@ -1,0 +1,76 @@
+name: 任务 / 需求
+description: 把一个可交付的工作拆成可分配、可验收的任务。
+title: "[TASK] "
+labels:
+  - type:task
+  - status:todo
+body:
+  - type: markdown
+    attributes:
+      value: |
+        一个 Issue 应尽量对应一个可以被关闭的工作单元。大型目标请拆成多个子任务，并在正文中写清依赖关系。
+  - type: input
+    id: owner
+    attributes:
+      label: 负责人
+      description: 写一名实际负责推进和回写结果的成员。
+      placeholder: 例如：孙承泽
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: 领域
+      options:
+        - twin / 数字孪生
+        - viz / 科研可视化
+        - physics / CFD 与物理
+        - model / 降阶与代理模型
+        - data / 基线数据
+        - control / 优化与 PPO
+        - docs / 文档与治理
+        - materials / 对外材料
+        - infra / 仓库与自动化
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 优先级
+      options:
+        - P0：阻断交付或会造成错误结论
+        - P1：影响质量、复现或协作
+        - P2：优化和整理
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目标与背景
+      description: 说明为什么现在需要做，以及完成后应该改变什么。
+      placeholder: 写清当前状态、问题和预期结果。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 用可检查的条件描述完成，而不是“做好”“优化一下”。
+      placeholder: 例如：命令通过、截图一致、数字来源可追溯、指定文件更新。
+    validations:
+      required: true
+  - type: textarea
+    id: related
+    attributes:
+      label: 相关资料和依赖
+      description: 链接已有 Issue、PR、代码、数据、文档、申请书或外部来源。
+      placeholder: "#123、path/to/file、外部 DOI 或数据地址"
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我已经检查过已有 Issue 和证据索引，确认不是重复工作。
+          required: true
+        - label: 我已经判断这项工作是否会改变数字、数据口径或对外材料。
+          required: true

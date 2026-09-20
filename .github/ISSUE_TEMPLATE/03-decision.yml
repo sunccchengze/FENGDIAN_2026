@@ -1,0 +1,70 @@
+name: 技术 / 项目决策
+description: 记录会影响技术路线、数据口径、仓库边界或长期协作方式的决策。
+title: "[DECISION] "
+labels:
+  - type:decision
+  - status:review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        讨论可以发生在 Issue 或 Discussion，但确认后的长期决策必须通过 PR 写入仓库内的决策记录。
+  - type: input
+    id: proposer
+    attributes:
+      label: 提议人
+      placeholder: 例如：孙承泽
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: 背景和约束
+      description: 写清当前事实、痛点、资源、时间和不能违反的边界。
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: 候选方案
+      description: 至少列出当前方案和一个被认真考虑过的替代方案。
+      placeholder: |
+        方案 A：
+        优点：
+        缺点：
+
+        方案 B：
+        优点：
+        缺点：
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: 推荐方案和取舍
+      description: 说明选择什么、放弃什么、为什么适合当前五人团队。
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: 影响和验证
+      description: 写对代码、数据、文档、材料、维护成本和后续升级路径的影响。
+    validations:
+      required: true
+  - type: input
+    id: record
+    attributes:
+      label: 决策记录位置
+      placeholder: 例如：docs/decisions/ADR-YYYY-NNN.md
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: 审阅要求
+      options:
+        - label: 受影响领域的主责人已经参与讨论。
+          required: true
+        - label: 该决策不会把代理/演示/示意数据误写成真实结论。
+          required: true
+        - label: 后续需要更新的 README、材料或自动化已经列出。
+          required: true

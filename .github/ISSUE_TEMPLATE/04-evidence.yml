@@ -1,0 +1,73 @@
+name: 证据 / 关键数字
+description: 登记一个需要复现、复核并可能进入 README 或对外材料的关键主张。
+title: "[EVIDENCE] "
+labels:
+  - type:evidence
+  - status:review
+body:
+  - type: markdown
+    attributes:
+      value: |
+        证据 Issue 不能只写“结果很好”。请把主张写成可以被另一名成员重新检查的句子。
+  - type: input
+    id: claim_id
+    attributes:
+      label: 证据编号
+      placeholder: 例如：EVID-2026-001
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: 要证明的主张
+      description: 写出主张、指标、单位、基线和容差。
+    validations:
+      required: true
+  - type: dropdown
+    id: provenance
+    attributes:
+      label: 数据口径
+      options:
+        - 真实
+        - 代理
+        - 演示
+        - 示意
+    validations:
+      required: true
+  - type: textarea
+    id: provenance_detail
+    attributes:
+      label: 输入、来源和版本
+      description: 写数据来源、日期、路径、哈希、授权、代码 commit 和依赖环境。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现方法
+      description: 写运行命令、参数、随机种子、输出文件和比较方法。
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 结果和限制
+      description: 写实际结果、失败尝试、适用范围和不能推出的结论。
+    validations:
+      required: true
+  - type: textarea
+    id: usage
+    attributes:
+      label: 使用位置
+      description: 写会被哪些 README、报告、PPT、Issue 或论文引用。
+  - type: checkboxes
+    id: review
+    attributes:
+      label: 复核门槛
+      options:
+        - label: 主责人已经核对输入和方法。
+          required: true
+        - label: 至少一名非主责人独立检查了结果。
+          required: true
+        - label: 进入对外材料前，真实/代理/演示/示意标签已经确认。
+          required: true

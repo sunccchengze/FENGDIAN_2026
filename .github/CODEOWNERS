@@ -1,0 +1,12 @@
+# CODEOWNERS is intentionally conservative until all four teammates' GitHub handles
+# are verified. Never guess a handle from a display name.
+#
+# @sunccchengze is the current verified repository integration owner. Domain review
+# remains mandatory through the team rules in CONTRIBUTING.md and docs/14.
+
+/.github/ @sunccchengze
+/README.md @sunccchengze
+/CONTRIBUTING.md @sunccchengze
+/docs/14_协作治理与可复现研究工作台方案.md @sunccchengze
+/docs/templates/ @sunccchengze
+/materials/ @sunccchengze
