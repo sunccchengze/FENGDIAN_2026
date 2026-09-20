@@ -1,0 +1,47 @@
+name: 文献 / 外部资料
+description: 收集与研究、技术选型、数据来源或答辩论证相关的外部资料。
+title: "[LIT] "
+labels:
+  - type:literature
+  - status:todo
+body:
+  - type: input
+    id: citation
+    attributes:
+      label: 标题、作者或机构
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: DOI、URL 或仓库
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: 与本项目的关系
+      description: 说明它解决什么问题，为什么值得研究，适用范围是什么。
+    validations:
+      required: true
+  - type: textarea
+    id: takeaway
+    attributes:
+      label: 可借鉴内容与不可照搬内容
+      description: 必须同时写复用点和风险，避免只摘录宣传性描述。
+    validations:
+      required: true
+  - type: textarea
+    id: usage
+    attributes:
+      label: 计划使用位置
+      description: 例如技术决策、研究记录、README、答辩材料或证据卡。
+  - type: checkboxes
+    id: quality
+    attributes:
+      label: 资料质量
+      options:
+        - label: 我已经区分了项目 README、Issue/PR 经验和论文/官方文档的证据等级。
+          required: true
+        - label: 我已经记录了访问日期或版本，避免外部页面变化后无法解释。
+          required: true

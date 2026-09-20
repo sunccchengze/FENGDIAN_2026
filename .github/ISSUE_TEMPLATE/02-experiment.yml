@@ -1,0 +1,70 @@
+name: 实验 / 仿真 / 验证
+description: 记录一个有明确问题、输入、方法、结果和复核条件的研究实验。
+title: "[EXP] "
+labels:
+  - type:experiment
+  - status:todo
+body:
+  - type: markdown
+    attributes:
+      value: |
+        实验不要求成功才记录。失败、暂停和结果不支持原假设的尝试同样是科研证据。
+  - type: input
+    id: owner
+    attributes:
+      label: 实验负责人
+      placeholder: 例如：田铭雨
+    validations:
+      required: true
+  - type: input
+    id: question
+    attributes:
+      label: 研究问题
+      placeholder: 这次实验要回答什么问题？
+    validations:
+      required: true
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: 假设和成功标准
+      placeholder: 写出可被结果支持或否定的假设，以及容差、基线或通过条件。
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: 输入数据与版本
+      description: 写来源、日期、路径、数据版本、哈希和授权边界。
+      placeholder: 原始数据、基线工况、模型、代码 commit 或外部 DOI。
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: 方法与环境
+      description: 写算法、参数、运行命令、依赖、随机种子和机器环境。
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: 结果、失败和限制
+      description: 实验完成后回填。不要只粘贴成功结果，要说明失败尝试和不能推出的结论。
+    validations:
+      required: false
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: 输出和证据位置
+      description: 链接图、表、日志、证据卡、PR 和材料引用。
+    validations:
+      required: false
+  - type: checkboxes
+    id: closeout
+    attributes:
+      label: 关闭前检查
+      options:
+        - label: 输入、代码 commit、环境和命令已记录。
+        - label: 输出文件和关键指标已链接。
+        - label: 结果的真实/代理/演示/示意边界已写清。
+        - label: 至少一名非负责人完成独立复核。
