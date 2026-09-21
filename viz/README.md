@@ -11,8 +11,8 @@
 > **📤 迁出说明（2026-09-21）**：本目录里**不属于平台本体的个人材料与队友交付件**已按人 `git mv` 到 `../materials/`，`viz/` 从 574 个文件减为 468 个，只剩平台运行 / 复现所需：
 > - → `../materials/孙承泽/`：`8.23组会*.md/.pptx`、`generate_823_pptx.py`、`暑期总结汇报_5分钟逐字口播稿_最终版.md`、`风电场偏航优化可视化260809.pptx`、`孙承泽原版微调_*.pptx`（`用户原版_*.pptx` 与之逐字节相同，迁入后按用户指示删除）、`王牌PPT.pptx`、`generate_ace_deck.py`、`scientific_{cfd,bar}_fig.png`、`jimeng-*.mp4`、`Figure1_Wake_Steering_Mechanism.psd`、`generate_figure_psd.py`、`PS_STUDY_DAY1_FOUNDATIONS.md`、`14_DAYS_MASTER_PLAN.md`、自学白皮书 `.md` + 练习册 + `images/` + `pdf/` + `whitepaper_src/`、`pocket-orbit/` + `给承泽·请先打开这个.md`、三份专家团报告 `.md`、`skills-notes/`；
 > - → `../materials/洪祖名/`：`20260810洪/`（目录名不变）；
-> - → `../materials/袁夫达/`：`建模与数据生成(1).docx`；
-> - → `../materials/集体/`：`20260329-大创申请书-终版(1).docx`；
+> - → `../materials/袁夫达/`：`建模与数据生成(1).docx`（迁入后去掉下载后缀）；
+> - → `../materials/集体/`：`20260329-大创申请书-终版(1).docx`（迁入后去掉下载后缀，现为 `…终版.docx`）；
 > - `_archive/*/20260808/` 内的队友交付件与群聊纪要亦已迁出并去重，台账见 `_archive/MANIFEST.md` 末节；
 > - **随之改动的代码只有两处一行**：`generate_nature_figures.py` 与 `generate_nature_figures_extended.py` 读取 PPO 轨迹的路径改为 `../materials/洪祖名/20260810洪/extracted/ppo_eval_traces.json`；
 > - `site/` 与两道门禁（`check_contract.py` / `verify_all_pages.py`）不依赖上述任何文件，迁出后复跑均通过；`site/assets/media/bg.mp4`、`site/assets/fonts/songti-sc-black.ttf` 是站内自有副本，未受影响；根目录 `songti-sc-black.ttf` 因被 `scripts/nature/setup_style.py` 使用而保留。

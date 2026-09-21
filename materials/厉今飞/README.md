@@ -7,7 +7,7 @@
 | 文件 / 目录 | 日期 | 性质 | 原路径 | 说明 |
 |---|---|---|---|---|
 | `厉今飞——风电场项目个人工作总结与答辩素材_截至20260918.docx` | 2026-09-18 | 源文件 | 本目录（原有） | 项目负责人兼 AI 模块负责人的工作总结：技术路线梳理、组会筹备、功率预测代码原型、尾流 PINN 论文研读、多风机 PINN 本地复现、POD + 小型网络路线评估 |
-| [`20260808_功率预测神经网络基线/`](20260808_功率预测神经网络基线/) | 2026-08-08 | 交付快照（解压自袁夫达的 `floris(1).zip`） | `viz/_archive/019fd504-static-site-line/20260808/floris(1).zip` → `floris/output_*/{train_wind_farm_model.py, wind_farm_results/}` | 在袁夫达 GCH / CC 各 1224 条样本上训练的多层全连接功率预测网络（Keras） |
+| [`20260808_功率预测神经网络基线/`](20260808_功率预测神经网络基线/) | 2026-08-08 | 交付快照（解压自袁夫达的 `floris(1).zip`，逐文件 sha256 与包内一致） | `viz/_archive/019fd504-static-site-line/20260808/floris(1).zip` → `floris/output_*/{train_wind_farm_model.py, wind_farm_results/}` | 在袁夫达 GCH / CC 各 1224 条样本上训练的多层全连接功率预测网络（Keras） |
 
 ## 归属依据
 
@@ -25,7 +25,7 @@
 | `output_*/wind_farm_results/true_vs_pred_{farm,turbine_1,turbine_2,turbine_3}_power.png` | 预测-真值散点 |
 | `output_*/wind_farm_results/model_metadata.json` | 特征、结构、超参元数据 |
 
-训练数据本身（`training_data_gch.csv` / `training_data_cc.csv`）在 [`materials/袁夫达/20260808_FLORIS数据生成/extracted/`](../袁夫达/20260808_FLORIS数据生成/extracted/)；原始 zip 也在袁夫达目录原样保留。
+训练数据本身（`training_data_gch.csv` / `training_data_cc.csv`）在 [`materials/袁夫达/20260808_FLORIS数据生成/extracted/`](../袁夫达/20260808_FLORIS数据生成/extracted/)；原始 zip（sha256 `68b717ae89b4…`）已按用户决定删除，只保留解压件，取回路径见袁夫达目录 README。
 
 洪祖名随后在同一数据上做的对比（[`materials/洪祖名/20260808_代理模型优化交付/`](../洪祖名/20260808_代理模型优化交付/)）以本目录的 Keras 模型为「厉今飞 MLP（基线）」：farm MAE 86.5 kW（GCH）/ 103.1 kW（CC），R² 0.99906 / 0.99871。
 

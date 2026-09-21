@@ -61,8 +61,8 @@
 
 | 原路径（B 线 `019fd504-static-site-line/`） | sha256 前 12 位 | 现路径 |
 |---|---|---|
-| `20260808/floris(1).zip` | `68b717ae89b4` | `materials/袁夫达/20260808_FLORIS数据生成/floris(1).zip`（袁夫达数据部分解压至同目录 `extracted/`；厉今飞的网络部分解压至 `materials/厉今飞/20260808_功率预测神经网络基线/`） |
-| `20260808/代理模型优化交付_20260808.zip` | `552a44c3ea7b` | `materials/洪祖名/20260808_代理模型优化交付/`（+ `extracted/`） |
+| `20260808/floris(1).zip` | `68b717ae89b4` | 先迁至 `materials/袁夫达/20260808_FLORIS数据生成/`，随后按用户决定**只留解压件**（袁夫达数据部分在同目录 `extracted/`，厉今飞网络部分在 `materials/厉今飞/20260808_功率预测神经网络基线/`；31 个文件逐条 sha256 与包内一致），zip 本体删除。完整 sha256：`68b717ae89b4081ed63a9ad4af3aaab0db314902a20a0685c54a3c7cfecda70c`；取回：`git show 66abeb5:"viz/_archive/019fd504-static-site-line/20260808/floris(1).zip"` |
+| `20260808/代理模型优化交付_20260808.zip` | `552a44c3ea7b` | 先迁至 `materials/洪祖名/20260808_代理模型优化交付/`，随后按用户决定**只留解压件**（19 个文件逐条 sha256 与包内一致），zip 本体删除。完整 sha256：`552a44c3ea7be549513f243e1a38b918487be713adb7036c6b38decec4d7f4fb`；取回：`git show 66abeb5:"viz/_archive/019fd504-static-site-line/20260808/代理模型优化交付_20260808.zip"` |
 | `20260808/README.md` | `08ce2762be41` | `materials/集体/20260808_群聊纪要_FLORIS数据·神经网络选型·导师意见.md` |
 | `20260808/假期前PPT.md` | — | `materials/集体/假期前PPT_大创项目假期技术路线.md` |
 | `20260808/本科生答辩材料可供参考.md` | `d5785119c8ab` | `materials/集体/参考资料/本科生答辩材料可供参考.md` |
@@ -72,14 +72,14 @@
 | 原路径 | sha256 前 12 位 | 与之相同的保留件 |
 |---|---|---|
 | `019fcc85-streamlit-line/20260808/README.md` | `08ce2762be41` | `materials/集体/20260808_群聊纪要_…md` |
-| `019fcc85-streamlit-line/20260808/floris(1).zip` | `68b717ae89b4` | `materials/袁夫达/20260808_FLORIS数据生成/floris(1).zip` |
+| `019fcc85-streamlit-line/20260808/floris(1).zip` | `68b717ae89b4` | `materials/袁夫达/20260808_FLORIS数据生成/extracted/` + `materials/厉今飞/20260808_功率预测神经网络基线/`（解压件） |
 | `019fcc85-streamlit-line/floris(1).zip` | `68b717ae89b4` | 同上 |
 | `019fd504-static-site-line/floris(1).zip` | `68b717ae89b4` | 同上 |
-| `019fcc85-streamlit-line/20260808/代理模型优化交付_20260808.zip` | `552a44c3ea7b` | `materials/洪祖名/20260808_代理模型优化交付/…zip` |
+| `019fcc85-streamlit-line/20260808/代理模型优化交付_20260808.zip` | `552a44c3ea7b` | `materials/洪祖名/20260808_代理模型优化交付/extracted/`（解压件） |
 | `019fcc85-streamlit-line/20260808/本科生答辩材料可供参考.md` | `d5785119c8ab` | `materials/集体/参考资料/…md` |
 | `019fcc85-streamlit-line/20260808/最高优先级AGENT必须遵守的宪法级文件.md` | `fbccfa3e1ff2` | `materials/孙承泽/学习计划与Agent准则/skills-notes/同名文件` |
 | `019fd504-static-site-line/20260808/最高优先级AGENT必须遵守的宪法级文件.md` | `fbccfa3e1ff2` | 同上 |
-| `019fcc85-streamlit-line/20260329-大创申请书-终版.docx` | `7f01fcb31a7e` | `materials/集体/20260329-大创申请书-终版(1).docx`（正文 12,851 字与 11 张内嵌图逐条目相同；被删版本是 2026-08-04 由 `a94126` 另存，仅 docProps / styles 等元数据不同，保留的是原作者 `jinfei L` 2026-03-30 的原件） |
+| `019fcc85-streamlit-line/20260329-大创申请书-终版.docx` | `7f01fcb31a7e` | `materials/集体/20260329-大创申请书-终版.docx`（迁入时名为 `终版(1).docx`，后去掉下载后缀；正文 12,851 字与 11 张内嵌图逐条目相同；被删版本是 2026-08-04 由 `a94126` 另存，仅 docProps / styles 等元数据不同，保留的是原作者 `jinfei L` 2026-03-30 的原件） |
 | `019fd504-static-site-line/20260329-大创申请书-终版.docx` | `7f01fcb31a7e` | 同上 |
 
 ### 另：`viz/` 根目录的一对相同 PPT
