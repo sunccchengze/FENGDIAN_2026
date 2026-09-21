@@ -46,3 +46,44 @@
 - 本目录为历史存档，**不是现役产品的组成部分**；现役产品为仓库根的 `site/`（15 页纯静态站，
   状态 FINAL，见根目录 `FREEZE.md` / `HANDOFF_NEXT_AGENT.md`）。
 - 归档内容一律不再维护；如需引用其中的数字/设计，请先与 `HANDOFF_NEXT_AGENT.md` 的可信口径核对。
+
+---
+
+## 2026-09-21 追记：队友交付件迁出与重复件去重台账
+
+> 执行：Arena Agent（分支 `arena/01a0c193-dachuang-szls`），依用户「按人分类、不漏一个文件」的要求。
+> 迁出前的完整快照仍可在提交 `66abeb5` 中取回（`git show 66abeb5:<原路径>`）。
+
+两条归档线的 `20260808/` 目录里放的是**袁夫达、厉今飞、洪祖名的交付件和全组群聊纪要**，不是可视化平台代码，
+且 A/B 两线各存一份、根目录又各存一份 `floris(1).zip`，同一份文件最多重复 4 次。本次处理原则：**唯一内容迁到 `materials/` 对应人目录，字节级重复件删除**。
+
+### 迁出（`git mv`，内容不变）
+
+| 原路径（B 线 `019fd504-static-site-line/`） | sha256 前 12 位 | 现路径 |
+|---|---|---|
+| `20260808/floris(1).zip` | `68b717ae89b4` | `materials/袁夫达/20260808_FLORIS数据生成/floris(1).zip`（袁夫达数据部分解压至同目录 `extracted/`；厉今飞的网络部分解压至 `materials/厉今飞/20260808_功率预测神经网络基线/`） |
+| `20260808/代理模型优化交付_20260808.zip` | `552a44c3ea7b` | `materials/洪祖名/20260808_代理模型优化交付/`（+ `extracted/`） |
+| `20260808/README.md` | `08ce2762be41` | `materials/集体/20260808_群聊纪要_FLORIS数据·神经网络选型·导师意见.md` |
+| `20260808/假期前PPT.md` | — | `materials/集体/假期前PPT_大创项目假期技术路线.md` |
+| `20260808/本科生答辩材料可供参考.md` | `d5785119c8ab` | `materials/集体/参考资料/本科生答辩材料可供参考.md` |
+
+### 删除的字节级重复件（`git rm`）
+
+| 原路径 | sha256 前 12 位 | 与之相同的保留件 |
+|---|---|---|
+| `019fcc85-streamlit-line/20260808/README.md` | `08ce2762be41` | `materials/集体/20260808_群聊纪要_…md` |
+| `019fcc85-streamlit-line/20260808/floris(1).zip` | `68b717ae89b4` | `materials/袁夫达/20260808_FLORIS数据生成/floris(1).zip` |
+| `019fcc85-streamlit-line/floris(1).zip` | `68b717ae89b4` | 同上 |
+| `019fd504-static-site-line/floris(1).zip` | `68b717ae89b4` | 同上 |
+| `019fcc85-streamlit-line/20260808/代理模型优化交付_20260808.zip` | `552a44c3ea7b` | `materials/洪祖名/20260808_代理模型优化交付/…zip` |
+| `019fcc85-streamlit-line/20260808/本科生答辩材料可供参考.md` | `d5785119c8ab` | `materials/集体/参考资料/…md` |
+| `019fcc85-streamlit-line/20260808/最高优先级AGENT必须遵守的宪法级文件.md` | `fbccfa3e1ff2` | `materials/孙承泽/学习计划与Agent准则/skills-notes/同名文件` |
+| `019fd504-static-site-line/20260808/最高优先级AGENT必须遵守的宪法级文件.md` | `fbccfa3e1ff2` | 同上 |
+| `019fcc85-streamlit-line/20260329-大创申请书-终版.docx` | `7f01fcb31a7e` | `materials/集体/20260329-大创申请书-终版(1).docx`（正文 12,851 字与 11 张内嵌图逐条目相同；被删版本是 2026-08-04 由 `a94126` 另存，仅 docProps / styles 等元数据不同，保留的是原作者 `jinfei L` 2026-03-30 的原件） |
+| `019fd504-static-site-line/20260329-大创申请书-终版.docx` | `7f01fcb31a7e` | 同上 |
+
+### 未动的部分
+
+两线其余全部文件（Streamlit 代码、数据、`site/` 旧版、`docs/` 文档中心、`.vscode/`、`wrangler.toml` 等）原样保留；
+`019fd504-static-site-line/docs/` 里的 `team_inventory.md` / `communication_log.md` / `question.md` / `孙承泽个人待办.md` 等是孙承泽的 Agent 当时写的项目文档，属平台文档，留在归档内，
+但它们是判断上述交付件归属的一手依据（尤其 `communication_log.md` 末尾孙承泽对 Q4/Q12/Q13 的答复）。

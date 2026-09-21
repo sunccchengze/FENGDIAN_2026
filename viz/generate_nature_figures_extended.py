@@ -23,7 +23,8 @@ cases_multi = pd.read_csv('cases_multi.csv')
 cases_array = pd.read_csv('cases_array.csv')
 with open('array_independent_result.json') as f:
     arr = json.load(f)
-with open('20260810洪/extracted/ppo_eval_traces.json') as f:
+# 2026-09-21 起洪祖名的 PPO 交付件归档于 materials/洪祖名/20260810洪/（本脚本在 viz/ 下运行）
+with open('../materials/洪祖名/20260810洪/extracted/ppo_eval_traces.json') as f:
     ppo_eval = json.load(f)
 pod = np.load('pod_results/pod_data.npz')
 

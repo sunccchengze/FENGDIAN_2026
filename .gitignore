@@ -14,3 +14,6 @@ __pycache__/
 
 # Office 锁文件（materials/ 与 viz/ 里的 docx/pptx 打开时生成）
 ~$*
+
+# 白皮书 PDF 构建中间切分文件（原 viz/.gitignore 的 pdf/v*.md；白皮书 2026-09-21 迁至 materials/孙承泽/自学白皮书/）
+materials/孙承泽/自学白皮书/pdf/v*.md
