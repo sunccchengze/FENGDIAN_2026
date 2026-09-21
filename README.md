@@ -163,7 +163,7 @@ npm run verify
 - `viz/` 继续封板维护；
 - `twin/` 保留 3×3 留档并准备进入单列三机改造，1×3 新数字必须来自新的三机 oracle；
 - 五人协作、实验记录、证据卡、材料审阅和仓库质量门禁已经进入实施阶段；
-- 已用 Issue `#13` → PR `#12` → `EVID-2026-001` → `materials/README.md` 试跑一条真实验证闭环，待队友复核和 PR 合并后关闭 Issue；
+- 已用 Issue `#13` → PR `#12` → `EVID-2026-001` → `materials/README.md` 试跑一条真实验证闭环（Issue 随 2026-09-21 的 PR 关闭；队友复核改在证据卡 §6 打勾跟踪）；
 - 后续继续处理 GitHub 权限、Project、分支保护和其他领域的真实研究任务。
 
 详细研究历史、阶段数据和验收记录请从 [`docs/`](docs/README.md) 进入，不在根 README 复制所有轮次细节。
