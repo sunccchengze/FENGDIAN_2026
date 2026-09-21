@@ -14,7 +14,7 @@
 
 **同日第二批（用户提交 `0464a6d` 的 `新建文件夹.zip`，已解包归位后删除 zip）**：11 张微信群聊截图 → [`集体/聊天记录/`](集体/聊天记录/)（逐条转录 + 按日期重命名）；`会议时间线.txt` → [`集体/会议时间线.md`](集体/会议时间线.md)；`原理简概.docx` → `田铭雨/`；`模型需求.docx` → `厉今飞/`；`模型与数据来源说明_终版.docx` → `袁夫达/`；两篇 Phys. Fluids 尾流 PINN 论文 → `集体/参考资料/`。三份 docx 的归属均以群聊截图里的发送人为据。同一提交里重新出现在 `viz/` 的 `8.23组会汇报_…pptx` 与 `孙承泽/2026-08-23_组会汇报/` 中的那份 sha256 完全相同（`7d158d63bdc4`），已删除。
 
-**Markdown 镜像**：`materials/` 下所有 docx / pptx / pdf 都有同名 `.md`（`tools/markitdown_sync.py`，基于 [microsoft/markitdown](https://github.com/microsoft/markitdown)），首行 `markitdown-mirror` 注释记录来源与 sha256；**只读副本，以原文件为准**；例外是 `孙承泽/自学白皮书/pdf/`（本身由同目录 Markdown 生成，不再镜像）。原文件更新后运行 `python3 tools/markitdown_sync.py` 刷新（依赖 `pip install 'markitdown[docx,pptx,pdf,xlsx]'`）；`--check` 只校验镜像是否齐全、sha256 是否一致（不需要 markitdown，`ci/repo_quality.py` 也做同样检查）。镜像里的图片一律是文字占位 `*(图片：… · 见原文件 …)*`，看图请开原文件。
+**Markdown 镜像**：`materials/` 下所有 docx / pptx / pdf 都有同名 `.md`（`tools/markitdown_sync.py`，基于 [microsoft/markitdown](https://github.com/microsoft/markitdown)），首行 `markitdown-mirror` 注释记录来源与 sha256；**只读副本，以原文件为准**；例外是 `孙承泽/自学白皮书/pdf/`（本身由同目录 Markdown 生成，不再镜像；用户 2026-09-21 确认保持此例外）；`viz/` 里的 33 份论文风格图表 PDF 不在镜像范围（封板目录，且每张都有同名 PNG，用户同日确认不转）。原文件更新后运行 `python3 tools/markitdown_sync.py` 刷新（依赖 `pip install 'markitdown[docx,pptx,pdf,xlsx]'`）；`--check` 只校验镜像是否齐全、sha256 是否一致（不需要 markitdown，`ci/repo_quality.py` 也做同样检查）。镜像里的图片一律是文字占位 `*(图片：… · 见原文件 …)*`，看图请开原文件。
 
 ## 1. 六个目录
 
