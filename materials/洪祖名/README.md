@@ -1,6 +1,8 @@
 # 洪祖名 · 优化控制模块 · 个人材料与交付件
 
 > 本目录放**洪祖名本人**制作或负责解释的文件。2026-09-21 整理时，两份历史交付件从 `viz/` 迁入（`git mv`）。
+>
+> 📄 **Markdown 镜像**：本目录每份 docx / pptx / pdf 旁边都有同名 `.md`，由 `tools/markitdown_sync.py`（microsoft/markitdown）自动转换，首行带 `markitdown-mirror` 标记；它是**只读副本，以原文件为准**，原文件更新后重跑脚本即可刷新。
 
 ## 目录一览
 
