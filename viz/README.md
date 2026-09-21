@@ -6,10 +6,10 @@
 > - 下文提到的分支名（如 `arena/01a012f1-wind-farm-viz`）与 8 位 SHA 属原仓库，对照表见 `../docs/12_附件_wind_farm_viz_commit_map.tsv`；
 > - 原仓 `技能库&准则/`（-SKILL- 仓库整份拷贝，410 MB）**未迁入**，其中 7 份项目相关 md 曾保留在 `skills-notes/`（2026-09-21 起随个人材料迁至 `../materials/孙承泽/学习计划与Agent准则/skills-notes/`）；精选技能在 `../skills/`；
 > - Cloudflare Pages 项目需重新连接到本仓（Root directory `viz`，输出 `site`），见 `../docs/12` §4.2；
-> - 封板状态（v1.3-final）、FREEZE 边界与数据口径**原样有效**，本段之外未改动任何原文。
+> - 封板状态（v1.3-final）、FREEZE 边界与数据口径**原样有效**，除本两段说明与下方「团队成员」一行（2026-09-21 按 `../docs/decisions/ADR-2026-002` 更正分工）外未改动任何原文。
 >
 > **📤 迁出说明（2026-09-21）**：本目录里**不属于平台本体的个人材料与队友交付件**已按人 `git mv` 到 `../materials/`，`viz/` 从 574 个文件减为 468 个，只剩平台运行 / 复现所需：
-> - → `../materials/孙承泽/`：`8.23组会*.md/.pptx`、`generate_823_pptx.py`、`暑期总结汇报_5分钟逐字口播稿_最终版.md`、`风电场偏航优化可视化260809.pptx`、`用户原版_*.pptx`、`孙承泽原版微调_*.pptx`、`王牌PPT.pptx`、`generate_ace_deck.py`、`scientific_{cfd,bar}_fig.png`、`jimeng-*.mp4`、`Figure1_Wake_Steering_Mechanism.psd`、`generate_figure_psd.py`、`PS_STUDY_DAY1_FOUNDATIONS.md`、`14_DAYS_MASTER_PLAN.md`、自学白皮书 `.md` + 练习册 + `images/` + `pdf/` + `whitepaper_src/`、`pocket-orbit/` + `给承泽·请先打开这个.md`、三份专家团报告 `.md`、`skills-notes/`；
+> - → `../materials/孙承泽/`：`8.23组会*.md/.pptx`、`generate_823_pptx.py`、`暑期总结汇报_5分钟逐字口播稿_最终版.md`、`风电场偏航优化可视化260809.pptx`、`孙承泽原版微调_*.pptx`（`用户原版_*.pptx` 与之逐字节相同，迁入后按用户指示删除）、`王牌PPT.pptx`、`generate_ace_deck.py`、`scientific_{cfd,bar}_fig.png`、`jimeng-*.mp4`、`Figure1_Wake_Steering_Mechanism.psd`、`generate_figure_psd.py`、`PS_STUDY_DAY1_FOUNDATIONS.md`、`14_DAYS_MASTER_PLAN.md`、自学白皮书 `.md` + 练习册 + `images/` + `pdf/` + `whitepaper_src/`、`pocket-orbit/` + `给承泽·请先打开这个.md`、三份专家团报告 `.md`、`skills-notes/`；
 > - → `../materials/洪祖名/`：`20260810洪/`（目录名不变）；
 > - → `../materials/袁夫达/`：`建模与数据生成(1).docx`；
 > - → `../materials/集体/`：`20260329-大创申请书-终版(1).docx`；
@@ -20,7 +20,7 @@
 
 西安交通大学 · 能源与动力工程学院 · 大学生创新训练项目
 可视化与交互系统模块负责人：孙承泽 ｜ 指导教师：李良星 副教授
-团队成员：田铭雨（CFD 仿真）· 袁夫达（降阶与代理模型）· 厉今飞（基线数据）· 洪祖名（优化与 PPO）
+项目负责人：厉今飞（AI 模块）｜ 团队成员：袁夫达（建模与 FLORIS 数据）· 田铭雨（Fluent CFD 仿真）· 洪祖名（优化控制与 PPO）
 
 > **最终封板**：网页于 2026-08-19 完成 `v1.3-final` 验收。现役 15 页不再继续视觉改版；最终维护边界见 `HANDOFF_NEXT_AGENT.md` 与 `FREEZE.md`。
 
