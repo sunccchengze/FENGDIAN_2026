@@ -1,0 +1,63 @@
+{
+  "raw_input_columns": [
+    "wind_speed",
+    "wind_direction",
+    "turbulence_intensity"
+  ],
+  "engineered_features": [
+    "wind_speed",
+    "turbulence_intensity",
+    "sin(direction)",
+    "cos(direction)",
+    "sin(2*direction)",
+    "cos(2*direction)"
+  ],
+  "target_columns": [
+    "turbine_1_power",
+    "turbine_2_power",
+    "turbine_3_power",
+    "farm_power"
+  ],
+  "output_scales_W": [
+    5000000.0,
+    5000000.0,
+    5000000.0,
+    15000000.0
+  ],
+  "split": {
+    "train_samples": 840,
+    "validation_samples": 181,
+    "test_samples": 181,
+    "random_seed": 42
+  },
+  "data_ranges": {
+    "wind_speed": {
+      "min": 4.0,
+      "max": 12.0
+    },
+    "wind_direction": {
+      "min": 0.0,
+      "max": 345.0
+    },
+    "turbulence_intensity": {
+      "min": 0.06,
+      "max": 0.1
+    },
+    "turbine_1_power": {
+      "min": 56340.32158427136,
+      "max": 5000000.0
+    },
+    "turbine_2_power": {
+      "min": 48366.53356061663,
+      "max": 5000000.0
+    },
+    "turbine_3_power": {
+      "min": 56340.32158427136,
+      "max": 5000000.0
+    },
+    "farm_power": {
+      "min": 426864.097065002,
+      "max": 15000000.0
+    }
+  }
+}

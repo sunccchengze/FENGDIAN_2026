@@ -16,20 +16,22 @@
 | [`docs/14`](docs/14_协作治理与可复现研究工作台方案.md) | **当前治理基线**：技术取舍、证据链、MVP 和执行顺序 |
 | [`docs/`](docs/README.md) | 研究、决策、会议、证据、审计和模板导航 |
 | [`docs/evidence/`](docs/evidence/README.md) | 权威数字和可复现证据索引 |
-| [`materials/`](materials/README.md) | 阶段总结、答辩、申报材料和审核口径 |
+| [`materials/`](materials/README.md) | **按人归档**的材料与交付件（五个个人目录 + `集体/`）、答辩 / 申报材料和审核口径 |
 | [`HANDOFF_NEXT.md`](HANDOFF_NEXT.md) | 当前阶段开放项、红线和下一轮交接 |
 
 ## 五人分工
 
 | 成员 | 主责 |
 |---|---|
-| **孙承泽** | 项目集成、可视化与数字孪生、仓库治理、材料与答辩 |
-| **田铭雨** | CFD 仿真和物理建模 |
-| **袁夫达** | 降阶模型和代理模型 |
-| **厉今飞** | 基线数据和数据口径 |
-| **洪祖名** | 优化算法、PPO 和控制验证 |
+| **厉今飞** | **项目负责人**；AI 模块：功率 / 流场预测神经网络、PINN、降阶与代理模型路线、各模块目标与接口对接 |
+| **袁夫达** | 建模：风机选型（NREL 5MW）、FLORIS 风场数据生成、数据字典与工况口径、FLORIS / Fluent 原理梳理 |
+| **田铭雨** | 仿真：Fluent CFD（MRF）算例、网格与湍流模型、高保真流场数据 |
+| **洪祖名** | 优化控制：代理模型优化、PPO 与控制闭环验证 |
+| **孙承泽** | 可视化与数字孪生：`viz/` 科研平台、`twin/` 数字孪生；项目集成、仓库治理、材料与答辩 |
 
-主责人负责事实和审阅，不拥有个人目录。共享文件必须通过 PR 协作；跨领域结论由主责人和至少一名其他成员共同审阅。
+主责人负责事实和审阅。代码与数据目录（`viz/`、`twin/`、`docs/`）不按人划分，共享文件必须通过 PR 协作；个人制作的材料、报告与交付件按内容主责人归档在 `materials/<姓名>/`（2026-09-21 起，见 [`materials/README.md`](materials/README.md)）；跨领域结论由主责人和至少一名其他成员共同审阅。
+
+> 分工口径以申请书封面（项目负责人厉今飞）与各成员工作总结自述为准，2026-09-21 经 [`ADR-2026-002`](docs/decisions/ADR-2026-002-五人分工表以申请书与成员自述为准.md) 修订（此前版本把厉今飞写成「基线数据」、袁夫达写成「降阶模型和代理模型」，已 supersede）。
 
 ## 仓库结构：一条证据链、两套平台
 
@@ -37,9 +39,11 @@
 |---|---|---|---|
 | [`viz/`](viz/README.md) | **科研可视化平台**（15 页浅色瑞士网格科研台，FLORIS/POD/PPO 真值全量呈现） | **封板 v1.3-final**（2026-08-19），只修 bug/死链/数据错 | `cd viz && python3 -m http.server 8000 --directory site`；线上 [wind-farm-viz.pages.dev](https://wind-farm-viz.pages.dev/)（Pages 需重连本仓，见 `docs/12` §4.2） |
 | [`twin/`](twin/README.md) | **AEOLUS TWIN 数字孪生**（影院级深色 3D Web 大屏，申请书阶段五法定交付形态） | 持续迭代（R40）；当前按 [`docs/13`](docs/13_0919组会决议_三风机改造方案与3x3留档.md) 进入单列三机改造准备，3×3 留档 tag `twin-3x3-archive-20260919` | `cd twin && npm install && npm run dev` |
-| [`materials/`](materials/README.md) | 对外材料（阶段总结 / 答辩 PPT / 申报） | 9 月阶段总结已入库，材料治理已建立 | — |
+| [`materials/`](materials/README.md) | 按人归档的材料与交付件（阶段总结 / PPT / 讲稿 / 申报 / 队友交付包） | 2026-09-21 已把 `viz/` 及其归档中的个人材料与队友交付件按人迁入（不含目录 README 与 Markdown 镜像：孙承泽 76 · 洪祖名 36 · 厉今飞 25 · 袁夫达 13 · 集体 20 · 田铭雨 2，含 2026-09-21 新增的 4 份 `SHA256SUMS.txt` 与白皮书 `build.py`）；所有 docx / pptx / pdf 附 markitdown 生成的同名 `.md` 镜像（`tools/markitdown_sync.py`），材料治理已建立 | 各人目录 `README.md` |
 | [`docs/`](docs/README.md) | 研究、决策、会议、证据、审计和交接记录 | 持续维护 | — |
 | [`skills/`](skills/README.md) | 精选技能和参考资料 | 辅助知识，不是事实来源 | — |
+| [`ci/`](ci/repo_quality.py) | 仓库契约门禁（链接、镜像、`SHA256SUMS`、白皮书装配、体积/命名）与 workflow 草案 | `.github/workflows/` 待有权限后激活（见 `docs/audits/2026-09-20_治理实现自审.md`） | `python3 ci/repo_quality.py` |
+| [`tools/`](tools/README.md) | 仓库维护脚本（目前：`markitdown_sync.py` 生成/校验 Office·PDF 的 Markdown 镜像） | 持续维护 | `python3 tools/markitdown_sync.py --check` |
 
 > 科研平台负责“已验证”，孪生平台负责“将被验收”：数据同源、口径全局唯一、重要数字必须有证据入口。两平台关系的完整表述见 `materials/孙承泽/孙承泽——9月工作阶段总结.docx` §五。
 
@@ -47,7 +51,7 @@
 
 1. **仓库归一**（已完成）：`wind_farm_viz` 的项目文件和历史迁入 `viz/`；本仓多余分支清理，迁移范围与例外见 `docs/12`；
 2. **数字孪生 3×3 → 单列三风机**（方案已出，下一轮动工）：布局可切换、3×3 不删，见 `docs/13`；
-3. **材料与答辩 PPT**（新增职责）：统一入口为 `materials/`。
+3. **材料与答辩 PPT**（新增职责）：统一入口为 `materials/`；历史 PPT / 讲稿 / 白皮书等已从 `viz/` 按人迁入 `materials/<姓名>/`（2026-09-21）。
 
 ---
 
@@ -159,7 +163,7 @@ npm run verify
 - `viz/` 继续封板维护；
 - `twin/` 保留 3×3 留档并准备进入单列三机改造，1×3 新数字必须来自新的三机 oracle；
 - 五人协作、实验记录、证据卡、材料审阅和仓库质量门禁已经进入实施阶段；
-- 已用 Issue `#13` → PR `#12` → `EVID-2026-001` → `materials/README.md` 试跑一条真实验证闭环，待队友复核和 PR 合并后关闭 Issue；
+- 已用 Issue `#13` → PR `#12` → `EVID-2026-001` → `materials/README.md` 试跑一条真实验证闭环（Issue 随 2026-09-21 的 PR 关闭；队友复核改在证据卡 §6 打勾跟踪）；
 - 后续继续处理 GitHub 权限、Project、分支保护和其他领域的真实研究任务。
 
 详细研究历史、阶段数据和验收记录请从 [`docs/`](docs/README.md) 进入，不在根 README 复制所有轮次细节。

@@ -66,7 +66,7 @@
 
 - 它是用户通用技能仓 [`sunccchengze/-SKILL-`](https://github.com/sunccchengze/-SKILL-) 的**整份拷贝**：410 MB / 16,470 个文件，占原仓 75%，含 11 个 zip 与一个 28 MB 的测试 fixture；
 - 本仓 `skills/` 已是按项目需要精选安装的 27 项（见 `skills/README.md`），装载来源与协议都写明；
-- 原仓自己的装载纪要（现 `viz/skills-notes/019ff854技能装载纪要.md`）也写着"上游 community 1,556 + variants 697 不复制进本仓库"——整份拷贝是后来的操作，与其原则相悖；
+- 原仓自己的装载纪要（现 `materials/孙承泽/学习计划与Agent准则/skills-notes/019ff854技能装载纪要.md`，2026-09-21 前在 `viz/skills-notes/`）也写着"上游 community 1,556 + variants 697 不复制进本仓库"——整份拷贝是后来的操作，与其原则相悖；
 - 用户 2026-09-19 拍板：**不迁，以 -SKILL- 仓库链接代替**。需要时 `git clone https://github.com/sunccchengze/-SKILL-`。
 
 ### 3.2 旧 SHA 怎么查
@@ -103,6 +103,8 @@ Dachuang-SZLS/
 
 **原则**：`viz/` 内部结构**原样保留**（封板线，改路径会破坏其文档、脚本与 FREEZE 边界的引用），
 只在 `viz/README.md` 顶部加了一段迁入说明；对外材料的"统一入口"由 `materials/README.md` 做索引，不搬文件。
+
+> **2026-09-21 更正**：上面这条"不搬文件"的原则**已被用户明确否决**。上图树中 `pocket-orbit/`、`images/ pdf/ whitepaper_src/ + 自学白皮书`、`skills-notes/`、`8.23组会*.md/.pptx · 王牌PPT.pptx · 建模与数据生成.docx · 大创申请书终版.docx` 以及 `20260810洪/`、`_archive/*/20260808/` 中的队友交付件，均已按内容主责人 `git mv` 到 `materials/{孙承泽,洪祖名,袁夫达,厉今飞,集体}/`；`viz/` 只保留 `site/`、Streamlit、数据管道、出版图管线、治理文档与 `_archive/` 两条旧分支的代码快照（574 → 468 个文件）。逐文件对照见 [`materials/README.md`](../materials/README.md) 与各人目录 README，`viz/` 侧说明见 `viz/README.md` 顶部"迁出说明"，归档去重台账见 `viz/_archive/MANIFEST.md` 末节。§八的"574 = 567 + 7"是迁入当时的核对数，仍然成立，只是此后文件位置变了。
 
 ### 4.1 在 `viz/` 里执行命令的口径
 
@@ -179,7 +181,7 @@ git checkout twin-3x3-archive-20260919 -- twin/src/scene/terrainUtil.ts   # 只�
 | 检查 | 结果 |
 |---|---|
 | 原仓 4 条分支 tip 文件**并集** | 17,037 个文件，其中技能库 16,470 个（按用户决定不迁，另 7 份 md 归位 `skills-notes/`） |
-| 本仓 `viz/` 文件数 | 574 = 567 项目文件 + 7 份 skills-notes |
+| 本仓 `viz/` 文件数 | 574 = 567 项目文件 + 7 份 skills-notes（迁入当日核对数；2026-09-21 按人迁出个人材料与队友交付件后为 468，见 §4 更正） |
 | **缺失**（原仓有、`viz/` 没有） | **0** |
 | **blob 哈希不同** | 2：`.gitignore`（= 白皮书分支加的 `pdf/v*.md` 忽略行，两分支合并后的自然结果）、`README.md`（只在顶部**加**了 8 行迁入说明，unified diff 无删除行；合并提交 `3c9603d` 处的 `viz/README.md` 与原仓 `main:README.md` **逐字节相同**） |
 | `viz/` 多出的文件 | 0 |
