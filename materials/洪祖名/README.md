@@ -23,6 +23,7 @@
 | `extracted/final_models/` | GCH / CC 各三台机的 XGBoost 原生 JSON + metadata |
 | `extracted/evaluation/` | 基线复现指标、5-fold CV 对比、Optuna 最优超参、残差图 |
 | `extracted/scripts/` | `data_loader.py`、`keras_model.py`、`optuna_tune.py`、`stage3_analysis.py`、`train_and_eval.py` |
+| `extracted/SHA256SUMS.txt` | 2026-09-21 生成的逐文件 sha256 清单（19 个文件，`sha256sum -c` 格式）；原 zip 已删，这是解压件完整性的唯一可复核依据，`ci/repo_quality.py` 每次自动校验 |
 
 关键结论（来自 `优化工作说明.md`，未经本仓复算）：XGBoost 将 farm 功率 MAE 从厉今飞 MLP 基线的 86.5 / 103.1 kW 降到 7.79 / 10.49 kW（GCH / CC），R² > 0.99996。
 
@@ -36,6 +37,7 @@
 | `extracted/ppo_repro_train.py`、`ppo_repro_eval.py`、`requirements-ppo.txt` | 可视化侧（孙承泽的 Agent，2026-08-10） | 依据交付文档忠实复现训练与 200 回合评测（见 `viz/.learnings/AUDIT_20260810.md` §第八轮） |
 | `extracted/model/ppo_tracking_v3_seed42.pt`（55,420 B）、`ppo_repro_v1_nonconverged_DONOTSHIP.pt` | 复现产物 | 前者是复现后的可用权重；后者是未收敛对照，禁止对外使用 |
 | `extracted/metrics_repro.json`、`ppo_eval_traces.json` | 复现产物 | 稳态 MAE 0.523%、平均调节时间 0.944 s、95 分位 1.805 s（seed 42，200 回合） |
+| `extracted/SHA256SUMS.txt` | 2026-09-21 生成 | 12 个解压文件的 sha256 清单（`sha256sum -c` 格式），`ci/repo_quality.py` 自动校验 |
 
 `viz/generate_nature_figures.py` 与 `viz/generate_nature_figures_extended.py` 读取本目录的 `extracted/ppo_eval_traces.json`（fig9 / fig17），路径已在 2026-09-21 改为 `../materials/洪祖名/20260810洪/…`，在 `viz/` 下运行即可。
 

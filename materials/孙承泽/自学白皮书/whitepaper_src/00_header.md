@@ -4,7 +4,7 @@
 
 本书面向**零基础初入风电场集群控制、尾流物理、降阶建模、强化学习控制与科学数据可视化领域的本科生与初学者**，基于西安交通大学大学生创新训练项目「风电场偏航优化可视化系统」（`sunccchengze/wind_farm_viz`）的全部研发资产编写。
 
-![风电场偏航优化与智能可视化 · 封面（中文标注版）](./images/wp_cover_hero.png)
+![风电场偏航优化与智能可视化 · 封面（中文标注版）](../images/wp_cover_hero.png)
 
 ## 本书覆盖的证据范围（口径统一说明）
 
@@ -105,10 +105,10 @@
 | 公式 | Unicode 纯文本（〔式〕标记），禁止美元符数学环境与裸 LaTeX |
 | 数字 | 百分比/倍数/次数断言带来源；图注含数字带出处 |
 | 工况红线 | FLORIS = 模拟非实测；贪心 = 下限；PPO = seed 42；XGBoost = 图源级佐证；ΔAEP = 等权简化 |
-| 装配 | 本文件由 `whitepaper_src/` 源文件装配 |
+| 装配 | 本文件由 `whitepaper_src/` 8 个片段装配（`python3 whitepaper_src/build.py`；`--check` 只比对不写） |
 | 验收 | 图片引用齐全、无 LaTeX 残留、与审计台账逐条对账 |
 
-> 📌 修改讲稿请只改 `whitepaper_src/`，再重新装配。
+> 📌 修改讲稿请只改 `whitepaper_src/`（片段内图片路径写 `../images/`），再运行 `python3 whitepaper_src/build.py` 重新装配。
 
 ---
 

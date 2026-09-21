@@ -27,6 +27,7 @@
 | `output_*/wind_farm_results/training_history.csv`、`training_curve.png` | 训练曲线 |
 | `output_*/wind_farm_results/true_vs_pred_{farm,turbine_1,turbine_2,turbine_3}_power.png` | 预测-真值散点 |
 | `output_*/wind_farm_results/model_metadata.json` | 特征、结构、超参元数据 |
+| `SHA256SUMS.txt` | 2026-09-21 生成的逐文件 sha256 清单（22 个文件，`sha256sum -c` 格式）；与袁夫达侧的清单合起来即原 `floris(1).zip` 31 个文件，`ci/repo_quality.py` 自动校验 |
 
 训练数据本身（`training_data_gch.csv` / `training_data_cc.csv`）在 [`materials/袁夫达/20260808_FLORIS数据生成/extracted/`](../袁夫达/20260808_FLORIS数据生成/extracted/)；原始 zip（sha256 `68b717ae89b4…`）已按用户决定删除，只保留解压件，取回路径见袁夫达目录 README。
 

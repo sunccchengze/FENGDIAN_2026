@@ -64,7 +64,8 @@
 |---|---|---|---|
 | `风电场偏航优化与智能可视化自学白皮书.md` | 源文件 | `viz/` | 全书正文（138 KB），图片用 `./images/` 相对引用，**同目录结构原样保留，引用不断** |
 | `风电场偏航优化与智能可视化练习册_DeepTutor版.md` | 源文件 | `viz/` | 配套练习册 |
-| `whitepaper_src/`（8 个 md） | 源片段 | `viz/whitepaper_src/` | 分章源片段，拼接得正文 |
+| `whitepaper_src/`（8 个 md） | 源片段 | `viz/whitepaper_src/` | 分章源片段，按文件名顺序拼接得正文；2026-09-21 起片段内图片路径改为 `../images/`（就地可读），装配时由 `build.py` 改回 `./images/` |
+| `whitepaper_src/build.py` | 装配脚本（2026-09-21 新增） | — | `python3 build.py` 重新装配整册，`--check` 只比对（已并入 `ci/repo_quality.py`）；改讲稿只改片段 |
 | `images/`（19 张 png） | 生成图 | `viz/images/` | 中文教学图 |
 | `pdf/`（8 册 + README） | 生成文件 | `viz/pdf/` | 分章打印版；`pdf/README.md` 里「仓库根」指本子目录 |
 

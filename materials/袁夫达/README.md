@@ -28,6 +28,7 @@
 | `extracted/output_cc/training_data_cc.csv` | CC 模型同网格 1224 条 |
 | `extracted/output_*/layout_visualization.png` | 3 台 NREL 5MW、间距 378 m（3D）沿 X 轴布局 |
 | `extracted/output_*/wake_horizontal_slice_265.png`、`_270.png` | 风向 265° / 270° 轮毂高度尾流切片 |
+| `extracted/SHA256SUMS.txt` | 2026-09-21 生成的逐文件 sha256 清单（9 个文件，不含自动生成的 `说明.md` 镜像）；原 zip 已删，与 [`../厉今飞/20260808_功率预测神经网络基线/SHA256SUMS.txt`](../厉今飞/20260808_功率预测神经网络基线/SHA256SUMS.txt) 合起来就是原包 31 个文件的完整清单，`ci/repo_quality.py` 自动校验 |
 
 **包内属于厉今飞的部分**（`train_wind_farm_model.py` 与 `wind_farm_results/`）已按作者解压到 [`materials/厉今飞/20260808_功率预测神经网络基线/`](../厉今飞/20260808_功率预测神经网络基线/)，本目录 `extracted/` 中不再重复。
 

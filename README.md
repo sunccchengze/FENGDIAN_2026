@@ -39,9 +39,11 @@
 |---|---|---|---|
 | [`viz/`](viz/README.md) | **科研可视化平台**（15 页浅色瑞士网格科研台，FLORIS/POD/PPO 真值全量呈现） | **封板 v1.3-final**（2026-08-19），只修 bug/死链/数据错 | `cd viz && python3 -m http.server 8000 --directory site`；线上 [wind-farm-viz.pages.dev](https://wind-farm-viz.pages.dev/)（Pages 需重连本仓，见 `docs/12` §4.2） |
 | [`twin/`](twin/README.md) | **AEOLUS TWIN 数字孪生**（影院级深色 3D Web 大屏，申请书阶段五法定交付形态） | 持续迭代（R40）；当前按 [`docs/13`](docs/13_0919组会决议_三风机改造方案与3x3留档.md) 进入单列三机改造准备，3×3 留档 tag `twin-3x3-archive-20260919` | `cd twin && npm install && npm run dev` |
-| [`materials/`](materials/README.md) | 按人归档的材料与交付件（阶段总结 / PPT / 讲稿 / 申报 / 队友交付包） | 2026-09-21 已把 `viz/` 及其归档中的个人材料与队友交付件按人迁入（不含目录 README 与 Markdown 镜像：孙承泽 75 · 洪祖名 34 · 厉今飞 24 · 袁夫达 12 · 集体 20 · 田铭雨 2）；所有 docx / pptx / pdf 附 markitdown 生成的同名 `.md` 镜像（`tools/markitdown_sync.py`），材料治理已建立 | 各人目录 `README.md` |
+| [`materials/`](materials/README.md) | 按人归档的材料与交付件（阶段总结 / PPT / 讲稿 / 申报 / 队友交付包） | 2026-09-21 已把 `viz/` 及其归档中的个人材料与队友交付件按人迁入（不含目录 README 与 Markdown 镜像：孙承泽 76 · 洪祖名 36 · 厉今飞 25 · 袁夫达 13 · 集体 20 · 田铭雨 2，含 2026-09-21 新增的 4 份 `SHA256SUMS.txt` 与白皮书 `build.py`）；所有 docx / pptx / pdf 附 markitdown 生成的同名 `.md` 镜像（`tools/markitdown_sync.py`），材料治理已建立 | 各人目录 `README.md` |
 | [`docs/`](docs/README.md) | 研究、决策、会议、证据、审计和交接记录 | 持续维护 | — |
 | [`skills/`](skills/README.md) | 精选技能和参考资料 | 辅助知识，不是事实来源 | — |
+| [`ci/`](ci/repo_quality.py) | 仓库契约门禁（链接、镜像、`SHA256SUMS`、白皮书装配、体积/命名）与 workflow 草案 | `.github/workflows/` 待有权限后激活（见 `docs/audits/2026-09-20_治理实现自审.md`） | `python3 ci/repo_quality.py` |
+| [`tools/`](tools/README.md) | 仓库维护脚本（目前：`markitdown_sync.py` 生成/校验 Office·PDF 的 Markdown 镜像） | 持续维护 | `python3 tools/markitdown_sync.py --check` |
 
 > 科研平台负责“已验证”，孪生平台负责“将被验收”：数据同源、口径全局唯一、重要数字必须有证据入口。两平台关系的完整表述见 `materials/孙承泽/孙承泽——9月工作阶段总结.docx` §五。
 
