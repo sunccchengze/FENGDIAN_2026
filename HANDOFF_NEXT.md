@@ -28,7 +28,7 @@
 4. **Office / PDF 都有 Markdown 镜像**（`tools/markitdown_sync.py`，规则 9）：读材料先读同名 `.md`；改了源文件要重跑脚本，`ci/repo_quality.py` 会把过期镜像当错误。
 5. **解压交付件带 `SHA256SUMS.txt`**（规则 10）：四份清单覆盖已删 zip 的全部 31 + 19 个文件和保留 zip 的 12 个文件，门禁逐文件校验。
 6. **门禁范围已扩大**：`python3 ci/repo_quality.py` 现在检查全部活跃 Markdown 的本地链接（123 个文件）、镜像、校验和、白皮书装配；基线 0 error / 1 warning（PSD 体积）。例外目录写在脚本顶部的 `LINK_SCOPE_EXCLUDE`，Issue #14 的 35 条历史断链已逐项结论（`docs/audits/2026-09-20_治理实现自审.md` §2.1）。
-7. **等用户拍板、agent 不要自作主张的两件事**：`materials/集体/参考资料/` 两篇 AIP 论文 PDF 的版权去留（项目负责人决定）；`materials/集体/假期前PPT_大创项目假期技术路线.md` 是否按发送人证据（厉今飞 7/26）移到 `materials/厉今飞/`。其余待办见 `materials/README.md` §7。
+7. **两件事已由用户 2026-09-21 拍板，不要再翻**：`materials/集体/参考资料/` 两篇 AIP 论文 PDF 保持现状；`materials/集体/假期前PPT_大创项目假期技术路线.md` 归集体（不因发送人是厉今飞而移动）。其余待办见 `materials/README.md` §7。
 
 ## 下一轮（R41）的建议顺序
 
