@@ -63,3 +63,6 @@
 - [x] 演示侧零改动（仅文档订正；`twin/` 无 diff）
 - [x] gate 0 error
 - [x] WORKLIST §2.7 + research README 索引 + TIMELINE 阶段 6 补 R47 条目
+- [x] 提交史注记 ×4 修订（round44 顶部 / WORKLIST §2.7 / research README）
+
+> ⚠ **提交史（本轮遭遇第 4 次沙箱 `.git` 刷新）**：审计进行中本地 HEAD 被重置回 `b65ca49`（工作区文件全部幸存）。恢复 = 全量重提 `b2c8f5d`（`git diff 31b1984..b2c8f5d` 验证：0 删除、恰好 7 个 R47 文件，严格超集）→ force-with-lease 推送远端会话分支（用户 2026-10-05 安全网裁定；远端 = `b2c8f5d`）。`c038be7`/`31b1984` 及其余各代本地 SHA 均为悬空/被取代引用。
