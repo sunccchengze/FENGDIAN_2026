@@ -65,6 +65,8 @@ export interface TurbineEval {
   ti: number
   /** 并网功率 (kW) */
   powerKw: number
+  /** 有效偏航（含二次导向 wake_added_yaw，°）——场采样 sampleHubPlane 用 */
+  effYaw: number
 }
 
 export interface GCHResult {
@@ -488,9 +490,165 @@ export function runGCH(
       aI: (0.5 / Math.cos(yawDeg[t] * DEG)) * (1 - Math.sqrt(Math.max(0, 1 - ct * Math.cos(yawDeg[t] * DEG)))),
       ti: tiTurbines[si],
       powerKw: pKw,
+      effYaw: state.effYaw[si],
     }
   }
   return { turbines, totalKw }
+}
+
+/** 调试/取证用：solveTurbineGrid 的 27 点转子网格原始 u（布局序 × 3×3，g = iy*3+iz，±D/4） */
+export function __debugRotorU(xFloris: number[], yFloris: number[], wind: GCHWind, yawDeg: number[]): number[] {
+  const { u } = solveTurbineGrid(xFloris, yFloris, wind, yawDeg)
+  return Array.from(u)
+}
+
+/**
+ * 轮毂高度水平面流场采样（z = HH，展示口径，R44 演示 C1 流场图）。
+ * 与 solveTurbineGrid 同一套 GCH 公式（gauss 偏折 + gauss 亏损 + SOSFS 组合），
+ * 但机组状态（uAvg/ct/aI/effYaw/ti）直接复用 runGCH 的逐机结果：
+ *  · 口径差异（已文档化）：ti 取恢复后值（runGCH 返回口径），对 sigma 的影响
+ *    在亚百分点级，仅影响展示场，不影响任何功率/误差数字（那些走 runGCH 原路）。
+ * 红线（9.19 §二）：轮毂高度截面是展示范围，不解释为二维物理问题。
+ * @param xs FLORIS 系东向坐标采样点 (m)
+ * @param ys FLORIS 系北向坐标采样点 (m)
+ * @returns u (m/s)，长度 = ys.length * xs.length（iy 外层, ix 内层）
+ */
+export function sampleHubPlane(
+  xFloris: number[],
+  yFloris: number[],
+  wind: GCHWind,
+  yawDeg: number[],
+  xs: number[],
+  ys: number[],
+): Float64Array {
+  const n = xFloris.length
+  const D = TURBINE.D
+  const { alpha, beta, ka, kb } = GCH
+
+  // ---- 坐标旋转（流向 +x'，与 solveTurbineGrid 同口径）----
+  const delta = ((((wind.fromDeg - 270) % 360) + 360) % 360) * DEG
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity
+  for (let i = 0; i < n; i++) {
+    if (xFloris[i] < minX) minX = xFloris[i]
+    if (xFloris[i] > maxX) maxX = xFloris[i]
+    if (yFloris[i] < minY) minY = yFloris[i]
+    if (yFloris[i] > maxY) maxY = yFloris[i]
+  }
+  const cx = (minX + maxX) / 2
+  const cy = (minY + maxY) / 2
+  const cosD = Math.cos(delta), sinD = Math.sin(delta)
+  const xr = new Array<number>(n), yr = new Array<number>(n)
+  for (let i = 0; i < n; i++) {
+    const ox = xFloris[i] - cx, oy = yFloris[i] - cy
+    xr[i] = ox * cosD - oy * sinD + cx
+    yr[i] = ox * sinD + oy * cosD + cy
+  }
+
+  // ---- 排序（上游→下游，稳定，与 solveTurbineGrid 一致）----
+  const order = Array.from({ length: n }, (_, i) => i)
+  order.sort((a, b) => xr[a] - xr[b] || a - b)
+
+  // ---- 逐机状态复用 runGCH（同输入同结果）----
+  const res = runGCH(xFloris, yFloris, wind, yawDeg)
+
+  // ---- 水平面网格点（旋转后坐标）----
+  const NX = xs.length, NY = ys.length
+  const P = NX * NY
+  const px = new Float64Array(P)
+  const py = new Float64Array(P)
+  for (let iy = 0; iy < NY; iy++) {
+    for (let ix = 0; ix < NX; ix++) {
+      const p = iy * NX + ix
+      const ox = xs[ix] - cx, oy = ys[iy] - cy
+      px[p] = ox * cosD - oy * sinD + cx
+      py[p] = ox * sinD + oy * cosD + cy
+    }
+  }
+
+  // z = HH（= 参考高）→ 初始流场处处 = uInf（剪切项幂为 0）
+  const uInit = wind.uInf
+  const wake = new Float64Array(P)
+  const defl = new Float64Array(P)
+  const eA = Math.exp(1 / 12), eB = Math.exp(1 / 3)
+
+  for (let si = 0; si < n; si++) {
+    const t = order[si]
+    const xi = xr[t]
+    const yi = yr[t]
+    const yawT = yawDeg[t]
+    const tb = res.turbines[t]
+    const ctI = tb.ct
+    const tiI = tb.ti
+    const s1ct = Math.sqrt(1 - ctI)
+
+    // ---- 偏折场参数（gauss；z=HH → dZ=0，与 solveTurbineGrid 同式，up=uInit 处处相等）----
+    const yawMr = -tb.effYaw * DEG
+    const cosYm = Math.cos(yawMr)
+    const s1ctCos = Math.sqrt(Math.max(0, 1 - ctI * cosYm))
+    const x0 = xi + (D * cosYm * (1 + s1ctCos)) / (Math.SQRT2 * (4 * alpha * tiI + 2 * beta * (1 - s1ct)))
+    const kyD = ka * tiI + kb
+    const thetaC0 = (0.3 * yawMr / cosYm) * (1 - s1ctCos)
+    const delta0 = Math.tan(thetaC0) * (x0 - xi)
+    const uRm = (uInit * ctI * cosYm) / (2 * (1 - s1ctCos))
+    const sz0m = (D / 2) * Math.sqrt(uRm / (uInit + uInit * s1ct))
+    const sy0m = sz0m * cosYm
+    const C0 = 1 - s1ct
+    const M0 = C0 * (2 - C0)
+    const E0 = C0 * C0 - 3 * eA * C0 + 3 * eB
+    const midCoef = (thetaC0 * E0 / 5.2) * Math.sqrt((sy0m * sz0m) / (kyD * kyD * M0))
+
+    // ---- 亏损场参数（gauss；z=HH → dZ=0，与 solveTurbineGrid 同式）----
+    const yawVr = -yawT * DEG
+    const cosYv = Math.cos(yawVr)
+    const x0v = xi + (D * cosYv * (1 + s1ct)) / (Math.SQRT2 * (4 * alpha * tiI + 2 * beta * (1 - s1ct)))
+    const kyV = ka * tiI + kb
+    const uRv = (uInit * ctI) / (2 * (1 - s1ct))
+    const sz0v = (D / 2) * Math.sqrt(uRv / (uInit + uInit * s1ct))
+    const sy0v = sz0v * cosYv
+
+    for (let p = 0; p < P; p++) {
+      const xP = px[p]
+      // 偏折：近场 [xi, x0] 线性 + 远场解析（dNear + dFar，与内核同一结构）
+      const dNear = ((xP - xi) / (x0 - xi)) * delta0 * ((xP >= xi && xP <= x0) ? 1 : 0)
+      let dFar = 0
+      if (xP > x0) {
+        const sy = kyD * (xP - x0) + sy0m
+        const sz = kyD * (xP - x0) + sz0m
+        const mt = Math.sqrt((sy * sz) / (sy0m * sz0m))
+        const ms = Math.sqrt(M0)
+        const lnNum = (1.6 + ms) * (1.6 * mt - ms)
+        const lnDen = (1.6 - ms) * (1.6 * mt + ms)
+        dFar = delta0 + midCoef * Math.log(lnNum / lnDen)
+      }
+      defl[p] = dNear + dFar
+
+      // 亏损（gauss 近/远场）
+      let dfc = 0
+      if (ctI > 0 && xP > xi + 0.1) {
+        const dY = py[p] - yi - defl[p]
+        if (xP < x0v) {
+          const rampUp = (xP - xi) / (x0v - xi)
+          const rampDown = (x0v - xP) / (x0v - xi)
+          const sy = rampDown * 0.501 * D * Math.sqrt(ctI / 2) + rampUp * sy0v
+          const sz = rampDown * 0.501 * D * Math.sqrt(ctI / 2) + rampUp * sz0v
+          const r2 = (dY * dY) / (2 * sy * sy)
+          const Cc = 1 - Math.sqrt(clamp01(1 - (ctI * cosYv) / ((8 * sy * sz) / (D * D))))
+          dfc = Cc * Math.exp(-r2)
+        } else {
+          const sy = kyV * (xP - x0v) + sy0v
+          const sz = kyV * (xP - x0v) + sz0v
+          const r2 = (dY * dY) / (2 * sy * sy)
+          const Cc = 1 - Math.sqrt(clamp01(1 - (ctI * cosYv) / ((8 * sy * sz) / (D * D))))
+          dfc = Cc * Math.exp(-r2)
+        }
+      }
+      wake[p] = Math.hypot(wake[p], dfc * uInit)
+    }
+  }
+
+  const out = new Float64Array(P)
+  for (let p = 0; p < P; p++) out[p] = uInit - wake[p]
+  return out
 }
 
 /**

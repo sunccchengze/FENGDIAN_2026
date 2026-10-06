@@ -19,6 +19,10 @@
 #   docs/research/oracle/floris_gch_oracle_v1.json   （第三方可复现存档）
 #   twin/src/data/oracle/florisGchOracle.ts          （selftest 内嵌数据件）
 #
+# R42（2026-10-05）新增 tandem3 块：三机串列（= 3×3 中列，docs/13 决议 1×3 几何），
+# 8 m/s 北来风 × {none / 统一偏航 13 档 / 上游扫 13 档 / 中游扫 13 档 / 逐机贪心}，
+# 外加与 3×3 中列切片的交叉校验（纯北来风三列互不干扰，两者应逐机相等）。
+#
 # 复现：pip install floris==4.6.6 && python3 generate_floris_gch_oracle.py
 # 红线：本脚本不拟合、不调参 —— 所有数字均为 FLORIS 原样输出。
 # ================================================================
@@ -76,6 +80,31 @@ def run_fm(lay, wd, ws, yaw):
     except Exception:
         cts = np.full(len(u_eff), math.nan)
     return powers, u_eff, cts, tis
+
+
+def run_fm6(lay, wd, ws, yaw):
+    """R44 演示用（C3 参考值/C4 耗时对照）：run_fm 口径 + 轮毂高度平均风速
+    (fm.turbine_average_velocities, m/s, 布局序) + fm.run() 墙钟耗时 (s)。
+    独立实现，不改 run_fm，保证旧区块逐位一致。红线同前：不拟合、不调参。"""
+    import time
+    fm = FlorisModel("defaults")
+    fm.set(
+        layout_x=[p[0] for p in lay],
+        layout_y=[p[1] for p in lay],
+        wind_speeds=[ws],
+        wind_directions=[wd],
+        turbulence_intensities=[TI],
+    )
+    if yaw is not None:
+        fm.set_operation(yaw_angles=np.array([[float(v) for v in yaw]]))
+    t0 = time.perf_counter()
+    fm.run()
+    sec = time.perf_counter() - t0
+    p = np.asarray(fm.get_turbine_powers())[0] / 1e3  # kW
+    vel = np.asarray(fm.turbine_average_velocities)[0]  # m/s, 布局序
+    u = np.asarray(fm.core.flow_field.u)[0]  # (n_turb, 3, 3)
+    uEff = np.cbrt(np.mean(u ** 3, axis=(1, 2)))  # (n_turb,) 与 run_fm 同口径
+    return p, [float(v) for v in uEff], [float(v) for v in vel], float(sec)
 
 
 def cross_plane_u(yaw_up, x_down, ys, zs):
@@ -236,6 +265,96 @@ def main():
     arr["round18_ref"] = {"none_kW": float(p0.sum()), "unified+30_kW": float(p30.sum())}
     out["array"] = arr
 
+    # ---- 4b) 三机串列 tandem3（R42 · 1×3 真值组；= 3×3 中列，docs/13 §4.4）----
+    # 场景系 (-100, z) 北→南: T01 z=-1272 / T02 z=-640 / T03 z=-8
+    # FLORIS 系 y=-z: (x=-100, y=1272/640/8)；wd=0 北来风 → 上游=最大 y（T01，index 0）
+    TAND3 = [(-100.0, 1272.0), (-100.0, 640.0), (-100.0, 8.0)]
+    td = {}
+    p, ue, ct, ti = run_fm(TAND3, 0.0, WS, [0.0, 0.0, 0.0])
+    p6, uEff0, vel0, sec0 = run_fm6(TAND3, 0.0, WS, [0.0, 0.0, 0.0])
+    td["none"] = {"total_kW": float(p.sum()), "p_kW": [float(v) for v in p],
+                  "uEff": [float(v) for v in ue], "ti": [float(v) for v in ti],
+                  "vel": vel0, "sec": sec0}
+    td["unified"] = []
+    for y in range(-30, 31, 5):
+        p, uEff, vel, sec = run_fm6(TAND3, 0.0, WS, [float(y)] * 3)
+        td["unified"].append({"yaw": y, "total_kW": float(p.sum()),
+                               "p_kW": [float(v) for v in p], "uEff": [float(v) for v in uEff],
+                               "vel": vel, "sec": sec})
+    td["upstreamScan"] = []
+    for a in range(-30, 31, 5):
+        p, uEff, vel, sec = run_fm6(TAND3, 0.0, WS, [float(a), 0.0, 0.0])
+        td["upstreamScan"].append({"yaw": a, "total_kW": float(p.sum()),
+                                    "p_kW": [float(v) for v in p], "uEff": [float(v) for v in uEff],
+                                    "vel": vel, "sec": sec})
+    td["midstreamScan"] = []
+    for b in range(-30, 31, 5):
+        p, uEff, vel, sec = run_fm6(TAND3, 0.0, WS, [0.0, float(b), 0.0])
+        td["midstreamScan"].append({"yaw": b, "total_kW": float(p.sum()),
+                                     "p_kW": [float(v) for v in p], "uEff": [float(v) for v in uEff],
+                                     "vel": vel, "sec": sec})
+    # 逐机贪心（与 twin farmSim.optimizeYaw 同逻辑：上游→下游逐行推进，
+    # 每步在 CAND 上取全场总功率最大；此处作为 TS 贪心的真值参照）
+    CAND = [-30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30]
+    def tsum(yaw3):
+        pp, *_ = run_fm(TAND3, 0.0, WS, [float(v) for v in yaw3])
+        return float(pp.sum())
+    greedy = {"path": []}
+    base = tsum([0, 0, 0])
+    greedy["none_kW"] = base
+    best1 = max(CAND, key=lambda a: tsum([a, 0, 0]))
+    greedy["path"].append({"stage": "upstream", "yaw": best1, "total_kW": tsum([best1, 0, 0])})
+    best2 = max(CAND, key=lambda b: tsum([best1, b, 0]))
+    greedy["path"].append({"stage": "midstream", "yaw": best2, "total_kW": tsum([best1, best2, 0])})
+    best3 = max(CAND, key=lambda c: tsum([best1, best2, c]))
+    greedy["path"].append({"stage": "downstream", "yaw": best3, "total_kW": tsum([best1, best2, best3])})
+    greedy["yaw"] = [best1, best2, best3]
+    greedy["total_kW"] = tsum([best1, best2, best3])
+    greedy["gain_pct"] = (greedy["total_kW"] / base - 1) * 100
+    # R44：逐阶段 + 终态补 pKw/uEff/vel/sec（tsum 搜索路径本身不记，仅定稿复算）
+    for entry, yaw3 in ((greedy["path"][0], [best1, 0.0, 0.0]),
+                        (greedy["path"][1], [best1, best2, 0.0]),
+                        (greedy["path"][2], [best1, best2, best3])):
+        p, uEff, vel, sec = run_fm6(TAND3, 0.0, WS, yaw3)
+        entry["p_kW"] = [float(v) for v in p]
+        entry["uEff"] = [float(v) for v in uEff]
+        entry["vel"] = vel
+        entry["sec"] = sec
+    p, uEff, greedy["vel"], greedy["sec"] = run_fm6(TAND3, 0.0, WS, [best1, best2, best3])
+    greedy["p_kW"] = [float(v) for v in p]
+    greedy["uEff"] = [float(v) for v in uEff]
+    td["greedy"] = greedy
+    td["velNote"] = ("vel = FLORIS turbine_average_velocities（轮毂高度平均风速, m/s, 布局序 index0=上游 T01）；"
+                     "uEff = 转子网格立方平均风速（与 run_fm 同口径）；"
+                     "sec = fm.run() 墙钟 (s, 本机实测, 仅稳态求解, 不含模型构建)")
+    # 交叉校验：纯北来风下 3×3 各列互不干扰 → 1×3 逐机功率 == 3×3 中列切片
+    # 3×3 row-major: 中列 = 索引 1/4/7（T02 北 / T05 中 / T08 南，与 TAND3 同序）
+    def midcol(total_p):
+        return [total_p[1], total_p[4], total_p[7]]
+    p3_none, *_ = run_fm(CLEAN_LAY, 0.0, WS, [0.0] * 9)
+    p3_30, *_ = run_fm(CLEAN_LAY, 0.0, WS, [30.0] * 9)
+    td["crossCheck3x3"] = {
+        "none": {
+            "pKw1x3": td["none"]["p_kW"],
+            "pKw3x3MidCol": [float(v) for v in midcol(p3_none)],
+            "maxDiffKw": float(max(abs(a - b) for a, b in zip(td["none"]["p_kW"], midcol(p3_none)))),
+        },
+        "unified+30": {
+            "pKw1x3": None,  # 下面补
+            "pKw3x3MidCol": [float(v) for v in midcol(p3_30)],
+            "maxDiffKw": None,
+        },
+    }
+    p1_30, *_ = run_fm(TAND3, 0.0, WS, [30.0, 30.0, 30.0])
+    cc = td["crossCheck3x3"]["unified+30"]
+    cc["pKw1x3"] = [float(v) for v in p1_30]
+    cc["maxDiffKw"] = float(max(abs(a - b) for a, b in zip(p1_30, midcol(p3_30))))
+    td["layout"] = TAND3
+    td["coordNote"] = "FLORIS(x=东,y=北)；TAND3 = 3×3 中列 (x=-100, y=1272/640/8)，index0=上游"
+    out["tandem3"] = td
+    print("tandem3 none:", td["none"]["total_kW"], "kW; 交叉校验 maxDiff:",
+          td["crossCheck3x3"]["none"]["maxDiffKw"], "/", cc["maxDiffKw"], "kW")
+
     # ---- 5) 尾流横偏质心（对齐 round17 §3.2 口径，涡轮在原点）----
     defl = []
     for y in (10, 20, 30):
@@ -315,6 +434,17 @@ def main():
     ts.append("    configs: Record<string, { yaw: number[]; totalKw: number; pKw: number[] }>")
     ts.append("    round18Ref: { noneKw: number; unified30Kw: number }")
     ts.append("  }")
+    ts.append("  tandem3: {")
+    ts.append("    layout: [number, number][]")
+    ts.append("    coordNote: string")
+    ts.append("    none: { totalKw: number; pKw: number[]; uEff: number[]; ti: number[]; vel: number[]; sec: number }")
+    ts.append("    unified: { yaw: number; totalKw: number; pKw: number[]; uEff: number[]; vel: number[]; sec: number }[]")
+    ts.append("    upstreamScan: { yaw: number; totalKw: number; pKw: number[]; uEff: number[]; vel: number[]; sec: number }[]")
+    ts.append("    midstreamScan: { yaw: number; totalKw: number; pKw: number[]; uEff: number[]; vel: number[]; sec: number }[]")
+    ts.append("    greedy: { path: { stage: string; yaw: number; totalKw: number; pKw: number[]; uEff: number[]; vel: number[]; sec: number }[]; yaw: number[]; totalKw: number; noneKw: number; gainPct: number; pKw: number[]; uEff: number[]; vel: number[]; sec: number }")
+    ts.append("    velNote: string")
+    ts.append("    crossCheck3x3: { none: { pKw1x3: number[]; pKw3x3MidCol: number[]; maxDiffKw: number }; unifiedPlus30: { pKw1x3: number[]; pKw3x3MidCol: number[]; maxDiffKw: number } }")
+    ts.append("  }")
     ts.append("  deflection: { yaw: number; xD: number; centroidYm: number }[]")
     ts.append("  crossSection: {")
     ts.append("    frameNote: string")
@@ -376,6 +506,40 @@ def main():
             },
             "round18Ref": {"noneKw": out["array"]["round18_ref"]["none_kW"],
                            "unified30Kw": out["array"]["round18_ref"]["unified+30_kW"]},
+        },
+        "tandem3": {
+            "layout": out["tandem3"]["layout"],
+            "coordNote": out["tandem3"]["coordNote"],
+            "none": {"totalKw": out["tandem3"]["none"]["total_kW"], "pKw": out["tandem3"]["none"]["p_kW"],
+                     "uEff": out["tandem3"]["none"]["uEff"], "ti": out["tandem3"]["none"]["ti"],
+                     "vel": out["tandem3"]["none"]["vel"], "sec": out["tandem3"]["none"]["sec"]},
+            "unified": [{"yaw": c["yaw"], "totalKw": c["total_kW"], "pKw": c["p_kW"], "uEff": c["uEff"], "vel": c["vel"], "sec": c["sec"]}
+                        for c in out["tandem3"]["unified"]],
+            "upstreamScan": [{"yaw": c["yaw"], "totalKw": c["total_kW"], "pKw": c["p_kW"], "uEff": c["uEff"], "vel": c["vel"], "sec": c["sec"]}
+                             for c in out["tandem3"]["upstreamScan"]],
+            "midstreamScan": [{"yaw": c["yaw"], "totalKw": c["total_kW"], "pKw": c["p_kW"], "uEff": c["uEff"], "vel": c["vel"], "sec": c["sec"]}
+                              for c in out["tandem3"]["midstreamScan"]],
+            "greedy": {
+                "path": [{"stage": s["stage"], "yaw": s["yaw"], "totalKw": s["total_kW"], "pKw": s["p_kW"], "uEff": s["uEff"], "vel": s["vel"], "sec": s["sec"]}
+                         for s in out["tandem3"]["greedy"]["path"]],
+                "yaw": out["tandem3"]["greedy"]["yaw"],
+                "totalKw": out["tandem3"]["greedy"]["total_kW"],
+                "noneKw": out["tandem3"]["greedy"]["none_kW"],
+                "gainPct": out["tandem3"]["greedy"]["gain_pct"],
+                "pKw": out["tandem3"]["greedy"]["p_kW"],
+                "uEff": out["tandem3"]["greedy"]["uEff"],
+                "vel": out["tandem3"]["greedy"]["vel"],
+                "sec": out["tandem3"]["greedy"]["sec"],
+            },
+            "velNote": out["tandem3"]["velNote"],
+            "crossCheck3x3": {
+                "none": out["tandem3"]["crossCheck3x3"]["none"],
+                "unifiedPlus30": {
+                    "pKw1x3": out["tandem3"]["crossCheck3x3"]["unified+30"]["pKw1x3"],
+                    "pKw3x3MidCol": out["tandem3"]["crossCheck3x3"]["unified+30"]["pKw3x3MidCol"],
+                    "maxDiffKw": out["tandem3"]["crossCheck3x3"]["unified+30"]["maxDiffKw"],
+                },
+            },
         },
         "deflection": [
             {"yaw": d["yaw"], "xD": d["xD"], "centroidYm": d["centroid_y_m"]} for d in out["deflection"]

@@ -4,6 +4,7 @@ import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { FARM, SUBSTATION, terrainSurfaceY } from './terrainUtil'
 import { skyState } from './lightState'
+import { phaseT } from './freeze.ts'
 
 // ============================================================================
 // 夜间地面微光脉动（B2 夜晚生机）
@@ -70,7 +71,7 @@ function Pulse({ x, z, y, phase, scaleBase }: { x: number; z: number; y: number;
   }, [tex])
 
   useFrame((state) => {
-    const t = state.clock.elapsedTime
+    const t = phaseT(state.clock.elapsedTime)
     const dayF = skyState.dayF
     const night = 1 - dayF
     if (night < 0.05) {

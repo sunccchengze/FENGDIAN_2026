@@ -5,6 +5,7 @@ import * as THREE from 'three'
 import { dayNight, sunWarmth } from '../data/farmSim'
 import { useSim } from '../state/simStore'
 import { skyState } from './lightState'
+import { FREEZE } from './freeze.ts'
 
 // ============================================================
 // 昼夜光照装置（任务#2/#3/#10 修订版）
@@ -65,7 +66,7 @@ export default function LightRig() {
     // 开场运镜期间（introDone=false）startSimClock 不推进 tHours，这里也必须
     // 同步冻结连续钟——否则天空/光照会在 43s 里从 06:00 悄悄走到 ~06:20，
     // 而 HUD 时间轴停在 06:00，开场一结束光照才被吸附回 06:00（"开场后光照跳变"）。
-    if (!s.playing || !s.introDone || Math.abs(g) > 0.6) tmp.simT = s.tHours
+    if (FREEZE || !s.playing || !s.introDone || Math.abs(g) > 0.6) tmp.simT = s.tHours // R42 freeze：连续钟恒吸附 store
     else tmp.simT = wrap24(tmp.simT + Math.min(0.1, delta) * (24 / 50))
 
     const dn = dayNight(tmp.simT)

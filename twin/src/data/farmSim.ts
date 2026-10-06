@@ -15,14 +15,14 @@
 // 求解结果，不是 SCADA 实测。HUD 所有读数统一挂【演示】角标。
 // ================================================================
 
-import { FARM } from '../scene/terrainUtil.ts'
+import { FARM, ROW_COUNT } from '../scene/terrainUtil.ts'
 import { smoothNoise, periodicSmoothNoise } from './rng.ts'
 import {
   powerCurveKw, rotorRpm, genTempC, gridFrequency, WAKE_REV} from './turbinePhysics.ts'
 import { evaluateFarmScene } from '../core/physics/evalFarm.ts'
 
-export const N_UNITS = FARM.length // 9
-export const FARM_RATED_MW = 45 // 9 × 5 MW
+export const N_UNITS = FARM.length // R41-A：派生自布局真值源（3×3=9 / 1×3=3）
+export const FARM_RATED_MW = N_UNITS * 5 // 单机 5 MW × 机组数（R41-A 派生，旧写死 45 作废）
 
 // ---- 场景坐标系约定（全场唯一）----
 // +x = 东，+z = 南（three.js Y-up 下取 -z 为北）
@@ -395,7 +395,7 @@ export function optimizeYaw(tHours: number, seedYaw: number[], wind?: WindOverri
   const measure = (y: number[]) => evalCore({ tHours: tq, unitYaw: y, targetMW: FARM_RATED_MW, wind }).totalMW
   const base = measure(yaw)
   const CAND = [-30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30]
-  for (let r = 0; r < 3; r++) {
+  for (let r = 0; r < ROW_COUNT; r++) { // R41-A：排数派生（1×3 下每排 1 台，退化为逐机贪心）
     let best = -Infinity
     let bestOff = 0
     for (const off of CAND) {

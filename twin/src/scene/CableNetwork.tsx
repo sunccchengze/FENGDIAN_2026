@@ -6,8 +6,10 @@ import { Line2 } from 'three/examples/jsm/lines/Line2.js'
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js'
 import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js'
 import { APPROACH, FARM, SUBSTATION, terrainSurfaceY } from './terrainUtil'
+import { LAYOUT } from './layouts.ts'
 import { buildHugPath, type HugPath } from '../data/paths.ts'
 import { mulberry32 } from '../data/rng.ts'
+import { phaseT } from './freeze.ts'
 
 // ============================================================================
 // 集电网络（v3：串接拓扑 + O(1) 脉冲）
@@ -138,22 +140,40 @@ export default function CableNetwork() {
       }
     }
 
-    // ---- 3 条集电回路：按"排"串接（西→东蛇形经过 3 台），再汇入升压站 ----
-    for (let row = 0; row < 3; row++) {
-      const inRow = FARM.filter((f) => f.row === row).sort((a, b) => a.x - b.x)
+    // ---- 集电回路：拓扑由布局给定（R42；docs/13 §4.1）----
+    // 3×3 = 3 条回路，每条沿一"排"串接 3 台（西→东蛇形）后汇入升压站；
+    // 1×3 = 1 条回路沿列南下串接 3 台后入站（符合电气一次接线，线条更少）。
+    const feeder = (plan: [number, number][], entrance: [number, number], top: [number, number]) => {
+      plan.push(entrance, top)
+      addLine(plan, { pulseSpeed: 0.1 })
+    }
+    if (LAYOUT.cableTopology === 'column') {
+      const col = [...FARM].sort((a, b) => a.z - b.z) // 北(上游)→南(下游)
       const plan: [number, number][] = []
-      inRow.forEach((u, i) => {
+      col.forEach((u, i) => {
         plan.push([u.x, u.z])
-        if (i < inRow.length - 1) {
-          // 相邻两机之间加一个沿排方向的浅摆点（表达实际蛇形敷设，非直线魔法）
-          const nx = inRow[i + 1]
-          plan.push([(u.x + nx.x) / 2, (u.z + nx.z) / 2 + 18])
+        if (i < col.length - 1) {
+          // 相邻两机之间沿列方向的浅摆点（蛇形敷设，非直线魔法）
+          const nx = col[i + 1]
+          plan.push([(u.x + nx.x) / 2 + 18, (u.z + nx.z) / 2])
         }
       })
-      // 串接尾 → 升压站对应侧的进线段
-      plan.push([SUBSTATION.x - 60 + row * 30, SUBSTATION.z - 96 - row * 8])
-      plan.push([SUBSTATION.x - 40 + row * 40, SUBSTATION.z - 46])
-      addLine(plan, { pulseSpeed: 0.1 })
+      feeder(plan, [SUBSTATION.x - 60, SUBSTATION.z - 96], [SUBSTATION.x - 40, SUBSTATION.z - 46])
+    } else {
+      for (let row = 0; row < 3; row++) {
+        const inRow = FARM.filter((f) => f.row === row).sort((a, b) => a.x - b.x)
+        const plan: [number, number][] = []
+        inRow.forEach((u, i) => {
+          plan.push([u.x, u.z])
+          if (i < inRow.length - 1) {
+            // 相邻两机之间加一个沿排方向的浅摆点（表达实际蛇形敷设，非直线魔法）
+            const nx = inRow[i + 1]
+            plan.push([(u.x + nx.x) / 2, (u.z + nx.z) / 2 + 18])
+          }
+        })
+        // 串接尾 → 升压站对应侧的进线段
+        feeder(plan, [SUBSTATION.x - 60 + row * 30, SUBSTATION.z - 96 - row * 8], [SUBSTATION.x - 40 + row * 40, SUBSTATION.z - 46])
+      }
     }
 
     // ---- 外送：升压站 → 220kV 出线构架 → 场外的 2 回出线 ----
@@ -199,7 +219,7 @@ export default function CableNetwork() {
   const dummy = useMemo(() => new THREE.Object3D(), [])
   const buf = useMemo(() => new Float32Array(3), [])
   useFrame((s) => {
-    const t = s.clock.elapsedTime
+    const t = phaseT(s.clock.elapsedTime)
     built.glitterMat.uniforms.uTime.value = t
     const dpr = s.viewport.dpr
     for (const m of built.lineMats) m.resolution.set(size.width * dpr, size.height * dpr)

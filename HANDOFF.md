@@ -1,5 +1,7 @@
 # HANDOFF · 交接给下一任 Agent
 
+> **本文件是「Agent 交接」分区明细的历史部分**（第 2 任 → 第 3 任）。全项目时间线主干见 [`docs/project/TIMELINE.md`](docs/project/TIMELINE.md)；现行交接与开放项见 [`HANDOFF_NEXT.md`](HANDOFF_NEXT.md)。
+>
 > **⚠️ 本文件是「第 2 任 → 第 3 任」的历史交接（写于 2026-08-28），正文中的分支名/数字/工具体检均已过期。**
 > 保留价值：§0 三句忠告、§2 用户偏好、§8 红线——这四节仍是现行口径。
 > **当前进度与开放项一律看** [`HANDOFF_NEXT.md`](HANDOFF_NEXT.md)；

@@ -72,6 +72,7 @@ void main() {
 `
 
 import { debugEnabled, hasFlag } from '../data/debug.ts'
+import { phaseT, FREEZE } from './freeze.ts'
 
 interface StreamDef {
   pts: THREE.Vector3[]
@@ -160,8 +161,9 @@ export default function WindVeil() {
   }, [built])
 
   const buf = useMemo(() => new Float32Array(3), [])
-  useFrame((s, delta) => {
-    const t = s.clock.elapsedTime
+  useFrame((s, deltaRaw) => {
+    const delta = FREEZE ? 0 : deltaRaw // R42 freeze：粒子沿线推进停摆
+    const t = phaseT(s.clock.elapsedTime)
     const posAttr = built.points.geometry.attributes.position as THREE.BufferAttribute
     const arr = posAttr.array as Float32Array
     const brightAttr = built.points.geometry.attributes.aBright as THREE.BufferAttribute
