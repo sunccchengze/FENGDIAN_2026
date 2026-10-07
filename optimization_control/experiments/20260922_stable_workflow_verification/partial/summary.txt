@@ -1,0 +1,11 @@
+{
+  "best": {
+    "score_w": 471525.53682818415,
+    "step": 128,
+    "checkpoint": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20260922_stable_workflow_verification\\partial\\step_00000128.pth"
+  },
+  "final": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20260922_stable_workflow_verification\\partial\\step_00000128.pth",
+  "completed": false,
+  "master_seed": 42,
+  "derived_run_seed": 2084522258
+}

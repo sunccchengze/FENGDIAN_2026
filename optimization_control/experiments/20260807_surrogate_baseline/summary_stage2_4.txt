@@ -1,0 +1,22 @@
+阶段2：Optuna（gch 数据，单分层 split 验证）
+  xgb:    farm RMSE 8.95 kW（n_estimators=529, depth=5, lr=0.197, subsample=0.738, reg_lambda=5.24）
+  gpr:    farm RMSE 20.17 kW（length_scale=0.37, noise=2.9e-5；对超参敏感，部分 trial 外推崩溃）
+  mlp_v2: farm RMSE 115.42 kW（lr=2.6e-3, l2=1e-6, hidden=(128,256,128)；优于基线 142.8 但仍远逊树模型）
+结论：1200 样本确定性映射场景，深度模型路线不占优；XGB 为最终模型
+
+阶段3：调参后 XGB 5-fold CV（out-of-fold）
+  gch: farm R2=0.999978 MAE=7.79kW RMSE=22.43kW
+      分风速段 farm MAE: 4-6m/s=2.87kW, 6-9=5.56kW, 9-12=12.29kW（高风速段误差最大）
+  cc:  farm R2=0.999961 MAE=10.49kW RMSE=29.97kW
+      分风速段: 4-6=6.78kW, 6-9=6.41kW, 9-12=16.09kW
+物理一致性:
+  守恒: farm=sum 误差 1W（xgb 设计保证）✓
+  边界: gch [11.4kW, 5.03MW] ✓ 在界内；cc [-0.66kW, 5.108MW] 轻微越界 → 推理 clip [0,5e6]
+  单调性: cc 严格 OK；gch 额定饱和区有 <kW 级非单调抖动（对 RL 无实际影响）
+
+阶段4：导出
+  optimization_control/surrogate/models/final/{gch,cc}_turbine_{1,2,3}.json + *_metadata.json
+  验证：加载前后预测差 0 W
+
+总体结论：代理模型从基线 MLP（farm MAE 86.5/103.1kW）提升到 XGB（7.79/10.49kW），
+提升 ~11 倍；高风速段（9-12 m/s）是主要误差来源；两套数据 GCH 整体比 CC 拟合更好。

@@ -1,0 +1,1 @@
+Diagnostic stopped before producing results due to a duplicate metric field. Fixed and rerun in 20260922_maddpg_reachability_checked. No training or model changes occurred.

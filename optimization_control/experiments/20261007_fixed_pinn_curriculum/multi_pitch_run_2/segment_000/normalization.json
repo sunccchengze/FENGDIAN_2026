@@ -1,0 +1,42 @@
+{
+  "features": [
+    "power_fraction",
+    "effective_wind_scaled",
+    "yaw_scaled",
+    "pitch_scaled",
+    "speed_scaled",
+    "previous_yaw_action",
+    "previous_pitch_action",
+    "previous_speed_action",
+    "farm_target_fraction",
+    "farm_error_fraction",
+    "ambient_wind_scaled",
+    "wind_direction_sin",
+    "wind_direction_cos",
+    "turbulence_intensity",
+    "remaining_fraction"
+  ],
+  "rated_power_w": [
+    5000000.0,
+    5000000.0,
+    5000000.0
+  ],
+  "wind_scale_m_s": 25.0,
+  "action_low": [
+    -0.35,
+    0.0,
+    0.6
+  ],
+  "action_high": [
+    0.35,
+    0.25,
+    1.267
+  ],
+  "method": "fixed_physical_scales_no_running_statistics",
+  "yaw_frame": "nacelle_heading",
+  "control_mask": [
+    false,
+    true,
+    false
+  ]
+}

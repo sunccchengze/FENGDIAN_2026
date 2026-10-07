@@ -1,0 +1,66 @@
+{
+  "test_used_for_selection": false,
+  "aggregate": [
+    {
+      "stage": "multi_all",
+      "comparison": "same_permissions",
+      "controller": "initial",
+      "runs": 3,
+      "mean_rmse_w": 933479.3191919915,
+      "std_rmse_w": 148.87649269251244,
+      "worst_tail_rmse_w": 1832848.8125962203,
+      "mean_q_return_gap_abs": 43.63625139552571
+    },
+    {
+      "stage": "multi_all",
+      "comparison": "same_permissions",
+      "controller": "selected",
+      "runs": 3,
+      "mean_rmse_w": 189807.9141591949,
+      "std_rmse_w": 15367.304367894136,
+      "worst_tail_rmse_w": 203411.58137816927,
+      "mean_q_return_gap_abs": 1.2413597860394663
+    },
+    {
+      "stage": "multi_all",
+      "comparison": "same_permissions",
+      "controller": "final",
+      "runs": 3,
+      "mean_rmse_w": 196081.90226897426,
+      "std_rmse_w": 8678.791466275788,
+      "worst_tail_rmse_w": 203411.58137816927,
+      "mean_q_return_gap_abs": 0.9850822250584895
+    },
+    {
+      "stage": "multi_all",
+      "comparison": "same_permissions",
+      "controller": "fixed",
+      "runs": 3,
+      "mean_rmse_w": 979384.5,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 2051088.0,
+      "mean_q_return_gap_abs": 0.0
+    },
+    {
+      "stage": "multi_all",
+      "comparison": "same_permissions",
+      "controller": "p",
+      "runs": 3,
+      "mean_rmse_w": 433021.3508512378,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 784576.75,
+      "mean_q_return_gap_abs": 0.0
+    },
+    {
+      "stage": "multi_all",
+      "comparison": "same_permissions",
+      "controller": "pi",
+      "runs": 3,
+      "mean_rmse_w": 270074.9585961468,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 90355.62823867836,
+      "mean_q_return_gap_abs": 0.0
+    }
+  ],
+  "scope": "fixed synthetic network only; single-target test changes initial state, multi-target test also changes target"
+}

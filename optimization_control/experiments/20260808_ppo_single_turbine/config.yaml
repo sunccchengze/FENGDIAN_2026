@@ -1,0 +1,105 @@
+schema_version: 1
+experiment_id: 20260808_ppo_single_turbine
+record_type: historical_reconstruction
+status: legacy_demo_only
+seed: 42
+environment:
+  class: SimplifiedTurbineEnv
+  model: cp_formula_with_first_order_rotor_speed
+  dt_s: 1.0
+  rotor_speed_time_constant_s: 5.0
+  episode_length_steps: 200
+  wind_profile:
+    type: step
+    values_m_per_s:
+    - 8.0
+    - 9.5
+    change_step: 100
+  target_profile:
+    type: available_power_fraction_step
+    values:
+    - 0.8
+    - 0.65
+    change_step: 100
+  observation:
+    fields:
+    - power_w
+    - rotor_speed_rad_s
+    - pitch_deg
+    - wind_speed_m_per_s
+    - target_power_w
+    scale:
+    - 5000000.0
+    - 1.267109
+    - 25.0
+    - 12.0
+    - 5000000.0
+  action:
+    fields:
+    - delta_pitch_deg
+    - delta_rotor_speed_reference_rad_s
+    limits:
+    - 0.5
+    - 0.1
+reward:
+  tracking_error_scale_w: 1000000.0
+  action_penalty_coefficient: 0.1
+  historical_formula: 0.1 * (delta_pitch_deg^2 + delta_speed_rad_s^2)
+  current_t1r_formula: 0.1 * mean((action / per_action_limit)^2)
+  compatibility_note: T1-R 修复了动作量纲混合；使用当前代码重训会与历史模型采用不同奖励。
+ppo:
+  implementation: cleanrl_style_single_file
+  requested_total_timesteps: 200000
+  actual_total_timesteps: 196608
+  policy_distribution: unsquashed_gaussian_then_environment_clip
+  num_envs: 4
+  rollout_steps_per_env: 2048
+  num_minibatches: 32
+  update_epochs: 10
+  learning_rate: 0.0003
+  anneal_learning_rate: true
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_coefficient: 0.2
+  entropy_coefficient: 0.0
+  value_coefficient: 0.5
+  max_gradient_norm: 0.5
+  network: actor/critic 64x64 Tanh
+evaluation:
+  historical_protocol:
+    requested_steps: 400
+    episode_length_steps: 200
+    terminated_truncated_handling: ignored
+    baseline_code_label: PIDController
+    baseline_actual_type: proportional_only
+  corrected_t1r_protocol:
+    default_episodes: 1
+    reset_after_each_episode: true
+    stop_on:
+    - terminated
+    - truncated
+    baseline: PController
+    pitch_direction_check: finite_difference
+    policy_format: legacy_unsquashed
+  corrected_legacy_model_regression_20260824:
+    ppo_rmse_kw: 49.83
+    p_controller_rmse_kw: 35.99
+    scenario_count: 1
+    formal_performance_conclusion: false
+  historical_results_do_not_overwrite:
+    ppo_rmse_kw: 28.49
+    ppo_mae_kw: 19.95
+    p_controller_old_direction_rmse_kw: 959.68
+  interpretation: 上述历史数值仅供追溯；旧评估跨越 episode、P 控制方向错误，且未压缩高斯动作的 log-prob 与环境裁剪后的动作不一致，不能作为正式结论。
+artifacts:
+  metrics_csv: metrics.csv
+  summary: summary.txt
+  model_not_in_git: ../../../models/ppo/ppo_tracking_v3_seed42.pt
+current_commands:
+  regression_test: .venv/Scripts/python.exe optimization_control/ppo_single_turbine/test_baseline.py
+  smoke_train: .venv/Scripts/python.exe optimization_control/ppo_single_turbine/train.py
+    --total-timesteps 512 --num-envs 2 --num-steps 256 --num-minibatches 4 --update-epochs
+    1 --no-save-model --run-tag smoke_tanh_policy
+  legacy_evaluation: .venv/Scripts/python.exe optimization_control/ppo_single_turbine/eval.py
+    --model models/ppo/ppo_tracking_v3_seed42.pt --policy-format legacy_unsquashed
+    --episodes 1

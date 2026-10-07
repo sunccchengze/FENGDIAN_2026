@@ -1,0 +1,4 @@
+split,rows,minimum_power_w,maximum_power_w
+train,2048,339357.96875,2407798.25
+validation,256,352878.53125,2416738.5
+test,256,441947.46875,2330772.75

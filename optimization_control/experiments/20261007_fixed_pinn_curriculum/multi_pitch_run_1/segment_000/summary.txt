@@ -1,0 +1,75 @@
+{
+  "best": {
+    "score_w": 150623.1491296869,
+    "step": 32768,
+    "checkpoint": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261007_fixed_pinn_curriculum\\multi_pitch_run_1\\segment_000\\step_00032768.pth",
+    "validation": [
+      {
+        "split": "validation",
+        "target_w": 2750000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 299754.3884626645,
+        "tail_rmse_w": 37435.233168798935,
+        "final_power_w": 2787476.5,
+        "max_abs_error_w": 1556129.0,
+        "q_initial": -5.522264321645101,
+        "discounted_return": -5.0695305552826735,
+        "q_return_gap": -0.4527337663624271,
+        "yaw_travel_rad": 0.0,
+        "pitch_travel_rad": 0.9939087784129473,
+        "speed_total_variation_rad_s": 3.028660322534904e-09,
+        "saturation_fraction": 0.05208333333333333
+      },
+      {
+        "split": "validation",
+        "target_w": 3250000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 174675.36167069775,
+        "tail_rmse_w": 49092.912282198704,
+        "final_power_w": 3203530.25,
+        "max_abs_error_w": 1056129.0,
+        "q_initial": -1.9432562987009685,
+        "discounted_return": -1.7744242088291664,
+        "q_return_gap": -0.1688320898718021,
+        "yaw_travel_rad": 0.0,
+        "pitch_travel_rad": 0.7175216143387078,
+        "speed_total_variation_rad_s": 3.028660322534904e-09,
+        "saturation_fraction": 0.04427083333333333
+      },
+      {
+        "split": "validation",
+        "target_w": 3750000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 81871.75696820032,
+        "tail_rmse_w": 67207.62934378596,
+        "final_power_w": 3651808.75,
+        "max_abs_error_w": 556129.0,
+        "q_initial": -0.6841629942258199,
+        "discounted_return": -0.4738911427708071,
+        "q_return_gap": -0.21027185145501287,
+        "yaw_travel_rad": 0.0,
+        "pitch_travel_rad": 1.4115110248104838,
+        "speed_total_variation_rad_s": 3.028660322534904e-09,
+        "saturation_fraction": 0.05208333333333334
+      },
+      {
+        "split": "validation",
+        "target_w": 4250000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 46191.089417185074,
+        "tail_rmse_w": 47499.49504840568,
+        "final_power_w": 4200702.0,
+        "max_abs_error_w": 131751.5,
+        "q_initial": -0.33727338910102844,
+        "discounted_return": -0.1892372192364436,
+        "q_return_gap": -0.14803616986458484,
+        "yaw_travel_rad": 0.0,
+        "pitch_travel_rad": 1.9798924485845277,
+        "speed_total_variation_rad_s": 3.028660322534904e-09,
+        "saturation_fraction": 0.0607638888888889
+      }
+    ]
+  },
+  "final": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261007_fixed_pinn_curriculum\\multi_pitch_run_1\\segment_000\\step_00032768.pth",
+  "completed": true
+}

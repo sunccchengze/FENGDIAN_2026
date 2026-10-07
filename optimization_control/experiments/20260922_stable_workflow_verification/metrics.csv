@@ -1,0 +1,6 @@
+check,passed
+network_replay_noise_resume_exact,True
+next_update_exact,True
+validation_history_exact,True
+disk_loaded_evaluation_exact,True
+frozen_trace_tampering_rejected,True

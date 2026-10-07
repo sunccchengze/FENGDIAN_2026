@@ -1,0 +1,204 @@
+schema_version: '0.1'
+purpose: software_integration_only_before_real_pinn_delivery
+interface:
+  model_kind:
+    value: quasi_static
+    source: project_interface_decision
+  model_dt_s:
+    value: null
+    source: project_interface_decision
+  turbine_ids:
+    value:
+    - T01
+    source: assumed
+    note: Replace with the fixed layout metadata delivered by the simulation/PINN
+      groups.
+environment:
+  seed:
+    value: 42
+    source: project_convention
+  control_interval_s:
+    value: 1.0
+    source: assumed
+    note: Candidate used for integration tests; not a frozen physical control period.
+  episode_horizon_steps:
+    value: 240
+    source: assumed
+  synthetic_wind_speed_base_m_s:
+    value: 8.0
+    source: assumed
+  synthetic_wind_speed_amplitude_m_s:
+    value: 1.0
+    source: assumed
+  synthetic_wind_period_steps:
+    value: 120
+    source: assumed
+  synthetic_wind_noise_std_m_s:
+    value: 0.1
+    source: assumed
+  ambient_wind_direction_rad:
+    value: 0.0
+    source: assumed
+  turbulence_intensity:
+    value: 0.08
+    source: assumed
+observation:
+  wind_speed_scale_m_s:
+    value: 25.0
+    source: assumed
+    note: Observation normalization only; independent of the mock Plant cut-out speed.
+mock_plant:
+  warning: Not calibrated; never report its control result as a physical conclusion.
+  rated_power_w:
+    value: 5000000.0
+    source: assumed
+  cut_in_wind_speed_m_s:
+    value: 3.0
+    source: assumed
+  rated_wind_speed_m_s:
+    value: 11.4
+    source: assumed
+  cut_out_wind_speed_m_s:
+    value: 25.0
+    source: assumed
+  rated_rotor_speed_rad_s:
+    value: 1.267
+    source: assumed
+  yaw_power_exponent:
+    value: 1.88
+    source: assumed
+  pitch_decay_scale_rad:
+    value: 0.2094395102
+    source: assumed
+  rotor_speed_width_rad_s:
+    value: 0.45
+    source: assumed
+  downstream_wake_loss_fraction:
+    value: 0.06
+    source: assumed
+  valid_turbulence_intensity_max:
+    value: 0.3
+    source: assumed
+action_mapper:
+  control_mode:
+    value: absolute_reference
+    source: project_interface_decision
+  yaw_misalignment_reference_rad:
+    minimum:
+      value: -0.5235987756
+      source: assumed
+    maximum:
+      value: 0.5235987756
+      source: assumed
+  collective_pitch_reference_rad:
+    minimum:
+      value: 0.0
+      source: assumed
+    maximum:
+      value: 0.436332313
+      source: assumed
+  rotor_speed_reference_rad_s:
+    minimum:
+      value: 0.1
+      source: assumed
+    maximum:
+      value: 1.267
+      source: assumed
+actuator_model:
+  yaw:
+    rate_limit_rad_s:
+      value: 0.005
+      source: assumed
+    time_constant_s:
+      value: 10.0
+      source: assumed
+    command_delay_s:
+      value: 0.0
+      source: assumed
+    update_period_steps:
+      value: 10
+      source: assumed
+  collective_pitch:
+    rate_limit_rad_s:
+      value: 0.05
+      source: assumed
+    time_constant_s:
+      value: 1.0
+      source: assumed
+    command_delay_s:
+      value: 0.0
+      source: assumed
+    update_period_steps:
+      value: 1
+      source: assumed
+  rotor_speed_operating_point:
+    acceleration_limit_rad_s2:
+      value: 0.1
+      source: assumed
+    time_constant_s:
+      value: 5.0
+      source: assumed
+    command_delay_s:
+      value: 0.0
+      source: assumed
+    update_period_steps:
+      value: 1
+      source: assumed
+  initial_applied_control:
+    yaw_misalignment_rad:
+      value: 0.0
+      source: assumed
+    collective_pitch_rad:
+      value: 0.034906585
+      source: assumed
+    rotor_speed_operating_point_rad_s:
+      value: 1.0
+      source: assumed
+available_power_counterfactual:
+  yaw_misalignment_rad:
+    value: 0.0
+    source: assumed
+  collective_pitch_rad:
+    value: 0.0
+    source: assumed
+  rotor_speed_operating_point_rad_s:
+    value: 1.0
+    source: assumed
+  note: Queried independently of applied control to prevent reference self-contraction.
+reference_power:
+  headroom_fraction:
+    value: 0.1
+    source: assumed
+  low_pass_time_constant_s:
+    value: 10.0
+    source: assumed
+  ramp_up_limit_w_s:
+    value: 100000.0
+    source: assumed
+  ramp_down_limit_w_s:
+    value: 100000.0
+    source: assumed
+reward:
+  tracking_weight:
+    value: 1.0
+    source: assumed
+  ramp_weight:
+    value: 0.1
+    source: assumed
+  action_rate_weight:
+    value: 0.01
+    source: assumed
+  load_weight:
+    value: 0.0
+    source: assumed
+  constraint_weight:
+    value: 1.0
+    source: assumed
+  ood_weight:
+    value: 1.0
+    source: assumed
+  energy_weight:
+    value: 0.0
+    source: assumed
+    note: 'Disabled by default: a linear energy bonus shifts the tracking optimum
+      above the reference.'

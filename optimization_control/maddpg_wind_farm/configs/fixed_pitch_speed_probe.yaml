@@ -1,0 +1,58 @@
+version: fixed_pinn_curriculum_v1
+seed: 42
+source_experiment: optimization_control/experiments/20261007_fixed_pinn_demo_checked
+runtime_site_packages: .venv/pinn_tf216
+workers: 3
+horizon: 128
+single_steps: 16384
+multi_steps: 32768
+expansion_steps: 16384
+eval_every: 2048
+warmup_steps: 512
+update_every: 2
+noise_std:
+- 0.05
+- 0.15
+- 0.08
+noise_correlation_s:
+- 10.0
+- 3.0
+- 5.0
+noise_kind: white
+noise_end_fraction: 0.2
+run_ids:
+- 0
+- 1
+- 2
+single_targets_w:
+- 2500000.0
+- 3500000.0
+- 4500000.0
+multi_training_targets_w:
+- 2500000.0
+- 3000000.0
+- 3500000.0
+- 4000000.0
+- 4500000.0
+validation_targets_w:
+- 2800000.0
+- 3200000.0
+- 3800000.0
+- 4200000.0
+test_targets_w:
+- 2600000.0
+- 3100000.0
+- 3900000.0
+- 4400000.0
+test_initial_pitch_rad:
+- 0.025
+- 0.055
+gate:
+  max_tail_rmse_w: 100000.0
+  min_endpoint_response_fraction: 0.8
+  max_final_over_best_validation_ratio: 1.25
+selection_rule: lowest_validation_mean_rmse_including_initial
+test_rule: freeze_completed_stages_and_baselines_before_test
+scope: independent_channel_capability_probe_after_failed_multi_pitch_gate
+stages:
+- multi_pitch_speed

@@ -167,3 +167,7 @@ npm run verify
 - 后续继续处理 GitHub 权限、Project、分支保护和其他领域的真实研究任务。
 
 详细研究历史、阶段数据和验收记录请从 [`docs/`](docs/README.md) 进入，不在根 README 复制所有轮次细节。
+
+## 优化控制完整交付 2026 年 10 月 7 日
+
+新增 [优化工作总索引](optimization_control/WORK_INDEX.md) 与 [洪祖名完整交付](materials/洪祖名/20261007_optimization_handoff/README.md)。包括代理模型、PPO、随机入口、MADDPG、统一传统基线及诊断；当前固定九输入网络的结果仅为合成联调，可靠性门槛未全部通过。此分支供审阅，未替代 main 结论。

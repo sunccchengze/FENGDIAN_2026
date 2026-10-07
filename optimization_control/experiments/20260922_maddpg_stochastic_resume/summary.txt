@@ -1,0 +1,8 @@
+Command: python -m optimization_control.maddpg_wind_farm.verify_workflow --output <new-directory>
+{
+  "steps": 512,
+  "updates_before_extra_check": 241,
+  "resume_exact": true,
+  "replay_exact": true
+}
+All results use coupled integration mock; not physical evidence.

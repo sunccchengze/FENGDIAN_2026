@@ -1,0 +1,55 @@
+{
+  "version": "farm_entrance_v1",
+  "dt_s": 1.0,
+  "seed": 42,
+  "split": "validation",
+  "episode": 170024,
+  "speed_metadata": {
+    "version": "kaimal_single_point_v1",
+    "config": {
+      "dt_s": 1.0,
+      "duration_s": 128.0,
+      "mean_min_m_s": 7.5,
+      "mean_max_m_s": 9.0,
+      "ti_values": [
+        0.06,
+        0.08,
+        0.1
+      ],
+      "length_scale_m": 100.0,
+      "padding_factor": 8,
+      "scenario": "stationary",
+      "ramp_amplitude_m_s": 0.5,
+      "gust_amplitude_m_s": 1.0,
+      "gust_duration_s": 32.0,
+      "speed_min_m_s": 3.0,
+      "speed_max_m_s": 20.0,
+      "max_attempts": 100
+    },
+    "seed": 42,
+    "split": "validation",
+    "worker": 0,
+    "episode": 170024,
+    "mean_m_s": 7.67864923832243,
+    "ti_requested": 0.1,
+    "scenario": "stationary",
+    "rejected_attempts": 0,
+    "expected_band_variance_m2_s2": 0.5247265243709567,
+    "source": "synthetic_assumption",
+    "ti_semantics": "stationary background component, before events"
+  },
+  "direction_config": {
+    "mean_rad": 4.71238898038469,
+    "amplitude_rad": 0.04,
+    "period_s": 300.0,
+    "ramp_rad": 0.02
+  },
+  "source": "synthetic_entrance_not_full_field",
+  "reference": "https://openfast.readthedocs.io/en/main/_downloads/cb14d3e2d3533d76e405d730fea19846/TurbSim_v2.00.pdf",
+  "speed_semantics": "constant entrance speed for diagnostic or stress case",
+  "ti_semantics": "background spectral parameter, constant per episode, before ramp/gust",
+  "direction_semantics": "shared angle convention with nacelle; smooth synthetic training design",
+  "override_family": "direction",
+  "override_wind_m_s": 8.0,
+  "csv_sha256": "3e113f7441d858901f625beae9a8cd2b8d671814e5079c2b16a17d307fd628e5"
+}

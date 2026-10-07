@@ -1,0 +1,33 @@
+Command: python -m optimization_control.maddpg_wind_farm.inflow_workflow --output <new-dir> --checkpoint <optional>
+[
+  {
+    "scenario": "stationary",
+    "disk_replay_exact": true,
+    "all_controllers_same_inflow": true,
+    "actuator_rates_passed": true,
+    "ensemble_psd_ratio": 0.9843324135545102,
+    "ensemble_mean_square_ratio": 0.9442741039009037,
+    "total_rejected_attempts": 0
+  },
+  {
+    "scenario": "ramp",
+    "disk_replay_exact": true,
+    "all_controllers_same_inflow": true,
+    "actuator_rates_passed": true,
+    "ensemble_psd_ratio": 0.9933679343457451,
+    "ensemble_mean_square_ratio": 1.0263902877852107,
+    "total_rejected_attempts": 0
+  },
+  {
+    "scenario": "gust",
+    "disk_replay_exact": true,
+    "all_controllers_same_inflow": true,
+    "actuator_rates_passed": true,
+    "ensemble_psd_ratio": 0.9812823757738542,
+    "ensemble_mean_square_ratio": 0.948675561337917,
+    "total_rejected_attempts": 0
+  }
+]
+Mock does not model direction/TI wake physics. No spatial field or physical superiority claim.
+Yaw command restricted to +/-0.45 rad in this config; PINN gamma domain remains +/-0.524 rad.
+This headroom covers designed slow directions, not arbitrary direction jumps; OOD always raises.

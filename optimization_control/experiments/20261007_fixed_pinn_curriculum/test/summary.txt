@@ -1,0 +1,166 @@
+{
+  "test_used_for_selection": false,
+  "aggregate": [
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "initial",
+      "runs": 1,
+      "mean_rmse_w": 978077.7138218629,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 1932527.0156258834,
+      "mean_q_return_gap_abs": 49.4709777594052
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "selected",
+      "runs": 1,
+      "mean_rmse_w": 170156.82842906818,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 28730.644281329867,
+      "mean_q_return_gap_abs": 0.3641527874999852
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "final",
+      "runs": 1,
+      "mean_rmse_w": 230361.7941692438,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 184976.80129664234,
+      "mean_q_return_gap_abs": 0.6008883441235413
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "fixed",
+      "runs": 1,
+      "mean_rmse_w": 1028104.3333333334,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 2151088.0,
+      "mean_q_return_gap_abs": 50.985330979499714
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "p",
+      "runs": 1,
+      "mean_rmse_w": 426107.6434102778,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 800751.9453127603,
+      "mean_q_return_gap_abs": 10.315978278900566
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "pi",
+      "runs": 1,
+      "mean_rmse_w": 272266.91100959276,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 94908.3645503754,
+      "mean_q_return_gap_abs": 6.227651350237277
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "complete_traditional_scheme",
+      "controller": "p",
+      "runs": 1,
+      "mean_rmse_w": 437997.88841016707,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 826831.2500000378,
+      "mean_q_return_gap_abs": 11.11496574962625
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "complete_traditional_scheme",
+      "controller": "pi",
+      "runs": 1,
+      "mean_rmse_w": 283194.55994880706,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 97429.61833738825,
+      "mean_q_return_gap_abs": 6.6642287245048015
+    },
+    {
+      "stage": "multi_pitch",
+      "comparison": "same_permissions",
+      "controller": "initial",
+      "runs": 3,
+      "mean_rmse_w": 932966.1064723763,
+      "std_rmse_w": 46.254355469334136,
+      "worst_tail_rmse_w": 1782659.8594352517,
+      "mean_q_return_gap_abs": 41.62291516016128
+    },
+    {
+      "stage": "multi_pitch",
+      "comparison": "same_permissions",
+      "controller": "selected",
+      "runs": 3,
+      "mean_rmse_w": 169752.68039412049,
+      "std_rmse_w": 9166.688473634616,
+      "worst_tail_rmse_w": 175786.16456405385,
+      "mean_q_return_gap_abs": 0.23054368683692897
+    },
+    {
+      "stage": "multi_pitch",
+      "comparison": "same_permissions",
+      "controller": "final",
+      "runs": 3,
+      "mean_rmse_w": 175162.75160019062,
+      "std_rmse_w": 14094.780714932776,
+      "worst_tail_rmse_w": 157045.9812374329,
+      "mean_q_return_gap_abs": 0.16546983264907392
+    },
+    {
+      "stage": "multi_pitch",
+      "comparison": "same_permissions",
+      "controller": "fixed",
+      "runs": 3,
+      "mean_rmse_w": 966884.5,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 2001088.0,
+      "mean_q_return_gap_abs": 43.1313207159748
+    },
+    {
+      "stage": "multi_pitch",
+      "comparison": "same_permissions",
+      "controller": "p",
+      "runs": 3,
+      "mean_rmse_w": 403398.5659531372,
+      "std_rmse_w": 7.128953417946986e-11,
+      "worst_tail_rmse_w": 737139.9687500258,
+      "mean_q_return_gap_abs": 8.476066909139908
+    },
+    {
+      "stage": "multi_pitch",
+      "comparison": "same_permissions",
+      "controller": "pi",
+      "runs": 3,
+      "mean_rmse_w": 251963.75711348315,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 84424.97983168298,
+      "mean_q_return_gap_abs": 4.980071477377604
+    },
+    {
+      "stage": "multi_pitch",
+      "comparison": "complete_traditional_scheme",
+      "controller": "p",
+      "runs": 3,
+      "mean_rmse_w": 431816.89803506184,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 763508.5156250664,
+      "mean_q_return_gap_abs": 9.262492824709975
+    },
+    {
+      "stage": "multi_pitch",
+      "comparison": "complete_traditional_scheme",
+      "controller": "pi",
+      "runs": 3,
+      "mean_rmse_w": 267187.87309727474,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 86930.90150136396,
+      "mean_q_return_gap_abs": 5.387921241439874
+    }
+  ],
+  "scope": "fixed synthetic network only; single-target test changes initial state, multi-target test also changes target"
+}

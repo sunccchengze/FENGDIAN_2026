@@ -1,0 +1,35 @@
+{
+  "version": "kaimal_single_point_v1",
+  "config": {
+    "dt_s": 1.0,
+    "duration_s": 600.0,
+    "mean_min_m_s": 6.0,
+    "mean_max_m_s": 10.0,
+    "ti_values": [
+      0.06,
+      0.08,
+      0.1
+    ],
+    "length_scale_m": 100.0,
+    "padding_factor": 8,
+    "scenario": "stationary",
+    "ramp_amplitude_m_s": 1.0,
+    "gust_amplitude_m_s": 1.5,
+    "gust_duration_s": 40.0,
+    "speed_min_m_s": 0.5,
+    "speed_max_m_s": 16.0,
+    "max_attempts": 100
+  },
+  "seed": 42,
+  "split": "test",
+  "worker": 0,
+  "episode": 0,
+  "mean_m_s": 6.289508957700364,
+  "ti_requested": 0.1,
+  "scenario": "stationary",
+  "rejected_attempts": 0,
+  "expected_band_variance_m2_s2": 0.36331785080974505,
+  "source": "synthetic_assumption",
+  "ti_semantics": "stationary background component, before events",
+  "csv_sha256": "0756232defcd254f3ad18108a670a0e4c110c04db56a78b8d5f8c748da0cfec4"
+}

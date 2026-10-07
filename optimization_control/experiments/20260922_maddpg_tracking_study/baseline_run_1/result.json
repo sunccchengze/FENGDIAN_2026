@@ -1,0 +1,243 @@
+{
+  "best": {
+    "score_w": 387086.8181301527,
+    "step": 16384,
+    "checkpoint": "optimization_control/experiments/20260922_maddpg_tracking_study/baseline_run_1/step_00016384.pth"
+  },
+  "final": "optimization_control/experiments/20260922_maddpg_tracking_study/baseline_run_1/step_00016384.pth",
+  "initial_rmse_w": 1011482.2512885513,
+  "final_rmse_w": 387086.8181301527,
+  "run_id": 1,
+  "config": {
+    "schema_version": 1,
+    "seed": 42,
+    "purpose": "stochastic_entrance_software_validation_not_physical_performance",
+    "plant": {
+      "kind": "mock",
+      "source": "coupled_integration_mock",
+      "power_semantics": "uncalibrated_steady_model_power_w",
+      "turbine_ids": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "rated_power_w": [
+        5000000,
+        5000000,
+        5000000
+      ],
+      "layout": {
+        "kind": "fixed_collinear_equal_spacing",
+        "spacing_m": null,
+        "note": "supplied_by_real_model_not_optimized"
+      },
+      "features": [
+        "ambient_wind_speed_m_s",
+        "ambient_wind_direction_rad",
+        "turbulence_intensity",
+        "gamma_1",
+        "gamma_2",
+        "gamma_3",
+        "beta_1",
+        "beta_2",
+        "beta_3",
+        "omega_1",
+        "omega_2",
+        "omega_3"
+      ],
+      "bounds": {
+        "ambient_wind_speed_m_s": [
+          3.0,
+          20.0
+        ],
+        "ambient_wind_direction_rad": [
+          0.0,
+          6.283186
+        ],
+        "turbulence_intensity": [
+          0.0,
+          0.3
+        ],
+        "gamma_1": [
+          -0.524,
+          0.524
+        ],
+        "gamma_2": [
+          -0.524,
+          0.524
+        ],
+        "gamma_3": [
+          -0.524,
+          0.524
+        ],
+        "beta_1": [
+          0.0,
+          0.437
+        ],
+        "beta_2": [
+          0.0,
+          0.437
+        ],
+        "beta_3": [
+          0.0,
+          0.437
+        ],
+        "omega_1": [
+          0.1,
+          1.268
+        ],
+        "omega_2": [
+          0.1,
+          1.268
+        ],
+        "omega_3": [
+          0.1,
+          1.268
+        ]
+      }
+    },
+    "environment": {
+      "parameter_source": {
+        "kind": "assumption",
+        "reference": "configs/default.yaml",
+        "note": "all physical limits and actuator parameters are integration assumptions"
+      },
+      "dt_s": 1.0,
+      "yaw_frame": "nacelle_heading",
+      "heading_bounds_rad": [
+        -314.1592653589793,
+        314.1592653589793
+      ],
+      "control_mask": [
+        1,
+        1,
+        1
+      ],
+      "horizon": 128,
+      "wind_scale_m_s": 25.0,
+      "action_low": [
+        -0.45,
+        0,
+        0.1
+      ],
+      "action_high": [
+        0.45,
+        0.436332313,
+        1.267
+      ],
+      "initial_operating_point": [
+        0.0,
+        0.04,
+        0.9
+      ],
+      "rate_limits": [
+        0.005,
+        0.00872664626,
+        0.1
+      ],
+      "time_constants_s": [
+        5.0,
+        2.0,
+        5.0
+      ],
+      "target_w": 3000000.0,
+      "wind_base_m_s": 8.0,
+      "wind_amplitude_m_s": 0.4,
+      "wind_period_steps": 128,
+      "wind_noise_std_m_s": 0.02,
+      "wind_direction_rad": 4.7123889804,
+      "turbulence_intensity": 0.08,
+      "action_change_weight": 0.001,
+      "inflow": {
+        "speed": {
+          "mean_min_m_s": 7.5,
+          "mean_max_m_s": 9.0,
+          "ti_values": [
+            0.06,
+            0.08,
+            0.1
+          ],
+          "length_scale_m": 100.0,
+          "padding_factor": 8,
+          "scenario": "mixed",
+          "ramp_amplitude_m_s": 0.5,
+          "gust_amplitude_m_s": 1.0,
+          "gust_duration_s": 40.0,
+          "speed_min_m_s": 3.0,
+          "speed_max_m_s": 20.0,
+          "max_attempts": 100
+        },
+        "direction": {
+          "mean_rad": 4.71238898038469,
+          "amplitude_rad": 0.04,
+          "period_s": 300.0,
+          "ramp_rad": 0.02
+        }
+      },
+      "reward_scale": 100.0
+    },
+    "algorithm": {
+      "hidden": 64,
+      "actor_lr": 0.0001,
+      "critic_lr": 0.001,
+      "gamma": 0.99,
+      "tau": 0.01,
+      "batch_size": 64,
+      "capacity": 20000,
+      "grad_clip": 1.0
+    },
+    "training": {
+      "total_steps": 4800,
+      "warmup_steps": 600,
+      "update_every": 2,
+      "noise_std": 0.15,
+      "episode_target_fractions": [
+        0.16,
+        0.2,
+        0.24
+      ]
+    },
+    "evaluation": {
+      "seed_offset": 10000,
+      "scenarios": [
+        {
+          "name": "stationary",
+          "target_w": 3000000.0,
+          "inflow": {
+            "speed": {
+              "scenario": "stationary"
+            }
+          }
+        },
+        {
+          "name": "ramp",
+          "target_w": 3000000.0,
+          "inflow": {
+            "speed": {
+              "scenario": "ramp"
+            }
+          }
+        },
+        {
+          "name": "gust",
+          "target_w": 3000000.0,
+          "inflow": {
+            "speed": {
+              "scenario": "gust"
+            }
+          }
+        }
+      ]
+    },
+    "baselines": {
+      "three_channel": true,
+      "yaw_offset_rad": 0.0,
+      "speed_per_wind_rad_m": 0.11114035087719298,
+      "pitch_bias_rad": 0.04,
+      "kp": 1.5,
+      "ki": 0.08,
+      "antiwindup_gain": 0.2,
+      "integral_limit_rad": 0.3
+    }
+  }
+}

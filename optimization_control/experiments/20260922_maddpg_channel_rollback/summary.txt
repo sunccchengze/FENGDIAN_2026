@@ -1,0 +1,81 @@
+{
+  "aggregate": [
+    {
+      "repeat": 0,
+      "mode": "best",
+      "mean_rmse_w": 401368.2308566811
+    },
+    {
+      "repeat": 0,
+      "mode": "final",
+      "mean_rmse_w": 650702.342959706
+    },
+    {
+      "repeat": 0,
+      "mode": "yaw",
+      "mean_rmse_w": 734786.3579636731
+    },
+    {
+      "repeat": 0,
+      "mode": "pitch",
+      "mean_rmse_w": 582227.42103982
+    },
+    {
+      "repeat": 0,
+      "mode": "speed",
+      "mean_rmse_w": 589377.2909169884
+    },
+    {
+      "repeat": 1,
+      "mode": "best",
+      "mean_rmse_w": 455012.6696117225
+    },
+    {
+      "repeat": 1,
+      "mode": "final",
+      "mean_rmse_w": 542651.32923411
+    },
+    {
+      "repeat": 1,
+      "mode": "yaw",
+      "mean_rmse_w": 799527.9070798799
+    },
+    {
+      "repeat": 1,
+      "mode": "pitch",
+      "mean_rmse_w": 681128.2635045185
+    },
+    {
+      "repeat": 1,
+      "mode": "speed",
+      "mean_rmse_w": 391832.31987176655
+    },
+    {
+      "repeat": 2,
+      "mode": "best",
+      "mean_rmse_w": 390591.44474582176
+    },
+    {
+      "repeat": 2,
+      "mode": "final",
+      "mean_rmse_w": 496587.86062853516
+    },
+    {
+      "repeat": 2,
+      "mode": "yaw",
+      "mean_rmse_w": 979744.8410411781
+    },
+    {
+      "repeat": 2,
+      "mode": "pitch",
+      "mean_rmse_w": 400296.8150989379
+    },
+    {
+      "repeat": 2,
+      "mode": "speed",
+      "mean_rmse_w": 574992.9604325187
+    }
+  ],
+  "scope": "validation-only channel intervention; cross-channel/state interactions remain; not a new selected policy",
+  "command": "python -m optimization_control.maddpg_wind_farm.retrospective --source <old-study> --output <new-directory> --channel-rollback"
+}

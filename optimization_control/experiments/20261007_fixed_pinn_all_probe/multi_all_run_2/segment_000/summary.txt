@@ -1,0 +1,75 @@
+{
+  "best": {
+    "score_w": 192581.82676442285,
+    "step": 16384,
+    "checkpoint": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261007_fixed_pinn_all_probe\\multi_all_run_2\\segment_000\\step_00016384.pth",
+    "validation": [
+      {
+        "split": "validation",
+        "target_w": 2800000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 325035.68836303847,
+        "tail_rmse_w": 183715.6932887722,
+        "final_power_w": 2581668.5,
+        "max_abs_error_w": 1551016.0,
+        "q_initial": -5.356741587320964,
+        "discounted_return": -5.503737319100258,
+        "q_return_gap": 0.14699573177929448,
+        "yaw_travel_rad": 0.807893279933007,
+        "pitch_travel_rad": 0.9899840492406854,
+        "speed_total_variation_rad_s": 1.0049730263478382,
+        "saturation_fraction": 0.17795138888888892
+      },
+      {
+        "split": "validation",
+        "target_w": 3200000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 247107.60096844527,
+        "tail_rmse_w": 205189.85515846813,
+        "final_power_w": 2977698.25,
+        "max_abs_error_w": 1151247.0,
+        "q_initial": -2.9766425291697183,
+        "discounted_return": -2.943554256562958,
+        "q_return_gap": -0.03308827260676006,
+        "yaw_travel_rad": 0.6025522168590465,
+        "pitch_travel_rad": 0.5640870906007459,
+        "speed_total_variation_rad_s": 0.9398202447150017,
+        "saturation_fraction": 0.12065972222222222
+      },
+      {
+        "split": "validation",
+        "target_w": 3800000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 135375.28910686428,
+        "tail_rmse_w": 107993.93172371532,
+        "final_power_w": 3667993.25,
+        "max_abs_error_w": 551539.0,
+        "q_initial": -1.349855899810791,
+        "discounted_return": -0.9001401769941706,
+        "q_return_gap": -0.4497157228166204,
+        "yaw_travel_rad": 0.5813257883869047,
+        "pitch_travel_rad": 0.4532345302586739,
+        "speed_total_variation_rad_s": 0.9276772170076709,
+        "saturation_fraction": 0.09375000000000001
+      },
+      {
+        "split": "validation",
+        "target_w": 4200000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 62808.72861934335,
+        "tail_rmse_w": 49343.916822548905,
+        "final_power_w": 4231671.5,
+        "max_abs_error_w": 255605.5,
+        "q_initial": -0.982838491598765,
+        "discounted_return": -0.23133069465646755,
+        "q_return_gap": -0.7515077969422974,
+        "yaw_travel_rad": 0.5096573912247249,
+        "pitch_travel_rad": 0.27966366948465615,
+        "speed_total_variation_rad_s": 0.9344960463503481,
+        "saturation_fraction": 0.07552083333333334
+      }
+    ]
+  },
+  "final": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261007_fixed_pinn_all_probe\\multi_all_run_2\\segment_000\\step_00016384.pth",
+  "completed": true
+}

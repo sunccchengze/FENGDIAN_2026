@@ -1,0 +1,5 @@
+seed: 42
+source: optimization_control/experiments/20260922_maddpg_stable_training
+split: validation
+intervention: final policy with one channel replaced by best policy at the current
+  state

@@ -1,0 +1,650 @@
+[
+  {
+    "wind_m_s": 5.5,
+    "target_w": 800000.0,
+    "upper_bound_w": 1261958.4746451539,
+    "known_available_w": 1261948.75,
+    "witness_power_w": 800000.125,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.12175701930706614,
+        0.6112719298245614
+      ],
+      [
+        0.0,
+        0.12175701930706614,
+        0.5701935045606431
+      ],
+      [
+        0.0,
+        0.12175701930706614,
+        0.5510345589913705
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 5.5,
+    "target_w": 1200000.0,
+    "upper_bound_w": 1261958.4746451539,
+    "known_available_w": 1261948.75,
+    "witness_power_w": 1200000.0,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.014422012029974599,
+        0.6112719298245614
+      ],
+      [
+        0.0,
+        0.014422012029974599,
+        0.5427877934142504
+      ],
+      [
+        0.0,
+        0.014422012029974599,
+        0.5123820513276622
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 5.5,
+    "target_w": 2400000.0,
+    "upper_bound_w": 1261958.4746451539,
+    "known_available_w": 1261948.75,
+    "witness_power_w": 1261948.75,
+    "status": "unreachable_above_certified_upper",
+    "certified_shortfall_floor_w": 1138041.5253548461,
+    "physical": [
+      [
+        0.0,
+        0.0,
+        0.6112719298245614
+      ],
+      [
+        0.0,
+        0.0,
+        0.537919298245614
+      ],
+      [
+        0.0,
+        0.0,
+        0.5056441403508771
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 5.5,
+    "target_w": 3000000.0,
+    "upper_bound_w": 1261958.4746451539,
+    "known_available_w": 1261948.75,
+    "witness_power_w": 1261948.75,
+    "status": "unreachable_above_certified_upper",
+    "certified_shortfall_floor_w": 1738041.5253548461,
+    "physical": [
+      [
+        0.0,
+        0.0,
+        0.6112719298245614
+      ],
+      [
+        0.0,
+        0.0,
+        0.537919298245614
+      ],
+      [
+        0.0,
+        0.0,
+        0.5056441403508771
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 5.5,
+    "target_w": 3600000.0,
+    "upper_bound_w": 1261958.4746451539,
+    "known_available_w": 1261948.75,
+    "witness_power_w": 1261948.75,
+    "status": "unreachable_above_certified_upper",
+    "certified_shortfall_floor_w": 2338041.5253548464,
+    "physical": [
+      [
+        0.0,
+        0.0,
+        0.6112719298245614
+      ],
+      [
+        0.0,
+        0.0,
+        0.537919298245614
+      ],
+      [
+        0.0,
+        0.0,
+        0.5056441403508771
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 5.5,
+    "target_w": 5000000.0,
+    "upper_bound_w": 1261958.4746451539,
+    "known_available_w": 1261948.75,
+    "witness_power_w": 1261948.75,
+    "status": "unreachable_above_certified_upper",
+    "certified_shortfall_floor_w": 3738041.5253548464,
+    "physical": [
+      [
+        0.0,
+        0.0,
+        0.6112719298245614
+      ],
+      [
+        0.0,
+        0.0,
+        0.537919298245614
+      ],
+      [
+        0.0,
+        0.0,
+        0.5056441403508771
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 7.5,
+    "target_w": 800000.0,
+    "upper_bound_w": 3199916.913544247,
+    "known_available_w": 3199907.0,
+    "witness_power_w": 800000.125,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.3393214195922961,
+        0.8335526315789472
+      ],
+      [
+        0.0,
+        0.3393214195922961,
+        0.8136745633387651
+      ],
+      [
+        0.0,
+        0.3393214195922961,
+        0.8039725494031181
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 7.5,
+    "target_w": 1200000.0,
+    "upper_bound_w": 3199916.913544247,
+    "known_available_w": 3199907.0,
+    "witness_power_w": 1200000.0,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.2474133893869626,
+        0.8335526315789472
+      ],
+      [
+        0.0,
+        0.2474133893869626,
+        0.8027600343253448
+      ],
+      [
+        0.0,
+        0.2474133893869626,
+        0.7879324964520346
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 7.5,
+    "target_w": 2400000.0,
+    "upper_bound_w": 3199916.913544247,
+    "known_available_w": 3199907.0,
+    "witness_power_w": 2400000.25,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.0788073278925816,
+        0.8335526315789472
+      ],
+      [
+        0.0,
+        0.0788073278925816,
+        0.7648243818235233
+      ],
+      [
+        0.0,
+        0.0788073278925816,
+        0.7332936547034888
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 7.5,
+    "target_w": 3000000.0,
+    "upper_bound_w": 3199916.913544247,
+    "known_available_w": 3199907.0,
+    "witness_power_w": 3000000.25,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.018426840193187355,
+        0.8335526315789472
+      ],
+      [
+        0.0,
+        0.018426840193187355,
+        0.7419292541523236
+      ],
+      [
+        0.0,
+        0.018426840193187355,
+        0.7011531462608008
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 7.5,
+    "target_w": 3600000.0,
+    "upper_bound_w": 3199916.913544247,
+    "known_available_w": 3199907.0,
+    "witness_power_w": 3199907.0,
+    "status": "unreachable_above_certified_upper",
+    "certified_shortfall_floor_w": 400083.0864557531,
+    "physical": [
+      [
+        0.0,
+        0.0,
+        0.8335526315789472
+      ],
+      [
+        0.0,
+        0.0,
+        0.7335263157894735
+      ],
+      [
+        0.0,
+        0.0,
+        0.6895147368421052
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 7.5,
+    "target_w": 5000000.0,
+    "upper_bound_w": 3199916.913544247,
+    "known_available_w": 3199907.0,
+    "witness_power_w": 3199907.0,
+    "status": "unreachable_above_certified_upper",
+    "certified_shortfall_floor_w": 1800083.086455753,
+    "physical": [
+      [
+        0.0,
+        0.0,
+        0.8335526315789472
+      ],
+      [
+        0.0,
+        0.0,
+        0.7335263157894735
+      ],
+      [
+        0.0,
+        0.0,
+        0.6895147368421052
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 8.0,
+    "target_w": 800000.0,
+    "upper_bound_w": 3883511.842333996,
+    "known_available_w": 3883502.0,
+    "witness_power_w": 799999.875,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.38226969540495803,
+        0.8891228070175438
+      ],
+      [
+        0.0,
+        0.38226969540495803,
+        0.8718412485652667
+      ],
+      [
+        0.0,
+        0.38226969540495803,
+        0.863368417040043
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 8.0,
+    "target_w": 1200000.0,
+    "upper_bound_w": 3883511.842333996,
+    "known_available_w": 3883502.0,
+    "witness_power_w": 1200000.0,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.2916918247965914,
+        0.8891228070175438
+      ],
+      [
+        0.0,
+        0.2916918247965914,
+        0.8625214257738851
+      ],
+      [
+        0.0,
+        0.2916918247965914,
+        0.8496186742660259
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 8.0,
+    "target_w": 2400000.0,
+    "upper_bound_w": 3883511.842333996,
+    "known_available_w": 3883502.0,
+    "witness_power_w": 2400000.25,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.12811576574900274,
+        0.8891228070175438
+      ],
+      [
+        0.0,
+        0.12811576574900274,
+        0.8311544811638651
+      ],
+      [
+        0.0,
+        0.12811576574900274,
+        0.8040600047773759
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 8.0,
+    "target_w": 3000000.0,
+    "upper_bound_w": 3883511.842333996,
+    "known_available_w": 3883502.0,
+    "witness_power_w": 3000000.0,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.07106688246241105,
+        0.8891228070175438
+      ],
+      [
+        0.0,
+        0.07106688246241105,
+        0.8130600990896752
+      ],
+      [
+        0.0,
+        0.07106688246241105,
+        0.7782822526792854
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 8.0,
+    "target_w": 3600000.0,
+    "upper_bound_w": 3883511.842333996,
+    "known_available_w": 3883502.0,
+    "witness_power_w": 3600000.0,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.02160121221535942,
+        0.8891228070175438
+      ],
+      [
+        0.0,
+        0.02160121221535942,
+        0.7928574113764467
+      ],
+      [
+        0.0,
+        0.02160121221535942,
+        0.7499360445018572
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 8.0,
+    "target_w": 5000000.0,
+    "upper_bound_w": 3883511.842333996,
+    "known_available_w": 3883502.0,
+    "witness_power_w": 3883502.0,
+    "status": "unreachable_above_certified_upper",
+    "certified_shortfall_floor_w": 1116488.1576660038,
+    "physical": [
+      [
+        0.0,
+        0.0,
+        0.8891228070175438
+      ],
+      [
+        0.0,
+        0.0,
+        0.7824280701754386
+      ],
+      [
+        0.0,
+        0.0,
+        0.7354823859649121
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 9.0,
+    "target_w": 800000.0,
+    "upper_bound_w": 5529449.146604462,
+    "known_available_w": 5529440.0,
+    "witness_power_w": 799999.9375,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.436332313,
+        0.785832403539385
+      ],
+      [
+        0.0,
+        0.436332313,
+        0.7756118995393934
+      ],
+      [
+        0.0,
+        0.436332313,
+        0.7705360352894038
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 9.0,
+    "target_w": 1200000.0,
+    "upper_bound_w": 5529449.146604462,
+    "known_available_w": 5529440.0,
+    "witness_power_w": 1200000.0,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.37075631321046565,
+        1.0002631578947367
+      ],
+      [
+        0.0,
+        0.37075631321046565,
+        0.9797257373888733
+      ],
+      [
+        0.0,
+        0.37075631321046565,
+        0.9696678644729494
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 9.0,
+    "target_w": 2400000.0,
+    "upper_bound_w": 5529449.146604462,
+    "known_available_w": 5529440.0,
+    "witness_power_w": 2400000.25,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.213379688559303,
+        1.0002631578947367
+      ],
+      [
+        0.0,
+        0.213379688559303,
+        0.9568109740732251
+      ],
+      [
+        0.0,
+        0.213379688559303,
+        0.9360286799340636
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 9.0,
+    "target_w": 3000000.0,
+    "upper_bound_w": 5529449.146604462,
+    "known_available_w": 5529440.0,
+    "witness_power_w": 3000000.5,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.1601245924801411,
+        1.0002631578947367
+      ],
+      [
+        0.0,
+        0.1601245924801411,
+        0.944268471152685
+      ],
+      [
+        0.0,
+        0.1601245924801411,
+        0.9178384178085854
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 9.0,
+    "target_w": 3600000.0,
+    "upper_bound_w": 5529449.146604462,
+    "known_available_w": 5529440.0,
+    "witness_power_w": 3600000.0,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.11506574229008579,
+        1.0002631578947367
+      ],
+      [
+        0.0,
+        0.11506574229008579,
+        0.9308676068195151
+      ],
+      [
+        0.0,
+        0.11506574229008579,
+        0.8985770690527972
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  },
+  {
+    "wind_m_s": 9.0,
+    "target_w": 5000000.0,
+    "upper_bound_w": 5529449.146604462,
+    "known_available_w": 5529440.0,
+    "witness_power_w": 5000000.0,
+    "status": "steady_feasible_witness",
+    "certified_shortfall_floor_w": 0,
+    "physical": [
+      [
+        0.0,
+        0.028533936483238494,
+        1.0002631578947367
+      ],
+      [
+        0.0,
+        0.028533936483238494,
+        0.8954814746888717
+      ],
+      [
+        0.0,
+        0.028533936483238494,
+        0.8485787894020043
+      ]
+    ],
+    "bound_kind": "tight_mock_low_speed"
+  }
+]

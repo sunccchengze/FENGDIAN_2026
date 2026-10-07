@@ -1,0 +1,6 @@
+checkpoint=.\optimization_control\experiments\20261007_fixed_pinn_demo_checked\initial\checkpoint.pth
+source=teammate_backbone_synthetic_demo
+power_semantics=synthetic_mock_power_w_not_physical_validation
+control_mask=[True, True, True]; traditional_three_channel=True
+Shared wind, target, initial states and actuators. P/PI use configured schedules; not learned joint optimization.
+Target feasibility not certified; shortfall is reported, target never silently reduced.

@@ -1,0 +1,5 @@
+status=synthetic_data_prepared
+seed=42
+next_stage=fit
+physical_validation=false
+Superseded by runtime-isolated checked experiment.

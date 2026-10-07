@@ -1,0 +1,17 @@
+阶段1：候选模型 5-fold CV 对比（seed=42，分层按风速档）
+
+结果（farm 功率）：
+  基线 MLP (厉今飞): gch R2=0.99906 MAE=86.5kW | cc R2=0.99871 MAE=103.1kW
+  XGBoost:           gch R2=0.99994 MAE=13.8kW | cc R2=0.99996 MAE=15.0kW
+  GPR:               gch R2=0.99993 MAE=14.9kW | cc R2=0.99934 MAE=22.3kW
+  two-stage:         gch R2=0.99994 MAE=13.7kW | cc R2=0.99996 MAE=12.8kW (全量含零行)
+  mlp_v2:            gch R2=0.99757 MAE=157kW  | cc R2=0.99765 MAE=154kW  (待调参)
+
+结论：
+1. XGBoost / two-stage 全面超越基线：farm MAE 降低 ~6 倍（86.5 -> 13.8 kW）
+2. GPR 同样远超基线，且带不确定性输出，但 cc 上略逊于树模型
+3. mlp_v2（扩展特征 9 维）当前反而不如基线，需 Optuna 调参后再判定
+4. two-stage 在全量数据（含零功率行）上表现与 xgb 相当，且能输出 0 功率
+   （对 RL 环境低风速/遮挡场景有价值）
+
+数据：model_comparison_cv.csv（完整指标表）

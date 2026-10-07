@@ -1,0 +1,9 @@
+stage,comparison,controller,runs,mean_rmse_w,std_rmse_w,worst_tail_rmse_w,mean_q_return_gap_abs
+multi_pitch_speed,same_permissions,initial,3,933476.5126794758,147.8487803895639,1832844.9375973544,43.63608874146316
+multi_pitch_speed,same_permissions,selected,3,172889.30399123637,5330.95595187936,170650.44129566234,0.8042094593184848
+multi_pitch_speed,same_permissions,final,3,174868.56215380714,8682.040628467345,170650.44129566234,0.8266950685304666
+multi_pitch_speed,same_permissions,fixed,3,979384.5,0.0,2051088.0,0.0
+multi_pitch_speed,same_permissions,p,3,433021.3508512378,0.0,784576.75,0.0
+multi_pitch_speed,same_permissions,pi,3,270074.9585961468,0.0,90355.62823867836,0.0
+multi_pitch_speed,complete_traditional_scheme,p,3,433021.3508512378,0.0,784576.75,0.0
+multi_pitch_speed,complete_traditional_scheme,pi,3,270074.9585961468,0.0,90355.62823867836,0.0

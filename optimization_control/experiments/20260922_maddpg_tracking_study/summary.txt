@@ -1,0 +1,499 @@
+{
+  "status": "complete",
+  "aggregate": [
+    {
+      "controller": "baseline_selected",
+      "metric": "regular",
+      "mean_w": 394264.4266339736,
+      "std_w": 53508.50192464116,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_selected",
+      "metric": "fixed",
+      "mean_w": 296132.0833607335,
+      "std_w": 34631.504901632725,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_selected",
+      "metric": "low_power",
+      "mean_w": 135824.0807846073,
+      "std_w": 21969.022438690175,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_selected",
+      "metric": "low_shortfall_raw",
+      "mean_w": 3702987.2734733596,
+      "std_w": 152990.90448343346,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_selected",
+      "metric": "low_shortfall_floor",
+      "mean_w": 3230219.530677294,
+      "std_w": 5.703162734357589e-10,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_selected",
+      "metric": "low_shortfall_residual",
+      "mean_w": 472518.0650258316,
+      "std_w": 152842.97659897004,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_final",
+      "metric": "regular",
+      "mean_w": 394264.4266339736,
+      "std_w": 53508.50192464116,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_final",
+      "metric": "fixed",
+      "mean_w": 296132.0833607335,
+      "std_w": 34631.504901632725,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_final",
+      "metric": "low_power",
+      "mean_w": 135824.0807846073,
+      "std_w": 21969.022438690175,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_final",
+      "metric": "low_shortfall_raw",
+      "mean_w": 3702987.2734733596,
+      "std_w": 152990.90448343346,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_final",
+      "metric": "low_shortfall_floor",
+      "mean_w": 3230219.530677294,
+      "std_w": 5.703162734357589e-10,
+      "runs": 3
+    },
+    {
+      "controller": "baseline_final",
+      "metric": "low_shortfall_residual",
+      "mean_w": 472518.0650258316,
+      "std_w": 152842.97659897004,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_selected",
+      "metric": "regular",
+      "mean_w": 590192.1352788039,
+      "std_w": 56822.91211485815,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_selected",
+      "metric": "fixed",
+      "mean_w": 380798.16946064594,
+      "std_w": 51033.095213189634,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_selected",
+      "metric": "low_power",
+      "mean_w": 162770.79221234503,
+      "std_w": 32548.029237062343,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_selected",
+      "metric": "low_shortfall_raw",
+      "mean_w": 3699692.529703421,
+      "std_w": 93255.9734989594,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_selected",
+      "metric": "low_shortfall_floor",
+      "mean_w": 3230219.530677294,
+      "std_w": 5.703162734357589e-10,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_selected",
+      "metric": "low_shortfall_residual",
+      "mean_w": 468718.4869008316,
+      "std_w": 93619.22894217355,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_final",
+      "metric": "regular",
+      "mean_w": 608628.7657524478,
+      "std_w": 71270.87224618383,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_final",
+      "metric": "fixed",
+      "mean_w": 399842.5288344605,
+      "std_w": 77414.47730895114,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_final",
+      "metric": "low_power",
+      "mean_w": 144867.60213209558,
+      "std_w": 4979.662705829305,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_final",
+      "metric": "low_shortfall_raw",
+      "mean_w": 3722283.364370274,
+      "std_w": 131610.81639367316,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_final",
+      "metric": "low_shortfall_floor",
+      "mean_w": 3230219.530677294,
+      "std_w": 5.703162734357589e-10,
+      "runs": 3
+    },
+    {
+      "controller": "stratified_final",
+      "metric": "low_shortfall_residual",
+      "mean_w": 491158.7222523941,
+      "std_w": 131726.5731963814,
+      "runs": 3
+    },
+    {
+      "controller": "p_default",
+      "metric": "regular",
+      "mean_w": 606908.38199661,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_default",
+      "metric": "fixed",
+      "mean_w": 416979.3449756339,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_default",
+      "metric": "low_power",
+      "mean_w": 123166.48597678178,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_default",
+      "metric": "low_shortfall_raw",
+      "mean_w": 3237389.1905091703,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_default",
+      "metric": "low_shortfall_floor",
+      "mean_w": 3230219.5306772934,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_default",
+      "metric": "low_shortfall_residual",
+      "mean_w": 6987.338463331573,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_tuned",
+      "metric": "regular",
+      "mean_w": 489955.56055299676,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_tuned",
+      "metric": "fixed",
+      "mean_w": 289779.17343109235,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_tuned",
+      "metric": "low_power",
+      "mean_w": 95812.88433066824,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_tuned",
+      "metric": "low_shortfall_raw",
+      "mean_w": 3237389.1905091703,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_tuned",
+      "metric": "low_shortfall_floor",
+      "mean_w": 3230219.5306772934,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "p_tuned",
+      "metric": "low_shortfall_residual",
+      "mean_w": 6987.338463331573,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_default",
+      "metric": "regular",
+      "mean_w": 498371.83968785946,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_default",
+      "metric": "fixed",
+      "mean_w": 255146.0434965933,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_default",
+      "metric": "low_power",
+      "mean_w": 79305.36610672405,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_default",
+      "metric": "low_shortfall_raw",
+      "mean_w": 3237389.1905091703,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_default",
+      "metric": "low_shortfall_floor",
+      "mean_w": 3230219.5306772934,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_default",
+      "metric": "low_shortfall_residual",
+      "mean_w": 6987.338463331573,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_tuned",
+      "metric": "regular",
+      "mean_w": 401027.94039035996,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_tuned",
+      "metric": "fixed",
+      "mean_w": 182862.03034460172,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_tuned",
+      "metric": "low_power",
+      "mean_w": 62267.81951960572,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_tuned",
+      "metric": "low_shortfall_raw",
+      "mean_w": 3237389.1905091703,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_tuned",
+      "metric": "low_shortfall_floor",
+      "mean_w": 3230219.5306772934,
+      "std_w": 0.0,
+      "runs": 1
+    },
+    {
+      "controller": "pi_tuned",
+      "metric": "low_shortfall_residual",
+      "mean_w": 6987.338463331573,
+      "std_w": 0.0,
+      "runs": 1
+    }
+  ],
+  "paired": [
+    {
+      "run_id": 1,
+      "stage": "selected",
+      "regular_delta_w": 132699.0610988977,
+      "fixed_delta_w": 48501.671376402606,
+      "low_power_delta_w": 5574.673358919623,
+      "low_shortfall_residual_delta_w": 52894.9111328125
+    },
+    {
+      "run_id": 1,
+      "stage": "final",
+      "regular_delta_w": 132699.0610988977,
+      "fixed_delta_w": 48501.671376402606,
+      "low_power_delta_w": 5574.673358919623,
+      "low_shortfall_residual_delta_w": 52894.9111328125
+    },
+    {
+      "run_id": 2,
+      "stage": "selected",
+      "regular_delta_w": 157645.90544198093,
+      "fixed_delta_w": 84969.74470686866,
+      "low_power_delta_w": 41190.46567167484,
+      "low_shortfall_residual_delta_w": 190394.5146484375
+    },
+    {
+      "run_id": 2,
+      "stage": "final",
+      "regular_delta_w": 212955.79686291248,
+      "fixed_delta_w": 142102.822828312,
+      "low_power_delta_w": -12519.104569073505,
+      "low_shortfall_residual_delta_w": 257715.22070312488
+    },
+    {
+      "run_id": 3,
+      "stage": "selected",
+      "regular_delta_w": 297438.15939361206,
+      "fixed_delta_w": 120526.84221646603,
+      "low_power_delta_w": 34074.995252618726,
+      "low_shortfall_residual_delta_w": -254688.16015624988
+    },
+    {
+      "run_id": 3,
+      "stage": "final",
+      "regular_delta_w": 297438.15939361206,
+      "fixed_delta_w": 120526.84221646603,
+      "low_power_delta_w": 34074.995252618726,
+      "low_shortfall_residual_delta_w": -254688.16015624988
+    }
+  ],
+  "checks": [
+    {
+      "candidate": "baseline",
+      "run_id": 1,
+      "selected_step": 16384,
+      "validation_improved": true,
+      "final_degradation_ratio": 1.0,
+      "fixed_3mw_rmse_w": 225775.59047813306,
+      "fixed_gate_passed": false
+    },
+    {
+      "candidate": "baseline",
+      "run_id": 2,
+      "selected_step": 16384,
+      "validation_improved": true,
+      "final_degradation_ratio": 1.0,
+      "fixed_3mw_rmse_w": 226944.63359538847,
+      "fixed_gate_passed": false
+    },
+    {
+      "candidate": "baseline",
+      "run_id": 3,
+      "selected_step": 16384,
+      "validation_improved": true,
+      "final_degradation_ratio": 1.0,
+      "fixed_3mw_rmse_w": 221571.51277624947,
+      "fixed_gate_passed": false
+    },
+    {
+      "candidate": "stratified",
+      "run_id": 1,
+      "selected_step": 16384,
+      "validation_improved": true,
+      "final_degradation_ratio": 1.0,
+      "fixed_3mw_rmse_w": 248704.246405674,
+      "fixed_gate_passed": false
+    },
+    {
+      "candidate": "stratified",
+      "run_id": 2,
+      "selected_step": 8192,
+      "validation_improved": true,
+      "final_degradation_ratio": 1.0625699792613157,
+      "fixed_3mw_rmse_w": 238199.05851543866,
+      "fixed_gate_passed": false
+    },
+    {
+      "candidate": "stratified",
+      "run_id": 3,
+      "selected_step": 16384,
+      "validation_improved": true,
+      "final_degradation_ratio": 1.0,
+      "fixed_3mw_rmse_w": 275750.77265900135,
+      "fixed_gate_passed": false
+    }
+  ],
+  "targeted_improvement_acceptance": false,
+  "full_stability_gate_passed": false,
+  "test_used_for_selection": false,
+  "baselines": {
+    "p": {
+      "three_channel": true,
+      "yaw_offset_rad": 0.0,
+      "speed_per_wind_rad_m": 0.11114035087719298,
+      "pitch_bias_rad": 0.04,
+      "kp": 3.0,
+      "ki": 0.08,
+      "antiwindup_gain": 0.2,
+      "integral_limit_rad": 0.3
+    },
+    "pi": {
+      "three_channel": true,
+      "yaw_offset_rad": 0.0,
+      "speed_per_wind_rad_m": 0.11114035087719298,
+      "pitch_bias_rad": 0.04,
+      "kp": 0.75,
+      "ki": 0.16,
+      "antiwindup_gain": 0.2,
+      "integral_limit_rad": 0.3
+    }
+  },
+  "scope": "exact mock only; residual includes actuator transients; three paired runs are descriptive evidence",
+  "training_steps_total": 98304,
+  "command": "python -m optimization_control.maddpg_wind_farm.tracking_study --output <new-directory>",
+  "artifacts": [
+    "selection.json",
+    "test/metrics.csv",
+    "test_summary.csv",
+    "comparison.png",
+    "<group>_run_<id>/normalization.json"
+  ],
+  "verification": {
+    "distinct_tests_passed": 98,
+    "test_commands": [
+      "python -m unittest discover -s optimization_control/tests -p test_*.py -v",
+      "python -m unittest optimization_control.ppo_single_turbine.test_baseline -v"
+    ],
+    "frozen_hashes_valid": true,
+    "decomposition_identity_rows": 432,
+    "previous_actor_slow_networks_exactly_reproduced_runs": [
+      1,
+      2,
+      3
+    ],
+    "normalization_files_present": true,
+    "figures_visually_checked": true,
+    "accepted_as_default": false
+  }
+}

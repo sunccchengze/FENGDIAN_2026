@@ -1,0 +1,12 @@
+[
+  {
+    "stage": "single_pitch",
+    "passed": true,
+    "jobs": 3
+  },
+  {
+    "stage": "multi_pitch",
+    "passed": false,
+    "jobs": 3
+  }
+]
