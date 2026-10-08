@@ -16,3 +16,5 @@
 从仓库根执行 python tools/unpack_optimization.py --handoff materials/洪祖名/20261007_optimization_handoff --output optimization_handoff_restored；加 --all-history 可恢复全部历史成果。工具验证每卷及每个文件，不覆盖已有目录。
 
 当前结果仅属于固定 9 m/s、方向 0、TI 0.1 的合成迁移联调模型。软件流程已验证，多目标可靠性、后期退化与真实精度尚未验收，失败实验保留。以最新报告的限制为准，旧 PPO 优势数字不作为当前结论。
+
+2026-10-08 已核验首次完整上传提交 84d6f4b：远程目录树与本地审查版本一致，main 未变。详见 [上传核验记录](upload_receipt.json)。本分支采用普通 ZIP 历史分卷；本地另有压缩传输试验，未替换本分支归档。

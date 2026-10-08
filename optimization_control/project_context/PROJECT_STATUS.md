@@ -1,5 +1,10 @@
 # 项目状态恢复摘要
 
+> 2026-10-08 优化交付完成：本轮 ZIP（128.72 MiB）及任务说明.docx、AI readme.md 已就绪。
+> 全部历史工作上传至 GitHub 分支 codex/optimization-handoff-20261007，首次完整上传 84d6f4b；
+> 远程目录树与本地审查版本一致，团队 main 未变。1588 原文件恢复校验、110 测试、54 行移动路径回放通过。
+> 原实验、队友源文件和失败结论保留，没有重训。交付记录位于 deliverables/20261007_optimization_handoff/，完整导航 optimization_control/WORK_INDEX.md。
+
 > 2026-10-07 固定九输入逐级能力验证完成：单目标 pitch 的三个选中策略均学会跟踪，多目标 pitch、pitch+speed、all 各三个派生流的验证门槛通过数为 2/3、2/3、1/3，整体可靠性仍未通过。
 > 原链条在多目标门槛失败处停止；后两权限按用户要求另以新冻结协议独立验证，未放宽原标准。
 > 新测试 selected RMSE：pitch 169.75±9.17 kW，pitch+speed 172.89±5.33 kW，all 189.81±15.37 kW。

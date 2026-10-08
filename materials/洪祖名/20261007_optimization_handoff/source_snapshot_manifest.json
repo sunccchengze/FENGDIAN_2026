@@ -8813,9 +8813,9 @@
     {
       "source_path": "optimization_control/TASKFLOW.md",
       "repository_path": "optimization_control/TASKFLOW.md",
-      "source_sha256": "53572b842191e5933d95696c2a69a9a4c588a207baa1d37e953357e628b55e69",
-      "repository_sha256": "af9abac8eecbecf1a773391ae8cd77c9db329fb52e440b120c3db939202fd61f",
-      "adaptation": "navigation_paths_relocated",
+      "source_sha256": "379088bae3b2db9e025e5b9e49ee65eb42a22c1065b27006989ec52bd21d9f06",
+      "repository_sha256": "eb71004994320ae0969a2261f978ef32a11005b6d4d45b29a49823c193df5a6a",
+      "adaptation": "navigation_paths_relocated_and_delivery_status_recorded",
       "representation": "canonical_git_blob_bytes"
     },
     {
@@ -9005,17 +9005,17 @@
     {
       "source_path": "optimization_control/WORK_INDEX.md",
       "repository_path": "optimization_control/WORK_INDEX.md",
-      "source_sha256": "ccc9945bb43db2a1af45da5023b91eb52d9f53f8ca0c769924284d13a2b353a2",
-      "repository_sha256": "ccc9945bb43db2a1af45da5023b91eb52d9f53f8ca0c769924284d13a2b353a2",
-      "adaptation": "unchanged",
+      "source_sha256": "b4f850c33444c7b317d2f447ab469a4baa6118ff456d81099f87097d7225bb56",
+      "repository_sha256": "b4f850c33444c7b317d2f447ab469a4baa6118ff456d81099f87097d7225bb56",
+      "adaptation": "navigation_paths_relocated_and_delivery_status_recorded",
       "representation": "canonical_git_blob_bytes"
     },
     {
       "source_path": "PROJECT_STATUS.md",
       "repository_path": "optimization_control/project_context/PROJECT_STATUS.md",
-      "source_sha256": "d7e6de325e25e25b81dde85e163cef9dc39ad7bc131eb8f95f71afd08c6d81b0",
-      "repository_sha256": "d7e6de325e25e25b81dde85e163cef9dc39ad7bc131eb8f95f71afd08c6d81b0",
-      "adaptation": "unchanged",
+      "source_sha256": "1cd4c2022559e448d598bcad68928bd034fdc5e03c9127ebe22066be3b66679e",
+      "repository_sha256": "1cd4c2022559e448d598bcad68928bd034fdc5e03c9127ebe22066be3b66679e",
+      "adaptation": "navigation_paths_relocated_and_delivery_status_recorded",
       "representation": "canonical_git_blob_bytes"
     },
     {

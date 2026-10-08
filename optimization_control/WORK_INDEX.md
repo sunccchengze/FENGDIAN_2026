@@ -1,6 +1,6 @@
 # 优化控制工作总索引
 
-更新日期 2026-10-07。主责为优化控制；包括代理模型优化、PPO、随机入口、统一执行器与传统对照、三机 MADDPG、PINN 接口适配、评估与失败诊断。队友原始仿真数据和 PINN 主体不属于本人独立成果。
+更新日期 2026-10-08。主责为优化控制；包括代理模型优化、PPO、随机入口、统一执行器与传统对照、三机 MADDPG、PINN 接口适配、评估与失败诊断。队友原始仿真数据和 PINN 主体不属于本人独立成果。
 
 ## 按工作阶段查找
 
@@ -22,3 +22,10 @@
 先读本索引和 `TASKFLOW.md`，再读相关模块报告及实验的 `config.yaml / metrics.csv / summary.txt`。当前九输入迁移模型只在 9 m/s、方向 0、TI 0.1 下用于合成联调；随机风况能力属于外层环境，不能直接施加给这一固定工况网络。
 
 本轮 ZIP 配有 `任务说明.docx`、`readme.md`、`manifest.json` 和可移动回放入口。全部历史产物按原实验目录保留在分卷中，不只保留成功结果。GitHub 分支只用于交付和审阅，没有合并到团队 main。
+
+## 交付入口
+
+- [GitHub 交付分支](https://github.com/sunccchengze/FENGDIAN_2026/tree/codex/optimization-handoff-20261007)
+- [个人交付目录](https://github.com/sunccchengze/FENGDIAN_2026/tree/codex/optimization-handoff-20261007/materials/洪祖名/20261007_optimization_handoff)
+
+本轮 ZIP 和全部历史原文件均已验证恢复。GitHub 中 ZIP 分片由 tools/unpack_optimization.py 自动校验并重组；加 --all-history 恢复全部历史成果。首批完整上传为 84d6f4b，2026-10-08 核验远程目录树一致；main 未改动。软件测试与回放通过不代表策略稳定性或真实物理精度验收通过。
