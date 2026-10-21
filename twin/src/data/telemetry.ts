@@ -10,6 +10,7 @@
 // ================================================================
 
 import { useSim } from '../state/simStore'
+import { N_UNITS } from './farmSim.ts' // R41-A：DTAP 校验长度 = 场内机组数（docs/13 §4.1）
 
 export interface TelemetryPatch {
   /** 仿真时刻（小时）；提供则 seek */
@@ -37,7 +38,7 @@ export function applyPatch(p: TelemetryPatch): void {
   const s = useSim.getState()
   if (typeof p.tHours === 'number' && Number.isFinite(p.tHours)) s.seek(p.tHours)
   if (typeof p.targetMW === 'number' && Number.isFinite(p.targetMW)) s.setTargetMW(p.targetMW)
-  if (Array.isArray(p.unitYaw) && p.unitYaw.length === 9) {
+  if (Array.isArray(p.unitYaw) && p.unitYaw.length === N_UNITS) {
     p.unitYaw.forEach((v, i) => { if (Number.isFinite(v)) s.setUnitYaw(i, v) })
   }
   if (typeof p.playing === 'boolean' && p.playing !== s.playing) s.togglePlay()

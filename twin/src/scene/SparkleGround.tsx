@@ -5,6 +5,7 @@ import * as THREE from 'three'
 import { FARM, SUBSTATION, terrainSurfaceY } from './terrainUtil'
 import { mulberry32 } from '../data/rng'
 import { skyState } from './lightState'
+import { phaseT } from './freeze.ts'
 
 // W3 星光铺地：谷地 + 电缆走廊两处加密（基准图地面冰晶微光）。
 // D2/D11 修复：散布随机量改用 seed 派生 PRNG（StrictMode 双渲染/截图
@@ -96,7 +97,7 @@ export default function SparkleGround({ count = 4600 }: { count?: number }) {
   }, [built])
 
   useFrame((s) => {
-    built.mat.uniforms.uTime.value = s.clock.elapsedTime
+    built.mat.uniforms.uTime.value = phaseT(s.clock.elapsedTime)
     built.mat.uniforms.uDayF.value = skyState.dayF
   })
   return <points geometry={built.geo} material={built.mat} frustumCulled={false} />

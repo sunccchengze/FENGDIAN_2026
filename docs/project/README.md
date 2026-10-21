@@ -1,5 +1,9 @@
 # GitHub Project 配置蓝图
 
+> 📍 **本文件只讲 GitHub Project 的配置蓝图，不是 `docs/project/` 目录的全部。**
+> 同目录的 [`TIMELINE.md`](TIMELINE.md) 是**全仓唯一的项目时间线主干**（六个阶段、按事件日期的主表、事件↔入库滞后对照、分区明细职责划分、八项已知缺口），2026-10-05 建立。
+> 要回答「某件事什么时候发生」去 `TIMELINE.md`；要回答「Project 建好后有哪些字段和视图」看下面。
+
 > 状态：配置规格已入库，远端 Project 尚未创建。
 > 原因：当前 GitHub App 无权在 `sunccchengze` 用户名下创建 Projects；创建 mutation 返回 `FORBIDDEN`。这不是“已配置”的同义词。
 

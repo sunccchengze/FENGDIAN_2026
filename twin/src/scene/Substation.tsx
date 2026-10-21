@@ -3,6 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { SUBSTATION, terrainSurfaceY } from './terrainUtil'
 import { skyState } from './lightState'
+import { phaseT } from './freeze.ts'
 
 // ============================================================================
 // 升压站（v3：比例与要素修正 —— docs/07 A8）
@@ -23,7 +24,7 @@ export default function Substation() {
   const lightRef2 = useRef<THREE.PointLight>(null!)
   useFrame((state) => {
     const night = 1 - skyState.dayF
-    const t = state.clock.elapsedTime
+    const t = phaseT(state.clock.elapsedTime)
     const flick = 0.85 + 0.15 * Math.sin(t * 0.9)
     if (lightRef.current) {
       lightRef.current.intensity = night * (12 + 4 * flick)

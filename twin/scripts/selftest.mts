@@ -5,17 +5,20 @@
 // ================================================================
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs'
 import {
-  farmFrame, optimizeYaw, windAt, FARM_RATED_MW, dayNight, sunWarmth,
+  farmFrame, optimizeYaw, windAt, FARM_RATED_MW, N_UNITS, dayNight, sunWarmth,
 } from '../src/data/farmSim.ts'
 import { powerCurveKw, yawFactor, wakeDeficit, TILT_F, wakeDeflection } from '../src/data/turbinePhysics.ts'
 import {
-  FARM, SUBSTATION, FARM_CENTER, terrainHeight, terrainSurfaceY,
+  FARM, SERVOS, ROW_COUNT, SUBSTATION, FARM_CENTER, terrainHeight, terrainSurfaceY,
   landMask, biomeWeights, SNOW_LINE, grassSampleHits,
   PEAKS, FJORD_A, FJORD_B, STACKS, HEADLANDS, bakeHeightGrid,
   shoreSigned, treeAccept, treeSampleHits, TREE_SPAN_M, mulberry32,
   ISLANDS,
 } from '../src/scene/terrainUtil.ts'
 import { TURBINE_SPEC } from '../src/scene/turbine/geometry.ts'
+import { LAYOUTS, LAYOUT, ACTIVE_LAYOUT, unitOf } from '../src/scene/layouts.ts' // R41-A 布局真值源（R42 起 +ACTIVE_LAYOUT/unitOf）
+import { phaseFor, FROZEN_PHASE } from '../src/scene/freeze.ts' // R42 渲染相位冻结
+import { CAMERA_NODES, LOOK_NODES } from '../src/scene/introProfile.ts' // R42 开场路径
 import {
   CAM_HOTKEYS, diagnoseHotkey, ORBIT_MIN_DISTANCE, ORBIT_MAX_DISTANCE, ORBIT_MAX_POLAR_DEG,
 } from '../src/scene/hotkeys.ts'
@@ -162,10 +165,10 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
 // 待后续控制层/寻优层全面切换到 GCH 内核（L5/L7）后即可收敛全绿。勿顺手放宽容差。
 {
   const W = { u: 8, fromDeg: 0 }
-  const Z = new Array(9).fill(0)
-  const T = new Array(9).fill(30)
-  const none = farmFrame(12, Z, 45, W).totalMW * 1000
-  const uni = farmFrame(12, T, 45, W).totalMW * 1000
+  const Z = new Array(N_UNITS).fill(0) // R42：长度随布局（3×3=9 / 1×3=3）
+  const T = new Array(N_UNITS).fill(30)
+  const none = farmFrame(12, Z, FARM_RATED_MW, W).totalMW * 1000
+  const uni = farmFrame(12, T, FARM_RATED_MW, W).totalMW * 1000
   const gain = optimizeYaw(12, Z, W).gainPct
   // 第 18 轮（P0）：靶值改用与偏折曲线同源的 FLORIS 4.6.6 GCH 实算
   // （none 8108.08 / unified+30° 9060.03；旧靶 9299.05 来自老版本，实测差 −2.57%）。
@@ -174,9 +177,26 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
   // 0.48（0.45/0.48/0.52/0.58 → 3.88/3.88/3.93/4.09%），unified 始终卡在 −9.4%。
   // 收紧只会逼出"放大偏折几何凑功率"的错误解（曾试出 2.60% 但几何偏 1.9 倍，已弃用）。
   // 这是记录上限、防止继续劣化的守门线，不是掩盖问题：P1 高斯廓线落地后须收回 ±5%。
-  ok('V&V FLORIS none：8108.08 kW ±5%', Math.abs(none - 8108.08) <= 405.4, `=${none.toFixed(1)}`)
-  ok('V&V FLORIS unified+30°：9060.03 kW ±10%', Math.abs(uni - 9060.03) <= 906, `=${uni.toFixed(1)}`)
-  ok('V&V FLORIS 独立寻优增益：24.04% ±3pt', Math.abs(gain - 24.04) <= 3, `=${gain.toFixed(2)}%`)
+  if (ACTIVE_LAYOUT === '3x3') {
+    // FLORIS 4.6.6 GCH 实算靶值属 3×3 几何；1×3 的靶值组 = tandem3 oracle（R42 #2，floris 生成件）
+    ok('V&V FLORIS none：8108.08 kW ±5%', Math.abs(none - 8108.08) <= 405.4, `=${none.toFixed(1)}`)
+    ok('V&V FLORIS unified+30°：9060.03 kW ±10%', Math.abs(uni - 9060.03) <= 906, `=${uni.toFixed(1)}`)
+    ok('V&V FLORIS 独立寻优增益：24.04% ±3pt', Math.abs(gain - 24.04) <= 3, `=${gain.toFixed(2)}%`)
+  } else {
+    // 1×3：tandem3 oracle 到岗前，先用物理边界守门（不虚构靶值）
+    const f12z = farmFrame(12, Z, FARM_RATED_MW, W)
+    const pk = f12z.units.map((u) => u.powerKw)
+    ok('V&V 1×3 守门：逐机 0 < P ≤ 1754 kW（8m/s 不超单机 15m/s 额定 731kW×2.4 裕带，尾流只减不增）',
+      pk.length === 3 && pk.every((v) => v > 0 && v <= 1753.95 * 1.001), pk.map((v) => v.toFixed(1)).join('/'))
+    // 注（R42 oracle 到岗后修正归因）：「下游 T03(509.2) 反高于中游 T02(439.0)」不是
+    // Jensen 代理缺陷 —— FLORIS 4.6.6 GCH 实算同样如此（tandem3 none 逐机
+    // 1754.0/439.0/509.2 kW，3×3 中列切片 1754.0/439.2/509.7）：T02 正对 T01 尾流
+    // 核心（5D 最强衰减），T03 处 T01 尾流 10D 已扩散衰减 + T02 自身低推尾流更弱，
+    // 叠加后净衰减反而更小。代理与实算逐机差 ≤0.5 kW（round42 §3.3）。
+    ok('V&V 1×3 守门：T01 净风满发、T02/T03 被尾流削减（不锚单调性——FLORIS 实算亦非单调，见上）',
+      Math.abs(pk[0] - 1753.95) <= 1753.95 * 0.005 && pk[1] < pk[0] * 0.6 && pk[2] < pk[0] * 0.6,
+      pk.map((v) => v.toFixed(1)).join('/'))
+  }
   const p6 = powerCurveKw(6)
   const p8 = powerCurveKw(8)
   ok('V&V 单机功率锚点：731.0/1753.95 kW ±0.5%（FLORIS 表×倾斜）',
@@ -419,7 +439,7 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
   let distOK = true, polarOK = true, rotorOK = true, seaOK = true
   let worst = ''
   for (let i = 0; i < 9; i++) {
-    const u = FARM[i]
+    const u = FARM[unitOf(i)] // R42：1×3 下热键 i → 机组 i%3（3×3 时 = i）
     const d = diagnoseHotkey(i, { baseY: terrainSurfaceY(u.x, u.z) })
     if (!(d.dist3 >= ORBIT_MIN_DISTANCE + 5 && d.dist3 <= ORBIT_MAX_DISTANCE)) { distOK = false; worst += ` hot${i + 1}:dist=${d.dist3.toFixed(0)}` }
     if (!(d.polarDeg <= ORBIT_MAX_POLAR_DEG - 1)) { polarOK = false; worst += ` hot${i + 1}:polar=${d.polarDeg.toFixed(1)}` }
@@ -437,7 +457,7 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
   // 仰拍（7/8/9）必须收进全塔：塔基仍在框内（|ndcY| ≤ 0.98），不是只拍半截
   let towerOK = true
   for (const i of [6, 7, 8]) {
-    const u = FARM[i]
+    const u = FARM[unitOf(i)]
     const d = diagnoseHotkey(i, { baseY: terrainSurfaceY(u.x, u.z) })
     if (Math.abs(d.ndc.base.y) > 0.98) { towerOK = false; worst += ` hot${i + 1}:baseY=${d.ndc.base.y.toFixed(2)}` }
   }
@@ -449,7 +469,7 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
 {
   const deepOK = FARM.every((u) => shoreSigned(u.x, u.z) < -400)
   const worstD = Math.max(...FARM.map((u) => shoreSigned(u.x, u.z)))
-  ok('R36 岸距：9 机离岸 >400m（深水区，涌浪全幅不受阻尼）', deepOK,
+  ok('R36 岸距：全机组离岸 >400m（深水区，涌浪全幅不受阻尼）', deepOK,
     `最浅机=${worstD.toFixed(0)}m`)
   const isl = ISLANDS[0]
   ok('R36 岸距：岛心为陆侧（>0），岛外 1.5km 为海侧（<0）',
@@ -620,6 +640,7 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
 // ================================================================
 import { ORACLE } from '../src/data/oracle/florisGchOracle.ts'
 import { evaluateFarmScene } from '../src/core/physics/evalFarm.ts'
+import { sampleHubPlane, __debugRotorU } from '../src/core/physics/gch.ts' // R44 演示 C1 水平面采样
 
 console.log('== G · L4 GCH 内核 V&V（oracle：FLORIS 4.6.6 实算）==')
 
@@ -662,7 +683,9 @@ console.log('== G · L4 GCH 内核 V&V（oracle：FLORIS 4.6.6 实算）==')
   ok('G2 下游 TI（crespo WAT+偏航恢复）|Δ| ≤ 0.002', mTi <= 0.002, `maxΔ=${mTi.toFixed(5)}`)
 }
 
-// G3 九机阵列（规范 3×3@632m 场景几何，北来风）
+// G3 九机阵列（规范 3×3@632m 场景几何，北来风）—— 3×3 专属：oracle 即 3×3 生成件；
+// 1×3 对应组 = G3t（tandem3 oracle，R42 #2 落地后加入，勿提前写假靶值）
+if (ACTIVE_LAYOUT === '3x3')
 {
   const sc = { x: FARM.map((f) => f.x), z: FARM.map((f) => f.z) }
   const none = ORACLE.array.none
@@ -701,6 +724,69 @@ console.log('== G · L4 GCH 内核 V&V（oracle：FLORIS 4.6.6 实算）==')
   ok('G3 阵列 多行配置 5 组：逐机 |ΔP| ≤ 1 kW（含 [30,20,0] 贪心族）', mCfg <= 1, `maxΔ=${mCfg.toFixed(3)} kW`)
 }
 
+// G3t 三机串列（R42 · 1×3 真值组：tandem3 oracle，= 3×3 中列，floris 4.6.6 GCH）
+// 布局无关（内核吃显式坐标），两种布局下都跑
+{
+  const td = ORACLE.tandem3
+  const sc3 = { x: [-100, -100, -100], z: [-1272, -640, -8] } // 场景系北→南 = FLORIS y=1272/640/8
+  const r0 = evaluateFarmScene(sc3, { uInf: 8, fromDeg: 0, ti: 0.06 }, [0, 0, 0])
+  const mNone = Math.max(
+    Math.abs(r0.totalKw - td.none.totalKw),
+    ...r0.turbines.map((tb, i) => Math.abs(tb.powerKw - td.none.pKw[i])),
+  )
+  ok('G3t 串列 none：总/逐机 |ΔP| ≤ 0.5 kW（2702.2 kW，T01 满发 T02/T03 尾流）',
+    mNone <= 0.5, `maxΔ=${mNone.toFixed(3)} kW 逐机=${r0.turbines.map((tb) => tb.powerKw.toFixed(1)).join('/')}`)
+  const mNoneU = Math.max(...r0.turbines.map((tb, i) => Math.abs(tb.uEff - td.none.uEff[i])))
+  ok('G3t 串列 none：逐机 uEff |Δ| ≤ 0.005 m/s', mNoneU <= 0.005, `maxΔ=${mNoneU.toFixed(5)}`)
+  let mUni = 0
+  for (const c of td.unified) {
+    const r = evaluateFarmScene(sc3, { uInf: 8, fromDeg: 0, ti: 0.06 }, [c.yaw, c.yaw, c.yaw])
+    mUni = Math.max(mUni, Math.abs(r.totalKw - c.totalKw))
+  }
+  ok('G3t 串列 统一偏航 13 档：总 |ΔP| ≤ 1 kW', mUni <= 1, `maxΔ=${mUni.toFixed(3)} kW`)
+  let mScan = 0
+  for (const c of td.upstreamScan) {
+    const r = evaluateFarmScene(sc3, { uInf: 8, fromDeg: 0, ti: 0.06 }, [c.yaw, 0, 0])
+    mScan = Math.max(mScan, Math.abs(r.totalKw - c.totalKw))
+  }
+  for (const c of td.midstreamScan) {
+    const r = evaluateFarmScene(sc3, { uInf: 8, fromDeg: 0, ti: 0.06 }, [0, c.yaw, 0])
+    mScan = Math.max(mScan, Math.abs(r.totalKw - c.totalKw))
+  }
+  ok('G3t 串列 上游/中游单列扫描各 13 档：总 |ΔP| ≤ 1 kW', mScan <= 1, `maxΔ=${mScan.toFixed(3)} kW`)
+  const rG = evaluateFarmScene(sc3, { uInf: 8, fromDeg: 0, ti: 0.06 }, td.greedy.yaw)
+  ok('G3t 串列 贪心终态 [30,25,0]：总 |ΔP| ≤ 1 kW（+22.11%，异于 3×3 的 24.04%）',
+    td.greedy.yaw.join(',') === '30,25,0' && Math.abs(rG.totalKw - td.greedy.totalKw) <= 1,
+    `yaw=${td.greedy.yaw.join('/')} Δ=${(rG.totalKw - td.greedy.totalKw).toFixed(3)} kW`)
+  ok('G3t 交叉校验元数据：零偏航下 1×3 ≈ 3×3 中列切片（maxDiff ≤ 0.5 kW；+30° 时 ~12 kW=横偏跨列，见 round42 §3.3）',
+    td.crossCheck3x3.none.maxDiffKw <= 0.5,
+    `none=${td.crossCheck3x3.none.maxDiffKw.toFixed(3)} +30=${td.crossCheck3x3.unifiedPlus30.maxDiffKw.toFixed(2)} kW`)
+}
+
+// G4t R44 · sampleHubPlane 轮毂高度水平面采样（演示 C1 流场；布局无关，吃显式坐标）
+// 口径文档：机组状态复用 runGCH（ti 取恢复后值，亚百分点级 sigma 差，仅展示场）
+{
+  const XF = [-100, -100, -100], YF = [1272, 640, 8]
+  const W = { uInf: 8, fromDeg: 0, ti: 0.06 }
+  // ① 轴点 = 内核转子网格中心点（同一套 GCH 公式，浮点噪声级）
+  const u27 = __debugRotorU(XF, YF, W, [0, 0, 0])
+  const kC = [u27[4], u27[13], u27[22]] // 各机 order 中心点（g=4）
+  let dC = 0
+  for (let si = 0; si < 3; si++) {
+    dC = Math.max(dC, Math.abs(sampleHubPlane(XF, YF, W, [0, 0, 0], [-100], [YF[si]])[0] - kC[si]))
+  }
+  ok('G4t sampleHubPlane 轴点 = 内核转子中心点（|Δ| ≤ 0.001 m/s）', dC <= 0.001, `maxΔ=${dC.toExponential(2)} m/s`)
+  // ② none 尾流结构：净风 8.0 / T01 下游 322m / T02 下游 80m（近场深）/ T03 下游 408m
+  const uF = sampleHubPlane(XF, YF, W, [0, 0, 0], [-100], [1500, 950, 560, -400])
+  ok('G4t 流场结构(none)：净风=8.0，T01 下游 322m<6，T02 下游 80m<4，T03 下游 408m<7 (m/s)',
+    Math.abs(uF[0] - 8) < 1e-9 && uF[1] < 6 && uF[2] < 4 && uF[3] < 7,
+    `u=${uF.map((v) => v.toFixed(2)).join('/')}`)
+  // ③ greedy [30,25,0]：T01/T02 偏航 → 尾流偏离开轴 + T02 自身尾流减轻 → T02 下游轴点回升
+  const uG = sampleHubPlane(XF, YF, W, [30, 25, 0], [-100], [560])
+  ok('G4t 流场偏折(greedy)：T02 下游 80m 轴点回升 ≥ 1.5 m/s（0.42→≥1.9）',
+    uG[0] - uF[2] >= 1.5, `Δ=${(uG[0] - uF[2]).toFixed(2)} m/s`)
+}
+
 // G4/G5（横偏质心 + 横截面）待 gch.ts 的 sampleCrossPlane 导出后启用 ——
 // 设计见 docs/research/round38 交接文档 §5（需独立求值网格，不可复用 3×3 转子网格）。
 
@@ -720,9 +806,14 @@ console.log('== G · L4 GCH 内核 V&V（oracle：FLORIS 4.6.6 实算）==')
     }
     return out
   }
-  const evidence = [...walk('../docs'), ...walk('../image-search')]
+  // 2026-10-05（R41 前置基线修复）：聊天截图自 2026-09-21 起归档在
+  // `materials/集体/聊天记录/`（materials/README 规则 8/9），而 docs/project/TIMELINE.md
+  // 会按名引用它们；本守卫写于 09-21 归档之前，证据树还只有 docs + image-search，
+  // 于是把 3 处合法引用判成断链。证据树因此扩为 docs + image-search + materials。
+  // 0 字节检查一并覆盖 materials（纳管当天实测 56 张图、零空文件；只增严不放宽）。
+  const evidence = [...walk('../docs'), ...walk('../image-search'), ...walk('../materials')]
   const empty = evidence.filter((f) => IMG.test(f) && statSync(f).size === 0)
-  ok('R38 证据完整性：docs/ 与 image-search/ 下不存在 0 字节图片',
+  ok('R38 证据完整性：docs/、image-search/ 与 materials/ 下不存在 0 字节图片',
     empty.length === 0, `${empty.length} 个：${empty.slice(0, 3).join(' ')}`)
 
   const present = new Set(evidence.filter((f) => IMG.test(f)).map((f) => f.split('/').pop()!))
@@ -749,6 +840,103 @@ console.log('== G · L4 GCH 内核 V&V（oracle：FLORIS 4.6.6 实算）==')
   }
   ok('R38 证据链：docs/**.md 引用的截图都能找到对应文件（无漏拍/无断链）',
     missing.length === 0, `${missing.length} 处：${missing.slice(0, 6).join(' | ')}`)
+}
+
+// ================================================================
+// R41-A · 布局真值源守卫（docs/13 §4.5 原文落地 + 两条回归锁）
+// 背景：3×3 不删（留档 tag twin-3x3-archive-20260919）、布局可切换；
+// 改造最大的风险是"字面量 9 漏改一处"或"3×3 几何被顺手挪动"，都在这里锁死。
+// ================================================================
+{
+  const walkSrc = (dir: string, out: string[] = []): string[] => {
+    if (!existsSync(dir)) return out
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      const p = `${dir}/${e.name}`
+      if (e.isDirectory()) walkSrc(p, out)
+      else out.push(p)
+    }
+    return out
+  }
+  // ① src/ 内不得出现字面量 length: 9 / Array(9) / === 9（机组数一律派生）
+  const LIT = [/length:\s*9\b/, /Array\(\s*9\s*\)/, /===\s*9\b/]
+  const hits: string[] = []
+  for (const f of walkSrc('src').filter((f) => /\.(ts|tsx)$/.test(f))) {
+    readFileSync(f, 'utf8').split('\n').forEach((line, i) => {
+      if (LIT.some((re) => re.test(line))) hits.push(`${f}:${i + 1}`)
+    })
+  }
+  ok('R41 布局：src/ 内无字面量 length:9 / Array(9) / ===9（机组数派生）',
+    hits.length === 0, hits.slice(0, 5).join(' '))
+
+  // ② 两套布局都生成合法 FARM：id 连续、行列间距 632、贴地 ≤12 m
+  const legal = (id: '3x3' | '1x3'): string[] => {
+    const us = LAYOUTS[id].units
+    const bad: string[] = []
+    if (!us.every((u, i) => u.id === `T0${i + 1}`)) bad.push('id 不连续')
+    const gaps = (vals: number[]) => {
+      const u = [...new Set(vals)].sort((a, b) => a - b)
+      return u.slice(1).map((v, i) => v - u[i])
+    }
+    const gx = gaps(us.map((u) => u.x))
+    const gz = gaps(us.map((u) => u.z))
+    if (![...gx, ...gz].every((d) => d === 632)) bad.push(`间距≠632（${gx}/${gz}）`)
+    if (!us.every((u) => Math.abs(terrainSurfaceY(u.x, u.z)) <= 12)) bad.push('贴地>12m')
+    return bad
+  }
+  const bad3 = legal('3x3')
+  const bad1 = legal('1x3')
+  ok('R41 布局：3×3 与 1×3 均合法（id 连续、间距 632、贴地 ≤12m）',
+    bad3.length === 0 && bad1.length === 0, `3×3:${bad3.join(',')} 1×3:${bad1.join(',')}`)
+
+  // ③ 1×3 的几何 = 3×3 中列的严格子集（docs/13 §4.5 几何回归）
+  const mid = LAYOUTS['3x3'].units.filter((u) => u.col === 1).map((u) => `${u.x},${u.z}`)
+  const tan = LAYOUTS['1x3'].units.map((u) => `${u.x},${u.z}`)
+  ok('R41 布局：1×3 = 3×3 中列的严格子集（几何回归）',
+    mid.length === tan.length && mid.every((v, i) => v === tan[i]), `${mid} vs ${tan}`)
+
+  // ④ 回归锁：3×3 派生几何与留档 tag 的写死值逐位一致（row-major T01–T09）
+  const HIST: [number, number][] = [
+    [-732, -1272], [-100, -1272], [532, -1272],
+    [-732, -640], [-100, -640], [532, -640],
+    [-732, -8], [-100, -8], [532, -8],
+  ]
+  ok('R41 布局：3×3 派生几何与留档 tag 写死值逐位一致',
+    LAYOUTS['3x3'].units.every((u, i) => u.x === HIST[i][0] && u.z === HIST[i][1]))
+
+  // ⑤ 派生同源：FARM / SERVOS / ROW_COUNT / 额定功率 与 ACTIVE_LAYOUT 一致
+  ok('R41 布局：FARM/SERVOS/ROW_COUNT/额定功率派生自 ACTIVE_LAYOUT',
+    FARM.length === LAYOUT.units.length &&
+    SERVOS.length === LAYOUT.servos.length && SERVOS.every((v, i) => v === LAYOUT.servos[i]) &&
+    ROW_COUNT === LAYOUT.rows &&
+    FARM_RATED_MW === LAYOUT.units.length * 5,
+    `N=${FARM.length} servos=${SERVOS} rows=${ROW_COUNT} rated=${FARM_RATED_MW}`)
+}
+
+// ================================================================
+// R42 · 渲染相位冻结 + 1×3 冒烟（round42 §0/§2）
+// ================================================================
+{
+  // freeze：像素差判据的恢复条件（round41 §3.1 判据事故的修复）
+  ok('R42 freeze：?freeze=1 → 相位恒定（同参数两次渲染可逐像素比对）',
+    phaseFor('?freeze=1&t=15', 999.5) === FROZEN_PHASE && phaseFor('?freeze=1', 0) === FROZEN_PHASE)
+  ok('R42 freeze：默认关闭（无参/他值 → 挂钟透传，演示体验不变）',
+    phaseFor(null, 7.7) === 7.7 && phaseFor('', 7.7) === 7.7 &&
+    phaseFor('?freeze=0', 7.7) === 7.7 && phaseFor('?t=15', 7.7) === 7.7)
+
+  if (ACTIVE_LAYOUT === '1x3') {
+    // 1×3 冒烟：能跑到这里 = import 期不再崩（round42 §0.1 的 FARM[6] undefined.x）
+    ok('R42 1×3 冒烟：FARM = T01–T03 且北(上游)→南(下游)',
+      FARM.length === 3 && FARM.every((u, i) => u.id === `T0${i + 1}`) && FARM[0].z < FARM[1].z && FARM[1].z < FARM[2].z)
+    ok('R42 1×3 冒烟：热键 9 槽 → 3 机组（i%3，上游先）',
+      unitOf(0) === 0 && unitOf(1) === 1 && unitOf(2) === 2 && unitOf(3) === 0 && unitOf(6) === 0 && unitOf(8) === 2)
+    ok('R42 1×3 冒烟：开场 13 航点齐备且有限（路径按布局派生）',
+      CAMERA_NODES.length === 13 && LOOK_NODES.length === 13 &&
+      [...CAMERA_NODES, ...LOOK_NODES].every((v) => isFinite(v.x) && isFinite(v.y) && isFinite(v.z) && v.y > 0))
+    const f15 = farmFrame(15, new Array(3).fill(0), FARM_RATED_MW, null)
+    ok('R42 1×3 冒烟：farmFrame 有限且不超额定（3×3 的 45MW 靶值不得泄漏）',
+      f15.units.length === 3 && f15.units.every((u) => isFinite(u.powerKw) && u.powerKw >= 0 && u.powerKw <= 5000) &&
+      f15.totalMW <= 15.001, `total=${f15.totalMW.toFixed(2)} MW`)
+  }
 }
 
 
@@ -801,8 +989,10 @@ console.log('== G · L4 GCH 内核 V&V（oracle：FLORIS 4.6.6 实算）==')
     downwindFactor(0, 500, 0, 0, 0) > downwindFactor(0, -500, 0, 0, 0))
   // 声部裁决：近塔取本机、远场归零（≤3 声部）
   const units = FARM.map((f) => ({ x: f.x, z: f.z, rpm: 11, uEff: 8 }))
-  const near = selectTurbines(units, FARM[6].x + 60, 20, FARM[6].z, 0, 3)
-  ok('R40 声场：T07 塔旁 60m 的第一声部就是 T07', near.length > 0 && near[0].idx === 6, `got ${near[0]?.idx}`)
+  // R42：最近景机组 = 布局末位（3×3=T07 idx6；1×3=T03 idx2），断言口径不变
+  const NEAR = FARM[FARM.length - 1]
+  const near = selectTurbines(units, NEAR.x + 60, 20, NEAR.z, 0, 3)
+  ok(`R40 声场：${NEAR.id} 塔旁 60m 的第一声部就是 ${NEAR.id}`, near.length > 0 && near[0].idx === FARM.length - 1, `got ${near[0]?.idx}`)
   const far = selectTurbines(units, 4200, 300, 4200, 0, 3)
   ok('R40 声场：4km 外全场无声部（融进底噪，不占 PannerNode）', far.length === 0)
   ok('R40 声场：声部数上限 3', selectTurbines(units, FARM_CENTER.x, 90, FARM_CENTER.z, 0, 3).length <= 3)

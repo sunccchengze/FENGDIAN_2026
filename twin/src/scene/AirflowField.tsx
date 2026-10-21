@@ -7,6 +7,7 @@ import { windAt } from '../data/farmSim'
 import { ROTOR_D, WAKE_K, thrustCt, wakeDeflection } from '../data/turbinePhysics'
 import { useSim } from '../state/simStore'
 import { mulberry32 } from '../data/rng.ts'
+import { phaseT, FREEZE } from './freeze.ts'
 
 // ============================================================================
 // AirflowField —— 风洞烟线式全场气流可视化（第 12 轮 R2 重制 + 性能精简优化）
@@ -167,7 +168,7 @@ export default function AirflowField() {
     streaks.visible = on
     plumes.visible = on
     if (!on) return
-    const dt = Math.min(0.05, dtRaw)
+    const dt = FREEZE ? 0 : Math.min(0.05, dtRaw) // R42 freeze：粒子平流停摆（否则 Math.random 重生破坏确定性）
     const w = windAt(s.tHours)
     const baseU = w.u
     const th = (((w.fromDeg % 360) + 360) % 360) * (Math.PI / 180)
@@ -195,7 +196,7 @@ export default function AirflowField() {
     const P = streaks.userData as { px: Float32Array; py: Float32Array; pz: Float32Array }
     const SPEED = 30 // 平流倍率：烟线过场 ~10s（视觉流速≈现场直播的 26 倍）
     const TRAIL = 0.11 // 拖尾时长（秒，仿真倍率后）→ 线长∝当地速度；0.3→0.11：用户反馈画面显乱，收短
-    const now = performance.now() / 1000
+    const now = phaseT(performance.now() / 1000)
     for (let i = 0; i < n; i++) {
       let px = P.px[i], py = P.py[i], pz = P.pz[i]
       let def2 = 0, lat = 0

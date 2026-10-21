@@ -3,6 +3,7 @@ import { useSim, farmFrameNow } from '../state/simStore'
 import { cameraPos, cameraFwd, cameraUp } from '../scene/cameraBus'
 import { audioEngine } from './audioEngine'
 import { windAt } from '../data/farmSim'
+import { phaseT } from '../scene/freeze.ts'
 
 // ============================================================================
 // T9 · AudioField —— 声场驱动层（挂在 Canvas 之外）
@@ -76,7 +77,7 @@ export default function AudioField() {
       raf = requestAnimationFrame(loop)
       const s = useSim.getState()
       // 未开声：引擎内部只做纯函数求值（保留 lastFrame 供 HUD 读数），不碰节点
-      const t = performance.now() / 1000
+      const t = phaseT(performance.now() / 1000)
       const frame = farmFrameNow()
       const n = Math.min(_units.length, frame.units.length)
       for (let i = 0; i < n; i++) {

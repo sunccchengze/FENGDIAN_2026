@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useSim, useFarmFrame } from '../state/simStore'
 import { FARM } from '../scene/terrainUtil'
-import { UNIT_NAMEPLATE, FARM_RATED_MW } from '../data/farmSim'
+import { UNIT_NAMEPLATE, FARM_RATED_MW, N_UNITS } from '../data/farmSim'
+import { LAYOUT } from '../scene/layouts.ts' // R41-A：矩阵/滑杆口径派生自布局真值源
+import { FREEZE } from '../scene/freeze.ts' // R42：freeze 取证模式挂钟定格
 import { ROTOR_D, WAKE_K, wakeDeflection, yawFactor } from '../data/turbinePhysics'
 import { anomalyLabel } from '../data/anomaly'
 import {
@@ -86,13 +88,13 @@ function MetricDonut({ pct, label, sub, display }: { pct: number; label: string;
   )
 }
 
-/* ---------- 机组状态矩阵 3×3 ---------- */
+/* ---------- 机组状态矩阵（列数随布局：3×3 三列 / 1×3 竖排，R41-A 派生）---------- */
 function Matrix() {
   const frame = useFarmFrame()
   const selected = useSim((s) => s.selected)
   const setSelected = useSim((s) => s.setSelected)
   return (
-    <div className="matrix" role="grid" aria-label="机组状态矩阵 3×3">
+    <div className={`matrix layout-${LAYOUT.id}`} role="grid" aria-label={`机组状态矩阵 ${LAYOUT.label}`}>
       {frame.units.map((u, i) => (
         <button
           key={u.id}
@@ -659,9 +661,12 @@ export default function Hud() {
   const setQuality = useSim((s) => s.setQuality)
   const frame = useFarmFrame()
   const barRef = useRef<HTMLDivElement>(null)
-  const [wall, setWall] = useState(() => new Date().toLocaleTimeString('zh-CN', { hour12: false }))
+  // R42 freeze：真实挂钟也冻住（否则 HUD 时间戳每秒跳一位，像素差永不归零）。
+  // 取证模式钉在 00:00:00，不依赖 new Date() 的墙钟。
+  const [wall, setWall] = useState(() => (FREEZE ? '00:00:00' : new Date().toLocaleTimeString('zh-CN', { hour12: false })))
 
   useEffect(() => {
+    if (FREEZE) return
     const iv = setInterval(() => setWall(new Date().toLocaleTimeString('zh-CN', { hour12: false })), 1000)
     return () => clearInterval(iv)
   }, [])
@@ -742,7 +747,7 @@ export default function Hud() {
             </div>
           </Panel>
 
-          <Panel title="机组状态矩阵" en="Matrix 3×3" badge="演示">
+          <Panel title="机组状态矩阵" en={`Matrix ${LAYOUT.label}`} badge="演示">
             <Matrix />
           </Panel>
 
@@ -759,7 +764,7 @@ export default function Hud() {
 
           <Panel title="偏航角度" en="(deg)" cls="pservo">
             <div className="servos">
-              {Array.from({ length: 9 }, (_, i) => <ServoSlider key={i} i={i} />)}
+              {Array.from({ length: N_UNITS }, (_, i) => <ServoSlider key={i} i={i} />)}
             </div>
             <ControlConsole />
           </Panel>

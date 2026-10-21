@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { CAM, FARM } from './terrainUtil'
+import { LAYOUT } from './layouts.ts'
 import { pushCameraState } from './cameraBus'
 import { CAM_HOTKEYS } from './hotkeys.ts'
 import { useSim } from '../state/simStore'
@@ -31,7 +32,9 @@ const ORBIT_R0 = Math.hypot(76, 168)
 const ORBIT_R1 = 196
 const ORBIT_Y0 = 56
 const ORBIT_Y1 = 66
-const HUB = new THREE.Vector3(FARM[6].x, 0, FARM[6].z)
+// R42：开场收尾环绕的枢纽机组 = 布局内最近景一台（3×3 为 T07=FARM[6]，1×3 为 T03）。
+// 半径/角度沿用（对最近景机组的相对取景），不随布局重设计构图。
+const HUB = new THREE.Vector3(FARM[LAYOUT.units.length - 1].x, 0, FARM[LAYOUT.units.length - 1].z)
 
 const ease = (t: number) => t * t * (3 - 2 * t)
 

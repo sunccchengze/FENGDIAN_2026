@@ -4,6 +4,7 @@ import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { makeSkyCanvas } from './skyTexture'
 import { skyState } from './lightState'
+import { phaseT } from './freeze.ts'
 
 const VERT = /* glsl */ `
 varying vec3 vDir;
@@ -220,7 +221,7 @@ export default function SkyAurora() {
   useFrame((state) => {
     if (!mat.current) return
     const u = mat.current.uniforms
-    u.uTime.value = state.clock.elapsedTime
+    u.uTime.value = phaseT(state.clock.elapsedTime)
     u.uDay.value = skyState.dayF
     u.uSunDir.value.copy(skyState.sunDir)
     u.uMoonDir.value.copy(skyState.moonDir)
