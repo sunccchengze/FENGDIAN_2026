@@ -1,0 +1,10 @@
+check,passed,detail
+trained_model_present,False,"requires trained.keras, not original_frozen.keras/untrained.keras"
+training_report_present,False,independent physical-label errors and control ranges required
+real_geometry_filled,False,three actual ordered equally spaced positions; do not use structural test coordinates
+source_reports_real_training,False,structure_built_and_checked_NOT_trained
+controls_have_nonzero_saved_connections,False,saved 9x700 new control kernel inspected directly
+labelled_training_template,False,template contains 0 labelled rows; original flow CSVs are not control/power labels
+six_output_order,True,"W,W,W,m/s,m/s,m/s"
+nine_control_order,True,"interleaved by turbine, unlike optimization grouped controls"
+random_inflow_supported,False,documented fixed-condition nine-input model; no inlet speed/direction/TI features

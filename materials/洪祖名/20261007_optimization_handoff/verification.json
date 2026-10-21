@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-07",
+  "seed": 42,
+  "source_commit": "042c634",
+  "archive_files_verified": 1588,
+  "archive_count": 58,
+  "max_archive_mib": 80.0,
+  "task_zip_sha256": "07fc21faadc43369bd10184b0d7aeb317c35fe730009098e6cac6af1076e1778",
+  "task_zip_mib": 128.72227001190186,
+  "docx_pages_reviewed": 3,
+  "optimization_tests_passed": 110,
+  "portable_replay_metric_rows": 54,
+  "replay_max_numerical_difference": 0.0,
+  "replay_cases": [
+    "pitch selected run1",
+    "all selected run1 from moved package code",
+    "4.5MW single pitch final from moved package code"
+  ],
+  "navigation_markdown_checked": 33,
+  "docx_mirrors_checked": 1,
+  "checksum_manifests_checked": 1,
+  "credential_pattern_matches": 0,
+  "text_files_scanned_in_archives": 1123,
+  "text_files_scanned_in_repository": 1095,
+  "scope": "Packaging and replay validation; no retraining or physical-accuracy claim.",
+  "remote_main_modified": false,
+  "review_status": "branch_handoff_pending_team_review"
+}

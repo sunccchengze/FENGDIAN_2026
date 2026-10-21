@@ -1,0 +1,36 @@
+实验：单机 PPO 功率跟踪（Cp 解析公式环境）
+日期：2026-08-08 | 状态：⚠ 历史演示（T1-R 复核后不作为正式对比）
+
+历史假设：PPO 能学会"输入 P_target → 输出桨距角/转速变化 → 功率稳定跟踪"，且优于比例控制基线
+
+配置：
+  环境 SimplifiedTurbineEnv：NREL 5MW，观测归一化 [P,ω,β,U,P_target]/scale，
+  动作 [Δβ(±0.5°), Δω(±0.1rad/s)]，一阶转速惯性 τ=5s，
+  目标 = 当前风况最大可发功率 × (80%→65% 阶跃)，风速 8→9.5 m/s 阶跃，episode 200 步
+  PPO：请求 200k 步，实际完成 196608 步，4 envs，lr=3e-4 退火，clip=0.2，GAE λ=0.95，64x64 Tanh，seed=42
+
+历史结果（旧脚本连续运行 400 步，但 episode 在 200 步已 truncated）：
+  PPO: 跟踪 RMSE=28.49 kW, MAE=19.95 kW（目标 ~1.5-2.6MW，误差 <2%）
+  PController（旧控制方向）: 跟踪 RMSE=959.68 kW（kP=2e-6）
+  → 数值原样保留用于追溯；旧评估越过 episode、P 控制符号错误，且未压缩动作与环境裁剪后的执行动作不一致，34 倍差距不是有效结论
+
+过程教训（重要）：
+  1. 目标功率必须物理可达：初版设 2.5/3.5MW 但 8/9.5 m/s 最大可发仅 1.9/3.1MW → 任务不可达，学不好
+  2. 训练/评估观测一致性：初版用 NormalizeObservation wrapper 训练、原始观测评估 → 尺度不匹配，
+     策略输出乱动作；改为环境内建固定归一化后训练评估一致
+
+T1-R 复核与收尾（2026-08-23 至 2026-08-24）：
+  1. 修复 Gymnasium vector info 解析，后续 metrics.csv 的 episodic_return 记录每轮已完成 episode 的均值
+  2. eval.py 按 terminated/truncated 结束 episode，多 episode 时显式 reset
+  3. PIDController 更名 PController，并由有限差分确认 dP/d_beta<0 后修正控制符号
+  4. 动作惩罚改为按各动作上限归一化，避免 deg² 与 (rad/s)² 直接相加
+  5. 初始观测目标与第一步奖励目标统一；200 步定义为合成任务终点，向量环境使用 SAME_STEP 自动重置
+  6. 新训练策略改为 tanh 压缩高斯并映射到真实动作边界，log-prob 与实际动作保持一致
+  7. 历史模型必须用 --policy-format legacy_unsquashed 显式评估；修正协议单场景回归：
+     PPO RMSE=49.83 kW，PController RMSE=35.99 kW，不能形成统计或算法优劣结论
+  8. 512 步 smoke 训练成功；T1 7 项回归测试通过
+  9. 新增 config.yaml 与 test_baseline.py；奖励和策略分布均已变化，需重新训练后才能形成正式结论
+
+结论：T1 历史实验仅证明初版 RL 工具链可运行；修复后的正式性能对比需重新训练并按新协议评估
+文件：metrics.csv（训练曲线数据）、training_curve.png、ppo_vs_pid.png（对比图）
+模型：.\models\ppo\ppo_tracking_v3_seed42.pt（不入 git）

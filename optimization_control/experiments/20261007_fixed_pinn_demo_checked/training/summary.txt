@@ -1,0 +1,8 @@
+source=teammate_backbone_synthetic_demo
+power_semantics=synthetic_mock_power_w_not_physical_validation
+steps=2048
+episodes=16
+updates=897
+resume_from=None
+checkpoint=.\optimization_control\experiments\20261007_fixed_pinn_demo_checked\training\checkpoint.pth
+Integration training is not evidence of physical validity or algorithm superiority.

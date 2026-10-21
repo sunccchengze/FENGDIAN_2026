@@ -1,0 +1,65 @@
+schema_version: 1
+seed: 42
+purpose: synthetic_fixed_condition_integration_only
+package: pinn/PINNs_multi_turbine_wake_simulation-outputchange
+runtime_site_packages: .venv/pinn_tf216
+fixed_condition:
+  speed_m_s: 9.0
+  direction_rad: 0.0
+  turbulence_intensity: 0.1
+  source: demonstration_assumption_not_original_model_calibration
+geometry:
+  positions_m:
+  - - 0.0
+    - 0.0
+    - 90.0
+  - - 378.0
+    - 0.0
+    - 90.0
+  - - 756.0
+    - 0.0
+    - 90.0
+  source: demonstration_assumption_equal_spacing_not_team_geometry
+controls:
+  low:
+  - -0.35
+  - 0.0
+  - 0.6
+  high:
+  - 0.35
+  - 0.25
+  - 1.267
+  initial:
+  - 0.0
+  - 0.04
+  - 0.9
+  units:
+  - rad
+  - rad
+  - rad/s
+data:
+  source: coupled_integration_mock
+  train_rows: 2048
+  validation_rows: 256
+  test_rows: 256
+model_training:
+  epochs: 80
+  batch_size: 64
+  learning_rate: 0.0003
+  patience: 12
+maddpg:
+  total_steps: 2048
+  warmup_steps: 256
+  update_every: 2
+  noise_std: 0.15
+  actor_lr: 0.0001
+  reward_scale: 100.0
+  horizon: 128
+  training_targets_w:
+  - 2500000.0
+  - 3500000.0
+  - 4500000.0
+  evaluation_targets_w:
+  - 2500000.0
+  - 3500000.0
+  - 4500000.0

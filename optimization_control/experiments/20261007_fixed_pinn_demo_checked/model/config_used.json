@@ -1,0 +1,26 @@
+{
+  "turbine_positions_m": [
+    [
+      0.0,
+      0.0,
+      90.0
+    ],
+    [
+      378.0,
+      0.0,
+      90.0
+    ],
+    [
+      756.0,
+      0.0,
+      90.0
+    ]
+  ],
+  "control_units": {
+    "yaw": "deg",
+    "pitch": "deg",
+    "rotor_speed": "rpm"
+  },
+  "fixed_inlet_wind_speed_m_s": 9.0,
+  "geometry_source": "demonstration_assumption_equal_spacing_not_team_geometry"
+}

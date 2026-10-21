@@ -1,0 +1,13 @@
+Command: python -m optimization_control.maddpg_wind_farm.diagnostics --output <new-dir> --steps <steps> --reward-scales <scales>
+{
+  "target_w": 3000000.0,
+  "common_pitch_rad": 0.06719594076275788,
+  "equilibrium_power_w": 3000000.5,
+  "bracket_power_w": [
+    624399.5625,
+    3795598.5
+  ],
+  "scope": "steady mock feasibility, not instantaneous reachability"
+}
+Fixed inlet, seed 42; uniform reward scaling preserves the task optimum.
+Same permissions within each channel mask. Single seed: no statistical superiority claim.

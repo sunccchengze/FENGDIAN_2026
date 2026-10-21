@@ -1,0 +1,134 @@
+{
+  "policy_format": "tanh_squashed",
+  "environment_config": {
+    "version": "stochastic_single_v2",
+    "seed": 42,
+    "source": {
+      "kind": "assumption",
+      "method": "Kaimal longitudinal spectrum, TurbSim v2 Eq. 23",
+      "reference": "https://openfast.readthedocs.io/en/main/_downloads/cb14d3e2d3533d76e405d730fea19846/TurbSim_v2.00.pdf",
+      "note": "Single-point band-limited synthetic training wind. Numeric parameters are design assumptions, not site fits or IEC certification."
+    },
+    "wind": {
+      "dt_s": 1.0,
+      "duration_s": 600.0,
+      "mean_min_m_s": 6.0,
+      "mean_max_m_s": 10.0,
+      "ti_values": [
+        0.06,
+        0.08,
+        0.1
+      ],
+      "length_scale_m": 100.0,
+      "padding_factor": 8,
+      "scenario": "mixed",
+      "ramp_amplitude_m_s": 1.0,
+      "gust_amplitude_m_s": 1.5,
+      "gust_duration_s": 40.0,
+      "speed_min_m_s": 0.5,
+      "speed_max_m_s": 16.0,
+      "max_attempts": 100
+    },
+    "reference": {
+      "headroom_fraction": 0.2,
+      "low_pass_time_constant_s": 20.0,
+      "ramp_up_limit_w_s": 50000.0,
+      "ramp_down_limit_w_s": 50000.0
+    },
+    "environment": {
+      "rotor_tau_s": 5.0,
+      "semantics": "finite-horizon task; current reference is held for the next action interval"
+    }
+  },
+  "observation_names": [
+    "power_w",
+    "rotor_speed_rad_s",
+    "pitch_deg",
+    "wind_speed_m_s",
+    "reference_power_w",
+    "rotor_speed_setpoint_rad_s",
+    "filtered_reference_w",
+    "remaining_fraction"
+  ],
+  "obs_scale": [
+    5000000.0,
+    1.2671090364456177,
+    25.0,
+    16.0,
+    5000000.0,
+    1.2671090364456177,
+    5000000.0,
+    1.0
+  ],
+  "seed": 42,
+  "total_timesteps": 8192,
+  "training_config": {
+    "seed": 42,
+    "training": {
+      "seed": 42,
+      "total_timesteps": 8192,
+      "num_envs": 2,
+      "num_steps": 1024,
+      "num_minibatches": 8,
+      "update_epochs": 2,
+      "learning_rate": 0.0003,
+      "gamma": 0.99,
+      "gae_lambda": 0.95,
+      "clip_coef": 0.2,
+      "ent_coef": 0.0,
+      "vf_coef": 0.5,
+      "max_grad_norm": 0.5,
+      "anneal_lr": true,
+      "save_model": true,
+      "run_tag": "kaimal_smoke_v2",
+      "wind_config": "optimization_control\\ppo_single_turbine\\configs\\stochastic_wind_v1.yaml",
+      "output_dir": "optimization_control\\experiments\\20260913_kaimal_ppo_smoke",
+      "torch_threads": 1
+    },
+    "environment_config": {
+      "version": "stochastic_single_v2",
+      "seed": 42,
+      "source": {
+        "kind": "assumption",
+        "method": "Kaimal longitudinal spectrum, TurbSim v2 Eq. 23",
+        "reference": "https://openfast.readthedocs.io/en/main/_downloads/cb14d3e2d3533d76e405d730fea19846/TurbSim_v2.00.pdf",
+        "note": "Single-point band-limited synthetic training wind. Numeric parameters are design assumptions, not site fits or IEC certification."
+      },
+      "wind": {
+        "dt_s": 1.0,
+        "duration_s": 600.0,
+        "mean_min_m_s": 6.0,
+        "mean_max_m_s": 10.0,
+        "ti_values": [
+          0.06,
+          0.08,
+          0.1
+        ],
+        "length_scale_m": 100.0,
+        "padding_factor": 8,
+        "scenario": "mixed",
+        "ramp_amplitude_m_s": 1.0,
+        "gust_amplitude_m_s": 1.5,
+        "gust_duration_s": 40.0,
+        "speed_min_m_s": 0.5,
+        "speed_max_m_s": 16.0,
+        "max_attempts": 100
+      },
+      "reference": {
+        "headroom_fraction": 0.2,
+        "low_pass_time_constant_s": 20.0,
+        "ramp_up_limit_w_s": 50000.0,
+        "ramp_down_limit_w_s": 50000.0
+      },
+      "environment": {
+        "rotor_tau_s": 5.0,
+        "semantics": "finite-horizon task; current reference is held for the next action interval"
+      }
+    },
+    "versions": {
+      "numpy": "2.5.1",
+      "torch": "2.13.0+cpu",
+      "gymnasium": "1.3.0"
+    }
+  }
+}

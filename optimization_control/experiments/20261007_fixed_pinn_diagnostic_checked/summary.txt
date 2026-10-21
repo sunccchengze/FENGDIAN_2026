@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "metrics_verified": 24,
+  "trajectory_rows_verified": 3072,
+  "baseline_identical": true,
+  "training_episodes": {
+    "2500000.0": 6,
+    "3500000.0": 5,
+    "4500000.0": 5
+  },
+  "replay_transitions": {
+    "2500000.0": 768,
+    "3500000.0": 640,
+    "4500000.0": 640
+  },
+  "training_steps": 2048,
+  "updates": 897,
+  "weighted_target_mean_mw": 3.4375,
+  "feasible_targets": 3,
+  "initial_pitch_scan_min_w": 1782904.125,
+  "initial_pitch_scan_max_w": 5014932.5,
+  "source_files_unchanged": true,
+  "critic_scope": "reset states; finite 128-step return of first candidate then saved actor; no new training",
+  "teacher_scope": "same operating points only; synthetic label source, not real truth or closed-loop teacher performance"
+}

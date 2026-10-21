@@ -1,0 +1,18 @@
+seed: 42
+source_experiment: optimization_control/experiments/20261007_fixed_pinn_demo_checked
+purpose: saved_fixed_condition_diagnosis_no_training
+source_hashes:
+  optimization_control/experiments/20261007_fixed_pinn_demo_checked/training/checkpoint.pth: 6f1c1526d0ff7f6eecb5742bc6a73c0f70064a0371f80779aeac527f2b730d91
+  optimization_control/experiments/20261007_fixed_pinn_demo_checked/initial/checkpoint.pth: 81642ce7980067fe574c9be24d65787765000b9f3857bb702c634763d76c0beb
+  optimization_control/experiments/20261007_fixed_pinn_demo_checked/model/trained.keras: c2fd64efd9b41f73cc3e646bb223999abb63740784e84d8b6d6df693581a7e53
+  optimization_control/experiments/20261007_fixed_pinn_demo_checked/evaluation/trajectories.csv: e858a15cdf51043b46de30c788fe7de55ac2af955e138f1c7c3c5b8d5a142902
+  optimization_control/experiments/20261007_fixed_pinn_demo_checked/initial_evaluation/trajectories.csv: c1d53075f9afcfcc55cf816ae225cd65edbefaf8ef74b54c8f906d4c91e9bd3d
+first_action_counterfactual: one candidate action, then saved policy until termination
+teacher_check: offline predictions at saved operating points, NOT teacher closed loop
+  or physical truth
+critic_candidates:
+- actor
+- fixed
+- p
+- actor_pitch_minus_0.1
+- actor_pitch_plus_0.1

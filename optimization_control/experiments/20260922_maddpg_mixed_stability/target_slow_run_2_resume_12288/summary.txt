@@ -1,0 +1,11 @@
+{
+  "best": {
+    "score_w": 593910.2771022071,
+    "step": 16384,
+    "checkpoint": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20260922_maddpg_mixed_stability\\target_slow_run_2_resume_12288\\step_00016384.pth"
+  },
+  "final": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20260922_maddpg_mixed_stability\\target_slow_run_2_resume_12288\\step_00016384.pth",
+  "completed": true,
+  "master_seed": 42,
+  "derived_run_seed": 1744652054
+}

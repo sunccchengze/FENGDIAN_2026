@@ -1,0 +1,1696 @@
+{
+  "seed": 42,
+  "protocol_sha256": "2be6407f7e36015f94179fd7794a28a9d05ab99e0c1e1baaab984906af30db57",
+  "results": [
+    {
+      "stage": "single_pitch",
+      "run_id": 0,
+      "target_w": 2500000.0,
+      "config": {
+        "schema_version": 1,
+        "seed": 42,
+        "purpose": "synthetic_fixed_condition_integration_only",
+        "plant": {
+          "kind": "pinn",
+          "source": "teammate_backbone_synthetic_demo",
+          "power_semantics": "synthetic_mock_power_w_not_physical_validation",
+          "turbine_ids": [
+            "T01",
+            "T02",
+            "T03"
+          ],
+          "rated_power_w": [
+            5000000,
+            5000000,
+            5000000
+          ],
+          "layout": {
+            "kind": "fixed_collinear_equal_spacing",
+            "spacing_m": 378.0,
+            "source": "demonstration_assumption_equal_spacing_not_team_geometry"
+          },
+          "features": [
+            "ambient_wind_speed_m_s",
+            "ambient_wind_direction_rad",
+            "turbulence_intensity",
+            "gamma_1",
+            "gamma_2",
+            "gamma_3",
+            "beta_1",
+            "beta_2",
+            "beta_3",
+            "omega_1",
+            "omega_2",
+            "omega_3"
+          ],
+          "bounds": {
+            "ambient_wind_speed_m_s": [
+              3.0,
+              20.0
+            ],
+            "ambient_wind_direction_rad": [
+              0.0,
+              6.283186
+            ],
+            "turbulence_intensity": [
+              0.0,
+              0.3
+            ],
+            "gamma_1": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_2": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_3": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "beta_1": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_2": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_3": [
+              -1e-06,
+              0.250001
+            ],
+            "omega_1": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_2": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_3": [
+              0.599999,
+              1.2670009999999998
+            ]
+          },
+          "model_version": "synthetic-demo-c2fd64efd9b4",
+          "factory": "optimization_control.environments.teammate_pinn_backend:create_demo_predictor",
+          "backend": {
+            "run_dir": "optimization_control/experiments/20261007_fixed_pinn_demo_checked/model",
+            "script": "pinn/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_io.py",
+            "allow_synthetic_demo": true,
+            "fixed_condition": {
+              "direction_rad": 0.0,
+              "turbulence_intensity": 0.1
+            },
+            "yaw_convention": "misalignment_same_sign_as_gamma"
+          }
+        },
+        "environment": {
+          "parameter_source": {
+            "kind": "assumption",
+            "reference": "configs/fixed_pinn_demo.yaml",
+            "note": "fixed-condition synthetic integration assumptions"
+          },
+          "dt_s": 1.0,
+          "yaw_frame": "nacelle_heading",
+          "heading_bounds_rad": [
+            -314.1592653589793,
+            314.1592653589793
+          ],
+          "control_mask": [
+            0,
+            1,
+            0
+          ],
+          "horizon": 128,
+          "wind_scale_m_s": 25.0,
+          "action_low": [
+            -0.35,
+            0.0,
+            0.6
+          ],
+          "action_high": [
+            0.35,
+            0.25,
+            1.267
+          ],
+          "initial_operating_point": [
+            0.0,
+            0.04,
+            0.9
+          ],
+          "rate_limits": [
+            0.005,
+            0.00872664626,
+            0.1
+          ],
+          "time_constants_s": [
+            5.0,
+            2.0,
+            5.0
+          ],
+          "target_w": 3000000.0,
+          "wind_base_m_s": 9.0,
+          "wind_amplitude_m_s": 0.0,
+          "wind_period_steps": 128,
+          "wind_noise_std_m_s": 0.0,
+          "wind_direction_rad": 0.0,
+          "turbulence_intensity": 0.1,
+          "action_change_weight": 0.001,
+          "reward_scale": 100.0
+        },
+        "algorithm": {
+          "hidden": 64,
+          "actor_lr": 0.0001,
+          "critic_lr": 0.001,
+          "gamma": 0.99,
+          "tau": 0.01,
+          "batch_size": 64,
+          "capacity": 32768,
+          "grad_clip": 1.0,
+          "actor_initial_action": [
+            0.0,
+            -0.6799999999999999,
+            -0.10044977511244357
+          ]
+        },
+        "training": {
+          "total_steps": 2048,
+          "warmup_steps": 256,
+          "update_every": 2,
+          "noise_std": 0.15,
+          "episode_target_fractions": [
+            0.16666666666666666,
+            0.23333333333333334,
+            0.3
+          ]
+        },
+        "evaluation": {
+          "seed_offset": 10000,
+          "scenarios": [
+            {
+              "name": "fixed9_target_2500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 2500000.0
+            },
+            {
+              "name": "fixed9_target_3500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 3500000.0
+            },
+            {
+              "name": "fixed9_target_4500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 4500000.0
+            }
+          ]
+        },
+        "baselines": {
+          "three_channel": true,
+          "yaw_offset_rad": 0.0,
+          "speed_per_wind_rad_m": 0.11114035087719298,
+          "pitch_bias_rad": 0.04,
+          "kp": 1.5,
+          "ki": 0.08,
+          "antiwindup_gain": 0.2,
+          "integral_limit_rad": 0.3
+        }
+      },
+      "best": {
+        "score_w": 373867.45571202505,
+        "step": 8192,
+        "checkpoint": "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_2500000w/segment_000/step_00008192.pth",
+        "validation": [
+          {
+            "split": "validation",
+            "target_w": 2500000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 373867.45571202505,
+            "tail_rmse_w": 28730.644281329867,
+            "final_power_w": 2485241.5,
+            "max_abs_error_w": 1806129.0,
+            "q_initial": -8.15470822652181,
+            "discounted_return": -7.728678028744925,
+            "q_return_gap": -0.42603019777688544,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.5076343277571597,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.04166666666666667
+          }
+        ]
+      },
+      "final": "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_2500000w/segment_000/step_00016384.pth",
+      "initial": "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_2500000w/segment_000/step_00000000.pth",
+      "gate": {
+        "passed": true,
+        "improved": true,
+        "worst_tail_rmse_w": 28730.644281329867,
+        "response_fraction": 1.0,
+        "mean_rmse_w": 373867.45571202505
+      },
+      "final_rmse_w": 379036.579932311,
+      "final_over_best": 1.013826087671743,
+      "hashes": {
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_2500000w/segment_000/step_00000000.pth": "435ffd0e24d18cd8e565d0535ff431f7e5d35e1ec4a3fbc5d6bcfe279fabeec5",
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_2500000w/segment_000/step_00016384.pth": "54567bf1577bea7ab0b13485aa770857d78e7f4ebf2b0fd94140c0f5d4ccfb8f",
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_2500000w/segment_000/step_00008192.pth": "3843fdbac5f200fcdb8ca13398c601b7bbaa8be15af77aa81b8e53e8f56cd1b3"
+      }
+    },
+    {
+      "stage": "single_pitch",
+      "run_id": 0,
+      "target_w": 3500000.0,
+      "config": {
+        "schema_version": 1,
+        "seed": 42,
+        "purpose": "synthetic_fixed_condition_integration_only",
+        "plant": {
+          "kind": "pinn",
+          "source": "teammate_backbone_synthetic_demo",
+          "power_semantics": "synthetic_mock_power_w_not_physical_validation",
+          "turbine_ids": [
+            "T01",
+            "T02",
+            "T03"
+          ],
+          "rated_power_w": [
+            5000000,
+            5000000,
+            5000000
+          ],
+          "layout": {
+            "kind": "fixed_collinear_equal_spacing",
+            "spacing_m": 378.0,
+            "source": "demonstration_assumption_equal_spacing_not_team_geometry"
+          },
+          "features": [
+            "ambient_wind_speed_m_s",
+            "ambient_wind_direction_rad",
+            "turbulence_intensity",
+            "gamma_1",
+            "gamma_2",
+            "gamma_3",
+            "beta_1",
+            "beta_2",
+            "beta_3",
+            "omega_1",
+            "omega_2",
+            "omega_3"
+          ],
+          "bounds": {
+            "ambient_wind_speed_m_s": [
+              3.0,
+              20.0
+            ],
+            "ambient_wind_direction_rad": [
+              0.0,
+              6.283186
+            ],
+            "turbulence_intensity": [
+              0.0,
+              0.3
+            ],
+            "gamma_1": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_2": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_3": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "beta_1": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_2": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_3": [
+              -1e-06,
+              0.250001
+            ],
+            "omega_1": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_2": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_3": [
+              0.599999,
+              1.2670009999999998
+            ]
+          },
+          "model_version": "synthetic-demo-c2fd64efd9b4",
+          "factory": "optimization_control.environments.teammate_pinn_backend:create_demo_predictor",
+          "backend": {
+            "run_dir": "optimization_control/experiments/20261007_fixed_pinn_demo_checked/model",
+            "script": "pinn/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_io.py",
+            "allow_synthetic_demo": true,
+            "fixed_condition": {
+              "direction_rad": 0.0,
+              "turbulence_intensity": 0.1
+            },
+            "yaw_convention": "misalignment_same_sign_as_gamma"
+          }
+        },
+        "environment": {
+          "parameter_source": {
+            "kind": "assumption",
+            "reference": "configs/fixed_pinn_demo.yaml",
+            "note": "fixed-condition synthetic integration assumptions"
+          },
+          "dt_s": 1.0,
+          "yaw_frame": "nacelle_heading",
+          "heading_bounds_rad": [
+            -314.1592653589793,
+            314.1592653589793
+          ],
+          "control_mask": [
+            0,
+            1,
+            0
+          ],
+          "horizon": 128,
+          "wind_scale_m_s": 25.0,
+          "action_low": [
+            -0.35,
+            0.0,
+            0.6
+          ],
+          "action_high": [
+            0.35,
+            0.25,
+            1.267
+          ],
+          "initial_operating_point": [
+            0.0,
+            0.04,
+            0.9
+          ],
+          "rate_limits": [
+            0.005,
+            0.00872664626,
+            0.1
+          ],
+          "time_constants_s": [
+            5.0,
+            2.0,
+            5.0
+          ],
+          "target_w": 3000000.0,
+          "wind_base_m_s": 9.0,
+          "wind_amplitude_m_s": 0.0,
+          "wind_period_steps": 128,
+          "wind_noise_std_m_s": 0.0,
+          "wind_direction_rad": 0.0,
+          "turbulence_intensity": 0.1,
+          "action_change_weight": 0.001,
+          "reward_scale": 100.0
+        },
+        "algorithm": {
+          "hidden": 64,
+          "actor_lr": 0.0001,
+          "critic_lr": 0.001,
+          "gamma": 0.99,
+          "tau": 0.01,
+          "batch_size": 64,
+          "capacity": 32768,
+          "grad_clip": 1.0,
+          "actor_initial_action": [
+            0.0,
+            -0.6799999999999999,
+            -0.10044977511244357
+          ]
+        },
+        "training": {
+          "total_steps": 2048,
+          "warmup_steps": 256,
+          "update_every": 2,
+          "noise_std": 0.15,
+          "episode_target_fractions": [
+            0.16666666666666666,
+            0.23333333333333334,
+            0.3
+          ]
+        },
+        "evaluation": {
+          "seed_offset": 10000,
+          "scenarios": [
+            {
+              "name": "fixed9_target_2500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 2500000.0
+            },
+            {
+              "name": "fixed9_target_3500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 3500000.0
+            },
+            {
+              "name": "fixed9_target_4500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 4500000.0
+            }
+          ]
+        },
+        "baselines": {
+          "three_channel": true,
+          "yaw_offset_rad": 0.0,
+          "speed_per_wind_rad_m": 0.11114035087719298,
+          "pitch_bias_rad": 0.04,
+          "kp": 1.5,
+          "ki": 0.08,
+          "antiwindup_gain": 0.2,
+          "integral_limit_rad": 0.3
+        }
+      },
+      "best": {
+        "score_w": 116503.49754610207,
+        "step": 16384,
+        "checkpoint": "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_3500000w/segment_000/step_00016384.pth",
+        "validation": [
+          {
+            "split": "validation",
+            "target_w": 3500000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 116503.49754610207,
+            "tail_rmse_w": 1226.2279328735644,
+            "final_power_w": 3502816.0,
+            "max_abs_error_w": 806129.0,
+            "q_initial": -0.8423129717508951,
+            "discounted_return": -0.8358645661775166,
+            "q_return_gap": -0.006448405573378557,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.24173160176867203,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.019097222222222224
+          }
+        ]
+      },
+      "final": "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_3500000w/segment_000/step_00016384.pth",
+      "initial": "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_3500000w/segment_000/step_00000000.pth",
+      "gate": {
+        "passed": true,
+        "improved": true,
+        "worst_tail_rmse_w": 1226.2279328735644,
+        "response_fraction": 1.0,
+        "mean_rmse_w": 116503.49754610207
+      },
+      "final_rmse_w": 116503.49754610207,
+      "final_over_best": 1.0,
+      "hashes": {
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_3500000w/segment_000/step_00000000.pth": "5ff056c4237f0777f4d564dff6ea7f7305e48feaf1a83d98098faedb8938a9fc",
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_3500000w/segment_000/step_00016384.pth": "e7dcd3b81984a8afc40ee2cd50ace0009611a757eb330afef38e86873bcb7807"
+      }
+    },
+    {
+      "stage": "single_pitch",
+      "run_id": 0,
+      "target_w": 4500000.0,
+      "config": {
+        "schema_version": 1,
+        "seed": 42,
+        "purpose": "synthetic_fixed_condition_integration_only",
+        "plant": {
+          "kind": "pinn",
+          "source": "teammate_backbone_synthetic_demo",
+          "power_semantics": "synthetic_mock_power_w_not_physical_validation",
+          "turbine_ids": [
+            "T01",
+            "T02",
+            "T03"
+          ],
+          "rated_power_w": [
+            5000000,
+            5000000,
+            5000000
+          ],
+          "layout": {
+            "kind": "fixed_collinear_equal_spacing",
+            "spacing_m": 378.0,
+            "source": "demonstration_assumption_equal_spacing_not_team_geometry"
+          },
+          "features": [
+            "ambient_wind_speed_m_s",
+            "ambient_wind_direction_rad",
+            "turbulence_intensity",
+            "gamma_1",
+            "gamma_2",
+            "gamma_3",
+            "beta_1",
+            "beta_2",
+            "beta_3",
+            "omega_1",
+            "omega_2",
+            "omega_3"
+          ],
+          "bounds": {
+            "ambient_wind_speed_m_s": [
+              3.0,
+              20.0
+            ],
+            "ambient_wind_direction_rad": [
+              0.0,
+              6.283186
+            ],
+            "turbulence_intensity": [
+              0.0,
+              0.3
+            ],
+            "gamma_1": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_2": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_3": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "beta_1": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_2": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_3": [
+              -1e-06,
+              0.250001
+            ],
+            "omega_1": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_2": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_3": [
+              0.599999,
+              1.2670009999999998
+            ]
+          },
+          "model_version": "synthetic-demo-c2fd64efd9b4",
+          "factory": "optimization_control.environments.teammate_pinn_backend:create_demo_predictor",
+          "backend": {
+            "run_dir": "optimization_control/experiments/20261007_fixed_pinn_demo_checked/model",
+            "script": "pinn/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_io.py",
+            "allow_synthetic_demo": true,
+            "fixed_condition": {
+              "direction_rad": 0.0,
+              "turbulence_intensity": 0.1
+            },
+            "yaw_convention": "misalignment_same_sign_as_gamma"
+          }
+        },
+        "environment": {
+          "parameter_source": {
+            "kind": "assumption",
+            "reference": "configs/fixed_pinn_demo.yaml",
+            "note": "fixed-condition synthetic integration assumptions"
+          },
+          "dt_s": 1.0,
+          "yaw_frame": "nacelle_heading",
+          "heading_bounds_rad": [
+            -314.1592653589793,
+            314.1592653589793
+          ],
+          "control_mask": [
+            0,
+            1,
+            0
+          ],
+          "horizon": 128,
+          "wind_scale_m_s": 25.0,
+          "action_low": [
+            -0.35,
+            0.0,
+            0.6
+          ],
+          "action_high": [
+            0.35,
+            0.25,
+            1.267
+          ],
+          "initial_operating_point": [
+            0.0,
+            0.04,
+            0.9
+          ],
+          "rate_limits": [
+            0.005,
+            0.00872664626,
+            0.1
+          ],
+          "time_constants_s": [
+            5.0,
+            2.0,
+            5.0
+          ],
+          "target_w": 3000000.0,
+          "wind_base_m_s": 9.0,
+          "wind_amplitude_m_s": 0.0,
+          "wind_period_steps": 128,
+          "wind_noise_std_m_s": 0.0,
+          "wind_direction_rad": 0.0,
+          "turbulence_intensity": 0.1,
+          "action_change_weight": 0.001,
+          "reward_scale": 100.0
+        },
+        "algorithm": {
+          "hidden": 64,
+          "actor_lr": 0.0001,
+          "critic_lr": 0.001,
+          "gamma": 0.99,
+          "tau": 0.01,
+          "batch_size": 64,
+          "capacity": 32768,
+          "grad_clip": 1.0,
+          "actor_initial_action": [
+            0.0,
+            -0.6799999999999999,
+            -0.10044977511244357
+          ]
+        },
+        "training": {
+          "total_steps": 2048,
+          "warmup_steps": 256,
+          "update_every": 2,
+          "noise_std": 0.15,
+          "episode_target_fractions": [
+            0.16666666666666666,
+            0.23333333333333334,
+            0.3
+          ]
+        },
+        "evaluation": {
+          "seed_offset": 10000,
+          "scenarios": [
+            {
+              "name": "fixed9_target_2500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 2500000.0
+            },
+            {
+              "name": "fixed9_target_3500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 3500000.0
+            },
+            {
+              "name": "fixed9_target_4500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 4500000.0
+            }
+          ]
+        },
+        "baselines": {
+          "three_channel": true,
+          "yaw_offset_rad": 0.0,
+          "speed_per_wind_rad_m": 0.11114035087719298,
+          "pitch_bias_rad": 0.04,
+          "kp": 1.5,
+          "ki": 0.08,
+          "antiwindup_gain": 0.2,
+          "integral_limit_rad": 0.3
+        }
+      },
+      "best": {
+        "score_w": 7462.654327471434,
+        "step": 2048,
+        "checkpoint": "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_4500000w/segment_000/step_00002048.pth",
+        "validation": [
+          {
+            "split": "validation",
+            "target_w": 4500000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 7462.654327471434,
+            "tail_rmse_w": 5131.632322845724,
+            "final_power_w": 4510460.0,
+            "max_abs_error_w": 20169.0,
+            "q_initial": -0.2598777736226718,
+            "discounted_return": -0.002302984684523576,
+            "q_return_gap": -0.2575747889381482,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.036917822482877685,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.0
+          }
+        ]
+      },
+      "final": "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_4500000w/segment_000/step_00016384.pth",
+      "initial": "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_4500000w/segment_000/step_00000000.pth",
+      "gate": {
+        "passed": true,
+        "improved": true,
+        "worst_tail_rmse_w": 5131.632322845724,
+        "response_fraction": 1.0,
+        "mean_rmse_w": 7462.654327471434
+      },
+      "final_rmse_w": 189443.78583019748,
+      "final_over_best": 25.385576969955487,
+      "hashes": {
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_4500000w/segment_000/step_00000000.pth": "60d7ee2ceb391094824ca2212efdc802fe7dbbf241cbd30af783431d1be77180",
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_4500000w/segment_000/step_00016384.pth": "24d4deb053f405a14d6ef622bd1b183b86fa103c60b7f0d26140ba4a69c921d2",
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_4500000w/segment_000/step_00002048.pth": "5c3f3b356cf5de6aad4a6fc47cabdd86d2c105ba5b9f43c8a579ac931c2f70f5"
+      }
+    },
+    {
+      "stage": "multi_pitch",
+      "run_id": 0,
+      "target_w": null,
+      "config": {
+        "schema_version": 1,
+        "seed": 42,
+        "purpose": "synthetic_fixed_condition_integration_only",
+        "plant": {
+          "kind": "pinn",
+          "source": "teammate_backbone_synthetic_demo",
+          "power_semantics": "synthetic_mock_power_w_not_physical_validation",
+          "turbine_ids": [
+            "T01",
+            "T02",
+            "T03"
+          ],
+          "rated_power_w": [
+            5000000,
+            5000000,
+            5000000
+          ],
+          "layout": {
+            "kind": "fixed_collinear_equal_spacing",
+            "spacing_m": 378.0,
+            "source": "demonstration_assumption_equal_spacing_not_team_geometry"
+          },
+          "features": [
+            "ambient_wind_speed_m_s",
+            "ambient_wind_direction_rad",
+            "turbulence_intensity",
+            "gamma_1",
+            "gamma_2",
+            "gamma_3",
+            "beta_1",
+            "beta_2",
+            "beta_3",
+            "omega_1",
+            "omega_2",
+            "omega_3"
+          ],
+          "bounds": {
+            "ambient_wind_speed_m_s": [
+              3.0,
+              20.0
+            ],
+            "ambient_wind_direction_rad": [
+              0.0,
+              6.283186
+            ],
+            "turbulence_intensity": [
+              0.0,
+              0.3
+            ],
+            "gamma_1": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_2": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_3": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "beta_1": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_2": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_3": [
+              -1e-06,
+              0.250001
+            ],
+            "omega_1": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_2": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_3": [
+              0.599999,
+              1.2670009999999998
+            ]
+          },
+          "model_version": "synthetic-demo-c2fd64efd9b4",
+          "factory": "optimization_control.environments.teammate_pinn_backend:create_demo_predictor",
+          "backend": {
+            "run_dir": "optimization_control/experiments/20261007_fixed_pinn_demo_checked/model",
+            "script": "pinn/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_io.py",
+            "allow_synthetic_demo": true,
+            "fixed_condition": {
+              "direction_rad": 0.0,
+              "turbulence_intensity": 0.1
+            },
+            "yaw_convention": "misalignment_same_sign_as_gamma"
+          }
+        },
+        "environment": {
+          "parameter_source": {
+            "kind": "assumption",
+            "reference": "configs/fixed_pinn_demo.yaml",
+            "note": "fixed-condition synthetic integration assumptions"
+          },
+          "dt_s": 1.0,
+          "yaw_frame": "nacelle_heading",
+          "heading_bounds_rad": [
+            -314.1592653589793,
+            314.1592653589793
+          ],
+          "control_mask": [
+            0,
+            1,
+            0
+          ],
+          "horizon": 128,
+          "wind_scale_m_s": 25.0,
+          "action_low": [
+            -0.35,
+            0.0,
+            0.6
+          ],
+          "action_high": [
+            0.35,
+            0.25,
+            1.267
+          ],
+          "initial_operating_point": [
+            0.0,
+            0.04,
+            0.9
+          ],
+          "rate_limits": [
+            0.005,
+            0.00872664626,
+            0.1
+          ],
+          "time_constants_s": [
+            5.0,
+            2.0,
+            5.0
+          ],
+          "target_w": 3000000.0,
+          "wind_base_m_s": 9.0,
+          "wind_amplitude_m_s": 0.0,
+          "wind_period_steps": 128,
+          "wind_noise_std_m_s": 0.0,
+          "wind_direction_rad": 0.0,
+          "turbulence_intensity": 0.1,
+          "action_change_weight": 0.001,
+          "reward_scale": 100.0
+        },
+        "algorithm": {
+          "hidden": 64,
+          "actor_lr": 0.0001,
+          "critic_lr": 0.001,
+          "gamma": 0.99,
+          "tau": 0.01,
+          "batch_size": 64,
+          "capacity": 32768,
+          "grad_clip": 1.0,
+          "actor_initial_action": [
+            0.0,
+            -0.6799999999999999,
+            -0.10044977511244357
+          ]
+        },
+        "training": {
+          "total_steps": 2048,
+          "warmup_steps": 256,
+          "update_every": 2,
+          "noise_std": 0.15,
+          "episode_target_fractions": [
+            0.16666666666666666,
+            0.23333333333333334,
+            0.3
+          ]
+        },
+        "evaluation": {
+          "seed_offset": 10000,
+          "scenarios": [
+            {
+              "name": "fixed9_target_2500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 2500000.0
+            },
+            {
+              "name": "fixed9_target_3500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 3500000.0
+            },
+            {
+              "name": "fixed9_target_4500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 4500000.0
+            }
+          ]
+        },
+        "baselines": {
+          "three_channel": true,
+          "yaw_offset_rad": 0.0,
+          "speed_per_wind_rad_m": 0.11114035087719298,
+          "pitch_bias_rad": 0.04,
+          "kp": 1.5,
+          "ki": 0.08,
+          "antiwindup_gain": 0.2,
+          "integral_limit_rad": 0.3
+        }
+      },
+      "best": {
+        "score_w": 158646.05856571463,
+        "step": 28672,
+        "checkpoint": "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_0/segment_000/step_00028672.pth",
+        "validation": [
+          {
+            "split": "validation",
+            "target_w": 2750000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 301239.31716591044,
+            "tail_rmse_w": 24435.71276796557,
+            "final_power_w": 2780883.5,
+            "max_abs_error_w": 1556129.0,
+            "q_initial": -5.258891741434733,
+            "discounted_return": -5.544651218854117,
+            "q_return_gap": 0.2857594774193837,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 1.4865567782585438,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.12847222222222227
+          },
+          {
+            "split": "validation",
+            "target_w": 3250000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 178058.88279872554,
+            "tail_rmse_w": 44976.20652388657,
+            "final_power_w": 3197781.25,
+            "max_abs_error_w": 1056129.0,
+            "q_initial": -1.9006061553955078,
+            "discounted_return": -1.8055195388996297,
+            "q_return_gap": -0.09508661649587813,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.5123182483237323,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.03211805555555555
+          },
+          {
+            "split": "validation",
+            "target_w": 3750000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 135334.78740281175,
+            "tail_rmse_w": 134600.97982219057,
+            "final_power_w": 3606748.5,
+            "max_abs_error_w": 556129.0,
+            "q_initial": -0.6613622506459554,
+            "discounted_return": -0.7320606223545314,
+            "q_return_gap": 0.07069837170857596,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.3925045110588276,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.025173611111111112
+          },
+          {
+            "split": "validation",
+            "target_w": 4250000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 19951.246895410837,
+            "tail_rmse_w": 17003.88524008006,
+            "final_power_w": 4264332.0,
+            "max_abs_error_w": 83606.5,
+            "q_initial": -0.2353050410747528,
+            "discounted_return": -0.021130101158547875,
+            "q_return_gap": -0.21417493991620493,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.1747376156607372,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.005208333333333334
+          }
+        ]
+      },
+      "final": "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_0/segment_000/step_00032768.pth",
+      "initial": "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_0/segment_000/step_00000000.pth",
+      "gate": {
+        "passed": false,
+        "improved": true,
+        "worst_tail_rmse_w": 134600.97982219057,
+        "response_fraction": 0.9889656666666666,
+        "mean_rmse_w": 158646.05856571463
+      },
+      "final_rmse_w": 170800.77538056715,
+      "final_over_best": 1.0766153091021657,
+      "hashes": {
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_0/segment_000/step_00000000.pth": "697370644a738340121ffe5b330d42fa423b93b19b7e677eb9341a6e3341807a",
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_0/segment_000/step_00032768.pth": "deda1a5c0ff5c227e4394ee098f601738e01dabfa60895eb65c50d36366b7507",
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_0/segment_000/step_00028672.pth": "756a9864f62bb4dced63f2592b8082e574065886af3571d557f645ee39941a43"
+      }
+    },
+    {
+      "stage": "multi_pitch",
+      "run_id": 1,
+      "target_w": null,
+      "config": {
+        "schema_version": 1,
+        "seed": 42,
+        "purpose": "synthetic_fixed_condition_integration_only",
+        "plant": {
+          "kind": "pinn",
+          "source": "teammate_backbone_synthetic_demo",
+          "power_semantics": "synthetic_mock_power_w_not_physical_validation",
+          "turbine_ids": [
+            "T01",
+            "T02",
+            "T03"
+          ],
+          "rated_power_w": [
+            5000000,
+            5000000,
+            5000000
+          ],
+          "layout": {
+            "kind": "fixed_collinear_equal_spacing",
+            "spacing_m": 378.0,
+            "source": "demonstration_assumption_equal_spacing_not_team_geometry"
+          },
+          "features": [
+            "ambient_wind_speed_m_s",
+            "ambient_wind_direction_rad",
+            "turbulence_intensity",
+            "gamma_1",
+            "gamma_2",
+            "gamma_3",
+            "beta_1",
+            "beta_2",
+            "beta_3",
+            "omega_1",
+            "omega_2",
+            "omega_3"
+          ],
+          "bounds": {
+            "ambient_wind_speed_m_s": [
+              3.0,
+              20.0
+            ],
+            "ambient_wind_direction_rad": [
+              0.0,
+              6.283186
+            ],
+            "turbulence_intensity": [
+              0.0,
+              0.3
+            ],
+            "gamma_1": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_2": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_3": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "beta_1": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_2": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_3": [
+              -1e-06,
+              0.250001
+            ],
+            "omega_1": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_2": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_3": [
+              0.599999,
+              1.2670009999999998
+            ]
+          },
+          "model_version": "synthetic-demo-c2fd64efd9b4",
+          "factory": "optimization_control.environments.teammate_pinn_backend:create_demo_predictor",
+          "backend": {
+            "run_dir": "optimization_control/experiments/20261007_fixed_pinn_demo_checked/model",
+            "script": "pinn/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_io.py",
+            "allow_synthetic_demo": true,
+            "fixed_condition": {
+              "direction_rad": 0.0,
+              "turbulence_intensity": 0.1
+            },
+            "yaw_convention": "misalignment_same_sign_as_gamma"
+          }
+        },
+        "environment": {
+          "parameter_source": {
+            "kind": "assumption",
+            "reference": "configs/fixed_pinn_demo.yaml",
+            "note": "fixed-condition synthetic integration assumptions"
+          },
+          "dt_s": 1.0,
+          "yaw_frame": "nacelle_heading",
+          "heading_bounds_rad": [
+            -314.1592653589793,
+            314.1592653589793
+          ],
+          "control_mask": [
+            0,
+            1,
+            0
+          ],
+          "horizon": 128,
+          "wind_scale_m_s": 25.0,
+          "action_low": [
+            -0.35,
+            0.0,
+            0.6
+          ],
+          "action_high": [
+            0.35,
+            0.25,
+            1.267
+          ],
+          "initial_operating_point": [
+            0.0,
+            0.04,
+            0.9
+          ],
+          "rate_limits": [
+            0.005,
+            0.00872664626,
+            0.1
+          ],
+          "time_constants_s": [
+            5.0,
+            2.0,
+            5.0
+          ],
+          "target_w": 3000000.0,
+          "wind_base_m_s": 9.0,
+          "wind_amplitude_m_s": 0.0,
+          "wind_period_steps": 128,
+          "wind_noise_std_m_s": 0.0,
+          "wind_direction_rad": 0.0,
+          "turbulence_intensity": 0.1,
+          "action_change_weight": 0.001,
+          "reward_scale": 100.0
+        },
+        "algorithm": {
+          "hidden": 64,
+          "actor_lr": 0.0001,
+          "critic_lr": 0.001,
+          "gamma": 0.99,
+          "tau": 0.01,
+          "batch_size": 64,
+          "capacity": 32768,
+          "grad_clip": 1.0,
+          "actor_initial_action": [
+            0.0,
+            -0.6799999999999999,
+            -0.10044977511244357
+          ]
+        },
+        "training": {
+          "total_steps": 2048,
+          "warmup_steps": 256,
+          "update_every": 2,
+          "noise_std": 0.15,
+          "episode_target_fractions": [
+            0.16666666666666666,
+            0.23333333333333334,
+            0.3
+          ]
+        },
+        "evaluation": {
+          "seed_offset": 10000,
+          "scenarios": [
+            {
+              "name": "fixed9_target_2500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 2500000.0
+            },
+            {
+              "name": "fixed9_target_3500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 3500000.0
+            },
+            {
+              "name": "fixed9_target_4500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 4500000.0
+            }
+          ]
+        },
+        "baselines": {
+          "three_channel": true,
+          "yaw_offset_rad": 0.0,
+          "speed_per_wind_rad_m": 0.11114035087719298,
+          "pitch_bias_rad": 0.04,
+          "kp": 1.5,
+          "ki": 0.08,
+          "antiwindup_gain": 0.2,
+          "integral_limit_rad": 0.3
+        }
+      },
+      "best": {
+        "score_w": 150623.1491296869,
+        "step": 32768,
+        "checkpoint": "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_1/segment_000/step_00032768.pth",
+        "validation": [
+          {
+            "split": "validation",
+            "target_w": 2750000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 299754.3884626645,
+            "tail_rmse_w": 37435.233168798935,
+            "final_power_w": 2787476.5,
+            "max_abs_error_w": 1556129.0,
+            "q_initial": -5.522264321645101,
+            "discounted_return": -5.0695305552826735,
+            "q_return_gap": -0.4527337663624271,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.9939087784129473,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.05208333333333333
+          },
+          {
+            "split": "validation",
+            "target_w": 3250000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 174675.36167069775,
+            "tail_rmse_w": 49092.912282198704,
+            "final_power_w": 3203530.25,
+            "max_abs_error_w": 1056129.0,
+            "q_initial": -1.9432562987009685,
+            "discounted_return": -1.7744242088291664,
+            "q_return_gap": -0.1688320898718021,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.7175216143387078,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.04427083333333333
+          },
+          {
+            "split": "validation",
+            "target_w": 3750000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 81871.75696820032,
+            "tail_rmse_w": 67207.62934378596,
+            "final_power_w": 3651808.75,
+            "max_abs_error_w": 556129.0,
+            "q_initial": -0.6841629942258199,
+            "discounted_return": -0.4738911427708071,
+            "q_return_gap": -0.21027185145501287,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 1.4115110248104838,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.05208333333333334
+          },
+          {
+            "split": "validation",
+            "target_w": 4250000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 46191.089417185074,
+            "tail_rmse_w": 47499.49504840568,
+            "final_power_w": 4200702.0,
+            "max_abs_error_w": 131751.5,
+            "q_initial": -0.33727338910102844,
+            "discounted_return": -0.1892372192364436,
+            "q_return_gap": -0.14803616986458484,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 1.9798924485845277,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.0607638888888889
+          }
+        ]
+      },
+      "final": "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_1/segment_000/step_00032768.pth",
+      "initial": "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_1/segment_000/step_00000000.pth",
+      "gate": {
+        "passed": true,
+        "improved": true,
+        "worst_tail_rmse_w": 67207.62934378596,
+        "response_fraction": 0.9421503333333333,
+        "mean_rmse_w": 150623.1491296869
+      },
+      "final_rmse_w": 150623.1491296869,
+      "final_over_best": 1.0,
+      "hashes": {
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_1/segment_000/step_00000000.pth": "134de6c77fc7479607dd28fd80e443a1c41d3484000885d4529ea0ee307f9b8e",
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_1/segment_000/step_00032768.pth": "4fb8865254ec4c77c116e4fb189ee4e3abd94abcb0fa71374ed36055215476ed"
+      }
+    },
+    {
+      "stage": "multi_pitch",
+      "run_id": 2,
+      "target_w": null,
+      "config": {
+        "schema_version": 1,
+        "seed": 42,
+        "purpose": "synthetic_fixed_condition_integration_only",
+        "plant": {
+          "kind": "pinn",
+          "source": "teammate_backbone_synthetic_demo",
+          "power_semantics": "synthetic_mock_power_w_not_physical_validation",
+          "turbine_ids": [
+            "T01",
+            "T02",
+            "T03"
+          ],
+          "rated_power_w": [
+            5000000,
+            5000000,
+            5000000
+          ],
+          "layout": {
+            "kind": "fixed_collinear_equal_spacing",
+            "spacing_m": 378.0,
+            "source": "demonstration_assumption_equal_spacing_not_team_geometry"
+          },
+          "features": [
+            "ambient_wind_speed_m_s",
+            "ambient_wind_direction_rad",
+            "turbulence_intensity",
+            "gamma_1",
+            "gamma_2",
+            "gamma_3",
+            "beta_1",
+            "beta_2",
+            "beta_3",
+            "omega_1",
+            "omega_2",
+            "omega_3"
+          ],
+          "bounds": {
+            "ambient_wind_speed_m_s": [
+              3.0,
+              20.0
+            ],
+            "ambient_wind_direction_rad": [
+              0.0,
+              6.283186
+            ],
+            "turbulence_intensity": [
+              0.0,
+              0.3
+            ],
+            "gamma_1": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_2": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "gamma_3": [
+              -0.35000099999999995,
+              0.35000099999999995
+            ],
+            "beta_1": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_2": [
+              -1e-06,
+              0.250001
+            ],
+            "beta_3": [
+              -1e-06,
+              0.250001
+            ],
+            "omega_1": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_2": [
+              0.599999,
+              1.2670009999999998
+            ],
+            "omega_3": [
+              0.599999,
+              1.2670009999999998
+            ]
+          },
+          "model_version": "synthetic-demo-c2fd64efd9b4",
+          "factory": "optimization_control.environments.teammate_pinn_backend:create_demo_predictor",
+          "backend": {
+            "run_dir": "optimization_control/experiments/20261007_fixed_pinn_demo_checked/model",
+            "script": "pinn/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_io.py",
+            "allow_synthetic_demo": true,
+            "fixed_condition": {
+              "direction_rad": 0.0,
+              "turbulence_intensity": 0.1
+            },
+            "yaw_convention": "misalignment_same_sign_as_gamma"
+          }
+        },
+        "environment": {
+          "parameter_source": {
+            "kind": "assumption",
+            "reference": "configs/fixed_pinn_demo.yaml",
+            "note": "fixed-condition synthetic integration assumptions"
+          },
+          "dt_s": 1.0,
+          "yaw_frame": "nacelle_heading",
+          "heading_bounds_rad": [
+            -314.1592653589793,
+            314.1592653589793
+          ],
+          "control_mask": [
+            0,
+            1,
+            0
+          ],
+          "horizon": 128,
+          "wind_scale_m_s": 25.0,
+          "action_low": [
+            -0.35,
+            0.0,
+            0.6
+          ],
+          "action_high": [
+            0.35,
+            0.25,
+            1.267
+          ],
+          "initial_operating_point": [
+            0.0,
+            0.04,
+            0.9
+          ],
+          "rate_limits": [
+            0.005,
+            0.00872664626,
+            0.1
+          ],
+          "time_constants_s": [
+            5.0,
+            2.0,
+            5.0
+          ],
+          "target_w": 3000000.0,
+          "wind_base_m_s": 9.0,
+          "wind_amplitude_m_s": 0.0,
+          "wind_period_steps": 128,
+          "wind_noise_std_m_s": 0.0,
+          "wind_direction_rad": 0.0,
+          "turbulence_intensity": 0.1,
+          "action_change_weight": 0.001,
+          "reward_scale": 100.0
+        },
+        "algorithm": {
+          "hidden": 64,
+          "actor_lr": 0.0001,
+          "critic_lr": 0.001,
+          "gamma": 0.99,
+          "tau": 0.01,
+          "batch_size": 64,
+          "capacity": 32768,
+          "grad_clip": 1.0,
+          "actor_initial_action": [
+            0.0,
+            -0.6799999999999999,
+            -0.10044977511244357
+          ]
+        },
+        "training": {
+          "total_steps": 2048,
+          "warmup_steps": 256,
+          "update_every": 2,
+          "noise_std": 0.15,
+          "episode_target_fractions": [
+            0.16666666666666666,
+            0.23333333333333334,
+            0.3
+          ]
+        },
+        "evaluation": {
+          "seed_offset": 10000,
+          "scenarios": [
+            {
+              "name": "fixed9_target_2500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 2500000.0
+            },
+            {
+              "name": "fixed9_target_3500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 3500000.0
+            },
+            {
+              "name": "fixed9_target_4500000w",
+              "wind_base_m_s": 9.0,
+              "target_w": 4500000.0
+            }
+          ]
+        },
+        "baselines": {
+          "three_channel": true,
+          "yaw_offset_rad": 0.0,
+          "speed_per_wind_rad_m": 0.11114035087719298,
+          "pitch_bias_rad": 0.04,
+          "kp": 1.5,
+          "ki": 0.08,
+          "antiwindup_gain": 0.2,
+          "integral_limit_rad": 0.3
+        }
+      },
+      "best": {
+        "score_w": 152336.9164592334,
+        "step": 26624,
+        "checkpoint": "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_2/segment_000/step_00026624.pth",
+        "validation": [
+          {
+            "split": "validation",
+            "target_w": 2750000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 309321.3599242836,
+            "tail_rmse_w": 25256.339089602523,
+            "final_power_w": 2748608.0,
+            "max_abs_error_w": 1556129.0,
+            "q_initial": -5.613072236378987,
+            "discounted_return": -5.264929913518552,
+            "q_return_gap": -0.34814232286043545,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.6174482142581716,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.049479166666666664
+          },
+          {
+            "split": "validation",
+            "target_w": 3250000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 185567.08276483617,
+            "tail_rmse_w": 19826.66353203433,
+            "final_power_w": 3253888.5,
+            "max_abs_error_w": 1056129.0,
+            "q_initial": -2.21083394686381,
+            "discounted_return": -1.9267531575281736,
+            "q_return_gap": -0.2840807893356365,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.5679740040748394,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.035590277777777776
+          },
+          {
+            "split": "validation",
+            "target_w": 3750000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 79218.48012022261,
+            "tail_rmse_w": 23982.72033705987,
+            "final_power_w": 3747536.0,
+            "max_abs_error_w": 556129.0,
+            "q_initial": -0.6514771183331808,
+            "discounted_return": -0.4171268923794358,
+            "q_return_gap": -0.234350225953745,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.48350793069304676,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.025173611111111112
+          },
+          {
+            "split": "validation",
+            "target_w": 4250000.0,
+            "initial_pitch_rad": 0.04,
+            "rmse_w": 35240.74302759121,
+            "tail_rmse_w": 44167.20505540565,
+            "final_power_w": 4210205.0,
+            "max_abs_error_w": 124417.5,
+            "q_initial": -0.1620110720396042,
+            "discounted_return": -0.07295119844489664,
+            "q_return_gap": -0.08905987359470754,
+            "yaw_travel_rad": 0.0,
+            "pitch_travel_rad": 0.35446509302115914,
+            "speed_total_variation_rad_s": 3.028660322534904e-09,
+            "saturation_fraction": 0.011284722222222222
+          }
+        ]
+      },
+      "final": "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_2/segment_000/step_00032768.pth",
+      "initial": "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_2/segment_000/step_00000000.pth",
+      "gate": {
+        "passed": true,
+        "improved": true,
+        "worst_tail_rmse_w": 44167.20505540565,
+        "response_fraction": 0.974398,
+        "mean_rmse_w": 152336.9164592334
+      },
+      "final_rmse_w": 157447.9376463,
+      "final_over_best": 1.0335507722347417,
+      "hashes": {
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_2/segment_000/step_00026624.pth": "7e48ec1369bf19d0bcf80b88c73e5058816fb4b1971594b05ea3ce9e0cf62baa",
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_2/segment_000/step_00000000.pth": "7a553d050f71bca3d2ca40334347e669b4a571952223b3851355aea9a3b68a43",
+        "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_2/segment_000/step_00032768.pth": "61760c6102e6ff570dac76cf703f547e6280a3e196d7cc79be9a6edb72cf82be"
+      }
+    }
+  ],
+  "hashes": {
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_2500000w/segment_000/step_00000000.pth": "435ffd0e24d18cd8e565d0535ff431f7e5d35e1ec4a3fbc5d6bcfe279fabeec5",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_2500000w/segment_000/step_00016384.pth": "54567bf1577bea7ab0b13485aa770857d78e7f4ebf2b0fd94140c0f5d4ccfb8f",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_2500000w/segment_000/step_00008192.pth": "3843fdbac5f200fcdb8ca13398c601b7bbaa8be15af77aa81b8e53e8f56cd1b3",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_3500000w/segment_000/step_00000000.pth": "5ff056c4237f0777f4d564dff6ea7f7305e48feaf1a83d98098faedb8938a9fc",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_3500000w/segment_000/step_00016384.pth": "e7dcd3b81984a8afc40ee2cd50ace0009611a757eb330afef38e86873bcb7807",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_4500000w/segment_000/step_00000000.pth": "60d7ee2ceb391094824ca2212efdc802fe7dbbf241cbd30af783431d1be77180",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_4500000w/segment_000/step_00016384.pth": "24d4deb053f405a14d6ef622bd1b183b86fa103c60b7f0d26140ba4a69c921d2",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/single_pitch_4500000w/segment_000/step_00002048.pth": "5c3f3b356cf5de6aad4a6fc47cabdd86d2c105ba5b9f43c8a579ac931c2f70f5",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_0/segment_000/step_00000000.pth": "697370644a738340121ffe5b330d42fa423b93b19b7e677eb9341a6e3341807a",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_0/segment_000/step_00032768.pth": "deda1a5c0ff5c227e4394ee098f601738e01dabfa60895eb65c50d36366b7507",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_0/segment_000/step_00028672.pth": "756a9864f62bb4dced63f2592b8082e574065886af3571d557f645ee39941a43",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_1/segment_000/step_00000000.pth": "134de6c77fc7479607dd28fd80e443a1c41d3484000885d4529ea0ee307f9b8e",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_1/segment_000/step_00032768.pth": "4fb8865254ec4c77c116e4fb189ee4e3abd94abcb0fa71374ed36055215476ed",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_2/segment_000/step_00026624.pth": "7e48ec1369bf19d0bcf80b88c73e5058816fb4b1971594b05ea3ce9e0cf62baa",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_2/segment_000/step_00000000.pth": "7a553d050f71bca3d2ca40334347e669b4a571952223b3851355aea9a3b68a43",
+    "optimization_control/experiments/20261007_fixed_pinn_curriculum/multi_pitch_run_2/segment_000/step_00032768.pth": "61760c6102e6ff570dac76cf703f547e6280a3e196d7cc79be9a6edb72cf82be"
+  }
+}

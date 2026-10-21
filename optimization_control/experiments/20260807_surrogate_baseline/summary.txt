@@ -1,0 +1,7 @@
+假设：厉今飞 MLP 基线可被 numpy 前向复现，作为后续候选模型对比基准
+观察：
+- .keras 为 Keras3 Functional：Normalization(eps=0) → 64/128/64 Swish → 3 Sigmoid → farm 固定权重 [1/3,1/3,1/3]
+- numpy 前向与 Keras 官方加载最大差 2W（float32 舍入），指标完全复现
+- 关键坑：Keras 3 Normalization 在 count=0 时推理 epsilon=0（非文档默认 1e-3）
+- 队友交付自洽：.keras ↔ test_predictions.csv ↔ test_metrics.csv 同源
+结论：基线可信，阶段 1 候选模型可公平对比

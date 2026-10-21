@@ -1,0 +1,86 @@
+{
+  "selected_candidate": {
+    "name": "scaled",
+    "parent": "nominal",
+    "nominal_init": true,
+    "reward_scale": 100.0,
+    "actor_lr": 0.0003,
+    "noise": "white"
+  },
+  "aggregate": [
+    {
+      "controller": "initial",
+      "runs": 3,
+      "mean_rmse_w": 852727.3606437007,
+      "std_across_runs_w": 184.10193997542962,
+      "min_run_rmse_w": 852527.1401193638,
+      "max_run_rmse_w": 852889.3363285897
+    },
+    {
+      "controller": "selected",
+      "runs": 3,
+      "mean_rmse_w": 412147.0022882021,
+      "std_across_runs_w": 30488.169209300155,
+      "min_run_rmse_w": 379013.41461016855,
+      "max_run_rmse_w": 439016.8290506577
+    },
+    {
+      "controller": "final",
+      "runs": 3,
+      "mean_rmse_w": 554599.8053826889,
+      "std_across_runs_w": 74314.04400995868,
+      "min_run_rmse_w": 495226.99718709785,
+      "max_run_rmse_w": 637940.0012602016
+    },
+    {
+      "controller": "fixed",
+      "runs": 1,
+      "mean_rmse_w": 852767.1467808163,
+      "std_across_runs_w": 0.0,
+      "min_run_rmse_w": 852767.1467808163,
+      "max_run_rmse_w": 852767.1467808163
+    },
+    {
+      "controller": "p",
+      "runs": 1,
+      "mean_rmse_w": 497582.1505267811,
+      "std_across_runs_w": 0.0,
+      "min_run_rmse_w": 497582.1505267811,
+      "max_run_rmse_w": 497582.1505267811
+    },
+    {
+      "controller": "pi",
+      "runs": 1,
+      "mean_rmse_w": 441092.1363237969,
+      "std_across_runs_w": 0.0,
+      "min_run_rmse_w": 441092.1363237969,
+      "max_run_rmse_w": 441092.1363237969
+    }
+  ],
+  "checks": [
+    {
+      "repeat": 0,
+      "selected_step": 6144,
+      "validation_improved": true,
+      "fixed_test_gate_passed": true,
+      "final_degradation_ratio": 1.6212103822239383
+    },
+    {
+      "repeat": 1,
+      "selected_step": 10240,
+      "validation_improved": true,
+      "fixed_test_gate_passed": true,
+      "final_degradation_ratio": 1.1926070755286273
+    },
+    {
+      "repeat": 2,
+      "selected_step": 12288,
+      "validation_improved": true,
+      "fixed_test_gate_passed": true,
+      "final_degradation_ratio": 1.2713741360917181
+    }
+  ],
+  "stability_gate_passed": false,
+  "scope": "single uncalibrated mock; three runs describe variability, not statistical superiority; stress cases excluded from aggregate",
+  "test_used_for_selection": false
+}

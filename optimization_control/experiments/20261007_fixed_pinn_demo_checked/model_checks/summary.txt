@@ -1,0 +1,11 @@
+{
+  "probes": 149,
+  "all_nine_controls_respond": true,
+  "pitch_feedback_sign_checked": true,
+  "min_power_w": 328285.6875,
+  "max_power_w": 2293333.0,
+  "min_ueff_m_s": 7.765493392944336,
+  "max_ueff_m_s": 9.0,
+  "physical_validation": false,
+  "scope": "limited synthetic-domain response checks, not physics certification"
+}

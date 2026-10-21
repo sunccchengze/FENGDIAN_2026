@@ -1,0 +1,13 @@
+{
+  "checkpoint_count": 12,
+  "rows": 1080,
+  "terminal_and_command_contract": true,
+  "source_checkpoints_unchanged": true,
+  "artifacts": [
+    "metrics.csv",
+    "update_probes.csv",
+    "replay_audit.json"
+  ],
+  "scope": "validation only; Q-return differences use one realized wind continuation, not exact conditional expected value",
+  "command": "python -m optimization_control.maddpg_wind_farm.retrospective --source <old-study> --output <new-directory>"
+}

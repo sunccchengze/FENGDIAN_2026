@@ -1,0 +1,302 @@
+{
+  "stage": "multi_pitch_speed",
+  "run_id": 0,
+  "target_w": null,
+  "config": {
+    "schema_version": 1,
+    "seed": 42,
+    "purpose": "synthetic_fixed_condition_integration_only",
+    "plant": {
+      "kind": "pinn",
+      "source": "teammate_backbone_synthetic_demo",
+      "power_semantics": "synthetic_mock_power_w_not_physical_validation",
+      "turbine_ids": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "rated_power_w": [
+        5000000,
+        5000000,
+        5000000
+      ],
+      "layout": {
+        "kind": "fixed_collinear_equal_spacing",
+        "spacing_m": 378.0,
+        "source": "demonstration_assumption_equal_spacing_not_team_geometry"
+      },
+      "features": [
+        "ambient_wind_speed_m_s",
+        "ambient_wind_direction_rad",
+        "turbulence_intensity",
+        "gamma_1",
+        "gamma_2",
+        "gamma_3",
+        "beta_1",
+        "beta_2",
+        "beta_3",
+        "omega_1",
+        "omega_2",
+        "omega_3"
+      ],
+      "bounds": {
+        "ambient_wind_speed_m_s": [
+          3.0,
+          20.0
+        ],
+        "ambient_wind_direction_rad": [
+          0.0,
+          6.283186
+        ],
+        "turbulence_intensity": [
+          0.0,
+          0.3
+        ],
+        "gamma_1": [
+          -0.35000099999999995,
+          0.35000099999999995
+        ],
+        "gamma_2": [
+          -0.35000099999999995,
+          0.35000099999999995
+        ],
+        "gamma_3": [
+          -0.35000099999999995,
+          0.35000099999999995
+        ],
+        "beta_1": [
+          -1e-06,
+          0.250001
+        ],
+        "beta_2": [
+          -1e-06,
+          0.250001
+        ],
+        "beta_3": [
+          -1e-06,
+          0.250001
+        ],
+        "omega_1": [
+          0.599999,
+          1.2670009999999998
+        ],
+        "omega_2": [
+          0.599999,
+          1.2670009999999998
+        ],
+        "omega_3": [
+          0.599999,
+          1.2670009999999998
+        ]
+      },
+      "model_version": "synthetic-demo-c2fd64efd9b4",
+      "factory": "optimization_control.environments.teammate_pinn_backend:create_demo_predictor",
+      "backend": {
+        "run_dir": "optimization_control/experiments/20261007_fixed_pinn_demo_checked/model",
+        "script": "pinn/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_io.py",
+        "allow_synthetic_demo": true,
+        "fixed_condition": {
+          "direction_rad": 0.0,
+          "turbulence_intensity": 0.1
+        },
+        "yaw_convention": "misalignment_same_sign_as_gamma"
+      }
+    },
+    "environment": {
+      "parameter_source": {
+        "kind": "assumption",
+        "reference": "configs/fixed_pinn_demo.yaml",
+        "note": "fixed-condition synthetic integration assumptions"
+      },
+      "dt_s": 1.0,
+      "yaw_frame": "nacelle_heading",
+      "heading_bounds_rad": [
+        -314.1592653589793,
+        314.1592653589793
+      ],
+      "control_mask": [
+        0,
+        1,
+        1
+      ],
+      "horizon": 128,
+      "wind_scale_m_s": 25.0,
+      "action_low": [
+        -0.35,
+        0.0,
+        0.6
+      ],
+      "action_high": [
+        0.35,
+        0.25,
+        1.267
+      ],
+      "initial_operating_point": [
+        0.0,
+        0.04,
+        0.9
+      ],
+      "rate_limits": [
+        0.005,
+        0.00872664626,
+        0.1
+      ],
+      "time_constants_s": [
+        5.0,
+        2.0,
+        5.0
+      ],
+      "target_w": 3000000.0,
+      "wind_base_m_s": 9.0,
+      "wind_amplitude_m_s": 0.0,
+      "wind_period_steps": 128,
+      "wind_noise_std_m_s": 0.0,
+      "wind_direction_rad": 0.0,
+      "turbulence_intensity": 0.1,
+      "action_change_weight": 0.001,
+      "reward_scale": 100.0
+    },
+    "algorithm": {
+      "hidden": 64,
+      "actor_lr": 0.0001,
+      "critic_lr": 0.001,
+      "gamma": 0.99,
+      "tau": 0.01,
+      "batch_size": 64,
+      "capacity": 32768,
+      "grad_clip": 1.0,
+      "actor_initial_action": [
+        0.0,
+        -0.6799999999999999,
+        -0.10044977511244357
+      ]
+    },
+    "training": {
+      "total_steps": 2048,
+      "warmup_steps": 256,
+      "update_every": 2,
+      "noise_std": 0.15,
+      "episode_target_fractions": [
+        0.16666666666666666,
+        0.23333333333333334,
+        0.3
+      ]
+    },
+    "evaluation": {
+      "seed_offset": 10000,
+      "scenarios": [
+        {
+          "name": "fixed9_target_2500000w",
+          "wind_base_m_s": 9.0,
+          "target_w": 2500000.0
+        },
+        {
+          "name": "fixed9_target_3500000w",
+          "wind_base_m_s": 9.0,
+          "target_w": 3500000.0
+        },
+        {
+          "name": "fixed9_target_4500000w",
+          "wind_base_m_s": 9.0,
+          "target_w": 4500000.0
+        }
+      ]
+    },
+    "baselines": {
+      "three_channel": true,
+      "yaw_offset_rad": 0.0,
+      "speed_per_wind_rad_m": 0.11114035087719298,
+      "pitch_bias_rad": 0.04,
+      "kp": 1.5,
+      "ki": 0.08,
+      "antiwindup_gain": 0.2,
+      "integral_limit_rad": 0.3
+    }
+  },
+  "best": {
+    "score_w": 153204.23087219353,
+    "step": 16384,
+    "checkpoint": "optimization_control/experiments/20261007_fixed_pinn_pitch_speed_probe/multi_pitch_speed_run_0/segment_000/step_00016384.pth",
+    "validation": [
+      {
+        "split": "validation",
+        "target_w": 2800000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 299565.7673533786,
+        "tail_rmse_w": 53577.58721598724,
+        "final_power_w": 2709321.5,
+        "max_abs_error_w": 1492340.0,
+        "q_initial": -4.8373597462972,
+        "discounted_return": -5.1521405807980365,
+        "q_return_gap": 0.31478083450083627,
+        "yaw_travel_rad": 0.0,
+        "pitch_travel_rad": 1.433661692120518,
+        "speed_total_variation_rad_s": 1.7575371763210301,
+        "saturation_fraction": 0.08593750000000003
+      },
+      {
+        "split": "validation",
+        "target_w": 3200000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 201573.6210100506,
+        "tail_rmse_w": 46132.684780284675,
+        "final_power_w": 3207149.75,
+        "max_abs_error_w": 1103381.5,
+        "q_initial": -2.4800970554351807,
+        "discounted_return": -2.49451429942693,
+        "q_return_gap": 0.014417243991749373,
+        "yaw_travel_rad": 0.0,
+        "pitch_travel_rad": 2.323049430842064,
+        "speed_total_variation_rad_s": 2.0415799297890134,
+        "saturation_fraction": 0.07812500000000001
+      },
+      {
+        "split": "validation",
+        "target_w": 3800000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 76478.18840546459,
+        "tail_rmse_w": 25851.86234628918,
+        "final_power_w": 3832113.75,
+        "max_abs_error_w": 524625.0,
+        "q_initial": -0.7453832626342773,
+        "discounted_return": -0.38855466727106713,
+        "q_return_gap": -0.3568285953632102,
+        "yaw_travel_rad": 0.0,
+        "pitch_travel_rad": 0.6272238883846667,
+        "speed_total_variation_rad_s": 1.27294357503292,
+        "saturation_fraction": 0.025173611111111112
+      },
+      {
+        "split": "validation",
+        "target_w": 4200000.0,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 35199.3467198803,
+        "tail_rmse_w": 11739.9331544393,
+        "final_power_w": 4189202.0,
+        "max_abs_error_w": 218702.0,
+        "q_initial": -0.4767521222432454,
+        "discounted_return": -0.10044600706517628,
+        "q_return_gap": -0.3763061151780691,
+        "yaw_travel_rad": 0.0,
+        "pitch_travel_rad": 0.23776806538271578,
+        "speed_total_variation_rad_s": 1.0608472107132787,
+        "saturation_fraction": 0.004340277777777778
+      }
+    ]
+  },
+  "final": "optimization_control/experiments/20261007_fixed_pinn_pitch_speed_probe/multi_pitch_speed_run_0/segment_000/step_00016384.pth",
+  "initial": "optimization_control/experiments/20261007_fixed_pinn_pitch_speed_probe/multi_pitch_speed_run_0/segment_000/step_00000000.pth",
+  "gate": {
+    "passed": true,
+    "improved": true,
+    "worst_tail_rmse_w": 53577.58721598724,
+    "response_fraction": 1.0570575,
+    "mean_rmse_w": 153204.23087219353
+  },
+  "final_rmse_w": 153204.23087219353,
+  "final_over_best": 1.0,
+  "hashes": {
+    "optimization_control/experiments/20261007_fixed_pinn_pitch_speed_probe/multi_pitch_speed_run_0/segment_000/step_00016384.pth": "ccd03dda01c98d1fa2b0a6e30616d50d49de98d45bac4013f0d27cfdab16dab7",
+    "optimization_control/experiments/20261007_fixed_pinn_pitch_speed_probe/multi_pitch_speed_run_0/segment_000/step_00000000.pth": "f4f8ad05590bb279f40b0b89fdf79ad9e586eb2c58b09e9c42b157c5d0fa7963"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "seed": 42,
+  "jobs": 6,
+  "transitions": 147456,
+  "checks": "fixed wind, disabled channels, physical rates, terminal masks, cooperative reward, unchanged checkpoint"
+}

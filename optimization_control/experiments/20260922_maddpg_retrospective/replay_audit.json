@@ -1,0 +1,494 @@
+[
+  {
+    "repeat": 0,
+    "steps": 4096,
+    "replay_size": 4096,
+    "terminated_count": 32,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 1408,
+      "3000000": 1408,
+      "3600000": 1280
+    },
+    "training_episode_counts": {
+      "direction/2400000": 2,
+      "direction/3000000": 2,
+      "direction/3600000": 2,
+      "fixed/2400000": 3,
+      "fixed/3000000": 2,
+      "fixed/3600000": 2,
+      "gust/2400000": 2,
+      "gust/3000000": 2,
+      "gust/3600000": 2,
+      "ramp/2400000": 2,
+      "ramp/3000000": 2,
+      "ramp/3600000": 2,
+      "stationary/2400000": 2,
+      "stationary/3000000": 3,
+      "stationary/3600000": 2
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 0,
+    "steps": 6144,
+    "replay_size": 6144,
+    "terminated_count": 48,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 2048,
+      "3000000": 2048,
+      "3600000": 2048
+    },
+    "training_episode_counts": {
+      "direction/2400000": 3,
+      "direction/3000000": 3,
+      "direction/3600000": 3,
+      "fixed/2400000": 4,
+      "fixed/3000000": 3,
+      "fixed/3600000": 3,
+      "gust/2400000": 3,
+      "gust/3000000": 3,
+      "gust/3600000": 3,
+      "ramp/2400000": 3,
+      "ramp/3000000": 3,
+      "ramp/3600000": 4,
+      "stationary/2400000": 3,
+      "stationary/3000000": 4,
+      "stationary/3600000": 3
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 0,
+    "steps": 8192,
+    "replay_size": 8192,
+    "terminated_count": 64,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 2816,
+      "3000000": 2688,
+      "3600000": 2688
+    },
+    "training_episode_counts": {
+      "direction/2400000": 4,
+      "direction/3000000": 4,
+      "direction/3600000": 4,
+      "fixed/2400000": 5,
+      "fixed/3000000": 4,
+      "fixed/3600000": 4,
+      "gust/2400000": 5,
+      "gust/3000000": 4,
+      "gust/3600000": 4,
+      "ramp/2400000": 4,
+      "ramp/3000000": 4,
+      "ramp/3600000": 5,
+      "stationary/2400000": 4,
+      "stationary/3000000": 5,
+      "stationary/3600000": 4
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 0,
+    "steps": 16384,
+    "replay_size": 16384,
+    "terminated_count": 128,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 5504,
+      "3000000": 5504,
+      "3600000": 5376
+    },
+    "training_episode_counts": {
+      "direction/2400000": 8,
+      "direction/3000000": 9,
+      "direction/3600000": 8,
+      "fixed/2400000": 9,
+      "fixed/3000000": 8,
+      "fixed/3600000": 9,
+      "gust/2400000": 9,
+      "gust/3000000": 8,
+      "gust/3600000": 8,
+      "ramp/2400000": 8,
+      "ramp/3000000": 9,
+      "ramp/3600000": 9,
+      "stationary/2400000": 9,
+      "stationary/3000000": 9,
+      "stationary/3600000": 8
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 1,
+    "steps": 8192,
+    "replay_size": 8192,
+    "terminated_count": 64,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 2816,
+      "3000000": 2688,
+      "3600000": 2688
+    },
+    "training_episode_counts": {
+      "direction/2400000": 4,
+      "direction/3000000": 4,
+      "direction/3600000": 4,
+      "fixed/2400000": 5,
+      "fixed/3000000": 4,
+      "fixed/3600000": 4,
+      "gust/2400000": 5,
+      "gust/3000000": 4,
+      "gust/3600000": 4,
+      "ramp/2400000": 4,
+      "ramp/3000000": 4,
+      "ramp/3600000": 5,
+      "stationary/2400000": 4,
+      "stationary/3000000": 5,
+      "stationary/3600000": 4
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 1,
+    "steps": 10240,
+    "replay_size": 10240,
+    "terminated_count": 80,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 3456,
+      "3000000": 3456,
+      "3600000": 3328
+    },
+    "training_episode_counts": {
+      "direction/2400000": 5,
+      "direction/3000000": 6,
+      "direction/3600000": 5,
+      "fixed/2400000": 6,
+      "fixed/3000000": 5,
+      "fixed/3600000": 5,
+      "gust/2400000": 6,
+      "gust/3000000": 5,
+      "gust/3600000": 5,
+      "ramp/2400000": 5,
+      "ramp/3000000": 5,
+      "ramp/3600000": 6,
+      "stationary/2400000": 5,
+      "stationary/3000000": 6,
+      "stationary/3600000": 5
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 1,
+    "steps": 12288,
+    "replay_size": 12288,
+    "terminated_count": 96,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 4096,
+      "3000000": 4096,
+      "3600000": 4096
+    },
+    "training_episode_counts": {
+      "direction/2400000": 6,
+      "direction/3000000": 7,
+      "direction/3600000": 6,
+      "fixed/2400000": 7,
+      "fixed/3000000": 6,
+      "fixed/3600000": 7,
+      "gust/2400000": 7,
+      "gust/3000000": 6,
+      "gust/3600000": 6,
+      "ramp/2400000": 6,
+      "ramp/3000000": 6,
+      "ramp/3600000": 7,
+      "stationary/2400000": 6,
+      "stationary/3000000": 7,
+      "stationary/3600000": 6
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 1,
+    "steps": 16384,
+    "replay_size": 16384,
+    "terminated_count": 128,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 5504,
+      "3000000": 5504,
+      "3600000": 5376
+    },
+    "training_episode_counts": {
+      "direction/2400000": 8,
+      "direction/3000000": 9,
+      "direction/3600000": 8,
+      "fixed/2400000": 9,
+      "fixed/3000000": 8,
+      "fixed/3600000": 9,
+      "gust/2400000": 9,
+      "gust/3000000": 8,
+      "gust/3600000": 8,
+      "ramp/2400000": 8,
+      "ramp/3000000": 9,
+      "ramp/3600000": 9,
+      "stationary/2400000": 9,
+      "stationary/3000000": 9,
+      "stationary/3600000": 8
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 2,
+    "steps": 10240,
+    "replay_size": 10240,
+    "terminated_count": 80,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 3456,
+      "3000000": 3456,
+      "3600000": 3328
+    },
+    "training_episode_counts": {
+      "direction/2400000": 5,
+      "direction/3000000": 6,
+      "direction/3600000": 5,
+      "fixed/2400000": 6,
+      "fixed/3000000": 5,
+      "fixed/3600000": 5,
+      "gust/2400000": 6,
+      "gust/3000000": 5,
+      "gust/3600000": 5,
+      "ramp/2400000": 5,
+      "ramp/3000000": 5,
+      "ramp/3600000": 6,
+      "stationary/2400000": 5,
+      "stationary/3000000": 6,
+      "stationary/3600000": 5
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 2,
+    "steps": 12288,
+    "replay_size": 12288,
+    "terminated_count": 96,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 4096,
+      "3000000": 4096,
+      "3600000": 4096
+    },
+    "training_episode_counts": {
+      "direction/2400000": 6,
+      "direction/3000000": 7,
+      "direction/3600000": 6,
+      "fixed/2400000": 7,
+      "fixed/3000000": 6,
+      "fixed/3600000": 7,
+      "gust/2400000": 7,
+      "gust/3000000": 6,
+      "gust/3600000": 6,
+      "ramp/2400000": 6,
+      "ramp/3000000": 6,
+      "ramp/3600000": 7,
+      "stationary/2400000": 6,
+      "stationary/3000000": 7,
+      "stationary/3600000": 6
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 2,
+    "steps": 14336,
+    "replay_size": 14336,
+    "terminated_count": 112,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 4864,
+      "3000000": 4736,
+      "3600000": 4736
+    },
+    "training_episode_counts": {
+      "direction/2400000": 7,
+      "direction/3000000": 8,
+      "direction/3600000": 7,
+      "fixed/2400000": 8,
+      "fixed/3000000": 7,
+      "fixed/3600000": 8,
+      "gust/2400000": 8,
+      "gust/3000000": 7,
+      "gust/3600000": 7,
+      "ramp/2400000": 7,
+      "ramp/3000000": 7,
+      "ramp/3600000": 8,
+      "stationary/2400000": 8,
+      "stationary/3000000": 8,
+      "stationary/3600000": 7
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  },
+  {
+    "repeat": 2,
+    "steps": 16384,
+    "replay_size": 16384,
+    "terminated_count": 128,
+    "terminal_and_command_contract": true,
+    "target_step_counts": {
+      "2400000": 5504,
+      "3000000": 5504,
+      "3600000": 5376
+    },
+    "training_episode_counts": {
+      "direction/2400000": 8,
+      "direction/3000000": 9,
+      "direction/3600000": 8,
+      "fixed/2400000": 9,
+      "fixed/3000000": 8,
+      "fixed/3600000": 9,
+      "gust/2400000": 9,
+      "gust/3000000": 8,
+      "gust/3600000": 8,
+      "ramp/2400000": 8,
+      "ramp/3000000": 9,
+      "ramp/3600000": 9,
+      "stationary/2400000": 9,
+      "stationary/3000000": 9,
+      "stationary/3600000": 8
+    },
+    "replay_capacity_exceeded": false,
+    "applied_observation_indices": [
+      2,
+      3,
+      4
+    ],
+    "previous_command_indices": [
+      5,
+      6,
+      7
+    ],
+    "partial_observability": "No wind history; hidden random wind realization is not observed."
+  }
+]

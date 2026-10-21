@@ -1,0 +1,148 @@
+schema_version: 1
+seed: 42
+purpose: software_integration_only_not_physical_validation
+plant:
+  kind: mock
+  source: coupled_integration_mock
+  power_semantics: uncalibrated_steady_model_power_w
+  turbine_ids:
+  - T01
+  - T02
+  - T03
+  rated_power_w:
+  - 5000000
+  - 5000000
+  - 5000000
+  layout:
+    kind: fixed_collinear_equal_spacing
+    spacing_m: null
+    note: supplied_by_real_model_not_optimized
+  features:
+  - ambient_wind_speed_m_s
+  - ambient_wind_direction_rad
+  - turbulence_intensity
+  - gamma_1
+  - gamma_2
+  - gamma_3
+  - beta_1
+  - beta_2
+  - beta_3
+  - omega_1
+  - omega_2
+  - omega_3
+  bounds:
+    ambient_wind_speed_m_s:
+    - 3.0
+    - 20.0
+    ambient_wind_direction_rad:
+    - 0.0
+    - 6.283186
+    turbulence_intensity:
+    - 0.0
+    - 0.3
+    gamma_1:
+    - -0.524
+    - 0.524
+    gamma_2:
+    - -0.524
+    - 0.524
+    gamma_3:
+    - -0.524
+    - 0.524
+    beta_1:
+    - 0.0
+    - 0.437
+    beta_2:
+    - 0.0
+    - 0.437
+    beta_3:
+    - 0.0
+    - 0.437
+    omega_1:
+    - 0.1
+    - 1.268
+    omega_2:
+    - 0.1
+    - 1.268
+    omega_3:
+    - 0.1
+    - 1.268
+environment:
+  parameter_source:
+    kind: assumption
+    reference: configs/default.yaml
+    note: all physical limits and actuator parameters are integration assumptions
+  dt_s: 1.0
+  yaw_frame: nacelle_heading
+  heading_bounds_rad:
+  - -314.1592653589793
+  - 314.1592653589793
+  control_mask:
+  - 1
+  - 1
+  - 1
+  horizon: 128
+  wind_scale_m_s: 25.0
+  action_low:
+  - -0.5235987756
+  - 0.0
+  - 0.1
+  action_high:
+  - 0.5235987756
+  - 0.436332313
+  - 1.267
+  initial_operating_point:
+  - 0.0
+  - 0.04
+  - 0.9
+  rate_limits:
+  - 0.005
+  - 0.00872664626
+  - 0.1
+  time_constants_s:
+  - 5.0
+  - 2.0
+  - 5.0
+  target_w: 3000000.0
+  wind_base_m_s: 8
+  wind_amplitude_m_s: 0
+  wind_period_steps: 128
+  wind_noise_std_m_s: 0
+  wind_direction_rad: 4.7123889804
+  turbulence_intensity: 0.08
+  action_change_weight: 0.001
+  reward_scale: 100.0
+algorithm:
+  hidden: 64
+  actor_lr: 0.0003
+  critic_lr: 0.001
+  gamma: 0.99
+  tau: 0.01
+  batch_size: 64
+  capacity: 20000
+  grad_clip: 1.0
+training:
+  total_steps: 8192
+  warmup_steps: 256
+  update_every: 2
+  noise_std: 0.15
+  episode_target_fractions:
+  - 0.2
+evaluation:
+  seed_offset: 10000
+  scenarios:
+  - name: wind8_target3mw
+    wind_base_m_s: 8.0
+    target_w: 3000000.0
+  - name: wind9_target4mw
+    wind_base_m_s: 9.0
+    target_w: 4000000.0
+baselines:
+  three_channel: true
+  yaw_offset_rad: 0.0
+  speed_per_wind_rad_m: 0.11114035087719298
+  pitch_bias_rad: 0.04
+  kp: 1.5
+  ki: 0.08
+  antiwindup_gain: 0.2
+  integral_limit_rad: 0.3

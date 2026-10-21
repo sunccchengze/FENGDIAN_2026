@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "checkpoints": 6,
+  "training_replay_transitions": 98304,
+  "test_cases_used": 0,
+  "new_training_steps": 0,
+  "source_files_unchanged": true,
+  "consistent_td_shift_max_error": 1.1368683772161603e-13,
+  "scope": "Exogenous finite-horizon reward offsets preserve policy ordering; offline amplitude change is not performance improvement.",
+  "command": "python -m optimization_control.maddpg_wind_farm.value_baseline_diagnostic --source <tracking-study> --output <new-directory>",
+  "new_tests_passed": 4,
+  "performance_improvement_claimed": false
+}

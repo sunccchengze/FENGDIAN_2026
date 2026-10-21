@@ -1,0 +1,11 @@
+{
+  "best": {
+    "score_w": 134454.9738661222,
+    "step": 4096,
+    "checkpoint": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20260922_maddpg_stable_training\\bridge_pitch_speed\\step_00004096.pth"
+  },
+  "final": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20260922_maddpg_stable_training\\bridge_pitch_speed\\step_00008192.pth",
+  "completed": true,
+  "master_seed": 42,
+  "derived_run_seed": 996826812
+}

@@ -1,0 +1,114 @@
+{
+  "version": "farm_benchmark_v1",
+  "seed": 42,
+  "cases": [
+    {
+      "id": "validation_fixed_0",
+      "split": "validation",
+      "family": "fixed",
+      "path": "validation_fixed_0.csv",
+      "csv_sha256": "575cb1739c03b7cc274f7b1ef3fd6d19bd8017c1298533c2777fa5f67348949f",
+      "json_sha256": "33624ee568a8aafb8d4969241057adbb15124577f2b8f74c16ac88561ef0f85d",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_stationary_0",
+      "split": "validation",
+      "family": "stationary",
+      "path": "validation_stationary_0.csv",
+      "csv_sha256": "fe80671d794fde86ea5a734475d0c6737ea4490b7b7b21429693aaec309aa613",
+      "json_sha256": "4cc49b3222ffa2ac8222e46f3f5565a5fdab50d9afa6dceb93b62e3e77abc5c0",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_ramp_0",
+      "split": "validation",
+      "family": "ramp",
+      "path": "validation_ramp_0.csv",
+      "csv_sha256": "32e2525540eba27c4e000345b7293d4d77e4f1085a11ba1bed12ae2afbbc8914",
+      "json_sha256": "7e5a52f6c1fe92375c1df8dfcdaf25b2040c011b897fb0842fa9f90f5df2e2a4",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_gust_0",
+      "split": "validation",
+      "family": "gust",
+      "path": "validation_gust_0.csv",
+      "csv_sha256": "8c5fe8b63a9c824616718717e69e02cdd875557b4a7176ccfc7ac656a2e668ec",
+      "json_sha256": "2b4bdce550240d7fb3a347343e5b04ba2a19ffd877f9e149f88f9e69ab6dab84",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_direction_0",
+      "split": "validation",
+      "family": "direction",
+      "path": "validation_direction_0.csv",
+      "csv_sha256": "8501e9a4b03d4de2c7ce69da91719043d8c02171bbcc92a41f430bc4e4df79ce",
+      "json_sha256": "6724a19f5e72c426044ea0dc37fab89397889e640b67954ffe487617729f110b",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_shortfall_0",
+      "split": "validation",
+      "family": "shortfall",
+      "path": "validation_shortfall_0.csv",
+      "csv_sha256": "a38bef1974fa0d8848d6103593e9dbcdc06a7d1306a5d0d0e21901ba78f387c7",
+      "json_sha256": "9cee4bb6984e6fb6db5891163baf41c553ddeac5ca6ce348727246be49d53582",
+      "target_w": 5000000.0
+    },
+    {
+      "id": "test_fixed_0",
+      "split": "test",
+      "family": "fixed",
+      "path": "test_fixed_0.csv",
+      "csv_sha256": "bd7e46a7006212e5262170d241d3edc2c02e79ae65631e7ebff3719b85f6fb93",
+      "json_sha256": "5e401262ec7cb7b583daf7b6f072e05c62dc1004b084b76e396eb6447ed94b46",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_stationary_0",
+      "split": "test",
+      "family": "stationary",
+      "path": "test_stationary_0.csv",
+      "csv_sha256": "9452baffcea6eb572fd1ab182e0974b054f8d027785620a3e6f852c77a39d0e4",
+      "json_sha256": "1761195d2c06e33011d2b1961a5f4ac25791402a8da1a76e74403e9925699b85",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_ramp_0",
+      "split": "test",
+      "family": "ramp",
+      "path": "test_ramp_0.csv",
+      "csv_sha256": "4c74c339dc78ddaa150b457c8b9c722316ea62ff3a9fe15fc62a403030020e4e",
+      "json_sha256": "1cf731939e1a43906f8f459c0519fd3669f442bcaba4f3f6775c8ceff20273b9",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_gust_0",
+      "split": "test",
+      "family": "gust",
+      "path": "test_gust_0.csv",
+      "csv_sha256": "c4c84ad865d199ca0f21658808f3dd89b2e539c19ee8d3210cc78eb86332b01f",
+      "json_sha256": "3e15db3e3b619976e6c9ff51a909d68cdeebb173b13d6d4eb1871e421bb02ade",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_direction_0",
+      "split": "test",
+      "family": "direction",
+      "path": "test_direction_0.csv",
+      "csv_sha256": "b206d8477c001854d6de41096d903fea92ed27864774e95bfcfb7c73759f3600",
+      "json_sha256": "1020cb15b27109a1b5c7c37052cc84da74eb50e6436061b5d0db5bd1e1a4417e",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_shortfall_0",
+      "split": "test",
+      "family": "shortfall",
+      "path": "test_shortfall_0.csv",
+      "csv_sha256": "a38bef1974fa0d8848d6103593e9dbcdc06a7d1306a5d0d0e21901ba78f387c7",
+      "json_sha256": "587b74b2fbdb1df4c61b9b3e89d794a9bc75fcd519b2abb1ea2f483920202845",
+      "target_w": 5000000.0
+    }
+  ]
+}
