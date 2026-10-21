@@ -30,6 +30,7 @@
 | [`docs/`](docs/README.md) | 研究、决策、会议、证据、审计和模板导航 |
 | [`docs/evidence/`](docs/evidence/README.md) | 权威数字和可复现证据索引 |
 | [`materials/`](materials/README.md) | **按人归档**的材料与交付件（五个个人目录 + `集体/`）、答辩 / 申报材料和审核口径 |
+| [`optimization_control/`](optimization_control/WORK_INDEX.md) | **优化控制代码与实验**（洪祖名 2026-10-07 交付）：代理模型、PPO、随机入口、三机 MADDPG、统一传统基线、诊断与回放工具 |
 | [`HANDOFF_NEXT.md`](HANDOFF_NEXT.md) | 当前阶段开放项、红线和下一轮交接 |
 
 ## 五人分工
@@ -52,7 +53,8 @@
 |---|---|---|---|
 | [`viz/`](viz/README.md) | **科研可视化平台**（15 页浅色瑞士网格科研台，FLORIS/POD/PPO 真值全量呈现） | **封板 v1.3-final**（2026-08-19），只修 bug/死链/数据错 | `cd viz && python3 -m http.server 8000 --directory site`；线上 [wind-farm-viz.pages.dev](https://wind-farm-viz.pages.dev/)（Pages 需重连本仓，见 `docs/12` §4.2） |
 | [`twin/`](twin/README.md) | **AEOLUS TWIN 数字孪生**（影院级深色 3D Web 大屏，申请书阶段五法定交付形态） | 持续迭代（R44）；**单列三机（1×3）改造 + 九一九 §2 演示界面已完成**：布局可切换（`?layout=1x3` / `?layout=3x3`，默认 3×3）、3×3 不删（留档 tag `twin-3x3-archive-20260919`）、1×3 真值来自 FLORIS 三机串列 oracle（tandem3）、`?demo=1` 七步演示（调航向/求解优化/复核/导出，GCH 内核 + FLORIS 实测对拍 1e-12 kW），见 [`docs/13`](docs/13_0919组会决议_三风机改造方案与3x3留档.md) 与 [`round41`](docs/research/round41_单列三机改造.md)/[`round42`](docs/research/round42_单列三机改造_视觉与真值.md)/[`round44`](docs/research/round44_演示界面_七步流程.md) | `cd twin && npm install && npm run dev` |
-| [`materials/`](materials/README.md) | 按人归档的材料与交付件（阶段总结 / PPT / 讲稿 / 申报 / 队友交付包） | 2026-09-21 已把 `viz/` 及其归档中的个人材料与队友交付件按人迁入（不含目录 README 与 Markdown 镜像：孙承泽 76 · 洪祖名 36 · 厉今飞 25 · 袁夫达 13 · 集体 20 · 田铭雨 2，含 2026-09-21 新增的 4 份 `SHA256SUMS.txt` 与白皮书 `build.py`）；所有 docx / pptx / pdf 附 markitdown 生成的同名 `.md` 镜像（`tools/markitdown_sync.py`），材料治理已建立 | 各人目录 `README.md` |
+| [`optimization_control/`](optimization_control/WORK_INDEX.md) | **优化控制模块**（准静态风场环境 / MADDPG / PPO / 代理模型，纯 Python + `unittest`） | 2026-10-21 随分支吸收并入 `main`；**固定 9 输入网络的结果仅为合成联调，可靠性门槛未全部通过** | 入口 [`WORK_INDEX.md`](optimization_control/WORK_INDEX.md)；交付包 [`materials/洪祖名/20261007_optimization_handoff/`](materials/洪祖名/20261007_optimization_handoff/README.md) |
+| [`materials/`](materials/README.md) | 按人归档的材料与交付件（阶段总结 / PPT / 讲稿 / 申报 / 队友交付包） | 2026-09-21 已把 `viz/` 及其归档中的个人材料与队友交付件按人迁入（不含目录 README 与 Markdown 镜像：孙承泽 76 · 洪祖名 101 · 厉今飞 27 · 袁夫达 13 · 集体 28 · 田铭雨 2；2026-09-21 的基线为 76 / 36 / 25 / 13 / 20 / 2，10 月新增部分见 `materials/README.md` §1）；所有 docx / pptx / pdf 附 markitdown 生成的同名 `.md` 镜像（`tools/markitdown_sync.py`），材料治理已建立 | 各人目录 `README.md` |
 | [`docs/`](docs/README.md) | 研究、决策、会议、证据、审计和交接记录 | 持续维护 | — |
 | [`skills/`](skills/README.md) | 精选技能和参考资料 | 辅助知识，不是事实来源 | — |
 | [`ci/`](ci/repo_quality.py) | 仓库契约门禁（链接、镜像、`SHA256SUMS`、白皮书装配、体积/命名）与 workflow 草案 | `.github/workflows/` 待有权限后激活（见 `docs/audits/2026-09-20_治理实现自审.md`） | `python3 ci/repo_quality.py` |
@@ -214,6 +216,6 @@ npm run verify
 
 详细研究历史、阶段数据和验收记录请从 [`docs/`](docs/README.md) 进入，不在根 README 复制所有轮次细节。
 
-## 优化控制完整交付 2026 年 10 月 7 日
+## 优化控制完整交付（2026-10-07，2026-10-21 并入 main）
 
-新增 [优化工作总索引](optimization_control/WORK_INDEX.md) 与 [洪祖名完整交付](materials/洪祖名/20261007_optimization_handoff/README.md)。包括代理模型、PPO、随机入口、MADDPG、统一传统基线及诊断；当前固定九输入网络的结果仅为合成联调，可靠性门槛未全部通过。此分支供审阅，未替代 main 结论。
+[优化工作总索引](optimization_control/WORK_INDEX.md) 与 [洪祖名完整交付](materials/洪祖名/20261007_optimization_handoff/README.md) 原在独立分支 `codex/optimization-handoff-20261007`（`84d6f4b` + `782368a3`），**2026-10-21 随分支吸收并入主线**（PR #17）。内容包括代理模型、PPO、随机入口、MADDPG、统一传统基线及诊断；**当前固定九输入网络的结果仅为合成联调，可靠性门槛未全部通过**，不能当作 `main` 的结论引用。交付包本体 **≈1.01 GiB**（58 个分卷，单卷 ≤95 MiB），入库理由、体积代价与待裁定项见 [`docs/audits/2026-10-21_分支吸收与合并审计.md`](docs/audits/2026-10-21_分支吸收与合并审计.md) 与 [`materials/README.md`](materials/README.md) §7。
