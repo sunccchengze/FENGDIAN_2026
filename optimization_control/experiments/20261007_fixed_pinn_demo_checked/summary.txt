@@ -1,0 +1,66 @@
+{
+  "status": "fixed_condition_integration_completed",
+  "seed": 42,
+  "physical_validation": false,
+  "network_control_inputs": 9,
+  "adapter_context_inputs": 12,
+  "model_sha256": "c2fd64efd9b41f73cc3e646bb223999abb63740784e84d8b6d6df693581a7e53",
+  "fixed_condition": {
+    "speed_m_s": 9.0,
+    "direction_rad": 0.0,
+    "turbulence_intensity": 0.1,
+    "source": "demonstration_assumption_not_original_model_calibration"
+  },
+  "geometry": {
+    "positions_m": [
+      [
+        0.0,
+        0.0,
+        90.0
+      ],
+      [
+        378.0,
+        0.0,
+        90.0
+      ],
+      [
+        756.0,
+        0.0,
+        90.0
+      ]
+    ],
+    "source": "demonstration_assumption_equal_spacing_not_team_geometry"
+  },
+  "steps": 2048,
+  "updates": 897,
+  "checkpoint": "D:\\VSCODE\\大创项目风电\\optimization_control\\experiments\\20261007_fixed_pinn_demo_checked\\training\\checkpoint.pth",
+  "repeat_reset_equal": true,
+  "saved_loaded_actions_equal": true,
+  "full_episode_replay_equal": true,
+  "compared_controllers": [
+    "initial_maddpg",
+    "trained_maddpg",
+    "fixed",
+    "p",
+    "pi"
+  ],
+  "conclusion": "Software integration only; synthetic-label fit and short RL are not physical accuracy, convergence or superiority evidence.",
+  "source_files_unchanged": true,
+  "trace_checks": {
+    "fixed_wind_verified": true,
+    "applied_bounds_verified": true,
+    "heading_gamma_relation_verified": true,
+    "max_per_step_changes": [
+      0.0050000000000003375,
+      0.008726646260000005,
+      0.043292636158105746
+    ],
+    "rate_limits": [
+      0.005,
+      0.00872664626,
+      0.1
+    ],
+    "baseline_trajectories_identical": true,
+    "evaluated_rows": 1536
+  }
+}

@@ -1,0 +1,52 @@
+version: mixed_stability_v1
+seed: 42
+steps: 16384
+run_ids:
+- 1
+- 2
+- 3
+bank_episode_offset: 90000
+bank_targets_w:
+- 2400000.0
+- 3000000.0
+- 3600000.0
+cases_per_family: 6
+selection_rule: most_stable_runs_then_lowest_tail3_validation_then_declared_order
+candidates:
+- name: baseline
+  nominal_init: true
+  reward_scale: 100.0
+  actor_lr: 0.0003
+  critic_lr: 0.001
+  tau: 0.01
+  noise: white
+- name: actor_slow
+  nominal_init: true
+  reward_scale: 100.0
+  actor_lr: 0.0001
+  critic_lr: 0.001
+  tau: 0.01
+  noise: white
+- name: critic_slow
+  nominal_init: true
+  reward_scale: 100.0
+  actor_lr: 0.0003
+  critic_lr: 0.0003
+  tau: 0.01
+  noise: white
+- name: target_slow
+  nominal_init: true
+  reward_scale: 100.0
+  actor_lr: 0.0003
+  critic_lr: 0.001
+  tau: 0.003
+  noise: white
+baseline_kp:
+- 0.75
+- 1.5
+- 3.0
+baseline_ki:
+- 0.04
+- 0.08
+- 0.16
+test_rule: freeze_all_models_and_baselines_before_test

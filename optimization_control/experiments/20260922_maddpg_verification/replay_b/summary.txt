@@ -1,0 +1,5 @@
+checkpoint=.\optimization_control\experiments\20260922_maddpg_verification\continuous\checkpoint.pth
+source=coupled_integration_mock
+MADDPG: nine channels. Fixed/P/PI: fixed yaw and speed; P/PI pitch feedback only.
+Shared wind, target, initial states and actuator limits. Different control permissions; no algorithm superiority claim.
+Target feasibility not certified; shortfall is reported, target never silently reduced.

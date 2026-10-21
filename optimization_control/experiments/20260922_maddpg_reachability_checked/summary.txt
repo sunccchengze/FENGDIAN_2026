@@ -1,0 +1,14 @@
+{
+  "cases": 24,
+  "rows": 144,
+  "steady_feasible": 17,
+  "certified_unreachable": 7,
+  "scope": "exact mock only; static floor not a dynamic optimality certificate; residual includes actuator transients",
+  "command": "python -m optimization_control.maddpg_wind_farm.reachability --source <mixed-study> --output <new-directory>",
+  "artifacts": [
+    "metrics.csv",
+    "witnesses.json",
+    "same_state_target_probe.csv",
+    "diagnosis.png"
+  ]
+}

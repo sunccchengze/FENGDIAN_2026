@@ -1,0 +1,8 @@
+source=coupled_integration_mock
+power_semantics=uncalibrated_steady_model_power_w
+steps=4800
+episodes=8
+updates=2101
+resume_from=None
+checkpoint=.\optimization_control\experiments\20260922_maddpg_stochastic_train\checkpoint.pth
+Integration training is not evidence of physical validity or algorithm superiority.

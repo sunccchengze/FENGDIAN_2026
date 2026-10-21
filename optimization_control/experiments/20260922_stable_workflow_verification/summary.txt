@@ -1,0 +1,23 @@
+[
+  {
+    "check": "network_replay_noise_resume_exact",
+    "passed": true
+  },
+  {
+    "check": "next_update_exact",
+    "passed": true
+  },
+  {
+    "check": "validation_history_exact",
+    "passed": true
+  },
+  {
+    "check": "disk_loaded_evaluation_exact",
+    "passed": true
+  },
+  {
+    "check": "frozen_trace_tampering_rejected",
+    "passed": true
+  }
+]
+Bank trace intentionally altered AFTER verification to test rejection; not a production bank.

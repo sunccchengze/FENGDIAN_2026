@@ -1,0 +1,11 @@
+{
+  "target_w": 3000000.0,
+  "common_pitch_rad": 0.06719594076275788,
+  "equilibrium_power_w": 3000000.5,
+  "bracket_power_w": [
+    624399.5625,
+    3795598.5
+  ],
+  "scope": "steady mock feasibility, not instantaneous reachability"
+}
+One-seed mock diagnostic, not physical validation.

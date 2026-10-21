@@ -6,6 +6,8 @@
 //   天际线 ≈ 画面上缘 12%；全场冰青全息基调
 // ================================================================
 
+import { LAYOUT } from './layouts.ts'
+
 function makeNoise(seed = 7) {
   const hash = (x: number, y: number) => {
     const s = Math.sin(x * 127.1 + y * 311.7 + seed * 17.43) * 43758.5453
@@ -420,47 +422,27 @@ export function terrainHeight(x: number, z: number): number {
   return h
 }
 
-// ---- 场区：3×3 排布（舵机 1-5 与显眼机组编排见 SERVOS）----
+// ---- 场区：布局真值源在 ./layouts（R41-A · 2026-10-05 起）----
 // 2026-08-28（任务#1 数据对齐）：阵列几何直接采用老网页/FLORIS 例题场
 // ——3×3、纵横间距 632 m = 5.02D（NREL 5MW D=126m）。这同时消解了
 // docs/07 B7 的"间距小于工程惯例"叙事风险：5D 恰是尾流控制惯例下限，
 // 且与本仓引用的 FLORIS 9 机基准功率 8095.15 kW 同一几何，代理引擎
-// 的尾流 k 即按该工况标定（turbinePhysics.JENSEN_K）。机组 ±20m 内
-// 微移位为取景用的确定性抖动（演示层，不影响功率物理口径）。
-export const ROW_GAP_M = 632 // 行距=FLORIS 例程阵列间距（5.02D）
-export const COL_GAP_M = 632 // 列距
-
+// 的尾流 k 即按该工况标定（turbinePhysics.JENSEN_K）。
+// R41-A：几何 / 排数 / 舵机 / 语义锚点下标全部派生自 layouts.ts
+// （3×3 与留档 tag `twin-3x3-archive-20260919` 逐位一致，selftest 有回归锁）；
+// P0-1（2026-09-16）移除的 ±20m 位置抖动**保持移除**（layouts 里就没有抖动）。
 export const ROTOR_D_M = 126 // NREL 5MW 风轮直径（示意几何）
 export interface FarmUnit { id: string; x: number; z: number; row: number; col: number; speed: number }
-export const FARM: FarmUnit[] = (() => {
-  const arr: FarmUnit[] = []
-  // 场心 (-100, -640)（保持旧取景重心）；FLORIS 间距 632m
-  const rowsZ = [-1272, -640, -8]
-  const colsX = [-732, -100, 532]
-  let k = 0
-  for (let r = 0; r < 3; r++) {
-    for (let c = 0; c < 3; c++) {
-      // P0-1（2026-09-16）：移除 ±20m 位置抖动 —— 场景几何与 FLORIS 规范布局
-      // （3×3 @ 632m）逐位一致，物理真值与场景同源（圆18"靶值同源化"精神）。
-      // 实测抖动使 T04 部分逃逸 T01 尾流（439→717 kW，全场 +6.4%），
-      // 与全部 FLORIS 实算表（+24.04% 等）失配；视觉影响 ≤20m/632m，机位不可察。
-      arr.push({
-        id: `T0${k + 1}`,
-        x: colsX[c],
-        z: rowsZ[r],
-        row: r, col: c,
-        speed: 1.02 + ((k * 29) % 5) * 0.1,
-      })
-      k++
-    }
-  }
-  return arr
-})()
+export const FARM: FarmUnit[] = LAYOUT.units.map((u, k) => ({
+  ...u,
+  // 演示层确定性转速抖动（不影响功率物理口径）；k = 布局内序号
+  speed: 1.02 + ((k * 29) % 5) * 0.1,
+}))
 
-// 5 路舵机对应的机组（近大远小中最显眼 5 台：近排左/中、中排左/右、远排中）
-export const SERVOS: number[] = [6, 7, 3, 5, 1]
+// 舵机滑杆对应的机组（1-based；3×3 = 近大远小中最显眼 5 台，1×3 = 全部 3 台）
+export const SERVOS: number[] = LAYOUT.servos
 
-export const ROW_COUNT = 3
+export const ROW_COUNT = LAYOUT.rows
 
 // 升压站：画面右中下（原图位置 x≈60%、y≈58%）
 export const SUBSTATION = { x: 300, z: 300 }
@@ -477,17 +459,30 @@ export const CAM = {
 // A6 修复：锚点必须挂在"被指物体"的真实几何位置附近（塔基/机舱/站体顶/
 // 线路中点），而不是随意的高空悬点；Callouts 还会按屏幕投影做避让。
 const HUB = 90 // 轮毂高（米）
+// R41-A：锚点改语义选择器（docs/13 §4.1）：power→中排中机、wake→上游机北侧来流空域、
+// turbine/dot→最近景机、cable→最近景机↔升压站中点。3×3 下与旧写死下标逐位等价。
+const AU = LAYOUT.units
+const AA = LAYOUT.anchors
+const at = (i: number, dx: number, dy: number, dz: number) => ({
+  x: AU[i].x + dx,
+  y: terrainSurfaceY(AU[i].x, AU[i].z + dz) + dy,
+  z: AU[i].z + dz,
+})
 export const ANCHOR = {
-  // 全场功率总览 → 指向中排中间机组机舱（功率汇聚的语义中心）
-  power: { x: FARM[4].x, y: terrainSurfaceY(FARM[4].x, FARM[4].z) + HUB + 8, z: FARM[4].z },
-  // 风能资源场 → 近排北侧的来流空域（机组北缘外 220m、轮毂高度）
-  wake: { x: FARM[7].x, y: terrainSurfaceY(FARM[7].x, FARM[7].z - 220) + HUB - 6, z: FARM[7].z - 220 },
-  // 风机 → 近排左侧机组（T07）塔筒中段
-  turbine: { x: FARM[6].x + 14, y: terrainSurfaceY(FARM[6].x, FARM[6].z) + 52, z: FARM[6].z },
-  // 集电线路 → 近排串接电缆中段（行 z 与升压站之间）
-  cable: { x: (FARM[8].x + SUBSTATION.x) / 2, y: terrainSurfaceY((FARM[8].x + SUBSTATION.x) / 2, (FARM[8].z + SUBSTATION.z) / 2) + 14, z: (FARM[8].z + SUBSTATION.z) / 2 },
+  // 全场功率总览 → 指向语义中心机组机舱（功率汇聚处）
+  power: at(AA.power, 0, HUB + 8, 0),
+  // 风能资源场 → 上游机组北侧的来流空域（北缘外 220m、轮毂高度）
+  wake: at(AA.wake, 0, HUB - 6, -220),
+  // 风机 → 最近景机组塔筒中段
+  turbine: at(AA.turbine, 14, 52, 0),
+  // 集电线路 → 最近景机组串接电缆中段（机组与升压站之间）
+  cable: {
+    x: (AU[AA.cable].x + SUBSTATION.x) / 2,
+    y: terrainSurfaceY((AU[AA.cable].x + SUBSTATION.x) / 2, (AU[AA.cable].z + SUBSTATION.z) / 2) + 14,
+    z: (AU[AA.cable].z + SUBSTATION.z) / 2,
+  },
   // 升压站 → 站体顶缘
   substation: { x: SUBSTATION.x - 40, y: terrainSurfaceY(SUBSTATION.x, SUBSTATION.z) + 46, z: SUBSTATION.z - 20 },
-  // 圈选：左下近景大机组（T07 塔基）
-  dot: { x: FARM[6].x, y: terrainSurfaceY(FARM[6].x, FARM[6].z) + 4, z: FARM[6].z },
+  // 圈选：最近景大机组塔基
+  dot: at(AA.dot, 0, 4, 0),
 }

@@ -1,0 +1,7 @@
+stage,comparison,controller,runs,mean_rmse_w,std_rmse_w,worst_tail_rmse_w,mean_q_return_gap_abs
+multi_all,same_permissions,initial,3,933479.3191919915,148.87649269251244,1832848.8125962203,43.63625139552571
+multi_all,same_permissions,selected,3,189807.9141591949,15367.304367894136,203411.58137816927,1.2413597860394663
+multi_all,same_permissions,final,3,196081.90226897426,8678.791466275788,203411.58137816927,0.9850822250584895
+multi_all,same_permissions,fixed,3,979384.5,0.0,2051088.0,0.0
+multi_all,same_permissions,p,3,433021.3508512378,0.0,784576.75,0.0
+multi_all,same_permissions,pi,3,270074.9585961468,0.0,90355.62823867836,0.0

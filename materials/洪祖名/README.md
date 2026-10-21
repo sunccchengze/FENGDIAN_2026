@@ -44,3 +44,7 @@
 ## 未在仓库中的内容
 
 `洪祖名——工作记录.docx` 提到的 `environments/plant_model.py`、`config.yaml`、`test_baseline.py` 等 T1-R / T2 代码**不在本仓库任何位置**，需要洪祖名本人通过 PR 提交。
+
+## 2026 年 10 月 7 日完整优化成果
+
+[本次完整交付](20261007_optimization_handoff/README.md) 补齐了此前未入仓的 T1-R、准静态闭环、随机风况及三机 MADDPG 代码，并保存历次配置、指标、模型和失败实验分卷。详细入口见 [优化总索引](../../optimization_control/WORK_INDEX.md)。上文“未在仓库中的内容”为 9 月 21 日历史状态；本分支已补交，**2026-10-21 已随分支吸收并入 `main`**（PR #17）。吸收时逐条校验该目录的 `SHA256SUMS.txt`：66 条里 `manifest.json` 与 `任务说明.md` **在分支上就与字节不符**（其余 64 条通过），第 3 条 `README.md` 因本次在交付目录追加合并说明而变；前两个文件本身未改，只按实际字节订正清单，过程见[交接目录 README](20261007_optimization_handoff/README.md) §2026-10-21 与[审计](../../docs/audits/2026-10-21_分支吸收与合并审计.md)。

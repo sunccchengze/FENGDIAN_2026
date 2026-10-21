@@ -1,0 +1,85 @@
+version: tracking_study_v1
+seed: 42
+run_ids:
+- 1
+- 2
+- 3
+steps: 16384
+bank_episode_offset: 170000
+selection_families:
+- fixed
+- stationary
+- ramp
+- gust
+- direction
+- low_power
+baseline_kp:
+- 0.75
+- 1.5
+- 3.0
+baseline_ki:
+- 0.04
+- 0.08
+- 0.16
+candidate:
+  nominal_init: true
+  reward_scale: 100.0
+  actor_lr: 0.0001
+  critic_lr: 0.001
+  tau: 0.01
+  noise: white
+tracking_curriculum:
+  fixed:
+    winds_m_s:
+    - 7.5
+    - 8.0
+    - 9.0
+    targets_w:
+    - 2400000.0
+    - 3000000.0
+    - 3600000.0
+  low:
+    winds_m_s:
+    - 5.0
+    - 5.5
+    - 6.0
+    targets_w:
+    - 800000.0
+    - 1200000.0
+    - 5000000.0
+bank:
+  validation:
+    fixed_winds:
+    - 8.05
+    - 8.5
+    - 8.95
+    low_winds:
+    - 5.1
+    - 5.6
+    low_targets:
+    - 800000.0
+    - 1000000.0
+    high_target: 5000000.0
+  test:
+    fixed_winds:
+    - 8.1
+    - 8.35
+    - 8.8
+    low_winds:
+    - 5.25
+    - 5.75
+    low_targets:
+    - 900000.0
+    - 1000000.0
+    high_target: 4500000.0
+regular_targets_w:
+- 2400000.0
+- 3000000.0
+- 3600000.0
+test_rule: freeze_both_groups_and_baselines_before_test
+acceptance:
+  paired_regular_rmse_nonincrease_each_run: true
+  paired_fixed_rmse_decrease_each_run: true
+  paired_low_shortfall_residual_decrease_each_run: true
+  fixed_3mw_rmse_w: 200000.0
+  max_final_over_selected_validation_ratio: 1.25

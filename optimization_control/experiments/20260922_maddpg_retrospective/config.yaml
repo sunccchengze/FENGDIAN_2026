@@ -1,0 +1,4 @@
+seed: 42
+source: optimization_control/experiments/20260922_maddpg_stable_training
+split: validation
+diagnostic_updates_saved: false

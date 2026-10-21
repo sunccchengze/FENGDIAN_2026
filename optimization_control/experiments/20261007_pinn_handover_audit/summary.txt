@@ -1,0 +1,138 @@
+{
+  "status": "blocked_untrained_delivery",
+  "ready_for_maddpg": false,
+  "checks": [
+    {
+      "check": "trained_model_present",
+      "passed": false,
+      "detail": "requires trained.keras, not original_frozen.keras/untrained.keras"
+    },
+    {
+      "check": "training_report_present",
+      "passed": false,
+      "detail": "independent physical-label errors and control ranges required"
+    },
+    {
+      "check": "real_geometry_filled",
+      "passed": false,
+      "detail": "three actual ordered equally spaced positions; do not use structural test coordinates"
+    },
+    {
+      "check": "source_reports_real_training",
+      "passed": false,
+      "detail": "structure_built_and_checked_NOT_trained"
+    },
+    {
+      "check": "controls_have_nonzero_saved_connections",
+      "passed": false,
+      "detail": "saved 9x700 new control kernel inspected directly"
+    },
+    {
+      "check": "labelled_training_template",
+      "passed": false,
+      "detail": "template contains 0 labelled rows; original flow CSVs are not control/power labels"
+    },
+    {
+      "check": "six_output_order",
+      "passed": true,
+      "detail": "W,W,W,m/s,m/s,m/s"
+    },
+    {
+      "check": "nine_control_order",
+      "passed": true,
+      "detail": "interleaved by turbine, unlike optimization grouped controls"
+    },
+    {
+      "check": "random_inflow_supported",
+      "passed": false,
+      "detail": "documented fixed-condition nine-input model; no inlet speed/direction/TI features"
+    }
+  ],
+  "model_inspection": {
+    "input_layers": [
+      [
+        "controls",
+        0,
+        0
+      ],
+      [
+        "turbine_positions",
+        0,
+        0
+      ]
+    ],
+    "output_layers": [
+      [
+        "output_units",
+        0,
+        0
+      ]
+    ],
+    "control_kernels": [
+      {
+        "path": "layers\\extended_input_dense/vars/0",
+        "shape": [
+          9,
+          700
+        ],
+        "nonzero": 0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      }
+    ],
+    "statistics": [
+      {
+        "path": "layers\\frozen_standardization/vars/0",
+        "shape": [
+          9
+        ],
+        "nonzero": 0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      {
+        "path": "layers\\frozen_standardization/vars/1",
+        "shape": [
+          9
+        ],
+        "nonzero": 9,
+        "minimum": 1.0,
+        "maximum": 1.0
+      },
+      {
+        "path": "layers\\frozen_standardization_1/vars/0",
+        "shape": [
+          6
+        ],
+        "nonzero": 0,
+        "minimum": 0.0,
+        "maximum": 0.0
+      },
+      {
+        "path": "layers\\frozen_standardization_1/vars/1",
+        "shape": [
+          6
+        ],
+        "nonzero": 6,
+        "minimum": 1.0,
+        "maximum": 1.0
+      }
+    ],
+    "all_control_connections_zero": true
+  },
+  "model_files": [
+    "OutputChange\\iochanged_9ms\\untrained.keras",
+    "OutputChange\\prepared_9ms\\original_frozen.keras",
+    "OutputChange\\prepared_9ms\\original_frozen_features.keras"
+  ],
+  "training_reports": [],
+  "runtime_versions": {
+    "tensorflow": null,
+    "tf-keras": null,
+    "h5py": "3.14.0"
+  },
+  "source_files_unchanged": true,
+  "future_scope": "fixed-condition supervised transfer using frozen coordinate-to-flow backbone; needs physical labels and independent validation",
+  "new_training_steps": 0,
+  "command": "python -m optimization_control.maddpg_wind_farm.audit_handover --package <delivery-root> --output <new-directory>"
+}

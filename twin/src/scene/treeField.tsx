@@ -6,6 +6,7 @@ import { terrainSurfaceY, treeAccept, TREE_SPAN_M, mulberry32 } from './terrainU
 import { skyState } from './lightState'
 import { windAt } from '../data/farmSim'
 import { useSim } from '../state/simStore'
+import { phaseT } from './freeze.ts'
 
 // ============================================================
 // R36 · 远岸森林（coastal_3d_v2 vegetation.ts 的本仓口径）
@@ -297,7 +298,7 @@ export default function TreeField() {
 
   useFrame((state) => {
     const u = set.mat.uniforms as Record<string, { value: unknown }>
-    ;(u.uTime as { value: number }).value = state.clock.elapsedTime
+    ;(u.uTime as { value: number }).value = phaseT(state.clock.elapsedTime)
     ;(u.uDayF as { value: number }).value = skyState.dayF
     ;(u.uSunDir as { value: THREE.Vector3 }).value.copy(skyState.sunDir)
     ;(u.uMoonDir as { value: THREE.Vector3 }).value.copy(skyState.moonDir)

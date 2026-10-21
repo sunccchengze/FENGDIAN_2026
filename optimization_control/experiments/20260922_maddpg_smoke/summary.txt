@@ -1,0 +1,10 @@
+source=coupled_integration_mock
+steps=2048
+episodes=16
+updates=897
+resume_from=None
+checkpoint=.\optimization_control\experiments\20260922_maddpg_smoke\checkpoint.pth
+Integration training is not evidence of physical validity or algorithm superiority.
+power_semantics=uncalibrated_steady_model_power_w
+Command: python -m optimization_control.maddpg_wind_farm.workflow train --output optimization_control/experiments/20260922_maddpg_smoke
+Validation: 63 optimization/multi-agent tests + 7 PPO regression tests passed.

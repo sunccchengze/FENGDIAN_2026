@@ -437,6 +437,7 @@ function buildMerged(): Merged {
 import { getFarmFrame } from './frameBus'
 import { useSim } from '../state/simStore'
 import { skyState } from './lightState'
+import { phaseT, FREEZE } from './freeze.ts'
 
 // ---------------------------------------------------------------------------
 // 单个机组
@@ -570,8 +571,9 @@ export default function HoloTurbine({ idx, x, z, y, servo }: {
   const _sProj = useMemo(() => new THREE.Vector3(), [])
   const _sDir = useMemo(() => new THREE.Vector3(), [])
 
-  useFrame((state, dt) => {
-    const t = state.clock.elapsedTime
+  useFrame((state, dtRaw) => {
+    const dt = FREEZE ? 0 : dtRaw // R42 freeze：转子旋转停摆
+    const t = phaseT(state.clock.elapsedTime)
     assets.shell.uniforms.uTime.value = t
     assets.core.color.copy(selected ? GOLD_CORE : HOLO_PURE)
     assets.halo.color.copy(selected ? GOLD_HALO : HOLO_GLOW)

@@ -1,4 +1,4 @@
-import { Component, Suspense, useState, type ReactNode } from 'react'
+import { Component, Suspense, useState, type ReactNode, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
@@ -24,6 +24,8 @@ import Hud from './hud/Hud'
 import AudioField from './audio/AudioField'
 import GrassField from './scene/grassField'
 import { useSim } from './state/simStore'
+import { FREEZE } from './scene/freeze.ts'
+import DemoPanel from './demo/DemoPanel.tsx'
 
 // ============================================================================
 // 装配壳（v3）
@@ -65,6 +67,10 @@ if (typeof window !== 'undefined' && /^(localhost|127\.0\.0\.1)$/.test(window.lo
 }
 
 export default function App() {
+  // R42 freeze=1 取证模式：CSS 动画全停（配合 JS 相位闸，见 freeze.ts）
+  useEffect(() => {
+    if (FREEZE) document.body.dataset.freeze = '1'
+  }, [])
   const quality = useSim((s) => s.quality)
   const setFatal = useSim((s) => s.setFatal)
   const fatal = useSim((s) => s.fatal)
@@ -181,6 +187,8 @@ export default function App() {
       <Hud />
       {/* T9 · 声场驱动层（Canvas 之外，rAF + Web Audio 自有时钟：软渲染掉帧不影响声音） */}
       <AudioField />
+      {/* R44 · 9.19 §二 七步演示面板（?demo=1；建议配 ?layout=1x3） */}
+      {new URLSearchParams(window.location.search).has('demo') && <DemoPanel />}
     </>
   )
 }

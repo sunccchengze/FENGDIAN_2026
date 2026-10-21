@@ -21,6 +21,7 @@
 // ============================================================================
 import * as THREE from 'three'
 import { FARM, FARM_CENTER } from './terrainUtil.ts'
+import { unitOf } from './layouts.ts'
 
 // —— OrbitControls 约束（App.tsx 直接引用，禁止在组件里另写魔法数）——
 /** 最小 Lambert 距离：近摄特写下限；全部热键落地距离必须 ≥ 此值 + 5m 裕度 */
@@ -75,26 +76,26 @@ function hotTarget(i: number, height: number): THREE.Vector3 {
 
 export interface CamHotkey { pos: THREE.Vector3; target: THREE.Vector3 }
 
-export const CAM_HOTKEYS: readonly CamHotkey[] = [
-  // 1: T01 右前方高处俯拍（沿用）
-  { pos: hotPos(0, 360, 160, HUB_Y + 260), target: hotTarget(0, HUB_Y) },
-  // 2: T02 正前方高处俯拍（沿用）
-  { pos: hotPos(1, 380, 0, HUB_Y + 270), target: hotTarget(1, HUB_Y) },
-  // 3: T03 左前方高处俯拍（沿用）
-  { pos: hotPos(2, 360, -160, HUB_Y + 260), target: hotTarget(2, HUB_Y) },
-  // 4: T04 右前方近距离平视（重设计：104m→172m，转子全框）
-  { pos: hotPos(3, 150, 84, HUB_Y + 12), target: hotTarget(3, HUB_Y) },
-  // 5: T05 正前方中距离平视（沿用）
-  { pos: hotPos(4, 170, 0, HUB_Y + 22), target: hotTarget(4, HUB_Y) },
-  // 6: T06 左前方远距离平视（沿用）
-  { pos: hotPos(5, 320, -120, HUB_Y + 20), target: hotTarget(5, HUB_Y) },
-  // 7: T07 右前方低处仰拍（重设计：83m/y8 → ~200m/y14，注视塔身 75m）
-  { pos: hotPos(6, 168, 108, 14), target: hotTarget(6, 75) },
-  // 8: T08 中前方低处仰拍（重设计：100m/y8 → ~210m/y14，注视塔身 75m）
-  { pos: hotPos(7, 210, 0, 14), target: hotTarget(7, 75) },
-  // 9: T09 左前方低处仰拍（重设计：93m/y8 → ~198m/y14，注视塔身 75m）
-  { pos: hotPos(8, 170, -102, 14), target: hotTarget(8, 75) },
+// R42（round42 §0.1）：机位表从「写死 T01–T09」改为「3 取景语法 × 3 槽位」，
+// 机组下标由 layouts.unitOf(i) 派生：
+//   · 3×3：i 本身（T01–T09 各一个机位，与旧表逐位一致，selftest 有回归锁）；
+//   · 1×3：i % 3（三机各享 高俯/平视/低仰 三个机位，上→下 = 上游→下游）。
+// 语法 = 机位相对塔的方向与海拔；槽位 = 右/中/左 三个方位变体。
+const GRAMMAR: Array<{ th: number; slots: Array<{ along: number; aside: number; h: number }> }> = [
+  // 语法一 · 高处俯拍（1/2/3）：轮毂上空 +260~270m，距塔 ~390-470m（沿用）
+  { th: HUB_Y, slots: [{ along: 360, aside: 160, h: HUB_Y + 260 }, { along: 380, aside: 0, h: HUB_Y + 270 }, { along: 360, aside: -160, h: HUB_Y + 260 }] },
+  // 语法二 · 平视（4/5/6）：4 = 右前方近距离（~172m 转子全框）、5 = 正前方中距离、6 = 左前方远距离
+  { th: HUB_Y, slots: [{ along: 150, aside: 84, h: HUB_Y + 12 }, { along: 170, aside: 0, h: HUB_Y + 22 }, { along: 320, aside: -120, h: HUB_Y + 20 }] },
+  // 语法三 · 低处仰拍（7/8/9）：机位海拔 14m，距塔 ~200-220m，注视塔身 75m（全塔 + 转子同框）
+  { th: 75, slots: [{ along: 168, aside: 108, h: 14 }, { along: 210, aside: 0, h: 14 }, { along: 170, aside: -102, h: 14 }] },
 ]
+export const CAM_HOTKEYS: readonly CamHotkey[] = GRAMMAR.flatMap((g, gi) =>
+  g.slots.map((s, si) => {
+    const i = gi * 3 + si
+    const u = unitOf(i)
+    return { pos: hotPos(u, s.along, s.aside, s.h), target: hotTarget(u, g.th) }
+  }),
+)
 
 // ---------------------------------------------------------------------------
 // 纯函数诊断：机位几何 + 取景拟合（selftest 与分析脚本共用，无 React 依赖）
@@ -130,7 +131,7 @@ export function diagnoseHotkey(
   const hubAboveBase = scene.hubAboveBase ?? 90
   const rotorR = scene.rotorR ?? 63
   const aspect = scene.aspect ?? 16 / 9
-  const u = FARM[i]
+  const u = FARM[unitOf(i)] // R42：1×3 下热键 i 对应机组 i%3（3×3 时 = i，行为不变）
   const gy = scene.baseY
   const { pos, target } = CAM_HOTKEYS[i]
   const fwd = target.clone().sub(pos)

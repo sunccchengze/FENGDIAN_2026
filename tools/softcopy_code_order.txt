@@ -1,0 +1,72 @@
+# 软著源代码 60 页文档 —— 文件顺序（程序顺序）
+# 规则：前 30 页（前 1500 非空行）+ 后 30 页（后 1500 非空行）提交；
+#       FLORIS 派生文件（gch.ts / florisTable.ts / florisData.ts）必须全部落在中间不提交段；
+#       末行 = 程序结束（第 60 页为模块结束页）→ 最后一个文件必须是 selftest.mts。
+# 排序策略（round45 §3.1）：原创占比最高的入口/HUD/演示层在前，验证/数据层在后。
+
+# ── 入口与平台壳 ──
+twin/src/main.tsx
+twin/src/App.tsx
+twin/src/scene/layouts.ts
+twin/src/scene/freeze.ts
+
+# ── HUD 与七步演示（原创核心功能；DemoPanel 紧跟 HUD 以落入前 30 页） ──
+twin/src/hud/Hud.tsx
+twin/src/demo/DemoPanel.tsx
+twin/src/demo/demoData.ts
+twin/src/demo/charts.tsx
+
+# ── 3D 场景（原创渲染体系） ──
+twin/src/scene/HoloTurbine.tsx
+twin/src/scene/CameraRig.tsx
+twin/src/scene/hotkeys.ts
+twin/src/scene/WorldTerrain.tsx
+twin/src/scene/grassField.tsx
+twin/src/scene/grassTile.ts
+twin/src/scene/terrainUtil.ts
+twin/src/scene/treeField.tsx
+twin/src/scene/AirflowField.tsx
+twin/src/scene/CableNetwork.tsx
+twin/src/scene/turbine/geometry.ts
+twin/src/scene/TurbineField.tsx
+twin/src/scene/SkyAurora.tsx
+twin/src/scene/WindVeil.tsx
+twin/src/scene/SparkleGround.tsx
+twin/src/scene/NightPulse.tsx
+twin/src/scene/Substation.tsx
+twin/src/scene/Callouts.tsx
+twin/src/scene/Effects.tsx
+twin/src/scene/PerfGovernor.tsx
+twin/src/scene/LightRig.tsx
+twin/src/scene/skyTexture.ts
+twin/src/scene/introProfile.ts
+twin/src/scene/cameraBus.ts
+twin/src/scene/lightState.ts
+twin/src/scene/frameBus.ts
+twin/src/scene/EnvSetup.tsx
+
+# ── 状态与音频（原创） ──
+twin/src/state/simStore.ts
+twin/src/audio/audioEngine.ts
+twin/src/audio/audioModel.ts
+twin/src/audio/AudioField.tsx
+
+# ── 物理内核：FLORIS 派生文件集中于此段（中间不提交段） ──
+twin/src/core/physics/gch.ts
+twin/src/core/physics/florisTable.ts
+twin/src/core/physics/evalFarm.ts
+twin/src/core/control/yawDrive.ts
+twin/src/data/florisData.ts
+
+# ── 数据与仿真（原创；靠后文件自然进入后 30 页） ──
+twin/src/data/farmSim.ts
+twin/src/data/turbinePhysics.ts
+twin/src/data/telemetry.ts
+twin/src/data/anomaly.ts
+twin/src/data/paths.ts
+twin/src/data/rng.ts
+twin/src/data/debug.ts
+twin/src/data/oracle/florisGchOracle.ts
+
+# ── 验证体系（原创；末文件 = 程序结束页） ──
+twin/scripts/selftest.mts

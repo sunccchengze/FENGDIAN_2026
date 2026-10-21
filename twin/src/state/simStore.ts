@@ -1,6 +1,7 @@
 /* oxlint-disable react/globals -- startSimClock 是模块级外部时钟驱动，非组件内可变全局（docs/08 D2） */
 import { create } from 'zustand'
 import { FARM, SERVOS } from '../scene/terrainUtil'
+import { FREEZE } from '../scene/freeze.ts'
 import { optimizeYaw, farmFrame, FARM_RATED_MW, N_UNITS, type FarmFrame } from '../data/farmSim'
 import { generateAnomalyPlan, applyAnomalyToFrame, type AnomalyPlan } from '../data/anomaly'
 import { createYawBank, stepYawBank, bankActual, type YawBank } from '../core/control/yawDrive'
@@ -22,17 +23,17 @@ export interface SimState {
   togglePlay: () => void
   seek: (h: number) => void
 
-  // 9 机偏航【指令】Δψ（滑杆/寻优下发；0° = 对风。量程 ±30°）
+  // 全场偏航【指令】Δψ（滑杆/寻优下发；0° = 对风。量程 ±30°；长度 = N_UNITS，R41-A 派生）
   unitYaw: number[]
   setUnitYaw: (i: number, v: number) => void
-  // 9 机偏航【实际】Δψ（P2 执行器：0.3°/s 速率限制 + ±5°/±3° 死区滞环 + 1.5s 指令滤波）
+  // 全场偏航【实际】Δψ（P2 执行器：0.3°/s 速率限制 + ±5°/±3° 死区滞环 + 1.5s 指令滤波）
   // —— 物理内核 / 三维机头 / 尾流偏折 / HUD 读数全部读 actYaw，unitYaw 只是指令。
   actYaw: number[]
   /** 偏航执行器组（运行时单例；startSimClock 每 tick 推进） */
   yawBank: YawBank
 
   // 需求功率闭环（研究内容③：输入功率 → 输出各机偏航角/限功率）
-  targetMW: number // 45 = 不限
+  targetMW: number // = FARM_RATED_MW 即不限（R41-A 派生）
   setTargetMW: (v: number) => void
 
   // 寻优结果回显（HUD 状态行）
@@ -86,7 +87,7 @@ export interface SimState {
 }
 
 const ZERO_YAW = new Array<number>(N_UNITS).fill(0)
-/** 偏航执行器组：全场 9 机，指令 0°、实际 0°（P2） */
+/** 偏航执行器组：全场 N_UNITS 机，指令 0°、实际 0°（P2；R41-A 派生） */
 const YAW_BANK = createYawBank(N_UNITS, ZERO_YAW)
 const randomAnomalyGap = () => 2 + Math.floor(Math.random() * 4) // 2~5 天
 const initialGap = randomAnomalyGap()
@@ -110,8 +111,8 @@ export const useSim = create<SimState>((set, get) => ({
       return { unitYaw }
     }),
 
-  targetMW: 45,
-  setTargetMW: (v) => set({ targetMW: Math.max(4, Math.min(45, v)) }),
+  targetMW: FARM_RATED_MW,
+  setTargetMW: (v) => set({ targetMW: Math.max(4, Math.min(FARM_RATED_MW, v)) }), // R41-A：量程派生（3×3=15MW×3? 不：45/15 MW）
 
   optimizeNote: null,
   optimizeStamp: 0,
@@ -255,6 +256,7 @@ let clockStarted = false
 export function startSimClock() {
   if (clockStarted) return
   clockStarted = true
+  if (FREEZE) return // R42 freeze：取证模式不进仿真时钟（tHours 定格 ?t=，偏航执行器不动）
   let last = performance.now()
   setInterval(() => {
     const now = performance.now()

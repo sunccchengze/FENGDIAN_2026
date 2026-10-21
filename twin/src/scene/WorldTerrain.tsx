@@ -6,6 +6,7 @@ import { terrainSurfaceY, landMask, coastT, shoreSigned, FARM_CENTER, bakeHeight
 import { skyState } from './lightState'
 import { windAt } from '../data/farmSim'
 import { useSim } from '../state/simStore'
+import { phaseT } from './freeze.ts'
 
 // ============================================================
 // 海洋地面（第 32 轮 A 重构 v4：六类生物群系 + 岩雪山体 + 海面克制化）
@@ -628,8 +629,8 @@ export default function WorldTerrain() {
       uFogColor: { value: THREE.Color }
       uFogDensity: { value: number }
     }
-    uu.uTime.value = state.clock.elapsedTime
-    const t = state.clock.elapsedTime
+    uu.uTime.value = phaseT(state.clock.elapsedTime)
+    const t = phaseT(state.clock.elapsedTime)
     const dayF = skyState.dayF
     const night = 1 - dayF
     const breathe = 0.5 + 0.5 * Math.sin(t * 0.55)

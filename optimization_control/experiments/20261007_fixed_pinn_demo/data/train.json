@@ -1,0 +1,76 @@
+{
+  "seed": 42,
+  "source": "coupled_integration_mock",
+  "physical_validation": false,
+  "geometry": {
+    "positions_m": [
+      [
+        0.0,
+        0.0,
+        90.0
+      ],
+      [
+        378.0,
+        0.0,
+        90.0
+      ],
+      [
+        756.0,
+        0.0,
+        90.0
+      ]
+    ],
+    "source": "demonstration_assumption_equal_spacing_not_team_geometry"
+  },
+  "fixed_condition": {
+    "speed_m_s": 9.0,
+    "direction_rad": 0.0,
+    "turbulence_intensity": 0.1,
+    "source": "demonstration_assumption_not_original_model_calibration"
+  },
+  "controls": [
+    "yaw1",
+    "pitch1",
+    "rotor_speed1",
+    "yaw2",
+    "pitch2",
+    "rotor_speed2",
+    "yaw3",
+    "pitch3",
+    "rotor_speed3"
+  ],
+  "outputs": [
+    "P1",
+    "P2",
+    "P3",
+    "Ueff1",
+    "Ueff2",
+    "Ueff3"
+  ],
+  "units": [
+    "deg",
+    "deg",
+    "rpm",
+    "deg",
+    "deg",
+    "rpm",
+    "deg",
+    "deg",
+    "rpm",
+    "W",
+    "W",
+    "W",
+    "m/s",
+    "m/s",
+    "m/s"
+  ],
+  "split_hashes": {
+    "train": "3c1a23ad4b6b56e2551d04433e73f44a9870d4d928d6b25b0ae6a9c411cbb624",
+    "validation": "2bcbe6aa39c365ef9fe5abc54eb525fc5d1b71711467f52886b5398839161c5e",
+    "test": "107850e36e7d8fe6ead8b5be537875bb8982082860ee6c6e9eaf96807ee59a0d"
+  },
+  "note": "Teacher has fixed index coupling; it does not resolve geometry, direction, TI or real wake steering.",
+  "split": "train",
+  "rows": 2048,
+  "csv_sha256": "df9b9fc72ab4f5936ee1eae1f2c8d23a36bae88fba5a5d328dc2987f96191d9b"
+}

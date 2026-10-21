@@ -1,0 +1,23 @@
+Synthetic single-point wind; assumptions, not measured site data or IEC full-field certification.
+TI requested is infinite-band stationary background; realized finite-record TI is not forced.
+No clipping or per-record renormalization; envelope rejection conditions the distribution.
+Each replay uses identical stored wind and action-independent reference.
+P baseline changes pitch only; PPO controls pitch and speed reference: not equal-authority algorithm comparison.
+Checkpoint smoke is not a trained-performance result.
+[
+  {
+    "scenario": "stationary",
+    "ensemble_psd_ratio": 0.9956672614677262,
+    "ensemble_mean_square_ratio": 0.9993775669417994
+  },
+  {
+    "scenario": "ramp",
+    "ensemble_psd_ratio": 0.9842744248651805,
+    "ensemble_mean_square_ratio": 0.9915345752013814
+  },
+  {
+    "scenario": "gust",
+    "ensemble_psd_ratio": 0.9911866398758266,
+    "ensemble_mean_square_ratio": 1.0016088658532478
+  }
+]

@@ -203,8 +203,9 @@ export function turbineAcoustic(
 }
 
 /**
- * 声部裁决：9 机全上 PannerNode 会让节点数与 CPU 都翻三倍，
+ * 声部裁决：3×3 九机全上 PannerNode 会让节点数与 CPU 都翻三倍，
  * 实际可闻的永远只有最近几台 —— 按 gain 取前 N（其余归零，引擎淡出）。
+ * R42：上限 3 ≥ 1×3 场区机组数，三机全上（HRTF 方位更准）；3×3 裁到最近 3 台。
  */
 export function selectTurbines(
   units: Array<{ x: number; z: number; rpm: number; uEff: number }>,

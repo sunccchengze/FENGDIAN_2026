@@ -1,0 +1,235 @@
+seed: 42
+protocol:
+  version: fixed_pinn_curriculum_v1
+  seed: 42
+  source_experiment: optimization_control/experiments/20261007_fixed_pinn_demo_checked
+  runtime_site_packages: .venv/pinn_tf216
+  workers: 3
+  horizon: 128
+  single_steps: 16384
+  multi_steps: 32768
+  expansion_steps: 16384
+  eval_every: 2048
+  warmup_steps: 512
+  update_every: 2
+  noise_std:
+  - 0.05
+  - 0.15
+  - 0.08
+  noise_correlation_s:
+  - 10.0
+  - 3.0
+  - 5.0
+  noise_kind: white
+  noise_end_fraction: 0.2
+  run_ids:
+  - 0
+  - 1
+  - 2
+  single_targets_w:
+  - 2500000.0
+  - 3500000.0
+  - 4500000.0
+  multi_training_targets_w:
+  - 2500000.0
+  - 3000000.0
+  - 3500000.0
+  - 4000000.0
+  - 4500000.0
+  validation_targets_w:
+  - 2750000.0
+  - 3250000.0
+  - 3750000.0
+  - 4250000.0
+  test_targets_w:
+  - 2650000.0
+  - 3150000.0
+  - 3850000.0
+  - 4350000.0
+  test_initial_pitch_rad:
+  - 0.025
+  - 0.055
+  gate:
+    max_tail_rmse_w: 100000.0
+    min_endpoint_response_fraction: 0.8
+    max_final_over_best_validation_ratio: 1.25
+  selection_rule: lowest_validation_mean_rmse_including_initial
+  test_rule: freeze_completed_stages_and_baselines_before_test
+  scope: fixed_condition_synthetic_transfer_model_only
+base_config:
+  schema_version: 1
+  seed: 42
+  purpose: synthetic_fixed_condition_integration_only
+  plant:
+    kind: pinn
+    source: teammate_backbone_synthetic_demo
+    power_semantics: synthetic_mock_power_w_not_physical_validation
+    turbine_ids:
+    - T01
+    - T02
+    - T03
+    rated_power_w:
+    - 5000000
+    - 5000000
+    - 5000000
+    layout:
+      kind: fixed_collinear_equal_spacing
+      spacing_m: 378.0
+      source: demonstration_assumption_equal_spacing_not_team_geometry
+    features:
+    - ambient_wind_speed_m_s
+    - ambient_wind_direction_rad
+    - turbulence_intensity
+    - gamma_1
+    - gamma_2
+    - gamma_3
+    - beta_1
+    - beta_2
+    - beta_3
+    - omega_1
+    - omega_2
+    - omega_3
+    bounds:
+      ambient_wind_speed_m_s:
+      - 3.0
+      - 20.0
+      ambient_wind_direction_rad:
+      - 0.0
+      - 6.283186
+      turbulence_intensity:
+      - 0.0
+      - 0.3
+      gamma_1:
+      - -0.35000099999999995
+      - 0.35000099999999995
+      gamma_2:
+      - -0.35000099999999995
+      - 0.35000099999999995
+      gamma_3:
+      - -0.35000099999999995
+      - 0.35000099999999995
+      beta_1:
+      - -1.0e-06
+      - 0.250001
+      beta_2:
+      - -1.0e-06
+      - 0.250001
+      beta_3:
+      - -1.0e-06
+      - 0.250001
+      omega_1:
+      - 0.599999
+      - 1.2670009999999998
+      omega_2:
+      - 0.599999
+      - 1.2670009999999998
+      omega_3:
+      - 0.599999
+      - 1.2670009999999998
+    model_version: synthetic-demo-c2fd64efd9b4
+    factory: optimization_control.environments.teammate_pinn_backend:create_demo_predictor
+    backend:
+      run_dir: optimization_control/experiments/20261007_fixed_pinn_demo_checked/model
+      script: pinn/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_io.py
+      allow_synthetic_demo: true
+      fixed_condition:
+        direction_rad: 0.0
+        turbulence_intensity: 0.1
+      yaw_convention: misalignment_same_sign_as_gamma
+  environment:
+    parameter_source:
+      kind: assumption
+      reference: configs/fixed_pinn_demo.yaml
+      note: fixed-condition synthetic integration assumptions
+    dt_s: 1.0
+    yaw_frame: nacelle_heading
+    heading_bounds_rad:
+    - -314.1592653589793
+    - 314.1592653589793
+    control_mask:
+    - 1
+    - 1
+    - 1
+    horizon: 128
+    wind_scale_m_s: 25.0
+    action_low:
+    - -0.35
+    - 0.0
+    - 0.6
+    action_high:
+    - 0.35
+    - 0.25
+    - 1.267
+    initial_operating_point:
+    - 0.0
+    - 0.04
+    - 0.9
+    rate_limits:
+    - 0.005
+    - 0.00872664626
+    - 0.1
+    time_constants_s:
+    - 5.0
+    - 2.0
+    - 5.0
+    target_w: 3000000.0
+    wind_base_m_s: 9.0
+    wind_amplitude_m_s: 0.0
+    wind_period_steps: 128
+    wind_noise_std_m_s: 0.0
+    wind_direction_rad: 0.0
+    turbulence_intensity: 0.1
+    action_change_weight: 0.001
+    reward_scale: 100.0
+  algorithm:
+    hidden: 64
+    actor_lr: 0.0001
+    critic_lr: 0.001
+    gamma: 0.99
+    tau: 0.01
+    batch_size: 64
+    capacity: 20000
+    grad_clip: 1.0
+    actor_initial_action:
+    - 0.0
+    - -0.6799999999999999
+    - -0.10044977511244357
+  training:
+    total_steps: 2048
+    warmup_steps: 256
+    update_every: 2
+    noise_std: 0.15
+    episode_target_fractions:
+    - 0.16666666666666666
+    - 0.23333333333333334
+    - 0.3
+  evaluation:
+    seed_offset: 10000
+    scenarios:
+    - name: fixed9_target_2500000w
+      wind_base_m_s: 9.0
+      target_w: 2500000.0
+    - name: fixed9_target_3500000w
+      wind_base_m_s: 9.0
+      target_w: 3500000.0
+    - name: fixed9_target_4500000w
+      wind_base_m_s: 9.0
+      target_w: 4500000.0
+  baselines:
+    three_channel: true
+    yaw_offset_rad: 0.0
+    speed_per_wind_rad_m: 0.11114035087719298
+    pitch_bias_rad: 0.04
+    kp: 1.5
+    ki: 0.08
+    antiwindup_gain: 0.2
+    integral_limit_rad: 0.3
+source_hashes:
+  pinn/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_io.py: ae841a99bc1d27ef64d6e061e7457fc171d168f530017e706abf61984af26c8c
+  pinn/PINNs_multi_turbine_wake_simulation-outputchange/prepare_pinn_outputchange.py: 768af5bc0b8e0b236943bbcc50d93f74600596d0a241a484ccc8ecd88845b832
+  pinn/PINNs_multi_turbine_wake_simulation-outputchange/OutputChange/project_config.json: 2aecb320606021ba089fd0440fdf9aadc651db0f594bb7e757d12b7b4b310a6d
+  pinn/PINNs_multi_turbine_wake_simulation-outputchange/OutputChange/iochanged_9ms/build_report.json: 0c4ffc38228777435d8735cfea36d1c2ac18328b1b4a69573126e8a4805823da
+  pinn/PINNs_multi_turbine_wake_simulation-outputchange/OutputChange/iochanged_9ms/untrained.keras: 430742626cd4dc7cfc6f11f6f923db621d4789010a4a7f8456e959b40f690b12
+  pinn/PINNs_multi_turbine_wake_simulation-outputchange/OutputChange/prepared_9ms/original_frozen.keras: 41ce925edb83ae0e38d73ebdc1c19bdfa21974ebb3800d7674a2c960a7aae303
+  pinn/PINNs_multi_turbine_wake_simulation-outputchange/OutputChange/prepared_9ms/original_frozen_features.keras: f87b9f483510c7490bb6a7449a3645ee0819c3ae5c7751513704dccfc2de86fe
+  optimization_control/experiments/20261007_fixed_pinn_demo_checked/model/trained.keras: c2fd64efd9b41f73cc3e646bb223999abb63740784e84d8b6d6df693581a7e53

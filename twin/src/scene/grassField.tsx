@@ -12,6 +12,7 @@ import {
   type Blade,
 } from './grassTile'
 import { landMask, biomeWeights, terrainSurfaceY, mulberry32 } from './terrainUtil'
+import { phaseT } from './freeze.ts'
 
 // ============================================================
 // P1 · T8 草地系统（R40 正式挂载版：相机跟随分块 + 视距裁决）
@@ -353,7 +354,7 @@ export default function GrassField() {
     const dt = Math.min(0.1, Math.max(0.001, delta))
     // —— 共享 uniform：时间 / 风 / 昼夜 / 雾 ——
     const sh = rig.shared
-    sh.uTime.value = state.clock.elapsedTime
+    sh.uTime.value = phaseT(state.clock.elapsedTime)
     sh.uDayF.value = skyState.dayF
     const w = windAt(useSim.getState().tHours)
     const th = (w.fromDeg * Math.PI) / 180
@@ -470,7 +471,7 @@ export default function GrassField() {
     // —— ④ 近场密草贴块（相机跟随，双缓冲）——
     const pat = rig.pattern
     const patches = rig.patches
-    const now = state.clock.elapsedTime
+    const now = phaseT(state.clock.elapsedTime)
     const groundY = terrainSurfaceY(cam.x, cam.z)
     const onLand = landMask(cam.x, cam.z) >= 0.1
     const altOk = cam.y - groundY < PATCH_MAX_ALT

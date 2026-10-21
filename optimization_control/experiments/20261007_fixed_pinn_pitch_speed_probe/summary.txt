@@ -1,0 +1,101 @@
+{
+  "seed": 42,
+  "gates": [
+    {
+      "stage": "multi_pitch_speed",
+      "passed": false,
+      "jobs": 3
+    }
+  ],
+  "planned_stages": [
+    "multi_pitch_speed"
+  ],
+  "stages_completed": 1,
+  "all_stages_passed": false,
+  "source_files_unchanged": true,
+  "test_used_for_selection": false,
+  "aggregate": [
+    {
+      "stage": "multi_pitch_speed",
+      "comparison": "same_permissions",
+      "controller": "initial",
+      "runs": 3,
+      "mean_rmse_w": 933476.5126794758,
+      "std_rmse_w": 147.8487803895639,
+      "worst_tail_rmse_w": 1832844.9375973544,
+      "mean_q_return_gap_abs": 43.63608874146316
+    },
+    {
+      "stage": "multi_pitch_speed",
+      "comparison": "same_permissions",
+      "controller": "selected",
+      "runs": 3,
+      "mean_rmse_w": 172889.30399123637,
+      "std_rmse_w": 5330.95595187936,
+      "worst_tail_rmse_w": 170650.44129566234,
+      "mean_q_return_gap_abs": 0.8042094593184848
+    },
+    {
+      "stage": "multi_pitch_speed",
+      "comparison": "same_permissions",
+      "controller": "final",
+      "runs": 3,
+      "mean_rmse_w": 174868.56215380714,
+      "std_rmse_w": 8682.040628467345,
+      "worst_tail_rmse_w": 170650.44129566234,
+      "mean_q_return_gap_abs": 0.8266950685304666
+    },
+    {
+      "stage": "multi_pitch_speed",
+      "comparison": "same_permissions",
+      "controller": "fixed",
+      "runs": 3,
+      "mean_rmse_w": 979384.5,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 2051088.0,
+      "mean_q_return_gap_abs": 0.0
+    },
+    {
+      "stage": "multi_pitch_speed",
+      "comparison": "same_permissions",
+      "controller": "p",
+      "runs": 3,
+      "mean_rmse_w": 433021.3508512378,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 784576.75,
+      "mean_q_return_gap_abs": 0.0
+    },
+    {
+      "stage": "multi_pitch_speed",
+      "comparison": "same_permissions",
+      "controller": "pi",
+      "runs": 3,
+      "mean_rmse_w": 270074.9585961468,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 90355.62823867836,
+      "mean_q_return_gap_abs": 0.0
+    },
+    {
+      "stage": "multi_pitch_speed",
+      "comparison": "complete_traditional_scheme",
+      "controller": "p",
+      "runs": 3,
+      "mean_rmse_w": 433021.3508512378,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 784576.75,
+      "mean_q_return_gap_abs": 0.0
+    },
+    {
+      "stage": "multi_pitch_speed",
+      "comparison": "complete_traditional_scheme",
+      "controller": "pi",
+      "runs": 3,
+      "mean_rmse_w": 270074.9585961468,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 90355.62823867836,
+      "mean_q_return_gap_abs": 0.0
+    }
+  ],
+  "final_stable_runs": 3,
+  "jobs": 3
+}

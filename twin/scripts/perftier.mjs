@@ -18,23 +18,26 @@ const base = process.argv[2] || 'http://127.0.0.1:4173/'
 const w = Number(process.argv[3] || 1280)
 const h = Number(process.argv[4] || 720)
 const tiers = (process.argv[5] || 'high,medium,low').split(',')
+const EXTRA = process.argv[6] || '' // R42：附加 query（如 layout=1x3）
 // 固定机位 + 锁时刻：与 docs/research/round36 的对拍口径一致，跨轮可比
 const CAM = 'cam=60,22,990&t=15'
 const FRAMES = 30
 
-const browser = await puppeteer.launch({
-  executablePath: await chromium.executablePath(),
-  env: { ...process.env, LD_LIBRARY_PATH: repoLibs + ':/tmp/nsslibs' },
-  args: [...chromium.args, '--no-sandbox', '--disable-gpu-sandbox', '--enable-unsafe-swiftshader'],
-  defaultViewport: { width: w, height: h, deviceScaleFactor: 1 },
-  headless: 'shell',
-})
-const out = {}
-for (const q of tiers) {
-  const page = await browser.newPage()
-  const errs = []
+// R42：每档单独起浏览器 —— 单浏览器连开 3 页在沙箱软渲染下会累积内存崩
+// （ProtocolError/detached Frame），分进程隔离最稳。
+async function runTier(q) {
+  const browser = await puppeteer.launch({
+    executablePath: await chromium.executablePath(),
+    env: { ...process.env, LD_LIBRARY_PATH: repoLibs + ':/tmp/nsslibs' },
+    args: [...chromium.args, '--no-sandbox', '--disable-gpu-sandbox', '--enable-unsafe-swiftshader'],
+    defaultViewport: { width: w, height: h, deviceScaleFactor: 1 },
+    headless: 'shell',
+  })
+  try {
+    const page = await browser.newPage()
+    const errs = []
   page.on('pageerror', (e) => errs.push(String(e).slice(0, 160)))
-  await page.goto(`${base}?debug=1&q=${q}&${CAM}`, { waitUntil: 'load', timeout: 90000 })
+  await page.goto(`${base}?debug=1&q=${q}&${CAM}${EXTRA}`, { waitUntil: 'load', timeout: 90000 })
   await new Promise((r) => setTimeout(r, 22000))
   const stats = await page.evaluate(() => {
     const w = window
@@ -56,8 +59,15 @@ for (const q of tiers) {
     }
     requestAnimationFrame(tick)
   }), FRAMES)
-  out[q] = { stats, frameMs, pageErrors: errs.slice(0, 3) }
-  await page.close()
+    out[q] = { stats, frameMs, pageErrors: errs.slice(0, 3) }
+    await page.close()
+  } finally {
+    await browser.close()
+  }
+}
+const out = {}
+for (const q of tiers) {
+  await runTier(q)
+  console.error('tier', q, 'done')
 }
 console.log(JSON.stringify(out, null, 1))
-await browser.close()

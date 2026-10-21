@@ -1,0 +1,222 @@
+{
+  "version": "farm_benchmark_v1",
+  "seed": 42,
+  "cases": [
+    {
+      "id": "validation_fixed_0",
+      "split": "validation",
+      "family": "fixed",
+      "path": "validation_fixed_0.csv",
+      "csv_sha256": "e4943e0c33247d3a6083a328d3153c74ecb852d250ba4523a39a81b903e2080a",
+      "json_sha256": "e8c057977d1aea36f46e975a34f15d662c5d83a19a2679ae078975f9eb06c4b0",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_fixed_1",
+      "split": "validation",
+      "family": "fixed",
+      "path": "validation_fixed_1.csv",
+      "csv_sha256": "cabf9bb31d3387c8ef663a748936843dc31362db212d8cab081e80152190922d",
+      "json_sha256": "ac281507cde7c6e22c43718d737f1a25c142b30d69d6f6b89926147dd6f8eadf",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_stationary_0",
+      "split": "validation",
+      "family": "stationary",
+      "path": "validation_stationary_0.csv",
+      "csv_sha256": "24eb70c76c766ef88d4c3b996d0b6caa9b8a2f6945731db410c717e0a155e89b",
+      "json_sha256": "78fa1e55070355c6ef112ebfff6087224de05855bfdf7992a210b9fbf1a79e92",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_stationary_1",
+      "split": "validation",
+      "family": "stationary",
+      "path": "validation_stationary_1.csv",
+      "csv_sha256": "cb15029658979b33f8f601e0858a8923b4abcecee9ab6e34487f53e630cdfb23",
+      "json_sha256": "6f8761c14cc7c18fd9f390a76582499d927802e9c9e26e91a4ed4553d5665930",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_ramp_0",
+      "split": "validation",
+      "family": "ramp",
+      "path": "validation_ramp_0.csv",
+      "csv_sha256": "edf501144f49a6d593c04fad4a8d788d129a61a1b95ea7736a7d78874e17742c",
+      "json_sha256": "6bc77cab0d2c209c0cebfe9d4325a73f4a03fc8b10e6c9a6c59e4d1b59a762e7",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_ramp_1",
+      "split": "validation",
+      "family": "ramp",
+      "path": "validation_ramp_1.csv",
+      "csv_sha256": "0ef56fc60b0a61374b81f0dc35d92b507c35d0ee8bf9c15f81ff2a10dee3cdfb",
+      "json_sha256": "eab1cd3adcf9da382c1e41c0f490cbfe25a8c1f27ac5066ba877d922248f8394",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_gust_0",
+      "split": "validation",
+      "family": "gust",
+      "path": "validation_gust_0.csv",
+      "csv_sha256": "3e5d0a9e255889ed0ddbee7e77e93455ad2940ef6e287624d1176c70e7dace2b",
+      "json_sha256": "48eb574671ed06f44922a7c2b84a149a8e8f6589c4ac0979f5c457f5757d982d",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_gust_1",
+      "split": "validation",
+      "family": "gust",
+      "path": "validation_gust_1.csv",
+      "csv_sha256": "fb571fa013b237f15e9138901855bce3f687e34034e50c78a66359868d82d9ce",
+      "json_sha256": "6ec1d59cfe4653c0630816b754eaf61533754d706af6d269aab4759acf72aa8e",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_direction_0",
+      "split": "validation",
+      "family": "direction",
+      "path": "validation_direction_0.csv",
+      "csv_sha256": "8cb36062be35435a0d854999e13471b67152770d31d2f0eb2a3e62a96456d154",
+      "json_sha256": "847d2d7f4cdc3db4b8053181f5567a16603f0974b4367c07e15d69dd1a38b46a",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_direction_1",
+      "split": "validation",
+      "family": "direction",
+      "path": "validation_direction_1.csv",
+      "csv_sha256": "c19f7ee55128affbddf0e2b9374ce15c05f5a853331640f69fa787feb0bc6ee0",
+      "json_sha256": "6477d17b8f098c057f8079f5584f0adb855f4252c4f1f5ba5d25d154400df1d6",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "validation_shortfall_0",
+      "split": "validation",
+      "family": "shortfall",
+      "path": "validation_shortfall_0.csv",
+      "csv_sha256": "ba59a7ec377d620c562e4dfecfe4843a595cc113585dc079e488d94b37c2e849",
+      "json_sha256": "11362c125a09bf3373ef7800f6bc26db7f9a967fe6b36e12b8c1559a41b19170",
+      "target_w": 5000000.0
+    },
+    {
+      "id": "validation_shortfall_1",
+      "split": "validation",
+      "family": "shortfall",
+      "path": "validation_shortfall_1.csv",
+      "csv_sha256": "ba59a7ec377d620c562e4dfecfe4843a595cc113585dc079e488d94b37c2e849",
+      "json_sha256": "93c1f58ea26c53c287f7718040274774910c787dc814a75f47a516e942966061",
+      "target_w": 5000000.0
+    },
+    {
+      "id": "test_fixed_0",
+      "split": "test",
+      "family": "fixed",
+      "path": "test_fixed_0.csv",
+      "csv_sha256": "11463f9dff9899cb07ec3fec51c01b2173e402f1ee78ca6546e884f957ef7523",
+      "json_sha256": "fb1cdcb54d7bde54a3959eaf544317b0cfe17b636ed0fed5a05795dc4e790cb1",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_fixed_1",
+      "split": "test",
+      "family": "fixed",
+      "path": "test_fixed_1.csv",
+      "csv_sha256": "c6414c82cb6ff0d1ab1342029bc1c18078da4cafd48811209ea7917527c829ad",
+      "json_sha256": "c82b54b335af92e369672cd5f3168aa633f57be1da954e03a5f3322815006309",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_stationary_0",
+      "split": "test",
+      "family": "stationary",
+      "path": "test_stationary_0.csv",
+      "csv_sha256": "9d9bdd5af7c1f9b1bf960f3753789873a0d1c12da1fa0c5a87518873b3669c9c",
+      "json_sha256": "a89da9dafc58e64363ce8abe1c39149aa623ea22dd19be04ff7d3c3a227985a8",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_stationary_1",
+      "split": "test",
+      "family": "stationary",
+      "path": "test_stationary_1.csv",
+      "csv_sha256": "154abe61c94c0eff198fceaf57197eb08bc73484e9be8e02ff3169fc2c21479d",
+      "json_sha256": "30ecf7db9c62cef9e01858fbed0dcce08f013e97ebb60c11fa0c8b104dffd459",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_ramp_0",
+      "split": "test",
+      "family": "ramp",
+      "path": "test_ramp_0.csv",
+      "csv_sha256": "01fe05dd2d30be1c82dab41c25b96df8ecd5d514b3239e5b7e948ff13eab3b32",
+      "json_sha256": "7a17678b57064352bde302ebfa247b4b713a749ce29be7f30d013ea3088612e9",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_ramp_1",
+      "split": "test",
+      "family": "ramp",
+      "path": "test_ramp_1.csv",
+      "csv_sha256": "d83123ac37d2e1c2f03ff8c0767938997128cfedb5d69ae1a69befd2d969af52",
+      "json_sha256": "e3a882ddef5dae950d52e78420e865cce1f6e9fb02c67926464cabd61b0dcf37",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_gust_0",
+      "split": "test",
+      "family": "gust",
+      "path": "test_gust_0.csv",
+      "csv_sha256": "08a13d8e903030e939097c35506dd4ddc82a9c0ebeef3de92af68629ba65cd35",
+      "json_sha256": "15e9d259ed24b0debda97174e281705f7c5737d8bee393d906a71ce2727cebd1",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_gust_1",
+      "split": "test",
+      "family": "gust",
+      "path": "test_gust_1.csv",
+      "csv_sha256": "709db8d9d650b46605d434356a1c13dab3c2094185ab7e99dc5216fa99047b5b",
+      "json_sha256": "3b04f8a27ddf42347f630acb908842782fffac68e6d362c4f8d8c62813581acf",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_direction_0",
+      "split": "test",
+      "family": "direction",
+      "path": "test_direction_0.csv",
+      "csv_sha256": "328fd14cc310690b65682a55306352b985063c5a47cfd6d07be3f4d4867eb54b",
+      "json_sha256": "6a0eed4482ade48a0df0ccdbb5f0615d4aca5961b247772010d4f26ff8e8ad5a",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_direction_1",
+      "split": "test",
+      "family": "direction",
+      "path": "test_direction_1.csv",
+      "csv_sha256": "e69b3ae2ad523d9c4d1a313ca38575fefdd568b6da9cf11232ba4db684b3be8e",
+      "json_sha256": "a40e7cdbedc222a36c1fc79f0d8355c0cdb9f6071dd040bb05652cea07e40442",
+      "target_w": 3000000.0
+    },
+    {
+      "id": "test_shortfall_0",
+      "split": "test",
+      "family": "shortfall",
+      "path": "test_shortfall_0.csv",
+      "csv_sha256": "ba59a7ec377d620c562e4dfecfe4843a595cc113585dc079e488d94b37c2e849",
+      "json_sha256": "e5a5ba706bb55f26a1fc3dea4cbe43434caaf968ad3dc44bf5dc4502d86e0f79",
+      "target_w": 5000000.0
+    },
+    {
+      "id": "test_shortfall_1",
+      "split": "test",
+      "family": "shortfall",
+      "path": "test_shortfall_1.csv",
+      "csv_sha256": "ba59a7ec377d620c562e4dfecfe4843a595cc113585dc079e488d94b37c2e849",
+      "json_sha256": "05f04f1930fe053530e2880ea423a55e9acda271e0e7832091b1e6c94676fd66",
+      "target_w": 5000000.0
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+source=coupled_integration_mock
+steps=256
+episodes=8
+updates=113
+resume_from=optimization_control\experiments\20260922_maddpg_verification\partial\checkpoint.pth
+checkpoint=.\optimization_control\experiments\20260922_maddpg_verification\resumed\checkpoint.pth
+Integration training is not evidence of physical validity or algorithm superiority.

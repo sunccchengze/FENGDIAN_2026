@@ -8,15 +8,29 @@
 >
 > 迁移审计证明的是：除用户明确决定不迁的通用技能库拷贝外，前身仓库的文件、历史路径和提交已进入 `viz/`；它**不等于**外部技能仓、聊天记录、外部数据或其他项目生态内容自动进入本仓。迁移边界和未迁内容以 `docs/12` 为准。
 
+## 🚪 新接手？先花 30 分钟，按这个顺序读
+
+本仓文档多（根 README、两份 HANDOFF、`docs/` 14 篇编号文档、`materials/` 六个台账），**不要从任意一篇开始**。按 [`HANDOFF_NEXT.md`](HANDOFF_NEXT.md) §0 的路径读，30 分钟能掌握全貌：
+
+1. 本 README §项目入口 + §五人分工 + §PINN 线（5 分钟）
+2. [`docs/project/TIMELINE.md`](docs/project/TIMELINE.md) §0–§2 —— **什么时候发生了什么**（10 分钟）
+3. [`docs/project/WORKLIST.md`](docs/project/WORKLIST.md) §0–§2 —— **接下来谁干什么、卡在哪、过期几天**（10 分钟）
+4. [`HANDOFF_NEXT.md`](HANDOFF_NEXT.md) §1 现状快照 + 红线 + 九条门槛（5 分钟）
+
+三条导航原则：**时间 → TIMELINE；待办 → WORKLIST；本模块技术与红线 → HANDOFF_NEXT。** 其余文档都是这三者的分区明细或原始记录，不要把它们当入口。
+
 ## 项目入口
 
 | 入口 | 你会找到什么 |
 |---|---|
+| [`docs/project/TIMELINE.md`](docs/project/TIMELINE.md) | **唯一时间线主干**：六个阶段、按事件日期的主表、事件↔入库滞后对照、十一项已知缺口 |
+| [`docs/project/WORKLIST.md`](docs/project/WORKLIST.md) | **唯一待办来源**：按角色的待办/阻塞/过期天数/倒排节点；可视化四条工作流 |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | 五人分工、Issue/PR、审阅和提交规则 |
 | [`docs/14`](docs/14_协作治理与可复现研究工作台方案.md) | **当前治理基线**：技术取舍、证据链、MVP 和执行顺序 |
 | [`docs/`](docs/README.md) | 研究、决策、会议、证据、审计和模板导航 |
 | [`docs/evidence/`](docs/evidence/README.md) | 权威数字和可复现证据索引 |
 | [`materials/`](materials/README.md) | **按人归档**的材料与交付件（五个个人目录 + `集体/`）、答辩 / 申报材料和审核口径 |
+| [`optimization_control/`](optimization_control/WORK_INDEX.md) | **优化控制代码与实验**（洪祖名 2026-10-07 交付）：代理模型、PPO、随机入口、三机 MADDPG、统一传统基线、诊断与回放工具 |
 | [`HANDOFF_NEXT.md`](HANDOFF_NEXT.md) | 当前阶段开放项、红线和下一轮交接 |
 
 ## 五人分工
@@ -38,8 +52,9 @@
 | 目录 | 平台 | 状态 | 入口 |
 |---|---|---|---|
 | [`viz/`](viz/README.md) | **科研可视化平台**（15 页浅色瑞士网格科研台，FLORIS/POD/PPO 真值全量呈现） | **封板 v1.3-final**（2026-08-19），只修 bug/死链/数据错 | `cd viz && python3 -m http.server 8000 --directory site`；线上 [wind-farm-viz.pages.dev](https://wind-farm-viz.pages.dev/)（Pages 需重连本仓，见 `docs/12` §4.2） |
-| [`twin/`](twin/README.md) | **AEOLUS TWIN 数字孪生**（影院级深色 3D Web 大屏，申请书阶段五法定交付形态） | 持续迭代（R40）；当前按 [`docs/13`](docs/13_0919组会决议_三风机改造方案与3x3留档.md) 进入单列三机改造准备，3×3 留档 tag `twin-3x3-archive-20260919` | `cd twin && npm install && npm run dev` |
-| [`materials/`](materials/README.md) | 按人归档的材料与交付件（阶段总结 / PPT / 讲稿 / 申报 / 队友交付包） | 2026-09-21 已把 `viz/` 及其归档中的个人材料与队友交付件按人迁入（不含目录 README 与 Markdown 镜像：孙承泽 76 · 洪祖名 36 · 厉今飞 25 · 袁夫达 13 · 集体 20 · 田铭雨 2，含 2026-09-21 新增的 4 份 `SHA256SUMS.txt` 与白皮书 `build.py`）；所有 docx / pptx / pdf 附 markitdown 生成的同名 `.md` 镜像（`tools/markitdown_sync.py`），材料治理已建立 | 各人目录 `README.md` |
+| [`twin/`](twin/README.md) | **AEOLUS TWIN 数字孪生**（影院级深色 3D Web 大屏，申请书阶段五法定交付形态） | 持续迭代（R44）；**单列三机（1×3）改造 + 九一九 §2 演示界面已完成**：布局可切换（`?layout=1x3` / `?layout=3x3`，默认 3×3）、3×3 不删（留档 tag `twin-3x3-archive-20260919`）、1×3 真值来自 FLORIS 三机串列 oracle（tandem3）、`?demo=1` 七步演示（调航向/求解优化/复核/导出，GCH 内核 + FLORIS 实测对拍 1e-12 kW），见 [`docs/13`](docs/13_0919组会决议_三风机改造方案与3x3留档.md) 与 [`round41`](docs/research/round41_单列三机改造.md)/[`round42`](docs/research/round42_单列三机改造_视觉与真值.md)/[`round44`](docs/research/round44_演示界面_七步流程.md) | `cd twin && npm install && npm run dev` |
+| [`optimization_control/`](optimization_control/WORK_INDEX.md) | **优化控制模块**（准静态风场环境 / MADDPG / PPO / 代理模型，纯 Python + `unittest`） | 2026-10-21 随分支吸收并入 `main`；**固定 9 输入网络的结果仅为合成联调，可靠性门槛未全部通过** | 入口 [`WORK_INDEX.md`](optimization_control/WORK_INDEX.md)；交付包 [`materials/洪祖名/20261007_optimization_handoff/`](materials/洪祖名/20261007_optimization_handoff/README.md) |
+| [`materials/`](materials/README.md) | 按人归档的材料与交付件（阶段总结 / PPT / 讲稿 / 申报 / 队友交付包） | 2026-09-21 已把 `viz/` 及其归档中的个人材料与队友交付件按人迁入（不含目录 README 与 Markdown 镜像：孙承泽 76 · 洪祖名 101 · 厉今飞 27 · 袁夫达 13 · 集体 28 · 田铭雨 2；2026-09-21 的基线为 76 / 36 / 25 / 13 / 20 / 2，10 月新增部分见 `materials/README.md` §1）；所有 docx / pptx / pdf 附 markitdown 生成的同名 `.md` 镜像（`tools/markitdown_sync.py`），材料治理已建立 | 各人目录 `README.md` |
 | [`docs/`](docs/README.md) | 研究、决策、会议、证据、审计和交接记录 | 持续维护 | — |
 | [`skills/`](skills/README.md) | 精选技能和参考资料 | 辅助知识，不是事实来源 | — |
 | [`ci/`](ci/repo_quality.py) | 仓库契约门禁（链接、镜像、`SHA256SUMS`、白皮书装配、体积/命名）与 workflow 草案 | `.github/workflows/` 待有权限后激活（见 `docs/audits/2026-09-20_治理实现自审.md`） | `python3 ci/repo_quality.py` |
@@ -50,8 +65,25 @@
 ## 2026-09-19 组会后的三件事
 
 1. **仓库归一**（已完成）：`wind_farm_viz` 的项目文件和历史迁入 `viz/`；本仓多余分支清理，迁移范围与例外见 `docs/12`；
-2. **数字孪生 3×3 → 单列三风机**（方案已出，下一轮动工）：布局可切换、3×3 不删，见 `docs/13`；
+2. **数字孪生 3×3 → 单列三风机**（✅ 已完成 R41–R42 · 2026-10-05）：布局可切换、3×3 不删、1×3 真值来自新 tandem3 oracle，见 `docs/13` + `docs/research/round41·round42`；
 3. **材料与答辩 PPT**（新增职责）：统一入口为 `materials/`；历史 PPT / 讲稿 / 白皮书等已从 `viz/` 按人迁入 `materials/<姓名>/`（2026-09-21）。
+
+## PINN 线（2026-10-03 交接）· 两份文档 + 一个未入库的交付包
+
+9.19 方案定的「两条并行工作线」中，物理线（CFD / PINN）的第一份实质交付已在 2026-10-04 入库**说明文档**：
+
+| 文件 | 日期 | 性质 | 内容 |
+|---|---|---|---|
+| [`materials/厉今飞/三台风机PINN模型交接与训练指南.docx`](materials/厉今飞/三台风机PINN模型交接与训练指南.docx) | 交接日期 **2026-10-03**（docx 自述）；**2026-10-04 00:06 由厉今飞发到微信群**（截图坐实，见下） | 交接指南 · 生成文件 | 厉今飞打包。已完成：原预训练模型加载、隐藏层冻结、**9 个控制输入 + 6 个目标输出**的结构改造、项目运行检查。参数账：原模型 3,090,200；保留的原有隐藏层 3,087,200（**冻结**）；新增控制输入连接 6,300；新六个输出层 18,006；**合计可训练 24,306（约占原模型 0.79%）**。三台机组共用原网络权重，各自输出层读取所在位置特征。46,329 B（微信显示 45.2K，吻合）；sha256 `5d8bdce36636…`；附 markitdown 镜像（20 份之一） |
+| [`materials/厉今飞/PROJECT_DOCUMENTATION.md`](materials/厉今飞/PROJECT_DOCUMENTATION.md) | 2026-10-04 入库 | 项目说明 · 源文件 | 同一交付的 13 章说明版：`PINNs_multi_turbine_wake-outputchange/` 的目录结构、PINN 与尾流数学模型、执行盘模型、原始预训练架构与 OutputChange 迁移架构、四步训练流程、`project_config.json`、Rectangular/Diamond 网格原始训练、后处理与可视化、迁移学习、技术栈、11 条使用警告 |
+
+**当前交付阶段 = 待数据训练。** 新增部分尚未学习真实工况与功率/有效风速的关系，**预测准确性尚未验证**；结构检查通过 ≠ 准确性验证（`PROJECT_DOCUMENTATION.md` §11.6 自己写明）。本版面向**固定三台机组布置、固定机型、固定来流**；入口风速、风向、湍流强度**尚未作为可变输入接入**。原预训练模型对应 **9 m/s、四台风机**的源工况，迁移到三机布局的准确性需验证。后续训练采用**有标签的迁移学习**，不运行原仓库的 RANS 与 k-ε 方程残差训练流程；可训练参数减少 **不等于** 计算时间按同比例减少（原隐藏层仍参与前向计算与新增连接的反向传播）。
+
+**2026-10-04 00:06 群聊证据**（用户 2026-10-05 提供截图转录，见 [`materials/集体/聊天记录/群聊记录_2026-07-26至09-20.md`](materials/集体/聊天记录/群聊记录_2026-07-26至09-20.md) §2026-10-04）：厉今飞在群里**同时**发了这份 docx 和交付 zip。按 materials/README 规则 8「文件归属以截图里的发送人为准」，两份文档于 **2026-10-05 第二轮归位到 `materials/厉今飞/`**（`git mv`，保留原文件名），docx 同时补上 markitdown 镜像。
+
+> ⚠ **交付包本体没有入库，且 603.8 MB 装不进普通 git。** 截图显示 zip 名为 `PINNs_multi_turbine_wake_simul…ange.zip`（即 `PINNs_multi_turbine_wake_simulation-outputchange.zip`）、**603.8 MB**，与 docx 同一条消息发出。这个体积**超过 GitHub 单文件 100 MB 硬限**（push 会被拒），也超过 Cloudflare Pages 单文件 25 MiB 约束；Git LFS 免费额度（1 GB 存储 / 1 GB 月流量）装得下但流量吃紧。docx §2 列明的包内内容（`prepare_pinn_outputchange.py`、`modify_pinn_io.py`、`OutputChange/prepared_9ms/original_frozen.keras`、`OutputChange/iochanged_9ms/untrained.keras` + `build_report.json` + 训练数据模板、`project_config.json`、原仓库代码与 LICENSE/README）**全部不在仓库**，因此当前无法复现、无法审阅。补交待办与存储方式裁定见 [`materials/README.md`](materials/README.md) §7 与 [`materials/厉今飞/README.md`](materials/厉今飞/README.md)。
+>
+> ✅ 2026-10-05 第二轮已解决原缺口 #2：两份文档从根目录归位 `materials/厉今飞/`，docx 补上镜像（镜像总数 19 → 20），[`docs/audits/2026-10-05_仓库整理与时间线主干.md`](docs/audits/2026-10-05_仓库整理与时间线主干.md) §5 缺口 #2 状态已更新为「已解决」。
 
 ---
 
@@ -99,7 +131,23 @@ npm run verify
 
 结果：**lint 0 warnings / 0 errors；selftest 145 通过 / 0 失败；TypeScript 检查通过；Vite production build 通过。** 该结果只证明当前代码在本次环境下通过对应门禁，不替代真实硬件、现场数据或领域审阅。
 
-### R40 视觉取证基线（2026-09-17）
+### R42 视觉取证基线（2026-10-05，当前有效）
+
+单列三机改造后的重测（1280×720、SwiftShader、固定机位 `?q=…&t=15&cam=60,22,990`；计数=确定值，帧时长只作档间相对）。
+**上节 R40 的 267/642,556 等旧数自此作废，只作历史留档。**
+
+| 布局 | 档 | draw calls | tris | lines |
+|---|---|---|---|---|
+| 3×3 | high | 267 | 586,756 | 48,880 |
+| 3×3 | medium | 264 | 567,064 | 48,180 |
+| 3×3 | low | 231 | 440,060 | 47,730 |
+| **1×3** | high | 267 | **549,556**（−6.3%） | 48,880 |
+| **1×3** | medium | 264 | 529,864 | 48,180 |
+| **1×3** | low | 231 | 440,060 | 47,730 |
+
+取证新增 `?freeze=1`（渲染相位冻结，同参数两次渲染逐像素可比，见 `docs/research/round42` §2）。
+
+### R40 视觉取证基线（2026-09-17，历史留档，数字已作废）
 
 以下数字来自固定机位和 `npm run perftier` 的历史取证，不是本轮 `npm run verify` 重新测得的硬件性能：
 
@@ -161,9 +209,13 @@ npm run verify
 
 - 两仓归一已经完成，但迁移边界仍按 `docs/12` 区分，不把外部技能仓、聊天、外部数据或原仓库生态默认视为已迁入；
 - `viz/` 继续封板维护；
-- `twin/` 保留 3×3 留档并准备进入单列三机改造，1×3 新数字必须来自新的三机 oracle；
+- `twin/` 已完成单列三机（1×3）改造（布局可切换、3×3 留档 tag `twin-3x3-archive-20260919`）；1×3 数字以 tandem3 oracle 为准（`docs/research/round42`）；
 - 五人协作、实验记录、证据卡、材料审阅和仓库质量门禁已经进入实施阶段；
 - 已用 Issue `#13` → PR `#12` → `EVID-2026-001` → `materials/README.md` 试跑一条真实验证闭环（Issue 随 2026-09-21 的 PR 关闭；队友复核改在证据卡 §6 打勾跟踪）；
 - 后续继续处理 GitHub 权限、Project、分支保护和其他领域的真实研究任务。
 
 详细研究历史、阶段数据和验收记录请从 [`docs/`](docs/README.md) 进入，不在根 README 复制所有轮次细节。
+
+## 优化控制完整交付（2026-10-07，2026-10-21 并入 main）
+
+[优化工作总索引](optimization_control/WORK_INDEX.md) 与 [洪祖名完整交付](materials/洪祖名/20261007_optimization_handoff/README.md) 原在独立分支 `codex/optimization-handoff-20261007`（`84d6f4b` + `782368a3`），**2026-10-21 随分支吸收并入主线**（PR #17）。内容包括代理模型、PPO、随机入口、MADDPG、统一传统基线及诊断；**当前固定九输入网络的结果仅为合成联调，可靠性门槛未全部通过**，不能当作 `main` 的结论引用。交付包本体 **≈1.01 GiB**（58 个分卷，单卷 ≤95 MiB），入库理由、体积代价与待裁定项见 [`docs/audits/2026-10-21_分支吸收与合并审计.md`](docs/audits/2026-10-21_分支吸收与合并审计.md) 与 [`materials/README.md`](materials/README.md) §7。

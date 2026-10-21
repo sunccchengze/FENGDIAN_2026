@@ -1,0 +1,4 @@
+target_mw,feasible_witness,pitch_rad,yaw_rad,speed_rad_s,power_w,residual_w
+2.5,True,0.18294524393975736,0.0,0.9,2500000.5,0.5
+3.5,True,0.10549010701477529,0.0,0.9,3500000.5,0.5
+4.5,True,0.03537638299167156,0.0,0.9,4500000.0,0.0

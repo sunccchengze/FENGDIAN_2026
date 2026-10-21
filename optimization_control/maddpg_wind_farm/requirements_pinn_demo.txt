@@ -1,0 +1,5 @@
+# Install with --target .venv/pinn_tf216; existing RL environment stays intact.
+tensorflow==2.16.1
+tf-keras==2.16.0
+numpy==1.26.4
+scipy==1.12.0
