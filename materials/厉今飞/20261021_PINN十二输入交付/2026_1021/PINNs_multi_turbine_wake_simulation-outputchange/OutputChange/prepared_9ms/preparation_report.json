@@ -1,0 +1,71 @@
+{
+  "status": "original_pretrained_backbone_frozen_and_verified",
+  "tensorflow": "2.16.1",
+  "tf_keras": "2.16.0",
+  "source_model": "C:\\Users\\Ice-d\\Desktop\\pinnmodel\\PINNs_multi_turbine_wake_simulation-outputchange\\Rectangular_grid\\Pre_trained\\9ms",
+  "source_saved_model_sha256": "a48ea66bd22707e6d2f32fd1e9909f018c098329047b2ef04966c4dcc5a35859",
+  "original_weights_sha256": "a5a5da63f9123e166535ed6f6eb4387605621f6141beabb05f480c7d400f80c4",
+  "original_parameters": 3090200,
+  "frozen_backbone_parameters": 3087200,
+  "frozen_backbone_trainable_parameters": 0,
+  "original_input_names": [
+    "x_input",
+    "y_input",
+    "z_input"
+  ],
+  "original_output_names": [
+    "output_u",
+    "output_v",
+    "output_w",
+    "output_p",
+    "output_k",
+    "output_eps"
+  ],
+  "feature_order": [
+    "output_u",
+    "output_v",
+    "output_w",
+    "output_p",
+    "output_k",
+    "output_eps"
+  ],
+  "feature_shapes_for_four_check_points": [
+    [
+      4,
+      500
+    ],
+    [
+      4,
+      500
+    ],
+    [
+      4,
+      500
+    ],
+    [
+      4,
+      500
+    ],
+    [
+      4,
+      500
+    ],
+    [
+      4,
+      500
+    ]
+  ],
+  "intended_future_outputs": [
+    "P1",
+    "P2",
+    "P3",
+    "Ueff1",
+    "Ueff2",
+    "Ueff3"
+  ],
+  "control_inputs_connected": false,
+  "replacement_outputs_built": false,
+  "training_performed": false,
+  "checks": "weight equality, finite predictions, save/reload equality, freezing",
+  "scope": "Only the original coordinate-to-flow network is prepared. Nine control variables and condition-level power/effective-speed outputs require a separate input/readout design. This is not yet a trained power predictor or a validated nine-variable optimizer."
+}

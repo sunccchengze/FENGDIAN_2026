@@ -1,0 +1,46 @@
+{
+  "schema": "pinn_wind_io_v1_si_flow_to",
+  "turbine_positions_m": [
+    [
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null
+    ]
+  ],
+  "control_units": {
+    "yaw": "rad",
+    "pitch": "rad",
+    "rotor_speed": "rad/s"
+  },
+  "wind_direction_convention": "flow_to_ccw_from_positive_x",
+  "geometry_frame": "fixed_source_origin_xy_at_zero_wind",
+  "time_scale": "quasi_steady_or_case_mean",
+  "turbine_model": null,
+  "rotor_diameter_m": null,
+  "air_density_kg_m3": null,
+  "fixed_inlet_profile_description": null,
+  "power_definition": null,
+  "ueff_definition": null,
+  "notes": [
+    "本配置与旧版project_config.json独立。构建不需要填写；训练前填真实三机位置。",
+    "新接口固定使用rad、rad、rad/s。旧版deg与rpm须转换，不能仅改单位文字。",
+    "风向为风吹向的方向：0沿+x，pi/2沿+y，从上往下看逆时针为正。不是气象来向。",
+    "偏航输入是相对来流的失配角；优化侧应先完成执行器映射，再传实际运行点。",
+    "机位以原模型的固定原点为基准，零风向时x沿流、y横向、z向上，单位m。",
+    "图内按每行风向将固定机位旋转到随来流对齐的坐标系，不改变机组编号。",
+    "机型、尺寸、密度及入口剖面在本版固定。请在数据说明中补齐这些条件。",
+    "补齐机械/电功率口径及转子盘有效风速定义；单点风速不能直接替代Ueff。",
+    "原预训练权重来自9m/s四机工况；旋转坐标和增加输入本身不证明迁移准确。",
+    "当前训练是监督迁移，不包含原RANS/k-epsilon方程残差或新的边界条件损失。"
+  ]
+}

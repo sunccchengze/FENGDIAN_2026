@@ -1,0 +1,6 @@
+checkpoint=D:\VSCODE\大创项目风电\optimization_control\experiments\20261022_wind_pinn_integration\training\checkpoint.pth
+source=teammate_20261021_synthetic_test
+power_semantics=synthetic_test_power_w_not_physical_validation
+control_mask=[True, True, True]; traditional_three_channel=True
+Shared wind, target, initial states and actuators. P/PI use configured schedules; not learned joint optimization.
+Target feasibility not certified; shortfall is reported, target never silently reduced.

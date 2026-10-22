@@ -27,6 +27,8 @@ class AlgorithmConfig:
     fixed_action: tuple = (0.0, 0.0, 0.0)
     actor_initial_action: tuple | None = None
     actor_final_scale: float = 0.001
+    # Effective-wind observation scale, speed/wind slope, physical speed bounds.
+    speed_reference_schedule: tuple | None = None
 
     def __post_init__(self):
         if self.agents != 3 or self.action_dim != 3 or min(self.obs_dim, self.hidden, self.batch_size) <= 0 or self.capacity < self.batch_size:
@@ -43,6 +45,10 @@ class AlgorithmConfig:
                 raise ValueError("actor_initial_action must be strictly inside [-1,1]")
         if not np.isfinite(self.actor_final_scale) or self.actor_final_scale < 0:
             raise ValueError("invalid actor final initialization scale")
+        if self.speed_reference_schedule is not None:
+            v = np.asarray(self.speed_reference_schedule, dtype=float)
+            if v.shape != (4,) or not np.isfinite(v).all() or min(v[:2]) <= 0 or not 0 <= v[2] < v[3] or self.action_mask[2]:
+                raise ValueError("scheduled speed requires four physical parameters and disabled RL speed channel")
 
 
 def mlp(n_in, hidden, n_out, bounded=False):
@@ -116,7 +122,12 @@ class MADDPG:
     def policy(self, actor, obs):
         mask = torch.as_tensor(self.config.action_mask, device=self.device, dtype=torch.bool)
         fixed = torch.as_tensor(self.config.fixed_action, device=self.device, dtype=torch.float32)
-        return torch.where(mask, actor(obs), fixed)
+        action = torch.where(mask, actor(obs), fixed)
+        if self.config.speed_reference_schedule is not None:
+            scale, slope, low, high = self.config.speed_reference_schedule
+            speed = torch.clamp(2 * (obs[..., 1] * scale * slope - low) / (high - low) - 1, -1, 1)
+            action = torch.cat((action[..., :2], speed.unsqueeze(-1)), dim=-1)
+        return action
 
     def act(self, obs, noise_std=0.0):
         obs = np.asarray(obs, dtype=np.float32)
@@ -126,8 +137,9 @@ class MADDPG:
             x = torch.as_tensor(obs, device=self.device)
             action = torch.stack([self.policy(actor, x[i]) for i, actor in enumerate(self.actors)]).cpu().numpy()
         if noise_std:
-            action += self.rng.normal(0, noise_std, action.shape)
-        return np.where(self.config.action_mask, np.clip(action, -1, 1), self.config.fixed_action).astype(np.float32)
+            noise = self.rng.normal(0, noise_std, action.shape)
+            action = np.where(self.config.action_mask, action + noise, action)
+        return np.clip(action, -1, 1).astype(np.float32)
 
     @staticmethod
     def td_target(rewards, terminated, next_q, gamma):

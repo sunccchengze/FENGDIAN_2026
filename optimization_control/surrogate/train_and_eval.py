@@ -18,8 +18,8 @@ from models.mlp_v2 import MLPv2Surrogate
 from models.two_stage import TwoStageSurrogate
 
 
-DATA_DIR = r".\data\teammates\yuan_fuda_floris\raw"
-EXP_DIR = r".\optimization_control\experiments\20260807_surrogate_baseline"
+DATA_DIR = r"D:\VSCODE\大创项目风电\data\teammates\yuan_fuda_floris\raw"
+EXP_DIR = r"D:\VSCODE\大创项目风电\optimization_control\experiments\20260807_surrogate_baseline"
 TARGETS = ["turbine_1_power", "turbine_2_power", "turbine_3_power", "farm_power"]
 SEED = 42
 

@@ -55,6 +55,13 @@ class MADDPGFarmEnv:
             raise ValueError("reward_scale must be finite and positive")
         if self.low.shape != (3,) or self.high.shape != (3,) or self.initial.shape != (3,):
             raise ValueError("action bounds and initial point must each have three channels")
+        self.reference_schedule = dict(config.get("reference_schedule") or {})
+        if self.reference_schedule:
+            if set(self.reference_schedule) != {"yaw_offset_rad", "speed_per_wind_rad_m"}:
+                raise ValueError("reference schedule requires yaw offset and speed curve")
+            yaw, slope = self.reference_schedule["yaw_offset_rad"], self.reference_schedule["speed_per_wind_rad_m"]
+            if not self.heading_mode or not np.isfinite([yaw, slope]).all() or not self.low[0] <= yaw <= self.high[0] or slope <= 0:
+                raise ValueError("invalid nacelle-frame reference schedule")
         source = ParameterSource(**config["parameter_source"])
         channels = [ActionChannelConfig(n, self.low[k], self.high[k], ("rad", "rad", "rad/s")[k], source)
                     for k, n in enumerate(COMMANDS)]
@@ -78,10 +85,16 @@ class MADDPGFarmEnv:
                 "action_high": self.high.tolist(), "method": "fixed_physical_scales_no_running_statistics"}
         if self.heading_mode:
             result.update(yaw_frame="nacelle_heading", control_mask=self.control_mask.tolist())
+        if self.reference_schedule:
+            result["reference_schedule"] = dict(self.reference_schedule)
         return result
 
     def project_action(self, action):
-        fixed = self.normalize_commands(np.tile(self.initial, (3, 1)))
+        physical = np.tile(self.initial, (3, 1))
+        if self.reference_schedule:
+            physical[:, 0] = self.reference_schedule["yaw_offset_rad"]
+            physical[:, 2] = np.clip(self.reference_schedule["speed_per_wind_rad_m"] * self.effective_wind, self.low[2], self.high[2])
+        fixed = self.normalize_commands(physical)
         return np.where(self.control_mask, action, fixed).astype(np.float32)
 
     def normalize_commands(self, physical):

@@ -1,0 +1,46 @@
+version: wind12_random_training_v1
+seed: 42
+runtime_site_packages: .venv/pinn_tf216
+source_experiment: optimization_control/experiments/20261022_wind_pinn_integration
+horizon: 128
+dt_s: 1.0
+run_ids: [0, 1, 2]
+steps_per_run: 16384
+eval_every: 4096
+warmup_steps: 512
+update_every: 2
+actor_lr: 0.0001
+noise_std: [0.05, 0.15, 0.08]
+noise_end_fraction: 0.2
+training_targets_w: [2600000.0, 3200000.0, 3800000.0]
+validation_targets_w: [2800000.0, 3400000.0]
+test_targets_w: [2700000.0, 3300000.0, 3900000.0]
+test_initial_pitch_rad: [0.025, 0.055]
+training_initial_pitch_rad: [0.025, 0.055]
+background_schedule:
+  yaw_offset_rad: 0.0
+  speed_per_wind_rad_m: 0.11114035087719298
+inflow:
+  speed:
+    mean_min_m_s: 8.7
+    mean_max_m_s: 9.3
+    ti_values: [0.04, 0.08]
+    scenario: mixed
+    length_scale_m: 100.0
+    padding_factor: 8
+    ramp_amplitude_m_s: 0.35
+    gust_amplitude_m_s: 0.5
+    gust_duration_s: 32.0
+    speed_min_m_s: 7.5
+    speed_max_m_s: 10.5
+    max_attempts: 100
+  direction:
+    mean_rad: 0.0
+    amplitude_rad: 0.035
+    period_s: 180.0
+    ramp_rad: 0.04
+gate:
+  mean_validation_rmse_w: 400000.0
+  worst_validation_rmse_w: 500000.0
+  max_final_over_selected: 1.25
+scope: synthetic_wind12_model_only_not_physical_validation

@@ -1,0 +1,4 @@
+stage,run_id,selected_step,selected_validation_rmse_w,final_over_selected,passed
+pitch,0,16384,471785.02971506614,1.0,False
+pitch,1,16384,444141.52958118735,1.0,False
+pitch,2,16384,433654.12390580674,1.0,False

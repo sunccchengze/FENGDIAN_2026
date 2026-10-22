@@ -1,0 +1,89 @@
+{
+  "schema": "pinn_wind_io_v1_si_flow_to",
+  "status": "structure_checked_NOT_trained",
+  "built_at": "20261021_042402Z",
+  "source": "C:\\Users\\Ice-d\\Desktop\\pinnmodel\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\prepared_9ms\\original_frozen.keras",
+  "tensorflow": "2.16.1",
+  "tf_keras": "2.16.0",
+  "physical_input_order": [
+    "ambient_wind_speed_m_s",
+    "ambient_wind_direction_rad",
+    "turbulence_intensity",
+    "yaw1",
+    "pitch1",
+    "rotor_speed1",
+    "yaw2",
+    "pitch2",
+    "rotor_speed2",
+    "yaw3",
+    "pitch3",
+    "rotor_speed3"
+  ],
+  "encoded_feature_order": [
+    "ambient_wind_speed_m_s",
+    "wind_direction_sin",
+    "wind_direction_cos",
+    "turbulence_intensity",
+    "yaw1",
+    "pitch1",
+    "rotor_speed1",
+    "yaw2",
+    "pitch2",
+    "rotor_speed2",
+    "yaw3",
+    "pitch3",
+    "rotor_speed3"
+  ],
+  "output_order": [
+    "P1",
+    "P2",
+    "P3",
+    "Ueff1",
+    "Ueff2",
+    "Ueff3"
+  ],
+  "control_units": {
+    "yaw": "rad",
+    "pitch": "rad",
+    "rotor_speed": "rad/s"
+  },
+  "inputs": {
+    "conditions_and_controls": [
+      null,
+      12
+    ],
+    "turbine_positions": [
+      null,
+      3,
+      3
+    ]
+  },
+  "wind_direction_convention": "flow_to_ccw_from_positive_x",
+  "original_parameters": 3090200,
+  "retained_original_hidden_parameters": 3087200,
+  "new_input_trainable_parameters": 9100,
+  "new_output_trainable_parameters": 18006,
+  "total_trainable_parameters": 27106,
+  "total_parameters_including_statistics": 3114344,
+  "retained_original_sha256": "9a97a5fb949e1f157f33bfbb655e6e819d89278594f3e91a0875538cb9ed080e",
+  "checks": {
+    "original_features_preserved_at_zero_new_kernel": true,
+    "wind_encoding_and_coordinate_rotation_checked": true,
+    "all_thirteen_new_kernel_rows_have_gradients": true,
+    "all_twelve_physical_input_paths_checked": true,
+    "wind_direction_periodicity_checked": true,
+    "temporary_check_updates_restored": true,
+    "original_hidden_weights_unchanged": true,
+    "save_reload_equal_and_freezing_preserved": true
+  },
+  "config": "C:\\Users\\Ice-d\\Desktop\\pinnmodel\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\wind_project_config.json",
+  "training_performed_on_real_data": false,
+  "notes": [
+    "All six original hidden branches are reused and frozen; no extra hidden network.",
+    "The physical interface has 12 SI-valued inputs; sin/cos expansion is inside the saved graph.",
+    "Fixed geometry is rotated into the flow-aligned source coordinates for each case.",
+    "Geometry transformation does not make a four-turbine 9m/s source physically valid for new cases.",
+    "These are new data-fitted outputs, without the original PDE residual loss.",
+    "No physical accuracy, dynamic wake response, or hardware speedup is established."
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "seed": 42,
+  "gates": [
+    {
+      "stage": "single_pitch",
+      "passed": false,
+      "jobs": 3
+    }
+  ],
+  "jobs": 3,
+  "physical_validation": false,
+  "planned_stages": [
+    "single_pitch",
+    "multi_pitch",
+    "multi_pitch_speed",
+    "multi_all"
+  ],
+  "all_stages_passed": false,
+  "source_files_unchanged": true,
+  "test_used_for_selection": false,
+  "aggregate": [
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "initial",
+      "runs": 1,
+      "mean_rmse_w": 685710.8646855211,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 1361707.0859422677,
+      "mean_q_return_gap_abs": 24.83829702744778
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "selected",
+      "runs": 1,
+      "mean_rmse_w": 100659.22511219193,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 18136.517015354468,
+      "mean_q_return_gap_abs": 0.18453294955090563
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "final",
+      "runs": 1,
+      "mean_rmse_w": 104689.54319805808,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 34334.4711112144,
+      "mean_q_return_gap_abs": 0.22093984175287554
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "fixed",
+      "runs": 1,
+      "mean_rmse_w": 764976.84375,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 1612447.21875,
+      "mean_q_return_gap_abs": 0.0
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "p",
+      "runs": 1,
+      "mean_rmse_w": 287522.79003646673,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 553094.71875,
+      "mean_q_return_gap_abs": 0.0
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "same_permissions",
+      "controller": "pi",
+      "runs": 1,
+      "mean_rmse_w": 180684.12756953656,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 70019.01061115711,
+      "mean_q_return_gap_abs": 0.0
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "complete_traditional_scheme",
+      "controller": "p",
+      "runs": 1,
+      "mean_rmse_w": 289202.48239041347,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 556183.5000000729,
+      "mean_q_return_gap_abs": 0.0
+    },
+    {
+      "stage": "single_pitch",
+      "comparison": "complete_traditional_scheme",
+      "controller": "pi",
+      "runs": 1,
+      "mean_rmse_w": 181833.95030382878,
+      "std_rmse_w": 0.0,
+      "worst_tail_rmse_w": 72082.24942835349,
+      "mean_q_return_gap_abs": 0.0
+    }
+  ],
+  "final_stable_runs": 2,
+  "steps": 49152,
+  "scope": "one derived training stream per task; capability diagnostic, not multi-seed reliability"
+}

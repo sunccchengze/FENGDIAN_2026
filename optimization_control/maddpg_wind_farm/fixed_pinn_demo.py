@@ -20,8 +20,21 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def resolve_team_path(path):
+    """Resolve only the documented old delivery move; never guess a new version."""
+    path = Path(path)
+    if not path.exists():
+        parts = path.parts
+        for i in range(len(parts) - 1):
+            if parts[i] == "pinn" and parts[i + 1] == "PINNs_multi_turbine_wake_simulation-outputchange":
+                moved = Path(*parts[:i + 1], "2026_1007", *parts[i + 1:])
+                if moved.exists():
+                    return moved
+    return path
+
+
 def load_team_module(script):
-    path = Path(script).resolve()
+    path = resolve_team_path(script).resolve()
     name = "_wind_team_pinn_io_" + hashlib.sha256(str(path).encode()).hexdigest()[:12]
     if name not in sys.modules:
         spec = importlib.util.spec_from_file_location(name, path)

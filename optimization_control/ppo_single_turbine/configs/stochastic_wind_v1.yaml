@@ -4,17 +4,13 @@ source:
   kind: assumption
   method: Kaimal longitudinal spectrum, TurbSim v2 Eq. 23
   reference: https://openfast.readthedocs.io/en/main/_downloads/cb14d3e2d3533d76e405d730fea19846/TurbSim_v2.00.pdf
-  note: Single-point band-limited synthetic training wind. Numeric parameters are
-    design assumptions, not site fits or IEC certification.
+  note: Single-point band-limited synthetic training wind. Numeric parameters are design assumptions, not site fits or IEC certification.
 wind:
   dt_s: 1.0
   duration_s: 600.0
   mean_min_m_s: 6.0
   mean_max_m_s: 10.0
-  ti_values:
-  - 0.06
-  - 0.08
-  - 0.1
+  ti_values: [0.06, 0.08, 0.10]
   length_scale_m: 100.0
   padding_factor: 8
   scenario: mixed

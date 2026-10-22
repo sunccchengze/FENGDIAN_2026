@@ -1,0 +1,22 @@
+{
+  "source_hashes": {
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\modify_pinn_io.py": "ae841a99bc1d27ef64d6e061e7457fc171d168f530017e706abf61984af26c8c",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\modify_pinn_wind_io.py": "4db850074b62a7f86720534f6286b48c2a024efd9218f1b243c376fd54d5a270",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\prepare_pinn_outputchange.py": "768af5bc0b8e0b236943bbcc50d93f74600596d0a241a484ccc8ecd88845b832",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\gitignore.txt": "5e2c671ddc9e301dafc241ad1a7c07aa85a91fef560a17721b41977b9eddba17",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\README_pinn_wind_zh.txt": "683414be7f2af902b0824ae30efb1e95a2e315e8f37891f1d607b69492b2407c",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\requirements.txt": "20f1b0519d5d21e7f705dc9c1c67cc5bbbe10cf3755052d092bb58c7770f8892",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\README.md": "2a11b0316029fd36b78fc73a1be995036c1ed9a80517963793ad94a808a3c85c",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\iochanged_9ms\\build_report.json": "0c4ffc38228777435d8735cfea36d1c2ac18328b1b4a69573126e8a4805823da",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\prepared_9ms\\preparation_report.json": "09bc88328734398b320f0e10a4ea54ee2c6b019adbfc5bb745d1790a9bd81233",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\project_config.json": "2aecb320606021ba089fd0440fdf9aadc651db0f594bb7e757d12b7b4b310a6d",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\wind_iochanged_9ms\\build_report.json": "2c2311286f5311df13fae6b7025ab2dfede0c5a11154383dcdf03d971f2696b2",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\wind_project_config.json": "7a62dd9e641eeb0e2cc9b87ca15690877de566923a6b38f2d8e35cb071859fe2",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\iochanged_9ms\\untrained.keras": "430742626cd4dc7cfc6f11f6f923db621d4789010a4a7f8456e959b40f690b12",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\prepared_9ms\\original_frozen.keras": "41ce925edb83ae0e38d73ebdc1c19bdfa21974ebb3800d7674a2c960a7aae303",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\prepared_9ms\\original_frozen_features.keras": "f87b9f483510c7490bb6a7449a3645ee0819c3ae5c7751513704dccfc2de86fe",
+    "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\wind_iochanged_9ms\\untrained.keras": "9e93883785b3f5ea5d75b97eb101d36d85e98de13120dba99b753545683ed163"
+  },
+  "seed": 42,
+  "physical_validation": false
+}

@@ -1,0 +1,246 @@
+{
+  "schema": "pinn_wind_io_v1_si_flow_to",
+  "status": "trained_requires_independent_physical_validation",
+  "seed": 42,
+  "label_source": "synthetic_test",
+  "teacher": "geometry_wind_controls_synthetic_test_v1",
+  "physical_validation": false,
+  "config": {
+    "schema": "pinn_wind_io_v1_si_flow_to",
+    "turbine_positions_m": [
+      [
+        0.0,
+        0.0,
+        90.0
+      ],
+      [
+        378.0,
+        0.0,
+        90.0
+      ],
+      [
+        756.0,
+        0.0,
+        90.0
+      ]
+    ],
+    "control_units": {
+      "yaw": "rad",
+      "pitch": "rad",
+      "rotor_speed": "rad/s"
+    },
+    "wind_direction_convention": "flow_to_ccw_from_positive_x",
+    "geometry_frame": "fixed_source_origin_xy_at_zero_wind",
+    "time_scale": "quasi_steady_or_case_mean",
+    "turbine_model": "synthetic_5mw_assumption",
+    "rotor_diameter_m": 126.0,
+    "air_density_kg_m3": 1.225,
+    "fixed_inlet_profile_description": "software shared entrance only; no resolved vertical profile",
+    "power_definition": "synthetic_test_power_w",
+    "ueff_definition": "synthetic_test_local_wake_formula_not_disk_integration",
+    "notes": [
+      "本配置与旧版project_config.json独立。构建不需要填写；训练前填真实三机位置。",
+      "新接口固定使用rad、rad、rad/s。旧版deg与rpm须转换，不能仅改单位文字。",
+      "风向为风吹向的方向：0沿+x，pi/2沿+y，从上往下看逆时针为正。不是气象来向。",
+      "偏航输入是相对来流的失配角；优化侧应先完成执行器映射，再传实际运行点。",
+      "机位以原模型的固定原点为基准，零风向时x沿流、y横向、z向上，单位m。",
+      "图内按每行风向将固定机位旋转到随来流对齐的坐标系，不改变机组编号。",
+      "机型、尺寸、密度及入口剖面在本版固定。请在数据说明中补齐这些条件。",
+      "补齐机械/电功率口径及转子盘有效风速定义；单点风速不能直接替代Ueff。",
+      "原预训练权重来自9m/s四机工况；旋转坐标和增加输入本身不证明迁移准确。",
+      "当前训练是监督迁移，不包含原RANS/k-epsilon方程残差或新的边界条件损失。"
+    ],
+    "geometry_source": "demonstration_assumption_not_team_calibration"
+  },
+  "physical_input_order": [
+    "ambient_wind_speed_m_s",
+    "ambient_wind_direction_rad",
+    "turbulence_intensity",
+    "yaw1",
+    "pitch1",
+    "rotor_speed1",
+    "yaw2",
+    "pitch2",
+    "rotor_speed2",
+    "yaw3",
+    "pitch3",
+    "rotor_speed3"
+  ],
+  "encoded_feature_order": [
+    "ambient_wind_speed_m_s",
+    "wind_direction_sin",
+    "wind_direction_cos",
+    "turbulence_intensity",
+    "yaw1",
+    "pitch1",
+    "rotor_speed1",
+    "yaw2",
+    "pitch2",
+    "rotor_speed2",
+    "yaw3",
+    "pitch3",
+    "rotor_speed3"
+  ],
+  "output_order": [
+    "P1",
+    "P2",
+    "P3",
+    "Ueff1",
+    "Ueff2",
+    "Ueff3"
+  ],
+  "output_units": [
+    "W",
+    "W",
+    "W",
+    "m/s",
+    "m/s",
+    "m/s"
+  ],
+  "trainable_parameters": 27106,
+  "original_parameters_unchanged": true,
+  "retained_original_sha256": "9a97a5fb949e1f157f33bfbb655e6e819d89278594f3e91a0875538cb9ed080e",
+  "epochs_completed": 120,
+  "best_epoch": 120,
+  "training_input_min": [
+    7.5,
+    -0.15000000596046448,
+    0.019999999552965164,
+    -0.4000000059604645,
+    0.0,
+    0.6000000238418579,
+    -0.4000000059604645,
+    0.0,
+    0.6000000238418579,
+    -0.4000000059604645,
+    0.0,
+    0.6000000238418579
+  ],
+  "training_input_max": [
+    10.5,
+    0.15000000596046448,
+    0.15000000596046448,
+    0.4000000059604645,
+    0.2199999988079071,
+    1.2669999599456787,
+    0.4000000059604645,
+    0.2199999988079071,
+    1.2669999599456787,
+    0.4000000059604645,
+    0.2199999988079071,
+    1.2669999599456787
+  ],
+  "training_direction_covering_arc": {
+    "start_rad": 6.133185386657715,
+    "width_rad": 0.30000001588930303
+  },
+  "constant_inputs_in_training": [],
+  "training_feature_mean": [
+    9.009732246398926,
+    0.00026384415104985237,
+    0.997223436832428,
+    0.08793671429157257,
+    7.689528865739703e-05,
+    0.10996926575899124,
+    0.9335160255432129,
+    -6.452750676544383e-05,
+    0.11000634729862213,
+    0.9334538578987122,
+    -5.6124950788216665e-05,
+    0.10998336970806122,
+    0.9333630204200745
+  ],
+  "training_feature_std": [
+    0.7451756000518799,
+    0.07439444214105606,
+    0.0032932183239609003,
+    0.03323262929916382,
+    0.23103711009025574,
+    0.06353969126939774,
+    0.19266201555728912,
+    0.23107802867889404,
+    0.06355437636375427,
+    0.1926695704460144,
+    0.23109573125839233,
+    0.06354213505983353,
+    0.1925869733095169
+  ],
+  "training_output_mean": [
+    1245484.5,
+    1015094.625,
+    869597.1875,
+    9.009732246398926,
+    8.407934188842773,
+    7.9858012199401855
+  ],
+  "training_output_std": [
+    506355.59375,
+    429314.125,
+    362755.25,
+    0.7451756000518799,
+    0.739366888999939,
+    0.728438138961792
+  ],
+  "new_condition_row_norms": [
+    2.6458983421325684,
+    1.1182875633239746,
+    1.3843343257904053,
+    0.4271051585674286,
+    1.1822776794433594,
+    1.7626585960388184,
+    3.0541176795959473,
+    0.5498323440551758,
+    2.1886441707611084,
+    2.759352922439575,
+    0.48102763295173645,
+    2.238779306411743,
+    3.3987135887145996
+  ],
+  "source_model_sha256": "9e93883785b3f5ea5d75b97eb101d36d85e98de13120dba99b753545683ed163",
+  "model_sha256": "7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451",
+  "team_script_sha256": "4db850074b62a7f86720534f6286b48c2a024efd9218f1b243c376fd54d5a270",
+  "negative_test_output_count": 0,
+  "test_metrics": {
+    "P1": {
+      "MAE": 51001.323669433594,
+      "RMSE": 65473.89297720992,
+      "unit": "W"
+    },
+    "P2": {
+      "MAE": 48294.64797973633,
+      "RMSE": 62490.29824777758,
+      "unit": "W"
+    },
+    "P3": {
+      "MAE": 44457.324798583984,
+      "RMSE": 58656.821737339225,
+      "unit": "W"
+    },
+    "Ueff1": {
+      "MAE": 0.009770467877388,
+      "RMSE": 0.01294086966824134,
+      "unit": "m/s"
+    },
+    "Ueff2": {
+      "MAE": 0.035358985885977745,
+      "RMSE": 0.04651396918957464,
+      "unit": "m/s"
+    },
+    "Ueff3": {
+      "MAE": 0.045732264406979084,
+      "RMSE": 0.05846747027105636,
+      "unit": "m/s"
+    }
+  },
+  "split_sha256": {
+    "train": "56c03c22c157159c480fa79150a8b9d37a96b2e12a07cca0b1b7766b8aca07dd",
+    "validation": "604840d27a4ee5c10b8787b9e6af4e1ac7dcbcd793b28201125b7db01663eeab",
+    "test": "5639785e3f5381257a4a50d0f7f8cd53e06292abfa84635167e018ba67e1f882"
+  },
+  "runtime_versions": {
+    "tensorflow": "2.16.1",
+    "tf_keras": "2.16.0",
+    "numpy": "1.26.4"
+  },
+  "initialization": "new_readouts_zero; only_training_statistics; source_graph_unchanged"
+}
