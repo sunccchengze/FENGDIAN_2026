@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { debugEnabled } from '../data/debug'
 import { useFrame, useThree } from '@react-three/fiber'
 import { useSim } from '../state/simStore'
 
@@ -21,7 +22,7 @@ export default function PerfGovernor() {
   const frozen = useRef(false)
   const introEndAt = useRef(0)
   const lock = useRef<string | null>(
-    typeof location !== 'undefined'
+    typeof location !== 'undefined' && debugEnabled()
       ? (new URLSearchParams(location.search).get('q') as 'low' | 'medium' | 'high' | null)
       : null,
   )

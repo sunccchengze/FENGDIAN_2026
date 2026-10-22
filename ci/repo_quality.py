@@ -18,7 +18,15 @@ Checks (all stdlib, no network):
 6. ``SHA256SUMS.txt`` manifests (ADR-2026-001 "manifest + SHA-256"): every listed file
    exists and hashes as recorded; files in the same tree that are not listed are warned;
 7. the self-study whitepaper assembles byte-identically from its ``whitepaper_src/``
-   fragments (``build.py --check``).
+   fragments (``build.py --check``);
+8. case-insensitive path collisions (paths differing only in case clobber each
+   other on Windows/macOS checkouts — found once in the 2026-10-22 audit);
+9. U+FFFD replacement characters in first-party tracked ``.md``/``.py`` files;
+10. twin/viz FLORIS 3D payloads stay equal (``twin/src/data/floris3dData.mjs``
+    vs ``viz/site/assets/data_3d_real.js``, modulo header comment and the
+    ``export default`` / ``window.WIND_3D_REAL`` wrappers);
+11. every tracked ``.py`` compiles and every tracked ``.json`` parses
+    (tsconfig files are JSONC and excluded by name).
 """
 
 from __future__ import annotations
@@ -303,6 +311,87 @@ def check_whitepaper_build(errors: list[str]) -> None:
         errors.append(f"whitepaper fragments and assembled file differ: {WHITEPAPER_BUILD} --check -> {detail[-1] if detail else result.returncode}")
 
 
+def check_case_collisions(files: list[Path], errors: list[str]) -> None:
+    seen: dict[str, str] = {}
+    for path in files:
+        name = rel(path)
+        key = name.lower()
+        if key in seen and seen[key] != name:
+            errors.append(
+                f"case-insensitive path collision: {seen[key]} vs {name} "
+                "(Windows/macOS checkouts would clobber one of them)"
+            )
+        seen.setdefault(key, name)
+
+
+def check_text_hygiene(files: list[Path], warnings: list[str]) -> None:
+    for path in files:
+        if path.suffix.lower() not in {".md", ".py"}:
+            continue
+        if path.name in {"markitdown_sync.py", "repo_quality.py"}:
+            continue  # these two legitimately contain the U+FFFD literal/escape
+        if rel(path).startswith("skills/") or is_mirror(path):
+            continue  # third-party packs and generated mirrors: extraction artefacts, not authoring damage
+        try:
+            text = path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        if "�" in text:
+            warnings.append(f"{rel(path)}: contains U+FFFD replacement character(s)")
+
+
+def check_floris3d_sync(errors: list[str]) -> None:
+    twin = ROOT / "twin" / "src" / "data" / "floris3dData.mjs"
+    site = ROOT / "viz" / "site" / "assets" / "data_3d_real.js"
+    if not twin.exists() or not site.exists():
+        errors.append("floris3d sync: twin/src/data/floris3dData.mjs or viz/site/assets/data_3d_real.js missing")
+        return
+    import ast
+    import json
+
+    twin_body = twin.read_text(encoding="utf-8").split("export default", 1)[1].strip().rstrip(";").strip()
+    site_text = site.read_text(encoding="utf-8")
+    site_body = site_text.split("window.WIND_3D_REAL =", 1)[1].strip()
+    site_body = site_body[: site_body.rfind(";")].strip() if ";" in site_body else site_body
+    try:
+        twin_data = json.loads(twin_body)
+        try:
+            site_data = json.loads(site_body)
+        except json.JSONDecodeError:
+            site_data = ast.literal_eval(
+                site_body.replace("null", "None").replace("true", "True").replace("false", "False")
+            )
+    except Exception as exc:  # parse failure is itself the signal
+        errors.append(f"floris3d sync: cannot parse payloads for comparison ({exc.__class__.__name__})")
+        return
+    if twin_data != site_data:
+        errors.append(
+            "floris3d sync: twin/src/data/floris3dData.mjs and viz/site/assets/data_3d_real.js payloads differ; "
+            "regenerate both from the same FLORIS run (see docs/audits/2026-10-22_全仓完整审计_问题清单.md AUD-22)"
+        )
+
+
+def check_parseable(files: list[Path], errors: list[str]) -> None:
+    import json
+
+    for path in files:
+        suffix = path.suffix.lower()
+        try:
+            text = path.read_text(encoding="utf-8-sig")
+        except (OSError, UnicodeDecodeError):
+            continue
+        if suffix == ".py":
+            try:
+                compile(text, str(path), "exec")
+            except SyntaxError as exc:
+                errors.append(f"{rel(path)}: python syntax error ({exc.msg} line {exc.lineno})")
+        elif suffix == ".json" and "tsconfig" not in path.name:
+            try:
+                json.loads(text)
+            except json.JSONDecodeError as exc:
+                errors.append(f"{rel(path)}: invalid JSON ({exc.msg} line {exc.lineno})")
+
+
 def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
@@ -316,6 +405,10 @@ def main() -> int:
     manifests = check_checksums(files, errors, warnings)
     check_large_assets(files, errors, warnings)
     check_whitepaper_build(errors)
+    check_case_collisions(files, errors)
+    check_text_hygiene(files, warnings)
+    check_floris3d_sync(errors)
+    check_parseable(files, errors)
 
     for warning in sorted(set(warnings)):
         print(f"WARN: {warning}")

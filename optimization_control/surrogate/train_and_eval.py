@@ -18,8 +18,9 @@ from models.mlp_v2 import MLPv2Surrogate
 from models.two_stage import TwoStageSurrogate
 
 
-DATA_DIR = r".\data\teammates\yuan_fuda_floris\raw"
-EXP_DIR = r".\optimization_control\experiments\20260807_surrogate_baseline"
+from _paths import repo_path, yuan_training_csv
+
+EXP_DIR = repo_path("optimization_control", "experiments", "20260807_surrogate_baseline")
 TARGETS = ["turbine_1_power", "turbine_2_power", "turbine_3_power", "farm_power"]
 SEED = 42
 
@@ -74,7 +75,7 @@ def main():
     os.makedirs(EXP_DIR, exist_ok=True)
     all_rows = []
     for model_key in ["gch", "cc"]:
-        csv_path = os.path.join(DATA_DIR, model_key, f"training_data_{model_key}.csv")
+        csv_path = yuan_training_csv(model_key)
         raw = load_raw(csv_path)
         clean = clean_data(raw)
         X = make_features(clean)

@@ -20,8 +20,12 @@ export function phaseFor(search: string | null | undefined, live: number): numbe
   return live
 }
 
-/** 浏览器端标志：?freeze=1 时冻结（node/selftest 环境恒 false，走挂钟） */
-export const FREEZE = phaseFor(
+/** 浏览器端标志：?freeze=1 时冻结（取证开关，须与其它调试开关同闸：DEV 或 ?debug=1；
+ *  node/selftest 环境恒 false，走挂钟） */
+const FREEZE_ALLOWED =
+  (typeof import.meta !== 'undefined' && import.meta.env?.DEV === true) ||
+  (typeof location !== 'undefined' && new URLSearchParams(location.search).has('debug'))
+export const FREEZE = FREEZE_ALLOWED && phaseFor(
   typeof location !== 'undefined' && typeof location.search === 'string' ? location.search : null,
   0,
 ) === FROZEN_PHASE

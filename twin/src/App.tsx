@@ -71,6 +71,10 @@ export default function App() {
   useEffect(() => {
     if (FREEZE) document.body.dataset.freeze = '1'
   }, [])
+  // 无障碍：系统要求减少动态效果时跳过开场运镜，直接进主界面（AUD-23）
+  useEffect(() => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) useSim.getState().skipIntro()
+  }, [])
   const quality = useSim((s) => s.quality)
   const setFatal = useSim((s) => s.setFatal)
   const fatal = useSim((s) => s.fatal)
@@ -101,7 +105,7 @@ export default function App() {
                 setFatal('WebGL 上下文丢失（显卡驱动重置或显存不足）。')
               })
               canvas.addEventListener('webglcontextrestored', () => setFatal(null))
-              // 首帧后不立即隐藏 Loading：再等一小段预热（3 帧 + 400ms），
+              // 首帧后不立即隐藏 Loading：再等一小段预热（2 帧且 ≥120ms，见下行条件），
               // 让 PMREM/shader 首次编译的停顿发生在 Loading 屏期间，
               // 用户看到的第一眼就是已就绪、直接开跑的开场，不再有“首秒卡死”。
               let warmFrames = 0

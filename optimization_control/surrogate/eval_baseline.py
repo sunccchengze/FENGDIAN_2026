@@ -9,16 +9,16 @@ from data_loader import make_features
 from keras_model import KerasMLPForward
 
 
-TEAMMATES = r".\data\teammates\li_jinfei_nn"
+from _paths import li_model_path, li_results_csv
 
 
 def eval_one(model_key: str):
     """对单个模型（gch/cc）：用 test_predictions.csv 的输入行复现预测，输出指标对比"""
     print("=" * 60)
     print(f"模型: {model_key}")
-    model_path = os.path.join(TEAMMATES, "models", model_key, "wind_farm_power_model.keras")
-    pred_csv = os.path.join(TEAMMATES, "results", model_key, "test_predictions.csv")
-    metrics_csv = os.path.join(TEAMMATES, "results", model_key, "test_metrics.csv")
+    model_path = li_model_path(model_key)
+    pred_csv = li_results_csv(model_key, "test_predictions.csv")
+    metrics_csv = li_results_csv(model_key, "test_metrics.csv")
 
     model = KerasMLPForward(model_path)
     test = pd.read_csv(pred_csv)

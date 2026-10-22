@@ -19,9 +19,10 @@ from data_loader import clean_data, load_raw, make_features
 from models.xgb_model import XGBSurrogate
 
 
-DATA_DIR = r".\data\teammates\yuan_fuda_floris\raw"
-EXP_DIR = r".\optimization_control\experiments\20260807_surrogate_baseline"
-MODEL_DIR = r".\optimization_control\surrogate\models\final"
+from _paths import repo_path, yuan_training_csv
+
+EXP_DIR = repo_path("optimization_control", "experiments", "20260807_surrogate_baseline")
+MODEL_DIR = repo_path("optimization_control", "surrogate", "models", "final")
 SEED = 42
 BEST_PARAMS = dict(
     n_estimators=529, max_depth=5, learning_rate=0.19716139842591673,
@@ -32,7 +33,7 @@ TARGETS = ["turbine_1_power", "turbine_2_power", "turbine_3_power", "farm_power"
 
 def run_cv(model_key):
     """分层 5-fold CV，返回 out-of-fold 预测"""
-    raw = load_raw(os.path.join(DATA_DIR, model_key, f"training_data_{model_key}.csv"))
+    raw = load_raw(yuan_training_csv(model_key))
     clean = clean_data(raw)
     X = make_features(clean)
     y = clean[TARGETS].to_numpy(float)
@@ -79,7 +80,7 @@ def plot_residuals(clean, X, y, pred, model_key, tag):
 
 def export_final(model_key):
     """全量清洗数据训练最终模型，导出 xgboost 原生 json + 元数据"""
-    raw = load_raw(os.path.join(DATA_DIR, model_key, f"training_data_{model_key}.csv"))
+    raw = load_raw(yuan_training_csv(model_key))
     clean = clean_data(raw)
     X = make_features(clean)
     y = clean[TARGETS].to_numpy(float)

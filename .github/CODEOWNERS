@@ -12,3 +12,11 @@
 /materials/ @sunccchengze
 /ci/ @sunccchengze
 /tools/ @sunccchengze
+# 代码树此前无所有权路由（AUD-24）：在队友 handle 核实前先统一路由集成人，
+# 领域审阅仍按 CONTRIBUTING 的主责分工执行，不因此免除。
+/twin/ @sunccchengze
+/viz/ @sunccchengze
+/optimization_control/ @sunccchengze
+/docs/ @sunccchengze
+/HANDOFF.md @sunccchengze
+/HANDOFF_NEXT.md @sunccchengze

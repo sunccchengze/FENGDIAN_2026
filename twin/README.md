@@ -5,7 +5,7 @@
 
 ## 技术栈
 Vite 8 + React 19 + TS 6 + three 0.185 + R3F 9 + drei + @react-three/postprocessing + zustand。
-字体全部 @fontsource 自托管（Noto Sans SC / Rajdhani / Share Tech Mono），无外部网络请求。
+字体全部 @fontsource 自托管（Noto Sans SC / Orbitron / Rajdhani / Share Tech Mono），无外部网络请求。（`public/fonts/` 的 Barlow Condensed 两件为历史选型留存、当前无引用，构建会原样拷贝，结题清理时再议——审计 AUD-23。）
 
 ## 运行 / 自检
 ```bash
@@ -13,7 +13,7 @@ npm install
 npm run dev        # http://localhost:5173/
 npm run build      # tsc -b && vite build → dist/（0 错误）
 npm run lint       # oxlint（0 警告 0 错误；R3F 每帧 ref/uniform 惯用法为带注释的文件级豁免）
-npm run selftest   # 数据契约/渲染口径 84 断言（Node 22 原生类型剥离，无浏览器依赖）
+npm run selftest   # 数据契约/渲染口径断言（2026-10-22 实测 161 通过/0 失败；TWIN_LAYOUT=1x3 为 158/0；数字以当场运行为准，Node 22 原生类型剥离）
 node scripts/shot.mjs <url> <out.png> [settleMs] [w] [h]  # 无头自拍（沙箱需 /tmp/nsslibs，真机无需）
 node scripts/probe.mjs <url含debug> [settleMs] [fpsMs]  # FPS/DrawCall/三角面/控制台错误探针
 npm run perftier   # 三档画质单帧计数 + 帧时长（high/medium/low，同参同机位）
@@ -63,9 +63,10 @@ src/
               TreeField(远岸森林, R36) · grassField(瓦片草地+剔除, R40 挂载) · audio/(WebAudio 声场, R40) · Callouts(防重叠/避让HUD) ·
               CameraRig(13节点+书签+跳过) · Effects(三档) · PerfGovernor · EnvSetup · frameBus
   hud/        Hud.tsx(1920×1080 等比舞台：KPI/矩阵/雷达/图表/控制台/告警/信息卡/时间轴)
-scripts/      shot.mjs · shot2.mjs · shotlocal.mjs · probe.mjs · qa2.mjs · qa_audio.mjs · perftier.mjs ·
-              sunprobe.mjs · moontrack.py · framestats.py · horizoncheck.py ·
-              abdiff.py · selftest.mts · calibrateWake.mts · bootstrap.sh（沙箱一键恢复依赖）
+scripts/      shot.mjs · shot2.mjs · shotlocal.mjs · probe.mjs · qa2.mjs · qa_audio.mjs · qa_audio_far.mjs ·
+              qasmoke.mjs · perftier.mjs · perfstats.mjs · sunprobe.mjs · moontrack.py · framestats.py ·
+              horizoncheck.py · abdiff.py · selftest.mts · calibrateWake.mts · introStats.mts ·
+              bootstrap.sh（沙箱一键恢复依赖，现行 NSS 伪库方案）· rebuild-nss.sh（整源码编译 NSS 的重型备选，保留备查、勿作默认）· nss_stub.c / nss_version.map（伪库源）
 ```
 
 ## 已知边界（v3 阶段工作，非缺陷隐瞒）

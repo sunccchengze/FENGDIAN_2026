@@ -17,8 +17,10 @@ from models.gpr_model import GPRSurrogate
 from models.mlp_v2 import MLPv2Surrogate
 
 
-DATA_CSV = r".\data\teammates\yuan_fuda_floris\raw\gch\training_data_gch.csv"
-EXP_DIR = r".\optimization_control\experiments\20260807_surrogate_baseline"
+from _paths import repo_path, yuan_training_csv
+
+DATA_CSV = yuan_training_csv("gch")
+EXP_DIR = repo_path("optimization_control", "experiments", "20260807_surrogate_baseline")
 SEED = 42
 
 

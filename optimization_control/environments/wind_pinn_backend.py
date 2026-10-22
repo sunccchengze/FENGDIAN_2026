@@ -98,10 +98,33 @@ class WindConditionPredictor:
         return y
 
 
+def _resolve_repo_path(raw):
+    """Resolve config paths that historical configs wrote relative to a repo-root
+    ``pinn/<version>/`` tree. That tree was never committed; the delivery lives
+    under ``materials/厉今飞/20261021_PINN十二输入交付/<version>/`` (see pinn/README.md).
+    Missing paths are returned resolved as-is so existing validation reports them.
+    """
+    p = Path(raw)
+    if p.exists():
+        return p.resolve()
+    for parent in Path(__file__).resolve().parents:
+        if not (parent / "optimization_control").is_dir():
+            continue
+        cand = parent / p
+        if cand.exists():
+            return cand.resolve()
+        if len(p.parts) >= 2 and p.parts[0] == "pinn":
+            cand = parent / "materials" / "厉今飞" / "20261021_PINN十二输入交付" / Path(*p.parts[1:])
+            if cand.exists():
+                return cand.resolve()
+        break
+    return p.resolve()
+
+
 def create_predictor(backend):
-    run = Path(backend["run_dir"]).resolve()
+    run = _resolve_repo_path(backend["run_dir"])
     cfg, report, positions, lo, hi, arc = validate_wind_run(run, backend)
-    script = Path(backend["script"]).resolve()
+    script = _resolve_repo_path(backend["script"])
     expected_script = backend.get("script_sha256") or report.get("team_script_sha256")
     script_hash = digest(script)
     if not expected_script or any(value and script_hash != value for value in (expected_script, report.get("team_script_sha256"))):
@@ -112,7 +135,7 @@ def create_predictor(backend):
         raise ValueError("trained model differs from pinned provenance")
     team = load_team_module(script)
     tf, keras, *_ = team.tensorflow_components()
-    model = keras.models.load_model(str(run / "trained.keras"), compile=False)
+    model = keras.models.load_model(str(run / "trained.keras"), compile=False, safe_mode=True)
     if team.retained_digest(model) != report.get("retained_original_sha256") or team.trainable_count(model) != 27106:
         raise ValueError("loaded backbone or trainable parameter set mismatch")
     @tf.function(input_signature=[{"conditions_and_controls": tf.TensorSpec([None, 12], tf.float32),

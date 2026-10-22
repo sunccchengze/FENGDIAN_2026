@@ -1,0 +1,52 @@
+# 草案（AUD-03）：与仓库内其他草案一样，需由仓库管理员移动到
+# .github/workflows/ 才能生效；历史上 workflow 文件经 API 推送被拒（权限），
+# 故先入草案区，激活步骤见 ci/README 口径与 docs/audits/2026-10-22 附记。
+name: Optimization control tests
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "optimization_control/**"
+      - ".github/workflows/optimization-quality.yml"
+  push:
+    branches: [main]
+    paths:
+      - "optimization_control/**"
+      - ".github/workflows/optimization-quality.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  optimization:
+    name: unittest (129 + PPO baseline 7)
+    runs-on: ubuntu-latest
+    # requirements.txt 首行带 PyTorch CPU 索引；tensorflow/torch 体积大，
+    # 首次冷装约需数分钟，pip 缓存开启。
+    timeout-minutes: 45
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: optimization_control/requirements.txt
+
+      - name: Install pinned environment
+        run: pip install -r optimization_control/requirements.txt
+
+      # 测试必须从仓库根运行（包路径 optimization_control.* 与仓库根相对配置）
+      - name: Run optimization test suite
+        run: python -m unittest discover -s optimization_control/tests
+
+      - name: Run PPO single-turbine baseline tests
+        run: python -m unittest discover -s optimization_control/ppo_single_turbine -p "test_*.py"
+
+      - name: Clean test scratch directories
+        if: always()
+        run: rm -rf tmp

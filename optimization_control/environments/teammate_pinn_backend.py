@@ -96,11 +96,34 @@ class FixedConditionPredictor:
         return y
 
 
+def _resolve_repo_path(raw):
+    """Resolve config paths that historical configs wrote relative to a repo-root
+    ``pinn/<version>/`` tree. That tree was never committed; the delivery lives
+    under ``materials/厉今飞/20261021_PINN十二输入交付/<version>/`` (see pinn/README.md).
+    Missing paths are returned resolved as-is so existing validation reports them.
+    """
+    p = Path(raw)
+    if p.exists():
+        return p.resolve()
+    for parent in Path(__file__).resolve().parents:
+        if not (parent / "optimization_control").is_dir():
+            continue
+        cand = parent / p
+        if cand.exists():
+            return cand.resolve()
+        if len(p.parts) >= 2 and p.parts[0] == "pinn":
+            cand = parent / "materials" / "厉今飞" / "20261021_PINN十二输入交付" / Path(*p.parts[1:])
+            if cand.exists():
+                return cand.resolve()
+        break
+    return p.resolve()
+
+
 def create_predictor(backend):
     """Factory for existing workflow; reject incomplete handover before loading TF."""
-    run=Path(backend["run_dir"]).resolve()
+    run=_resolve_repo_path(backend["run_dir"])
     cfg,report,p,f,lo,hi,ambient=validate_run(run,backend)
-    script=Path(backend["script"]).resolve()
+    script=_resolve_repo_path(backend["script"])
     if not script.is_file(): raise ValueError("team custom-layer module is missing")
     name="_wind_team_pinn_io_"+hashlib.sha256(str(script).encode()).hexdigest()[:12]
     if name not in sys.modules:
@@ -112,7 +135,7 @@ def create_predictor(backend):
             raise
     module=sys.modules[name]
     _,keras,*_=module.tensorflow_components()
-    model=keras.models.load_model(str(run/"trained.keras"),compile=False)
+    model=keras.models.load_model(str(run/"trained.keras"),compile=False,safe_mode=True)
     if module.retained_digest(model)!=report.get("retained_original_sha256"):
         raise ValueError("loaded retained backbone does not match training report")
     predictor=FixedConditionPredictor(model,p,f,lo,hi,ambient)
@@ -160,7 +183,7 @@ def create_demo_predictor(backend):
         raise ValueError("team loading script differs from training provenance")
     module=load_team_module(script)
     tf,keras,*_=module.tensorflow_components()
-    model=keras.models.load_model(str(run/"trained.keras"),compile=False)
+    model=keras.models.load_model(str(run/"trained.keras"),compile=False,safe_mode=True)
     if module.retained_digest(model)!=report.get("retained_original_sha256") or module.trainable_count(model)!=24306:
         raise ValueError("demo retained backbone or trainable parameter set mismatch")
     @tf.function(input_signature=[{"controls":tf.TensorSpec([None,9],tf.float32),"turbine_positions":tf.TensorSpec([None,3,3],tf.float32)}])

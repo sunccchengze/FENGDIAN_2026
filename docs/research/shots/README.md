@@ -85,3 +85,10 @@ python3 scripts/abdiff.py before.png after.png rNN_label   # 帧差（同相位�
 python3 scripts/framestats.py before.png after.png         # 亮度/饱和，守"不得更亮"红线
 ```
 沙箱是 SwiftShader 软渲染：**像素可读，帧率数字一律不可引用**。
+
+## 证据孤儿登记（2026-10-22 全仓审计 AUD-20）
+
+按文件名全仓检索：本目录 230 张中约 85 张没有任何文档引用（约 95.9 MiB），
+包括失败尝试、A/B 对照与未及登记的中间帧。口径（用户「不要删除成果」）：
+中期答辩前不删不动；新截图入库须由引用文档同轮登记文件名；结题后统一分诊
+（补引用 / 转记失败尝试 / 经裁定归档 Release 后再议回收体积）。

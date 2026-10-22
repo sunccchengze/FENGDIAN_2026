@@ -85,7 +85,7 @@ def main():
         )
 
     agent = Agent(Dummy())
-    agent.load_state_dict(torch.load(args.model, map_location="cpu"))
+    agent.load_state_dict(torch.load(args.model, map_location="cpu", weights_only=True))
     agent.eval()
 
     # rollout

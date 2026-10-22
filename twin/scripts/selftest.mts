@@ -37,6 +37,8 @@ import {
   bankActual, YAW_RATE_DPS, YAW_DEADBAND_DEG, YAW_STOP_BAND_DEG,
 } from '../src/core/control/yawDrive.ts'
 
+const TWIN_ROOT = new URL('../', import.meta.url).pathname // 脚本相对 twin 根，免 cwd 依赖（AUD-21）
+
 let pass = 0
 let fail = 0
 const ok = (name: string, cond: boolean, detail = '') => {
@@ -506,7 +508,7 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
 // R36 · 渲染层口径锁（防后续重构悄悄丢特性；源码 token 级）
 // ---------------------------------------------------------------
 {
-  const read = (p: string) => readFileSync(p, 'utf8')
+  const read = (p: string) => readFileSync(p.startsWith('src/') ? TWIN_ROOT + p : p, 'utf8')
   const wt = read('src/scene/WorldTerrain.tsx')
   ok('R36 海面：浅水阻尼 + 拍岸碎浪带 + 水线爬升（aShore 消费链完整）',
     wt.includes('aShore') && wt.includes('shoreDamp') && wt.includes('surfRoll') && wt.includes('swash'),
@@ -545,12 +547,12 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
 
 // R36c · 夜陆口径锁：夜间陆地 = 暗底乘性 + 方向月光（旧版加性 wrap 抬灰底 → 灰白）
 {
-  const wt = readFileSync('src/scene/WorldTerrain.tsx', 'utf8')
+  const wt = readFileSync(TWIN_ROOT + 'src/scene/WorldTerrain.tsx', 'utf8')
   ok('R36c 夜陆：乘性月光塑形（nightBase/moonSlope/moonGate），无加性灰底',
     wt.includes('nightBase') && wt.includes('moonSlope') && wt.includes('moonGate')
     && !wt.includes('landCol += vec3(0.30, 0.42, 0.58)'),
     '加性 wrap 月光必须移除')
-  const tf = readFileSync('src/scene/treeField.tsx', 'utf8')
+  const tf = readFileSync(TWIN_ROOT + 'src/scene/treeField.tsx', 'utf8')
   ok('R36c 夜树：同口径乘性月光（nightMultT），无加性灰底',
     tf.includes('nightMultT') && !tf.includes('col += vec3(0.30, 0.42, 0.58)'),
     '树与地形同病同治')
@@ -573,13 +575,13 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
   }
   ok('R37 色温连续：0.02h 步长最大 |Δ| < 0.2（红→金→白全程平滑，无开关跳变）',
     maxG < 0.2, `maxΔ=${maxG.toFixed(3)}`)
-  const wtR = readFileSync('src/scene/WorldTerrain.tsx', 'utf8')
+  const wtR = readFileSync(TWIN_ROOT + 'src/scene/WorldTerrain.tsx', 'utf8')
   ok('R37 渲染：雪冠红金(alpen/alpenCol) + 岩脊暖线 + 晨昏波光同色温 + uWarmF',
     wtR.includes('alpen') && wtR.includes('alpenCol') && wtR.includes('uWarmF')
     && wtR.includes('sunCol = mix(sunCol, vec3(1.00, 0.52, 0.24), uWarmF'))
-  const skyR = readFileSync('src/scene/SkyAurora.tsx', 'utf8')
+  const skyR = readFileSync(TWIN_ROOT + 'src/scene/SkyAurora.tsx', 'utf8')
   ok('R37 渲染：日轮本体色温(sunDiscCol)随仰角红→金→白', skyR.includes('sunDiscCol') && skyR.includes('uWarmF'))
-  const lrR = readFileSync('src/scene/LightRig.tsx', 'utf8')
+  const lrR = readFileSync(TWIN_ROOT + 'src/scene/LightRig.tsx', 'utf8')
   ok('R37 主灯：sunWarmth 驱动色温暖化 + skyState.warmF 写入',
     lrR.includes('sunWarmth') && lrR.includes('warmF'))
 }
@@ -589,7 +591,7 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
 // 依据：docs/research/round38_残项收口与裁决.md §一（先裁决后合并）；
 //      实现落在主线基线上，不照抄 a3 写法。
 {
-  const wt = readFileSync('src/scene/WorldTerrain.tsx', 'utf8')
+  const wt = readFileSync(TWIN_ROOT + 'src/scene/WorldTerrain.tsx', 'utf8')
   const vert = wt.slice(wt.indexOf('const VERT'), wt.indexOf('const FRAG'))
   const frag = wt.slice(wt.indexOf('const FRAG'), wt.indexOf('export default function'))
 
@@ -624,7 +626,7 @@ ok('偏航因子：cos^p 随 |yaw| 递减', yawFactor(0) > yawFactor(10) && yawF
     '平涂反射 = 反射一个天上不存在的颜色（round38 §一 判据）')
 
   // ③ 云掩日月次序：云必须画在日月之后（云可遮日月），不再自相矛盾
-  const sky = readFileSync('src/scene/SkyAurora.tsx', 'utf8')
+  const sky = readFileSync(TWIN_ROOT + 'src/scene/SkyAurora.tsx', 'utf8')
   const sIdx = sky.indexOf('sunDiscCol'), mIdx = sky.indexOf('moonDot ='), cIdx = sky.indexOf('cov = smoothstep')
   ok('R39 云掩日月次序：日 → 月 → 云（云最后画，可遮日月；夜间云不可见不抢星野）',
     sIdx > -1 && mIdx > sIdx && cIdx > mIdx, `sun=${sIdx} moon=${mIdx} cloud=${cIdx}`)
@@ -811,7 +813,8 @@ if (ACTIVE_LAYOUT === '3x3')
   // 会按名引用它们；本守卫写于 09-21 归档之前，证据树还只有 docs + image-search，
   // 于是把 3 处合法引用判成断链。证据树因此扩为 docs + image-search + materials。
   // 0 字节检查一并覆盖 materials（纳管当天实测 56 张图、零空文件；只增严不放宽）。
-  const evidence = [...walk('../docs'), ...walk('../image-search'), ...walk('../materials')]
+  const repoRoot = new URL('../../', import.meta.url).pathname
+  const evidence = [...walk(repoRoot + 'docs'), ...walk(repoRoot + 'image-search'), ...walk(repoRoot + 'materials')]
   const empty = evidence.filter((f) => IMG.test(f) && statSync(f).size === 0)
   ok('R38 证据完整性：docs/、image-search/ 与 materials/ 下不存在 0 字节图片',
     empty.length === 0, `${empty.length} 个：${empty.slice(0, 3).join(' ')}`)
@@ -821,11 +824,16 @@ if (ACTIVE_LAYOUT === '3x3')
   // 证据图引用必须可查：漏拍 / 改名 / 移树都在这里锁死。
   // 不查：命令行示例（shot.mjs/abdiff/… 行）、花括号速记、`<占位>.png`。
   const CMD = /shot\d?\.mjs|abdiff|framestats|horizoncheck|perfstats|python3|npm run|npx |^\s*\$/
-  const TOK = /[^\s`"'()[\]<>|{},*?]+\.(?:png|jpe?g)/g // 排除通配（`r33_*.png` 是集合描述，不是链接）
+  // 切词须把全角标点也当分隔符：审计文档描写误报根因时的全角括号曾把后缀粘成假文件名（AUD-01）
+  const TOK = /[^\s`"'()[\]<>|{},*?（）「」『』、，。：；·…—]+\.(?:png|jpe?g)/g // 排除通配（`r33_*.png` 是集合描述，不是链接）
   // 设计上已不存在、但历史文档合理提及的资产（不允许静默扩大此表）：
   //  sky-realistic-cyan.png —— Round-9 #6 删除的 1.9 MB 无许可位图（见 docs/08「删除…无许可记录」）
   const GONE = new Set(['sky-realistic-cyan.png'])
-  for (const m of walk('../docs').filter((f) => f.endsWith('.md'))) {
+  // 有意不入库、按 ADR-2026-003 存 Release 资产的图片（登记须带出处，不许静默扩大）：
+  //  868b9ad82f7aa32bf26d3d9a4dc68b0b.png —— 2026-10-22 交付截图原件，存草稿 Release
+  //  `intake-2026-10-22`，sha256 见 materials/集体/交付收取/20261022_三机优化控制与中期答辩/RELEASE_ASSETS.sha256
+  const EXTERNAL = new Set(['868b9ad82f7aa32bf26d3d9a4dc68b0b.png'])
+  for (const m of walk(repoRoot + 'docs').filter((f) => f.endsWith('.md'))) {
     const lines = readFileSync(m, 'utf8').split('\n')
     lines.forEach((line, i) => {
       if (CMD.test(line)) return
@@ -834,7 +842,7 @@ if (ACTIVE_LAYOUT === '3x3')
         if (!/[\s`(/]/.test(prev)) continue // 不是独立 token（如 r24_{20,30}s_before.png 的尾巴）
         const name = mm[0].split('/').pop()!
         const tag = `${m.split('/').pop()}:${i + 1} → ${name}`
-        if (!present.has(name) && !GONE.has(name) && !missing.includes(tag)) missing.push(tag)
+        if (!present.has(name) && !GONE.has(name) && !EXTERNAL.has(name) && !missing.includes(tag)) missing.push(tag)
       }
     })
   }
@@ -860,7 +868,7 @@ if (ACTIVE_LAYOUT === '3x3')
   // ① src/ 内不得出现字面量 length: 9 / Array(9) / === 9（机组数一律派生）
   const LIT = [/length:\s*9\b/, /Array\(\s*9\s*\)/, /===\s*9\b/]
   const hits: string[] = []
-  for (const f of walkSrc('src').filter((f) => /\.(ts|tsx)$/.test(f))) {
+  for (const f of walkSrc(TWIN_ROOT + 'src').filter((f) => /\.(ts|tsx)$/.test(f))) {
     readFileSync(f, 'utf8').split('\n').forEach((line, i) => {
       if (LIT.some((re) => re.test(line))) hits.push(`${f}:${i + 1}`)
     })

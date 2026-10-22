@@ -1,0 +1,23 @@
+# 只声明二进制类型，防止任何平台/工具对二进制做换行转换（AUD-25）。
+# 故意不对文本文件加 eol 规则：存量含 12 个 CRLF 与校验和清单，换行归一
+# 会改动既有证据的字节与哈希；新文本文件的换行由 .editorconfig 约束。
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.mp4 binary
+*.zip binary
+*.zip.* binary
+*.npz binary
+*.keras binary
+*.pth binary
+*.pt binary
+*.psd binary
+*.pdf binary
+*.docx binary
+*.pptx binary
+*.xlsx binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
