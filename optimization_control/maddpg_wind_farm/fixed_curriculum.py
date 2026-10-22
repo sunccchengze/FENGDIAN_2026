@@ -374,8 +374,10 @@ def plot_results(root):
             means = [np.mean([float(r["final_power_w"]) for r in rows if float(r["target_w"]) == target])/1e6 for target in targets]
             axes[index, 1].plot(np.array(targets)/1e6, means, marker="o", label=label)
         axes[index, 1].plot(np.array(targets)/1e6, np.array(targets)/1e6, "k--", label="Target")
-        axes[index, 1].set(xlabel="Test target [MW]", ylabel="Final predicted power [MW]",
-                          title="Test response | mean over initial states and runs")
+        axes[index, 1].set(
+            xlabel="Fixed target of each independent policy [MW]" if stage == "single_pitch" else "Test target [MW]",
+            ylabel="Final predicted power [MW]",
+            title="Separate single-target policies | test means" if stage == "single_pitch" else "Test response | mean over initial states and runs")
         for ax in axes[index]:
             ax.legend()
             ax.grid(alpha=.25)

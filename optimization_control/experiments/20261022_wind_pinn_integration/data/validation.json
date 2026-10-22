@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "split": "validation",
+  "label_source": "synthetic_test",
+  "teacher": "geometry_wind_controls_synthetic_test_v1",
+  "geometry": {
+    "positions_m": [
+      [
+        0.0,
+        0.0,
+        90.0
+      ],
+      [
+        378.0,
+        0.0,
+        90.0
+      ],
+      [
+        756.0,
+        0.0,
+        90.0
+      ]
+    ],
+    "source": "demonstration_assumption_not_team_calibration"
+  },
+  "physical_validation": false,
+  "rows": 512,
+  "csv_sha256": "2d52aa9230069ee36b65581c00a71c505b50044f0edd1bc361351978874ed865"
+}

@@ -1,0 +1,6 @@
+seed: 42
+source_experiment: optimization_control/experiments/20261022_random_wind_training
+stage: pitch
+run_id: 0
+checkpoint: optimization_control/experiments/20261022_random_wind_training/pitch_run_0/segment_000/step_00016384.pth
+purpose: frozen_replay_not_new_training

@@ -1,0 +1,42 @@
+{
+  "status": "wind12_software_integration_completed",
+  "seed": 42,
+  "physical_validation": false,
+  "source_files_unchanged": true,
+  "model_sha256": "7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451",
+  "steps": 2048,
+  "updates": 897,
+  "full_saved_reloaded_replay_equal": true,
+  "baselines_identical": true,
+  "checks": {
+    "seed": 42,
+    "probes": 281,
+    "all_twelve_inputs_respond": true,
+    "pitch_sign_verified": true,
+    "circular_aliases_equal": true,
+    "min_power_w": 284535.6875,
+    "min_ueff_m_s": 6.210589408874512,
+    "common_pitch_power_range_w": [
+      2080055.375,
+      4824291.0
+    ],
+    "single_targets_w": [
+      2766114.28125,
+      3452173.1875,
+      4138232.09375
+    ],
+    "monotone_common_pitch": true,
+    "physical_validation": false
+  },
+  "trace_audit": {
+    "rows": 3072,
+    "heading_gamma_verified": true,
+    "shared_inflow_verified": true,
+    "farm_power_sum_verified": true,
+    "max_actuator_step": [
+      0.0050000000000000044,
+      0.008726646260000005,
+      0.053214663621965586
+    ]
+  }
+}

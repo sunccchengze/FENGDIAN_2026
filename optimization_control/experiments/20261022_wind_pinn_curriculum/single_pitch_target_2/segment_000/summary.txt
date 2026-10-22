@@ -1,0 +1,27 @@
+{
+  "best": {
+    "score_w": 10389.216588246916,
+    "step": 0,
+    "checkpoint": "optimization_control/experiments/20261022_wind_pinn_curriculum/single_pitch_target_2/segment_000/step_00000000.pth",
+    "validation": [
+      {
+        "split": "validation",
+        "target_w": 4138232.09375,
+        "initial_pitch_rad": 0.04,
+        "rmse_w": 10389.216588246916,
+        "tail_rmse_w": 10408.602283711694,
+        "final_power_w": 4127817.0,
+        "max_abs_error_w": 10415.09375,
+        "q_initial": 0.04079181452592214,
+        "discounted_return": -0.003468174200860113,
+        "q_return_gap": 0.04425998872678225,
+        "yaw_travel_rad": 0.0,
+        "pitch_travel_rad": 0.00011310982235984007,
+        "speed_total_variation_rad_s": 3.028660322534904e-09,
+        "saturation_fraction": 0.0
+      }
+    ]
+  },
+  "final": "optimization_control/experiments/20261022_wind_pinn_curriculum/single_pitch_target_2/segment_000/step_00016384.pth",
+  "completed": true
+}

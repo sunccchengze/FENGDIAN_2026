@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "probes": 281,
+  "all_twelve_inputs_respond": true,
+  "pitch_sign_verified": true,
+  "circular_aliases_equal": true,
+  "min_power_w": 284535.6875,
+  "min_ueff_m_s": 6.210589408874512,
+  "common_pitch_power_range_w": [
+    2080055.375,
+    4824291.0
+  ],
+  "single_targets_w": [
+    2766114.28125,
+    3452173.1875,
+    4138232.09375
+  ],
+  "monotone_common_pitch": true,
+  "physical_validation": false
+}

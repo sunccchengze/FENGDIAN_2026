@@ -1,0 +1,84 @@
+schema_version: 1
+seed: 42
+purpose: synthetic_wind_pinn_integration_only
+package: pinn/2026_1021/PINNs_multi_turbine_wake_simulation-outputchange
+runtime_site_packages: .venv/pinn_tf216
+geometry:
+  positions_m:
+  - - 0.0
+    - 0.0
+    - 90.0
+  - - 378.0
+    - 0.0
+    - 90.0
+  - - 756.0
+    - 0.0
+    - 90.0
+  source: demonstration_assumption_not_team_calibration
+domain:
+  wind_low:
+  - 7.5
+  - -0.15
+  - 0.02
+  wind_high:
+  - 10.5
+  - 0.15
+  - 0.15
+  control_low:
+  - -0.4
+  - 0.0
+  - 0.6
+  control_high:
+  - 0.4
+  - 0.22
+  - 1.267
+controls:
+  low:
+  - -0.25
+  - 0.0
+  - 0.6
+  high:
+  - 0.25
+  - 0.22
+  - 1.267
+  initial:
+  - 0.0
+  - 0.04
+  - 0.9
+data:
+  source: geometry_wind_controls_synthetic_test_v1
+  train_rows: 4096
+  validation_rows: 512
+  test_rows: 512
+model_training:
+  epochs: 120
+  batch_size: 64
+  learning_rate: 0.0003
+  patience: 16
+maddpg:
+  total_steps: 2048
+  warmup_steps: 256
+  update_every: 2
+  noise_std: 0.15
+  actor_lr: 0.0001
+  reward_scale: 100.0
+  horizon: 128
+inflow:
+  speed:
+    mean_min_m_s: 8.7
+    mean_max_m_s: 9.3
+    ti_values:
+    - 0.025
+    - 0.04
+    scenario: mixed
+    length_scale_m: 100.0
+    ramp_amplitude_m_s: 0.35
+    gust_amplitude_m_s: 0.5
+    gust_duration_s: 32.0
+    speed_min_m_s: 7.5
+    speed_max_m_s: 10.5
+  direction:
+    mean_rad: 0.0
+    amplitude_rad: 0.035
+    period_s: 180.0
+    ramp_rad: 0.04

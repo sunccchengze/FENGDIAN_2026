@@ -1,0 +1,63 @@
+{
+  "seed": 42,
+  "completed": true,
+  "physical_validation": false,
+  "gates": [
+    {
+      "stage": "pitch",
+      "passed": false
+    }
+  ],
+  "training_steps": 49152,
+  "jobs": 3,
+  "aggregate": [
+    {
+      "stage": "pitch",
+      "controller": "initial",
+      "runs": 3,
+      "mean_rmse_w": 1083624.3005748177,
+      "std_across_runs_w": 96.4201799526257
+    },
+    {
+      "stage": "pitch",
+      "controller": "selected",
+      "runs": 3,
+      "mean_rmse_w": 449720.51516766025,
+      "std_across_runs_w": 40107.57065068765
+    },
+    {
+      "stage": "pitch",
+      "controller": "final",
+      "runs": 3,
+      "mean_rmse_w": 449720.51516766025,
+      "std_across_runs_w": 40107.57065068765
+    },
+    {
+      "stage": "pitch",
+      "controller": "fixed",
+      "runs": 1,
+      "mean_rmse_w": 1100343.8237186456,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "pitch",
+      "controller": "p",
+      "runs": 1,
+      "mean_rmse_w": 552369.6786984412,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "pitch",
+      "controller": "pi",
+      "runs": 1,
+      "mean_rmse_w": 477543.3320475702,
+      "std_across_runs_w": 0.0
+    }
+  ],
+  "test_used_for_selection": false,
+  "source_files_unchanged": true,
+  "test_rows": 240,
+  "trace_rows": 30720,
+  "reachability_certified": false,
+  "comparison": "shared actuator and background rules; pitch stage has identical yaw/speed schedules for RL and P/PI"
+}

@@ -1,0 +1,8 @@
+{
+  "rmse_kw": {
+    "selected": 163.46097098846167,
+    "P": 403.3985659531372,
+    "PI": 251.96375711348315
+  },
+  "scope": "synthetic_fixed_condition_only"
+}

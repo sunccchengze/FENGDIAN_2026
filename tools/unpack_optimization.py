@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import zipfile
+import tarfile
 
 
 def digest(path):
@@ -23,6 +24,22 @@ def extract_safe(path, output):
             if target.exists():
                 raise FileExistsError(target)
         z.extractall(output)
+
+
+def extract_solid(path, output):
+    with zipfile.ZipFile(path) as wrapper:
+        with wrapper.open("payload.tar.xz") as compressed:
+            with tarfile.open(fileobj=compressed, mode="r|xz") as tar:
+                for member in tar:
+                    target = (output / member.name).resolve()
+                    if not target.is_relative_to(output) or not member.isfile():
+                        raise ValueError("non-file or unsafe solid-archive member")
+                    if target.exists():
+                        raise FileExistsError(target)
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    with tar.extractfile(member) as source, target.open("xb") as dest:
+                        while chunk := source.read(4 << 20):
+                            dest.write(chunk)
 
 
 def main():
@@ -52,6 +69,8 @@ def main():
         for r in manifest["archives"]:
             if r["kind"] == "independent_zip":
                 extract_safe(source / r["path"], output)
+            elif r["kind"] == "solid_tar_xz_zip":
+                extract_solid(source / r["path"], output)
     expected = [r for r in manifest["files"] if a.all_history or r["location"] == "task_zip"]
     for r in expected:
         if digest(output / r["path"]) != r["sha256"]:

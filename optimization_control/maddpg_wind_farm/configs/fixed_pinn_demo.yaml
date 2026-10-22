@@ -1,7 +1,7 @@
 schema_version: 1
 seed: 42
 purpose: synthetic_fixed_condition_integration_only
-package: pinn/PINNs_multi_turbine_wake_simulation-outputchange
+package: pinn/2026_1007/PINNs_multi_turbine_wake_simulation-outputchange
 runtime_site_packages: .venv/pinn_tf216
 fixed_condition:
   speed_m_s: 9.0
