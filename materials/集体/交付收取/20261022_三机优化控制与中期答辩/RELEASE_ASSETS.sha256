@@ -1,0 +1,9 @@
+# 2026-10-22 交付：大文件不进 git，按 ADR-2026-003 存于 GitHub Release 资产
+# Release tag : intake-2026-10-22（草稿状态，2026-10-22 由用户上传）
+# 校验方式    : gh release download intake-2026-10-22 --dir ./_intake && sha256sum -c RELEASE_ASSETS.sha256
+# 注意        : GitHub 会改写资产名（中文被剥掉、括号换成点），下载后按「原始文件名」一列恢复再校验
+#
+# sha256                                                          资产名(GitHub)                                              原始文件名                                            字节
+23f9f35c8323eaffcf6bae129d079d663a43f8d57d69d95542253bf4d9da62d6  868b9ad82f7aa32bf26d3d9a4dc68b0b.png                       868b9ad82f7aa32bf26d3d9a4dc68b0b.png                27558
+8a36fd1a128dafc42a810c2779e86816c66b52d4f096381be4253b803910c62e  _20261022.zip                                               三机优化控制与中期答辩交付_20261022.zip               171202920
+7246548ef5eda39bbc3bdae2e562cca4b7fb9078806a686b042f521b2d8d0670  PINNs_multi_turbine_wake_simulation-outputchange.1.zip      PINNs_multi_turbine_wake_simulation-outputchange(1).zip  644638986

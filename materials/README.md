@@ -71,6 +71,7 @@
 - 综合验收和问题清单：[`docs/08`](../docs/08_合并评审_最终清单.md)；
 - 三风机改造决议：[`docs/13`](../docs/13_0919组会决议_三风机改造方案与3x3留档.md)；
 - 会议与逐字稿：[`docs/meetings/`](../docs/meetings/README.md)（正式纪要）→ 原始材料在 [`materials/集体/会议记录/`](集体/会议记录/)。2026-10-11 那场的结论**未经主持人确认**，引用前看清纪要文首状态；
+- 交付收取与大包资产：[`集体/交付收取/20261022_三机优化控制与中期答辩/`](集体/交付收取/20261022_三机优化控制与中期答辩/README.md)——2026-10-22 的三份大文件按 [`ADR-2026-003`](../docs/decisions/ADR-2026-003-大交付包存储口径.md) 存于 Release `intake-2026-10-22`，仓库只留 sha256 清单（`RELEASE_ASSETS.sha256`）；**内容尚未入库**，状态以该目录 README 为准；
 - 科研平台冻结口径：[`viz/FREEZE.md`](../viz/FREEZE.md)、[`viz/README.md`](../viz/README.md)；
 - 数字孪生运行和演示口径：[`twin/README.md`](../twin/README.md)、[`HANDOFF_NEXT.md`](../HANDOFF_NEXT.md)；
 - 软件验证证据：[`EVID-2026-001`](../docs/evidence/EVID-2026-001_twin-verify-2026-09-20.md)（仅证明本地门禁）；
