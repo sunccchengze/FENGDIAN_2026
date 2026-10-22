@@ -3468,5 +3468,35 @@
     "credentials",
     "teammate raw datasets and full delivery",
     "unrelated files"
+  ],
+  "task_zip": {
+    "name": "三机优化控制与中期答辩交付_20261022.zip",
+    "bytes": 171202920,
+    "sha256": "8a36fd1a128dafc42a810c2779e86816c66b52d4f096381be4253b803910c62e"
+  },
+  "archives": [
+    {
+      "path": "archives/task_bundle.zip.001",
+      "kind": "task_zip_chunk",
+      "bytes": 83886080,
+      "sha256": "6dead5f60872696b77e5eee6ca2a582d389909f0aaf6fffc82689d8dcf6b6bbd"
+    },
+    {
+      "path": "archives/task_bundle.zip.002",
+      "kind": "task_zip_chunk",
+      "bytes": 83886080,
+      "sha256": "c9d1e375437db7a79e250b64a9d1db53b6dc482d53b207702ead23fa51ff7966"
+    },
+    {
+      "path": "archives/task_bundle.zip.003",
+      "kind": "task_zip_chunk",
+      "bytes": 3430760,
+      "sha256": "a5097a8429428809462c5bfc783f534bb3bf8b5f485f0f3b64606712a85c9123"
+    }
+  ],
+  "task_chunk_order": [
+    "archives/task_bundle.zip.001",
+    "archives/task_bundle.zip.002",
+    "archives/task_bundle.zip.003"
   ]
 }

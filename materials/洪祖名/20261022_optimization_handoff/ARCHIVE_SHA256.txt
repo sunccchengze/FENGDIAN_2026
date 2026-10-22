@@ -1,0 +1,24 @@
+# 2026-10-22 优化控制交付包 · 原始分片校验和
+
+说明：本文件保留交付方 `SHA256SUMS.txt` 的原文条目，**校验对象是交付方原始包**。
+`archives/task_bundle.zip.001–003` 三片合计 171,202,920 B（= 163.3 MiB），按
+[ADR-2026-003](../../../docs/decisions/ADR-2026-003-大交付包存储口径.md) **不入 git**，
+整包存于 Release `intake-2026-10-22` 的 `_20261022.zip`（sha256 `8a36fd1a128dafc4…`，见 `verification.json`）。
+仓库内的正文副本做过路径归一（把作者本机 `D:\VSCODE\…` 改写为仓库相对路径），因此下表中这些条目的
+sha256 只对原始包成立，不对仓库内副本成立——`ci/repo_quality.py` 只校验名为 `SHA256SUMS.txt` 的清单，
+本文件不参与该校验，仅作溯源留证。
+
+b1c67baa17913c418f5ecd07fda663ad2e108d7f3e70ac174623a4fb84b84435  ai/readme.md
+6dead5f60872696b77e5eee6ca2a582d389909f0aaf6fffc82689d8dcf6b6bbd  archives/task_bundle.zip.001
+c9d1e375437db7a79e250b64a9d1db53b6dc482d53b207702ead23fa51ff7966  archives/task_bundle.zip.002
+a5097a8429428809462c5bfc783f534bb3bf8b5f485f0f3b64606712a85c9123  archives/task_bundle.zip.003
+68bedc8db59c7d54b2c87c1d00d6b8149f86a2ffbbec8c8fd51e16b691469aee  build_tools/build_handoff.py
+0f7500cbeb5a6d2a664d8c8facc52fa3ffb8db3e32810488ab498cc934bdf26d  build_tools/build_task_document.py
+5263c1c6f634cd138474a5b7d8d6840c9a148ec24d8c9149fe6e4d60089f896b  build_tools/README.md
+c77d3463f2d986b127726f24318b946d17a272205d52bac63f9a9809b23de279  environment_versions.txt
+67afe986fca2631a97950361db87e17c7f1456026b19e9d2a2560d0122dd9d75  manifest.json
+4db3f297bf5b415298b361a96ab3278fd81e78c211084b158a222a304ba8cc47  README.md
+15a2685dceeee22f45222afb5c3778c31add5700c9118a64c9ea9897e8c04728  source_snapshot_manifest.json
+2092fd7b8f4284fd2842d75ac4479fe16dd3b7a92e4c601ad48f794910b1ef6c  verification.json
+3e5fa0fe58da47c508d13f94bff6decd80f00051d3e8aa0d8b82885ba70d991a  任务说明.docx
+2dc47ee61776a616326199de4915ca1fdf8706016ecd2d4d6cf4bbef9aec62e0  任务说明.md
