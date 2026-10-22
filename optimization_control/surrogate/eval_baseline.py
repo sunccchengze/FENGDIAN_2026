@@ -9,7 +9,7 @@ from data_loader import make_features
 from keras_model import KerasMLPForward
 
 
-TEAMMATES = r"D:\VSCODE\大创项目风电\data\teammates\li_jinfei_nn"
+TEAMMATES = r".\data\teammates\li_jinfei_nn"
 
 
 def eval_one(model_key: str):
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     # 汇总表（供实验记录）
     summary = pd.concat(out, keys=["gch", "cc"], names=["model"])
     summary = summary.reset_index()
-    exp_dir = r"D:\VSCODE\大创项目风电\optimization_control\experiments\20260807_surrogate_baseline"
+    exp_dir = r".\optimization_control\experiments\20260807_surrogate_baseline"
     os.makedirs(exp_dir, exist_ok=True)
     summary.to_csv(os.path.join(exp_dir, "baseline_metrics.csv"), index=False)
     print(f"\n已保存: {exp_dir}\\baseline_metrics.csv")

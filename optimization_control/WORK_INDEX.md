@@ -28,7 +28,7 @@
 
 ## 交付入口
 
-- [GitHub 交付分支](https://github.com/sunccchengze/FENGDIAN_2026/tree/codex/optimization-handoff-20261007)
-- [个人交付目录](https://github.com/sunccchengze/FENGDIAN_2026/tree/codex/optimization-handoff-20261007/materials/洪祖名/20261007_optimization_handoff)
+- [GitHub 交付分支](https://github.com/sunccchengze/FENGDIAN_2026/tree/782368a31e412ff318595d7166a7e8eae30104fe)
+- [个人交付目录](https://github.com/sunccchengze/FENGDIAN_2026/tree/782368a31e412ff318595d7166a7e8eae30104fe/materials/洪祖名/20261007_optimization_handoff)
 
 本轮 ZIP 和全部历史原文件均已验证恢复。GitHub 中 ZIP 分片由 tools/unpack_optimization.py 自动校验并重组；加 --all-history 恢复全部历史成果。首批完整上传为 84d6f4b，2026-10-08 核验远程目录树一致；main 未改动。软件测试与回放通过不代表策略稳定性或真实物理精度验收通过。

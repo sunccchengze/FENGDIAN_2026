@@ -19,9 +19,9 @@ from data_loader import clean_data, load_raw, make_features
 from models.xgb_model import XGBSurrogate
 
 
-DATA_DIR = r"D:\VSCODE\大创项目风电\data\teammates\yuan_fuda_floris\raw"
-EXP_DIR = r"D:\VSCODE\大创项目风电\optimization_control\experiments\20260807_surrogate_baseline"
-MODEL_DIR = r"D:\VSCODE\大创项目风电\optimization_control\surrogate\models\final"
+DATA_DIR = r".\data\teammates\yuan_fuda_floris\raw"
+EXP_DIR = r".\optimization_control\experiments\20260807_surrogate_baseline"
+MODEL_DIR = r".\optimization_control\surrogate\models\final"
 SEED = 42
 BEST_PARAMS = dict(
     n_estimators=529, max_depth=5, learning_rate=0.19716139842591673,

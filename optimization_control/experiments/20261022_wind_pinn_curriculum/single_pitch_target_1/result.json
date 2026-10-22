@@ -92,8 +92,8 @@
       "model_version": "wind12-synthetic-7506554ac981",
       "factory": "optimization_control.environments.wind_pinn_backend:create_predictor",
       "backend": {
-        "run_dir": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261022_wind_pinn_integration\\model",
-        "script": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\modify_pinn_wind_io.py",
+        "run_dir": "optimization_control/experiments/20261022_wind_pinn_integration/model",
+        "script": "pinn/2026_1021/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_wind_io.py",
         "allow_synthetic_demo": true,
         "model_sha256": "7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451",
         "script_sha256": "4db850074b62a7f86720534f6286b48c2a024efd9218f1b243c376fd54d5a270"
@@ -2178,7 +2178,7 @@
   "best": {
     "score_w": 65315.58910387385,
     "step": 14336,
-    "checkpoint": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\single_pitch_target_1\\segment_000\\step_00014336.pth",
+    "checkpoint": "optimization_control/experiments/20261022_wind_pinn_curriculum/single_pitch_target_1/segment_000/step_00014336.pth",
     "validation": [
       {
         "split": "validation",
@@ -2198,8 +2198,8 @@
       }
     ]
   },
-  "final": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\single_pitch_target_1\\segment_000\\step_00016384.pth",
-  "initial": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\single_pitch_target_1\\segment_000\\step_00000000.pth",
+  "final": "optimization_control/experiments/20261022_wind_pinn_curriculum/single_pitch_target_1/segment_000/step_00016384.pth",
+  "initial": "optimization_control/experiments/20261022_wind_pinn_curriculum/single_pitch_target_1/segment_000/step_00000000.pth",
   "gate": {
     "passed": true,
     "improved": true,
@@ -2210,8 +2210,8 @@
   "final_rmse_w": 65572.97385730996,
   "final_over_best": 1.0039406328101363,
   "hashes": {
-    "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\single_pitch_target_1\\segment_000\\step_00000000.pth": "131db1f6ac7408467443784b38cf99d97f4b2324bd73449442fa738750b0d9bb",
-    "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\single_pitch_target_1\\segment_000\\step_00016384.pth": "87e4ffbace9e7913436e1b0d3829c17dddb4ab8cd50c374d5b9fb61818eb8619",
-    "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\single_pitch_target_1\\segment_000\\step_00014336.pth": "83e120c3a79b3a781c3318b6dd3170e09c8e3a6d0327bca787c1b02c0f9dea85"
+    "optimization_control/experiments/20261022_wind_pinn_curriculum/single_pitch_target_1/segment_000/step_00000000.pth": "131db1f6ac7408467443784b38cf99d97f4b2324bd73449442fa738750b0d9bb",
+    "optimization_control/experiments/20261022_wind_pinn_curriculum/single_pitch_target_1/segment_000/step_00016384.pth": "87e4ffbace9e7913436e1b0d3829c17dddb4ab8cd50c374d5b9fb61818eb8619",
+    "optimization_control/experiments/20261022_wind_pinn_curriculum/single_pitch_target_1/segment_000/step_00014336.pth": "83e120c3a79b3a781c3318b6dd3170e09c8e3a6d0327bca787c1b02c0f9dea85"
   }
 }

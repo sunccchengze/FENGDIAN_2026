@@ -91,8 +91,8 @@
       "model_version": "wind12-synthetic-7506554ac981",
       "factory": "optimization_control.environments.wind_pinn_backend:create_predictor",
       "backend": {
-        "run_dir": "D:\\VSCODE\\大创项目风电\\optimization_control\\experiments\\20261022_wind_pinn_integration\\model",
-        "script": "D:\\VSCODE\\大创项目风电\\pinn\\2026_1021\\PINNs_multi_turbine_wake_simulation-outputchange\\modify_pinn_wind_io.py",
+        "run_dir": "optimization_control/experiments/20261022_wind_pinn_integration/model",
+        "script": "pinn/2026_1021/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_wind_io.py",
         "allow_synthetic_demo": true,
         "model_sha256": "7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451",
         "script_sha256": "4db850074b62a7f86720534f6286b48c2a024efd9218f1b243c376fd54d5a270"
@@ -2203,10 +2203,10 @@
       "integral_limit_rad": 0.3
     }
   },
-  "initial": "D:\\VSCODE\\大创项目风电\\optimization_control\\experiments\\20261022_random_wind_training\\pitch_run_2\\segment_000\\step_00000000.pth",
+  "initial": "optimization_control/experiments/20261022_random_wind_training/pitch_run_2/segment_000/step_00000000.pth",
   "best": {
     "score_w": 433654.12390580674,
-    "checkpoint": "D:\\VSCODE\\大创项目风电\\optimization_control\\experiments\\20261022_random_wind_training\\pitch_run_2\\segment_000\\step_00016384.pth",
+    "checkpoint": "optimization_control/experiments/20261022_random_wind_training/pitch_run_2/segment_000/step_00016384.pth",
     "step": 16384,
     "validation": [
       {
@@ -2313,13 +2313,13 @@
       }
     ]
   },
-  "final": "D:\\VSCODE\\大创项目风电\\optimization_control\\experiments\\20261022_random_wind_training\\pitch_run_2\\segment_000\\step_00016384.pth",
+  "final": "optimization_control/experiments/20261022_random_wind_training/pitch_run_2/segment_000/step_00016384.pth",
   "final_over_best": 1.0,
   "passed": false,
   "steps": 16384,
   "initial_rmse_w": 1290166.2584491705,
   "hashes": {
-    "D:\\VSCODE\\大创项目风电\\optimization_control\\experiments\\20261022_random_wind_training\\pitch_run_2\\segment_000\\step_00000000.pth": "74bf0a4ee92a9930bcfd4c448ca730b2ecba9b659457c894766f13dbb8fbb41d",
-    "D:\\VSCODE\\大创项目风电\\optimization_control\\experiments\\20261022_random_wind_training\\pitch_run_2\\segment_000\\step_00016384.pth": "f270020ab1f92462bb719aed5dfc8c35eb596ffc2100cae986337faf7e472029"
+    "optimization_control/experiments/20261022_random_wind_training/pitch_run_2/segment_000/step_00000000.pth": "74bf0a4ee92a9930bcfd4c448ca730b2ecba9b659457c894766f13dbb8fbb41d",
+    "optimization_control/experiments/20261022_random_wind_training/pitch_run_2/segment_000/step_00016384.pth": "f270020ab1f92462bb719aed5dfc8c35eb596ffc2100cae986337faf7e472029"
   }
 }
