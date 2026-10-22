@@ -1,7 +1,7 @@
 # 2026-10-22 交付入库记录（十二输入 PINN + 随机入口训练 + 中期答辩 7 图）
 
 > **状态**：**已入库并推送**（2026-10-22）。代码进 `optimization_control/`，材料按主责人归位。
-> **口径**：[`ADR-2026-003`](../../../docs/decisions/ADR-2026-003-大交付包存储口径.md) —— >50 MiB 的二进制走 Release 资产，git 只收代码/配置/文档/清单。
+> **口径**：[`ADR-2026-003`](../../../../docs/decisions/ADR-2026-003-大交付包存储口径.md) —— >50 MiB 的二进制走 Release 资产，git 只收代码/配置/文档/清单。
 > **来源**：用户 2026-10-22 直接上传到会话分支（原提交 `c11627d`，857 文件 / 1,916.4 MB）。
 
 ---
@@ -15,7 +15,7 @@
 | 重复的 4 个 `.keras` 权重（`pinn/2026_1021` 与上游包逐字节相同，已比对 blob 一致） | 47.9 MB | **只留一份**，上游包仅存代码 |
 | 代码、配置、文档、清单、报告、7 张图（PNG/PDF/SVG）、4 个 `.keras` | 79.5 MB | **入库** |
 
-完整原包与两份 zip 仍在 Release `intake-2026-10-22`（sha256 见 [`RELEASE_ASSETS.sha256`](../../集体/交付收取/20261022_三机优化控制与中期答辩/RELEASE_ASSETS.sha256)）。
+完整原包与两份 zip 仍在 Release `intake-2026-10-22`（sha256 见 [`RELEASE_ASSETS.sha256`](RELEASE_ASSETS.sha256)）。
 
 > **原提交 `c11627d` 已被重做**（`git push --force-with-lease`），本分支历史不再包含那 1.9 GB。
 > 若要回看原始上传，见该 SHA 或 Release 资产。
@@ -24,11 +24,11 @@
 
 | 内容 | 位置 |
 |---|---|
-| 十二输入 PINN 交付包（16 文件，含 4 个 `.keras` 权重、`build_report.json`、`project_config.json`、`wind_project_config.json`、两个改造脚本） | [`materials/厉今飞/20261021_PINN十二输入交付/pinn_2026_1021/`](../../厉今飞/20261021_PINN十二输入交付/) |
+| 十二输入 PINN 交付包（16 文件，含 4 个 `.keras` 权重、`build_report.json`、`project_config.json`、`wind_project_config.json`、两个改造脚本） | [`materials/厉今飞/20261021_PINN十二输入交付/pinn_2026_1021/`](../../../厉今飞/20261021_PINN十二输入交付/) |
 | 上游 PINN 工程代码与说明（`modify_pinn_io.py`、`prepare_pinn_outputchange.py`、`README`、`requirements`、各网格 `.py` 配置） | 同目录 `upstream_repo/`（**不含任何数据与权重**） |
-| 优化控制代码（新增 `environments/wind_generator.py`、`wind_pinn_backend.py`、`maddpg_wind_farm/midterm_figures.py`、`tests/test_wind_pinn.py`、`tests/test_random_wind_training.py` 等 34 个文件更新） | [`optimization_control/`](../../../optimization_control/WORK_INDEX.md) |
-| 交付说明、任务说明 docx + markitdown 镜像、`PROJECT_STATUS.md`、`CLAUDE.md`、`GIT_WORKFLOW.md`、`AGENTS.md`、`manifest.json`、`environment_versions.txt`、`文献综述_第一次组会.md`、`project_context/` | [`materials/洪祖名/20261022_optimization_handoff/`](../../洪祖名/20261022_optimization_handoff/README.md) |
-| 7 张中期图（PNG 220 dpi / PDF / SVG，共 21 个图形文件）+ 逐图讲解 | [`optimization_control/experiments/20261022_midterm_figures/`](../../../optimization_control/experiments/20261022_midterm_figures/图表说明.md) |
+| 优化控制代码（新增 `environments/wind_generator.py`、`wind_pinn_backend.py`、`maddpg_wind_farm/midterm_figures.py`、`tests/test_wind_pinn.py`、`tests/test_random_wind_training.py` 等 34 个文件更新） | [`optimization_control/`](../../../../optimization_control/WORK_INDEX.md) |
+| 交付说明、任务说明 docx + markitdown 镜像、`PROJECT_STATUS.md`、`CLAUDE.md`、`GIT_WORKFLOW.md`、`AGENTS.md`、`manifest.json`、`environment_versions.txt`、`文献综述_第一次组会.md`、`project_context/` | [`materials/洪祖名/20261022_optimization_handoff/`](../../../洪祖名/20261022_optimization_handoff/readme.md) |
+| 7 张中期图（PNG 220 dpi / PDF / SVG，共 21 个图形文件）+ 逐图讲解 | [`optimization_control/experiments/20261022_midterm_figures/`](../../../../optimization_control/experiments/20261022_midterm_figures/图表说明.md) |
 
 ## 3. 入库时修的问题
 
