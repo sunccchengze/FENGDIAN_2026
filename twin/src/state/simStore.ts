@@ -4,7 +4,7 @@ import { FARM, SERVOS } from '../scene/terrainUtil'
 import { FREEZE } from '../scene/freeze.ts'
 import { optimizeYaw, farmFrame, FARM_RATED_MW, N_UNITS, type FarmFrame } from '../data/farmSim'
 import { generateAnomalyPlan, applyAnomalyToFrame, type AnomalyPlan } from '../data/anomaly'
-import { createYawBank, stepYawBank, bankActual, type YawBank } from '../core/control/yawDrive'
+import { createYawBank, stepYawBank, bankActual, YAW_CMD_LIMIT_DEG, type YawBank } from '../core/control/yawDrive'
 
 // ================================================================
 // 全局仿真控制状态（zustand）
@@ -107,12 +107,12 @@ export const useSim = create<SimState>((set, get) => ({
   setUnitYaw: (i, v) =>
     set((s) => {
       const unitYaw = [...s.unitYaw]
-      unitYaw[i] = Math.max(-40, Math.min(40, v))
+      unitYaw[i] = Math.max(-YAW_CMD_LIMIT_DEG, Math.min(YAW_CMD_LIMIT_DEG, v)) // 与执行器/HUD 同一量程 ±30°
       return { unitYaw }
     }),
 
   targetMW: FARM_RATED_MW,
-  setTargetMW: (v) => set({ targetMW: Math.max(4, Math.min(FARM_RATED_MW, v)) }), // R41-A：量程派生（3×3=15MW×3? 不：45/15 MW）
+  setTargetMW: (v) => set({ targetMW: Math.max(4, Math.min(FARM_RATED_MW, v)) }), // R41-A：量程由布局额定派生（3×3=45 MW，1×3=15 MW）
 
   optimizeNote: null,
   optimizeStamp: 0,

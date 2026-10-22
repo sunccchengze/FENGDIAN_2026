@@ -10,6 +10,7 @@
 // ================================================================
 
 import { useSim } from '../state/simStore'
+import { debugEnabled } from './debug'
 import { N_UNITS } from './farmSim.ts' // R41-A：DTAP 校验长度 = 场内机组数（docs/13 §4.1）
 
 export interface TelemetryPatch {
@@ -76,13 +77,28 @@ export function createWsSource(url: string, onError?: (m: string) => void): Tele
   }
 }
 
-/** 站点装配入口：默认 demo；?ws= 显式开启实时源 */
+/** 站点装配入口：默认 demo；?ws= 显式开启实时源。
+ *  安全闸（AUD-10）：?ws= 仅在调试模式（DEV 或 ?debug=1）下生效，且地址必须能
+ *  解析为 ws:/wss:——否则任何人发一条带 ?ws= 的链接即可遥控打开者的界面。
+ *  将来接入真实遥测时应改为部署期配置的同源 wss 地址，而非 URL 参数。 */
 export function pickSourceFromQuery(): TelemetrySource {
   if (typeof location !== 'undefined') {
     const u = new URLSearchParams(location.search).get('ws')
-    if (u) {
-      console.info('[AEOLUS] 遥测源 = WebSocket', u, '（接口为 v3 DTAP 骨架，字段见 TelemetryPatch）')
-      return createWsSource(u, (m) => console.warn('[AEOLUS telemetry]', m))
+    if (u && debugEnabled()) {
+      let protoOk = false
+      try {
+        const p = new URL(u).protocol
+        protoOk = p === 'ws:' || p === 'wss:'
+      } catch {
+        protoOk = false
+      }
+      if (protoOk) {
+        console.info('[AEOLUS] 遥测源 = WebSocket', u, '（接口为 v3 DTAP 骨架，字段见 TelemetryPatch）')
+        return createWsSource(u, (m) => console.warn('[AEOLUS telemetry]', m))
+      }
+      console.warn('[AEOLUS telemetry] ?ws= 地址不是合法的 ws:/wss: URL，已忽略，回退演示数据')
+    } else if (u) {
+      console.warn('[AEOLUS telemetry] ?ws= 仅在 ?debug=1（或 DEV 构建）下生效，已回退演示数据')
     }
   }
   return demoSource

@@ -203,8 +203,20 @@ class MADDPG:
 
     @classmethod
     def load(cls, path, device="cpu"):
-        # Full training checkpoints include NumPy/RNG objects. Only load trusted local files.
-        state = torch.load(path, map_location=device, weights_only=False)
+        # Full training checkpoints embed NumPy arrays (replay buffer) and RNG state,
+        # which the default weights-only unpickler rejects. Allowlist exactly the
+        # NumPy reconstruction globals instead of weights_only=False, so a tampered
+        # checkpoint still cannot execute arbitrary code. Checkpoints whose metadata
+        # holds non-primitive objects will not load; keep metadata JSON-like.
+        safe = [np.ndarray, np.dtype]
+        core = getattr(np, "_core", None) or getattr(np, "core", None)
+        if core is not None:
+            safe += [core.multiarray._reconstruct, core.multiarray.scalar]
+        dtypes = getattr(np, "dtypes", None)
+        if dtypes is not None:
+            safe += [getattr(dtypes, n) for n in dir(dtypes) if n.endswith("DType")]
+        with torch.serialization.safe_globals(safe):
+            state = torch.load(path, map_location=device, weights_only=True)
         if state["version"] != 1:
             raise ValueError("unsupported checkpoint version")
         agent = cls(AlgorithmConfig(**state["config"]), device)

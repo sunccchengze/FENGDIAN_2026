@@ -292,12 +292,12 @@ export function AccTimeChart({ svgId, svgRefCb, title, cases }: SvgProps & { cas
       <text x={PX0} y={PY0 + PH + 13} fontSize={8.5} fill={CC.text}>横轴：none → 统一×13 → 上游×13 → 中游×13 → greedy</text>
       <g fontSize={9} fill={CC.text}>
         <circle cx={20} cy={H - 58} r={3} fill={CC.ref} />
-        <text x={28} y={H - 55}>FLORIS 4.6.6 实算（本机墙钟）均值 {refMean.toFixed(1)} ms</text>
+        <text x={28} y={H - 55}>FLORIS 4.6.6 实算（oracle 生成机墙钟，存档值）均值 {refMean.toFixed(1)} ms</text>
         <circle cx={20} cy={H - 42} r={3} fill={CC.fast} />
         <text x={28} y={H - 39}>GCH 内核（浏览器端）均值 {predMean.toFixed(2)} ms · P95 {p95.toFixed(2)} ms（&lt;1 s 交互预算 ✓）</text>
       </g>
       <text x={12} y={H - 22} fontSize={9} fill={CC.text}>精度：NMAE(总功率) = {nmae.toExponential(2)}% · 单机最大偏差 {maxErr.toExponential(1)} kW</text>
-      <text x={12} y={H - 8} fontSize={8.5} fill={CC.err}>耗时为本机实测（随机器浮动）；两模型同机对比，量级差 ~{Math.round(refMean / Math.max(predMean, 1e-9))}×</text>
+      <text x={12} y={H - 8} fontSize={8.5} fill={CC.err}>两组耗时不在同一机器测得（FLORIS 为生成环境存档、内核为当前浏览器实测）；量级差 ~{Math.round(refMean / Math.max(predMean, 1e-9))}× 仅作量级参考，不作同机加速比结论</text>
     </svg>
   )
 }

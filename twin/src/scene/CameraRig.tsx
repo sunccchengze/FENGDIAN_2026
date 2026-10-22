@@ -53,8 +53,8 @@ const DEBUG_CAM = (() => {
   }
 })()
 
-const NO_INTRO = typeof location !== 'undefined'
-  && (new URLSearchParams(location.search).has('intro0') || (DEBUG_ALLOWED && new URLSearchParams(location.search).get('intro') === '0'))
+const NO_INTRO = typeof location !== 'undefined' && DEBUG_ALLOWED
+  && (new URLSearchParams(location.search).has('intro0') || new URLSearchParams(location.search).get('intro') === '0')
 
 // QA / A/B 帧精确锚点：仅 DEBUG 允许 `?introT=<s>` 冻结开场时钟（软渲染可复现指定帧）。
 const INTRO_T_JUMP = (() => {
@@ -128,6 +128,9 @@ export default function CameraRig() {
   // 全局快捷键：Esc 跳过开场 / 1-9 塔位快速镜头（见 ./hotkeys.ts）
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      // 焦点在输入控件里时不劫持按键（否则在滑杆/输入框里敲数字、空格会误触镜头与跳过开场）
+      const t = e.target as HTMLElement | null
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return
       const s = useSim.getState()
       if (e.key === 'Escape' || e.key === ' ' || e.key.toLowerCase() === 'y') {
         if (!s.introDone) s.skipIntro()

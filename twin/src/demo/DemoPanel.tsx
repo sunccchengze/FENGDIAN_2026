@@ -118,7 +118,7 @@ export default function DemoPanel() {
     if (step === 5 || step === 7) out.opt = hubField([30, 25, 0])
     return out
     // effYaw 由 effKey 编码（customYaw ?? 预置工况 yaw，二者皆受控状态）
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react-hooks/exhaustive-deps -- effKey 是 effYaw 的有意编码（上行注释）
   }, [booted, step, effKey])
 
   if (ACTIVE_LAYOUT !== '1x3') {

@@ -24,11 +24,11 @@
 
 先读本索引和 `TASKFLOW.md`，再读相关模块报告及实验的 `config.yaml / metrics.csv / summary.txt`。当前十二输入联调模型来自 `pinn/2026_1021` 的冻结主体和新增参数合成拟合，可在报告约定的小范围入口下联调；不是物理精度验证。旧九输入模型已移至 `pinn/2026_1007`，仍只在固定 9 m/s、方向 0、TI 0.1 下使用。
 
-本轮 ZIP 配有 `任务说明.docx`、`readme.md`、`manifest.json` 和可移动回放入口。全部历史产物按原实验目录保留在分卷中，不只保留成功结果。GitHub 分支只用于交付和审阅，没有合并到团队 main。
+本轮 ZIP 配有 `任务说明.docx`、`readme.md`、`manifest.json` 和可移动回放入口。全部历史产物按原实验目录保留在分卷中，不只保留成功结果。GitHub 分支只用于交付和审阅，没有合并到团队 main。（2026-10-22 仓库注：本交付其后已并入 main，此句为交付当时状态；ZIP 内 `readme.md` 的仓库副本已改名为 `接手说明.md`，见 `materials/洪祖名/20261022_optimization_handoff/README.md`。）
 
 ## 交付入口
 
 - [GitHub 交付分支](https://github.com/sunccchengze/FENGDIAN_2026/tree/782368a31e412ff318595d7166a7e8eae30104fe)
 - [个人交付目录](https://github.com/sunccchengze/FENGDIAN_2026/tree/782368a31e412ff318595d7166a7e8eae30104fe/materials/洪祖名/20261007_optimization_handoff)
 
-本轮 ZIP 和全部历史原文件均已验证恢复。GitHub 中 ZIP 分片由 tools/unpack_optimization.py 自动校验并重组；加 --all-history 恢复全部历史成果。首批完整上传为 84d6f4b，2026-10-08 核验远程目录树一致；main 未改动。软件测试与回放通过不代表策略稳定性或真实物理精度验收通过。
+本轮 ZIP 和全部历史原文件均已验证恢复。GitHub 中 ZIP 分片由 tools/unpack_optimization.py 自动校验并重组；加 --all-history 恢复全部历史成果。首批完整上传为 84d6f4b，2026-10-08 核验远程目录树一致；main 未改动。（2026-10-22 仓库注：其后已两度并入 main，此句为当时状态。）软件测试与回放通过不代表策略稳定性或真实物理精度验收通过。

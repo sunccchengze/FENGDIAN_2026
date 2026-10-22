@@ -1,0 +1,45 @@
+# 草案（AUD-03）：需由仓库管理员移动到 .github/workflows/ 才能生效。
+# viz 已封板 v1.3-final；本工作流只跑其自带的两道静态门禁，防止误改部署树。
+name: Viz static site gates
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "viz/**"
+      - ".github/workflows/viz-quality.yml"
+  push:
+    branches: [main]
+    paths:
+      - "viz/**"
+      - ".github/workflows/viz-quality.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  viz:
+    name: contract + pages verification
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check site contract
+        run: python viz/site/check_contract.py
+
+      - name: Verify all pages
+        run: python viz/site/verify_all_pages.py
+
+      # build_data.py 幂等性（重生成后 tree 必须干净）；依赖 viz requirements，
+      # 首次启用时在此步前加 pip install -r viz/requirements.txt 并回归一次。
+      # - name: Regenerate site data idempotently
+      #   run: |
+      #     python viz/site/build_data.py
+      #     git diff --exit-code -- viz/site

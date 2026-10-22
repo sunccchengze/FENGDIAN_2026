@@ -3,6 +3,20 @@ dist/
 *.local
 .DS_Store
 
+# 环境与本地产物（AUD-25：此前未忽略，git add -A 会误收）
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+.idea/
+*.log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+tmp/
+
 # 沙箱产物（不入库）
 twin/nsslibs/
 twin/.nssbuild/

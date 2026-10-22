@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: 先读协作规范
-    url: https://github.com/sunccchengze/Dachuang-SZLS/blob/main/CONTRIBUTING.md
+    url: https://github.com/sunccchengze/FENGDIAN_2026/blob/main/CONTRIBUTING.md
     about: 提交任务、实验、决策或材料前，请先阅读五人协作规则。
   - name: 查看证据索引
-    url: https://github.com/sunccchengze/Dachuang-SZLS/tree/main/docs/evidence
+    url: https://github.com/sunccchengze/FENGDIAN_2026/tree/main/docs/evidence
     about: 先检查已有权威数字和证据，避免重复实验或口径漂移。

@@ -510,13 +510,13 @@ function ControlConsole() {
         <span className="slab">需求功率<em>{targetMW >= FARM_RATED_MW ? '不限' : `${f1(targetMW)} MW`}</em></span>
         <div className="track">
           <input
-            type="range" min={4} max={45} step={0.5} value={targetMW}
+            type="range" min={4} max={FARM_RATED_MW} step={0.5} value={targetMW}
             aria-label="需求功率目标"
             aria-valuetext={`${f1(targetMW)} 兆瓦`}
             onChange={(e) => setTargetMW(Number(e.target.value))}
-            style={{ ['--p' as string]: `${((targetMW - 4) / 41) * 100}%` }}
+            style={{ ['--p' as string]: `${((targetMW - 4) / (FARM_RATED_MW - 4)) * 100}%` }}
           />
-          <div className="trk"><i className="fill" style={{ width: `${((targetMW - 4) / 41) * 100}%` }} /><i className="head" style={{ left: `${((targetMW - 4) / 41) * 100}%` }} /></div>
+          <div className="trk"><i className="fill" style={{ width: `${((targetMW - 4) / (FARM_RATED_MW - 4)) * 100}%` }} /><i className="head" style={{ left: `${((targetMW - 4) / (FARM_RATED_MW - 4)) * 100}%` }} /></div>
         </div>
         <span className="sval" title="需求功率/装机容量的指令比">{f1((targetMW / FARM_RATED_MW) * 100)}%</span>
       </div>

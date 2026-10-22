@@ -88,3 +88,7 @@
 2. R43 答辩 pptx 装配（骨架已立，`generate_823_pptx.py` 套皮）——七步截图可直接入 ppt 证据页。
 3. PINN 替换：内核换 PINN 推理的接口位已在 `demoData.ts` 的 `runCase` 抽象（`predictor` 函数参数），14 天检查点验证后一行替换；当前演示标注「代理·GCH 内核」。
 4. `scripts/shot.mjs` 在 SwiftShader 下单张 ~2.5 min，批量截图需逐张跑（7 张一次循环会超 600 s 工具超时）——R45 截图计划按此排程。
+
+---
+
+> **2026-10-22 审计附记（AUD-06/17）**：本轮按生成脚本重跑 oracle，物理量逐位复现，仅每工况 `sec`（生成机墙钟）不同。§5 与上文登记的**整文件 sha256 含 `sec`，重跑必然对不上，不构成复现失败**；今后复现校验以 [`scripts/check_oracle_physics.py`](scripts/check_oracle_physics.py) 的「剔除 sec 物理哈希」为准（存档值 `c239b923…`）。演示界面的耗时图注已改口径：FLORIS 侧为生成环境存档墙钟、内核侧为当前浏览器实测，量级差只作量级参考，不作同机加速比。

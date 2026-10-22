@@ -5,6 +5,8 @@
 | `coastal_3d/` | 朋友（友参考）提供的海岸 3D 演示源码 | R32–R34 借鉴基线；拆解笔记见 `coastal_3d_学习笔记.md` |
 | `coastal_3d_v2/` | 同上 v2（原以根目录 `hyper-realistic-3d-coastal-landscape.zip` 提交，PR #7） | R36/R38 借鉴对象。**只借技法，不引代码**（项目红线） |
 
+> **2026-10-22 审计注（AUD-19）**：`coastal_3d/` 与 `coastal_3d_v2/` 两棵树实测**逐字节相同**（`diff -r` 零输出）。docs/11 的「海洋天空 v2 借鉴」叙事在本仓内没有可对照的增量文件；若 v2 原有新意，它不在这两棵树里。两棵树都按 provenance 保留，引用技法时标 v1/v2 均可，不必纠结版本差异。
+
 ## 根目录 zip 的下线（2026-09-13，R38-T2）
 
 - 原 `hyper-realistic-3d-coastal-landscape.zip`（180 KB）已从工作树删除：

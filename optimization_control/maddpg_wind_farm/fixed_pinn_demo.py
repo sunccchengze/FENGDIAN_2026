@@ -149,7 +149,7 @@ def fit(cfg, root):
     keras.utils.set_random_seed(42)
     out = fresh_output(Path(root) / "model", cfg)
     source = package / "OutputChange/iochanged_9ms/untrained.keras"
-    model = keras.models.load_model(str(source), compile=False)
+    model = keras.models.load_model(str(source), compile=False, safe_mode=True)
     before = team.retained_digest(model)
     if team.trainable_count(model) != 24306:
         raise RuntimeError("unexpected trainable parameter set")
@@ -190,7 +190,7 @@ def fit(cfg, root):
     run_cfg = dict(turbine_positions_m=cfg["geometry"]["positions_m"], control_units=dict(yaw="deg", pitch="deg", rotor_speed="rpm"),
                    fixed_inlet_wind_speed_m_s=cfg["fixed_condition"]["speed_m_s"], geometry_source=cfg["geometry"]["source"])
     model.save(str(out / "trained.keras"))
-    restored = keras.models.load_model(str(out / "trained.keras"), compile=False)
+    restored = keras.models.load_model(str(out / "trained.keras"), compile=False, safe_mode=True)
     if team.retained_digest(restored) != before:
         raise RuntimeError("reloaded frozen backbone digest changed")
     prediction = np.asarray(restored(inputs(data["test"]["controls"]), training=False))

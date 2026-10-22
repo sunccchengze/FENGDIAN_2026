@@ -1,3 +1,8 @@
+# 优化控制模块冻结环境（2026-10-22）
+# torch==2.13.0+cpu 只发布在 PyTorch 官方 CPU 索引，默认 PyPI 没有该本地版本，
+# 故首行加 --extra-index-url；其余包仍走 PyPI。用全新建的虚拟环境安装：
+#   python -m venv .venv && .venv/Scripts/pip install -r optimization_control/requirements.txt
+--extra-index-url https://download.pytorch.org/whl/cpu
 absl-py==2.5.0
 alembic==1.19.0
 astunparse==1.6.3

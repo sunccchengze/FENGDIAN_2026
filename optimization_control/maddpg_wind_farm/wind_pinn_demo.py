@@ -131,7 +131,7 @@ def fit(cfg, root):
     keras.utils.set_random_seed(42)
     out = fresh_output(root / "model", cfg)
     source = package / "OutputChange/wind_iochanged_9ms/untrained.keras"
-    model = keras.models.load_model(str(source), compile=False)
+    model = keras.models.load_model(str(source), compile=False, safe_mode=True)
     before = team.retained_digest(model)
     build = team.read_json(source.parent / "build_report.json")
     if team.trainable_count(model) != 27106 or before != build["retained_original_sha256"]:
@@ -160,7 +160,7 @@ def fit(cfg, root):
     if team.retained_digest(model) != before:
         raise RuntimeError("frozen original backbone changed")
     model.save(str(out / "trained.keras"))
-    restored = keras.models.load_model(str(out / "trained.keras"), compile=False)
+    restored = keras.models.load_model(str(out / "trained.keras"), compile=False, safe_mode=True)
     if team.retained_digest(restored) != before or team.trainable_count(restored) != 27106:
         raise RuntimeError("saved/reloaded backbone changed")
     test = data["test"]
