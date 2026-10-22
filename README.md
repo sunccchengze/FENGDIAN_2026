@@ -219,3 +219,9 @@ npm run verify
 ## 优化控制完整交付（2026-10-07，2026-10-21 并入 main）
 
 [优化工作总索引](optimization_control/WORK_INDEX.md) 与 [洪祖名完整交付](materials/洪祖名/20261007_optimization_handoff/README.md) 原在独立分支 `codex/optimization-handoff-20261007`（`84d6f4b` + `782368a3`），**2026-10-21 随分支吸收并入主线**（PR #17）。内容包括代理模型、PPO、随机入口、MADDPG、统一传统基线及诊断；**当前固定九输入网络的结果仅为合成联调，可靠性门槛未全部通过**，不能当作 `main` 的结论引用。交付包本体 **≈1.01 GiB**（58 个分卷，单卷 ≤95 MiB），入库理由、体积代价与待裁定项见 [`docs/audits/2026-10-21_分支吸收与合并审计.md`](docs/audits/2026-10-21_分支吸收与合并审计.md) 与 [`materials/README.md`](materials/README.md) §7。
+
+## 优化控制交付更新（2026-10-22，2026-10-22 并入 main）
+
+[优化工作总索引](optimization_control/WORK_INDEX.md) 与 [本轮交付](materials/洪祖名/20261022_optimization_handoff/README.md)：新版十二输入联调、随机入口多流训练、统一 P/PI 同权对照、冻结独立测试与中期答辩 7 张图。原在独立分支 `codex/optimization-handoff-20261022`，**2026-10-22 随分支收口并入主线**，审计见 [`docs/audits/2026-10-22_分支收口与合并审计.md`](docs/audits/2026-10-22_分支收口与合并审计.md)。
+
+口径：**软件流程完成，精度门槛未通过**——常规测试均值 449.72±40.11 kW 优于初始策略 58.5%，相对 PI（477.54）仅低 5.8%，第 0 流、慢变与低风压力场仍弱于 PI；代理模型仍是合成标签，无实测或 CFD 精度结论。交付包本体 163.3 MB 按 [`ADR-2026-003`](docs/decisions/ADR-2026-003-大交付包存储口径.md) 存于 Release `intake-2026-10-22`（`_20261022.zip`），仓库只收代码、清单与 sha256；旧九输入成果与全部历史归档保留不动。

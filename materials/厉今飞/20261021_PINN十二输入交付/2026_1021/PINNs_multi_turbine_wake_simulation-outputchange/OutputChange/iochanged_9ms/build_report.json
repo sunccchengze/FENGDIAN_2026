@@ -1,0 +1,72 @@
+{
+  "status": "structure_built_and_checked_NOT_trained",
+  "built_at": "20261003_003809Z",
+  "source": "C:\\Users\\Ice-d\\Desktop\\pinnmodel\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\prepared_9ms\\original_frozen.keras",
+  "tensorflow": "2.16.1",
+  "tf_keras": "2.16.0",
+  "control_order": [
+    "yaw1",
+    "pitch1",
+    "rotor_speed1",
+    "yaw2",
+    "pitch2",
+    "rotor_speed2",
+    "yaw3",
+    "pitch3",
+    "rotor_speed3"
+  ],
+  "output_order": [
+    "P1",
+    "P2",
+    "P3",
+    "Ueff1",
+    "Ueff2",
+    "Ueff3"
+  ],
+  "output_units": [
+    "W",
+    "W",
+    "W",
+    "m/s",
+    "m/s",
+    "m/s"
+  ],
+  "inputs": {
+    "controls": [
+      null,
+      9
+    ],
+    "turbine_positions": [
+      null,
+      3,
+      3
+    ]
+  },
+  "original_parameters": 3090200,
+  "retained_original_hidden_parameters": 3087200,
+  "new_input_trainable_parameters": 6300,
+  "new_output_trainable_parameters": 18006,
+  "total_trainable_parameters": 24306,
+  "total_parameters_including_statistics": 3111536,
+  "retained_original_sha256": "9a97a5fb949e1f157f33bfbb655e6e819d89278594f3e91a0875538cb9ed080e",
+  "checks": {
+    "original_features_preserved_at_zero_new_kernel": true,
+    "all_nine_input_rows_have_gradients": true,
+    "all_nine_inputs_can_affect_outputs_with_nonzero_connections": true,
+    "temporary_check_update_rolled_back": true,
+    "original_weights_unchanged": true,
+    "save_reload_equal_and_freezing_preserved": true
+  },
+  "config": "C:\\Users\\Ice-d\\Desktop\\pinnmodel\\PINNs_multi_turbine_wake_simulation-outputchange\\OutputChange\\project_config.json",
+  "training_performed_on_real_data": false,
+  "notes": [
+    "All original hidden branches are retained; scalar flow heads are replaced.",
+    "No new hidden layer; extra rows in the original first kernel start at zero.",
+    "Coordinates are auxiliary inputs; use fixed project geometry during training/prediction.",
+    "The six readouts are data-fitted case outputs, not renamed u/v/w/p/k/eps.",
+    "Ueff labels require the project's rotor-disk effective-speed definition.",
+    "The original RANS/k-epsilon loss is not used for these six case outputs.",
+    "Frozen weights still participate in forward/backward calculations for the new input kernel.",
+    "No transfer accuracy or speedup is established by these structural checks."
+  ]
+}

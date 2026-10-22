@@ -1,0 +1,12 @@
+{
+  "metrics_recomputed": 240,
+  "trace_rows": 30720,
+  "max_rmse_difference_w": 0.0,
+  "protected_files": 25,
+  "source_and_checkpoint_hashes_match": true,
+  "completed": true,
+  "figures": 7,
+  "rendered_files": 21,
+  "source_files_unchanged": true,
+  "physical_validation": false
+}

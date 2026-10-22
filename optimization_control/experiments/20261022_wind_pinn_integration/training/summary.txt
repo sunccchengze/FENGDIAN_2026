@@ -1,0 +1,8 @@
+source=teammate_20261021_synthetic_test
+power_semantics=synthetic_test_power_w_not_physical_validation
+steps=2048
+episodes=16
+updates=897
+resume_from=None
+checkpoint=D:\VSCODE\大创项目风电\optimization_control\experiments\20261022_wind_pinn_integration\training\checkpoint.pth
+Integration training is not evidence of physical validity or algorithm superiority.

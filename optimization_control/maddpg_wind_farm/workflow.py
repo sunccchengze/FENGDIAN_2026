@@ -135,17 +135,29 @@ def train(config, output, resume=None):
     return output / "checkpoint.pth"
 
 
-def make_agent(config, env):
+def make_agent(config, env, *, seed=None):
     algorithm = dict(config["algorithm"])
     algorithm.update(action_mask=tuple(int(v) for v in env.control_mask),
                      fixed_action=tuple(float(v) for v in env.normalize_commands(np.tile(env.initial, (3, 1)))[0]))
-    return MADDPG(AlgorithmConfig(obs_dim=len(OBSERVATIONS), seed=config["seed"], **algorithm))
+    if env.reference_schedule:
+        fixed = list(algorithm["fixed_action"])
+        fixed[0] = 2 * (env.reference_schedule["yaw_offset_rad"] - env.low[0]) / (env.high[0] - env.low[0]) - 1
+        algorithm["fixed_action"] = tuple(fixed)
+        if not env.control_mask[2]:
+            algorithm["speed_reference_schedule"] = (env.wind_scale, env.reference_schedule["speed_per_wind_rad_m"], float(env.low[2]), float(env.high[2]))
+    return MADDPG(AlgorithmConfig(obs_dim=len(OBSERVATIONS), seed=config["seed"] if seed is None else seed, **algorithm))
 
 
-def evaluate(checkpoint, output):
+def evaluate(checkpoint, output, *, backend_paths=None):
     torch.set_num_threads(1)
     agent, metadata = MADDPG.load(checkpoint)
     config = metadata["config"]
+    if backend_paths is not None:
+        from copy import deepcopy
+        if config["plant"]["kind"] != "pinn" or not set(backend_paths) <= {"run_dir", "script"}:
+            raise ValueError("evaluation may relocate only PINN run_dir/script; model identity stays pinned")
+        config = deepcopy(config)
+        config["plant"]["backend"].update(backend_paths)
     env = build_env(config)
     if metadata["normalization"] != env.normalization():
         raise ValueError("observation normalization mismatch")

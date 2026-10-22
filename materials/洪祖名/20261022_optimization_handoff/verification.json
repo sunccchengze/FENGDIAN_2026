@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "zip_verified_files": 432,
+  "zip_sha256": "8a36fd1a128dafc42a810c2779e86816c66b52d4f096381be4253b803910c62e",
+  "zip_bytes": 171202920,
+  "docx_pages": 1,
+  "docx_render": "Native Microsoft Word export plus packaged render_docx rasterization",
+  "docx_visually_checked": true,
+  "module_tests_passed": 129,
+  "portable_replay": {
+    "seed": 42,
+    "run_id": 0,
+    "rows": 10240,
+    "metric_rows": 80,
+    "full_trace_equal": true,
+    "protected_inputs_unchanged": true,
+    "relocated_model": true,
+    "new_training": false,
+    "physical_validation": false
+  },
+  "history_final_commit": "782368a31e412ff318595d7166a7e8eae30104fe",
+  "main_at_inspection": "83fd589fff9128f2750508e830179b26f074318e",
+  "history_ancestor_of_main": true,
+  "physical_validation": false
+}

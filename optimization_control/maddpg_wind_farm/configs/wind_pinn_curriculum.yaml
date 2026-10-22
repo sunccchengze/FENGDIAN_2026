@@ -1,0 +1,27 @@
+version: wind_pinn_curriculum_v1
+seed: 42
+source_experiment: optimization_control/experiments/20261022_wind_pinn_integration
+runtime_site_packages: .venv/pinn_tf216
+horizon: 128
+single_steps: 16384
+multi_steps: 32768
+expansion_steps: 16384
+eval_every: 2048
+warmup_steps: 512
+update_every: 2
+noise_std: [0.05, 0.15, 0.08]
+noise_correlation_s: [10.0, 3.0, 5.0]
+noise_kind: white
+noise_end_fraction: 0.2
+single_fractions: [0.25, 0.5, 0.75]
+training_fractions: [0.20, 0.35, 0.50, 0.65, 0.80]
+validation_fractions: [0.275, 0.425, 0.575, 0.725]
+test_fractions: [0.24, 0.39, 0.61, 0.76]
+test_initial_pitch_rad: [0.025, 0.055]
+gate:
+  max_tail_rmse_w: 100000.0
+  min_endpoint_response_fraction: 0.8
+  max_final_over_best_validation_ratio: 1.25
+selection_rule: lowest_validation_mean_rmse_including_initial
+test_rule: freeze_completed_stages_and_baselines_before_test
+scope: one_seed_synthetic_software_capability_diagnostic

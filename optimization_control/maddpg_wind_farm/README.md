@@ -1,5 +1,14 @@
 # 三台风机 MADDPG
 
+中期答辩图表使用保存实验数据和 Python 绘制，图组、说明与复现入口见 [MIDTERM_FIGURES.md](MIDTERM_FIGURES.md)。
+
+`portable_random_replay.py`用于2026-10-22交付包的移动目录验收：仅在内存重定位冻结记录的模型/脚本路径，校验摘要并逐行核对原测试；不训练、不改写原记录，输出必须为新目录。
+
+2026-10-22 随机入口的多流训练、后台偏航/转速调度与独立测试见 [RANDOM_WIND_TRAINING.md](RANDOM_WIND_TRAINING.md)。
+2026-10-22 新版十二输入 PINN 接入、合成联调和分阶段学习见 [WIND_PINN_INTEGRATION.md](WIND_PINN_INTEGRATION.md)。
+新版外部十二输入、内部十三特征；风向/TI 可传入，实际可用范围由拟合数据和报告约束。
+旧版交付已移至 `pinn/2026_1007`，旧实验保留；新版源目录为 `pinn/2026_1021`。
+
 稳定训练、验证集选模、独立重复与固定测试流程见 [STABLE_TRAINING.md](STABLE_TRAINING.md)。
 后续混合风况的退化定位、逐因素对照与验证选参 P/PI 基线见 [MIXED_STABILITY.md](MIXED_STABILITY.md)。
 功率可达性证明、误差分解和联合风速/目标采样实验见 [REACHABILITY_TRACKING.md](REACHABILITY_TRACKING.md)。
@@ -24,6 +33,10 @@
 - `diagnostics.py`：固定可达目标、三种控制权限、初始/训练策略/P/PI、奖励尺度诊断。
 - `diagnose_fixed_pinn.py`：已保存固定九输入实验的指标复算、目标响应、稳态可行点及 Critic 首步反事实回放；不训练、不覆盖原实验。报告放同目录，CSV/图表放日期命名实验目录。
 - `fixed_curriculum.py`：固定九输入模型的单目标桨距、多目标桨距、转速与偏航逐级训练；协议放 `configs/`，运行/恢复/验收记录沿用日期实验目录，不覆盖旧策略。
+- `wind_pinn_demo.py`：新版十二输入网络合成数据拟合、控制响应检查、随机入口短训练和新进程完整回放。
+- `wind_pinn_curriculum.py`：在新版模型上复用固定风阶段训练器，依验证门槛逐级开放权限；各阶段有固定预算。
+- `random_wind_training.py`：生成器作为每回合入口，冻结验证/测试风况，首层只学习pitch并共用yaw/转速调度；三流固定预算、门槛晋级和完整回放。
+- `../environments/wind_pinn_backend.py`：十二输入 SI 顺序转换、圆周风向域、几何和模型摘要核对；标准化和坐标旋转由保存的网络完成。
 - `inflow_workflow.py`：风况统计、CSV/JSON 回放、同权限及完整方案对照。
 - `../environments/farm_inflow.py`：复用旧 Kaimal 速度生成器，增加入口方向与 TI。
 - `../environments/pinn_adapter.py`：变化的 PINN 输入与固定六维输出之间的适配。

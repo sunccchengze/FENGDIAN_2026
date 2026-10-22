@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "full_replay_equal": true,
+  "checkpoint_sha256": "de60e8289d3bf9c42c0b4925b10037b44ba828214ce2e954964846539018a28d",
+  "model_sha256": "7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451",
+  "checkpoint_unchanged": true,
+  "physical_validation": false,
+  "rows": 3072,
+  "heading_gamma_verified": true,
+  "shared_inflow_verified": true,
+  "farm_power_sum_verified": true,
+  "max_actuator_step": [
+    0.0050002255002334905,
+    0.008726646260000005,
+    0.06649768267987932
+  ]
+}

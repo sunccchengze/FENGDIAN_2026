@@ -34,6 +34,14 @@ ROOT = Path(__file__).resolve().parents[1]
 MAX_ERROR_BYTES = 95 * 1024 * 1024
 MAX_WARN_BYTES = 50 * 1024 * 1024
 
+# ADR-2026-003（2026-10-22 生效）：>50 MiB 的二进制不进 git，走 Release 资产。
+# 「存量不动」——这两个文件在 ADR 生效前已入库，登记为基线，不再重复告警；
+# 新增的大文件不在基线内，必须同时满足「有 SHA256SUMS 条目」才不告警。
+LARGE_ASSET_BASELINE = {
+    "materials/孙承泽/PS科研制图/Figure1_Wake_Steering_Mechanism.psd",
+    "materials/洪祖名/20261007_optimization_handoff/archives/task_bundle.zip.001",
+}
+
 REQUIRED_PATHS = [
     "README.md",
     "CONTRIBUTING.md",
@@ -192,7 +200,7 @@ def check_files(files: list[Path], errors: list[str], warnings: list[str]) -> No
             errors.append(f"zero-byte image: {relative}")
         if size > MAX_ERROR_BYTES:
             errors.append(f"file exceeds 95 MiB: {relative} ({size} bytes)")
-        elif size > MAX_WARN_BYTES:
+        elif size > MAX_WARN_BYTES and relative not in LARGE_ASSET_BASELINE:
             warnings.append(f"large tracked file (>50 MiB): {relative} ({size} bytes)")
         if TEMP_NAME_RE.search(path.name):
             warnings.append(f"version-like filename needs human review: {relative}")
@@ -257,6 +265,34 @@ def check_checksums(files: list[Path], errors: list[str], warnings: list[str]) -
     return len(manifests)
 
 
+def check_large_assets(files: list[Path], errors: list[str], warnings: list[str]) -> int:
+    """ADR-2026-003：新增的 >50 MiB 文件要么有清单留证，要么就不该进 git。
+
+    判据只有一条：**能不能在某个 SHA256SUMS.txt 里找到它**。找不到就告警并给出
+    正确做法（传到带 tag 的 Release，仓库留清单 + 下载命令），而不是静默放行。
+    存量文件见 LARGE_ASSET_BASELINE，不在此重复告警。
+    """
+    covered: set[Path] = set()
+    for manifest in (path for path in files if path.name == CHECKSUM_FILENAME and path.is_file()):
+        for line in manifest.read_text(encoding="utf-8").splitlines():
+            match = CHECKSUM_LINE_RE.match(line.strip())
+            if match:
+                covered.add((manifest.parent / match.group("name")).resolve())
+    large = 0
+    for path in files:
+        if not path.is_file() or path.stat().st_size <= MAX_WARN_BYTES:
+            continue
+        relative = rel(path)
+        if relative in LARGE_ASSET_BASELINE:
+            continue
+        large += 1
+        if path.resolve() not in covered:
+            warnings.append(
+                f"大文件无清单留证（ADR-2026-003：>50 MiB 应作 Release 资产并在 SHA256SUMS.txt 登记）: {relative}"
+            )
+    return large
+
+
 def check_whitepaper_build(errors: list[str]) -> None:
     build = ROOT / WHITEPAPER_BUILD
     if not build.exists():
@@ -278,6 +314,7 @@ def main() -> int:
     check_files(files, errors, warnings)
     mirrors = check_mirrors(files, errors, warnings)
     manifests = check_checksums(files, errors, warnings)
+    check_large_assets(files, errors, warnings)
     check_whitepaper_build(errors)
 
     for warning in sorted(set(warnings)):

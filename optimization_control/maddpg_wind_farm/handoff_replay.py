@@ -16,7 +16,8 @@ def resolve_recorded(root, value):
             break
     else:
         p = root / value
-    p = p.resolve()
+    from .fixed_pinn_demo import resolve_team_path
+    p = resolve_team_path(p).resolve()
     if not p.is_relative_to(root) or not p.exists():
         raise ValueError(f"missing/out-of-root handoff dependency: {value}")
     return p

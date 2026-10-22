@@ -27,6 +27,7 @@
 | 3×3 留档与 1×3 决议 | [`docs/13`](../13_0919组会决议_三风机改造方案与3x3留档.md) | 工程改造和不可混用的数字口径 |
 | 数字孪生运行验证 | [`twin/README.md`](../../twin/README.md) | 运行、自检、数据分类和已知边界 |
 | EVID-2026-001 软件门禁 | [`EVID-2026-001_twin-verify-2026-09-20.md`](EVID-2026-001_twin-verify-2026-09-20.md) | `twin` lint/selftest/typecheck/build 的本地复现记录 |
+| EVID-2026-002 优化控制随机入口与中期交付 | [`EVID-2026-002_优化控制随机入口与中期交付.md`](EVID-2026-002_优化控制随机入口与中期交付.md) | 十二输入联调 + 随机入口三流训练 + P/PI 同权对照的结果卡；**软件流程完成、精度门槛未通过**，无物理精度结论 |
 | 科研可视化数据契约 | [`viz/README.md`](../../viz/README.md) | FLORIS/POD/PPO 数据、来源和复现脚本 |
 | 对外材料数字 | [`materials/README.md`](../../materials/README.md) | 写材料前必须先核对此处和其引用 |
 

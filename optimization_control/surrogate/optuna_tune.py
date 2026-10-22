@@ -17,8 +17,8 @@ from models.gpr_model import GPRSurrogate
 from models.mlp_v2 import MLPv2Surrogate
 
 
-DATA_CSV = r".\data\teammates\yuan_fuda_floris\raw\gch\training_data_gch.csv"
-EXP_DIR = r".\optimization_control\experiments\20260807_surrogate_baseline"
+DATA_CSV = r"D:\VSCODE\大创项目风电\data\teammates\yuan_fuda_floris\raw\gch\training_data_gch.csv"
+EXP_DIR = r"D:\VSCODE\大创项目风电\optimization_control\experiments\20260807_surrogate_baseline"
 SEED = 42
 
 

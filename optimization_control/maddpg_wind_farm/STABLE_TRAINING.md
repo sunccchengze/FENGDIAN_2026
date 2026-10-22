@@ -99,7 +99,7 @@ Python 调用 `train_run(..., resume=<检查点>, output=<新目录>)` 可续做
 ## 2026-09-22 实验结果
 
 训练与固定评估流程已完成，全部实验正常结束；**完整稳定性门槛未通过**，不能把验证选出的较好策略等同于训练稳定收敛。
-实验目录：[20260922_maddpg_stable_training](../experiments/20260922_maddpg_stable_training)。
+实验目录：[20260922_maddpg_stable_training](../experiments/20260922_maddpg_stable_training/)。
 总训练预算为 106496 个环境步（五组筛查、两组通道扩展、三组独立确认），不含恢复验收的小实验。
 
 单通道筛查结果如下，单位 kW；这些数字来自验证集，不能与后面的混合风况测试均值直接比较。
@@ -153,6 +153,6 @@ P/PI 在同一场景库运行一次，不存在训练随机性；表中横线不
 验证：78 项优化模块测试及 7 项旧 PPO 测试通过，共 85 项；最终防护调整后重跑 6 项受影响测试通过。
 连续 256 步与 128+128 步恢复的网络、回放、探索随机状态、验证记录及下一更新完全一致；
 磁盘加载评估一致、场景文件被改动时拒绝加载。
-验收记录：[20260922_stable_workflow_verification](../experiments/20260922_stable_workflow_verification)。
+验收记录：[20260922_stable_workflow_verification](../experiments/20260922_stable_workflow_verification/)。
 
 ![验证曲线与固定测试结果](../experiments/20260922_maddpg_stable_training/stability.png)

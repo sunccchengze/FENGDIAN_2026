@@ -152,10 +152,10 @@ def validate_demo_run(run_dir,backend):
 
 
 def create_demo_predictor(backend):
-    from ..maddpg_wind_farm.fixed_pinn_demo import load_team_module
+    from ..maddpg_wind_farm.fixed_pinn_demo import load_team_module, resolve_team_path
     run=Path(backend["run_dir"]).resolve()
     cfg,report,p,f,lo,hi,ambient=validate_demo_run(run,backend)
-    script=Path(backend["script"]).resolve()
+    script=resolve_team_path(backend["script"]).resolve()
     if hashlib.sha256(script.read_bytes()).hexdigest()!=report.get("team_script_sha256"):
         raise ValueError("team loading script differs from training provenance")
     module=load_team_module(script)
