@@ -1,4 +1,4 @@
-checkpoint=D:\VSCODE\大创项目风电\optimization_control\experiments\20261022_wind_pinn_integration\initial\checkpoint.pth
+checkpoint=.\optimization_control\experiments\20261022_wind_pinn_integration\initial\checkpoint.pth
 source=teammate_20261021_synthetic_test
 power_semantics=synthetic_test_power_w_not_physical_validation
 control_mask=[True, True, True]; traditional_three_channel=True

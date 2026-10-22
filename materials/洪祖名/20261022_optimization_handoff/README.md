@@ -9,7 +9,7 @@
 - [本轮结果报告](../../../optimization_control/maddpg_wind_farm/RANDOM_WIND_TRAINING.md)
 - [答辩图表及逐图讲稿](../../../optimization_control/maddpg_wind_farm/MIDTERM_FIGURES.md)
 - [原始产物清单](manifest.json)
-- [ZIP分片校验和（原始包，条目名 `ARCHIVE_SHA256.txt`）](ARCHIVE_SHA256.txt)
+- [ZIP分片校验和](ARCHIVE_SHA256.txt)
 - [移动目录验证](verification.json)
 - [历史完整成果](../20261007_optimization_handoff/README.md)
 
@@ -17,4 +17,4 @@
 
 当前常规测试选中策略449.72±40.11 kW，初始1083.62、P552.37、PI477.54；第0流、慢变和低风压力场仍弱于PI，未通过精度门槛。此为代理模型的软件联调结果，不是真实风场收益或预测精度结论。审阅前不合并main。
 
-> **2026-10-22 仓库侧收口**：`archives/task_bundle.zip.001–003`（163.3 MiB）按 ADR-2026-003 **不入 git**，整包在 Release `intake-2026-10-22` 的 `_20261022.zip`；本目录其余文件（含 30,720 行与 10,240 行两份轨迹）已随分支吸收进 `main`。原 `SHA256SUMS.txt` 因校验对象是原始包、改名 `ARCHIVE_SHA256.txt`，并由该文件前言说明。
+> **仓库侧追加（非作者正文）**：`archives/task_bundle.zip.001–003`（163.3 MiB）按 [`ADR-2026-003`](../../../docs/decisions/ADR-2026-003-大交付包存储口径.md) **不入 git**，整包存于 Release `intake-2026-10-22` 的 `_20261022.zip`（171,202,920 B）。原 `SHA256SUMS.txt` 的校验对象是交付方原始包、且仓库内副本做过路径归一，故改名为 `ARCHIVE_SHA256.txt` 并加前言说明，避免门禁按「本地必须存在」逐条校验。本目录其余文件已随分支吸收进 `main`（见 [`docs/audits/2026-10-22_分支收口与合并审计.md`](../../../docs/audits/2026-10-22_分支收口与合并审计.md)）。

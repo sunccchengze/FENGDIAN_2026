@@ -2,7 +2,7 @@
   "best": {
     "score_w": 65315.58910387385,
     "step": 14336,
-    "checkpoint": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\single_pitch_target_1\\segment_000\\step_00014336.pth",
+    "checkpoint": "optimization_control/experiments/20261022_wind_pinn_curriculum/single_pitch_target_1/segment_000/step_00014336.pth",
     "validation": [
       {
         "split": "validation",
@@ -22,6 +22,6 @@
       }
     ]
   },
-  "final": "D:\\VSCODE\\\u5927\u521b\u9879\u76ee\u98ce\u7535\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\single_pitch_target_1\\segment_000\\step_00016384.pth",
+  "final": "optimization_control/experiments/20261022_wind_pinn_curriculum/single_pitch_target_1/segment_000/step_00016384.pth",
   "completed": true
 }

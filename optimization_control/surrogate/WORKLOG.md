@@ -15,7 +15,7 @@
 
 ## 2. 队友成果接收（2026-08-06）
 
-来源：`D:\xjtu\大创风电\floris.zip`（含 31 个文件 + 说明.docx）
+来源：`external_teammate_delivery\floris.zip`（含 31 个文件 + 说明.docx）
 
 ### 数据（袁夫达）
 

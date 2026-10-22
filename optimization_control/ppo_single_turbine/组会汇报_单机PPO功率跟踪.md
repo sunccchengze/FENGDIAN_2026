@@ -117,15 +117,15 @@ Critic 评价状态好坏（学价值函数），二者共享特征。
 
 ```powershell
 # 1. 模型文件存在
-Test-Path D:\VSCODE\大创项目风电\models\ppo\ppo_tracking_v3_seed42.pt   # 应为 True
+Test-Path .\models\ppo\ppo_tracking_v3_seed42.pt   # 应为 True
 # 2. venv 存在
-Test-Path D:\VSCODE\大创项目风电\.venv\Scripts\python.exe               # 应为 True
+Test-Path .\.venv\Scripts\python.exe               # 应为 True
 ```
 
 ### 3.2 演示命令（一条命令跑完，约 10 秒）
 
 ```powershell
-D:\VSCODE\大创项目风电\.venv\Scripts\python.exe D:\VSCODE\大创项目风电\optimization_control\ppo_single_turbine\demo.py --target-fraction 0.8 --step
+.\.venv\Scripts\python.exe .\optimization_control\ppo_single_turbine\demo.py --target-fraction 0.8 --step
 ```
 
 ### 3.3 预期输出 + 讲解词
@@ -147,7 +147,7 @@ D:\VSCODE\大创项目风电\.venv\Scripts\python.exe D:\VSCODE\大创项目风�
 
 **打开效果图**：
 ```powershell
-Invoke-Item D:\VSCODE\大创项目风电\runs\demo_0.8_step.png
+Invoke-Item .\runs\demo_0.8_step.png
 ```
 
 图有 3 个面板（边指边说）：

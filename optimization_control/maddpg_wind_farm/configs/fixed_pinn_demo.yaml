@@ -9,13 +9,34 @@ fixed_condition:
   turbulence_intensity: 0.1
   source: demonstration_assumption_not_original_model_calibration
 geometry:
-  positions_m: [[0.0, 0.0, 90.0], [378.0, 0.0, 90.0], [756.0, 0.0, 90.0]]
+  positions_m:
+  - - 0.0
+    - 0.0
+    - 90.0
+  - - 378.0
+    - 0.0
+    - 90.0
+  - - 756.0
+    - 0.0
+    - 90.0
   source: demonstration_assumption_equal_spacing_not_team_geometry
 controls:
-  low: [-0.35, 0.0, 0.6]
-  high: [0.35, 0.25, 1.267]
-  initial: [0.0, 0.04, 0.9]
-  units: [rad, rad, rad/s]
+  low:
+  - -0.35
+  - 0.0
+  - 0.6
+  high:
+  - 0.35
+  - 0.25
+  - 1.267
+  initial:
+  - 0.0
+  - 0.04
+  - 0.9
+  units:
+  - rad
+  - rad
+  - rad/s
 data:
   source: coupled_integration_mock
   train_rows: 2048
@@ -34,5 +55,11 @@ maddpg:
   actor_lr: 0.0001
   reward_scale: 100.0
   horizon: 128
-  training_targets_w: [2500000.0, 3500000.0, 4500000.0]
-  evaluation_targets_w: [2500000.0, 3500000.0, 4500000.0]
+  training_targets_w:
+  - 2500000.0
+  - 3500000.0
+  - 4500000.0
+  evaluation_targets_w:
+  - 2500000.0
+  - 3500000.0
+  - 4500000.0
