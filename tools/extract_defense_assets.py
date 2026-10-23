@@ -47,8 +47,19 @@ ITEMS = [
     ("materials/孙承泽/2026-08-09_首版PPT与王牌PPT/王牌PPT.pptx", "ppt/media/image1.png",
      "ui_demo_early_deck.png", "早期答辩 PPT 里的界面截图（含人物，慎用）"),
     ("materials/孙承泽/2026-08-23_组会汇报/8.23组会汇报_可视化暑期进展_孙承泽.pptx",
-     "ppt/media/image1.jpg", "ui_3x3_overview_0823.png", "8.23 组会用的 3×3 全景界面截图"),
+     "ppt/media/image1.jpg", "ui_3x3_overview_0823.jpg", "8.23 组会用的 3×3 全景界面截图"),
 ]
+
+
+def sniff(data: bytes) -> str:
+    """按文件头判定真实格式，避免 jpg 被存成 .png（PPT 里会插不进去）。"""
+    if data[:4] == b"\x89PNG":
+        return "png"
+    if data[:2] == b"\xff\xd8":
+        return "jpg"
+    if data[:6] in (b"GIF87a", b"GIF89a"):
+        return "gif"
+    return "bin"
 
 
 def main() -> int:
@@ -65,6 +76,11 @@ def main() -> int:
             except KeyError:
                 print(f"跳过（包内无 {member}）：{src}")
                 continue
+        real = sniff(data)
+        stem, ext = Path(name).stem, Path(name).suffix.lstrip(".").lower()
+        if real != "bin" and real != ext:
+            print(f"  格式修正：{name} → {stem}.{real}（实际为 {real}）")
+            name = f"{stem}.{real}"
         target = OUT / name
         target.write_bytes(data)
         total += len(data)
