@@ -10,7 +10,10 @@
     python3 tools/build_defense_pack.py            # 生成 zip
     python3 tools/build_defense_pack.py --check    # 只校验已有 zip
 
-输出：docs/defense/中期答辩素材_20261023.zip
+输出：docs/defense/defense_assets_20261023.zip
+
+文件名用 ASCII：中文名在命令行与 URL 里要百分号转义，容易传错。
+包内的目录名仍是中文。
 """
 from __future__ import annotations
 
@@ -24,7 +27,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "docs/defense/assets"
-OUT_ZIP = ROOT / "docs/defense/中期答辩素材_20261023.zip"
+OUT_ZIP = ROOT / "docs/defense/defense_assets_20261023.zip"
 TOP = "中期答辩素材_20261023"
 
 README = """中期答辩素材包 · 2026-10-23

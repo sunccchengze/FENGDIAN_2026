@@ -17,5 +17,5 @@
 
 ## 整包下载
 
-全部素材打成一个 zip，随仓库一起推：`../中期答辩素材_20261023.zip`（7.7 MiB）。
+全部素材打成一个 zip，随仓库一起推：`../defense_assets_20261023.zip`（7.7 MiB）。
 重打用 `python3 tools/build_defense_pack.py`，它会顺带做完整性、清单、格式与尺寸自检。
