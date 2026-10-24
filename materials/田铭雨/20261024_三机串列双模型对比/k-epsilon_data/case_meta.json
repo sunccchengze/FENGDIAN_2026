@@ -1,0 +1,16 @@
+{
+ "case": "FLTG-1.cas.h5",
+ "data": "FLTG-1-04800.dat.h5",
+ "turbulence": "epsilon",
+ "inlet_velocity_m_s": 9.0,
+ "R_m": 63.5,
+ "omega_rad_s": 1.07,
+ "turbine_z_m": [8.006, -369.994, -747.994],
+ "axis": [0.0, 0.0962254138749342, 0.9953594016056894],
+ "hub_y": 81.333,
+ "cells": 1055511,
+ "flow_cells": 769932,
+ "iteration": 4800,
+ "convention": "U_forward = -U_axial",
+ "source": "F:\\NREL 5MW\\fangji-2_files\\dp0\\FLTG-2\\Fluent"
+}
