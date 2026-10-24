@@ -57,6 +57,7 @@ FS = (16, 9)
 TAG_SIM = ("模拟真值 · FLORIS", BLUE)
 TAG_SYN = ("合成标签 · 非物理精度", AMBER)
 TAG_OBS = ("实测记录", GREEN)
+TAG_CFD = ("CFD 后处理 · 非实测", PURPLE)
 
 
 def use_cjk() -> None:
@@ -1127,54 +1128,62 @@ def g18():
     save(fig, "g18_pinn_architecture")
 
 
-# ── g19 Fluent 现状 ─────────────────────────────────────────────────────
+# ── g19 Fluent 现状（2026-10-24 按三机串列双模型数据重做）──────────────
 def g19():
-    fig = plt.figure(figsize=FS)
-    frame(fig, "Fluent 仿真：流程跑通了，网格质量是当前的硬阻塞",
-          "NREL-5MW · 双机串列 · MRF 稳态 · SST k-ω；额定工况 11.4 m/s、12.1 rpm",
-          "依据：materials/田铭雨/田铭雨——仿真阶段记录.md（2026-09）　"
-          "｜　截图见 assets/extracted/fluent_*.png",
-          "Fluent 仿真工作 · 第 5 页", TAG_OBS)
+    """第 5 页主图：左「已完成工况」、右「已知不足」。
 
-    ax = fig.add_axes([0.05, 0.14, 0.43, 0.62])
+    口径来源 materials/田铭雨/20261024_三机串列双模型对比/（k-omega_data、
+    k-epsilon_data 的 power_thrust.csv 与 case_meta.json），可用性判定见
+    docs/evidence/EVID-2026-003。**三台总功率与逐台功率比一律不上这张图**。
+    """
+    fig = plt.figure(figsize=FS)
+    frame(fig, "Fluent 仿真：流程跑通了，网格还解析不了串列尾流",
+          "NREL-5MW · 三机串列 3D（378 m）· 稳态 MRF · 9 m/s、TI 10% · 同一套网格跑 SST k-ω 与标准 k-ε",
+          "依据：materials/田铭雨/20261024_三机串列双模型对比/　｜　"
+          "判定见 docs/evidence/EVID-2026-003　｜　单机才可信，串列干扰量不上屏",
+          "Fluent 仿真工作 · 第 5 页", TAG_CFD)
+
+    # 左栏：已完成
+    ax = fig.add_axes([0.05, 0.13, 0.44, 0.63])
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
     b(ax.text(0.0, 0.95, "已完成", fontsize=16, color=TEAL), TEAL, 0.7)
     done = [
-        ("几何与计算域", "前后两台机，间距 378 m（3D）"),
-        ("旋转域", "直径 189 m（1.5D）"),
-        ("网格", "Poly-Hexcore，近壁多面体"),
-        ("湍流模型", "SST k-ω，边界层分离可用"),
-        ("求解设置", "Coupled，伪时间稳态"),
-        ("数据链路", "速度云图与力矩可导出"),
+        ("布置", "三机串列，间距 378 m（3.0D）"),
+        ("网格", "Poly-Hexcore，1,055,511 单元"),
+        ("湍流模型", "SST k-ω 与标准 k-ε，各一套"),
+        ("工况", "9 m/s、TI 10%、Ω = 1.070 rad/s"),
+        ("单机功率", "2.39 MW（k-ω）/ 2.32 MW（k-ε）"),
+        ("两模型差", "2.7%；对 FLORIS 单机差 4.4% / 7.0%"),
     ]
     for i, (k, v) in enumerate(done):
-        y0 = 0.84 - i * 0.132
+        y0 = 0.82 - i * 0.135
         ax.add_patch(Rectangle((0.0, y0 - 0.012), 0.012, 0.012, color=TEAL))
         ax.text(0.03, y0, k, fontsize=13, color=INK)
         ax.text(0.30, y0, v, fontsize=11.5, color=GRAY)
 
-    bx = fig.add_axes([0.52, 0.14, 0.43, 0.62])
+    # 右栏：已知不足
+    bx = fig.add_axes([0.53, 0.13, 0.42, 0.63])
     bx.set_xlim(0, 1)
     bx.set_ylim(0, 1)
     bx.axis("off")
-    b(bx.text(0.0, 0.95, "阻塞与待办", fontsize=16, color=RED), RED, 0.7)
+    b(bx.text(0.0, 0.95, "已知不足", fontsize=16, color=RED), RED, 0.7)
     todo = [
-        ("网格质量", "体网格正交质量偏低，迭代中出现湍流强度过高报错"),
-        ("力矩失真", "网格问题的直接后果，力矩结果不能直接用作标签"),
-        ("网格无关性", "尚未做；一般要求差异 < 5% 才算无关"),
-        ("滑移网格", "捕捉瞬态涡结构需要它，成本更高，暂未上"),
+        ("尾流区网格 13 m", "127 m 直径上只有十来个单元，解析不出盘面平均亏损"),
+        ("3D 处尾流未体现", "T2 盘面均速只比 T1 低 0.2%（k-ε 反而高 0.3%）"),
+        ("同一 3D 却掉 34%", "T3 相对 T2 掉 34%，与上一条自相矛盾"),
+        ("零速度区", "3 个 zone 共 285,579 单元，占 27%"),
     ]
     for i, (k, v) in enumerate(todo):
-        y0 = 0.82 - i * 0.20
-        bx.add_patch(FancyBboxPatch((0.0, y0 - 0.04), 1.0, 0.16,
+        y0 = 0.80 - i * 0.205
+        bx.add_patch(FancyBboxPatch((0.0, y0 - 0.040), 1.0, 0.150,
                                     boxstyle="round,pad=0.02", facecolor="#fdf1ef",
                                     edgecolor=RED, lw=1, alpha=0.7))
-        bx.text(0.04, y0 + 0.06, k, fontsize=13, color=INK)
-        bx.text(0.04, y0 - 0.005, v, fontsize=11, color=GRAY)
-    bx.text(0.0, 0.02, "所以当前所有模型标签来自 FLORIS，不来自 Fluent。",
-            fontsize=12, color=RED)
+        bx.text(0.035, y0 + 0.062, k, fontsize=12.5, color=INK)
+        bx.text(0.035, y0 - 0.005, v, fontsize=10.5, color=GRAY)
+    bx.text(0.0, 0.015, "所以：单机数据可用作交叉核对，串列干扰量不进入对外材料。",
+            fontsize=11.5, color=RED)
     save(fig, "g19_fluent_status")
 
 
