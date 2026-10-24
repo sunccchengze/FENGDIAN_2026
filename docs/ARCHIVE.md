@@ -25,6 +25,7 @@
 | [`docs/defense/答辩_证据骨架_v1_20261005.pptx`](defense/答辩_证据骨架_v1_20261005.pptx) | 9 页旧 deck，**不是中期答辩成品** | 同上新大纲。素材另见 [`2026-10-23_答辩素材清单.md`](defense/2026-10-23_答辩素材清单.md) |
 | [`docs/defense/generate_defense_pptx.py`](defense/generate_defense_pptx.py) | 上面那份旧 deck 的生成器 | — |
 | [`HANDOFF.md`](..//HANDOFF.md) | **第 2 任 Agent** 的交接，人员与阶段均已变化 | [`HANDOFF_NEXT.md`](..//HANDOFF_NEXT.md)（2026-10-24 刷新） |
+| `docs/defense/defense_assets_20261023.zip` | 包内 g19 是**旧图**（2026-09 的双机 11.4 m/s），且大纲是已作废的 13 页版。2026-10-24 已删除 | `defense_assets_20261024.zip`（42 个文件与仓库逐字节一致）。取回旧包：`git show <本提交之前>:docs/defense/defense_assets_20261023.zip > /tmp/old.zip` |
 
 ---
 
@@ -76,7 +77,7 @@
 | `viz/figures_nature/`（18 张） | 是 **3×3** 旧布局口径（+24.04% / +67.26%） | 当前项目是 **1×3**，不得直接上屏 |
 | `viz/` 整体 | 封板于 2026-08-19，只修 bug | 里面的数字是 8 月口径 |
 | `materials/田铭雨/田铭雨——仿真阶段记录.docx` | 2026-09 的**双机、11.4 m/s、12.1 rpm** 工况 | 当前是三机、9 m/s、TI 10%，见 [`EVID-2026-003`](evidence/EVID-2026-003_三机串列CFD数据可用性核查.md) |
-| `docs/defense/assets/generated/g19_fluent_status.png` | 已于 2026-10-24 按三机新数据**重做** | ✅ 已修正，现在的图是对的 |
+| `docs/defense/assets/generated/g19_fluent_status.png` | 已于 2026-10-24 按三机新数据**重做**（此前是双机 11.4 m/s 旧口径） | ✅ 已修正；`build_defense_pack.py --check` 现在会逐字节比对包内与仓库，防止再出现"图换了包没换" |
 
 ---
 

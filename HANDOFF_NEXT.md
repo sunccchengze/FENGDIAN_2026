@@ -61,7 +61,7 @@
 
 ### 今天新进的三个事实（✅ 我亲手验过）
 
-1. **`main` 被重写成单根提交** `f2a6f4f`（用户整仓覆盖上传）。新树 = 旧树（`cb6ec84`）+ 1 个 docx，内容没丢；旧历史目前无 ref 指向，**需要用户决定是否打 tag 抢救**。
+1. **`main` 被重写成单根提交** `f2a6f4f`（用户整仓覆盖上传）。新树 = 旧树（`cb6ec84`）+ 1 个 docx，内容没丢。**旧历史已抢救**：tag `archive-main-before-2026-10-24-rewrite` → `cb6ec84`，API 实测 401 个提交可达。取旧文件走这个 tag。
 2. **田铭雨的 CFD 串列数据判否**：单机可信（对 FLORIS 差 −4.4%/−7.0%），串列干扰与尾流剖面不可用（T2 距 T1 3D 只低 0.2%，T3 距 T2 3D 却低 34%）。见 `docs/evidence/EVID-2026-003`。
 3. **PINN 训过了**（⚠️ 本条 2026-10-24 曾被我写错成"没训"，已更正）：结构包 `materials/厉今飞/20261021_PINN十二输入交付/` 确实只有结构（`untrained.keras`），但**真正训过的模型在** `optimization_control/experiments/20261022_wind_pinn_integration/model/summary.txt`——120 epoch、loss 1.006→0.019、测试集 P1/P2/P3 MAE 51.0/48.3/44.5 kW（4.1%/4.8%/5.1%）。**但 `label_source=synthetic_test`、`physical_validation=false`**，只能说"合成标签下的拟合精度"。
 
