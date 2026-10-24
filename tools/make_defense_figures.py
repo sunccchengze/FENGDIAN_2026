@@ -1068,6 +1068,137 @@ def gif_scan():
     print(f"  gif_yaw_scan.gif  {out.stat().st_size / 1024:.0f} KB")
 
 
+# ── g24 功率跟踪时序（有效 / 不足） ─────────────────────────────────────
+TRAJ = RANDOM / "test/trajectories.csv"
+
+# 选例规则（写死在脚本里，改例要连口径一起改）：
+#   有效场景 = 阵风、目标 2.7 MW、第 1 条训练流 —— 训练后 376 kW vs PI 512 kW
+#   不足场景 = 慢变、目标 3.9 MW、第 1 条训练流 —— 训练后 517 kW vs P 278 / PI 303 kW
+G24_CASES = (
+    ("test_gust_0_pitch0.055", "1", "有效场景｜阵风 · 目标 2.7 MW", TEAL),
+    ("test_ramp_2_pitch0.025", "1", "不足场景｜慢变 · 目标 3.9 MW（高目标）", RED),
+)
+
+
+def _series(case, ctrl, run):
+    pts = [(int(r["step"]), float(r["farm_power_w"]) / 1e6, float(r["target_w"]) / 1e6)
+           for r in rows(TRAJ)
+           if r["case_id"] == case and r["controller"] == ctrl and r["run_id"] == run]
+    pts.sort()
+    return pts
+
+
+def _rmse(case, ctrl, run):
+    vals = [float(r["error_w"]) for r in rows(TRAJ)
+            if r["case_id"] == case and r["controller"] == ctrl and r["run_id"] == run]
+    return (sum(v * v for v in vals) / len(vals)) ** 0.5 / 1000
+
+
+def g24():
+    fig = plt.figure(figsize=FS)
+    frame(fig, "同一工况、同一执行器：跟踪过程看得见，强弱点也看得见",
+          "左＝有效场景，训练后贴近目标、明显优于 PI　·　右＝不足场景，慢变加高目标下落后于 P / PI"
+          "　·　横轴为一回合 128 步（每步 1 s）",
+          "数据来源：…/20261022_random_wind_training/test/trajectories.csv（同 case_id 回放，测试集不参与选模）"
+          "　｜　标签为合成教师模型",
+          "第 9 页 · 优化控制结果（过程证据）", TAG_SYN)
+
+    for i, (case, run, label, color) in enumerate(G24_CASES):
+        ax = fig.add_axes([0.055 + i * 0.485, 0.335, 0.415, 0.395])
+        ours = _series(case, "final", run)
+        pi = _series(case, "pi", "-1")
+        p_ = _series(case, "p", "-1")
+        ini = _series(case, "initial", run)
+        t = [s for s, _, _ in ours]
+        tgt = ours[0][2]
+
+        ax.plot([s for s, _, _ in ini], [v for _, v, _ in ini], color=MUTED, lw=1.4,
+                alpha=0.75, label=f"初始策略　{_rmse(case, 'initial', run):.0f} kW")
+        ax.plot([s for s, _, _ in pi], [v for _, v, _ in pi], color=BLUE, lw=1.9,
+                label=f"PI 控制　{_rmse(case, 'pi', '-1'):.0f} kW")
+        ax.plot([s for s, _, _ in p_], [v for _, v, _ in p_], color=GRAY, lw=1.4,
+                ls=(0, (4, 2)), label=f"P 控制　{_rmse(case, 'p', '-1'):.0f} kW")
+        ax.plot(t, [v for _, v, _ in ours], color=color, lw=2.8,
+                label=f"训练后 MADDPG　{_rmse(case, 'final', run):.0f} kW")
+        ax.axhline(tgt, color=INK, lw=1.6, ls=(0, (6, 3)))
+        ax.text(3, tgt + 0.11, f"给定目标 {tgt:.1f} MW", ha="left", fontsize=11.5, color=INK,
+                bbox=dict(boxstyle="round,pad=0.22", facecolor="white", edgecolor="none", alpha=0.9))
+
+        ax.set_xlim(0, 128)
+        ax.set_ylim(1.9, 5.55)
+        ax.set_xlabel("回合内时间 / s", fontsize=12)
+        ax.set_ylabel("全场功率 / MW", fontsize=12)
+        b(ax.set_title(label, fontsize=14.5, color=color, pad=9), color, 0.5)
+        leg = ax.legend(fontsize=10, loc="upper left", ncol=2, handlelength=1.5,
+                        columnspacing=1.1, labelspacing=0.3, borderpad=0.35,
+                        facecolor="white", edgecolor=LINE, framealpha=0.95)
+        for txt in leg.get_texts():
+            txt.set_color(GRAY)
+        clean(ax, "y")
+
+    fig.text(0.055, 0.205,
+             "读法：黑虚线是给定目标，四条线是四种方式（同一执行器、同一量程、同一回合）。\n"
+             "左图各方法都向目标收敛、训练后最贴近；右图目标接近可用出力上限，训练后反而落后于 P / PI。",
+             fontsize=11.5, color=GRAY)
+    fig.text(0.055, 0.122,
+             "能证明：合成标签环境下训练后的策略确实把功率拉向目标；不能证明：真实风场同样成立。",
+             fontsize=11.5, color=RED)
+    save(fig, "g24_power_tracking")
+
+
+# ── g25 三项阶段技术贡献 ────────────────────────────────────────────────
+def g25():
+    fig = plt.figure(figsize=FS)
+    frame(fig, "我们具体解决了什么：三项阶段技术贡献，各对应一个难点",
+          "都不是算法原创；是把「已有模型 + 已有算法」接成一条能复算、能对照、能追责的评估链",
+          "对应页：第 6 页（贡献 01）· 第 8 页（贡献 02）· 第 9 页（贡献 03）"
+          "　｜　每一项的检验依据都在本仓库可复算",
+          "第 7 页备选 · 贡献提炼", None)
+
+    items = [
+        ("01", "面向三机任务的模型接口适配与检查", BLUE,
+         "难点", "风况、实际运行点、列序、风向周期、单位怎么统一",
+         "做法的检验依据",
+         ["外部 12 维 = 风况 3 + 三机运行点 9；桥接层转逐机交错列序",
+          "风向内部编为 sin/cos，外部 12 维 / 内部 13 特征不混称",
+          "列序、单位、机位、有效域逐项自检：输入越界显式拒绝",
+          "输入取执行器实际运行点，不把参考值当已施加状态"]),
+        ("02", "带统一执行器约束的多机控制评估", TEAL,
+         "难点", "RL 与 P / PI 权限、限速、后台规则不同，比较就不公平",
+         "做法的检验依据",
+         ["所有方法共享同一 ActionMapper 与 ActuatorModel",
+          "偏航 0.005 rad/s、桨距 0.5°/s、转速 0.1 rad/s²，全体一致",
+          "正式实验 RL 仅学桨距，偏航与转速由共同调度补齐",
+          "奖励 = 全场跟踪误差² + 动作变化惩罚，不含发电量项"]),
+        ("03", "训练到冻结测试的评估流程", AMBER,
+         "难点", "避免只展示最好的一条流、一个工况或一根均值柱",
+         "做法的检验依据",
+         ["三流 × 每流 128 回合，验证集先定门槛再开测试",
+          "门槛预先固定：验证均值 ≤400 kW、最差 ≤500 kW，未过不晋级",
+          "冻结测试 18 场 + 压力 2 场，测试集不参与选模与调参",
+          "240 条指标 / 30,720 行轨迹全留档，可逐回合复算"]),
+    ]
+    for i, (num, title, color, k1, v1, k2, rows_) in enumerate(items):
+        x = 0.045 + i * 0.318
+        ax = fig.add_axes([x, 0.175, 0.30, 0.62])
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, 1)
+        ax.axis("off")
+        ax.add_patch(FancyBboxPatch((0.0, 0.0), 1.0, 1.0, boxstyle="round,pad=0.012",
+                                    facecolor=PANEL, edgecolor=color, lw=1.6))
+        b(ax.text(0.05, 0.945, num, fontsize=15, color=color), color, 0.5)
+        b(ax.text(0.05, 0.845, title, fontsize=14.5, color=INK), INK, 0.5)
+        ax.plot([0.05, 0.95], [0.70, 0.70], color=LINE, lw=1.0)
+        b(ax.text(0.05, 0.645, k1, fontsize=12, color=color), color, 0.4)
+        ax.text(0.05, 0.585, v1, fontsize=11, color=GRAY, wrap=True)
+        ax.plot([0.05, 0.95], [0.505, 0.505], color=LINE, lw=1.0)
+        b(ax.text(0.05, 0.455, k2, fontsize=12, color=color), color, 0.4)
+        for j, r in enumerate(rows_):
+            ax.text(0.055, 0.375 - j * 0.115, "· " + r, fontsize=10.3, color=INK,
+                    wrap=True)
+    save(fig, "g25_contributions")
+
+
 def main(argv):
     use_cjk()
     wanted = set(argv)
