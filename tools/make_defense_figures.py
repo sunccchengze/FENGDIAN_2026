@@ -753,8 +753,9 @@ def g11():
         streams.append(st.mean(vals))
 
     fig = plt.figure(figsize=FS)
-    frame(fig, "独立测试：相对初始策略降 58.5%，相对 PI 只低 5.8%",
-          "20 个工况中的 18 个常规工况（平稳 / 慢变 / 阵风各 6），三种控制方法同权对照",
+    frame(fig, "独立测试：跟踪误差比初始策略降 58.5%，比 PI 只低 5.8%",
+          "20 个工况中的 18 个常规工况（平稳 / 慢变 / 阵风各 6）　·　指标是功率跟踪 RMSE，越低越好"
+          "　·　五种方法同一执行器、同一量程",
           "数据来源：optimization_control/experiments/20261022_random_wind_training/test/metrics.csv"
           "　｜　± 为三条训练流均值的样本标准差，不是置信区间",
           "第 9 页 · 优化控制结果", TAG_SYN)
