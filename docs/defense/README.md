@@ -11,7 +11,7 @@
 | [`2026-10-22_中期答辩评估与突击方案.md`](2026-10-22_中期答辩评估与突击方案.md) | 🗄️ 部分过时 | 「哪些话不能说」的判断仍有效，结构部分失效 |
 | [`答辩_证据骨架_v1_20261005.pptx`](答辩_证据骨架_v1_20261005.pptx) | 🚫 **已作废** | 9 页旧 deck，**不是中期答辩成品**，勿误交 |
 | [`generate_defense_pptx.py`](generate_defense_pptx.py) | 🚫 已作废 | 上述旧 deck 的生成器 |
-| [`assets/`](assets/README.md) | — | 图与 GIF 素材（`generated/` 22 张 + `extracted/` 12 张 + `animated/` 2 个） |
+| [`assets/`](assets/README.md) | — | 图与 GIF 素材（`generated/` **23 张** + `extracted/` 12 张 + `animated/` 2 个） |
 
 > 全部旧文件登记在 [`../ARCHIVE.md`](../ARCHIVE.md)。
 >

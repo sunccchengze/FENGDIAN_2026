@@ -58,6 +58,7 @@ TAG_SIM = ("模拟真值 · FLORIS", BLUE)
 TAG_SYN = ("合成标签 · 非物理精度", AMBER)
 TAG_OBS = ("实测记录", GREEN)
 TAG_CFD = ("CFD 后处理 · 非实测", PURPLE)
+TAG_UI = ("界面演示 · 非实时控制", BLUE)
 
 
 def use_cjk() -> None:
@@ -86,8 +87,21 @@ def frame(fig, title, subtitle="", footer="", kicker="", tag=None):
     fig.add_artist(Rectangle((0.045, 0.905), 0.055, 0.0035,
                              transform=fig.transFigure, facecolor=BLUE, edgecolor="none"))
     if footer:
-        fig.text(0.045, 0.038, footer, color=MUTED, fontsize=12, va="bottom")
-    fig.add_artist(Rectangle((0.045, 0.075), 0.910, 0.0014,
+        # 右下角有口径角标（从 x=0.80 起），脚注必须在此之前折行，否则两段字会叠在一起。
+        # 注意：textwrap 数的是「字符数」，中文一个字占两个字宽，必须按显示宽度折。
+        lines, cur, cur_w, limit = [], "", 0, 132   # 132 半角单位 ≈ 66 个汉字
+        for ch in str(footer):
+            w = 1 if ord(ch) < 128 else 2
+            if cur_w + w > limit and cur:
+                lines.append(cur)
+                cur, cur_w = "", 0
+            cur += ch
+            cur_w += w
+        if cur:
+            lines.append(cur)
+        fig.text(0.045, 0.038, "\n".join(lines), color=MUTED, fontsize=11.5,
+                 va="bottom", linespacing=1.45)
+    fig.add_artist(Rectangle((0.045, 0.088), 0.760, 0.0014,
                              transform=fig.transFigure, facecolor=LINE, edgecolor="none"))
     if tag:
         text, color = tag
@@ -167,11 +181,12 @@ def g01():
     loss = 1 - total / ideal
 
     fig = plt.figure(figsize=FS)
-    frame(fig, "串列布局的尾流损失：三台机只能发到单机功率的 51%",
-          "1×3 串列，间距 632 m（5.02D），来流 8 m/s、均匀入口、零偏航",
-          "数据来源：docs/research/oracle/floris_gch_oracle_v1.json（tandem3.none，FLORIS 4.6.6 GCH）"
-          "　｜　首台机功率作为「无尾流单机功率」的代理值",
-          "研究背景 · 第 2 页", TAG_SIM)
+    frame(fig, "串列布局的尾流损失：三台机合计只有单机功率的 51%",
+          "1×3 串列，间距 632 m（5.02D），来流 8 m/s、均匀入口、零偏航"
+          "　｜　同期外场：未控制尾流损失约 4%–20%（Simley et al., WES 9, 219–234, 2024）",
+          "数据来源：floris_gch_oracle_v1.json（tandem3.none，FLORIS 4.6.6 GCH）"
+          "　｜　首台机功率作「无尾流单机功率」代理　｜　左图为本场景模拟值，不与其他场站年值直接比较",
+          "第 2 页 · 研究背景", TAG_SIM)
 
     ax = fig.add_axes([0.065, 0.175, 0.40, 0.56])
     x = np.arange(3)
@@ -184,10 +199,11 @@ def g01():
             ax.text(i + 0.19, v / 2, f"−{100 * (1 - v / a):.0f}%", ha="center",
                     color="white", fontsize=15)
     ax.set_xticks(x, ["T01 上游", "T02 中游", "T03 下游"])
-    ax.set_ylim(0, 2050)
+    ax.set_ylim(0, 2350)
     ax.set_ylabel("单机功率 / kW")
     b(ax.set_title("逐台功率", loc="left", fontsize=16.5, color=INK), INK, 0.7)
-    ax.legend(frameon=False, loc="upper right", fontsize=12.5)
+    ax.legend(frameon=False, loc="upper center", ncol=2, fontsize=12.5,
+              bbox_to_anchor=(0.5, 1.02), handlelength=1.4, columnspacing=1.6)
     clean(ax, "y")
 
     bx = fig.add_axes([0.52, 0.175, 0.44, 0.56])
@@ -198,15 +214,16 @@ def g01():
                                 facecolor=PANEL, edgecolor=LINE, lw=1.3))
     bx.text(0.5, 0.845, f"全场  {ideal:.0f} kW  →  {total:.0f} kW",
             ha="center", va="center", fontsize=21, color=GRAY)
-    b(bx.text(0.5, 0.705, f"尾流吃掉 {loss * 100:.1f}%", ha="center", va="center",
-              fontsize=30, color=RED), RED, 1.0)
+    b(bx.text(0.5, 0.705, f"本场景模拟损失 −{loss * 100:.1f}%", ha="center", va="center",
+              fontsize=27, color=RED), RED, 1.0)
     bx.add_patch(FancyArrowPatch((0.10, 0.52), (0.90, 0.52), arrowstyle="-|>",
                                  mutation_scale=26, color=MUTED, lw=2))
-    bx.text(0.5, 0.42, "机位固定、来流均匀时，差的那一半全部来自尾流",
+    bx.text(0.5, 0.42, "机位固定、来流均匀时，这个差额全部来自尾流",
             ha="center", fontsize=14.5, color=GRAY)
     bx.text(0.5, 0.22,
-            "口径提醒：这是 FLORIS 模拟真值，不是现场实测；\n"
-            "换风向、换间距、换湍流强度，数值都会变。",
+            "口径提醒：这是单一场景的 FLORIS 模拟真值，不是现场实测；\n"
+            "换风向、换间距、换湍流强度，数值都会变；\n"
+            "外场的年尺度量级是 4%–20%，与本图的单场景值不同口径。",
             ha="center", va="center", fontsize=13, color=GRAY, linespacing=1.9)
     save(fig, "g01_wake_loss")
 
@@ -223,7 +240,7 @@ def g02():
           "三机同角度偏航扫描（±30°，5° 步长），同一来流与同一零偏航基准",
           "数据来源：同 oracle（tandem3.unified / tandem3.greedy）　｜　"
           "增益 = 单场景、单风向的模拟真值，不可外推为年发电量",
-          "研究背景 → 方法 · 第 3 页", TAG_SIM)
+          "第 8 页 · 优化控制（偏航线）", TAG_SIM)
 
     ax = fig.add_axes([0.065, 0.165, 0.55, 0.585])
     ys = sorted(scan)
@@ -288,7 +305,7 @@ def g03():
           "取轮毂高度附近 z = 100 m 的水平剖面，比较 0° 与三机 +30° 时 T01 下游三处",
           "数据来源：同 oracle（crossSection.u；x 为自 T01 起算的顺风距离）　｜　"
           "剖面相隔约 70 m，用于示意，不作逐点定量结论",
-          "方法示意 · 第 3–4 页", TAG_SIM)
+          "第 8 页 · 偏航示意（备用）", TAG_SIM)
 
     ax = fig.add_axes([0.065, 0.165, 0.46, 0.585])
     colors = [BLUE, TEAL, AMBER]
@@ -345,15 +362,15 @@ def g04():
           "四个模块完成度不同，按「已跑通 / 部分完成 / 未达标」分别标注",
           "依据：docs/project/WORKLIST.md 与各模块交付记录　｜　"
           "「跑通」指软件链路可运行，不等于物理精度验收",
-          "研究目标与技术路线 · 第 3 页")
+          "第 3 页 · 研究目标与技术路线")
 
     ax = fig.add_axes([0.04, 0.11, 0.92, 0.66])
     ax.set_xlim(0, 100)
     ax.set_ylim(0, 100)
     ax.axis("off")
     boxes = [
-        (3, 48, "Fluent 仿真", "NREL-5MW · MRF · SST k-ω\n双机串列，间距 3D",
-         "流程跑通，网格质量未达标", AMBER),
+        (3, 48, "Fluent 仿真", "NREL-5MW · MRF · 双湍流模型\n三机串列，间距 3D（378 m）",
+         "流程跑通；网格与取样待修", AMBER),
         (28, 48, "PINN 代理模型", "冻结主干 308.7 万参数\n新增 12 输入 / 6 输出",
          "结构就绪，精度待真实数据", AMBER),
         (53, 48, "优化控制", "MADDPG + P/PI 同权对照\n逐台贪心偏航寻优",
@@ -400,7 +417,7 @@ def g05():
           "输入风速 / 风向 / 湍流强度；1224 条 FLORIS 样本，8:1:1 划分，交叉验证",
           "数据来源：optimization_control/experiments/20260807_surrogate_baseline/model_comparison_cv.csv"
           "　｜　这是交叉验证误差，不是独立测试集精度",
-          "前期研究 · 第 4 页", TAG_SIM)
+          "第 4 页 · 前期研究", TAG_SIM)
 
     ax = fig.add_axes([0.065, 0.175, 0.48, 0.56])
     width = 0.19
@@ -447,7 +464,7 @@ def g06():
     frame(fig, "文献里的四类做法，以及本项目落在哪里",
           "不在此页做数值对比——外部增益数字必须带研究范围，留给口头补充",
           "说明：本页刻意不含外部研究的具体增益数值；若要引用，须注明场站与条件（见大纲 §4.2）",
-          "前期研究 · 第 4 页")
+          "第 4 页 · 前期研究")
 
     ax = fig.add_axes([0.04, 0.13, 0.92, 0.66])
     ax.set_xlim(0, 100)
@@ -487,56 +504,91 @@ def g06():
 
 # ── g07 PINN 改造 ───────────────────────────────────────────────────────
 def g07():
+    """第 7 页主图：结构改造（左）+ 训练与测试（右）。
+
+    左栏取结构包 `build_report.json`（9 输入版，可训练 24,306）；
+    右栏取真正训过的 12 输入版 `20261022_wind_pinn_integration/model/summary.txt`
+    （可训练 27,106、120 epoch、MAE 51.0/48.3/44.5 kW）。
+    **两个数不是同一版本，图上必须分开写**——这是 2026-10-24 复核发现的坑。
+    """
     rep = json.loads(BUILD_REPORT.read_text(encoding="utf-8"))
     total = rep["original_parameters"]
     frozen = rep["retained_original_hidden_parameters"]
     add_in = rep["new_input_trainable_parameters"]
     add_out = rep["new_output_trainable_parameters"]
-    train = rep["total_trainable_parameters"]
+    structure = rep["total_trainable_parameters"]
+
+    trained = json.loads((INTEG / "model/summary.txt").read_text(encoding="utf-8"))
+    n_epoch = trained["epochs_completed"]
+    trainable = trained["trainable_parameters"]
+    tm = trained["test_metrics"]
+    mae = [tm[k]["MAE"] / 1000 for k in ("P1", "P2", "P3")]
+
+    hist = [(int(r["epoch"]), float(r["loss"]), float(r["val_loss"]))
+            for r in rows(INTEG / "model/metrics.csv")]
 
     fig = plt.figure(figsize=FS)
-    frame(fig, "模型迁移：冻结 309 万参数的骨干，只训练 2.4 万新增参数",
-          "没有全量重训：原坐标连接权重与偏置保持冻结，仅新增输入连接与输出头参与训练",
-          "数据来源：materials/厉今飞/20261021_PINN十二输入交付/…/iochanged_9ms/build_report.json",
-          "模型迁移 · 第 7 页", TAG_SYN)
+    frame(fig, "PINN：冻结 309 万主干，只训新增接口；已训完 120 epoch",
+          "左＝结构改造（9 输入版，可训练 24,306）　右＝实际训练版本（12 输入版，可训练 27,106）"
+          "　—— 两个数是两个版本，不能混写",
+          "来源：PINN十二输入交付/…/build_report.json；experiments/20261022_wind_pinn_integration/model/"
+          "{summary.txt,metrics.csv}　｜　标签为合成教师模型，physical_validation = false",
+          "第 7 页 · PINN 开发进展", TAG_SYN)
 
-    ax = fig.add_axes([0.045, 0.15, 0.44, 0.60])
+    # 左：结构改造
+    ax = fig.add_axes([0.045, 0.15, 0.40, 0.60])
     ax.set_xlim(0, 100)
     ax.set_ylim(0, 100)
     ax.axis("off")
-    ax.add_patch(FancyBboxPatch((4, 56), 92, 26, boxstyle="round,pad=1.0",
+    ax.add_patch(FancyBboxPatch((4, 60), 92, 24, boxstyle="round,pad=1.0",
                                 facecolor="#eef5f9", edgecolor=BLUE, lw=2))
-    b(ax.text(50, 76, "原 PINN 骨干（冻结）", ha="center", fontsize=16, color=INK), INK, 0.8)
-    ax.text(50, 65, f"{frozen:,} 个参数 · 权重不变 · 摘要前后一致",
-            ha="center", fontsize=13, color=GRAY)
-    ax.add_patch(FancyBboxPatch((4, 28), 92, 18, boxstyle="round,pad=1.0",
+    b(ax.text(50, 79, "原 PINN 主干（冻结）", ha="center", fontsize=15, color=INK), INK, 0.8)
+    ax.text(50, 68, f"{frozen:,} 个参数 · 权重不变 · 摘要前后一致",
+            ha="center", fontsize=12, color=GRAY)
+    ax.add_patch(FancyBboxPatch((4, 33), 92, 17, boxstyle="round,pad=1.0",
                                 facecolor="#fdf3e7", edgecolor=AMBER, lw=2))
-    b(ax.text(50, 41, f"新增输入连接 {add_in:,}", ha="center", fontsize=15, color=INK), INK, 0.7)
-    ax.text(50, 33, "12 个输入：U∞、θ∞、TI + 三机 γ、β、ω", ha="center",
-            fontsize=12.5, color=GRAY)
-    ax.add_patch(FancyBboxPatch((4, 2), 92, 18, boxstyle="round,pad=1.0",
+    b(ax.text(50, 45, f"新增输入连接 {add_in:,}", ha="center", fontsize=14, color=INK), INK, 0.7)
+    ax.text(50, 37, "12 维：风速/风向/TI + 三机 γ、β、ω", ha="center",
+            fontsize=11.5, color=GRAY)
+    ax.add_patch(FancyBboxPatch((4, 8), 92, 17, boxstyle="round,pad=1.0",
                                 facecolor="#fdf3e7", edgecolor=AMBER, lw=2))
-    b(ax.text(50, 15, f"新增输出头 {add_out:,}", ha="center", fontsize=15, color=INK), INK, 0.7)
-    ax.text(50, 7, "6 个输出：P1–P3（W）、Ueff1–Ueff3（m/s）", ha="center",
-            fontsize=12.5, color=GRAY)
-    for y0, y1 in ((56, 46), (28, 20)):
+    b(ax.text(50, 20, f"新增输出头 {add_out:,}", ha="center", fontsize=14, color=INK), INK, 0.7)
+    ax.text(50, 12, "6 维：P1–P3（W）、Ueff1–3（m/s）", ha="center",
+            fontsize=11.5, color=GRAY)
+    for y0, y1 in ((60, 50), (33, 25)):
         ax.add_patch(FancyArrowPatch((50, y0), (50, y1), arrowstyle="-|>",
-                                     mutation_scale=18, color=MUTED, lw=1.6))
+                                     mutation_scale=16, color=MUTED, lw=1.6))
+    ax.text(50, 3, f"原模型总量 {total:,}　可训练 {structure:,}（{100 * structure / total:.2f}%）",
+            ha="center", fontsize=12, color=GRAY)
 
-    bx = fig.add_axes([0.52, 0.15, 0.44, 0.60])
-    bx.set_xlim(0, 1)
-    bx.set_ylim(0, 1)
-    bx.axis("off")
-    card(bx, 0.0, 0.60, 0.47, 0.33, "原模型全部参数", f"{total:,}", "保留用于追溯", INK)
-    card(bx, 0.51, 0.60, 0.47, 0.33, "本轮可训练参数", f"{train:,}",
-         f"占原模型 {100 * train / total:.2f}%", AMBER)
-    card(bx, 0.0, 0.20, 0.47, 0.33, "训练步数（三条流）", "16,384 × 3",
-         "每 4096 步验证一次", INK)
-    card(bx, 0.51, 0.20, 0.47, 0.33, "合成输入数量级", "4,096",
-         "训练 / 验证 / 测试独立划分", INK)
-    bx.text(0.0, 0.06,
-            "口播口径：说「没有全量重训」，不要说「没有训练」。",
-            fontsize=12.5, color=RED)
+    # 右：训练曲线
+    bx = fig.add_axes([0.50, 0.455, 0.44, 0.295])
+    ep = [h[0] for h in hist]
+    bx.plot(ep, [h[1] for h in hist], color=BLUE, lw=2.2, label="训练 loss")
+    bx.plot(ep, [h[2] for h in hist], color=AMBER, lw=2.2, ls="--", label="验证 loss")
+    bx.set_yscale("log")
+    bx.set_ylabel("loss（对数）", fontsize=12)
+    b(bx.set_title(f"训练过程：{n_epoch} epoch，loss {hist[0][1]:.2f} → {hist[-1][1]:.3f}",
+                   loc="left", fontsize=14, color=INK), INK, 0.6)
+    bx.legend(frameon=False, fontsize=11.5)
+    bx.tick_params(labelsize=11)
+    clean(bx, "y")
+
+    # 右：测试指标卡
+    cx = fig.add_axes([0.50, 0.115, 0.44, 0.26])
+    cx.set_xlim(0, 1)
+    cx.set_ylim(0, 1)
+    cx.axis("off")
+    card(cx, 0.0, 0.48, 0.30, 0.50, "可训练（12 输入版）", f"{trainable:,}",
+         f"结构版为 {structure:,}", INK)
+    card(cx, 0.35, 0.48, 0.30, 0.50, "测试集 P1 MAE", f"{mae[0]:.1f} kW",
+         "相对 4.09%", AMBER)
+    card(cx, 0.70, 0.48, 0.30, 0.50, "P2 / P3 MAE", f"{mae[1]:.1f} / {mae[2]:.1f}",
+         "4.76% / 5.11%", AMBER)
+    cx.text(0.0, 0.30, "标签来源 synthetic_test　·　physical_validation = false　·　监督迁移（无 PDE 残差）",
+            fontsize=11.5, color=RED)
+    cx.text(0.0, 0.10, "所以：这是「拟合合成标签」的精度，不是对 CFD 或实测的精度。",
+            fontsize=12, color=GRAY)
     save(fig, "g07_pinn_migration")
 
 
@@ -546,7 +598,7 @@ def g08():
     frame(fig, "系统架构：五段数据流，一段接一段跑通",
           "随机入口 → 冻结代理模型 → 反馈与评估 → 控制器 → 统一执行器",
           "依据：optimization_control/experiments/20261022_midterm_figures/01_closed_loop（同一张图的重新排版）",
-          "系统架构 · 第 5 页")
+          "第 3 页 · 技术路线（备用）")
 
     ax = fig.add_axes([0.04, 0.11, 0.92, 0.66])
     ax.set_xlim(0, 100)
@@ -601,7 +653,7 @@ def g09():
     frame(fig, "七步闭环：从选工况到导出材料，全程在同一界面完成",
           "每一步都有对应截图与可导出数据；界面内置三段计时，现场以显示为准",
           "截图来源：docs/research/img/r44_demo_step1–7.png（1×3 布局，2026-10-05）",
-          "系统流程 · 第 6 页")
+          "第 10 页 · 可视化与集成")
 
     ax = fig.add_axes([0.045, 0.700, 0.91, 0.135])
     ax.set_xlim(0, 100)
@@ -642,7 +694,7 @@ def g10():
           "验证 RMSE 随训练步数变化；三条流各 16,384 步，每 4,096 步验证一次",
           "数据来源：optimization_control/experiments/20261022_random_wind_training/pitch_run_{0,1,2}"
           "/segment_000/metrics.csv　｜　合成入口 + 合成标签",
-          "优化控制 · 第 8 页前", TAG_SYN)
+          "第 9 页 · 优化控制（训练收敛）", TAG_SYN)
 
     ax = fig.add_axes([0.07, 0.175, 0.53, 0.56])
     colors = [BLUE, TEAL, AMBER]
@@ -705,7 +757,7 @@ def g11():
           "20 个工况中的 18 个常规工况（平稳 / 慢变 / 阵风各 6），三种控制方法同权对照",
           "数据来源：optimization_control/experiments/20261022_random_wind_training/test/metrics.csv"
           "　｜　± 为三条训练流均值的样本标准差，不是置信区间",
-          "控制效果 · 第 8 页", TAG_SYN)
+          "第 9 页 · 优化控制结果", TAG_SYN)
 
     ax = fig.add_axes([0.07, 0.175, 0.46, 0.56])
     cols = [LINE, MUTED, BLUE, TEAL, AMBER]
@@ -799,7 +851,7 @@ def g13():
           "这些不改口径、不挑数据，原样报告",
           "数据来源：test/metrics.csv（low_wind_stress 族）+ 20261022_wind_pinn_curriculum/metrics.csv"
           "　｜　三条结论都是合成标签下的结果",
-          "适用边界 · 第 9 页", TAG_SYN)
+          "第 9 页 · 结果（负结果）", TAG_SYN)
 
     ax = fig.add_axes([0.05, 0.14, 0.90, 0.62])
     ax.set_xlim(0, 100)
@@ -841,7 +893,7 @@ def g14():
     frame(fig, "证据链：每个数字都能回到一份可复算的文件",
           "左侧是四条可复算证据，右侧是它们各自回答的那个质疑",
           "来源：docs/evidence/、ci/repo_quality.py 输出、30,720 行轨迹复算记录",
-          "可复现性 · 第 10 页")
+          "第 13 页 · 总结（可复算）")
 
     ax = fig.add_axes([0.05, 0.14, 0.44, 0.62])
     ax.set_xlim(0, 1)
@@ -885,7 +937,7 @@ def g15():
           "两张对照卡：左边是公开研究的证据等级，右边是我们目前的证据等级",
           "文献事实：Fleming et al., WES 9 (2024)；Howland et al., WES 5 (2020) / 6 (2021)；"
           "Bensason et al., JRSE 13 (2021)　｜　本页不写外部增益数值，引用时须带研究范围",
-          "研究定位 · 第 11 页")
+          "第 13 页 · 总结（备用）")
 
     ax = fig.add_axes([0.045, 0.145, 0.665, 0.615])
     ax.set_xlim(0, 100)
@@ -932,7 +984,7 @@ def g16():
     frame(fig, "下一步：先把真实数据接进来，再谈策略与规模",
           "三段时间预算，每一段都有可验收的产出物",
           "依据：docs/project/WORKLIST.md §2.6 节点表（2026-10-31 / 11-30 / 12-31 / 2027-06）",
-          "后续计划 · 第 12 页")
+          "第 12 页 · 后续研究计划")
 
     ax = fig.add_axes([0.05, 0.16, 0.90, 0.60])
     ax.set_xlim(0, 100)
@@ -1051,7 +1103,7 @@ def g17():
           "每个组合一条样本，共 1,224 条；同一套参数分别用 CC 与 GCH 两套尾流模型各算一遍",
           "数据来源：materials/袁夫达/20260808_FLORIS数据生成/extracted/output_{cc,gch}/training_data_*.csv"
           "　｜　标签来自 FLORIS，不是 Fluent",
-          "前期工作 · 第 4–5 页", TAG_SIM)
+          "第 7 页 · PINN 数据集（备用）", TAG_SIM)
 
     ax = fig.add_axes([0.065, 0.175, 0.36, 0.56])
     sub = [r for r in gch if abs(float(r["turbulence_intensity"]) - 0.06) < 1e-9]
@@ -1093,7 +1145,7 @@ def g18():
     frame(fig, "PINN 的结构改造：坐标输入旁接上 9 个控制量，输出接三个头",
           "不新增隐藏层，复用原网络的共享主干与六个特征分支；三台机共用同一套权重",
           "依据：materials/厉今飞/三台风机PINN模型交接与训练指南.docx（2026-10-03）",
-          "PINN 模型构建 · 第 6 页", TAG_SYN)
+          "第 6 页 · PINN 模型构建", TAG_SYN)
 
     ax = fig.add_axes([0.045, 0.13, 0.92, 0.64])
     ax.set_xlim(0, 100)
@@ -1141,7 +1193,7 @@ def g19():
           "NREL-5MW · 三机串列 3D（378 m）· 稳态 MRF · 9 m/s、TI 10% · 同一套网格跑 SST k-ω 与标准 k-ε",
           "依据：materials/田铭雨/20261024_三机串列双模型对比/　｜　"
           "判定见 docs/evidence/EVID-2026-003　｜　单机才可信，串列干扰量不上屏",
-          "Fluent 仿真工作 · 第 5 页", TAG_CFD)
+          "第 5 页 · Fluent 仿真工作", TAG_CFD)
 
     # 左栏：已完成
     ax = fig.add_axes([0.05, 0.13, 0.44, 0.63])
@@ -1195,7 +1247,7 @@ def g20():
     frame(fig, "偏航不是白拿：上游机少发、下游机多发，净值才决定值不值得",
           "同一 8 m/s 来流下，上游机偏航后自身功率下降，但把尾流推开让下游机回升",
           "数据来源：同 oracle（pair8ms，上游/下游两台机随偏航角变化的功率）",
-          "研究背景 · 第 2 页", TAG_SIM)
+          "第 2 页 · 研究背景（备用）", TAG_SIM)
 
     ax = fig.add_axes([0.07, 0.175, 0.52, 0.56])
     ys = [r["yaw"] for r in pair]
@@ -1247,7 +1299,7 @@ def g21():
           "两条线用的后端、评价指标、证据强度都不一样，混在一起就会被追问",
           "依据：optimization_control/maddpg_wind_farm/{WIND_PINN_INTEGRATION,REACHABILITY_TRACKING}.md"
           " 与 docs/research/oracle/",
-          "优化控制模块 · 第 8 页")
+          "第 8 页 · 优化控制")
 
     ax = fig.add_axes([0.045, 0.13, 0.92, 0.64])
     ax.set_xlim(0, 100)
@@ -1283,38 +1335,123 @@ def g21():
 
 # ── g22 当前问题与解决方案 ──────────────────────────────────────────────
 def g22():
-    fig = plt.figure(figsize=FS)
-    frame(fig, "当前问题与应对：四条卡点，四条正在走的路",
-          "问题按「卡住整条链路」的程度排序，解决方案写的是下一步动作，不是愿望",
-          "依据：docs/project/WORKLIST.md、docs/meetings/2026-10-11、materials/田铭雨/fluent仿真疑问.md",
-          "当前问题与解决方案 · 第 10 页")
+    """第 11 页主图。五条卡点，按「卡住整条链路的程度」排序。
 
-    ax = fig.add_axes([0.045, 0.13, 0.92, 0.64])
+    2026-10-24 复核后重写：原第 2 条「力矩失真」是 2026-08 的旧结论，本轮真正的
+    卡点是「尾流区 13 m 网格 + 盘面平均取样」；并新增第 5 条「验收带未对齐」。
+    """
+    fig = plt.figure(figsize=FS)
+    frame(fig, "当前问题与应对：五条卡点，每条都有下一步动作",
+          "问题按「卡住整条链路的程度」排序；写的是下一步做什么，不是愿望",
+          "依据：EVID-2026-003 §4.1.1（取样复核）　｜　田铭雨《中期答辩_仿真部分总结》§5.2（加密方案）"
+          "　｜　20261022_random_wind_training（训练门槛）",
+          "第 11 页 · 当前问题与解决方案")
+
+    ax = fig.add_axes([0.045, 0.105, 0.92, 0.70])
     ax.set_xlim(0, 100)
     ax.set_ylim(0, 100)
     ax.axis("off")
     items = [
-        ("数据不足", "标签全部来自 FLORIS 合成数据，没有实测或 CFD 校准",
-         "先修网格跑通 Fluent 小算例，再接实测风速数据", RED),
-        ("网格质量", "正交质量低、力矩失真、未做无关性验证",
-         "加密局部网格 + 网格无关性验证（差异 < 5%）", AMBER),
-        ("训练成本与效果", "三条流都未过 400 kW 门槛，慢变场仍落后 PI",
-         "先补数据再扩预算；不靠调参掩盖", AMBER),
-        ("跨模块口径", "偏航与桨距两条线容易混，外部数值易被当成上限",
-         "统一口径表 + 每页标注数据来源角标", BLUE),
+        ("① 标签全是代理或合成",
+         "训练标签来自 FLORIS 与自建合成教师模型；没有任何 CFD 或实测标签",
+         "修 Fluent 小算例，形成可追溯校验集", RED),
+        ("② 网格与取样口径",
+         "尾流区单元 13 m，解析不出盘面亏损；盘面 648 点中四成越界",
+         "尾流区加密到 2.0–2.5 m + 取样口径重写", RED),
+        ("③ 训练成本与泛化",
+         "三条训练流均未过 400 kW 门槛，慢变场仍落后 PI",
+         "先补样本再扩预算；分场景重跑对照", AMBER),
+        ("④ 输入语义未冻结",
+         "坐标口径（g18）与来流口径（g07）的映射未核对；rad/rpm 未统一",
+         "冻结字段表与单位，补单元测试", AMBER),
+        ("⑤ 验收带未对齐",
+         "P2/P1 合格带：仿真侧 0.50–0.65，本项目 FLORIS 基准 0.222，差一个量级",
+         "加密前先谈拢判据，否则是 450–600 万网格返工", BLUE),
     ]
     for i, (name, problem, plan, color) in enumerate(items):
-        y0 = 84 - i * 21
-        ax.add_patch(FancyBboxPatch((0, y0 - 15), 100, 18, boxstyle="round,pad=0.6",
+        y0 = 92 - i * 17.6
+        ax.add_patch(FancyBboxPatch((0, y0 - 13), 100, 15.2, boxstyle="round,pad=0.5",
                                     facecolor=PANEL, edgecolor=LINE, lw=1.1))
-        ax.add_patch(Rectangle((0.4, y0 - 15), 0.9, 18, facecolor=color,
+        ax.add_patch(Rectangle((0.4, y0 - 13), 0.9, 15.2, facecolor=color,
                                edgecolor="none"))
-        b(ax.text(3.5, y0 - 2, name, fontsize=14.5, color=INK), INK, 0.7)
-        ax.text(3.5, y0 - 10, problem, fontsize=11.5, color=GRAY)
-        ax.text(56, y0 - 8, "→  " + plan, fontsize=11.5, color=color)
-    ax.text(50, 3, "排序原则：先解决「没有真实数据」和「网格质量」，其余问题在它们之后才有意义",
-            ha="center", fontsize=12.5, color=GRAY)
+        b(ax.text(3.2, y0 - 3.2, name, fontsize=13.5, color=INK), INK, 0.7)
+        ax.text(3.2, y0 - 10.2, problem, fontsize=11, color=GRAY)
+        ax.text(58, y0 - 7.5, "→  " + plan, fontsize=11, color=color)
+    ax.text(50, 0.5, "排序原则：先解决「没有真实标签」与「网格/取样」，其余问题在它们之后才有意义",
+            ha="center", fontsize=12, color=GRAY)
     save(fig, "g22_problems_actions")
+
+
+# ── g23 演示界面（重新裁切 + 数值口径图例）──────────────────────────────
+def g23():
+    """第 10 页主图：界面实拍（重新裁切）+ 面板数值的正确含义。
+
+    2026-10-24 用户要求重做。原 PPT 把左栏面板读成「全场发电量 1.2 MW /
+    当前风速 30.1 / 增量 6.0 / 运行状态 25%」，实际分别是
+    演示占位功率 / 发电机温度 30.1 ℃ / 等效满发小时 6.0 h / 机组状态矩阵载荷。
+    本图把「可引用的结果值」与「面板占位值」分成两块，避免再次误读。
+    """
+    src = SHOT / "r44_demo_step4.png"
+    shot = Image.open(src).convert("RGB")
+    # 只保留右侧「七步流程 + 模型建议 / 参考复核」面板。
+    # 左边界按像素实测：x≈1245 是面板与 3D 场景的分界（1200–1240 列均亮度 258→274，
+    # 1245 起降到 54），早先裁 1440 会把「模型建议」那一栏和总功率列切掉。
+    crop = shot.crop((1245, 0, 1915, 720))
+
+    fig = plt.figure(figsize=FS)
+    frame(fig, "界面演示：七步流程走通，模型建议与参考复核并列",
+          "第 4 步「求解优化」实拍　·　1×3 串列（T01→T02→T03，北→南）、8 m/s 北风、TI 6%",
+          "截图来源：docs/research/img/r44_demo_step4.png（twin/?demo=1 第 4 步浏览器实拍）"
+          "　｜　界面为演示工具，非 SCADA、非实时控制",
+          "第 10 页 · 可视化与系统集成", TAG_UI)
+
+    # 左：界面裁切
+    ax = fig.add_axes([0.045, 0.115, 0.44, 0.66])
+    ax.axis("off")
+    ax.imshow(np.asarray(crop))
+    ax.add_patch(Rectangle((-0.004, -0.004), 1.008, 1.008, transform=ax.transAxes,
+                           facecolor="none", edgecolor=LINE, lw=2))
+    ax.text(0.5, -0.055, "界面右侧面板原样截取（未改字）", transform=ax.transAxes,
+            ha="center", fontsize=11.5, color=MUTED)
+
+    # 右：两栏口径说明
+    bx = fig.add_axes([0.505, 0.115, 0.45, 0.66])
+    bx.set_xlim(0, 1)
+    bx.set_ylim(0, 1)
+    bx.axis("off")
+
+    bx.add_patch(FancyBboxPatch((0.0, 0.585), 1.0, 0.395, boxstyle="round,pad=0.012",
+                                facecolor=PANEL, edgecolor=TEAL, lw=1.6))
+    b(bx.text(0.035, 0.935, "可引用的结果值", fontsize=15, color=TEAL), TEAL, 0.7)
+    rows_ok = [
+        ("模型建议（代理 · GCH 内核）", "3,299.8 kW"),
+        ("参考复核（FLORIS 4.6.6 独立算）", "3,299.8 kW"),
+        ("逐台：T01 / T02 / T03", "1339.9 / 847.2 / 1112.7 kW"),
+        ("本步优化计时（界面内单次）", "5.5 ms"),
+    ]
+    for i, (k, v) in enumerate(rows_ok):
+        y = 0.855 - i * 0.078
+        bx.text(0.035, y, k, fontsize=11.5, color=GRAY)
+        b(bx.text(0.66, y, v, fontsize=13, color=INK), INK, 0.5)
+
+    bx.add_patch(FancyBboxPatch((0.0, 0.245), 1.0, 0.305, boxstyle="round,pad=0.012",
+                                facecolor="#f7f8fa", edgecolor=MUTED, lw=1.3))
+    bx.text(0.035, 0.505, "左侧 HUD 面板值是演示占位，不作结论", fontsize=13, color=GRAY)
+    rows_demo = [
+        ("1.2 MW　→ 全场功率总览（面板带「演示」角标）", ),
+        ("30.1 ℃　→ 发电机温度峰值，不是风速", ),
+        ("6.0 h　→ 等效满发小时，不是增量百分比", ),
+        ("3 / 3 台　→ 运行机组数（25% 是载荷矩阵值）", ),
+    ]
+    for i, (k,) in enumerate(rows_demo):
+        bx.text(0.05, 0.425 - i * 0.055, k, fontsize=11, color=GRAY)
+
+    bx.text(0.0, 0.16, "界面是演示工具，不是实时控制系统：", fontsize=13.5, color=RED)
+    bx.text(0.0, 0.075,
+            "5.5 ms 只代表界面内单次寻优，数据接口、执行器速率与闭环时延\n"
+            "都没有做过实时性验证。全片不使用「实时控制」「毫秒级控制」。",
+            fontsize=11.5, color=GRAY, linespacing=1.7)
+    save(fig, "g23_ui_demo")
 
 
 if __name__ == "__main__":
