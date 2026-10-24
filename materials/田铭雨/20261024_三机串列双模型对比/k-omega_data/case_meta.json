@@ -1,0 +1,22 @@
+{
+ "case": "FLTG-2.cas.h5",
+ "data": "FLTG-2-04606.dat.h5",
+ "turbulence": "omega",
+ "inlet_velocity_m_s": 9.0,
+ "R_m": 63.5,
+ "omega_rad_s": 1.07,
+ "turbine_z_m": [
+  8.006,
+  -369.994,
+  -747.994
+ ],
+ "axis": [
+  0.0,
+  0.09622496246144666,
+  0.9953596116978493
+ ],
+ "hub_y": 81.333,
+ "cells": 1055512,
+ "flow_cells": 769932,
+ "convention": "U_forward = -U_axial"
+}

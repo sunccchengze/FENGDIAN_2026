@@ -92,3 +92,14 @@
 两线其余全部文件（Streamlit 代码、数据、`site/` 旧版、`docs/` 文档中心、`.vscode/`、`wrangler.toml` 等）原样保留；
 `019fd504-static-site-line/docs/` 里的 `team_inventory.md` / `communication_log.md` / `question.md` / `孙承泽个人待办.md` 等是孙承泽的 Agent 当时写的项目文档，属平台文档，留在归档内，
 但它们是判断上述交付件归属的一手依据（尤其 `communication_log.md` 末尾孙承泽对 Q4/Q12/Q13 的答复）。
+
+## 2026-10-24 追记：田铭雨三机串列数据包（非归档来源，仅记删除台账）
+
+| 项目 | 记录 |
+|---|---|
+| 原路径 | `materials/田铭雨/三机串列_双模型对比数据及说明.zip` |
+| 大小 / sha256 | 744,061 B / `240fe7e38c5c21106834565f18880205be5cc9c52df5f7612aa8bf98c96675c6` |
+| 来源提交 | `cb6ec84`（田铭雨 2026-10-24 经 GitHub 网页上传） |
+| 处理 | 按 `materials/README.md` §2 规矩 5 解包并逐文件核对后删除 zip 本体；解包结果 23 个文件留在 `materials/田铭雨/20261024_三机串列双模型对比/`，附 `SHA256SUMS.txt` |
+| 取回 | `git show cb6ec84:"materials/田铭雨/三机串列_双模型对比数据及说明.zip" > /tmp/tandem.zip` |
+| 备注 | 该 zip 用 GBK 记录文件名且未置 UTF-8 标志位，直接解包会得到乱码目录；须 `info.filename.encode("cp437").decode("gbk")` 转码（`tools/inspect_transfer_zip.py` 同样会显示为乱码）。可用性核查见 `docs/evidence/EVID-2026-003_三机串列CFD数据可用性核查.md` |
