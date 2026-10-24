@@ -1,5 +1,8 @@
 # HANDOFF · 交接给下一任 Agent
 
+> 🗄️ **已被取代**｜这是**第 2 任 Agent** 的交接，历史价值为主。现行交接：[`HANDOFF_NEXT.md`](HANDOFF_NEXT.md)（2026-10-24 刷新，含「不要完全相信这份文件」声明）。
+
+
 > **本文件是「Agent 交接」分区明细的历史部分**（第 2 任 → 第 3 任）。全项目时间线主干见 [`docs/project/TIMELINE.md`](docs/project/TIMELINE.md)；现行交接与开放项见 [`HANDOFF_NEXT.md`](HANDOFF_NEXT.md)。
 >
 > **⚠️ 本文件是「第 2 任 → 第 3 任」的历史交接（写于 2026-08-28），正文中的分支名/数字/工具体检均已过期。**

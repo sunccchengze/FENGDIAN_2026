@@ -63,7 +63,7 @@
 
 1. **`main` 被重写成单根提交** `f2a6f4f`（用户整仓覆盖上传）。新树 = 旧树（`cb6ec84`）+ 1 个 docx，内容没丢；旧历史目前无 ref 指向，**需要用户决定是否打 tag 抢救**。
 2. **田铭雨的 CFD 串列数据判否**：单机可信（对 FLORIS 差 −4.4%/−7.0%），串列干扰与尾流剖面不可用（T2 距 T1 3D 只低 0.2%，T3 距 T2 3D 却低 34%）。见 `docs/evidence/EVID-2026-003`。
-3. **PINN 四个 build_report 全是 `NOT_trained`**，`training_performed_on_real_data: false`。所以第 7 页只能说"接口改造完成"，**不能说"已训练"**。
+3. **PINN 训过了**（⚠️ 本条 2026-10-24 曾被我写错成"没训"，已更正）：结构包 `materials/厉今飞/20261021_PINN十二输入交付/` 确实只有结构（`untrained.keras`），但**真正训过的模型在** `optimization_control/experiments/20261022_wind_pinn_integration/model/summary.txt`——120 epoch、loss 1.006→0.019、测试集 P1/P2/P3 MAE 51.0/48.3/44.5 kW（4.1%/4.8%/5.1%）。**但 `label_source=synthetic_test`、`physical_validation=false`**，只能说"合成标签下的拟合精度"。
 
 ### 最该干的活（按价值排）
 
@@ -195,6 +195,12 @@ R39 把仓库里两条未并入的分支（R38 与孤儿 a3）正式合入，并
 ## ★ 9. 我可能错在哪（请独立复核，不要因为是我写的就当真）
 
 用户在 2026-10-24 明确要求：「跟下一个 agent 强调不要完全相信你说的一切，让他独立思考，细细把握整体全貌。」
+
+### 9.0 我确实判错过一次（2026-10-24，同一天内被用户纠正）
+
+我看了 `materials/厉今飞/20261021_PINN十二输入交付/` 里四个 `build_report.json`（全写 `NOT_trained`）和 `untrained.keras`，就下结论"PINN 一个都没训"，并写进了大纲第 7 页。**错了。** 训练记录在另一个目录：`optimization_control/experiments/20261022_wind_pinn_integration/model/`，120 epoch、测试集 MAE 4%–5%。
+
+教训：**本仓库同一个模型的"交付包"和"使用记录"分开放**。判断"某件事做没做"时，不能只看交付目录，必须去下游找有没有人真的跑过。这条是用户看出来的——所以用户的领域直觉比我的文件检索更可靠，被质疑时先复核，别辩解。
 
 ### 9.1 我的判断里最脆的三处
 
