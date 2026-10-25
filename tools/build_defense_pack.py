@@ -48,10 +48,11 @@ README = """中期答辩 · 全素材包（2026-10-24）
   00_制作大纲v3_主线版.md      ★★ 先看这个：主线（问题→路线→贡献→结果→价值）+ 逐页屏上/口播/图 + 时间点
   01_逐页制作规格_14页.md      ★ 排版说明书（v2）：每页「屏上放什么 / 用哪张图 / 口播念什么 / 不要说」
   02_问答备忘.md               ★ Q1–Q10 高频问 + 每页 2–3 条追问的标准答法，每条 ≤3 句
-  03_口播稿_照念_v3.txt        ★ 提词器版（v3，按 00_ 的稿）：1,430 字 / 6′32″，分页标「应到时间」
-  03_口播稿_照念.txt           ← v2 提词器（1,394 字），与 01_ 配套，二选一
+  03c_口播稿_照念_v3.txt       ★ 提词器版（v3，按 00_ 的稿）：1,435 字 / 6′32″，分页标「应到时间」
+  03_口播稿_照念.txt           ← v2 提词器（1,394 字），已被 03c 取代，仅留作对照
   03b_初版PPT内容审阅.md       ★ 对现有 14 页成稿逐页挑错：4 条必须改 + 6 条建议
   04_初版大纲内容替换表.md      ← 你初版 14 页大纲逐页「哪句要改、改成什么、出处」
+  08_第9页证据说明.md          ← 第 9 页被追问时给什么：另有一个独立证据包 + 包里怎么复算
   05_答辩素材清单.md           ← 23 张图逐张的作用、关键数、出处、不能说什么
   06_项目记忆与现存问题.md      ← 真问题在哪、哪些数说出去会出事
   07_证据卡_EVID-2026-003.md    ← CFD 数据可用性判定（含 2026-10-24 的取样复核）
@@ -59,14 +60,14 @@ README = """中期答辩 · 全素材包（2026-10-24）
   animated/     2 个 GIF       ← 七步演示逐帧、偏航扫描逐帧
   extracted/   12 张原图       ← 从 .docx / .pptx 里解出来的队友原始截图
   raw/          3 份源数据     ← 第 9 页那张图的 metrics.csv（240 行）+ summary + aggregate
-  scripts/      3 个 .py       ← 出图、解包、打包脚本（只读仓库数据，不重跑实验）
+  scripts/      5 个 .py       ← 出图、解包、打包、时间同步、第 9 页证据包（只读仓库数据，不重跑实验）
   MANIFEST.sha256              ← 逐文件校验和
 
 
 一、半小时怎么用
 ----
 1.（5 分钟）读 01_ 开头两张表：「排片总表」和「时间检查点」。
-   先认三件事：14 页定死、口播 1,394 字 ≈ 5 分 24 秒、含停顿计划 6 分 27 秒、硬上限 7 分。
+   先认三件事：14 页定死、口播 1,435 字 ≈ 5 分 34 秒、含停顿计划 6 分 32 秒、硬上限 7 分。
 
 2.（10 分钟）把 01_ 里 14 页的「屏上」代码块整块复制进 PPT。
    每块都已按最新口径改好，包括要加的小字和要删的旧数字。
@@ -168,6 +169,8 @@ def sha256(path: Path) -> str:
 # 只打包这几个脚本，别把整个 tools/ 都算进去
 SCRIPT_MAP = {
     "make_defense_figures.py": ROOT / "tools/make_defense_figures.py",
+    "sync_defense_timing.py": ROOT / "tools/sync_defense_timing.py",
+    "build_page9_evidence.py": ROOT / "tools/build_page9_evidence.py",
     "extract_defense_assets.py": ROOT / "tools/extract_defense_assets.py",
     "build_defense_pack.py": ROOT / "tools/build_defense_pack.py",
 }
@@ -184,6 +187,7 @@ DOC_MAP = {
     "05_答辩素材清单.md": DEF / "2026-10-23_答辩素材清单.md",
     "06_项目记忆与现存问题.md": DEF / "2026-10-24_项目记忆与现存问题.md",
     "07_证据卡_EVID-2026-003.md": ROOT / "docs/evidence/EVID-2026-003_三机串列CFD数据可用性核查.md",
+    "08_第9页证据说明.md": DEF / "2026-10-24_第9页证据说明.md",
 }
 
 TEST_DIR = ROOT / "optimization_control/experiments/20261022_random_wind_training/test"

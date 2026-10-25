@@ -528,7 +528,7 @@ def g07():
             for r in rows(INTEG / "model/metrics.csv")]
 
     fig = plt.figure(figsize=FS)
-    frame(fig, "PINN：冻结 309 万主干，只训新增接口；已训完 120 epoch",
+    frame(fig, "PINN：冻结主干 3,087,200 参数，只训新增接口 27,106 个；已训完 120 epoch",
           "左＝结构改造（9 输入版，可训练 24,306）　右＝实际训练版本（12 输入版，可训练 27,106）"
           "　—— 两个数是两个版本，不能混写",
           "来源：PINN十二输入交付/…/build_report.json；experiments/20261022_wind_pinn_integration/model/"
@@ -780,7 +780,7 @@ def g11():
     bx.add_patch(FancyBboxPatch((0.0, 0.62), 1.0, 0.28, boxstyle="round,pad=0.02",
                                 facecolor="#eef7f5", edgecolor=TEAL, lw=1.2))
     bx.text(0.04, 0.84, "相对初始：−58.5%", fontsize=15, color=TEAL)
-    bx.text(0.04, 0.71, "三条训练流方向一致，这一条站得住", fontsize=12, color=GRAY)
+    bx.text(0.04, 0.71, "三条训练流方向一致，这一条可复现", fontsize=12, color=GRAY)
     bx.add_patch(FancyBboxPatch((0.0, 0.28), 1.0, 0.28, boxstyle="round,pad=0.02",
                                 facecolor="#fdf3e7", edgecolor=AMBER, lw=1.2))
     bx.text(0.04, 0.50, "相对 PI：−5.8%", fontsize=15, color=AMBER)
@@ -1497,7 +1497,7 @@ def g22():
          "坐标口径（g18）与来流口径（g07）的映射未核对；rad/rpm 未统一",
          "冻结字段表与单位，补单元测试", AMBER),
         ("⑤ 验收带未对齐",
-         "P2/P1 合格带：仿真侧 0.50–0.65，本项目 FLORIS 基准 0.222，差一个量级",
+         "P2/P1 验收参考：仿真侧 0.50–0.65，本项目 FLORIS 基准 0.222，差异明显，需先对齐判据",
          "加密前先谈拢判据，否则是 450–600 万网格返工", BLUE),
     ]
     for i, (name, problem, plan, color) in enumerate(items):
