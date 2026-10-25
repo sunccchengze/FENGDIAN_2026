@@ -77,6 +77,11 @@ LINK_SCOPE_EXCLUDE = (
     ".learnings/",  # agent learning logs at any depth (viz/.learnings/ too) are historical, matched by segment below
     # notes excerpted from the -SKILL- repo; their upstream references/ were deliberately not migrated
     "materials/孙承泽/学习计划与Agent准则/skills-notes/",
+    # imported teammate deliverable, kept verbatim: its in-package figure links were already broken
+    # in the original zip (13 referenced names do not exist, and docs/ uses figures/ instead of ../figures/).
+    # See materials/袁夫达/20261025_仿真建模数据交接/README.md §6 — fix upstream, not here.
+    "materials/袁夫达/20261025_仿真建模数据交接/docs/数据合理性验证报告.md",
+    "materials/袁夫达/20261025_仿真建模数据交接/docs/训练结果分析.md",
 )
 LINK_SCOPE_KEEP = {"viz/_archive/MANIFEST.md"}
 

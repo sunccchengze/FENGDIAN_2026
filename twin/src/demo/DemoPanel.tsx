@@ -12,7 +12,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSim } from '../state/simStore.ts'
-import { ACTIVE_LAYOUT, LAYOUTS } from '../scene/layouts.ts'
+import { ACTIVE_LAYOUT, LAYOUTS, switchLayoutHref } from '../scene/layouts.ts'
 import { FREEZE } from '../scene/freeze.ts'
 import './demo.css'
 import {
@@ -122,10 +122,20 @@ export default function DemoPanel() {
   }, [booted, step, effKey])
 
   if (ACTIVE_LAYOUT !== '1x3') {
+    // 2026-10-25 解冻：原来是死胡同（只告诉你「请用 ?demo=1&layout=1x3 打开」），改成一键过去。
+    // 走 switchLayoutHref → 只换 layout，demo=1&step=N 原样保留，所以点完仍在演示面板里。
     return (
       <div className="demo-panel demo-block">
         <h2>演示需要 1×3 串列布局</h2>
-        <p>本演示为三机串列（T01–T03）工况流程，请用 <code>?demo=1&amp;layout=1x3</code> 打开。</p>
+        <p>本演示为三机串列（T01–T03）工况流程，当前是 3×3 阵列。</p>
+        <button
+          type="button"
+          className="demo-goto1x3"
+          onClick={() => { window.location.assign(switchLayoutHref(window.location.href, '1x3')) }}
+        >
+          切到 1×3 串列并继续演示 →
+        </button>
+        <p className="demo-blockhint">地址：<code>?demo=1&amp;layout=1x3</code></p>
       </div>
     )
   }

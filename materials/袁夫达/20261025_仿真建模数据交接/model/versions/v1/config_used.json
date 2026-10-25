@@ -1,0 +1,45 @@
+{
+  "schema": "pinn_wind_io_v1_si_flow_to",
+  "turbine_positions_m": [
+    [
+      0.0,
+      0.0,
+      21.5205
+    ],
+    [
+      90.3,
+      0.0,
+      21.5205
+    ],
+    [
+      180.6,
+      0.0,
+      21.5205
+    ]
+  ],
+  "control_units": {
+    "yaw": "rad",
+    "pitch": "rad",
+    "rotor_speed": "rad/s"
+  },
+  "wind_direction_convention": "flow_to_ccw_from_positive_x",
+  "geometry_frame": "fixed_source_origin_xy_at_zero_wind",
+  "time_scale": "quasi_steady_or_case_mean",
+  "turbine_model": "NREL 5MW reference turbine (FLORIS nrel_5MW)",
+  "rotor_diameter_m": 125.88,
+  "air_density_kg_m3": 1.225,
+  "fixed_inlet_profile_description": "power-law shear alpha=0.12, no veer, reference height = hub height 90 m",
+  "power_definition": "electrical: P = 0.5*rho*A*Ueff^3*Cp(tsr,pitch)*eta, eta=0.944 (FLORIS nrel_5MW 口径), 再乘 yaw 余弦损失 cos^1.88(gamma)",
+  "ueff_definition": "rotor-disk area average of the along-flow velocity component, sampled on an equal-area polar grid (4 radii x 8 azimuths = 32 points per rotor), in the flow-aligned frame",
+  "coordinate_mode": "scaled",
+  "coordinate_scale": 0.239117,
+  "notes": [
+    "坐标口径 = scaled。scaled 时坐标为原 PINN 训练域尺度（乘 0.239117），几何比例与真实布局完全一致，只是绝对尺度不同。",
+    "风向为风吹向的方向：0 沿 +x，pi/2 沿 +y，从上往下看逆时针为正；由 FLORIS 气象来向换算：theta_flow = (270 - wd_met) mod 360。",
+    "偏航为相对来流的失配角，直接取 FLORIS yaw_angles（度转弧度），正负号约定以本数据集为准。",
+    "三台机控制指令统一（同一叶尖速比目标与同一集体桨距）；各机实际转速由 omega_i = tsr*Ueff_i/R 决定，因此逐机不同。",
+    "桨距与叶尖速比只取离散网格值（桨距 0~14° 步长 2°，速比 6/7/8/9），FLORIS 多维表为最近邻选择。",
+    "功率为电功率口径，与项目早期 2448 条 9 输入数据集一致。",
+    "标签源为 FLORIS 解析尾流模型 + FLORIS 自带 NREL 5MW Cp/Ct 曲面（demo 用途），仅供打通训练链路，独立物理校验仍需要 Fluent 或实测数据。"
+  ]
+}

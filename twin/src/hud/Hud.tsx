@@ -2,7 +2,10 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { useSim, useFarmFrame } from '../state/simStore'
 import { FARM } from '../scene/terrainUtil'
 import { UNIT_NAMEPLATE, FARM_RATED_MW, N_UNITS } from '../data/farmSim'
-import { LAYOUT } from '../scene/layouts.ts' // R41-A：矩阵/滑杆口径派生自布局真值源
+import {
+  LAYOUT, LAYOUTS, ACTIVE_LAYOUT, switchLayoutHref, type LayoutId,
+} from '../scene/layouts.ts'
+import { demoHref, isDemoOpen, applyCleanHud } from '../data/urlParams.ts' // 2026-10-25：七步入口 + ?hud=clean
 import { FREEZE } from '../scene/freeze.ts' // R42：freeze 取证模式挂钟定格
 import { ROTOR_D, WAKE_K, wakeDeflection, yawFactor } from '../data/turbinePhysics'
 import { anomalyLabel } from '../data/anomaly'
@@ -89,6 +92,15 @@ function MetricDonut({ pct, label, sub, display }: { pct: number; label: string;
 }
 
 /* ---------- 机组状态矩阵（列数随布局：3×3 三列 / 1×3 竖排，R41-A 派生）---------- */
+/* ---------- 演示出片模式 `?hud=clean`：只隐内部控件，不隐数据与角标 ---------- */
+function useCleanHud() {
+  // 首帧已在 main.tsx 挂好属性，这里只兜底「运行中改了 URL」的情况
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    applyCleanHud(document, typeof location === 'undefined' ? null : location.search)
+  }, [])
+}
+
 function Matrix() {
   const frame = useFarmFrame()
   const selected = useSim((s) => s.selected)
@@ -348,6 +360,75 @@ function SoundControl() {
         onChange={(e) => setAudioVol(Number(e.target.value) / 100)}
       />
       {audioOn && gesturePending && !introDone && <i className="sndwarn">开场结束后自动开声</i>}
+    </div>
+  )
+}
+
+/* ---------- 布局切换（2026-10-25 解冻新增）：3×3 ↔ 1×3 串列 ----------
+   为什么是整页导航而不是热切换：`ACTIVE_LAYOUT / LAYOUT / FARM / CAM_HOTKEYS`
+   都是模块加载时定死的几何真值（整棵场景图、机位表、集电回路、告警引擎都按它建模），
+   热切换等于把 9 个消费者全改成响应式并重建场景，收益不抵风险（见 README §布局切换）。
+   这里只换 URL 的 `layout` 一个参数再导航，其余参数（demo / step / q …）原样带走，
+   所以「七步演示面板开着时点切换」不会把演示丢掉。 */
+function LayoutSwitch() {
+  const [pending, setPending] = useState<LayoutId | null>(null)
+  const ids: LayoutId[] = ['3x3', '1x3']
+  const go = (id: LayoutId) => {
+    if (id === ACTIVE_LAYOUT || pending) return
+    setPending(id)
+    window.location.assign(switchLayoutHref(window.location.href, id))
+  }
+  return (
+    <div
+      className="layoutsw"
+      role="group"
+      aria-label={`当前布局：${LAYOUT.label}（可切换）`}
+      title={`布局切换：3×3 阵列（9 台）↔ 1×3 串列（3 台）。当前 ${LAYOUT.label}。两套几何的功率数字不可混用`}
+    >
+      <span className="lb"><i className="ico" aria-hidden="true">⊞</i> 布局</span>
+      {ids.map((id) => (
+        <button
+          key={id}
+          type="button"
+          className={ACTIVE_LAYOUT === id ? 'on' : ''}
+          aria-pressed={ACTIVE_LAYOUT === id}
+          aria-label={`切换到 ${LAYOUTS[id].label}`}
+          disabled={pending !== null}
+          onClick={() => go(id)}
+        >
+          {pending === id ? '…' : id === '3x3' ? '3×3' : '1×3'}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+/* ---------- 七步演示面板入口（2026-10-25 解冻补：之前只能手打 ?demo=1） ----------
+   打开时同时确保 layout=1x3（演示数据只对三机串列成立）；关闭时只删 demo，
+   不动 layout —— 用户可能正用 1×3 看三机，不该被顺手切回九机。 */
+function DemoSwitch() {
+  const [pending, setPending] = useState(false)
+  const open = isDemoOpen(typeof location === 'undefined' ? null : location.search)
+  const go = () => {
+    if (pending) return
+    setPending(true)
+    window.location.assign(demoHref(window.location.href, !open))
+  }
+  return (
+    <div className="demosw" role="group" aria-label={open ? '七步演示已打开' : '打开七步演示'}>
+      <span className="lb"><i className="ico" aria-hidden="true">▤</i> 看板</span>
+      <button
+        type="button"
+        className={open ? 'on' : ''}
+        aria-pressed={open}
+        disabled={pending}
+        title={open
+          ? '关闭七步演示面板（回到常规 HUD；布局不变）'
+          : '打开七步演示面板：选工况 → 查基准 → 调航向 → 求解 → 复核 → 可靠性 → 导出（自动切到 1×3 三机串列）'}
+        onClick={go}
+      >
+        {pending ? '…' : open ? '七步 · 关' : '七步 · 开'}
+      </button>
     </div>
   )
 }
@@ -650,6 +731,7 @@ function AnomalyModal() {
 
 /* ---------- 主组件 ---------- */
 export default function Hud() {
+  useCleanHud() // ?hud=clean：出片时只隐内部控件（声场/布局/七步/画质）
   const { scale, h: stageH } = useStageScale()
   const playing = useSim((s) => s.playing)
   const togglePlay = useSim((s) => s.togglePlay)
@@ -699,6 +781,10 @@ export default function Hud() {
           <div className="subtitle">风电场偏航优化 · 数字孪生演示平台 — AEOLUS TWIN <Badge k="演示" /></div>
           <div className="wallclock">本地 {wall || '--:--:--'} · 仿真 {hh}:{mm}</div>
           <SoundControl />
+          <div className="toolsw">
+            <LayoutSwitch />
+            <DemoSwitch />
+          </div>
           <div className="quality">
             <span>画质</span>
             {(['high', 'medium', 'low'] as const).map((q) => (

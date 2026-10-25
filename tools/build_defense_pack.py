@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
-"""把答辩素材打成一个可下载的 zip（进仓库，随分支一起推送）。
+"""把中期答辩所需的**全部素材**打成一个 zip（进仓库，随分支一起推送）。
+
+与上一版（`defense_assets_20261024.zip`，只有图 + 3 份文档）的区别：
+本包是「做 PPT 的人打开就能干活」的整包 —— 多了**逐页制作规格**、**问答备忘**、
+**照念口播稿**、**证据卡**、**第 9 页源数据**、**出图与解包脚本**。
 
 为什么是脚本而不是手工压缩：
-- 包内目录结构、附录文件、校验和都由脚本决定，换机器重跑结果一致；
+- 包内目录结构、校验和都由脚本决定，换机器重跑结果一致；
 - 素材更新后重跑一次即可，不会出现「包里的图和仓库里的图不是同一版」；
-- 打完之后立即自检（文件数、尺寸、格式、sha256），不合格就不落盘。
+- 打完之后立即自检（清单、sha256、图片格式与尺寸、逐字节新鲜度），不合格就不落盘。
 
 用法：
     python3 tools/build_defense_pack.py            # 生成 zip
     python3 tools/build_defense_pack.py --check    # 只校验已有 zip
 
-输出：docs/defense/defense_assets_<日期>.zip（当前 20261024）
+输出：docs/defense/defense_full_pack_20261024.zip
+      包内顶层目录「中期答辩_全素材_20261024/」
 
-文件名用 ASCII：中文名在命令行与 URL 里要百分号转义，容易传错。
-包内的目录名仍是中文。
+zip 文件名用 ASCII（中文名在命令行与 URL 里要百分号转义，容易传错）；包内目录名仍是中文。
 """
 from __future__ import annotations
 
@@ -27,103 +31,128 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "docs/defense/assets"
+DEF = ROOT / "docs/defense"
 PACK_DATE = "20261024"
-OUT_ZIP = ROOT / "docs/defense" / f"defense_assets_{PACK_DATE}.zip"
-TOP = f"中期答辩素材_{PACK_DATE}"
+OUT_ZIP = DEF / f"defense_full_pack_{PACK_DATE}.zip"
+TOP = f"中期答辩_全素材_{PACK_DATE}"
 
-README = """中期答辩素材包 · 2026-10-24
-================================
+README = """中期答辩 · 全素材包（2026-10-24）
+============================================
 
-这是给评审/自查用的压缩包，不是成品 PPT。
-解压后 40 余个文件，按下面顺序看，20 分钟能看完。
+这是给「做 PPT 的人」用的整包，不是成品 PPT（成品由组内自己做）。
+解压后按下面的顺序看，半小时能上手。
 
 目录
 ----
-  00_先读我.txt                    ← 本文件
-  01_中期答辩大纲_14页7分钟.md     ← 现行大纲：开篇 1 + 中间 12 + 结尾 1
-  02_答辩素材清单.md               ← 逐张图的来源、口径、不能说什么
-  03_项目记忆与现存问题.md         ← 真问题在哪、哪些数字说出去会出事
-  figures/   22 张 PNG            ← 答辩图，1920×1080，可直接插 PPT
-  animated/   2 个 GIF            ← 七步界面、偏航扫描
-  extracted/ 12 张图片            ← 从 .docx/.pptx 里解出来的原始截图
-  scripts/    3 个 .py            ← 图的生成脚本与打包脚本（只读仓库数据）
-  MANIFEST.sha256                 ← 校验和，确认没传坏
+  00_先读我.txt                ← 本文件
+  00_制作大纲v3_主线版.md      ★★ 先看这个：主线（问题→路线→贡献→结果→价值）+ 逐页屏上/口播/图 + 时间点
+  01_逐页制作规格_14页.md      ★ 排版说明书（v2）：每页「屏上放什么 / 用哪张图 / 口播念什么 / 不要说」
+  02_问答备忘.md               ★ Q1–Q10 高频问 + 每页 2–3 条追问的标准答法，每条 ≤3 句
+  03c_口播稿_照念_v3.txt       ★ 提词器版（v3，按 00_ 的稿）：1,435 字 / 6′32″，分页标「应到时间」
+  03_口播稿_照念.txt           ← v2 提词器（1,394 字），已被 03c 取代，仅留作对照
+  03b_初版PPT内容审阅.md       ★ 对现有 14 页成稿逐页挑错：4 条必须改 + 6 条建议
+  04_初版大纲内容替换表.md      ← 你初版 14 页大纲逐页「哪句要改、改成什么、出处」
+  08_第9页证据说明.md          ← 第 9 页被追问时给什么：另有一个独立证据包 + 包里怎么复算
+  05_答辩素材清单.md           ← 23 张图逐张的作用、关键数、出处、不能说什么
+  06_项目记忆与现存问题.md      ← 真问题在哪、哪些数说出去会出事
+  07_证据卡_EVID-2026-003.md    ← CFD 数据可用性判定（含 2026-10-24 的取样复核）
+  figures/     25 张 PNG       ← 1920×1080，16:9；v3 新增 g24 跟踪时序、g25 贡献页
+  animated/     2 个 GIF       ← 七步演示逐帧、偏航扫描逐帧
+  extracted/   12 张原图       ← 从 .docx / .pptx 里解出来的队友原始截图
+  raw/          3 份源数据     ← 第 9 页那张图的 metrics.csv（240 行）+ summary + aggregate
+  scripts/      5 个 .py       ← 出图、解包、打包、时间同步、第 9 页证据包（只读仓库数据，不重跑实验）
+  MANIFEST.sha256              ← 逐文件校验和
 
 
-一、20 分钟怎么看完
+一、半小时怎么用
 ----
-第 1 步（4 分钟）先看这 5 张：
-  figures/g01_wake_loss.png        尾流吃掉 48.6%，第 2 页主图
-  figures/g19_fluent_status.png    Fluent 现状（2026-10-24 已按三机数据重画）
-  figures/g07_pinn_migration.png   PINN 接口改造与可训练占比
-  figures/g11_independent_test.png 独立测试：−58.5% / −5.8%，含「第 0 条高于 PI」
-  figures/g22_problems_actions.png 第 10 页：四个卡点与下一步
+1.（5 分钟）读 01_ 开头两张表：「排片总表」和「时间检查点」。
+   先认三件事：14 页定死、口播 1,435 字 ≈ 5 分 34 秒、含停顿计划 6 分 32 秒、硬上限 7 分。
 
-第 2 步（5 分钟）看 01_ 的 §1 排片表
-  14 行，一眼看完。重点确认：每页时长你认不认。
+2.（10 分钟）把 01_ 里 14 页的「屏上」代码块整块复制进 PPT。
+   每块都已按最新口径改好，包括要加的小字和要删的旧数字。
 
-第 3 步（6 分钟）看 01_ 的第 5、7、10 三页
-  这三页是评委会认真看的地方，也是风险最高的三页。
-  讲稿可直接念，口径和禁语都写在旁边。
+3.（8 分钟）按 01_ 每页的「图」一行，插 figures/ 里的图。
+   图右下角的口径角标（模拟真值 / 合成标签 / CFD 后处理 / 界面演示）不要裁掉——
+   它和口播是配套的，裁掉就成了没有依据的声明。
 
-第 4 步（5 分钟）抽查三张容易出问题的：
-  figures/g13_failure_cases.png     三处没达标（主动交代那页）
-  figures/g15_positioning.png       证据等级对照，故意不写外部数值
-  figures/g21_two_control_lines.png 偏航线与桨距线不能混
+4.（5 分钟）把 03_ 打印出来实念一遍，掐表记总长。
+   超 7 分：按 01_ 末尾的「兜底砍句顺序」删括号里的句子，不要加速念。
+
+5.（2 分钟）看 02_ 的 Q1–Q10，覆盖八成提问。
 
 
 二、这批图的口径纪律（看图时请一起核）
 ----
-每张图右下角有一个角标，四种颜色四种话术，说的时候不能改：
+每张图右下角有一个角标，四种说法，说的时候不能改：
 
-  蓝「模拟真值 · FLORIS」    =  FLORIS 算出来的，口播说「模拟真值」
-  橙「合成标签 · 非物理精度」=  标签是合成公式生成的，口播必须带后半句
-  紫「CFD 后处理 · 非实测」  =  Fluent 算完导出的，不是实测，也不是精度证据
-  绿「实测记录」             =  本仓库目前没有任何一张图该挂这个角标
+  蓝「模拟真值 · FLORIS」      = FLORIS 算出来的，口播说「模拟真值」
+  橙「合成标签 · 非物理精度」  = 标签由合成公式生成，口播必须带后半句
+  紫「CFD 后处理 · 非实测」    = Fluent 算完导出的，不是实测，也不是精度证据
+  蓝「界面演示 · 非实时控制」  = 浏览器截图，口播必须补「不是实时控制系统」
 
-已经守住的几条：
-  · 没有把代理说成实测
-  · 没有把 449.72 的均值说成「优于传统控制」（第 0 条流 492.28 高于 PI 477.54）
-  · 没有把 +22.11% 说成年发电量增益
-  · 没有把 0.4%–1.7% 那类外部数值写成「上限」，也没有画进任何一张图
-  · 没有用「实时控制」，界面计时只说「界面内单次求解」，不代表全链路
-  · 三机串列 CFD 的阵列总功率与 P2/P1 没有画进任何一张图（自身不自洽，见 EVID-2026-003）
-
-禁用素材（这批里没有，但仓库里有）：
-  viz/figures_nature/ 那 18 张是 3×3 旧口径（+24.04% / +67.26%），
-  本轮是 1×3，不能当结果上屏；只能当方法示意并标注。
+已经守住的几条（改稿时不要破）：
+  · 没有把代理结果说成实测；
+  · 没有把 449.72 说成「优于传统控制」——第 0 条流 492.28 仍高于 PI 的 477.54；
+  · 58.5% 一律是**功率跟踪误差**下降，不是发电量增益；
+  · 没有用「实时控制 / 毫秒级」，界面里的计时只说「界面内单次寻优」；
+  · 三机串列 CFD 的阵列总功率、P2/P1 没有画进任何一张图，
+    判否理由是「盘面平均与剖面的取样口径不可靠」（详见 07_ §4.1.1）；
+  · 界面截图里「1.2 MW / 30.1 / 6.0 / 25%」四个数已逐条注正，
+    不再当作发电量、风速、增量或运行状态引用。
 
 
-三、这一版相较 2026-10-23 改了什么
+三、23 张图的用途分工
 ----
-1) 大纲换成 14 页（用户 2026-10-24 给定结构），旧的 13 页版已作废；
-2) g19 按三机串列真实数据重画——原图是 2026-09 的双机、11.4 m/s、12.1 rpm，
-   与新工况（三机、9 m/s、TI 10%、105 万单元）不是一回事；
-3) 新增 03_项目记忆与现存问题.md；
-4) 打包脚本的 --check 现在会逐字节比对「包内 vs 仓库」，
-   以前只数文件个数，图换了它也不知道。
+进主线的 16 张（按 14 页顺序）：
+  p2  g01 尾流损失曲线        p3  g04 技术路线
+  p4  g05 模型选型（备 g06）   p5  g19 Fluent 现状
+  p6  g18 PINN 结构            p7  g07 PINN 训练进展
+  p8  g02 偏航扫描（或 g21 两条控制线）
+  p9  g11 独立测试（配 g13 三处未达标）
+  p10 g23 界面演示            p11 g22 五个卡点与动作
+  p12 g16 下一阶段计划        p13 g14 证据链（或 g15 定位）
+
+没进主线、被问到时才拿出来的 7 张：
+  g03  偏航把尾流推开（横向 16 点，示意级，不当数据）
+  g08  五段数据流架构（p3 的备选）
+  g09  七步流程条（p10 的备选）
+  g10  三条流验证误差均未过 400 kW 门槛（p7 追问时用）
+  g12  按来流族拆开：阵风赢、慢变输
+  g17  数据集覆盖 1,224 条（17 风速 × 24 风向 × 3 湍流度）
+  g20  偏航的收益账：上游少发、下游多发
+
+> 07_ 是内部核查记录，里面有组内人名与数据路径；会上**不要点名**，
+> 一律说「仿真组交付的这批数据」。
 
 
-四、图上数字怎么核
+四、不能用的素材
 ----
-所有图都是脚本从仓库数据现算的，没有手填。改数字就改脚本里的常量再重画，
-不要手改 PNG（改了图就和数据脱钩了）。
-
-  python3 scripts/make_defense_figures.py          # 重画 22 张
-  python3 scripts/make_defense_figures.py g01 g11  # 只画指定几张
-  python3 scripts/make_defense_figures.py gif      # 重画 2 个动图
-  python3 scripts/extract_defense_assets.py        # 重新解出 12 张原图
-  python3 scripts/build_defense_pack.py --check    # 校验包是否与仓库一致
-
-依赖：matplotlib + numpy + pillow，中文字体 NotoSansCJKsc-Regular.otf。
-脚本只读仓库既有文件，不重跑实验、不改任何实验目录。
+viz/figures_nature/ 那 18 张是 3×3 的旧口径（+24.04% / +67.26%），
+本轮是 1×3，不能当结果上屏。本包已刻意不放。
 
 
-五、这包里没有的东西
+五、图上数字怎么核
 ----
-· 没有 .pptx / PDF / 渲染脚本 —— 版式和成稿由组内自己做
-· 没有视频 —— 两个 GIF 是逐帧图，不是录屏
-· 没有外部文献原文 —— 所以那 9 个外部数值一个都没画进图
+所有图都是脚本从仓库数据现算，没有手填。要改数字就改脚本常量再重画，
+不要手改 PNG（改了图就和数据脱钩）。
+
+  python3 scripts/make_defense_figures.py            # 重画全部 23 张
+  python3 scripts/make_defense_figures.py g07 g19    # 只画指定几张
+  python3 scripts/make_defense_figures.py gif        # 重画 2 个动图
+  python3 scripts/extract_defense_assets.py          # 重新解出 12 张原图
+  python3 scripts/build_defense_pack.py --check      # 校验包与仓库逐字节一致
+
+依赖：matplotlib + numpy + pillow，中文用 NotoSansCJKsc-Regular.otf。
+脚本只读仓库里已有的数据文件，不重跑实验、不改任何实验目录。
+raw/metrics.csv 是第 9 页那张图的原始逐工况记录，可以直接复算 RMSE 与均值。
+
+
+六、包里没有的东西
+----
+· 没有 .pptx / PDF —— 版式和成稿由组内自己做（当前只到大纲、讲稿、图）
+· 没有视频 —— 两个 GIF 是逐帧拼接，不是录屏
+· 没有外部文献原文 —— 所以外部数字只用文字写，没有画进图
 
 —— 生成于 2026-10-24
 """
@@ -137,15 +166,42 @@ def sha256(path: Path) -> str:
     return h.hexdigest()
 
 
-def img_size(path: Path):
-    data = path.read_bytes()[:32]
-    if data[:4] == b"\x89PNG":
-        return struct.unpack(">II", data[16:24]), "png"
-    if data[:2] == b"\xff\xd8":
-        return None, "jpg"
-    if data[:6] in (b"GIF87a", b"GIF89a"):
-        return struct.unpack("<HH", data[6:10]), "gif"
-    return None, "?"
+# 只打包这几个脚本，别把整个 tools/ 都算进去
+SCRIPT_MAP = {
+    "make_defense_figures.py": ROOT / "tools/make_defense_figures.py",
+    "sync_defense_timing.py": ROOT / "tools/sync_defense_timing.py",
+    "build_page9_evidence.py": ROOT / "tools/build_page9_evidence.py",
+    "extract_defense_assets.py": ROOT / "tools/extract_defense_assets.py",
+    "build_defense_pack.py": ROOT / "tools/build_defense_pack.py",
+}
+
+# 包内文档 → 仓库源文件
+DOC_MAP = {
+    "00_制作大纲v3_主线版.md": DEF / "2026-10-24_制作大纲v3_主线版.md",
+    "01_逐页制作规格_14页.md": DEF / "2026-10-24_逐页制作规格_14页.md",
+    "02_问答备忘.md": DEF / "2026-10-24_问答备忘.md",
+    "03_口播稿_照念.txt": DEF / "2026-10-24_口播稿_照念.txt",
+    "03c_口播稿_照念_v3.txt": DEF / "2026-10-24_口播稿_照念_v3.txt",
+    "03b_初版PPT内容审阅.md": DEF / "2026-10-24_初版PPT内容审阅.md",
+    "04_初版大纲内容替换表.md": DEF / "2026-10-24_初版大纲内容替换表.md",
+    "05_答辩素材清单.md": DEF / "2026-10-23_答辩素材清单.md",
+    "06_项目记忆与现存问题.md": DEF / "2026-10-24_项目记忆与现存问题.md",
+    "07_证据卡_EVID-2026-003.md": ROOT / "docs/evidence/EVID-2026-003_三机串列CFD数据可用性核查.md",
+    "08_第9页证据说明.md": DEF / "2026-10-24_第9页证据说明.md",
+}
+
+TEST_DIR = ROOT / "optimization_control/experiments/20261022_random_wind_training/test"
+RAW_MAP = {
+    "g11_independent_test_source.csv": TEST_DIR / "metrics.csv",
+    "g11_test_summary.txt": TEST_DIR / "summary.txt",
+    "g11_test_aggregate.csv": TEST_DIR / "aggregate.csv",
+}
+
+DIR_MAP = (
+    (ASSETS / "generated", "figures", ".png"),
+    (ASSETS / "animated", "animated", ".gif"),
+    (ASSETS / "extracted", "extracted", None),
+)
 
 
 def build() -> int:
@@ -154,38 +210,40 @@ def build() -> int:
         return 1
     with tempfile.TemporaryDirectory() as tmp:
         stage = Path(tmp) / TOP
-        for sub in ("figures", "animated", "extracted", "scripts"):
+        for sub in ("figures", "animated", "extracted", "raw", "scripts"):
             (stage / sub).mkdir(parents=True)
 
-        copies = [
-            (ASSETS / "generated", "figures", ".png"),
-            (ASSETS / "animated", "animated", ".gif"),
-            (ASSETS / "extracted", "extracted", None),
-        ]
-        for src_dir, dst, ext in copies:
+        for src_dir, dst, ext in DIR_MAP:
+            if not src_dir.is_dir():
+                print(f"ERROR 素材目录不存在：{src_dir.relative_to(ROOT)}")
+                return 1
             for f in sorted(src_dir.iterdir()):
                 if not f.is_file() or (ext and f.suffix.lower() != ext):
                     continue
                 shutil.copy2(f, stage / dst / f.name)
 
-        for f in ("make_defense_figures.py", "extract_defense_assets.py",
-                  "build_defense_pack.py"):
-            src = ROOT / "tools" / f
-            if src.exists():
-                shutil.copy2(src, stage / "scripts" / f)
+        for name, src in SCRIPT_MAP.items():
+            if not src.exists():
+                print(f"ERROR 缺脚本：{src.relative_to(ROOT)}")
+                return 1
+            shutil.copy2(src, stage / "scripts" / name)
 
-        shutil.copy2(ROOT / "docs/defense/2026-10-24_中期答辩大纲_按建议结构.md",
-                     stage / "01_中期答辩大纲_14页7分钟.md")
-        shutil.copy2(ROOT / "docs/defense/2026-10-23_答辩素材清单.md",
-                     stage / "02_答辩素材清单.md")
-        shutil.copy2(ROOT / "docs/defense/2026-10-24_项目记忆与现存问题.md",
-                     stage / "03_项目记忆与现存问题.md")
+        for name, src in DOC_MAP.items():
+            if not src.exists():
+                print(f"ERROR 缺文档：{src.relative_to(ROOT)}")
+                return 1
+            shutil.copy2(src, stage / name)
+
+        for name, src in RAW_MAP.items():
+            if not src.exists():
+                print(f"ERROR 缺原始数据：{src.relative_to(ROOT)}")
+                return 1
+            shutil.copy2(src, stage / "raw" / name)
+
         (stage / "00_先读我.txt").write_text(README, encoding="utf-8")
 
-        manifest = []
-        for f in sorted(p for p in stage.rglob("*") if p.is_file()):
-            rel = f.relative_to(stage).as_posix()
-            manifest.append(f"{sha256(f)}  {rel}")
+        manifest = [f"{sha256(f)}  {f.relative_to(stage).as_posix()}"
+                    for f in sorted(p for p in stage.rglob("*") if p.is_file())]
         (stage / "MANIFEST.sha256").write_text("\n".join(manifest) + "\n",
                                                encoding="utf-8")
 
@@ -203,6 +261,28 @@ def build() -> int:
     return check()
 
 
+def expected_sources() -> dict[str, Path]:
+    """包内相对路径 → 仓库源文件。生成的 README / MANIFEST 不在此列。"""
+    exp: dict[str, Path] = {}
+    for src_dir, prefix, ext in DIR_MAP:
+        if not src_dir.is_dir():
+            continue
+        for f in sorted(src_dir.iterdir()):
+            if not f.is_file() or (ext and f.suffix.lower() != ext):
+                continue
+            exp[f"{prefix}/{f.name}"] = f
+    for name, src in SCRIPT_MAP.items():
+        if src.exists():
+            exp[f"scripts/{name}"] = src
+    for name, src in DOC_MAP.items():
+        if src.exists():
+            exp[name] = src
+    for name, src in RAW_MAP.items():
+        if src.exists():
+            exp[f"raw/{name}"] = src
+    return exp
+
+
 def check() -> int:
     if not OUT_ZIP.exists():
         print(f"找不到 {OUT_ZIP}，先跑一次不带参数的打包")
@@ -218,8 +298,9 @@ def check() -> int:
         listed = {line.split("  ", 1)[1]: line.split("  ", 1)[0]
                   for line in manifest if "  " in line}
         payload = [n for n in names if n != f"{TOP}/MANIFEST.sha256"]
-        missing = sorted(set(listed) - {n[len(TOP) + 1:] for n in payload})
-        extra = sorted({n[len(TOP) + 1:] for n in payload} - set(listed))
+        inside = {n[len(TOP) + 1:] for n in payload}
+        missing = sorted(set(listed) - inside)
+        extra = sorted(inside - set(listed))
         if missing:
             print(f"ERROR 清单里有、包里没有：{missing}")
             ok = False
@@ -228,19 +309,9 @@ def check() -> int:
             ok = False
         for n in payload:
             rel = n[len(TOP) + 1:]
-            digest = hashlib.sha256(zf.read(n)).hexdigest()
-            if listed.get(rel) != digest:
+            if hashlib.sha256(zf.read(n)).hexdigest() != listed.get(rel):
                 print(f"ERROR 校验和不符：{rel}")
                 ok = False
-        # 图片格式与扩展名、答辩图尺寸
-        counts = {"figures": 0, "animated": 0, "extracted": 0}
-        for n in payload:
-            rel = n[len(TOP) + 1:]
-            if "/" not in rel:
-                continue
-            top = rel.split("/")[0]
-            if top in counts:
-                counts[top] += 1
             data = zf.read(n)[:32]
             ext = Path(n).suffix.lower().lstrip(".")
             real = ("png" if data[:4] == b"\x89PNG" else
@@ -249,76 +320,37 @@ def check() -> int:
             if real not in ("?", ext) and not (real == "jpg" and ext in ("jpg", "jpeg")):
                 print(f"ERROR 格式与扩展名不符：{rel}（实际 {real}）")
                 ok = False
-            if top == "figures" and real == "png":
+            if rel.startswith("figures/") and real == "png":
                 w, h = struct.unpack(">II", data[16:24])
                 if (w, h) != (1920, 1080):
                     print(f"WARN 尺寸不是 1920×1080：{rel} = {w}×{h}")
-    # ── 新鲜度：包里的每一份，必须和仓库里的当前版本逐字节相同 ──────────
-    # 早先的 check 只比对「清单 vs 包内」，只能证明包没传坏，**证明不了包是新的**。
-    # 2026-10-24 发现 g19 已按三机数据重画，但包内仍是 10-23 的旧图而 --check 报通过，
-    # 因此补上这一层：包内容 vs 仓库源文件。
-    fresh = [
-        (ASSETS / "generated", "figures", ".png"),
-        (ASSETS / "animated", "animated", ".gif"),
-        (ASSETS / "extracted", "extracted", None),
-    ]
-    stale: list[str] = []
-    expected: dict[str, Path] = {}
-    for src_dir, prefix, ext in fresh:
-        if not src_dir.is_dir():
-            continue
-        for f in sorted(src_dir.iterdir()):
-            if not f.is_file():
+
+        # ── 新鲜度：包里的每一份，必须和仓库里的当前版本逐字节相同 ──────────
+        # 只比对「清单 vs 包内」只能证明包没传坏，证明不了包是新的。
+        for rel, src in sorted(expected_sources().items()):
+            if rel not in listed:
+                print(f"ERROR 包内缺少：{rel}")
+                ok = False
                 continue
-            if ext and f.suffix.lower() != ext:
+            if hashlib.sha256(zf.read(f"{TOP}/{rel}")).hexdigest() != sha256(src):
+                print(f"ERROR 包内容与仓库不一致（旧版）：{rel}")
+                ok = False
+        # 反向：包里是否有仓库已不存在的文件
+        for rel in sorted(listed):
+            if rel in ("00_先读我.txt", "MANIFEST.sha256"):
                 continue
-            expected[f"{prefix}/{f.name}"] = f
+            if rel not in expected_sources():
+                print(f"ERROR 包内有仓库已不存在的文件：{rel}")
+                ok = False
 
-    # 只打包这三个脚本，别把整个 tools/ 都算进去（否则永远报"缺失"）
-    for name in ("make_defense_figures.py", "extract_defense_assets.py",
-                 "build_defense_pack.py"):
-        src = ROOT / "tools" / name
-        if src.exists():
-            expected[f"scripts/{name}"] = src
-
-    doc_map = {
-        "01_中期答辩大纲_14页7分钟.md": ROOT / "docs/defense/2026-10-24_中期答辩大纲_按建议结构.md",
-        "02_答辩素材清单.md": ROOT / "docs/defense/2026-10-23_答辩素材清单.md",
-        "03_项目记忆与现存问题.md": ROOT / "docs/defense/2026-10-24_项目记忆与现存问题.md",
-    }
-    for name, src in doc_map.items():
-        if src.exists():
-            expected[name] = src
-
-    with zipfile.ZipFile(OUT_ZIP) as zf:
-        inpack = {n[len(TOP) + 1:]: n for n in zf.namelist() if not n.endswith("/")}
-        for rel, src in expected.items():
-            if rel not in inpack:
-                stale.append(f"{rel}（包内缺失，仓库里有）")
-                continue
-            if hashlib.sha256(zf.read(inpack[rel])).hexdigest() != sha256(src):
-                stale.append(f"{rel}（包内是旧版）")
-        for rel in inpack:
-            if rel != "00_先读我.txt" and rel != "MANIFEST.sha256" and rel not in expected:
-                stale.append(f"{rel}（仓库里已不存在，包内仍留着）")
-
-    if stale:
-        ok = False
-        print("ERROR 包内容与仓库当前文件不一致，请重跑打包：")
-        for item in stale:
-            print(f"  · {item}")
-    else:
-        print(f"  新鲜度：{len(expected)} 个文件与仓库逐字节一致")
-
-    print(f"  自检：{len(payload)} 个文件，"
-          f"figures {counts['figures']} / animated {counts['animated']} / "
-          f"extracted {counts['extracted']} —— {'通过' if ok else '未通过'}")
+        n_fig = len([r for r in listed if r.startswith("figures/")])
+        n_gif = len([r for r in listed if r.startswith("animated/")])
+        n_ext = len([r for r in listed if r.startswith("extracted/")])
+    print(f"  自检：{len(listed)} 个文件，figures {n_fig} / animated {n_gif} / "
+          f"extracted {n_ext} / raw {len(RAW_MAP)} / scripts {len(SCRIPT_MAP)} "
+          f"—— {'通过' if ok else '未通过'}")
     return 0 if ok else 1
 
 
-def main(argv: list[str]) -> int:
-    return check() if "--check" in argv else build()
-
-
 if __name__ == "__main__":
-    raise SystemExit(main(sys.argv[1:]))
+    sys.exit(check() if "--check" in sys.argv else build())

@@ -1,0 +1,154 @@
+{
+  "generated_at": "20261024T150115Z",
+  "rows": 20160,
+  "csv": "out\\cases_wind.csv",
+  "csv_sha256": "5e2e96182342eee4af27698caf997e53579e7f14d0bc35c5f1d5d252862785de",
+  "columns": [
+    "ambient_wind_speed_m_s",
+    "ambient_wind_direction_rad",
+    "turbulence_intensity",
+    "yaw1",
+    "pitch1",
+    "rotor_speed1",
+    "yaw2",
+    "pitch2",
+    "rotor_speed2",
+    "yaw3",
+    "pitch3",
+    "rotor_speed3",
+    "P1",
+    "P2",
+    "P3",
+    "Ueff1",
+    "Ueff2",
+    "Ueff3"
+  ],
+  "layout": {
+    "x": [
+      0.0,
+      377.64,
+      755.28
+    ],
+    "y": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotor_diameter": 125.88,
+    "hub_height": 90.0,
+    "spacing_D": 3.0
+  },
+  "scan": {
+    "ws": [
+      5.0,
+      12.0,
+      1.0
+    ],
+    "wd": [
+      0.0,
+      15.0,
+      30.0,
+      45.0,
+      60.0,
+      75.0,
+      85.0,
+      90.0,
+      95.0,
+      105.0,
+      120.0,
+      135.0,
+      150.0,
+      165.0,
+      180.0,
+      195.0,
+      210.0,
+      225.0,
+      240.0,
+      255.0,
+      265.0,
+      270.0,
+      275.0,
+      285.0,
+      300.0,
+      315.0,
+      330.0,
+      345.0
+    ],
+    "ti": [
+      0.06,
+      0.08,
+      0.1
+    ],
+    "yaw_strategies": {
+      "aligned": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "plus10": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "minus10": [
+        -10.0,
+        -10.0,
+        -10.0
+      ],
+      "plus20": [
+        20.0,
+        20.0,
+        20.0
+      ],
+      "staggered": [
+        20.0,
+        -20.0,
+        20.0
+      ]
+    },
+    "control_patterns_note": "每个风速下所有物理可行的桨距档都入选（解耦桨距与风速），另加逐机错列",
+    "pitch_ladder_deg": [
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0
+    ],
+    "tsr_preference": [
+      8.0,
+      7.0,
+      6.0
+    ],
+    "max_uniform_per_ws": 4
+  },
+  "units": {
+    "wind_speed": "m/s",
+    "direction": "rad (flow-to)",
+    "yaw": "rad",
+    "pitch": "rad",
+    "rotor_speed": "rad/s",
+    "power": "W (electrical)",
+    "ueff": "m/s"
+  },
+  "ueff_sampling": {
+    "radii": 8,
+    "angles": 16,
+    "points_per_rotor": 128,
+    "method": "cubic-mean (cbrt of mean u^3), equal-area polar grid"
+  },
+  "power_method": "每台机用自己 (桨距, 速比) 块的表；FLORIS 提供流场，功率由 128 点盘面积分P = 0.5*rho*A*Ueff^3*Cp_i*eta*cos^1.88(yaw_i) 计算",
+  "cp_calibration": {
+    "factor": 1.034666,
+    "isolated_8ms_before_MW": 1.6952,
+    "isolated_8ms_after_MW": 1.754,
+    "official_isolated_8ms_MW": 1.754,
+    "residual_pct": 0.0,
+    "reason": "demo Cp 曲面峰值比官方表低约 2.5%，整体乘因子对齐官方功率曲线；Ct 未动（差 0.09%）"
+  },
+  "per_turbine_control": true,
+  "floris_version": "4.6.6",
+  "quick": false
+}

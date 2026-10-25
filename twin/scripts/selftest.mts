@@ -16,7 +16,13 @@ import {
   ISLANDS,
 } from '../src/scene/terrainUtil.ts'
 import { TURBINE_SPEC } from '../src/scene/turbine/geometry.ts'
-import { LAYOUTS, LAYOUT, ACTIVE_LAYOUT, unitOf } from '../src/scene/layouts.ts' // R41-A 布局真值源（R42 起 +ACTIVE_LAYOUT/unitOf）
+import {
+  LAYOUTS, LAYOUT, ACTIVE_LAYOUT, unitOf,
+  layoutFromSearch, switchLayoutHref, isLayoutId,
+} from '../src/scene/layouts.ts'
+import {
+  setParamHref, demoHref, isDemoOpen, isCleanHud, cleanHudHref, applyCleanHud,
+} from '../src/data/urlParams.ts' // 2026-10-25 顶栏「七步 · 开/关」+ 出片模式 ?hud=clean // R41-A 布局真值源（R42 +ACTIVE_LAYOUT/unitOf；2026-10-25 +切换按钮的纯函数）
 import { phaseFor, FROZEN_PHASE } from '../src/scene/freeze.ts' // R42 渲染相位冻结
 import { CAMERA_NODES, LOOK_NODES } from '../src/scene/introProfile.ts' // R42 开场路径
 import {
@@ -1096,5 +1102,119 @@ if (ACTIVE_LAYOUT === '3x3')
   ok('P2 执行器：指令量程钳制 ±30°（与滑杆/store 同一约束）', close(bank.states[0].cmd, 30, 1e-9))
 }
 
+// ---------------------------------------------------------------------------
+// 布局切换（2026-10-25 解冻新增）：顶栏按钮只换 URL 的 `layout` 一个参数。
+// 锁三件事：① 解析口径与 ACTIVE_LAYOUT 同源；② 切换不丢 demo/step 等参数；
+// ③ 非法值不让后面的场景拿到未定义布局（旧实现靠三元表达式兜底，这里显式断言）。
+// ---------------------------------------------------------------------------
+{
+  ok('布局切换：?layout=1x3 → 1x3', layoutFromSearch('?layout=1x3') === '1x3')
+  ok('布局切换：?layout=3x3 → 3x3', layoutFromSearch('?layout=3x3') === '3x3')
+  ok('布局切换：无 layout 参数 → null（由 TWIN_LAYOUT / 3×3 默认兜底）', layoutFromSearch('?demo=1') === null)
+  ok('布局切换：空串 / undefined → null', layoutFromSearch('') === null && layoutFromSearch(undefined) === null)
+  ok('布局切换：非法值不落空，回 3×3', layoutFromSearch('?layout=9x9') === '3x3')
+  ok('布局切换：isLayoutId 只认两个值', isLayoutId('3x3') && isLayoutId('1x3') && !isLayoutId('2x2'))
+
+  const href = switchLayoutHref('http://h/?layout=3x3&demo=1&step=5&q=medium#x', '1x3')
+  const u = new URL(href)
+  ok('布局切换：只改 layout，demo/step/q 与 hash 原样保留',
+    u.searchParams.get('layout') === '1x3'
+    && u.searchParams.get('demo') === '1'
+    && u.searchParams.get('step') === '5'
+    && u.searchParams.get('q') === 'medium'
+    && u.hash === '#x',
+    href)
+  ok('布局切换：layout 不重复出现（set 而非 append）',
+    (switchLayoutHref('http://h/?layout=3x3', '1x3').match(/layout=/g) ?? []).length === 1)
+  ok('布局切换：无参地址切换后仍只有一个参数',
+    switchLayoutHref('http://h/', '1x3') === 'http://h/?layout=1x3',
+    switchLayoutHref('http://h/', '1x3'))
+  ok('布局切换：切到 3×3 时不残留 1x3',
+    new URL(switchLayoutHref('http://h/?layout=1x3', '3x3')).searchParams.get('layout') === '3x3')
+  // 顶栏高亮读的就是 ACTIVE_LAYOUT，与场景图同一个值 —— 不允许出现「按钮说 1×3、场景是 3×3」
+  ok('布局切换：ACTIVE_LAYOUT 合法且与 LAYOUT.id / LAYOUTS 表一致',
+    isLayoutId(ACTIVE_LAYOUT) && LAYOUT.id === ACTIVE_LAYOUT && LAYOUTS[ACTIVE_LAYOUT] === LAYOUT,
+    `ACTIVE=${ACTIVE_LAYOUT}`)
+  ok('布局切换：两套布局的机组数分别为 9 / 3（切换后矩阵与滑杆随之变形）',
+    LAYOUTS['3x3'].units.length === 9 && LAYOUTS['1x3'].units.length === 3)
+}
+
+
+// ---------------------------------------------------------------------------
+// 七步演示入口（2026-10-25 解冻补）：顶栏「看板 七步·开/关」。
+// 这组断言锁的是**数据和参数**，不是像素：
+//   ① 打开演示必须同时带 layout=1x3（DemoPanel 对 3×3 直接拒答，否则点了也白点）；
+//   ② 退出只删 demo，不把用户手选的布局改回去；
+//   ③ step / q / hash 全程不丢（从第 5 步退出再进来还在第 5 步）。
+// ---------------------------------------------------------------------------
+{
+  const openFrom = demoHref('http://h/?layout=3x3', true)
+  const u = new URL(openFrom)
+  ok('七步入口：打开时 demo=1 且强制 layout=1x3（3×3 下点了也能直接看到面板）',
+    u.searchParams.get('demo') === '1' && u.searchParams.get('layout') === '1x3', openFrom)
+
+  const keepStep = new URL(demoHref('http://h/?layout=3x3&step=5&q=low', true))
+  ok('七步入口：打开时保留 step / q（不影响正在看的步骤与画质）',
+    keepStep.searchParams.get('step') === '5' && keepStep.searchParams.get('q') === 'low')
+
+  const closeFrom = demoHref('http://h/?layout=1x3&demo=1&step=5', false)
+  const uc = new URL(closeFrom)
+  ok('七步入口：关闭只删 demo，layout=1x3 保留（不把用户手选的布局改回去）',
+    !uc.searchParams.has('demo') && uc.searchParams.get('layout') === '1x3', closeFrom)
+  ok('七步入口：关闭后 step 仍在（下次进来回到同一步）', uc.searchParams.get('step') === '5')
+
+  ok('七步入口：isDemoOpen 与 App.tsx 的 has(\'demo\') 同口径',
+    isDemoOpen('?demo=1') && isDemoOpen('?layout=1x3&demo=1&step=3') && !isDemoOpen('?layout=1x3') && !isDemoOpen(''))
+
+  ok('七步入口：反复开关不产生重复参数',
+    (demoHref(demoHref('http://h/?layout=3x3', true), true).match(/demo=/g) ?? []).length === 1)
+
+  // setParamHref 的三个基本契约（顶栏所有开关共用这一份实现）
+  ok('setParamHref：null 即删除参数', !new URL(setParamHref('http://h/?a=1&b=2', 'a', null)).searchParams.has('a'))
+  ok('setParamHref：set 覆盖而非追加', new URL(setParamHref('http://h/?layout=3x3', 'layout', '1x3')).searchParams.getAll('layout').length === 1)
+  ok('setParamHref：保留 hash', new URL(setParamHref('http://h/?a=1#frag', 'b', '2')).hash === '#frag')
+  ok('setParamHref：空地址也能加参数', setParamHref('http://h/', 'demo', '1') === 'http://h/?demo=1')
+}
+
+// ---------------------------------------------------------------------------
+// 出片模式 ?hud=clean（2026-10-25）
+// 事故背景：上一版为了防挤标题，在 ≤1280px 用 display:none 隐掉了布局/七步两个芯片；
+// 而舞台是固定 1920 再整体缩放，viewport 一窄按钮就**彻底消失**，用户实测「连 1×3 切换键都没了」。
+// 现在的契约：**任何视口宽度都不许隐藏功能**，窄屏只缩字号/换图标；要干净用 ?hud=clean 显式申请。
+// ---------------------------------------------------------------------------
+{
+  ok('出片模式：?hud=clean 生效', isCleanHud('?hud=clean'))
+  ok('出片模式：hud=off / 0 也算生效（同义写法）', isCleanHud('?hud=off') && isCleanHud('?hud=0'))
+  ok('出片模式：无参数 / 其它值不生效',
+    !isCleanHud('') && !isCleanHud('?layout=1x3') && !isCleanHud('?hud=1'))
+  ok('出片模式：cleanHudHref 打开写 clean、关闭删参数',
+    new URL(cleanHudHref('http://h/?layout=1x3', true)).searchParams.get('hud') === 'clean'
+    && !new URL(cleanHudHref('http://h/?layout=1x3&hud=clean', false)).searchParams.has('hud'))
+
+  // body 属性挂载/摘除（用最小假 doc，不引 jsdom）
+  const attrs = new Map<string, string>()
+  const fakeBody = {
+    setAttribute: (k: string, v: string) => attrs.set(k, v),
+    removeAttribute: (k: string) => attrs.delete(k),
+  }
+  const fakeDoc = { body: fakeBody } as unknown as Document
+  applyCleanHud(fakeDoc, '?hud=clean')
+  const on = attrs.has('data-hud-clean')
+  applyCleanHud(fakeDoc, '?layout=1x3')
+  const offAfter = !attrs.has('data-hud-clean')
+  ok('出片模式：applyCleanHud 能挂上也能摘掉 data-hud-clean', on && offAfter)
+
+  // 样式契约：CSS 里**不允许**再出现「按视口宽度隐藏布局/七步芯片」的规则
+  const css = readFileSync(new URL('../src/styles/theme.css', import.meta.url), 'utf8')
+  // 只锁「芯片容器本身被隐藏」；≤1100px 把**文字标签**换成图标（.toolsw .lb）是允许的，故选择器须止于芯片类
+  const hideRule = /\.topbar\s+\.(layoutsw|demosw|toolsw)\s*\{[^}]*display:\s*none/
+  ok('出片模式：theme.css 不存在「隐藏布局/七步芯片」的规则（事故回归锁）', !hideRule.test(css))
+  ok('出片模式：theme.css 定义了 body[data-hud-clean] 的隐藏范围（只隐控件）',
+    /body\[data-hud-clean\][^}]*\.toolsw/.test(css)
+    && /body\[data-hud-clean\][^}]*\.sound/.test(css)
+    && /body\[data-hud-clean\][^}]*\.quality/.test(css))
+  ok('出片模式：不过度隐藏 —— 没有 body[data-hud-clean] 直接针对 .panel/.badge 的规则',
+    !/body\[data-hud-clean\][^}]*\.(panel|badge)\b/.test(css))
+}
 console.log(`\n结果: ${pass} 通过 / ${fail} 失败`)
 process.exit(fail ? 1 : 0)
