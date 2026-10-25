@@ -33,3 +33,28 @@ export function isDemoOpen(search: string | null | undefined): boolean {
   if (!search) return false
   return new URLSearchParams(search).has('demo')
 }
+
+// ----------------------------------------------------------------
+// 演示出片模式 `?hud=clean`
+// ----------------------------------------------------------------
+// 只隐**内部控件**（声场 / 布局 / 七步 / 画质），保留标题、挂钟、数据面板、
+// 三类角标与页脚声明 —— 出片时不许「干净」到把口径角标也一起去掉。
+// 注意：它**不受 ?debug=1 门禁**（这是演示模式，不是调试开关）。
+export function isCleanHud(search: string | null | undefined): boolean {
+  if (!search) return false
+  const v = new URLSearchParams(search).get('hud')
+  return v === 'clean' || v === 'off' || v === '0'
+}
+
+/** 把 clean 状态写到 <body data-hud-clean>（CSS 用属性选择器，不依赖 React 重渲染）。 */
+export function applyCleanHud(doc: Document, search: string | null | undefined): boolean {
+  const clean = isCleanHud(search)
+  if (clean) doc.body.setAttribute('data-hud-clean', '')
+  else doc.body.removeAttribute('data-hud-clean')
+  return clean
+}
+
+/** 出片模式下的完整地址（供顶栏/文档给出可复制链接）。 */
+export function cleanHudHref(href: string, clean: boolean): string {
+  return setParamHref(href, 'hud', clean ? 'clean' : null)
+}

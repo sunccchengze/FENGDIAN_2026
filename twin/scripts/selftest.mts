@@ -20,7 +20,9 @@ import {
   LAYOUTS, LAYOUT, ACTIVE_LAYOUT, unitOf,
   layoutFromSearch, switchLayoutHref, isLayoutId,
 } from '../src/scene/layouts.ts'
-import { setParamHref, demoHref, isDemoOpen } from '../src/data/urlParams.ts' // 2026-10-25 顶栏「七步 · 开/关」 // R41-A 布局真值源（R42 +ACTIVE_LAYOUT/unitOf；2026-10-25 +切换按钮的纯函数）
+import {
+  setParamHref, demoHref, isDemoOpen, isCleanHud, cleanHudHref, applyCleanHud,
+} from '../src/data/urlParams.ts' // 2026-10-25 顶栏「七步 · 开/关」+ 出片模式 ?hud=clean // R41-A 布局真值源（R42 +ACTIVE_LAYOUT/unitOf；2026-10-25 +切换按钮的纯函数）
 import { phaseFor, FROZEN_PHASE } from '../src/scene/freeze.ts' // R42 渲染相位冻结
 import { CAMERA_NODES, LOOK_NODES } from '../src/scene/introProfile.ts' // R42 开场路径
 import {
@@ -1172,6 +1174,47 @@ if (ACTIVE_LAYOUT === '3x3')
   ok('setParamHref：set 覆盖而非追加', new URL(setParamHref('http://h/?layout=3x3', 'layout', '1x3')).searchParams.getAll('layout').length === 1)
   ok('setParamHref：保留 hash', new URL(setParamHref('http://h/?a=1#frag', 'b', '2')).hash === '#frag')
   ok('setParamHref：空地址也能加参数', setParamHref('http://h/', 'demo', '1') === 'http://h/?demo=1')
+}
+
+// ---------------------------------------------------------------------------
+// 出片模式 ?hud=clean（2026-10-25）
+// 事故背景：上一版为了防挤标题，在 ≤1280px 用 display:none 隐掉了布局/七步两个芯片；
+// 而舞台是固定 1920 再整体缩放，viewport 一窄按钮就**彻底消失**，用户实测「连 1×3 切换键都没了」。
+// 现在的契约：**任何视口宽度都不许隐藏功能**，窄屏只缩字号/换图标；要干净用 ?hud=clean 显式申请。
+// ---------------------------------------------------------------------------
+{
+  ok('出片模式：?hud=clean 生效', isCleanHud('?hud=clean'))
+  ok('出片模式：hud=off / 0 也算生效（同义写法）', isCleanHud('?hud=off') && isCleanHud('?hud=0'))
+  ok('出片模式：无参数 / 其它值不生效',
+    !isCleanHud('') && !isCleanHud('?layout=1x3') && !isCleanHud('?hud=1'))
+  ok('出片模式：cleanHudHref 打开写 clean、关闭删参数',
+    new URL(cleanHudHref('http://h/?layout=1x3', true)).searchParams.get('hud') === 'clean'
+    && !new URL(cleanHudHref('http://h/?layout=1x3&hud=clean', false)).searchParams.has('hud'))
+
+  // body 属性挂载/摘除（用最小假 doc，不引 jsdom）
+  const attrs = new Map<string, string>()
+  const fakeBody = {
+    setAttribute: (k: string, v: string) => attrs.set(k, v),
+    removeAttribute: (k: string) => attrs.delete(k),
+  }
+  const fakeDoc = { body: fakeBody } as unknown as Document
+  applyCleanHud(fakeDoc, '?hud=clean')
+  const on = attrs.has('data-hud-clean')
+  applyCleanHud(fakeDoc, '?layout=1x3')
+  const offAfter = !attrs.has('data-hud-clean')
+  ok('出片模式：applyCleanHud 能挂上也能摘掉 data-hud-clean', on && offAfter)
+
+  // 样式契约：CSS 里**不允许**再出现「按视口宽度隐藏布局/七步芯片」的规则
+  const css = readFileSync(new URL('../src/styles/theme.css', import.meta.url), 'utf8')
+  // 只锁「芯片容器本身被隐藏」；≤1100px 把**文字标签**换成图标（.toolsw .lb）是允许的，故选择器须止于芯片类
+  const hideRule = /\.topbar\s+\.(layoutsw|demosw|toolsw)\s*\{[^}]*display:\s*none/
+  ok('出片模式：theme.css 不存在「隐藏布局/七步芯片」的规则（事故回归锁）', !hideRule.test(css))
+  ok('出片模式：theme.css 定义了 body[data-hud-clean] 的隐藏范围（只隐控件）',
+    /body\[data-hud-clean\][^}]*\.toolsw/.test(css)
+    && /body\[data-hud-clean\][^}]*\.sound/.test(css)
+    && /body\[data-hud-clean\][^}]*\.quality/.test(css))
+  ok('出片模式：不过度隐藏 —— 没有 body[data-hud-clean] 直接针对 .panel/.badge 的规则',
+    !/body\[data-hud-clean\][^}]*\.(panel|badge)\b/.test(css))
 }
 console.log(`\n结果: ${pass} 通过 / ${fail} 失败`)
 process.exit(fail ? 1 : 0)

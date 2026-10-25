@@ -5,7 +5,7 @@ import { UNIT_NAMEPLATE, FARM_RATED_MW, N_UNITS } from '../data/farmSim'
 import {
   LAYOUT, LAYOUTS, ACTIVE_LAYOUT, switchLayoutHref, type LayoutId,
 } from '../scene/layouts.ts'
-import { demoHref, isDemoOpen } from '../data/urlParams.ts' // R41-A：矩阵/滑杆口径派生自布局真值源；2026-10-25 起兼顶栏布局切换
+import { demoHref, isDemoOpen, applyCleanHud } from '../data/urlParams.ts' // 2026-10-25：七步入口 + ?hud=clean
 import { FREEZE } from '../scene/freeze.ts' // R42：freeze 取证模式挂钟定格
 import { ROTOR_D, WAKE_K, wakeDeflection, yawFactor } from '../data/turbinePhysics'
 import { anomalyLabel } from '../data/anomaly'
@@ -92,6 +92,14 @@ function MetricDonut({ pct, label, sub, display }: { pct: number; label: string;
 }
 
 /* ---------- 机组状态矩阵（列数随布局：3×3 三列 / 1×3 竖排，R41-A 派生）---------- */
+/* ---------- 演示出片模式 `?hud=clean`：只隐内部控件，不隐数据与角标 ---------- */
+function useCleanHud() {
+  useEffect(() => {
+    if (typeof document === 'undefined') return
+    applyCleanHud(document, typeof location === 'undefined' ? null : location.search)
+  }, [])
+}
+
 function Matrix() {
   const frame = useFarmFrame()
   const selected = useSim((s) => s.selected)
@@ -376,7 +384,7 @@ function LayoutSwitch() {
       aria-label={`当前布局：${LAYOUT.label}（可切换）`}
       title={`布局切换：3×3 阵列（9 台）↔ 1×3 串列（3 台）。当前 ${LAYOUT.label}。两套几何的功率数字不可混用`}
     >
-      <span>布局</span>
+      <span className="lb"><i className="ico" aria-hidden="true">⊞</i> 布局</span>
       {ids.map((id) => (
         <button
           key={id}
@@ -407,7 +415,7 @@ function DemoSwitch() {
   }
   return (
     <div className="demosw" role="group" aria-label={open ? '七步演示已打开' : '打开七步演示'}>
-      <span>看板</span>
+      <span className="lb"><i className="ico" aria-hidden="true">▤</i> 看板</span>
       <button
         type="button"
         className={open ? 'on' : ''}
@@ -722,6 +730,7 @@ function AnomalyModal() {
 
 /* ---------- 主组件 ---------- */
 export default function Hud() {
+  useCleanHud() // ?hud=clean：出片时只隐内部控件（声场/布局/七步/画质）
   const { scale, h: stageH } = useStageScale()
   const playing = useSim((s) => s.playing)
   const togglePlay = useSim((s) => s.togglePlay)
@@ -771,8 +780,10 @@ export default function Hud() {
           <div className="subtitle">风电场偏航优化 · 数字孪生演示平台 — AEOLUS TWIN <Badge k="演示" /></div>
           <div className="wallclock">本地 {wall || '--:--:--'} · 仿真 {hh}:{mm}</div>
           <SoundControl />
-          <LayoutSwitch />
-          <DemoSwitch />
+          <div className="toolsw">
+            <LayoutSwitch />
+            <DemoSwitch />
+          </div>
           <div className="quality">
             <span>画质</span>
             {(['high', 'medium', 'low'] as const).map((q) => (

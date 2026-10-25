@@ -408,11 +408,19 @@ button { font-family: inherit; }
   background: rgba(40, 120, 170, 0.45); box-shadow: 0 0 8px rgba(100, 215, 255, 0.4);
 }
 
-/* ===== 2026-10-25 解冻新增 · 布局切换（声场芯片左侧，同一视觉语言） =====
-   位置用 right: 356px（= quality 22 + 自身宽 + sound 178 + sound 宽 ≈162 + 间距），
-   不依赖 wallclock 的可变宽度，避免标题区挤压时错位。 */
-.topbar .layoutsw {
-  position: absolute; right: 356px; top: 18px; z-index: 3;
+/* ===== 2026-10-25 解冻新增 · 顶栏工具组（布局 + 七步看板）=====
+   ⚠ 2026-10-25 修：上一版把两个芯片各自绝对定位（right:356 / 460），
+     两者互相重叠 22px，且都用了 viewport 媒体查询在 ≤1280 时 display:none ——
+     而舞台是**固定 1920 宽再整体缩放**，viewport 变窄并不会让舞台变窄，
+     结果就是「窗口一窄，按钮直接消失」。用户实测：连布局切换键都不见了。
+   现在：① 两个芯片放进一个 flex 容器，靠右偏移只写一次，永远不会互相压；
+        ② **删除全部 display:none**，窄屏只缩字号、不隐藏（用户要求「改成图标而不是隐藏」）；
+        ③ 加图标字形，缩到 0.6 倍仍认得出。 */
+.topbar .toolsw {
+  position: absolute; right: 372px; top: 18px; z-index: 3;
+  display: flex; align-items: center; gap: 8px;
+}
+.topbar .toolsw > div {
   display: flex; align-items: center; gap: 7px;
   font-size: 10.5px; letter-spacing: 0.16em; color: #7aa3be;
   padding: 5px 10px;
@@ -420,55 +428,42 @@ button { font-family: inherit; }
   border: 1px solid rgba(110, 200, 245, 0.18);
   box-shadow: 0 0 0 1px rgba(0,0,0,0.25), inset 0 1px 0 rgba(160,230,255,0.1);
 }
-.topbar .layoutsw button {
+.topbar .toolsw .lb { letter-spacing: 0.12em; }
+.topbar .toolsw .ico { font-style: normal; color: #6fb6d8; letter-spacing: 0; }
+.topbar .toolsw button {
   min-width: 40px; height: 20px; cursor: pointer; color: #9fd8f2;
   background: rgba(10, 34, 52, 0.6); border: 1px solid rgba(110, 200, 245, 0.35);
-  font-size: 11px; letter-spacing: 0.04em; transition: all 0.2s;
+  font-size: 11px; letter-spacing: 0.02em; transition: all 0.2s;
   font-variant-numeric: tabular-nums;
 }
-.topbar .layoutsw button:hover:not(:disabled) { border-color: rgba(150, 225, 255, 0.7); color: #d8f6ff; }
-.topbar .layoutsw button.on {
+.topbar .toolsw .demosw button { min-width: 54px; }
+.topbar .toolsw button:hover:not(:disabled) { border-color: rgba(150, 225, 255, 0.7); color: #d8f6ff; }
+.topbar .toolsw button.on {
   border-color: rgba(170, 240, 255, 0.9); color: #eafdff;
   background: rgba(40, 120, 170, 0.45); box-shadow: 0 0 8px rgba(100, 215, 255, 0.4);
-  cursor: default;
 }
-.topbar .layoutsw button:disabled { opacity: 0.55; cursor: progress; }
-/* 窄屏（≤1440 宽）时收紧，保证与标题、声场不重叠 */
+.topbar .toolsw button.on:disabled { cursor: default; }
+.topbar .toolsw button:disabled { opacity: 0.55; cursor: progress; }
+/* 窄视口：只缩不藏（舞台按 1920 等比缩放，字已经跟着小了，这里再收一点内边距） */
 @media (max-width: 1440px) {
-  .topbar .layoutsw { right: 300px; letter-spacing: 0.08em; padding: 4px 8px; }
-  .topbar .layoutsw button { min-width: 34px; font-size: 10px; }
+  .topbar .toolsw { right: 372px; gap: 6px; }
+  .topbar .toolsw > div { letter-spacing: 0.04em; padding: 4px 7px; gap: 5px; }
+  .topbar .toolsw button { min-width: 32px; font-size: 10px; }
+  .topbar .toolsw .demosw button { min-width: 44px; }
+  .topbar .toolsw .lb { letter-spacing: 0.02em; }
+}
+@media (max-width: 1100px) {
+  /* 仍不隐藏：只把文字标签换成纯图标（图标带 title/aria-label，鼠标悬停与读屏都能认） */
+  .topbar .toolsw .lb { display: none; }
+  .topbar .toolsw > div { padding: 4px 6px; }
 }
 
-/* ===== 2026-10-25 解冻新增 · 七步演示入口（布局芯片左侧，同一视觉语言）=====
-   位置 right: 460px ≈ 22(quality) + ~150(quality) + 18(声场右偏) + ~162(声场) + 8 + ~110(布局)。
-   用固定偏移而非 flex，是为了不扰动既有的标题居中与挂钟左对齐（封板版式不动）。 */
-.topbar .demosw {
-  position: absolute; right: 460px; top: 18px; z-index: 3;
-  display: flex; align-items: center; gap: 7px;
-  font-size: 10.5px; letter-spacing: 0.16em; color: #7aa3be;
-  padding: 5px 10px;
-  background: linear-gradient(135deg, rgba(16, 42, 68, 0.55), rgba(8, 24, 40, 0.4));
-  border: 1px solid rgba(110, 200, 245, 0.18);
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.25), inset 0 1px 0 rgba(160,230,255,0.1);
-}
-.topbar .demosw button {
-  min-width: 56px; height: 20px; cursor: pointer; color: #9fd8f2;
-  background: rgba(10, 34, 52, 0.6); border: 1px solid rgba(110, 200, 245, 0.35);
-  font-size: 11px; letter-spacing: 0.02em; transition: all 0.2s;
-}
-.topbar .demosw button:hover:not(:disabled) { border-color: rgba(150, 225, 255, 0.7); color: #d8f6ff; }
-.topbar .demosw button.on {
-  border-color: rgba(170, 240, 255, 0.9); color: #eafdff;
-  background: rgba(40, 120, 170, 0.45); box-shadow: 0 0 8px rgba(100, 215, 255, 0.4);
-}
-.topbar .demosw button:disabled { opacity: 0.55; cursor: progress; }
-@media (max-width: 1440px) {
-  .topbar .demosw { right: 392px; letter-spacing: 0.08em; padding: 4px 8px; }
-  .topbar .demosw button { min-width: 48px; font-size: 10px; }
-}
-@media (max-width: 1280px) {
-  .topbar .demosw, .topbar .layoutsw { display: none; }
-}
+/* ===== 演示出片模式 `?hud=clean`（2026-10-25）=====
+   只隐**内部控件**（声场 / 布局 / 七步 / 画质），保留挂钟、标题、角标与页脚声明。
+   用途：答辩截图与录屏不要把操作按钮拍进去。数据与角标一律不动 —— 不许干净到把口径角标也去掉。 */
+body[data-hud-clean] .topbar .toolsw,
+body[data-hud-clean] .topbar .sound,
+body[data-hud-clean] .topbar .quality { display: none; }
 
 /* ===== T9 · 声场控制（画质档左侧，同一芯片语言） ===== */
 .topbar .sound {
