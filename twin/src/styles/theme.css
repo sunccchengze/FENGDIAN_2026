@@ -408,6 +408,37 @@ button { font-family: inherit; }
   background: rgba(40, 120, 170, 0.45); box-shadow: 0 0 8px rgba(100, 215, 255, 0.4);
 }
 
+/* ===== 2026-10-25 解冻新增 · 布局切换（声场芯片左侧，同一视觉语言） =====
+   位置用 right: 356px（= quality 22 + 自身宽 + sound 178 + sound 宽 ≈162 + 间距），
+   不依赖 wallclock 的可变宽度，避免标题区挤压时错位。 */
+.topbar .layoutsw {
+  position: absolute; right: 356px; top: 18px; z-index: 3;
+  display: flex; align-items: center; gap: 7px;
+  font-size: 10.5px; letter-spacing: 0.16em; color: #7aa3be;
+  padding: 5px 10px;
+  background: linear-gradient(135deg, rgba(16, 42, 68, 0.55), rgba(8, 24, 40, 0.4));
+  border: 1px solid rgba(110, 200, 245, 0.18);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.25), inset 0 1px 0 rgba(160,230,255,0.1);
+}
+.topbar .layoutsw button {
+  min-width: 40px; height: 20px; cursor: pointer; color: #9fd8f2;
+  background: rgba(10, 34, 52, 0.6); border: 1px solid rgba(110, 200, 245, 0.35);
+  font-size: 11px; letter-spacing: 0.04em; transition: all 0.2s;
+  font-variant-numeric: tabular-nums;
+}
+.topbar .layoutsw button:hover:not(:disabled) { border-color: rgba(150, 225, 255, 0.7); color: #d8f6ff; }
+.topbar .layoutsw button.on {
+  border-color: rgba(170, 240, 255, 0.9); color: #eafdff;
+  background: rgba(40, 120, 170, 0.45); box-shadow: 0 0 8px rgba(100, 215, 255, 0.4);
+  cursor: default;
+}
+.topbar .layoutsw button:disabled { opacity: 0.55; cursor: progress; }
+/* 窄屏（≤1440 宽）时收紧，保证与标题、声场不重叠 */
+@media (max-width: 1440px) {
+  .topbar .layoutsw { right: 300px; letter-spacing: 0.08em; padding: 4px 8px; }
+  .topbar .layoutsw button { min-width: 34px; font-size: 10px; }
+}
+
 /* ===== T9 · 声场控制（画质档左侧，同一芯片语言） ===== */
 .topbar .sound {
   position: absolute; right: 178px; top: 18px; z-index: 3;

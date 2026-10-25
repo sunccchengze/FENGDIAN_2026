@@ -16,7 +16,10 @@ import {
   ISLANDS,
 } from '../src/scene/terrainUtil.ts'
 import { TURBINE_SPEC } from '../src/scene/turbine/geometry.ts'
-import { LAYOUTS, LAYOUT, ACTIVE_LAYOUT, unitOf } from '../src/scene/layouts.ts' // R41-A 布局真值源（R42 起 +ACTIVE_LAYOUT/unitOf）
+import {
+  LAYOUTS, LAYOUT, ACTIVE_LAYOUT, unitOf,
+  layoutFromSearch, switchLayoutHref, isLayoutId,
+} from '../src/scene/layouts.ts' // R41-A 布局真值源（R42 +ACTIVE_LAYOUT/unitOf；2026-10-25 +切换按钮的纯函数）
 import { phaseFor, FROZEN_PHASE } from '../src/scene/freeze.ts' // R42 渲染相位冻结
 import { CAMERA_NODES, LOOK_NODES } from '../src/scene/introProfile.ts' // R42 开场路径
 import {
@@ -1094,6 +1097,43 @@ if (ACTIVE_LAYOUT === '3x3')
     close(bank.states[0].actual, 12.34, 1e-9) && close(bank.states[1].actual, -7, 1e-9))
   stepYawBank(bank, [999, 0, 0, 0, 0, 0, 0, 0, 0], 0.1)
   ok('P2 执行器：指令量程钳制 ±30°（与滑杆/store 同一约束）', close(bank.states[0].cmd, 30, 1e-9))
+}
+
+// ---------------------------------------------------------------------------
+// 布局切换（2026-10-25 解冻新增）：顶栏按钮只换 URL 的 `layout` 一个参数。
+// 锁三件事：① 解析口径与 ACTIVE_LAYOUT 同源；② 切换不丢 demo/step 等参数；
+// ③ 非法值不让后面的场景拿到未定义布局（旧实现靠三元表达式兜底，这里显式断言）。
+// ---------------------------------------------------------------------------
+{
+  ok('布局切换：?layout=1x3 → 1x3', layoutFromSearch('?layout=1x3') === '1x3')
+  ok('布局切换：?layout=3x3 → 3x3', layoutFromSearch('?layout=3x3') === '3x3')
+  ok('布局切换：无 layout 参数 → null（由 TWIN_LAYOUT / 3×3 默认兜底）', layoutFromSearch('?demo=1') === null)
+  ok('布局切换：空串 / undefined → null', layoutFromSearch('') === null && layoutFromSearch(undefined) === null)
+  ok('布局切换：非法值不落空，回 3×3', layoutFromSearch('?layout=9x9') === '3x3')
+  ok('布局切换：isLayoutId 只认两个值', isLayoutId('3x3') && isLayoutId('1x3') && !isLayoutId('2x2'))
+
+  const href = switchLayoutHref('http://h/?layout=3x3&demo=1&step=5&q=medium#x', '1x3')
+  const u = new URL(href)
+  ok('布局切换：只改 layout，demo/step/q 与 hash 原样保留',
+    u.searchParams.get('layout') === '1x3'
+    && u.searchParams.get('demo') === '1'
+    && u.searchParams.get('step') === '5'
+    && u.searchParams.get('q') === 'medium'
+    && u.hash === '#x',
+    href)
+  ok('布局切换：layout 不重复出现（set 而非 append）',
+    (switchLayoutHref('http://h/?layout=3x3', '1x3').match(/layout=/g) ?? []).length === 1)
+  ok('布局切换：无参地址切换后仍只有一个参数',
+    switchLayoutHref('http://h/', '1x3') === 'http://h/?layout=1x3',
+    switchLayoutHref('http://h/', '1x3'))
+  ok('布局切换：切到 3×3 时不残留 1x3',
+    new URL(switchLayoutHref('http://h/?layout=1x3', '3x3')).searchParams.get('layout') === '3x3')
+  // 顶栏高亮读的就是 ACTIVE_LAYOUT，与场景图同一个值 —— 不允许出现「按钮说 1×3、场景是 3×3」
+  ok('布局切换：ACTIVE_LAYOUT 合法且与 LAYOUT.id / LAYOUTS 表一致',
+    isLayoutId(ACTIVE_LAYOUT) && LAYOUT.id === ACTIVE_LAYOUT && LAYOUTS[ACTIVE_LAYOUT] === LAYOUT,
+    `ACTIVE=${ACTIVE_LAYOUT}`)
+  ok('布局切换：两套布局的机组数分别为 9 / 3（切换后矩阵与滑杆随之变形）',
+    LAYOUTS['3x3'].units.length === 9 && LAYOUTS['1x3'].units.length === 3)
 }
 
 console.log(`\n结果: ${pass} 通过 / ${fail} 失败`)

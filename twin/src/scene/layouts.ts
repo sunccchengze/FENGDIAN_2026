@@ -71,11 +71,32 @@ export const LAYOUTS: Record<LayoutId, LayoutDef> = {
   },
 }
 
+/** URL `?layout=<id>` → 布局。非法/缺省一律回 3×3（留档口径）。
+ *  纯函数：不读全局、不碰 DOM，selftest 与顶栏切换按钮共用同一套解析。 */
+export function layoutFromSearch(search: string | null | undefined): LayoutId | null {
+  if (!search) return null
+  const v = new URLSearchParams(search).get('layout')
+  if (v == null) return null
+  return v === '1x3' ? '1x3' : '3x3'
+}
+
+/** 切换布局后的完整地址：**只改 `layout` 一个参数**，其余（demo / step / q / debug …）原样保留。
+ *  这就是「点按钮 → 换布局」的唯一实现口径；实现为整页导航而非热切换，原因见 README §布局切换。 */
+export function switchLayoutHref(href: string, id: LayoutId): string {
+  const url = new URL(href)
+  url.searchParams.set('layout', id)
+  return url.toString()
+}
+
+export function isLayoutId(v: string): v is LayoutId {
+  return v === '3x3' || v === '1x3'
+}
+
 /** 当前生效布局：URL `?layout=1x3` 切换；node 环境可用 TWIN_LAYOUT=1x3（selftest 分布局取证）；
  *  两者皆无时恒为 3×3（留档口径） */
 const q =
   typeof location !== 'undefined' && typeof location.search === 'string'
-    ? new URLSearchParams(location.search).get('layout')
+    ? layoutFromSearch(location.search)
     : null
 const g = globalThis as { process?: { env?: Record<string, string | undefined> } }
 const envL = g.process?.env?.TWIN_LAYOUT
