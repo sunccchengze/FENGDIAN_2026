@@ -19,7 +19,8 @@ import { TURBINE_SPEC } from '../src/scene/turbine/geometry.ts'
 import {
   LAYOUTS, LAYOUT, ACTIVE_LAYOUT, unitOf,
   layoutFromSearch, switchLayoutHref, isLayoutId,
-} from '../src/scene/layouts.ts' // R41-A 布局真值源（R42 +ACTIVE_LAYOUT/unitOf；2026-10-25 +切换按钮的纯函数）
+} from '../src/scene/layouts.ts'
+import { setParamHref, demoHref, isDemoOpen } from '../src/data/urlParams.ts' // 2026-10-25 顶栏「七步 · 开/关」 // R41-A 布局真值源（R42 +ACTIVE_LAYOUT/unitOf；2026-10-25 +切换按钮的纯函数）
 import { phaseFor, FROZEN_PHASE } from '../src/scene/freeze.ts' // R42 渲染相位冻结
 import { CAMERA_NODES, LOOK_NODES } from '../src/scene/introProfile.ts' // R42 开场路径
 import {
@@ -1136,5 +1137,41 @@ if (ACTIVE_LAYOUT === '3x3')
     LAYOUTS['3x3'].units.length === 9 && LAYOUTS['1x3'].units.length === 3)
 }
 
+
+// ---------------------------------------------------------------------------
+// 七步演示入口（2026-10-25 解冻补）：顶栏「看板 七步·开/关」。
+// 这组断言锁的是**数据和参数**，不是像素：
+//   ① 打开演示必须同时带 layout=1x3（DemoPanel 对 3×3 直接拒答，否则点了也白点）；
+//   ② 退出只删 demo，不把用户手选的布局改回去；
+//   ③ step / q / hash 全程不丢（从第 5 步退出再进来还在第 5 步）。
+// ---------------------------------------------------------------------------
+{
+  const openFrom = demoHref('http://h/?layout=3x3', true)
+  const u = new URL(openFrom)
+  ok('七步入口：打开时 demo=1 且强制 layout=1x3（3×3 下点了也能直接看到面板）',
+    u.searchParams.get('demo') === '1' && u.searchParams.get('layout') === '1x3', openFrom)
+
+  const keepStep = new URL(demoHref('http://h/?layout=3x3&step=5&q=low', true))
+  ok('七步入口：打开时保留 step / q（不影响正在看的步骤与画质）',
+    keepStep.searchParams.get('step') === '5' && keepStep.searchParams.get('q') === 'low')
+
+  const closeFrom = demoHref('http://h/?layout=1x3&demo=1&step=5', false)
+  const uc = new URL(closeFrom)
+  ok('七步入口：关闭只删 demo，layout=1x3 保留（不把用户手选的布局改回去）',
+    !uc.searchParams.has('demo') && uc.searchParams.get('layout') === '1x3', closeFrom)
+  ok('七步入口：关闭后 step 仍在（下次进来回到同一步）', uc.searchParams.get('step') === '5')
+
+  ok('七步入口：isDemoOpen 与 App.tsx 的 has(\'demo\') 同口径',
+    isDemoOpen('?demo=1') && isDemoOpen('?layout=1x3&demo=1&step=3') && !isDemoOpen('?layout=1x3') && !isDemoOpen(''))
+
+  ok('七步入口：反复开关不产生重复参数',
+    (demoHref(demoHref('http://h/?layout=3x3', true), true).match(/demo=/g) ?? []).length === 1)
+
+  // setParamHref 的三个基本契约（顶栏所有开关共用这一份实现）
+  ok('setParamHref：null 即删除参数', !new URL(setParamHref('http://h/?a=1&b=2', 'a', null)).searchParams.has('a'))
+  ok('setParamHref：set 覆盖而非追加', new URL(setParamHref('http://h/?layout=3x3', 'layout', '1x3')).searchParams.getAll('layout').length === 1)
+  ok('setParamHref：保留 hash', new URL(setParamHref('http://h/?a=1#frag', 'b', '2')).hash === '#frag')
+  ok('setParamHref：空地址也能加参数', setParamHref('http://h/', 'demo', '1') === 'http://h/?demo=1')
+}
 console.log(`\n结果: ${pass} 通过 / ${fail} 失败`)
 process.exit(fail ? 1 : 0)

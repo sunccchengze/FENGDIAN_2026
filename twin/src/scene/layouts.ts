@@ -9,6 +9,8 @@
 // 本文件**不得 import terrainUtil**（避免环）：只出纯几何，贴地高度由 terrainUtil 套。
 // ================================================================
 
+import { setParamHref } from '../data/urlParams.ts'
+
 export type LayoutId = '3x3' | '1x3'
 
 export interface LayoutUnit { id: string; x: number; z: number; row: number; col: number }
@@ -81,11 +83,10 @@ export function layoutFromSearch(search: string | null | undefined): LayoutId | 
 }
 
 /** 切换布局后的完整地址：**只改 `layout` 一个参数**，其余（demo / step / q / debug …）原样保留。
- *  这就是「点按钮 → 换布局」的唯一实现口径；实现为整页导航而非热切换，原因见 README §布局切换。 */
+ *  这就是「点按钮 → 换布局」的唯一实现口径；实现为整页导航而非热切换，原因见 README §布局切换。
+ *  参数改写统一走 urlParams.setParamHref（与七步演示的开关同一份实现，避免两处漂移）。 */
 export function switchLayoutHref(href: string, id: LayoutId): string {
-  const url = new URL(href)
-  url.searchParams.set('layout', id)
-  return url.toString()
+  return setParamHref(href, 'layout', id)
 }
 
 export function isLayoutId(v: string): v is LayoutId {

@@ -4,7 +4,8 @@ import { FARM } from '../scene/terrainUtil'
 import { UNIT_NAMEPLATE, FARM_RATED_MW, N_UNITS } from '../data/farmSim'
 import {
   LAYOUT, LAYOUTS, ACTIVE_LAYOUT, switchLayoutHref, type LayoutId,
-} from '../scene/layouts.ts' // R41-A：矩阵/滑杆口径派生自布局真值源；2026-10-25 起兼顶栏布局切换
+} from '../scene/layouts.ts'
+import { demoHref, isDemoOpen } from '../data/urlParams.ts' // R41-A：矩阵/滑杆口径派生自布局真值源；2026-10-25 起兼顶栏布局切换
 import { FREEZE } from '../scene/freeze.ts' // R42：freeze 取证模式挂钟定格
 import { ROTOR_D, WAKE_K, wakeDeflection, yawFactor } from '../data/turbinePhysics'
 import { anomalyLabel } from '../data/anomaly'
@@ -393,6 +394,36 @@ function LayoutSwitch() {
   )
 }
 
+/* ---------- 七步演示面板入口（2026-10-25 解冻补：之前只能手打 ?demo=1） ----------
+   打开时同时确保 layout=1x3（演示数据只对三机串列成立）；关闭时只删 demo，
+   不动 layout —— 用户可能正用 1×3 看三机，不该被顺手切回九机。 */
+function DemoSwitch() {
+  const [pending, setPending] = useState(false)
+  const open = isDemoOpen(typeof location === 'undefined' ? null : location.search)
+  const go = () => {
+    if (pending) return
+    setPending(true)
+    window.location.assign(demoHref(window.location.href, !open))
+  }
+  return (
+    <div className="demosw" role="group" aria-label={open ? '七步演示已打开' : '打开七步演示'}>
+      <span>看板</span>
+      <button
+        type="button"
+        className={open ? 'on' : ''}
+        aria-pressed={open}
+        disabled={pending}
+        title={open
+          ? '关闭七步演示面板（回到常规 HUD；布局不变）'
+          : '打开七步演示面板：选工况 → 查基准 → 调航向 → 求解 → 复核 → 可靠性 → 导出（自动切到 1×3 三机串列）'}
+        onClick={go}
+      >
+        {pending ? '…' : open ? '七步 · 关' : '七步 · 开'}
+      </button>
+    </div>
+  )
+}
+
 /* ---------- 告警通知（引擎驱动，含定位与确认） ---------- */
 function Alarms() {
   const frame = useFarmFrame()
@@ -741,6 +772,7 @@ export default function Hud() {
           <div className="wallclock">本地 {wall || '--:--:--'} · 仿真 {hh}:{mm}</div>
           <SoundControl />
           <LayoutSwitch />
+          <DemoSwitch />
           <div className="quality">
             <span>画质</span>
             {(['high', 'medium', 'low'] as const).map((q) => (
