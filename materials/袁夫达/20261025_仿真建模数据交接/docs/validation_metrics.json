@@ -1,0 +1,30 @@
+{
+  "rows": 20160,
+  "median_consistency_pct": 2.1042438939998805e-05,
+  "p95_consistency_pct": 9.240482411583777e-05,
+  "max_consistency_pct": 0.0003264502803537097,
+  "farm_efficiency_range_pct": [
+    47.88659709899964,
+    98.43987627664067
+  ],
+  "official_deviation_pct": [
+    -1.2449204759419088,
+    1.2437977710318222
+  ],
+  "yaw_gain_pct": 3.014771883909822,
+  "input_unique_counts": {
+    "ambient_wind_speed_m_s": 8,
+    "ambient_wind_direction_rad": 28,
+    "turbulence_intensity": 3,
+    "yaw1": 4,
+    "pitch1": 5,
+    "rotor_speed1": 4674,
+    "yaw2": 5,
+    "pitch2": 5,
+    "rotor_speed2": 2783,
+    "yaw3": 4,
+    "pitch3": 5,
+    "rotor_speed3": 4692
+  },
+  "blocks_used": 10
+}
