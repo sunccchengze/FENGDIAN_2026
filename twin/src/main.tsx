@@ -8,6 +8,7 @@ import { audioEngine } from './audio/audioEngine'
 import { pickSourceFromQuery } from './data/telemetry'
 import { debugEnabled } from './data/debug'
 import { bindFloris3D } from './data/florisData'
+import { applyCleanHud } from './data/urlParams'
 
 // FLORIS 三维速度场（真实数据件 135KB）：异步绑定，不阻塞首帧；
 // 绑定成功后风纱/流线在覆盖区自动切换为真场采样（florisData.sampleWorldU）
@@ -32,6 +33,10 @@ if (debugEnabled()) {
   const tq = new URLSearchParams(location.search).get('t')
   if (tq && Number.isFinite(Number(tq))) useSim.setState({ tHours: Number(tq), playing: false })
 }
+
+// `?hud=clean` 出片模式：在**首帧之前**就把 <body data-hud-clean> 挂上，
+// 否则会在挂载后的一帧里闪出布局/七步/画质按钮，录屏里就是一个可见的跳变。
+applyCleanHud(document, location.search)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

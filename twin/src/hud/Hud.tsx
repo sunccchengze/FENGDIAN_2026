@@ -94,6 +94,7 @@ function MetricDonut({ pct, label, sub, display }: { pct: number; label: string;
 /* ---------- 机组状态矩阵（列数随布局：3×3 三列 / 1×3 竖排，R41-A 派生）---------- */
 /* ---------- 演示出片模式 `?hud=clean`：只隐内部控件，不隐数据与角标 ---------- */
 function useCleanHud() {
+  // 首帧已在 main.tsx 挂好属性，这里只兜底「运行中改了 URL」的情况
   useEffect(() => {
     if (typeof document === 'undefined') return
     applyCleanHud(document, typeof location === 'undefined' ? null : location.search)
