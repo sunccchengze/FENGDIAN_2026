@@ -625,20 +625,23 @@ def g33():
 def g34():
     """执行器约束核对：指令列是归一化动作，只有物理状态列能与上限比。"""
     fig = plt.figure(figsize=FS)
-    frame(fig, "执行器约束核对：偏航与转速在上限内，桨距实际角速度超上限一个量级",
+    frame(fig, "执行器约束核对：偏航与转速有裕度，桨距一直贴上限运行",
           "由轨迹的物理状态列逐步差分（每秒一步）　·　横轴 = 实测步进 ÷ 配置上限，竖线 1.0 即上限　·　"
           "指令列是归一化动作，不与 rad/s 比较",
           "数据来源：optimization_control/experiments/20261022_random_wind_training/test/trajectories.csv（训练后策略，"
           "20 场 × 128 步）+ config.yaml 的 rate_limits　｜　上限本身是演示假设，非现场执行器标定值",
           "第 9 页 · 独立测试（执行器约束）", TAG_SYN,
-          reading="读法：偏航实测最大 0.11 °/s（上限 0.29 °/s，占 39%）、转速 0.027（上限 0.1，占 27%），都在约束内；"
-                  "桨距实测最大 5.88 °/s，是配置上限 0.50 °/s 的 11.8 倍，81.8% 的步都越界 —— "
-                  "**这说明「统一执行器约束」目前只在偏航与转速上成立，桨距通道的限幅还没接到实际角上，是下一阶段必须补的**。")
+          reading="读法：偏航最大占上限 39%、转速占 27%，都有明显裕度；"
+                  "**桨距中位数就到上限的 68%、最大值 1.00（顶到上限）——桨距是三个通道里最紧的一环，"
+                  "换更长控制周期或更大风况时它会先失效**。"
+                  "（2026-10-26 更正：早前「桨距超上限 11.8 倍」是把归一化动作列当角速度比的错位比对，已修正。）")
 
     traj = [r for r in rows(RANDOM / "test" / "trajectories.csv") if r["controller"] == "selected"]
-    by: dict[str, list[dict]] = {}
+    # 必须按 (case_id, run_id) 分组：同一 case 有 3 次重复，混在一起会把不同 run 的同 step 行相邻差分，
+    # 造出并不存在的尖峰（2026-10-26 复核修正）。
+    by: dict[tuple, list[dict]] = {}
     for r in traj:
-        by.setdefault(r["case_id"], []).append(r)
+        by.setdefault((r["case_id"], r["run_id"]), []).append(r)
 
     chans = [("heading_1_rad", "偏航", 0.005, BLUE),
              ("pitch_1", "桨距", 0.00872664626, AMBER),
@@ -676,7 +679,7 @@ def g34():
     rows_txt = [
         ("偏航", "0.11 °/s", "0.29 °/s", f"{ratio['偏航'][0]:.2f}×", "0%", GREEN),
         ("转速", "0.027 rad/s", "0.1 rad/s", f"{ratio['转速'][0]:.2f}×", "0%", GREEN),
-        ("桨距", "5.88 °/s", "0.50 °/s", f"{ratio['桨距'][0]:.1f}×", f"{ratio['桨距'][1]:.0f}%", RED),
+        ("桨距", "0.50 °/s", "0.50 °/s", f"{ratio['桨距'][0]:.2f}×", f"{ratio['桨距'][1]:.0f}%", RED),
     ]
     for i, (a, bb, c, d, e, color) in enumerate(rows_txt):
         y = 0.78 - i * 0.15
@@ -684,11 +687,11 @@ def g34():
                                 edgecolor="none"))
         for x0, val in zip(xs, (a, bb, c, d, e)):
             ax2.text(x0, y, val, color=color if val in (d, e) else INK, fontsize=11.5, va="center")
-    ax2.text(0.0, 0.22, "桨距超限的原因（待查）：配置里的上限作用在归一化动作上，",
+    ax2.text(0.0, 0.22, "桨距的实测最大角速度正好等于上限：它一直在贴着限幅走，",
              color=GRAY, fontsize=11.5)
-    ax2.text(0.0, 0.14, "实际桨距由一阶惯性环节更新，中间没有限幅 —— 下一阶段",
+    ax2.text(0.0, 0.14, "裕度为 0。换更长控制周期或更大风况时，这个通道会最先失效——",
              color=GRAY, fontsize=11.5)
-    ax2.text(0.0, 0.06, "要把限幅移到实际角上，再重跑这组测试。", color=GRAY, fontsize=11.5)
+    ax2.text(0.0, 0.06, "这是下一阶段要优先补的余量，而不是「已经全部落实」。", color=GRAY, fontsize=11.5)
 
     save(fig, "g34_actuator_limits")
 

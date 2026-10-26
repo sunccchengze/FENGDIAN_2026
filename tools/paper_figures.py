@@ -571,42 +571,9 @@ def fig11():
 
 
 def fig12():
-    """执行器通道：实际步进的分布与配置上限。"""
-    traj = [r for r in rows(RANDOM / "test" / "trajectories.csv") if r["controller"] == "selected"]
-    by = {}
-    for r in traj:
-        by.setdefault(r["case_id"], []).append(r)
-    chans = [("heading_1_rad", "偏航", 0.005, C["ours"]),
-             ("pitch_1", "桨距", 0.00872664626, C["alt"]),
-             ("speed_1", "转速", 0.1, C["acc"])]
-
-    fig = plt.figure(figsize=(3.35, 2.7))
-    ax = F.paper_axes(fig, [0.17, 0.19, 0.78, 0.73])
-    data, ticks, labels = [], [], []
-    for i, (col, name, lim, color) in enumerate(chans):
-        vals = []
-        for _cid, rs in by.items():
-            rs.sort(key=lambda r: int(r["step"]))
-            v = np.abs(np.diff([f(r[col]) for r in rs]))
-            vals.extend(v / lim)
-        vals = np.array(vals)
-        parts = ax.violinplot([vals], positions=[i], widths=0.62, showextrema=False)
-        for pc in parts["bodies"]:
-            pc.set_facecolor(color)
-            pc.set_alpha(0.55)
-            pc.set_edgecolor("#333333")
-            pc.set_linewidth(0.6)
-        ax.hlines(np.median(vals), i - 0.22, i + 0.22, color="#111111", lw=1.0)
-        ax.hlines(1.0, i - 0.3, i + 0.3, color=C["warn"], lw=1.2, ls="--")
-        data.append(vals)
-        ticks.append(i)
-        labels.append(name)
-    ax.set_yscale("log")
-    ax.set_xticks(ticks)
-    ax.set_xticklabels(labels)
-    ax.set_ylabel("实际步进 ÷ 配置上限")
-    ax.text(2.42, 1.15, "上限", color=C["warn"], fontsize=6.8, ha="right")
-    F.paper_save(fig, OUT, "fig12_actuator_violin")
+    """已撤下：按 case_id 合并 3 次重复会把不同 run 的同 step 行相邻差分，产生假尖峰。
+    同一内容改由 fig22 呈现（按 (case_id, run_id) 分组）。保留占位以免图号错位。"""
+    raise SystemExit("fig12 已撤下，请用 fig22（执行器速率余量）")
 
 
 def fig13():
@@ -886,6 +853,246 @@ def fig19():
     F.paper_save(fig, OUT, "fig19_tracking_cases")
 
 
+def _strategy_of(r):
+    """把一行工况归到四种偏航策略之一（只取零桨距行）。"""
+    y1, y2 = round(math.degrees(f(r["yaw1"]))), round(math.degrees(f(r["yaw2"])))
+    if y1 == 0 and y2 == 0:
+        return "align"
+    if y1 == 20 and y2 == -20:
+        return "stag"
+    if y1 == y2:
+        return f"u{y1:+d}"
+    return None
+
+
+def fig20():
+    """偏航策略的选择地图：只有来流接近串列轴时，偏航才真的换来增益。"""
+    data = [r for r in rows(CASES) if abs(f(r["pitch1"])) < 1e-9]
+    by: dict[tuple, list[float]] = {}
+    for r in data:
+        s = _strategy_of(r)
+        if s is None:
+            continue
+        d = round(math.degrees(f(r["ambient_wind_direction_rad"])))
+        by.setdefault((d, round(f(r["ambient_wind_speed_m_s"])), s), []).append(
+            f(r["P1"]) + f(r["P2"]) + f(r["P3"]))
+
+    dirs = sorted({k[0] for k in by})
+    spds = sorted({k[1] for k in by})
+    # 先在「每个方向」上各算各的增益，再折叠成 δ（同一 δ 可能对应左右两侧的对称方向，
+    # 取其中更高的一侧；不能先平均功率，否则两边最优策略不同会被抹平）
+    per_dir: dict[tuple[int, float], tuple[str, float]] = {}
+    for d in dirs:
+        for ws in spds:
+            vals = {s: st.mean(v) for (dd, ww, s), v in by.items() if dd == d and ww == ws}
+            if "align" not in vals or len(vals) < 2:
+                continue
+            b = max(vals, key=vals.get)
+            per_dir[(d, ws)] = (b, (vals[b] / vals["align"] - 1) * 100)
+    deltas = sorted({min(abs(d), abs(d - 180), abs(d - 360)) for d in dirs})
+    G = np.full((len(spds), len(deltas)), np.nan)
+    best = {}
+    for i, ws in enumerate(spds):
+        for j, dl in enumerate(deltas):
+            cand = [(g, s) for (d, w) in per_dir if w == ws
+                    and min(abs(d), abs(d - 180), abs(d - 360)) == dl
+                    for s, g in [per_dir[(d, w)]][0:1]]
+            if not cand:
+                continue
+            g, s = max(cand)
+            G[i, j] = g
+            best[(dl, ws)] = s
+
+    fig = plt.figure(figsize=(6.9, 2.7))
+    ax1 = F.paper_axes(fig, [0.075, 0.215, 0.30, 0.68])
+    im = ax1.pcolormesh(deltas, spds, G, cmap="YlGnBu", vmin=0, vmax=10, shading="nearest")
+    for i, ws in enumerate(spds):
+        for j, dl in enumerate(deltas):
+            v = G[i, j]
+            if np.isfinite(v):
+                ax1.text(dl, ws, f"{v:.0f}", ha="center", va="center", fontsize=5.6,
+                         color="white" if v > 6 else "#333333")
+    ax1.set_xlabel("与串列轴的夹角 δ / (°)")
+    ax1.set_ylabel("来流风速 / (m/s)")
+    ax1.set_xticks(deltas)
+    ax1.set_yticks(spds)
+    cb = fig.colorbar(im, ax=ax1, pad=0.03, fraction=0.05)
+    cb.set_label("最优策略增益 / %", fontsize=7)
+    cb.ax.tick_params(labelsize=6.2)
+    F.panel_label(ax1, "(a)")
+
+    ax2 = F.paper_axes(fig, [0.60, 0.215, 0.29, 0.68])
+    labels = {"align": "对齐（偏航无益）", "u+10": "统一 +10°", "u-10": "统一 −10°",
+              "u+20": "统一 +20°", "stag": "错列 ±20°"}
+    cols = {"align": C["base"], "u+10": "#9ec5e0", "u-10": C["alt"],
+            "u+20": "#d8b4a0", "stag": C["acc"]}
+    ws0 = 8.0 if 8.0 in spds else spds[len(spds) // 2]
+    xs = np.arange(len(deltas))
+    vals = [G[spds.index(ws0), j] for j in range(len(deltas))]
+    bars = ax2.bar(xs, vals, color=[cols[best[(dl, ws0)]] for dl in deltas],
+                   edgecolor="#333333", lw=0.6, width=0.68)
+    for x, v, dl in zip(xs, vals, deltas):
+        if v > 0.5:
+            ax2.text(x, v + 0.25, f"{v:.0f}", ha="center", fontsize=6.0)
+    ax2.set_xticks(xs)
+    ax2.set_xticklabels([f"{d:.0f}" for d in deltas], fontsize=7)
+    ax2.set_xlabel("与串列轴的夹角 δ / (°)")
+    ax2.set_ylabel(f"最优增益 / %（{ws0:.0f} m/s）")
+    ax2.set_ylim(0, 12)
+    ax2.set_xlim(-0.65, len(deltas) - 0.35)
+    handles = [plt.Rectangle((0, 0), 1, 1, facecolor=cols[k], edgecolor="#333333", lw=0.6)
+               for k in ("u+10", "u-10", "u+20", "stag", "align")]
+    ax2.legend(handles, [labels[k] for k in ("u+10", "u-10", "u+20", "stag", "align")],
+               loc="upper right", fontsize=6.0, handlelength=1.1, labelspacing=0.25)
+    F.panel_label(ax2, "(b)")
+    F.paper_save(fig, OUT, "fig20_yaw_strategy_map")
+    print("    δ 档位：", deltas)
+    for ws in spds:
+        row = " ".join(f"δ{dl:.0f}:{G[spds.index(ws), deltas.index(dl)]:.0f}%"
+                       for dl in deltas if np.isfinite(G[spds.index(ws), deltas.index(dl)]))
+        print(f"    {ws:.0f} m/s → {row}")
+
+
+def fig21():
+    """四个指标逐场对比：赢什么、输什么，一场一格。"""
+    def avg(ctrl):
+        acc: dict[str, list[dict]] = {}
+        for r in rows(RANDOM / "test" / "metrics.csv"):
+            if r["controller"] != ctrl or r["family"] == "low_wind_stress":
+                continue
+            acc.setdefault(r["case_id"], []).append(r)
+        out = {}
+        for cid, rs in acc.items():
+            row = dict(rs[0])
+            for k in ("rmse_w", "mae_w", "tail_rmse_w", "mean_shortfall_w"):
+                row[k] = str(st.mean(f(x[k]) for x in rs))
+            out[cid] = row
+        return out
+
+    data = avg("pi")
+    sel = avg("selected")
+    cases = sorted(data)
+    keys = [("rmse_w", "RMSE"), ("mae_w", "MAE"),
+            ("tail_rmse_w", "尾段 RMSE"), ("mean_shortfall_w", "平均缺额")]
+    M = np.full((len(keys), len(cases)), np.nan)
+    for i, (k, _lab) in enumerate(keys):
+        for j, c in enumerate(cases):
+            M[i, j] = (f(sel[c][k]) / f(data[c][k]) - 1) * 100
+    order = np.argsort(M[0])
+    M = M[:, order]
+    cases = [cases[i] for i in order]
+    fam = [data[c]["family"] for c in cases]
+
+    fig = plt.figure(figsize=(6.9, 2.9))
+    ax = F.paper_axes(fig, [0.085, 0.36, 0.82, 0.56])
+    lim = 40
+    im = ax.pcolormesh(np.arange(len(cases) + 1) - 0.5, np.arange(len(keys) + 1) - 0.5,
+                       np.clip(M, -lim, lim), cmap="RdBu_r", vmin=-lim, vmax=lim,
+                       shading="flat")
+    for j, c in enumerate(cases):
+        for i in range(len(keys)):
+            v = M[i, j]
+            if abs(v) > 8:
+                ax.text(j, i, f"{v:+.0f}", ha="center", va="center", fontsize=5.4,
+                        color="white" if abs(v) > 25 else "#222222")
+    ax.set_yticks(range(len(keys)))
+    ax.set_yticklabels([lab for _k, lab in keys], fontsize=7)
+    ax.set_xticks(range(len(cases)))
+    short = [("阵" if fm == "gust" else "慢" if fm == "ramp" else "稳")
+             + c.split("_")[-2] for c, fm in zip(cases, fam)]
+    ax.set_xticklabels(short, fontsize=6.4)
+    ax.set_xlabel("测试场（族 + 序号，按 RMSE 变化排序）", fontsize=7.5)
+    cb = fig.colorbar(im, ax=ax, pad=0.012, fraction=0.025)
+    cb.set_label("训练后相对 PI 的变化 / %（负 = 更好）", fontsize=6.6)
+    cb.ax.tick_params(labelsize=6)
+    F.paper_save(fig, OUT, "fig21_metric_heatmap")
+    print(f"    RMSE 更好 {int((M[0] < 0).sum())}/{len(cases)}；MAE 更好 {int((M[1] < 0).sum())}；"
+          f"尾段更好 {int((M[2] < 0).sum())}；缺额更好 {int((M[3] < 0).sum())}")
+
+
+def fig22():
+    """执行器速率余量：三个通道离配置上限还有多远（按 run 逐步差分，不与限幅比较错位）。"""
+    traj = [r for r in rows(RANDOM / "test" / "trajectories.csv")
+            if r["controller"] == "selected"]
+    chans = [("heading_1_rad", "偏航", 0.005, C["ours"]),
+             ("pitch_1", "桨距", 0.00872664626, C["alt"]),
+             ("speed_1", "转速", 0.1, C["acc"])]
+    by: dict[tuple, list[dict]] = {}
+    for r in traj:
+        by.setdefault((r["case_id"], r["run_id"]), []).append(r)
+
+    fig = plt.figure(figsize=(6.9, 2.5))
+    ax1 = F.paper_axes(fig, [0.075, 0.20, 0.30, 0.70])
+    for i, (col, name, lim, color) in enumerate(chans):
+        vals = []
+        for _k, rs in by.items():
+            rs.sort(key=lambda r: int(r["step"]))
+            vals.extend(np.abs(np.diff([f(r[col]) for r in rs])) / lim)
+        vals = np.array(vals)
+        parts = ax1.violinplot([vals], positions=[i], widths=0.62, showextrema=False)
+        for pc in parts["bodies"]:
+            pc.set_facecolor(color)
+            pc.set_alpha(0.5)
+            pc.set_edgecolor("#333333")
+            pc.set_linewidth(0.6)
+        ax1.hlines(np.median(vals), i - 0.2, i + 0.2, color="#111111", lw=1.0)
+        ax1.text(i, np.percentile(vals, 99.5) * 1.25, f"最大 {vals.max():.2f}",
+                 ha="center", fontsize=6.2)
+    ax1.axhline(1.0, color=C["warn"], lw=1.0, ls="--")
+    ax1.text(2.45, 1.08, "上限", color=C["warn"], fontsize=6.8, ha="right")
+    ax1.set_xticks(range(3))
+    ax1.set_xticklabels([c[1] for c in chans])
+    ax1.set_ylim(0, 1.35)
+    ax1.set_ylabel("实际步进 ÷ 配置上限")
+    F.panel_label(ax1, "(a)")
+
+    ax2 = F.paper_axes(fig, [0.485, 0.20, 0.47, 0.70])
+    for col, name, lim, color in chans:
+        vals = []
+        for _k, rs in by.items():
+            rs.sort(key=lambda r: int(r["step"]))
+            vals.extend(np.abs(np.diff([f(r[col]) for r in rs])) / lim)
+        vals = np.sort(np.array(vals))
+        ax2.plot(vals, np.arange(1, len(vals) + 1) / len(vals), color=color, lw=1.2, label=name)
+    ax2.axvline(1.0, color=C["warn"], lw=1.0, ls="--")
+    ax2.set_xlim(0, 1.15)
+    ax2.set_ylim(0, 1.02)
+    ax2.set_xlabel("实际步进 ÷ 配置上限")
+    ax2.set_ylabel("累积概率")
+    ax2.legend(loc="upper left", fontsize=6.8, handlelength=1.8)
+    ax2.text(1.0, 0.12, " 上限", color=C["warn"], fontsize=6.6, rotation=90, va="bottom", ha="right")
+    F.panel_label(ax2, "(b)")
+    F.paper_save(fig, OUT, "fig22_actuator_margin")
+
+
+def fig23():
+    """盘面速度逐点对比：k-ω vs k-ε（替代极坐标云图）。"""
+    fig = plt.figure(figsize=(6.9, 2.55))
+    names = ["T1", "T2", "T3"]
+    for k in range(3):
+        _, _t, a = _disk("k-omega_data", k + 1, "U_forward_m_s")
+        _, _t2, b = _disk("k-epsilon_data", k + 1, "U_forward_m_s")
+        x, y = a.ravel(), b.ravel()
+        ok = np.isfinite(x) & np.isfinite(y)
+        x, y = np.clip(x[ok], 0, 12), np.clip(y[ok], 0, 12)
+        ax = F.paper_axes(fig, [0.07 + k * 0.245, 0.20, 0.21, 0.70])
+        ax.plot([0, 12], [0, 12], color="#888888", lw=0.8, ls="--")
+        ax.scatter(x, y, s=3.2, color=C["ours"], alpha=0.45, linewidths=0)
+        mae = np.mean(np.abs(y - x))
+        ax.text(0.05, 0.95, f"MAE {mae:.2f} m/s\n偏差 {(y.mean() / x.mean() - 1) * 100:+.1f} %",
+                transform=ax.transAxes, va="top", fontsize=6.2)
+        ax.set_xlim(0, 12)
+        ax.set_ylim(0, 12)
+        ax.set_xticks([0, 4, 8, 12])
+        ax.set_yticks([0, 4, 8, 12])
+        ax.set_xlabel("k-ω SST 盘面速度 / (m/s)", fontsize=7.2)
+        if k == 0:
+            ax.set_ylabel("k-ε 盘面速度 / (m/s)")
+        ax.set_title(names[k], fontsize=8, pad=3)
+        F.panel_label(ax, "(" + "abc"[k] + ")")
+    F.paper_save(fig, OUT, "fig23_disk_scatter")
+
+
 FIGURES = {
     "fig01": ("设计空间热图（风速×风向 / 风速×湍流强度）", fig01),
     "fig02": ("五种偏航策略的功率曲线", fig02),
@@ -898,7 +1105,6 @@ FIGURES = {
     "fig09": ("逐场配对散点（含差值边缘分布）", fig09),
     "fig10": ("训练收敛与参数冻结", fig10),
     "fig11": ("预测-真值一致性 / 残差分布", fig11),
-    "fig12": ("执行器步进分布与上限", fig12),
     "fig13": ("来流方向极坐标功率图", fig13),
     "fig14": ("反算 Cp 与桨距的关系", fig14),
     "fig15": ("两机串列偏航优化（功率与增益矩阵）", fig15),
@@ -906,6 +1112,10 @@ FIGURES = {
     "fig17": ("尾流模态分解（能量与前两阶模态）", fig17),
     "fig18": ("尾流水平切片：对齐 vs 偏航 25°", fig18),
     "fig19": ("六工况功率跟踪过程", fig19),
+    "fig20": ("偏航策略选择地图（方向×风速）", fig20),
+    "fig21": ("四指标逐场对比热图", fig21),
+    "fig22": ("执行器速率余量（三通道）", fig22),
+    "fig23": ("盘面速度逐点对比（两模型）", fig23),
 }
 
 
