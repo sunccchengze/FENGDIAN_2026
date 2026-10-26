@@ -36,6 +36,8 @@
 
 一览图：`paper/_contact_sheet.png`（14 张缩略拼版，只用于快速过目，不进论文）。
 
+整包下载（只有 PNG，3.2 MB / 15 文件）：[`../paper_figures_20261026.zip`](../paper_figures_20261026.zip)。
+
 重画：`/home/user/.venvs/fig/bin/python tools/paper_figures.py [figXX …]`（`--list` 看图号）。
 **存量 37 张（`generated/`）不重画、不覆盖**；两批图结论口径一致。
 
