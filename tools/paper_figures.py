@@ -59,6 +59,7 @@ PINN_REPORT = DATASET / "model" / "training_report.json"
 CFD = ROOT / "materials" / "田铭雨" / "20261024_三机串列双模型对比"
 RANDOM = ROOT / "optimization_control" / "experiments" / "20261022_random_wind_training"
 BASELINE_NN = ROOT / "materials" / "厉今飞" / "20260808_功率预测神经网络基线"
+VIZ = ROOT / "viz"   # 两机串列 / 3×3 阵列 / POD 的 FLORIS 数据（8 月历史工作）
 
 D_ROTOR = 125.88
 A_ROTOR = math.pi * (D_ROTOR / 2) ** 2
@@ -684,6 +685,207 @@ def fig14():
     F.paper_save(fig, OUT, "fig14_cp_pitch")
 
 
+def fig15():
+    """两机串列偏航优化（8 月历史工作，FLORIS 合成数据）。"""
+    one = rows(VIZ / "cases.csv")
+    yaw = np.array([f(r["yaw_1"]) for r in one])
+    o = np.argsort(yaw)
+    yaw = yaw[o]
+    # viz/cases*.csv 里的功率已是 kW，不用再除 1e3
+    p1 = np.array([f(r["power_1"]) for r in one])[o]
+    p2 = np.array([f(r["power_2"]) for r in one])[o]
+    pt = np.array([f(r["power_total"]) for r in one])[o]
+
+    fig = plt.figure(figsize=(6.9, 2.5))
+    ax1 = F.paper_axes(fig, [0.075, 0.20, 0.365, 0.70])
+    ax1.plot(yaw, p1, color=C["ours"], marker="o", ms=2.6, lw=1.1, label="上游 P1")
+    ax1.plot(yaw, p2, color=C["alt"], marker="s", ms=2.6, lw=1.1, label="下游 P2")
+    ax1.plot(yaw, pt, color="#222222", marker="^", ms=2.6, lw=1.3, label="合计")
+    i_best = int(np.argmax(pt))
+    ax1.plot(yaw[i_best], pt[i_best], "o", ms=6.5, mfc="white", mec=C["warn"], mew=1.1, zorder=5)
+    ax1.annotate(f"最优 {yaw[i_best]:.0f}°", (yaw[i_best], pt[i_best]),
+                 textcoords="offset points", xytext=(0, -16), fontsize=6.8, ha="center",
+                 color=C["warn"])
+    ax1.set_xlabel("统一偏航角 / (°)")
+    ax1.set_ylabel("机组功率 / kW")
+    ax1.set_xlim(-33, 33)
+    ax1.set_ylim(300, 3000)
+    ax1.legend(loc="upper left", fontsize=6.4, ncol=3, columnspacing=0.7,
+               handlelength=1.5, borderaxespad=0.25)
+
+    multi = rows(VIZ / "cases_multi.csv")
+    us = sorted({f(r["U_inf"]) for r in multi})
+    ys = sorted({f(r["yaw_1"]) for r in multi})
+    G = np.full((len(us), len(ys)), np.nan)
+    for r in multi:
+        G[us.index(f(r["U_inf"])), ys.index(f(r["yaw_1"]))] = f(r["gain_pct"])
+    ax2 = F.paper_axes(fig, [0.575, 0.20, 0.26, 0.70])
+    im = ax2.pcolormesh(ys, us, G, cmap="YlGnBu", shading="nearest")
+    cb = fig.colorbar(im, ax=ax2, pad=0.02, fraction=0.05)
+    cb.set_label("相对对齐的总增益 / %", fontsize=7)
+    cb.ax.tick_params(labelsize=6.2)
+    ax2.set_xlabel("统一偏航角 / (°)")
+    ax2.set_ylabel("来流风速 / (m/s)")
+    ax2.set_yticks(us)
+    ax2.set_xticks([-30, -15, 0, 15, 30])
+    F.panel_label(ax1, "(a)")
+    F.panel_label(ax2, "(b)")
+    F.paper_save(fig, OUT, "fig15_tandem_yaw")
+
+
+def fig16():
+    """3×3 阵列：统一偏航 vs 逐台贪心（FLORIS 合成数据）。"""
+    one = rows(VIZ / "cases_array.csv")
+    yaw = np.array([f(r["yaw_upstream"]) for r in one])
+    o = np.argsort(yaw)
+    yaw, tot = yaw[o], np.array([f(r["power_total"]) for r in one])[o]   # 已是 kW
+    base = float(tot[yaw == 0][0]) if (yaw == 0).any() else tot.min()
+    greedy = json.loads((VIZ / "array_independent_result.json").read_text(encoding="utf-8"))
+
+    fig = plt.figure(figsize=(6.9, 2.6))
+    ax1 = F.paper_axes(fig, [0.075, 0.20, 0.33, 0.70])
+    ax1.plot(yaw, tot, color=C["ours"], marker="o", ms=2.8, lw=1.1)
+    ax1.axhline(base, color=C["base"], lw=0.9, ls="--")
+    ax1.text(-29, base + 90, f"对齐 {base:.0f} kW", fontsize=6.4, color=C["base"])
+    i = int(np.argmax(tot))
+    ax1.plot(yaw[i], tot[i], "o", ms=6.0, mfc="white", mec=C["warn"], mew=1.1, zorder=5)
+    ax1.set_xlabel("统一偏航角 / (°)")
+    ax1.set_ylabel("全场总功率 / kW")
+    ax1.set_xlim(-33, 33)
+    ax1.set_ylim(7800, 10600)
+
+    ax2 = F.paper_axes(fig, [0.575, 0.20, 0.40, 0.70])
+    names = ["对齐", "统一 30°", "前两排 30°", "逐台贪心"]
+    vals = [greedy["power_none"], greedy["power_unified"],
+            greedy["power_row2_30"], greedy["power_independent"]]
+    cols = [C["base"], C["light"], C["acc"], C["ours"]]
+    bars = ax2.bar(range(4), np.array(vals), color=cols, edgecolor="#333333",
+                   lw=0.6, width=0.62)
+    for b, v in zip(bars, vals):
+        ax2.text(b.get_x() + b.get_width() / 2, v + 90,
+                 f"{v / 1e3:.1f} MW", ha="center", fontsize=6.4)
+        if v != vals[0]:
+            ax2.text(b.get_x() + b.get_width() / 2, v + 330,
+                     f"+{(v / vals[0] - 1) * 100:.1f}%", ha="center", fontsize=6.2,
+                     color=C["warn"])
+    ax2.set_xticks(range(4))
+    ax2.set_xticklabels(names, fontsize=6.6)
+    ax2.set_ylabel("全场总功率 / kW")
+    ax2.set_ylim(7500, 11200)
+    F.panel_label(ax1, "(a)")
+    F.panel_label(ax2, "(b)")
+    F.paper_save(fig, OUT, "fig16_array_yaw")
+
+
+def fig17():
+    """尾流模态分解：能量占比与前两阶模态。"""
+    d = np.load(VIZ / "pod_results" / "pod_data.npz")
+    frac = d["energy_frac"][:6] * 100
+    cum = d["energy_cum"][:6] * 100
+    x, y = d["x"], d["y"]
+    modes = d["modes"]
+
+    fig = plt.figure(figsize=(6.9, 2.4))
+    ax1 = F.paper_axes(fig, [0.065, 0.20, 0.19, 0.68])
+    idx = np.arange(1, 7)
+    ax1.bar(idx, frac, color=C["ours"], edgecolor="white", lw=0.5, width=0.62)
+    ax1.set_xlabel("模态阶次")
+    ax1.set_ylabel("能量占比 / %")
+    ax1.set_xticks(idx)
+    ax1.set_ylim(0, 88)
+    ax1.text(3, 80, "前两阶 97.97 %", fontsize=6.4, ha="left")
+    F.panel_label(ax1, "(a)")
+
+    for k in range(2):
+        ax = F.paper_axes(fig, [0.325 + k * 0.335, 0.20, 0.26, 0.68])
+        lim = float(np.percentile(np.abs(modes[k]), 99))
+        im = ax.pcolormesh(x, y, modes[k], cmap="RdBu_r", vmin=-lim, vmax=lim,
+                           shading="nearest")
+        ax.set_xlabel("下游距离 x / m")
+        ax.set_yticks([-200, 0, 200])
+        if k == 0:
+            ax.set_ylabel("横向距离 y / m")
+        ax.set_title(f"模态 {k + 1}（{frac[k]:.1f} %）", fontsize=8, pad=3)
+        cb = fig.colorbar(im, ax=ax, pad=0.02, fraction=0.05)
+        cb.ax.tick_params(labelsize=6)
+        F.panel_label(ax, "(" + "bc"[k] + ")")
+    F.paper_save(fig, OUT, "fig17_pod_modes")
+
+
+def fig18():
+    """尾流水平切片：对齐 vs 统一偏航 +25°。"""
+    def field(name):
+        d = np.load(VIZ / "fields" / name)
+        return d["x"], d["y"], d["u"]
+
+    fig = plt.figure(figsize=(6.9, 2.45))
+    cases = (("case_0007.npz", "对齐 0°"), ("case_0012.npz", "统一偏航 +25°"))
+    vmin, vmax = 4.6, 8.0
+    levels = np.linspace(vmin, vmax, 15)
+    xs, ys, us = [], [], []
+    for _fn, _label in cases:
+        _x, _y, _u = field(_fn)
+        xs.append(_x)
+        ys.append(_y)
+        us.append(np.clip(_u, vmin, vmax))
+    for k, (fn, label) in enumerate(cases):
+        x, y, u = xs[k], ys[k], us[k]
+        ax = F.paper_axes(fig, [0.07 + k * 0.44, 0.20, 0.345, 0.70])
+        im = ax.contourf(x, y, u, levels=levels, cmap="viridis", extend="both")
+        for tx, tag in ((0.0, "T1"), (630.0, "T2")):
+            ax.plot(tx, 0, "^", ms=4.6, mfc="white", mec="#222222", mew=0.7)
+            ax.text(tx, 42, tag, fontsize=6.4, ha="center", color="#222222")
+        ax.set_xlabel("下游距离 x / m")
+        if k == 0:
+            ax.set_ylabel("横向距离 y / m")
+        ax.set_xlim(-200, 900)
+        ax.set_ylim(-300, 300)
+        ax.set_title(label, fontsize=8, pad=3)
+        F.panel_label(ax, "(" + "ab"[k] + ")")
+    cb = fig.colorbar(im, ax=fig.axes[-2:], pad=0.012, fraction=0.022)
+    cb.set_label("轴向速度 / (m/s)", fontsize=7)
+    cb.ax.tick_params(labelsize=6.2)
+    cb.set_ticks([5, 6, 7, 8])
+    cb.ax.set_yticklabels(["5", "6", "7", "8"])
+    F.paper_save(fig, OUT, "fig18_wake_slices")
+
+
+def fig19():
+    """六工况的功率跟踪过程（四种控制器）。"""
+    tr = rows(RANDOM / "test" / "trajectories.csv")
+    ctrls = [("initial", "初始策略", "#d0d0d0", ":"), ("p", "P 控制", "#a0a0a0", "-."),
+             ("pi", "PI 控制", "#4d4d4d", "--"), ("selected", "训练后", C["ours"], "-")]
+    fams = [("gust", "阵风"), ("stationary", "平稳"), ("ramp", "慢变")]
+
+    fig = plt.figure(figsize=(6.9, 2.65))
+    for k, (fam, flabel) in enumerate(fams):
+        ax = F.paper_axes(fig, [0.07 + k * 0.325, 0.255, 0.265, 0.625])
+        case = f"test_{fam}_0_pitch0.025"
+        tgt = None
+        for key, label, col, ls in ctrls:
+            rs = [r for r in tr if r["controller"] == key and r["case_id"] == case]
+            if not rs:
+                continue
+            rs.sort(key=lambda r: int(r["step"]))
+            tgt = tgt or f(rs[0]["target_w"]) / 1e6      # 目标单位是 MW
+            ax.plot([int(r["step"]) for r in rs], [f(r["farm_power_w"]) / 1e3 for r in rs],
+                    color=col, ls=ls, lw=1.1 if ls == "-" else 0.8,
+                    zorder=4 if ls == "-" else 2, label=label)
+        ax.axhline(tgt * 1e3, color=C["warn"], lw=0.8, ls=":")
+        ax.set_xlabel("控制步")
+        if k == 0:
+            ax.set_ylabel("全场功率 / kW")
+        ax.set_title(f"{flabel}　目标 {tgt:.1f} MW", fontsize=7.6, pad=3)
+        ax.set_ylim(1200, 5200)
+        ax.set_yticks([2000, 3000, 4000, 5000])
+        F.panel_label(ax, "(" + "abc"[k] + ")")
+    handles, labels_ = fig.axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels_, loc="lower center", ncol=4, fontsize=6.6,
+               frameon=False, bbox_to_anchor=(0.5, -0.01), handlelength=1.9,
+               columnspacing=1.4)
+    F.paper_save(fig, OUT, "fig19_tracking_cases")
+
+
 FIGURES = {
     "fig01": ("设计空间热图（风速×风向 / 风速×湍流强度）", fig01),
     "fig02": ("五种偏航策略的功率曲线", fig02),
@@ -699,6 +901,11 @@ FIGURES = {
     "fig12": ("执行器步进分布与上限", fig12),
     "fig13": ("来流方向极坐标功率图", fig13),
     "fig14": ("反算 Cp 与桨距的关系", fig14),
+    "fig15": ("两机串列偏航优化（功率与增益矩阵）", fig15),
+    "fig16": ("3×3 阵列统一偏航与逐台贪心", fig16),
+    "fig17": ("尾流模态分解（能量与前两阶模态）", fig17),
+    "fig18": ("尾流水平切片：对齐 vs 偏航 25°", fig18),
+    "fig19": ("六工况功率跟踪过程", fig19),
 }
 
 

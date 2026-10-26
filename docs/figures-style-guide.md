@@ -108,7 +108,9 @@ EOF
 | `panel_label(ax, "(a)")` | 左上角面板字母，8 pt 粗体 |
 | `paper_save(fig, out, name)` | 400 dpi PNG + 矢量 PDF，`bbox_inches="tight"` |
 
-出图脚本：`tools/paper_figures.py`（`fig01`–`fig14`），只读既有 CSV/JSON。
+出图脚本：`tools/paper_figures.py`（`fig01`–`fig19`），只读既有 CSV/JSON。
+`fig15`–`fig19` 是把原先散在别处、但同样是「图表版式」的内容，用同一套规范重画的：
+两机串列偏航优化、3×3 阵列偏航、尾流模态分解、尾流水平切片、六工况功率跟踪。
 图注与「不能说什么」见 `docs/defense/paper_captions.md`。
 
 ### 7.2 字体：**宋体**（思源宋体 Noto Serif SC）
