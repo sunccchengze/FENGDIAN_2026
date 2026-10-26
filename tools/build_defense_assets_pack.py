@@ -139,16 +139,16 @@ def main(argv):
     md = io.StringIO()
     cs = io.StringIO()
     w = csv.writer(cs)
-    w.writerow(["分类", "包内文件名", "图名", "讲什么", "建议页", "口径提醒"])
+    w.writerow(["分类", "包内文件名", "仓库源文件", "图名", "讲什么", "建议页", "口径提醒"])
 
     md.write("# 答辩 PPT 素材总索引（2026-10-26 · 只收图表版式的图）\n\n")
-    md.write("> 只收三种：**论文插图**（`fig01`–`fig19`，单/双栏、无页眉角标）、"
+    md.write("> 只收三种：**论文插图**（`fig01`–`fig23`，实存 22 张、缺 `fig12`，单/双栏、无页眉角标）、"
              "**数字孪生实拍截图**、**Fluent 软件导出原图**。\n>\n"
              "> 上一版里的 `g01`–`g37` 整页图、带大标题的旧科研图、PPT 版式示意图、科普插图**全部移出**——"
              "它们加不进我们的版式。原文件仍在仓库原位，只是不进这个包。\n\n")
     md.write("| 分类 | 文件数 | 说明 |\n|---|---:|---|\n")
     notes = {
-        "01_论文插图": "`fig01`–`fig19`，PNG 400 dpi + 同名矢量 PDF（PDF 在 `01_论文插图/PDF矢量/`）",
+        "01_论文插图": "`fig01`–`fig23`（22 张，`fig12` 已撤），PNG 400 dpi + 同名矢量 PDF（PDF 在 `01_论文插图/PDF矢量/`）",
         "02_数字孪生截图": "可视化页面实拍，JPEG（长边 ≤1700 px）",
         "03_Fluent导出": "Fluent 直接导出的云图 / 网格 / 求解器截图",
     }
@@ -157,12 +157,15 @@ def main(argv):
         md.write(f"| {c} | {n} | {notes[c]} |\n")
     md.write("\n")
 
+    md.write("> 下表「包内文件名」省略扩展名（图片 `.png` / `.jpg`，矢量图在 `01_论文插图/PDF矢量/`）；" 
+             "「仓库源文件」是在本仓库里的实际路径文件名，供核对与重画。\n")
     for c in ("01_论文插图", "02_数字孪生截图", "03_Fluent导出"):
         lst = [it for it in items if it["cat"] == c]
-        md.write(f"\n## {c}\n\n| 文件 | 图名 | 讲什么 | 建议页 | 口径提醒 |\n|---|---|---|---|---|\n")
+        md.write(f"\n## {c}\n\n| 仓库源文件 | 包内文件名 | 图名 | 讲什么 | 建议页 | 口径提醒 |\n|---|---|---|---|---|---|\n")
+        md.write("")
         for it in lst:
-            md.write(f"| `{it['name']}` | {it['title']} | {it['desc']} | {it['page']} | {it['note']} |\n")
-            w.writerow([c, it["name"], it["title"], it["desc"], it["page"], it["note"]])
+            md.write(f"| `{it['src'].name}` | {it['name'].rsplit('.', 1)[0]} | {it['title']} | {it['desc']} | {it['page']} | {it['note']} |\n")
+            w.writerow([c, it["name"], it["src"].name, it["title"], it["desc"], it["page"], it["note"]])
         md.write("\n")
 
     md.write("""## 配页建议（14 页里挑 7 张就够）
@@ -174,7 +177,7 @@ def main(argv):
 | p7 数据与代理 | `fig01`（覆盖）+ `fig03`（TI 影响）+ `fig10`（参数冻结） |
 | p8 优化控制 | `fig07`（四控制器箱线） |
 | p9 结果 | `fig09`（逐场配对，12 胜 6 负）+ `fig19`（跟踪过程） |
-| p9 追问 | `fig12`（执行器超限）、`fig15`/`fig16`（两机与阵列历史工作） |
+| p9 追问 | `fig22`（执行器余量：桨距恒贴上限）、`fig15`/`fig16`（两机与阵列历史工作） |
 | p13 结论 | `fig11`（预测一致性，注合成标签） |
 
 > 讲稿里所有数字仍以 `docs/defense/2026-10-24_口播稿_照念_v3.txt` 为准；
