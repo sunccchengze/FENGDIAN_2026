@@ -504,7 +504,7 @@ def fig10():
     ax1.legend(loc="upper right", fontsize=6.8)
     ax1.set_title("(a) PINN 迁移训练", fontsize=8.5, pad=4)
 
-    ax2 = F.paper_axes(fig, [0.425, 0.185, 0.30, 0.72])
+    ax2 = F.paper_axes(fig, [0.425, 0.185, 0.285, 0.72])
     for out, label, col, ls in (("output_cc", "算例 CC", C["ours"], "-"), ("output_gch", "算例 GCH", C["alt"], "--")):
         h = rows(BASELINE_NN / out / "wind_farm_results" / "training_history.csv")
         loss = np.array([f(r["loss"]) for r in h])
@@ -517,16 +517,16 @@ def fig10():
     ax2.set_title("(b) 功率预测基线（两组算例）", fontsize=8.5, pad=4)
 
     # 右：两套模型结构规模对比（柱）
-    ax3 = F.paper_axes(fig, [0.795, 0.185, 0.17, 0.72])
+    ax3 = F.paper_axes(fig, [0.805, 0.185, 0.155, 0.72])
     names = ["原主干\n(冻结)", "新增\n可训练"]
     vals = [3087200 / 1e6, 27106 / 1e6]
     ax3.bar([0, 1], vals, color=[C["light"], C["ours"]], edgecolor="#333333", lw=0.6, width=0.6)
     ax3.set_yscale("log")
     ax3.set_xticks([0, 1])
     ax3.set_xticklabels(names, fontsize=6.8)
-    ax3.set_ylabel("参数量 / 百万")
+    ax3.set_ylabel("参数量 / 百万", labelpad=1.5, fontsize=8)
     for i, v in enumerate(vals):
-        ax3.text(i, v * 1.7, ("27,106" if v < 1 else "3,087,200"), ha="center", fontsize=6.2)
+        ax3.text(i, v * 1.8, ("0.027" if v < 1 else "3.09"), ha="center", fontsize=6.5)
     ax3.set_ylim(1e-3, 60)
     ax3.set_title("(c) 参数冻结", fontsize=8.5, pad=4)
     F.paper_save(fig, OUT, "fig10_learning_curves")

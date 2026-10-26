@@ -34,6 +34,8 @@
 `fig09` 逐场配对、`fig10` 训练收敛＋参数冻结、`fig11` 预测一致性／残差、`fig12` 执行器步进、
 `fig13` 来流方向极坐标、`fig14` 反算 Cp–桨距。
 
+一览图：`paper/_contact_sheet.png`（14 张缩略拼版，只用于快速过目，不进论文）。
+
 重画：`/home/user/.venvs/fig/bin/python tools/paper_figures.py [figXX …]`（`--list` 看图号）。
 **存量 37 张（`generated/`）不重画、不覆盖**；两批图结论口径一致。
 

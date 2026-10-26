@@ -1,7 +1,7 @@
 # 论文插图图注（14 张）：直接可用的 caption + 每张的「不能说什么」
 
 > 对应脚本：`tools/paper_figures.py`；成品：`docs/defense/assets/paper/`（`fig01`–`fig14`，400 dpi PNG + 矢量 PDF）。
-> 重画：`/home/user/.venvs/fig/bin/python tools/paper_figures.py [figXX ...]`。
+> 重画：`/home/user/.venvs/fig/bin/python tools/paper_figures.py [figXX ...]`；一眼过目：`assets/paper/_contact_sheet.png`。
 >
 > **为什么要单独一份图注**：这批图是**论文插图**，图上只有坐标轴、轴标签、图例、panel 字母和必要注解，
 > 没有页眉、没有大标题、没有读法行、没有角标横幅。所有「这图说明什么、证据到什么程度、不能外推到哪」
