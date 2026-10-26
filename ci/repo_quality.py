@@ -72,7 +72,6 @@ REQUIRED_PATHS = [
 
 # Markdown files whose links are NOT checked (everything else tracked is).
 LINK_SCOPE_EXCLUDE = (
-    "skills/",  # third-party skill packs copied whole; cross-pack relative links live upstream
     "viz/_archive/",  # sealed history; only MANIFEST.md (kept below) is a live document
     ".learnings/",  # agent learning logs at any depth (viz/.learnings/ too) are historical, matched by segment below
     # notes excerpted from the -SKILL- repo; their upstream references/ were deliberately not migrated
@@ -335,8 +334,8 @@ def check_text_hygiene(files: list[Path], warnings: list[str]) -> None:
             continue
         if path.name in {"markitdown_sync.py", "repo_quality.py"}:
             continue  # these two legitimately contain the U+FFFD literal/escape
-        if rel(path).startswith("skills/") or is_mirror(path):
-            continue  # third-party packs and generated mirrors: extraction artefacts, not authoring damage
+        if is_mirror(path):
+            continue  # generated mirrors: extraction artefacts, not authoring damage
         try:
             text = path.read_text(encoding="utf-8", errors="ignore")
         except OSError:
