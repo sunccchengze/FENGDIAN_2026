@@ -86,3 +86,81 @@ EOF
 - 第一批图的版式（题注/角标/页脚）保持不变，只有字体、配色与线宽变了，**内容与数字一字未改**。
 - `docs/defense/defense_full_pack_20261024.zip` 仍是 2026-10-24 的旧版图，**不要直接用**；
   需要整包时按 §5 重跑脚本后重新打包（`tools/build_defense_pack.py`）。
+
+## 7. 论文插图模式（2026-10-26 新增，与上面 37 张答辩图并存）
+
+上面 §1–§6 讲的是**答辩整页**：16:9、带页眉题注、读法行、右下角证据角标。这一节讲另一套：
+
+> 论文正文里的 figure 只应该有一个坐标系和它的说明文字。页眉、大标题、副标题、读法行、
+> 来源条、角标横幅**一律不出现**——这些内容属于 caption，不属于图。
+
+### 7.1 落点
+
+`tools/figstyle.py` 里追加的「论文插图模式」段（原有 `PALETTE`/`frame()`/`card()`/`save()` 全部保留）：
+
+| 常量 / 函数 | 作用 |
+|---|---|
+| `PAPER_SINGLE = (3.35, 2.55)` | 单栏图宽 3.35 in（≈ 85 mm，双栏期刊单栏宽度） |
+| `PAPER_WIDE = (6.90, 2.45)` | 双栏图宽 6.90 in（≈ 175 mm） |
+| `PAPER_SQUARE` | 极坐标 / 方形图 |
+| `use_serif(root)` | 装载宋体字族，设定字号、线宽、刻度、`pdf.fonttype=42` |
+| `paper_axes(fig, rect)` | 四边闭合脊线 0.8 pt、刻度朝内、无网格 |
+| `panel_label(ax, "(a)")` | 左上角面板字母，8 pt 粗体 |
+| `paper_save(fig, out, name)` | 400 dpi PNG + 矢量 PDF，`bbox_inches="tight"` |
+
+出图脚本：`tools/paper_figures.py`（`fig01`–`fig14`），只读既有 CSV/JSON。
+图注与「不能说什么」见 `docs/defense/paper_captions.md`。
+
+### 7.2 字体：**宋体**（思源宋体 Noto Serif SC）
+
+用户明确要求用宋体。仓库自带 `viz/site/assets/fonts/songti-sc-black.ttf` **不能直接用于论文插图**：
+
+- 它是**单字重 900**，matplotlib 找不到常规字重，日志会刷
+  `findfont: Failed to find font weight normal for Songti SC, now using 900`；
+- 它的字符集**缺 `⁻`（U+207B）**，`m·s⁻¹` 这类写法会掉字。
+
+因此改用**思源宋体**（Noto Serif SC，同为宋体族，SIL OFL），400/700 双字重：
+
+```bash
+npm pack @fontsource/noto-serif-sc
+tar xzf fontsource-noto-serif-sc-*.tgz
+.venvs/fig/bin/python - <<'PY'
+from fontTools.ttLib import TTFont
+import os
+for w in (400, 700):
+    f = TTFont(f"package/files/noto-serif-sc-chinese-simplified-{w}-normal.woff")
+    f.flavor = None                      # 去掉 WOFF 容器
+    for rec in f["name"].names:          # 重写 family，避免与系统已装字重混淆
+        f["name"].setName(f"Noto Serif SC CN", rec.nameID, rec.platformID,
+                          rec.platEncID, rec.langID) if rec.nameID in (1, 4, 16) else None
+        if rec.nameID == 2:
+            f["name"].setName("Regular" if w == 400 else "Bold", 2, rec.platformID,
+                              rec.platEncID, rec.langID)
+    f.save(os.path.expanduser(f"~/.fonts/NotoSerifSC-cn-{w}.ttf"))
+PY
+```
+
+- 字族名：`Noto Serif SC CN`（各 7,946 字形）。
+- `font.family = ["DejaVu Serif", "Noto Serif SC CN"]`：拉丁字母与数字走衬线体，中文回落宋体。
+- `mathtext.fontset = "dejavuserif"`：公式与正文衬线风格一致。
+- 仓库内的 `songti-sc-black.ttf` 仅作**回退**（找不到上面两份时仍能出图，只是没有常规字重）。
+
+### 7.3 一条硬约束：**`$...$` 里不能夹中文**
+
+matplotlib 的 mathtext 一旦介入整个字符串，CJK 就交给 DejaVu，结果是豆腐块（日志为
+`Font 'default' does not have a glyph for '\u901f'…`）。所以论文插图的轴标签一律写成纯文本：
+
+| 不要写 | 改写成 |
+|---|---|
+| `速度 / m s$^{-1}$` | `速度 / (m/s)` |
+| `$C_p$ / 桨距` | 中文标签 + 图例里用 `Cp`，或把符号单独放进图内注释 |
+| `来流方向 $\\theta$` | `来流方向 / (°)` |
+
+函数名、变量名照常（`figstyle.py` 内部用 `r"k-$\omega$ SST"` 这类纯数学标签是安全的，
+因为字符串里没有中文）。
+
+### 7.4 与 §4「答辩纪律」的关系
+
+论文插图**不上图面**、但**必须在 caption 里**保留同样的边界：证据等级（A/B/C）、
+「不能说什么」。位置从图的右下角挪到 `docs/defense/paper_captions.md` 的对应条目，
+口头答辩仍按 §4 的口径讲。

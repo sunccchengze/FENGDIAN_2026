@@ -7,6 +7,7 @@
 | [`generated/`](generated/) | 新画的 16:9 答辩图（PNG 300 dpi + PDF） | **37**（第一批 25 + 第二批 12） | `tools/make_defense_figures.py`、`tools/make_defense_figures_batch2.py` |
 | [`animated/`](animated/) | 两个 GIF（七步演示、偏航扫描） | 2 | `python3 tools/make_defense_figures.py gif` |
 | [`extracted/`](extracted/) | 从 .docx / .pptx 里解出来的原图 | 12 | `python3 tools/extract_defense_assets.py` |
+| [`paper/`](paper/) | **论文插图**（单栏/双栏版面，PNG 400 dpi + PDF） | **14**（`fig01`–`fig14`） | `python3 tools/paper_figures.py` |
 
 **每张图配哪一页、能支持什么结论、不能说什么** → [`../2026-10-23_答辩素材清单.md`](../2026-10-23_答辩素材清单.md)。
 
@@ -14,6 +15,27 @@
 
 1. **不要手改 PNG。** 数字要改就改脚本里的常量再重画，否则图与数据脱钩。
 2. **图上的角标要与口播一致。** 「模拟真值 · FLORIS」不能说成实测；「合成标签 · 非物理精度」不能省掉这半句。
+
+## 论文插图（2026-10-26，`fig01`–`fig14`，14 张）
+
+给论文正文用的 figure，不是整页答辩图：**没有页眉、大标题、读法行、角标横幅**，
+只保留坐标轴、轴标签、图例、(a)(b)(c) 面板字母和必要注解；图注另见
+[`../paper_captions.md`](../paper_captions.md)。
+
+| 项 | 规格 |
+|---|---|
+| 版面 | 单栏 3.35 in、双栏 6.90 in（多面板）；按最终排版宽度等比缩放 |
+| 字体 | 中文**宋体**（思源宋体 Noto Serif SC 400/700）+ 拉丁/数字 DejaVu Serif；字号 7–9 pt |
+| 线型 | 四边闭合脊线 0.8 pt、刻度朝内、图例无边框、`mathtext.fontset=dejavuserif` |
+| 导出 | PNG **400 dpi** + 矢量 PDF（`pdf.fonttype=42`，文字可编辑/可搜） |
+
+14 张清单：`fig01` 设计空间、`fig02` 偏航策略、`fig03` TI 敏感性、`fig04` 尾流中心线＋两模型偏差、
+`fig05` 盘面速度极坐标、`fig06` 盘面 TI 径向、`fig07` 四控制器箱线、`fig08` 误差 CDF、
+`fig09` 逐场配对、`fig10` 训练收敛＋参数冻结、`fig11` 预测一致性／残差、`fig12` 执行器步进、
+`fig13` 来流方向极坐标、`fig14` 反算 Cp–桨距。
+
+重画：`/home/user/.venvs/fig/bin/python tools/paper_figures.py [figXX …]`（`--list` 看图号）。
+**存量 37 张（`generated/`）不重画、不覆盖**；两批图结论口径一致。
 
 ## 整包下载
 

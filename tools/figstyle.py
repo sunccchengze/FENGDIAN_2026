@@ -300,3 +300,115 @@ def export_zip(zip_path: Path, members: list[tuple[Path, str]], note: str = "") 
 
 def have_pdf_support() -> bool:
     return shutil.which("pdflatex") is not None
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 论文插图模式（2026-10-26 增补）
+# ----------------------------------------------------------------------
+# 与上面的「答辩整页」不同：期刊/学位论文里的插图是 figure，不是 slide
+#   · 没有页眉 kic​ker、没有大标题、没有页脚条、没有右下角证据角标；
+#   · 画面比例按单栏 / 双栏（3.3 in、6.8 in），不是 16:9；
+#   · 字号 7–9 pt，线宽 0.8，四边脊线闭合（full box），刻度朝内 —— 这是期刊排版惯例；
+#   · 中文用宋体（Songti SC），拉丁与数字用衬线体（DejaVu Serif），接近中文期刊的正文/图中字体；
+#   · 面板标号 (a)(b)(c) 用轴坐标写，不占标题位；
+#   · 导出 400 dpi PNG + 矢量 PDF。
+# 证据等级与「不能说什么」不写在图上，统一写在 docs/defense/paper_captions.md（caption 就是论文学术规范的位置）。
+# ══════════════════════════════════════════════════════════════════════
+
+PAPER_SINGLE = (3.35, 2.55)   # 单栏（约 85 mm）
+PAPER_WIDE = (6.90, 2.45)     # 双栏（约 175 mm）
+PAPER_SQUARE = (4.30, 3.60)
+
+# 拉丁/数字：DejaVu Serif（衬线、上标齐全）；中文：思源宋体 400/700
+_SERIF_STACK = ["DejaVu Serif"]
+_SERIF_CJK = [
+    (Path.home() / ".fonts" / "NotoSerifSC-cn-400.ttf",
+     Path.home() / ".fonts" / "NotoSerifSC-cn-700.ttf"),
+]
+
+
+def use_serif(root: Path | None = None) -> str:
+    """论文插图字体：中文宋体 + 拉丁/数字衬线。"""
+    from matplotlib import font_manager as fm
+
+    family = None
+    for regular, bold in _SERIF_CJK:
+        if regular.exists():
+            fm.fontManager.addfont(str(regular))
+            if bold.exists():
+                fm.fontManager.addfont(str(bold))
+            family = fm.FontProperties(fname=str(regular)).get_name()
+            break
+    if family is None and root is not None:
+        fallback = root / "viz" / "site" / "assets" / "fonts" / "songti-sc-black.ttf"
+        if fallback.exists():
+            fm.fontManager.addfont(str(fallback))
+            family = fm.FontProperties(fname=str(fallback)).get_name()
+    stack = _SERIF_STACK + ([family] if family else ["sans-serif"])
+    plt.rcParams.update({
+        "font.family": stack,
+        "font.serif": stack,
+        "font.size": 8,
+        "mathtext.fontset": "dejavuserif",
+        "axes.unicode_minus": False,
+        "axes.linewidth": 0.8,
+        "axes.spines.right": True,
+        "axes.spines.top": True,
+        "axes.edgecolor": "#222222",
+        "axes.labelcolor": "#222222",
+        "axes.labelsize": 8.5,
+        "axes.titlesize": 9,
+        "axes.titlepad": 4,
+        "xtick.labelsize": 7.5,
+        "ytick.labelsize": 7.5,
+        "xtick.direction": "in",
+        "ytick.direction": "in",
+        "xtick.major.width": 0.8,
+        "ytick.major.width": 0.8,
+        "xtick.minor.width": 0.6,
+        "ytick.minor.width": 0.6,
+        "xtick.top": True,
+        "ytick.right": True,
+        "xtick.major.size": 3.0,
+        "ytick.major.size": 3.0,
+        "legend.frameon": False,
+        "legend.fontsize": 7,
+        "legend.handlelength": 1.8,
+        "legend.labelspacing": 0.35,
+        "legend.borderaxespad": 0.3,
+        "lines.linewidth": 1.1,
+        "lines.markersize": 3.4,
+        "figure.facecolor": "white",
+        "savefig.facecolor": "white",
+        "savefig.bbox": "tight",
+        "savefig.pad_inches": 0.02,
+        "pdf.fonttype": 42,
+        "ps.fonttype": 42,
+    })
+    return family or "(fallback)"
+
+
+def paper_axes(fig, rect):
+    """论文风格子图：四边闭合 + 刻度朝内。"""
+    ax = fig.add_axes(rect)
+    for side in ("left", "bottom", "right", "top"):
+        ax.spines[side].set_linewidth(0.8)
+        ax.spines[side].set_color("#222222")
+    ax.tick_params(which="both", direction="in", top=True, right=True)
+    return ax
+
+
+def panel_label(ax, text, x=-0.005, y=1.02, fontsize=9):
+    """(a) (b) (c) 面板标号 —— 论文里写在数据区左上角，不占标题。"""
+    ax.text(x, y, text, transform=ax.transAxes, fontsize=fontsize, fontweight="bold",
+            ha="left", va="bottom", color="#111111")
+
+
+def paper_save(fig, out_dir: Path, name: str, dpi: int = 400) -> list[Path]:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    paths = [out_dir / f"{name}.png", out_dir / f"{name}.pdf"]
+    fig.savefig(paths[0], dpi=dpi, facecolor="white")
+    fig.savefig(paths[1], facecolor="white")
+    plt.close(fig)
+    print(f"  {name}  ({paths[0].stat().st_size / 1024:.0f} KB, {paths[1].stat().st_size / 1024:.0f} KB pdf)")
+    return paths
