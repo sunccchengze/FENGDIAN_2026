@@ -23,110 +23,67 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-import matplotlib
-
-matplotlib.use("Agg")
-import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
 from PIL import Image
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import figstyle as F  # 2026-10-26：与第二批统一，按 figures4papers / scientific-figure-making 规范
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs" / "defense" / "assets" / "generated"
 GIF = ROOT / "docs" / "defense" / "assets" / "animated"
-FONT = Path.home() / ".fonts" / "NotoSansCJKsc-Regular.otf"
 
-INK = "#16232f"
-GRAY = "#5d6f7e"
-MUTED = "#93a3b0"
-LINE = "#d7dee5"
-BG = "#ffffff"
-PANEL = "#f4f7fa"
-BLUE = "#2f6f9f"
-TEAL = "#2a9d8f"
-AMBER = "#d9862a"
-RED = "#bf5140"
-PURPLE = "#6f68a8"
-GREEN = "#4a8c53"
+PALETTE = F.PALETTE
+ROLE = F.ROLE
+INK = ROLE["ink"]
+GRAY = ROLE["gray"]
+MUTED = ROLE["muted"]
+LINE = ROLE["line"]
+BG = PALETTE["bg"]
+PANEL = ROLE["panel"]
+BLUE = ROLE["ours"]
+TEAL = ROLE["alt"]
+AMBER = ROLE["alt2"]
+RED = ROLE["worse"]
+PURPLE = ROLE["alt3"]
+GREEN = ROLE["better"]
 
-DPI = 120
-FS = (16, 9)
+TAG_SIM = F.TAG_SIM
+TAG_SYN = F.TAG_SYN
+TAG_OBS = F.TAG_OBS
+TAG_CFD = F.TAG_CFD
+TAG_UI = F.TAG_UI
 
-# 数据来源角标：三类证据用三种颜色，答辩时口头也必须说同一个词
-TAG_SIM = ("模拟真值 · FLORIS", BLUE)
-TAG_SYN = ("合成标签 · 非物理精度", AMBER)
-TAG_OBS = ("实测记录", GREEN)
-TAG_CFD = ("CFD 后处理 · 非实测", PURPLE)
-TAG_UI = ("界面演示 · 非实时控制", BLUE)
+DPI = F.DPI
+FS = F.FS
 
 
 def use_cjk() -> None:
-    from matplotlib import font_manager as fm
-
-    if FONT.exists():
-        fm.fontManager.addfont(str(FONT))
-        plt.rcParams["font.family"] = fm.FontProperties(fname=str(FONT)).get_name()
-    plt.rcParams["axes.unicode_minus"] = False
-    plt.rcParams["font.size"] = 15
+    F.use_cjk(ROOT)
 
 
-def b(t, color=INK, lw=0.85):
-    """伪粗体：同色描边，弥补单字重字体。"""
-    t.set_path_effects([pe.withStroke(linewidth=lw, foreground=color)])
-    return t
+def b(t, color=INK, lw=0.0):
+    """真粗体现在由 fontweight 提供（Noto Sans SC 400/700）；保留签名兼容旧调用。"""
+    try:
+        t.set_fontweight("bold")
+    except Exception:
+        pass
+    return F.bold(t, lw)
 
 
-def frame(fig, title, subtitle="", footer="", kicker="", tag=None):
-    fig.patch.set_facecolor(BG)
-    if kicker:
-        fig.text(0.045, 0.955, kicker, color=MUTED, fontsize=13.5, va="top")
-    b(fig.text(0.045, 0.918, title, color=INK, fontsize=30, va="top"), INK, 1.1)
-    if subtitle:
-        fig.text(0.045, 0.848, subtitle, color=GRAY, fontsize=15.5, va="top")
-    fig.add_artist(Rectangle((0.045, 0.905), 0.055, 0.0035,
-                             transform=fig.transFigure, facecolor=BLUE, edgecolor="none"))
-    if footer:
-        # 右下角有口径角标（从 x=0.80 起），脚注必须在此之前折行，否则两段字会叠在一起。
-        # 注意：textwrap 数的是「字符数」，中文一个字占两个字宽，必须按显示宽度折。
-        lines, cur, cur_w, limit = [], "", 0, 132   # 132 半角单位 ≈ 66 个汉字
-        for ch in str(footer):
-            w = 1 if ord(ch) < 128 else 2
-            if cur_w + w > limit and cur:
-                lines.append(cur)
-                cur, cur_w = "", 0
-            cur += ch
-            cur_w += w
-        if cur:
-            lines.append(cur)
-        fig.text(0.045, 0.038, "\n".join(lines), color=MUTED, fontsize=11.5,
-                 va="bottom", linespacing=1.45)
-    fig.add_artist(Rectangle((0.045, 0.088), 0.760, 0.0014,
-                             transform=fig.transFigure, facecolor=LINE, edgecolor="none"))
-    if tag:
-        text, color = tag
-        fig.add_artist(Rectangle((0.80, 0.030), 0.155, 0.042,
-                                 transform=fig.transFigure, facecolor=color, alpha=0.10,
-                                 edgecolor="none"))
-        fig.text(0.877, 0.051, text, color=color, fontsize=11.5, ha="center", va="center")
+def frame(fig, title, subtitle="", footer="", kicker="", tag=None, reading=""):
+    return F.frame(fig, title, subtitle=subtitle, footer=footer, kicker=kicker, tag=tag,
+                   reading=reading)
 
 
 def clean(ax, grid_axis=None):
-    for s in ("top", "right"):
-        ax.spines[s].set_visible(False)
-    for s in ("left", "bottom"):
-        ax.spines[s].set_color(MUTED)
-    if grid_axis:
-        ax.grid(axis=grid_axis, color=LINE, lw=0.8)
-        ax.set_axisbelow(True)
+    return F.clean(ax, grid_axis)
 
 
 def save(fig, name):
-    OUT.mkdir(parents=True, exist_ok=True)
-    path = OUT / f"{name}.png"
-    fig.savefig(path, dpi=DPI, facecolor=BG)
-    plt.close(fig)
-    print(f"  {name}.png  {path.stat().st_size / 1024:.0f} KB")
+    return F.save(fig, OUT, name)
 
 
 def card(ax, x, y, w, h, title, value, note="", color=INK, fill=PANEL):

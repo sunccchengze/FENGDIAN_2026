@@ -32,123 +32,56 @@ import statistics as st
 import sys
 from pathlib import Path
 
-import matplotlib
+import math
+import statistics as st
+import sys
+from pathlib import Path
 
-matplotlib.use("Agg")
-import matplotlib.patheffects as pe
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Rectangle
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import figstyle as F  # 2026-10-26：统一按 figures4papers / scientific-figure-making 规范出图
+from figstyle import PALETTE, ROLE, TAG_CFD, TAG_SIM, TAG_SYN
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs" / "defense" / "assets" / "generated"
 
-INK = "#16232f"
-GRAY = "#5d6f7e"
-MUTED = "#93a3b0"
-LINE = "#d7dee5"
-BG = "#ffffff"
-PANEL = "#f4f7fa"
-BLUE = "#2f6f9f"
-TEAL = "#2a9d8f"
-AMBER = "#d9862a"
-RED = "#bf5140"
-PURPLE = "#6f68a8"
-GREEN = "#4a8c53"
+INK = ROLE["ink"]
+GRAY = ROLE["gray"]
+MUTED = ROLE["muted"]
+LINE = ROLE["line"]
+BG = PALETTE["bg"]
+PANEL = ROLE["panel"]
+BLUE = ROLE["ours"]
+TEAL = ROLE["alt"]
+AMBER = ROLE["alt2"]
+RED = ROLE["worse"]
+PURPLE = ROLE["alt3"]
+GREEN = ROLE["better"]
 
-DPI = 120
-FS = (16, 9)
-
-TAG_SIM = ("模拟真值 · FLORIS", BLUE)
-TAG_SYN = ("合成标签 · 非物理精度", AMBER)
-TAG_CFD = ("CFD 后处理 · 非实测", PURPLE)
-
-# ── 字体 ────────────────────────────────────────────────────────────────
-FONT_CANDIDATES = [
-    Path.home() / ".fonts" / "NotoSansCJKsc-Regular.otf",
-    Path.home() / ".fonts" / "NotoSansCJK-Regular.ttc",
-    ROOT / "viz" / "site" / "assets" / "fonts" / "songti-sc-black.ttf",
-]
+FS = F.FS
 
 
 def use_cjk() -> None:
-    from matplotlib import font_manager as fm
-
-    for cand in FONT_CANDIDATES:
-        if cand.exists():
-            fm.fontManager.addfont(str(cand))
-            name = fm.FontProperties(fname=str(cand)).get_name()
-            # 数字与拉丁字母优先用 DejaVu（字形细、tabular 数字对齐），中文回退到 CJK 字体
-            plt.rcParams["font.family"] = ["DejaVu Sans", name]
-            plt.rcParams["font.sans-serif"] = ["DejaVu Sans", name]
-            break
-    plt.rcParams["axes.unicode_minus"] = False
-    plt.rcParams["font.size"] = 15
+    F.use_cjk(ROOT)
 
 
-def b(t, color=INK, lw=0.85):
-    """伪粗体：同色描边，弥补单字重字体。"""
-    t.set_path_effects([pe.withStroke(linewidth=lw, foreground=color)])
-    return t
-
-
-def frame(fig, title, subtitle="", footer="", kicker="", tag=None, reading=""):
-    fig.patch.set_facecolor(BG)
-    if kicker:
-        fig.text(0.045, 0.955, kicker, color=MUTED, fontsize=13.5, va="top")
-    b(fig.text(0.045, 0.918, title, color=INK, fontsize=30, va="top"), INK, 1.1)
-    if subtitle:
-        fig.text(0.045, 0.852, subtitle.replace("**", ""), color=GRAY, fontsize=15.5, va="top")
-    fig.add_artist(Rectangle((0.045, 0.905), 0.055, 0.0035,
-                             transform=fig.transFigure, facecolor=BLUE, edgecolor="none"))
-    block = "\n".join(x for x in (reading, footer) if x).replace("**", "")
-    if block:
-        lines, cur, cur_w, limit = [], "", 0, 150
-        for ch in block:
-            w = 1 if ord(ch) < 128 else 2
-            if cur_w + w > limit and cur:
-                lines.append(cur)
-                cur, cur_w = "", 0
-            cur += ch
-            cur_w += w
-        if cur:
-            lines.append(cur)
-        fig.text(0.045, 0.030, "\n".join(lines), color=MUTED, fontsize=11,
-                 va="bottom", linespacing=1.45)
-        if len(lines) > 4:
-            print(f"    ! 底部文字 {len(lines)} 行，可能与坐标轴标签相压：{title[:18]}")
-    fig.add_artist(Rectangle((0.045, 0.086), 0.760, 0.0014,
-                             transform=fig.transFigure, facecolor=LINE, edgecolor="none"))
-    if tag:
-        text, color = tag
-        fig.add_artist(Rectangle((0.80, 0.028), 0.155, 0.042,
-                                 transform=fig.transFigure, facecolor=color, alpha=0.10,
-                                 edgecolor="none"))
-        fig.text(0.877, 0.049, text, color=color, fontsize=11.5, ha="center", va="center")
+def frame(fig, *a, **kw):
+    return F.frame(fig, *a, **kw)
 
 
 def clean(ax, grid_axis=None):
-    for s in ("top", "right"):
-        ax.spines[s].set_visible(False)
-    for s in ("left", "bottom"):
-        ax.spines[s].set_color(MUTED)
-    if grid_axis:
-        ax.grid(axis=grid_axis, color=LINE, lw=0.8)
-        ax.set_axisbelow(True)
-    ax.tick_params(colors=GRAY, labelsize=12)
+    return F.clean(ax, grid_axis)
 
 
 def save(fig, name):
-    OUT.mkdir(parents=True, exist_ok=True)
-    path = OUT / f"{name}.png"
-    fig.savefig(path, dpi=DPI, facecolor=BG)
-    plt.close(fig)
-    print(f"  {name}.png  {path.stat().st_size / 1024:.0f} KB")
+    return F.save(fig, OUT, name)
 
 
 def rows(path):
-    with Path(path).open(encoding="utf-8") as fh:
-        return list(csv.DictReader(fh))
+    return F.rows(path)
 
 
 # ── 数据源 ──────────────────────────────────────────────────────────────
@@ -655,8 +588,9 @@ def g33():
         ("test_gust_0_pitch0.025", "阵风 · 目标 2.7 MW"),
         ("test_gust_1_pitch0.025", "阵风 · 目标 3.3 MW"),
     ]
-    ctrl = [("initial", "初始策略", MUTED, 1.6), ("p", "P 控制", GRAY, 1.5),
-            ("pi", "PI 控制", BLUE, 1.8), ("selected", "训练后", TEAL, 2.6)]
+    # 语义色（figures4papers）：我们=主蓝、PI=中性灰、P/初始=浅灰
+    ctrl = [("initial", "初始策略", PALETTE["neutral"], 1.6), ("p", "P 控制", ROLE["baseline"], 1.5),
+            ("pi", "PI 控制", ROLE["baseline"], 1.9), ("selected", "训练后", ROLE["ours"], 2.8)]
     for k, (cid, title) in enumerate(pick):
         ax = fig.add_axes([0.06 + (k % 3) * 0.315, 0.515 - (k // 3) * 0.285, 0.27, 0.215])
         for name, label, color, lw in ctrl:
@@ -772,7 +706,7 @@ def g35():
             if r["controller"] == "selected" and r["case_id"] == "test_gust_0_pitch0.025"]
     traj.sort(key=lambda r: int(r["step"]))
     step = np.array([int(r["step"]) for r in traj])
-    colors = (BLUE, TEAL, AMBER)
+    colors = (ROLE["ours"], ROLE["alt"], ROLE["alt2"])
 
     ax = fig.add_axes([0.065, 0.40, 0.87, 0.34])
     for i in (1, 2, 3):
@@ -851,6 +785,81 @@ def g36():
     save(fig, "g36_pinn_training")
 
 
+def g37():
+    """多指标并排：四项指标并不都赢 —— figures4papers 的「多子图 + 独立图例面板」范式。"""
+    ctrls = [("initial", "初始策略", PALETTE["neutral"]),
+             ("p", "P 控制", ROLE["baseline_light"]),
+             ("pi", "PI 控制", ROLE["baseline"]),
+             ("selected", "训练后", ROLE["ours"])]
+    metrics = [("rmse_w", "整回合 RMSE / kW"), ("tail_rmse_w", "尾段 RMSE / kW"),
+               ("mae_w", "平均绝对误差 / kW")]
+    def m(ctrl: str, key: str) -> float:
+        """按 case 平均后再对 18 个工况取均值（n=18，不是按行平均的 54）。"""
+        return st.mean(_case_avg(ctrl, key).values())
+
+    vals = {key: {c: m(c, key) for c, _l, _c in ctrls} for key, _l in metrics}
+    vals["mean_shortfall_w"] = {c: m(c, "mean_shortfall_w") for c, _l, _c in ctrls}
+
+    fig = plt.figure(figsize=FS)
+    frame(fig, "四项指标并排：RMSE 与 MAE 更好，尾段误差与短时缺额不如 PI",
+          "18 个常规工况按 case 平均　·　柱顶标数值，最后一格是相对 PI 的变化　·　"
+          "纵轴一律从 0 起，不用收紧的轴制造差别",
+          "数据来源：optimization_control/experiments/20261022_random_wind_training/test/metrics.csv"
+          "（rmse_w / tail_rmse_w / mae_w / mean_shortfall_w）　｜　标签为合成教师模型，非物理精度",
+          "第 9 页 · 独立测试（多指标交叉）", TAG_SYN,
+          reading="读法：训练后在整回合 RMSE（−5.8%）与 MAE（−5.6%）上领先，尾段 RMSE 反而高 16.8%、"
+                  "平均缺额高 121% —— 说明它擅长把整体功率拉到目标附近，不擅长抑制回合末段的偏差。"
+                  "四项指标不一致时，只能按「整回合跟踪误差」下结论，不能挑指标说全面更优。")
+
+    positions = [0.045 + i * 0.185 for i in range(4)]
+    axes = []
+    for i, (key, ylab) in enumerate(metrics):
+        ax = fig.add_axes([positions[i], 0.215, 0.155, 0.56])
+        xs = np.arange(len(ctrls))
+        bars = ax.bar(xs, [vals[key][c] for c, _l, _c in ctrls], width=0.68,
+                      color=[col for _c, _l, col in ctrls], edgecolor=PALETTE["gray_dark"],
+                      linewidth=1.2)
+        for x, c, _l, _col in zip(xs, [c for c, _l, _c in ctrls], [l for _c, l, _c in ctrls],
+                                  [c for _c, _l, c in ctrls]):
+            F.annotate(ax, x, vals[key][c], f"{vals[key][c]:.0f}", color=ROLE["ink"],
+                       fontsize=11.5, dy=6)
+        ax.set_ylim(0, max(vals[key].values()) * 1.22)
+        ax.set_xticks([])
+        ax.set_title(ylab, color=ROLE["ink"], fontsize=14, pad=10)
+        clean(ax, "y")
+        axes.append(ax)
+
+    # 第四格：相对 PI 的变化（0 中心轴，差异一目了然又不变形）
+    ax = fig.add_axes([positions[3], 0.215, 0.155, 0.56])
+    keys = ["rmse_w", "tail_rmse_w", "mae_w", "mean_shortfall_w"]
+    short = ["RMSE", "尾段", "MAE", "缺额"]
+    xs = np.arange(len(keys))
+    rel = [(vals[k]["selected"] / vals[k]["pi"] - 1) * 100 for k in keys]
+    ax.bar(xs, rel, width=0.62,
+           color=[ROLE["better"] if v < 0 else ROLE["worse"] for v in rel],
+           edgecolor=PALETTE["gray_dark"], linewidth=1.2)
+    ax.axhline(0, color=PALETTE["gray_dark"], lw=1.6)
+    for x, v in zip(xs, rel):
+        ax.annotate(f"{v:+.1f}%", (x, v), textcoords="offset points",
+                    xytext=(0, -16 if v < 0 else 7), ha="center",
+                    color=ROLE["ink"], fontsize=11.5, fontweight="bold")
+    ax.set_xticks(xs)
+    ax.set_xticklabels(short, fontsize=11.5)
+    lim = max(abs(min(rel)), abs(max(rel))) * 1.35
+    ax.set_ylim(-lim, lim)
+    ax.set_title("训练后相对 PI / %", color=ROLE["ink"], fontsize=14, pad=10)
+    clean(ax, "y")
+
+    # 独立图例面板（figures4papers 的 dedicated legend panel）
+    handles = [plt.Rectangle((0, 0), 1, 1, facecolor=col, edgecolor=PALETTE["gray_dark"], lw=1.2)
+               for _c, _l, col in ctrls]
+    F.legend_panel(fig, [0.800, 0.30, 0.17, 0.34],
+                   handles, [l for _c, l, _c in ctrls], fontsize=12.5,
+                   title="四种控制方式")
+
+    save(fig, "g37_multi_metric")
+
+
 FIGURES = {
     "g26": ("CFD 尾流中心线 · 双湍流模型", g26),
     "g27": ("CFD 盘面平均速度与 TI 对照", g27),
@@ -863,6 +872,7 @@ FIGURES = {
     "g34": ("执行器速率上限核对", g34),
     "g35": ("单场三机功率分解", g35),
     "g36": ("PINN 训练与测试误差", g36),
+    "g37": ("四项指标并排（多指标交叉）", g37),
 }
 
 

@@ -45,3 +45,9 @@
 1. 先检索→点名→完整执行→拿证据交付；
 2. 每个阶段主用 1 个技能 + 至多 3 个互补技能，不滥载；
 3. 引用结果需可验证（命令输出/截图/构建报告）。
+
+## 📐 科研出图（2026-10-26 引入）
+
+| 技能 | 用途 |
+|---|---|
+| scientific-figure-making（[figures4papers](https://github.com/ChenLiu-1996/figures4papers)） | 投稿级 matplotlib 出图规范：语义配色、去脊线、独立图例面板、300 dpi + 矢量导出。已落到 `tools/figstyle.py`，规则摘要见 `docs/figures-style-guide.md` |
