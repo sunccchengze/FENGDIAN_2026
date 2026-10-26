@@ -532,8 +532,8 @@ def g32():
                   "分布支持「阶段有效」，不支持「全面优于 PI」，也未做显著性检验。")
 
     ax = fig.add_axes([0.065, 0.215, 0.38, 0.56])
-    style = {"gust": (AMBER, "阵风"), "ramp": (BLUE, "慢变"),
-             "stationary": (TEAL, "平稳"), "low_wind_stress": (RED, "低风高目标")}
+    style = {"gust": (ROLE["alt2"], "阵风"), "ramp": (ROLE["ours"], "慢变"),
+             "stationary": (ROLE["alt"], "平稳"), "low_wind_stress": (ROLE["worse"], "低风高目标")}
     lim = (250, 730)
     ax.plot(lim, lim, color=MUTED, lw=1.2, ls="--")
     ax.text(600, 578, "与 PI 持平", color=MUTED, fontsize=11.5, rotation=33)
@@ -555,7 +555,8 @@ def g32():
 
     ax2 = fig.add_axes([0.565, 0.215, 0.395, 0.56])
     order = np.argsort(delta)
-    cols = [TEAL if d < 0 else RED for d in delta[order]]
+    # 语义色：更好=绿、落后=砖红（figures4papers：绿=改进、红=对照/落后）
+    cols = [ROLE["better"] if d < 0 else ROLE["worse"] for d in delta[order]]
     ax2.barh(np.arange(len(cases)), delta[order], color=cols, height=0.70)
     ax2.axvline(0, color=INK, lw=1.1)
     ax2.set_yticks([])
@@ -563,7 +564,7 @@ def g32():
     ax2.set_ylabel(f"{len(cases)} 个工况（按差值排序）", color=GRAY, fontsize=12.5)
     clean(ax2, "x")
     ax2.set_xlim(-260, 260)
-    ax2.text(-250, len(cases) - 0.6, f"更好 {wins} 场", color=TEAL, fontsize=12.5, va="top")
+    ax2.text(-250, len(cases) - 0.6, f"更好 {wins} 场", color=ROLE["better"], fontsize=12.5, va="top")
     ax2.text(250, 5.2, f"落后 {len(cases) - wins} 场", color=RED, fontsize=12.5, ha="right")
 
     save(fig, "g32_paired_cases")
