@@ -29,9 +29,9 @@
 | 线型 | 四边闭合脊线 0.8 pt、刻度朝内、图例无边框、`mathtext.fontset=dejavuserif` |
 | 导出 | PNG **400 dpi** + 矢量 PDF（`pdf.fonttype=42`，文字可编辑/可搜） |
 
-19 张清单：`fig01` 设计空间、`fig02` 偏航策略、`fig03` TI 敏感性、`fig04` 尾流中心线＋两模型偏差、
+22 张清单（`fig12` 已撤、编号留空档）：`fig01` 设计空间、`fig02` 偏航策略、`fig03` TI 敏感性、`fig04` 尾流中心线＋两模型偏差、
 `fig05` 盘面速度极坐标、`fig06` 盘面 TI 径向、`fig07` 四控制器箱线、`fig08` 误差 CDF、
-`fig09` 逐场配对、`fig10` 训练收敛＋参数冻结、`fig11` 预测一致性／残差、`fig12` 执行器步进、
+`fig09` 逐场配对、`fig10` 训练收敛＋参数冻结、`fig11` 预测一致性／残差、
 `fig13` 来流方向极坐标、`fig14` 反算 Cp–桨距、**`fig15` 两机串列偏航优化**、**`fig16` 3×3 阵列偏航**、
 **`fig17` 尾流模态分解**、**`fig18` 尾流水平切片**、**`fig19` 六工况功率跟踪**、
 **`fig20` 偏航策略选择地图**、**`fig21` 四指标逐场热图**、**`fig22` 执行器速率余量**、**`fig23` 盘面速度逐点对比**。
@@ -39,7 +39,7 @@
 
 一览图：`paper/_contact_sheet.png`（22 张缩略拼版，只用于快速过目，不进论文）。
 
-整包下载（只有 PNG，3.2 MB / 15 文件）：[`../paper_figures_20261026.zip`](../paper_figures_20261026.zip)。
+整包下载（只有 PNG，4.92 MB / 23 文件）：[`../paper_figures_20261026.zip`](../paper_figures_20261026.zip)。
 
 重画：`/home/user/.venvs/fig/bin/python tools/paper_figures.py [figXX …]`（`--list` 看图号）。
 **存量 37 张（`generated/`）不重画、不覆盖**；两批图结论口径一致。
