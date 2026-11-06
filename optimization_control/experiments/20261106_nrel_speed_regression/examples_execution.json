@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "read_only": {
+    "kind": "used_test_bank_configuration_regression",
+    "passed": true,
+    "passed_families": 3,
+    "families": [
+      {
+        "family": "stationary",
+        "rule": "nrel",
+        "unique_winds": 6,
+        "Y_policy_cases": 18,
+        "baseline_cases": 6,
+        "Y_kW": 432.0505523901449,
+        "P_kW": 549.7432905471658,
+        "PI_kW": 488.04186757355694,
+        "Y_minus_PI_kW": -55.99131518341205,
+        "Y_at400": 10,
+        "Y_at500": 14,
+        "passed": true
+      },
+      {
+        "family": "ramp",
+        "rule": "nrel",
+        "unique_winds": 6,
+        "Y_policy_cases": 18,
+        "baseline_cases": 6,
+        "Y_kW": 459.6266970442913,
+        "P_kW": 622.074412474048,
+        "PI_kW": 532.2000974569214,
+        "Y_minus_PI_kW": -72.57340041263005,
+        "Y_at400": 6,
+        "Y_at500": 8,
+        "passed": true
+      },
+      {
+        "family": "gust",
+        "rule": "nrel",
+        "unique_winds": 6,
+        "Y_policy_cases": 18,
+        "baseline_cases": 6,
+        "Y_kW": 454.08032097728574,
+        "P_kW": 621.7661217931708,
+        "PI_kW": 523.0879146562044,
+        "Y_minus_PI_kW": -69.00759367891861,
+        "Y_at400": 9,
+        "Y_at500": 12,
+        "passed": true
+      }
+    ],
+    "new_model_queries": 0,
+    "training_steps": 0
+  },
+  "frozen_inference": {
+    "controller": "Y0_selected",
+    "case_id": "test_00_stationary_2750000_pitch025",
+    "response_t": 32,
+    "observed_wind_rows": 33,
+    "action": [
+      [
+        0.0011262201005592942,
+        -0.42225974798202515,
+        0.171330988407135
+      ],
+      [
+        -0.003435595193877816,
+        0.26063889265060425,
+        -0.0704638734459877
+      ],
+      [
+        -0.0035702602472156286,
+        -0.048661988228559494,
+        -0.20933577418327332
+      ]
+    ],
+    "speed_command_rad_s": [
+      0.9906388846337795,
+      0.9100002982057631,
+      0.8636865193098784
+    ],
+    "saved_action_exact": true,
+    "parameters_and_counters_unchanged": true,
+    "PINN_model_queries": 0,
+    "environment_steps": 0,
+    "training_steps": 0
+  },
+  "additional_PINN_rows": 0,
+  "environment_steps": 0,
+  "training_steps": 0
+}

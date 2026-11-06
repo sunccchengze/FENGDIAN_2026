@@ -1,0 +1,6 @@
+{
+  "scope": "all_PR_changed_files; unchanged team files omitted from local sparse checkout",
+  "files": 1159,
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,125 @@
+{
+  "assessment": "retrospective_user_average_gate_after_published_results",
+  "batch_verdicts": {
+    "20261104_pitch_error_memory_formal": {
+      "passed": true,
+      "stress_below_pi": false
+    },
+    "20261028_pitch_nstep": {
+      "passed": true,
+      "stress_below_pi": false
+    },
+    "20261029_pitch_actor_context": {
+      "passed": true,
+      "stress_below_pi": false
+    }
+  },
+  "batch_proofs": {
+    "20261104_pitch_error_memory_formal": {
+      "metrics_sha256": "d81d0135ff8a0cfaeb7a9eea9d52ec616e27495e8bb7e21eb2bf7f113c7fafed",
+      "test_bank_manifest_sha256": "f27203abb791209e33a747bc3100c035762fa8a9f8e5386c6e1d6df99067956e",
+      "targets_w": [
+        2750000.0,
+        3350000.0,
+        3950000.0
+      ],
+      "regular_cases": 36,
+      "stress_cases": 8,
+      "common_pi_cases": 44,
+      "regular_wave_sha256": [
+        "02f0b3c940d81b87f201d17fb2a9dba5ff074d7cf3fc876848e6a92ae3ab0357",
+        "6665d9239e9a8416d481fb54a7df3c483c08eb8f9729dbeb3e58075a458a81fd",
+        "67518937aaba4fc7d4b34d03cb18842657b20ae283ef66e3ccaeabb47d57e035",
+        "680785938d39d818a1795631f6a4ce42cd03c56a083da7ccd37a95f6470813c7",
+        "80cc7a66b6fc060b97b8aa6259e8cf6a8789491413074311354a00c992b88942",
+        "8a832fb5136470ba8b0adb0197b3dcc62667b46fd772a9fd617f1b593513d38d",
+        "98d5ab04196740480d07195fc59bc90a375062de5979f22fedf610f9d09c94b7",
+        "a1279575f4260fd21fb3ce0c05b34c294da45e214623c7994b0e0766cf06d06c",
+        "a8c497921185e21f96a9c14296514eb4a8cd02bd1a7877c080a2f83a7ce1cd42",
+        "b51d1afe9928946a487504e7625dac856448fb884e29fb141d2865edeea0a13d",
+        "b6ed0e5b85cf30d9f9e1b9ed18de6be8346681d0137b4cb96976418f4c0af5bd",
+        "c1fab5d9e9f8e05379a30924b4854b3fb5d2394becafe74571feef7b51d57870",
+        "c872f7957a01970962a6f8c768c7640f3aca2eff1e0baaab0c711a75278646ca",
+        "d25eb35f02243da599c61b5ed46b4d914f9b11f7737395a24a7f81501634a406",
+        "d5efac71905fec85b0ef5a1377410cde70f6c97fa8fc01abb718d40077eb2201",
+        "db74df934259bf296061953161ce0774fcb47ecf6e8d5aa9aeaf23807f43a34e",
+        "ebabcaf404f82a18e8d9d170361d5fd4fce1140840bfc57b737051851bd9dac8",
+        "f5fdf3120e308ffdb7cde83b2b64c0f1dcaf95c88dfa4715eb64246e9a26bbdf"
+      ],
+      "raw_trace_direction_and_heading_verified": true,
+      "retained_roles": 3
+    },
+    "20261028_pitch_nstep": {
+      "metrics_sha256": "bf5ce97157826ea8bd1bf1eb595f4845a96d7c070219e3b79ca240e6346b4e53",
+      "test_bank_manifest_sha256": "649ca084c74400becba70a5d1e4eed7089ec4d47b5f8f22c1f50520a61ade341",
+      "targets_w": [
+        2650000.0,
+        3250000.0,
+        3950000.0
+      ],
+      "regular_cases": 36,
+      "stress_cases": 8,
+      "common_pi_cases": 44,
+      "regular_wave_sha256": [
+        "03374a40fb8246459f427ccb6f63fc9c827b2355f2d87871df3142706db0e0d7",
+        "13c964e6ead9e66446d8cd076a3f0718464cc0e3eaec00c457144832b2800201",
+        "1b5787d01e40ef1a9afa96e6b37b98e181f0521b46082ac0c69f7b0126d76625",
+        "26b6befbd5d530cea46e8f4f60f142f1bbf63973b9ce070f15999d73bc0d809b",
+        "6000298c7bd2ff8199617d629ce4c9fb4451839a6ba58777731ecb1564b4d966",
+        "7c1d0c90729f2e817f4116dad4e90c9ded238d2fa3f63b7240d6eb0a9541403f",
+        "908706e6d668f449587727191843b71084c7be9953697ccb9906ee27847ec274",
+        "92b652761be7bc3b82f8157d30619e678ca8b4e74aac382d5458235adef44adb",
+        "9f7779a54f027d3568370fc9d97635dc6cf0072d74eb1553a6ea59e0a2345126",
+        "b1431fa1df402a05d15108caa44fc29cf98e50b69b07b2375f5cdbbdf7b0e4cc",
+        "c0c6dce4f31d9a4c098c84e85374bc5a144aedf4ebc0e9fb95fcaf282d5d0430",
+        "c5041e1dd659eb21e90b9aef51ae6253c6a09648337db277156646685cb710b7",
+        "dacf89abb5f0731a056e08375930306b35ed8eb78f131bbadd0a7e815ecf3d13",
+        "dc280911aef019bd5f390d00c75cb04fe9c623378bcafdb658ee7987818e847f",
+        "de4d5ce857841f4cdc95de281736c7623710a22edf4f2a986b3ae61bbb4dff6d",
+        "e3eeaee06178a7215fd09cd05438c1fd4309da5d2b613da42f6fb9c033181108",
+        "f3399ea7c7e6cb4d1754a8a07907c7d179761c792e390fa2603f440715eb7fc1",
+        "fe2a2410d0e2b95592f9a3d7f58517d75c1bba9e57df6406e3e3f0e09c7a2765"
+      ],
+      "raw_trace_direction_and_heading_verified": false,
+      "retained_roles": 6
+    },
+    "20261029_pitch_actor_context": {
+      "metrics_sha256": "80ff5f24ac3b7a9cdac9231227f240bc1019bccffa855c95e705b3bf6bc200aa",
+      "test_bank_manifest_sha256": "5c2b19470f16130d04bbad7ddeb89e11b3a8c440f8184994644852cdd53dcfdb",
+      "targets_w": [
+        2725000.0,
+        3325000.0,
+        3925000.0
+      ],
+      "regular_cases": 36,
+      "stress_cases": 8,
+      "common_pi_cases": 44,
+      "regular_wave_sha256": [
+        "0a759f8788a385f3b1352fb6ce1d221cd2ff5f5e525b24739864552886405ecc",
+        "2cdcf3e83a7bee68e50795b100c3bb68ad7388d4fb9426ac7f5ea69f61d001b3",
+        "386ab94582aef954635687813b87177ccebaf3308586a1b84e79b218a46a0dfd",
+        "43611abf4474fd997754f52117ef54c4759f4b895327ae05ff18ed1f5f6b3b5c",
+        "4a4a2ce8a5517fc63ee52879389012bb42801e25b67beb34cc7e717f8069454f",
+        "4d1f0e4df5b11da73e1b1a26152d718001364bec0584727628c8efb19c407d6a",
+        "7ab405c51f859f918944e75421d412bee198ec4870b02b4f271fbb3135e90542",
+        "80f30b665ad4842a490aa6ab951546d0d1adef31c85e309bd3735260f3f6c5c0",
+        "81ce613a80205756b7adc713460b06fed79c35bdcb4ba5ab4b89d72e0c6800d5",
+        "8ec92dac85590f0862b8d758800e4cc33776d7b023e4f0828f48f4b1721bef1f",
+        "93b8945e7409148df965827822da2aaaafd414d980345ceb93a8bcb60cd15a62",
+        "c6645c13f88e5881dff1c8f8a6415e276bd7237e476b9dd7858a2e8b02bed059",
+        "ce090860d9aeed5b0f47ac11871cb5b7bb6c55cf2422f2b4d7e156e33f8bd0ae",
+        "d7afc29bd37e66fc3aa752fae96cba65eacb1fad984bd984fe323177f12b8eb5",
+        "dd3820e497a213b004665411396cfe25393d9372c568193ed53fe9f2ff4afa60",
+        "e3be33b37121583bc9e468d93905323a6f02b85c9d760748339f47f7960b477b",
+        "e516948ecd3a3e41435b97c52fb9a1d0315955ec16f03a26308d8f21d042d52d",
+        "f4309eef2a648a75216f1b4be0cac518a8174908e4bd72bf61f5820cc35d8098"
+      ],
+      "raw_trace_direction_and_heading_verified": true,
+      "retained_roles": 3
+    }
+  },
+  "original_gamma_parents_differ": true,
+  "model_rows": 0,
+  "optimizer_updates": 0,
+  "new_test_cases": 0
+}

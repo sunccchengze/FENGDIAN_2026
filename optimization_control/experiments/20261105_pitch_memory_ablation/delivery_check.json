@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "episodes": 324,
+  "model_rows": 41796,
+  "shared_wind_and_heading_verified": true,
+  "ablated_rmse_and_decomposition_recomputed": true,
+  "max_actual_rate_rad_s": 0.008726646260000012,
+  "optimizer_updates": 0,
+  "new_test_cases": 0,
+  "figure_sha256": {
+    "paired_ablation.png": "d3d8070ea6cbc96f24a0ed218a5326c30c59c9b598ae4e3814bb79cede32aef4",
+    "full_episode_ablation.png": "c1bd7fe434746f7f494e63c8ff0febbc165d858794de6cfa324e5cf44253b9e3"
+  },
+  "corrected_inherited_target_group_counts": 54,
+  "verified_zero_initial_alias_rows": 84,
+  "integral_table_sha256": "a50ce1c9b3ab61391d0639e9a937421ba6d5489993ac820a06c52799caf6a000",
+  "bytes_before_receipt": 19895307
+}

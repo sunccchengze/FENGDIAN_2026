@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "inventory_scope": "entire_new_experiment_directory_including_logs_engineering_figures",
+  "inventory_before_this_file": true,
+  "file_count_before_this_file": 5069,
+  "experiment_bytes_before_this_file": 2188158792,
+  "experiment_bytes_including_this_file": 2188160108,
+  "storage_cap_bytes": 3221225472,
+  "remaining_capacity_bytes": 1033065364,
+  "groups_before_this_file": {
+    "metrics_metadata_and_other": {
+      "files": 3343,
+      "bytes": 21954189
+    },
+    "figures": {
+      "files": 3,
+      "bytes": 1545027
+    },
+    "compressed_transition_arrays": {
+      "files": 771,
+      "bytes": 33284738
+    },
+    "logs": {
+      "files": 19,
+      "bytes": 35646
+    },
+    "weights": {
+      "files": 105,
+      "bytes": 2053774941
+    },
+    "compressed_timeseries": {
+      "files": 828,
+      "bytes": 77564251
+    }
+  },
+  "formal_full_states": 104,
+  "engineering_full_states": 1,
+  "weight_count": 105,
+  "weight_bytes": 2053774941,
+  "largest_weight_bytes": 19690453,
+  "no_historical_deletion": true,
+  "no_old_replay_or_weight_directory_copies": true,
+  "no_recomputed_learning_steps": true,
+  "report_sha256": "4af3f18d3c489500eafafd90b8d663764d3284c492d6100fa3df63933c7b079d",
+  "summary_sha256": "83c78b221c4633525370f60623a53be1b44f98267e55c03858ccabc0c30ca1e2"
+}

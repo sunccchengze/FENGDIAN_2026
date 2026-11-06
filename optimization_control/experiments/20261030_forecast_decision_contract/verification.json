@@ -1,0 +1,94 @@
+{
+  "passed": false,
+  "tests_run": 6,
+  "failures": 1,
+  "errors": 0,
+  "mock_rows": 94,
+  "real_PINN_rows": 0,
+  "formal_RL_steps": 0,
+  "parameter_updates": 0,
+  "evidence": {
+    "actual_m_and_terminal": [
+      {
+        "m": 1,
+        "discount": 0.99,
+        "returns": [
+          1.0,
+          0.3,
+          -2.0
+        ]
+      },
+      {
+        "m": 3,
+        "discount": 0.970299,
+        "returns": [
+          1.9602999999999997,
+          1.77609,
+          -5.9402
+        ]
+      },
+      {
+        "m": 5,
+        "discount": 0.9509900498999999,
+        "returns": [
+          2.882084049999999,
+          4.381342815,
+          -9.80199002
+        ]
+      },
+      {
+        "m": 8,
+        "discount": 0.9227446944279201,
+        "returns": [
+          -3.6900179868489205,
+          10.307190053538875,
+          -15.45106111441598
+        ]
+      }
+    ],
+    "before_forward_guard": true,
+    "macro_action_alias": {
+      "offsets": [
+        0.05,
+        0.1
+      ],
+      "same_current_total": [
+        1.0,
+        1.0
+      ],
+      "different_later_total": [
+        0.5499250374812594,
+        0.6998500749625187
+      ],
+      "critic_requires_actual_offset": true
+    },
+    "forecast_causality": {
+      "prefix_samples": 18,
+      "future_suffix_changed": true,
+      "outputs_bitwise_equal": true,
+      "inference_signature": "predict(history)",
+      "no_environment_argument": true,
+      "feature_normalizer_refit": false,
+      "frozen_model_sha256": "a5571a19354015c8b5997823748fafd7f0a6a355a0422d35b539e4faa3992877",
+      "next_recomputed_from_observed_history": true,
+      "first_sample_padding_and_last32_exact": true,
+      "B_zero_features_explicit_ablation": true
+    },
+    "gradient_contract": {
+      "decision_samples_per_8_seconds": 1,
+      "hold_gradients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "unexecuted_output_gradient_counterexample_detected": true,
+      "optimizer_steps": 0
+    }
+  },
+  "model_or_replay_files_copied": 0,
+  "new_independent_winds": 0
+}

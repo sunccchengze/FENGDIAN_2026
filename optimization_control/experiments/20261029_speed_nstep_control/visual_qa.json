@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "images": [
+    {
+      "file": "validation_stability.png",
+      "sha256": "0e5d9eaf135865d48cb5f6a2713fc8a6808999d4801e041a255e953b3e829da1"
+    },
+    {
+      "file": "test_comparison.png",
+      "sha256": "4c38f495600c58b064dc25672a47c27a0b5ff79231326326e33d55f4a8b5bb66"
+    },
+    {
+      "file": "actual_controls.png",
+      "sha256": "ff9ae234b6457259cd2eb3f46fe19da3a5ed19a8e87e7703e23140685b08119e"
+    }
+  ],
+  "findings": [
+    "Axes, legends, selected stars and labels are readable; no clipping observed.",
+    "Pressure P/PI curves overlap because saved values are identical.",
+    "Heading plot uses the first plotted wind direction as common angular reference; raw world headings remain in trajectories.",
+    "Turbine line styles and all three training streams are retained."
+  ],
+  "model_calls": 0,
+  "training_steps_added": 0
+}

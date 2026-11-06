@@ -1,0 +1,19 @@
+{
+  "command": "nrel_speed_transfer_report performance",
+  "exit_code": 1,
+  "exception": "TypeError: Object of type int32 is not JSON serializable",
+  "location": "nrel_speed_transfer_report.py performance saved_audit.json",
+  "cause": "sum of NumPy comparison booleans produced numpy.int32 for Y_old_precision_streams",
+  "partial_outputs_retained": [
+    "metrics.csv",
+    "paired.csv",
+    "family.csv",
+    "physical.csv",
+    "fixed_case4_stream2.png",
+    "reference_curves.png"
+  ],
+  "model_rows_before": 4030,
+  "extra_model_rows": 0,
+  "training_steps": 0,
+  "repair": "private saved-data reporting wrapper converts NumPy scalars to Python scalars; existing outputs must remain byte-identical; frozen inference and reporter sources unchanged"
+}

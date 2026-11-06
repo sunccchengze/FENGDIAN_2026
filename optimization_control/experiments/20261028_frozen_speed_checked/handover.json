@@ -1,0 +1,67 @@
+{
+  "seed": 42,
+  "root_config_sha256": "c040423ddd550bb0a1e57127e14f1bc94c6a8aed7f530ac196c23d410d341d90",
+  "checks": [
+    {
+      "run_id": 0,
+      "max_online_target_action_difference": 0.0,
+      "max_rmse_difference_w": 0.0,
+      "max_applied_difference": 0.0,
+      "max_action_difference": 0.0,
+      "max_power_difference_w": 0.0,
+      "legacy_original_exact": true,
+      "old_mode_to_new_mode_max_power_difference_w": 2.0,
+      "passed": true
+    },
+    {
+      "run_id": 1,
+      "max_online_target_action_difference": 0.0,
+      "max_rmse_difference_w": 0.0,
+      "max_applied_difference": 0.0,
+      "max_action_difference": 0.0,
+      "max_power_difference_w": 0.0,
+      "legacy_original_exact": true,
+      "old_mode_to_new_mode_max_power_difference_w": 2.5,
+      "passed": true
+    },
+    {
+      "run_id": 2,
+      "max_online_target_action_difference": 0.0,
+      "max_rmse_difference_w": 0.0,
+      "max_applied_difference": 0.0,
+      "max_action_difference": 0.0,
+      "max_power_difference_w": 0.0,
+      "legacy_original_exact": true,
+      "old_mode_to_new_mode_max_power_difference_w": 2.5,
+      "passed": true
+    }
+  ],
+  "replay_checks": [
+    {
+      "run_id": 0,
+      "rows": 32768,
+      "old_actions_preserved": true,
+      "total_action_next_command_exact": true,
+      "max_old_vs_new_schedule_difference": 2.980232238769531e-07,
+      "same_physical_absolute_target_semantics": true
+    },
+    {
+      "run_id": 1,
+      "rows": 28672,
+      "old_actions_preserved": true,
+      "total_action_next_command_exact": true,
+      "max_old_vs_new_schedule_difference": 2.980232238769531e-07,
+      "same_physical_absolute_target_semantics": true
+    },
+    {
+      "run_id": 2,
+      "rows": 24576,
+      "old_actions_preserved": true,
+      "total_action_next_command_exact": true,
+      "max_old_vs_new_schedule_difference": 2.980232238769531e-07,
+      "same_physical_absolute_target_semantics": true
+    }
+  ],
+  "passed": true,
+  "formal_steps_added": 0
+}

@@ -1,0 +1,252 @@
+{
+  "released": false,
+  "namespace": [
+    69000000,
+    69000001,
+    69000002,
+    69000003,
+    69000004,
+    69000005,
+    69000006,
+    69000007,
+    69000008,
+    69000009,
+    69000010,
+    69000011,
+    69000012,
+    69000013,
+    69000014,
+    69000015,
+    69000016,
+    69000017
+  ],
+  "seed": 42,
+  "wind_families": [
+    "stationary",
+    "ramp",
+    "gust"
+  ],
+  "targets_w": [
+    2750000.0,
+    3350000.0,
+    3850000.0
+  ],
+  "initial_pitch_rad": [
+    0.025,
+    0.055
+  ],
+  "independent_waveforms": 18,
+  "nominal_horizon": 128,
+  "statistical_unit": "whole_waveform_cluster_paired_over_three_parent_streams",
+  "roles": [
+    {
+      "arm": "A",
+      "run": 0,
+      "role": "selected",
+      "step": 0,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+        "sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+        "original_parent": true
+      }
+    },
+    {
+      "arm": "A",
+      "run": 0,
+      "role": "final",
+      "step": 8192,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\A0\\s8192\\inference.pt",
+        "sha256": "979a33e875c88c6b53a18bcf1e735000bb9a40ff83b3b181d118f964a641b429",
+        "bytes": 70573
+      }
+    },
+    {
+      "arm": "A",
+      "run": 1,
+      "role": "selected",
+      "step": 0,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+        "sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+        "original_parent": true
+      }
+    },
+    {
+      "arm": "A",
+      "run": 1,
+      "role": "final",
+      "step": 8192,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\A1\\s8192\\inference.pt",
+        "sha256": "e0f86f749bb0cfca8068ccc248c7f81ad0a7c3cc4fe59e18023857d4845b3dfb",
+        "bytes": 70573
+      }
+    },
+    {
+      "arm": "A",
+      "run": 2,
+      "role": "selected",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\A2\\s2048\\inference.pt",
+        "sha256": "69ae34316833c831004dd650b900910fe215819f43b7a80aafbb1be1677dfa50",
+        "bytes": 70573
+      }
+    },
+    {
+      "arm": "A",
+      "run": 2,
+      "role": "final",
+      "step": 8192,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\A2\\s8192\\inference.pt",
+        "sha256": "d6f7748a29a1f9010beec4b91c06e1b0c1da2fab9662ba3d15b12b06b28314de",
+        "bytes": 70573
+      }
+    },
+    {
+      "arm": "B",
+      "run": 0,
+      "role": "selected",
+      "step": 0,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\B0\\s0000\\inference.pt",
+        "sha256": "762f2c73a93453f43429562b8e4a6b756d744419386c6ea5244a9e7dd76c039a",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "B",
+      "run": 0,
+      "role": "final",
+      "step": 8192,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\B0\\s8192\\inference.pt",
+        "sha256": "14ceff9802680f789d5a20d8e31112843c388089cb4367e52d801ece64ad9b8d",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "B",
+      "run": 1,
+      "role": "selected",
+      "step": 0,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\B1\\s0000\\inference.pt",
+        "sha256": "30b438a388428fd7eec1c37a1671729b98750422bfb0b00f5a661f9d6c42a34a",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "B",
+      "run": 1,
+      "role": "final",
+      "step": 8192,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\B1\\s8192\\inference.pt",
+        "sha256": "37aa492ee456f2959a4cf8881b00350045aafc5c16c25060896e541629988055",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "B",
+      "run": 2,
+      "role": "selected",
+      "step": 4096,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\B2\\s4096\\inference.pt",
+        "sha256": "406b6570a1689220999b175e80f2da45c6e41007fff5ec5618290fe94ec0a199",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "B",
+      "run": 2,
+      "role": "final",
+      "step": 8192,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\B2\\s8192\\inference.pt",
+        "sha256": "517d7723e7d82d2170f6771856092db81f99b61d23185e200f9aa6750df7eb20",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "C",
+      "run": 0,
+      "role": "selected",
+      "step": 0,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\C0\\s0000\\inference.pt",
+        "sha256": "d3150ea9bb068b57c17db837740b9dd9303e57779583650f5a80b02b629df35b",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "C",
+      "run": 0,
+      "role": "final",
+      "step": 8192,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\C0\\s8192\\inference.pt",
+        "sha256": "fbd0beafcb3ee31b3858c5a81f0cb68daa43049a2abb7d9854f9939296f4e234",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "C",
+      "run": 1,
+      "role": "selected",
+      "step": 0,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\C1\\s0000\\inference.pt",
+        "sha256": "393461cbd1822f3e338396fa81b80edf94781dfa910d87edea111110ea9efd92",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "C",
+      "run": 1,
+      "role": "final",
+      "step": 8192,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\C1\\s8192\\inference.pt",
+        "sha256": "5267345863ea32b75fa6de2c45726f6914bd28d4bebd4c7df07da12030afd8e5",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "C",
+      "run": 2,
+      "role": "selected",
+      "step": 4096,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\C2\\s4096\\inference.pt",
+        "sha256": "81744bf336d4d469b68b96d8ef6af91e1c937583827434f81d131ad26490592e",
+        "bytes": 24831
+      }
+    },
+    {
+      "arm": "C",
+      "run": 2,
+      "role": "final",
+      "step": 8192,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\jobs\\C2\\s8192\\inference.pt",
+        "sha256": "ba26b7430429da66b85b23755f020230d7507163f47790ebe8cdd299241a6345",
+        "bytes": 24831
+      }
+    }
+  ],
+  "controllers": {
+    "learned_roles": 18,
+    "frozen_parent": 3,
+    "zero_speed_roles": 12,
+    "common_P_PI": 2
+  },
+  "physical_rollouts_upper": 630,
+  "query_rows_upper": 81270,
+  "stress_separate": true,
+  "requires_review_and_release": true,
+  "selection_sha": "f244fb0d4bd899b549e8933fbbeb2c4013323a4aa799e1ab956f16d371fe65dd"
+}

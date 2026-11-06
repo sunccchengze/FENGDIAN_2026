@@ -1,0 +1,485 @@
+{
+  "limit": 2048,
+  "scopes": [
+    {
+      "name": "anchor00",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor01",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor02",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor03",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor04",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor05",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor06",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor07",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor08",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor09",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor10",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor11",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor12",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor13",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor14",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor15",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor16",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor17",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor18",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor19",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor20",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor21",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor22",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor23",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor24",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor25",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor26",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor27",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor28",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor29",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor30",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor31",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor32",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor33",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor34",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor35",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor36",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor37",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor38",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor39",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor40",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor41",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor42",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor43",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor44",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor45",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor46",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    },
+    {
+      "name": "anchor47",
+      "reserve": 30,
+      "actual": 30,
+      "api_calls": 2,
+      "status": "complete",
+      "kinds": {
+        "PINN": 30
+      }
+    }
+  ]
+}

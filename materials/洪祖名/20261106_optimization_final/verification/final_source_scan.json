@@ -1,0 +1,7 @@
+{
+  "files": 1162,
+  "credential_patterns": [],
+  "local_absolute_paths": [],
+  "allowed_fixture": "test_anchor_closeout.py uses fictional D:/isolated and D:/original containment fixtures",
+  "cached_whitespace_check": true
+}

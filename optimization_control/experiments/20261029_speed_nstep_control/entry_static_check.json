@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checked_files": [
+    "optimization_control\\maddpg_wind_farm\\speed_nstep_training.py",
+    "optimization_control\\maddpg_wind_farm\\speed_nstep_audit.py"
+  ],
+  "duplicate_definitions": 0,
+  "new_source_changes_after_freeze": false
+}

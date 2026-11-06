@@ -1,0 +1,59 @@
+status: proposed_not_authorized_to_train_in_this_round
+seed: 42
+formal_training_steps_executed: 0
+primary_factor: gamma
+arms:
+- 0.99
+- 1.0
+n: 8
+raw_reward_unchanged: true
+action_change_weight: 0.001
+reward_scale: 100
+obs_network_actuator_lr_sampling_unchanged: true
+parents: original_20261023_validation_selected_three_streams
+steps_per_arm_stream: 16384
+streams:
+- 0
+- 1
+- 2
+proposed_total_environment_learning_steps: 98304
+proposed_updates_per_job: 7937
+eval_every: 4096
+save_every: 128
+warmup_steps: 512
+update_every: 2
+seed_entropy_proposed:
+- 42
+- 20261029
+purpose_proposed:
+  scenario: 5101
+  initial_pitch: 5102
+  exploration: 5103
+episode_offsets_proposed:
+  train: 51000000
+  validation: 52000000
+  test: 53000000
+  known_pressure: 53009000
+actual_rng_states: null
+check_namespace_again_before_prepare: true
+replay_migration: raw rewards unchanged; both AlgorithmConfig.gamma and SequenceReplay.gamma
+  updated; no cached old returns
+critic_target_adam: inherit identical weights and optimizer state, no resets or extra
+  calibration
+gates:
+  selected_noninitial_runs: 3
+  ramp_selected_improvement: 0.05
+  ramp_final_improvement: 0.05
+  ramp_improved_runs: 2
+  other_family_per_stream_mean_worst_max_ratio: 1.05
+  final_over_selected_max: 1.25
+  final_mean_worst_max_parent_control_ratio: 1.05
+  actual_pitch_travel_and_rms_rate_max_ratio: 1.1
+  motion_denominator_floor: 0.0001
+  pitch_bounds_rad:
+  - 0.0
+  - 0.22
+  pitch_rate_limit_rad_s: 0.00872664626
+  physical_tolerance: 1.0e-09
+test: one new frozen 36 routine plus 8 known low-wind pressure; P/PI unchanged
+plan: optimization_control/maddpg_wind_farm/PITCH_REWARD_ALIGNMENT_CANDIDATE.md

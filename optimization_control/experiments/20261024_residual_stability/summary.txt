@@ -1,0 +1,733 @@
+{
+  "seed": 42,
+  "completed": true,
+  "training_steps": 49152,
+  "gates": [
+    {
+      "stage": "baseline",
+      "stable_ratio_passed": 3,
+      "final_parent_passed": 0,
+      "paired_final_passed": 3,
+      "passed": false
+    },
+    {
+      "stage": "low_lr",
+      "stable_ratio_passed": 3,
+      "final_parent_passed": 0,
+      "paired_final_passed": 2,
+      "passed": false
+    }
+  ],
+  "test_rows": 600,
+  "trace_rows": 76800,
+  "physical_validation": false,
+  "test_used_for_selection": false,
+  "action_semantics": "baseline_plus_residual_total_absolute_targets",
+  "independent_routine_metric_rows": 540,
+  "known_low_wind_regression_rows": 60,
+  "pressure_case_is_new_independent_data": false,
+  "intervention": "Actor lr 1e-4 -> 3e-5 only",
+  "verification": {
+    "seed": 42,
+    "protected_files": 50,
+    "protected_unchanged": true,
+    "checkpoint_audit": [
+      {
+        "stage": "baseline",
+        "run_id": 0,
+        "parent_state_and_common_actor_reset_exact": true,
+        "actor_lr": 0.0001,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 2
+      },
+      {
+        "stage": "low_lr",
+        "run_id": 0,
+        "parent_state_and_common_actor_reset_exact": true,
+        "actor_lr": 3e-05,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "baseline",
+        "run_id": 1,
+        "parent_state_and_common_actor_reset_exact": true,
+        "actor_lr": 0.0001,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "low_lr",
+        "run_id": 1,
+        "parent_state_and_common_actor_reset_exact": true,
+        "actor_lr": 3e-05,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "baseline",
+        "run_id": 2,
+        "parent_state_and_common_actor_reset_exact": true,
+        "actor_lr": 0.0001,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "low_lr",
+        "run_id": 2,
+        "parent_state_and_common_actor_reset_exact": true,
+        "actor_lr": 3e-05,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      }
+    ],
+    "replay_audit": [
+      {
+        "stage": "baseline",
+        "run_id": 0,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "low_lr",
+        "run_id": 0,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "baseline",
+        "run_id": 1,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "low_lr",
+        "run_id": 1,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "baseline",
+        "run_id": 2,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "low_lr",
+        "run_id": 2,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      }
+    ],
+    "recovery_fork": {
+      "source_checkpoint": "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_000\\step_00002048.pth",
+      "fork_steps": 128,
+      "fork_count": 2,
+      "actions_rewards_losses_noise_networks_exact": true,
+      "actual_resumed_replay_next_episode_exact": true,
+      "source_unchanged": true,
+      "experiment_steps_added": 0
+    },
+    "test_metrics": 600,
+    "test_trace_rows": 76800,
+    "max_rmse_recompute_difference_w": 0.0,
+    "experiment_training_steps": 49152,
+    "physical_validation": false
+  },
+  "aggregate": [
+    {
+      "stage": "baseline",
+      "controller": "initial",
+      "mean_rmse_w": 405346.3317546747,
+      "std_across_runs_w": 21332.290005379262
+    },
+    {
+      "stage": "baseline",
+      "controller": "selected",
+      "mean_rmse_w": 405346.3317546747,
+      "std_across_runs_w": 21332.290005379262
+    },
+    {
+      "stage": "baseline",
+      "controller": "final",
+      "mean_rmse_w": 419384.0590846164,
+      "std_across_runs_w": 28100.101718010013
+    },
+    {
+      "stage": "baseline",
+      "controller": "parent",
+      "mean_rmse_w": 405346.3317546747,
+      "std_across_runs_w": 21332.290005379262
+    },
+    {
+      "stage": "baseline",
+      "controller": "fixed",
+      "mean_rmse_w": 1077473.6930193277,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "baseline",
+      "controller": "p",
+      "mean_rmse_w": 571342.0637885382,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "baseline",
+      "controller": "pi",
+      "mean_rmse_w": 506050.22689968,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "low_lr",
+      "controller": "initial",
+      "mean_rmse_w": 405346.3317546747,
+      "std_across_runs_w": 21332.290005379262
+    },
+    {
+      "stage": "low_lr",
+      "controller": "selected",
+      "mean_rmse_w": 405346.3317546747,
+      "std_across_runs_w": 21332.290005379262
+    },
+    {
+      "stage": "low_lr",
+      "controller": "final",
+      "mean_rmse_w": 429574.99201404717,
+      "std_across_runs_w": 23656.687137773773
+    },
+    {
+      "stage": "low_lr",
+      "controller": "parent",
+      "mean_rmse_w": 405346.3317546747,
+      "std_across_runs_w": 21332.290005379262
+    },
+    {
+      "stage": "low_lr",
+      "controller": "fixed",
+      "mean_rmse_w": 1077473.6930193277,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "low_lr",
+      "controller": "p",
+      "mean_rmse_w": 571342.0637885382,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "low_lr",
+      "controller": "pi",
+      "mean_rmse_w": 506050.22689968,
+      "std_across_runs_w": 0.0
+    }
+  ],
+  "results": [
+    {
+      "stage": "baseline",
+      "run_id": 0,
+      "selected_step": 0,
+      "mean_w": 329113.3577779671,
+      "worst_w": 523526.04157647956,
+      "final_over_selected": 1.1329359676661412,
+      "stability_pass": false,
+      "strict_accuracy_pass": false,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_run_0\\segment_000\\step_00000000.pth",
+        "parent_sha256": "ce7dfb2dc0c76224bd065c949235f80a962c9d826a37012c88a1c6d1e973e23b",
+        "cumulative_parent_steps": 32768,
+        "inherited_replay_size": 32768,
+        "inherited_updates": 15874,
+        "parent_mean_w": 329113.3577779671,
+        "parent_worst_w": 523526.04157647956,
+        "actor_optimizer_reset": true,
+        "only_intervention": "actor_lr",
+        "initial_actor_lr": 0.0001
+      },
+      "paired_final_noninferior": true
+    },
+    {
+      "stage": "low_lr",
+      "run_id": 0,
+      "selected_step": 0,
+      "mean_w": 329113.3577779671,
+      "worst_w": 523526.04157647956,
+      "final_over_selected": 1.1703267270437145,
+      "stability_pass": false,
+      "strict_accuracy_pass": false,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_run_0\\segment_000\\step_00000000.pth",
+        "parent_sha256": "ce7dfb2dc0c76224bd065c949235f80a962c9d826a37012c88a1c6d1e973e23b",
+        "cumulative_parent_steps": 32768,
+        "inherited_replay_size": 32768,
+        "inherited_updates": 15874,
+        "parent_mean_w": 329113.3577779671,
+        "parent_worst_w": 523526.04157647956,
+        "actor_optimizer_reset": true,
+        "only_intervention": "actor_lr",
+        "initial_actor_lr": 3e-05
+      },
+      "paired_final_noninferior": true
+    },
+    {
+      "stage": "baseline",
+      "run_id": 1,
+      "selected_step": 0,
+      "mean_w": 285036.88022188074,
+      "worst_w": 443296.3063962116,
+      "final_over_selected": 1.0730668937466892,
+      "stability_pass": false,
+      "strict_accuracy_pass": true,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_run_1\\segment_000\\step_00000000.pth",
+        "parent_sha256": "d25808b503b9964445c924318221eff30c5007ce416a85a46bac32e3af2aa452",
+        "cumulative_parent_steps": 30720,
+        "inherited_replay_size": 30720,
+        "inherited_updates": 14595,
+        "parent_mean_w": 285036.88022188074,
+        "parent_worst_w": 443296.3063962116,
+        "actor_optimizer_reset": true,
+        "only_intervention": "actor_lr",
+        "initial_actor_lr": 0.0001
+      },
+      "paired_final_noninferior": true
+    },
+    {
+      "stage": "low_lr",
+      "run_id": 1,
+      "selected_step": 0,
+      "mean_w": 285036.88022188074,
+      "worst_w": 443296.3063962116,
+      "final_over_selected": 1.1502879810538962,
+      "stability_pass": false,
+      "strict_accuracy_pass": true,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_run_1\\segment_000\\step_00000000.pth",
+        "parent_sha256": "d25808b503b9964445c924318221eff30c5007ce416a85a46bac32e3af2aa452",
+        "cumulative_parent_steps": 30720,
+        "inherited_replay_size": 30720,
+        "inherited_updates": 14595,
+        "parent_mean_w": 285036.88022188074,
+        "parent_worst_w": 443296.3063962116,
+        "actor_optimizer_reset": true,
+        "only_intervention": "actor_lr",
+        "initial_actor_lr": 3e-05
+      },
+      "paired_final_noninferior": false
+    },
+    {
+      "stage": "baseline",
+      "run_id": 2,
+      "selected_step": 0,
+      "mean_w": 299093.06121228245,
+      "worst_w": 474912.60168196785,
+      "final_over_selected": 1.131173153526526,
+      "stability_pass": false,
+      "strict_accuracy_pass": true,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_run_2\\segment_000\\step_00000000.pth",
+        "parent_sha256": "a460482076dab9a75f21e301a9216036067c2e6c7708fdfbcf4e5a4f830f39a9",
+        "cumulative_parent_steps": 32768,
+        "inherited_replay_size": 32768,
+        "inherited_updates": 15619,
+        "parent_mean_w": 299093.06121228245,
+        "parent_worst_w": 474912.60168196785,
+        "actor_optimizer_reset": true,
+        "only_intervention": "actor_lr",
+        "initial_actor_lr": 0.0001
+      },
+      "paired_final_noninferior": true
+    },
+    {
+      "stage": "low_lr",
+      "run_id": 2,
+      "selected_step": 0,
+      "mean_w": 299093.06121228245,
+      "worst_w": 474912.60168196785,
+      "final_over_selected": 1.0616512601020078,
+      "stability_pass": false,
+      "strict_accuracy_pass": true,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_run_2\\segment_000\\step_00000000.pth",
+        "parent_sha256": "a460482076dab9a75f21e301a9216036067c2e6c7708fdfbcf4e5a4f830f39a9",
+        "cumulative_parent_steps": 32768,
+        "inherited_replay_size": 32768,
+        "inherited_updates": 15619,
+        "parent_mean_w": 299093.06121228245,
+        "parent_worst_w": 474912.60168196785,
+        "actor_optimizer_reset": true,
+        "only_intervention": "actor_lr",
+        "initial_actor_lr": 3e-05
+      },
+      "paired_final_noninferior": true
+    }
+  ],
+  "test_corrections": [
+    {
+      "stage": "baseline",
+      "run_id": "0",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "0",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "0",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.06852397727400213",
+      "speed_correction_max_rad_s": "0.09937675094604491",
+      "yaw_correction_rms_rad": "0.07384633517092794",
+      "yaw_correction_max_rad": "0.08726447075605392",
+      "speed_raw_saturation_fraction": "0.03359375",
+      "yaw_raw_saturation_fraction": "0.3333333333333333",
+      "speed_total_clip_fraction": "0.0006510416666666666"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "0",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "0",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "0",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "0",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.06328977381509986",
+      "speed_correction_max_rad_s": "0.09995565234124659",
+      "yaw_correction_rms_rad": "0.053929086419837104",
+      "yaw_correction_max_rad": "0.08726255595684052",
+      "speed_raw_saturation_fraction": "0.0067708333333333336",
+      "yaw_raw_saturation_fraction": "0.04674479166666667",
+      "speed_total_clip_fraction": "0.021223958333333334"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "0",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "1",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.09240023228398499",
+      "speed_correction_max_rad_s": "0.09999250642955303",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013151041666666667",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "1",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.09240023228398499",
+      "speed_correction_max_rad_s": "0.09999250642955303",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013151041666666667",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "1",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.09933308544523894",
+      "speed_correction_max_rad_s": "0.10000000049173831",
+      "yaw_correction_rms_rad": "0.07821392450311715",
+      "yaw_correction_max_rad": "0.0872533917427063",
+      "speed_raw_saturation_fraction": "0.9149739583333333",
+      "yaw_raw_saturation_fraction": "0.130078125",
+      "speed_total_clip_fraction": "0.032942708333333334"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "1",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.09240023228398499",
+      "speed_correction_max_rad_s": "0.09999250642955303",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013151041666666667",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "1",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.09240023228398499",
+      "speed_correction_max_rad_s": "0.09999250642955303",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013151041666666667",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "1",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.09240023228398499",
+      "speed_correction_max_rad_s": "0.09999250642955303",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013151041666666667",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "1",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.08095973613803371",
+      "speed_correction_max_rad_s": "0.09999981164932249",
+      "yaw_correction_rms_rad": "0.02251122758962359",
+      "yaw_correction_max_rad": "0.06767885386943817",
+      "speed_raw_saturation_fraction": "0.2671875",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "1",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.09240023228398499",
+      "speed_correction_max_rad_s": "0.09999250642955303",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013151041666666667",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "2",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.08504370001220507",
+      "speed_correction_max_rad_s": "0.09999997067451476",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.36484375",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "2",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.08504370001220507",
+      "speed_correction_max_rad_s": "0.09999997067451476",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.36484375",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "2",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.07768670328776704",
+      "speed_correction_max_rad_s": "0.10000000049173831",
+      "yaw_correction_rms_rad": "0.07157170138706873",
+      "yaw_correction_max_rad": "0.0872664600610733",
+      "speed_raw_saturation_fraction": "0.37005208333333334",
+      "yaw_raw_saturation_fraction": "0.6666666666666666",
+      "speed_total_clip_fraction": "0.033203125"
+    },
+    {
+      "stage": "baseline",
+      "run_id": "2",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.08504370001220507",
+      "speed_correction_max_rad_s": "0.09999997067451476",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.36484375",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "2",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.08504370001220507",
+      "speed_correction_max_rad_s": "0.09999997067451476",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.36484375",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "2",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.08504370001220507",
+      "speed_correction_max_rad_s": "0.09999997067451476",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.36484375",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "2",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.06628273219079148",
+      "speed_correction_max_rad_s": "0.09984911540150641",
+      "yaw_correction_rms_rad": "0.08414603483978539",
+      "yaw_correction_max_rad": "0.08726214617490768",
+      "speed_raw_saturation_fraction": "0.058203125",
+      "yaw_raw_saturation_fraction": "0.13736979166666666",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "low_lr",
+      "run_id": "2",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.08504370001220507",
+      "speed_correction_max_rad_s": "0.09999997067451476",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.36484375",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    }
+  ],
+  "paired_initial_audit": {
+    "paired_initials": [
+      {
+        "run_id": 0,
+        "initial_equal_except_actor_lr": true,
+        "noise_equal": true
+      },
+      {
+        "run_id": 1,
+        "initial_equal_except_actor_lr": true,
+        "noise_equal": true
+      },
+      {
+        "run_id": 2,
+        "initial_equal_except_actor_lr": true,
+        "noise_equal": true
+      }
+    ],
+    "all_checkpoint_lr_count": 30,
+    "all_checkpoint_lr_correct": true,
+    "checkpoints": [
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_000\\step_00000000.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_000\\step_00002048.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_001\\step_00004096.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_001\\step_00006144.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_001\\step_00008192.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_1\\segment_000\\step_00000000.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_1\\segment_000\\step_00002048.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_1\\segment_000\\step_00004096.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_1\\segment_000\\step_00006144.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_1\\segment_000\\step_00008192.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_2\\segment_000\\step_00000000.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_2\\segment_000\\step_00002048.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_2\\segment_000\\step_00004096.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_2\\segment_000\\step_00006144.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_2\\segment_000\\step_00008192.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_0\\segment_000\\step_00000000.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_0\\segment_000\\step_00002048.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_0\\segment_000\\step_00004096.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_0\\segment_000\\step_00006144.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_0\\segment_000\\step_00008192.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_1\\segment_000\\step_00000000.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_1\\segment_000\\step_00002048.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_1\\segment_000\\step_00004096.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_1\\segment_000\\step_00006144.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_1\\segment_000\\step_00008192.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_2\\segment_000\\step_00000000.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_2\\segment_000\\step_00002048.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_2\\segment_000\\step_00004096.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_2\\segment_000\\step_00006144.pth",
+      "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_2\\segment_000\\step_00008192.pth"
+    ]
+  },
+  "conclusion": {
+    "intervention_accepted": false,
+    "all_selected_initial": true,
+    "routine_final_improved_pairs": 0,
+    "routine_final_pairs": 3,
+    "default_changed": false,
+    "distinct_affected_tests_passed": 7,
+    "figures_visually_checked": true
+  }
+}

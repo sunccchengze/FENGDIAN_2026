@@ -1,0 +1,69 @@
+{
+  "verified": true,
+  "roles": {
+    "Y0_selected": {
+      "metrics": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\metrics.json",
+        "sha256": "1676ad442ea7caeee6a2be4e67ce2ffa333ac2e3bf09839b92b34833c1aa4c0e",
+        "bytes": 5133
+      },
+      "trace": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\trace.npz",
+        "sha256": "95719fcaff412b74ecde600d0ffdfbd21c044d7d5c2beed8df016b1d2c47c44a",
+        "bytes": 155984
+      }
+    },
+    "Y1_selected": {
+      "metrics": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\metrics.json",
+        "sha256": "f508d19260ca48266d58f537313e4f64f81b7f6dd2ddd3320d2c764a6244f2b0",
+        "bytes": 5030
+      },
+      "trace": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\trace.npz",
+        "sha256": "8192b9847dcbe98b70db4b5604b30070a1c7277c86cbbd34094cff3314fb416a",
+        "bytes": 127208
+      }
+    },
+    "Y2_selected": {
+      "metrics": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\metrics.json",
+        "sha256": "df3dde9543119670ff11537ef2ecc5bb93d3f0a0f3ef32831a75e315730a23cb",
+        "bytes": 5120
+      },
+      "trace": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+        "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+        "bytes": 163658
+      }
+    },
+    "p": {
+      "metrics": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\p\\validation\\metrics.json",
+        "sha256": "0d9e28e5ff4852c054a6ba5c60bc99ad9c9c2872044145125998efc111c2f2b5",
+        "bytes": 4951
+      },
+      "trace": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\p\\validation\\trace.npz",
+        "sha256": "fcce9b3749f7d87b58a8724ded05413e3739605e2bea649c2b3908613f6aebe7",
+        "bytes": 109667
+      }
+    },
+    "pi": {
+      "metrics": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\metrics.json",
+        "sha256": "d3ef6496b5495ac3d1b00a140882bab7b1b1e30ccedc79c6518ff37d18b1e830",
+        "bytes": 4955
+      },
+      "trace": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+        "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+        "bytes": 109708
+      }
+    }
+  },
+  "physical_rollouts_referenced": 30,
+  "original_input_rows": 3870,
+  "new_model_rows": 0,
+  "all_same_frozen_identity_wind_targets_initials": true
+}

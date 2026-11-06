@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "seed": 42,
+  "formal_training_steps": 49152,
+  "extra_smoke_steps": 0,
+  "n8_gain_passed": false,
+  "n8_stable_streams": 2,
+  "n8_over_n1_ratios": {
+    "selected": 0.9969284701091448,
+    "final": 0.9915954367187894
+  },
+  "source_hashes_verified": true,
+  "test_released": true,
+  "test_metric_rows": 720,
+  "test_trace_rows": 92160,
+  "total_evaluation_environment_steps": 129504,
+  "new_candidate_started": false,
+  "report": "../../maddpg_wind_farm/SPEED_NSTEP_RESULTS.md",
+  "n8_selected_steps": [
+    0,
+    4096,
+    2048
+  ],
+  "n8_validation_accuracy_selected": 3,
+  "n8_validation_accuracy_final": 1,
+  "n8_test_accuracy_selected": 0,
+  "n8_test_accuracy_final": 0,
+  "n8_test_engineering_stable_streams": 3,
+  "n1_test_engineering_stable_streams": 2,
+  "uncommitted_recomputed_steps": 0,
+  "formal_checkpoints": 390,
+  "checkpoint_manifest": "checkpoint_manifest.csv",
+  "execution_resolution": "resolved_execution.json",
+  "next_candidate_started": false
+}

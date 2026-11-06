@@ -91,8 +91,8 @@ def prepare(p, output):
     bank = root / "bank"; bank.mkdir()
     manifest = dict(version="farm_benchmark_v1", seed=42, cases=[])
     env = build_env(cfg)
-    for split, targets, pitches, offset in (("validation", p["validation_targets_w"], [.04], 110000),
-                                             ("test", p["test_targets_w"], p["test_initial_pitch_rad"], 220000)):
+    for split, targets, pitches, offset in (("validation", p["validation_targets_w"], [.04], p.get("validation_episode_offset", 110000)),
+                                             ("test", p["test_targets_w"], p["test_initial_pitch_rad"], p.get("test_episode_offset", 220000))):
         for family_index, family in enumerate(FAMILIES):
             for j, target in enumerate(targets):
                 inflow = deepcopy(p["inflow"]); inflow["speed"]["scenario"] = family
@@ -118,7 +118,7 @@ def prepare(p, output):
                         target_w=float(target), initial_pitch_rad=float(pitch)))
     # Explicit low-wind/high-target test, separated from routine aggregates.
     inflow = deepcopy(p["inflow"]); inflow["speed"]["scenario"] = "stationary"
-    trace = generate_inflow(inflow, dt_s=p["dt_s"], horizon=p["horizon"], seed=42, split="test", episode=229000)
+    trace = generate_inflow(inflow, dt_s=p["dt_s"], horizon=p["horizon"], seed=42, split="test", episode=p.get("stress_episode", 229000))
     trace.values[:] = [7.6, 0., .08]; trace.components[:] = [7.6, 0., 0.]
     trace.metadata.update(override_family="low_wind_stress", source="explicit_low_wind_test_not_generated_turbulence")
     path = bank / "test_low_wind_stress.csv"; trace.save(path)
@@ -164,7 +164,7 @@ def preflight_training_winds(p, root):
             family, target, pitch = episode_design(p, run_id, episode)
             inflow = deepcopy(p["inflow"]); inflow["speed"]["scenario"] = family
             trace = generate_inflow(inflow, dt_s=p["dt_s"], horizon=p["horizon"], seed=42,
-                split="train", episode=40000 + run_id * 1000 + episode)
+                split="train", episode=p.get("training_episode_offset", 40000) + run_id * 1000 + episode)
             rows.append(dict(run_id=run_id, episode=episode, family=family, target_w=target, initial_pitch_rad=pitch,
                 rejected_attempts=trace.metadata["speed_metadata"]["rejected_attempts"],
                 values_sha256=hashlib.sha256(trace.values.tobytes()).hexdigest()))
@@ -273,6 +273,11 @@ def train_job(root, stage, mask, run_id):
     root = Path(root)
     saved = yaml.safe_load((root / "config.yaml").read_text(encoding="utf-8")); p = saved["protocol"]
     cfg = deepcopy(saved["base_config"]); cfg["environment"]["control_mask"] = mask
+    progressive = p["version"] == "wind12_progressive_random_v1"
+    parent = None
+    if progressive:
+        from .progressive_random_control import parent_for_worker, initialize_stage
+        parent = parent_for_worker(root, stage, run_id)
     torch.set_num_threads(1); torch.use_deterministic_algorithms(True)
     job = root / f"{stage}_run_{run_id}"
     if (job / "result.json").exists():
@@ -283,8 +288,14 @@ def train_job(root, stage, mask, run_id):
     env = build_env(cfg)
     validation = cases(root, "validation")
     run_seed = seed_for(42, 712, run_id)
-    noise = Exploration(seed_for(42, 713, run_id), p["noise_std"], [10., 3., 5.], env.dt, "white", p["noise_end_fraction"])
+    phase = [s for s, _ in STAGES].index(stage)
+    noise_std = p["stage_noise_std"][stage] if progressive else p["noise_std"]
+    noise = Exploration(seed_for(42, 813 + phase if progressive else 713, run_id), noise_std,
+                        [10., 3., 5.], env.dt, "white", p["noise_end_fraction"])
     identity = dict(config=cfg, protocol=p, stage=stage, run_id=run_id, bank_sha256=digest(root / "bank/manifest.json"))
+    if progressive:
+        identity["parent"] = parent
+    lineage = None
     if job.exists():
         segments = sorted(job.glob("segment_*/state.json"))
         if not segments:
@@ -295,11 +306,15 @@ def train_job(root, stage, mask, run_id):
             raise ValueError("resume identity differs")
         step, episode, history, best, initial = meta["steps"], meta["episodes"], meta["history"], meta["best"], meta["initial"]
         noise.load_state_dict(meta["noise"])
+        lineage = meta.get("lineage")
         from .fixed_curriculum import next_segment
         segment = next_segment(job)
     else:
+        if progressive:
+            agent, lineage = initialize_stage(root, stage, run_id, cfg, env, parent)
+        else:
+            agent = make_agent(cfg, env, seed=run_seed)
         job.mkdir(); step = episode = 0; history = []; best = initial = None; segment = 0
-        agent = make_agent(cfg, env, seed=run_seed)
     out = fresh(job / f"segment_{segment:03d}", dict(seed=42, **identity))
     write_json(out / "normalization.json", env.normalization())
     def snapshot(losses):
@@ -316,20 +331,25 @@ def train_job(root, stage, mask, run_id):
             item[key] = float(np.mean([v[key] for v in losses])) if losses else 0.
         history.append(item)
         agent.save(path, dict(identity=identity, config=cfg, steps=step, episodes=episode, history=history, best=best,
-            initial=initial, noise=noise.state_dict(), normalization=env.normalization()))
+            initial=initial, noise=noise.state_dict(), normalization=env.normalization(),
+            **({"lineage": lineage} if progressive else {})))
         write_csv(out / "metrics.csv", history); write_json(out / "state.json", dict(final=str(path), completed=step == p["steps_per_run"]))
         print(json.dumps(dict(stage=stage, run_id=run_id, **item)), flush=True)
         return str(path)
     final = snapshot([]) if step == 0 else last["final"]
+    handover_failed = bool(progressive and (not lineage["head_fit_passed"] or history[0]["validation_rmse_w"] >
+                           p["max_handover_ratio"] * lineage["parent_validation_rmse_w"]))
     losses = []
-    while step < p["steps_per_run"]:
+    while step < p["steps_per_run"] and not handover_failed:
         family, target, pitch = episode_design(p, run_id, episode)
         inflow = deepcopy(p["inflow"]); inflow["speed"]["scenario"] = family
-        trace = generate_inflow(inflow, dt_s=env.dt, horizon=env.horizon, seed=42, split="train", episode=40000 + run_id * 1000 + episode)
+        offset = p.get("training_episode_offset", 40000) + (phase * 10000 if progressive else 0)
+        trace = generate_inflow(inflow, dt_s=env.dt, horizon=env.horizon, seed=42, split="train", episode=offset + run_id * 1000 + episode)
         env.initial = np.asarray(cfg["environment"]["initial_operating_point"], dtype=float).copy(); env.initial[1] = pitch
         obs, _ = env.reset(seed=42, options=dict(wind_trajectory=trace.values, target_w=target)); noise.reset()
         for _ in range(env.horizon):
-            action = agent.rng.uniform(-1, 1, (3, 3)).astype(np.float32) if step < p["warmup_steps"] else np.clip(agent.act(obs) + noise.sample(step / p["steps_per_run"]), -1, 1)
+            action = (agent.rng.uniform(-1, 1, (3, 3)).astype(np.float32) if not progressive and step < p["warmup_steps"]
+                      else np.clip(agent.act(obs) + noise.sample(step / p["steps_per_run"]), -1, 1))
             action = env.project_action(action).astype(np.float32)
             nxt, reward, done, _, info = env.step(action)
             agent.replay.add(obs, info["executed_action"], reward, nxt, done)
@@ -343,9 +363,16 @@ def train_job(root, stage, mask, run_id):
     ratio = history[-1]["validation_rmse_w"] / max(best["score_w"], 1e-9)
     passed = (best["score_w"] < history[0]["validation_rmse_w"] and best["score_w"] <= p["gate"]["mean_validation_rmse_w"]
               and max(r["rmse_w"] for r in best["validation"]) <= p["gate"]["worst_validation_rmse_w"] and ratio <= p["gate"]["max_final_over_selected"])
+    if progressive:
+        passed = passed and not handover_failed and best["step"] > 0
     result = dict(stage=stage, run_id=run_id, config=cfg, initial=initial, best=best, final=final,
         final_over_best=ratio, passed=bool(passed), steps=step, initial_rmse_w=history[0]["validation_rmse_w"],
         hashes={f: digest(f) for f in set((initial, best["checkpoint"], final))})
+    if progressive:
+        result.update(lineage=lineage, handover_failed=handover_failed,
+                      inherited_replay_size=lineage["inherited_replay_size"], cumulative_steps=lineage["cumulative_parent_steps"] + step)
+        write_json(job / "handover.json", dict(**lineage, initial_validation_rmse_w=history[0]["validation_rmse_w"],
+                                               handover_failed=handover_failed))
     write_json(job / "result.json", result)
 
 
@@ -396,6 +423,11 @@ def test_locked(root):
             rows, capture = rollout(result["config"], bank_cases, agent=agent, capture=True)
             tags = dict(stage=result["stage"], run_id=result["run_id"], controller=label)
             metrics.extend(dict(**tags, **r) for r in rows); traces.extend(dict(**tags, **r) for r in capture)
+        if "lineage" in result:
+            agent, parent_meta = MADDPG.load(result["lineage"]["parent_checkpoint"])
+            rows, capture = rollout(parent_meta["config"], bank_cases, agent=agent, capture=True)
+            tags = dict(stage=result["stage"], run_id=result["run_id"], controller="parent")
+            metrics.extend(dict(**tags, **r) for r in rows); traces.extend(dict(**tags, **r) for r in capture)
         print("Independent test", result["stage"], result["run_id"], flush=True)
     for stage in dict.fromkeys(r["stage"] for r in selection["results"]):
         cfg = next(r["config"] for r in selection["results"] if r["stage"] == stage)
@@ -407,7 +439,10 @@ def test_locked(root):
     sampled_ranges(saved["base_config"], bank_cases, out / "sampled_ranges.csv")
     aggregate = []
     for stage in dict.fromkeys(r["stage"] for r in selection["results"]):
-        for label in ("initial", "selected", "final", "fixed", "p", "pi"):
+        labels = ("initial", "selected", "final", "fixed", "p", "pi")
+        if "lineage" in selection["results"][0]:
+            labels += ("parent",)
+        for label in labels:
             part = [r for r in metrics if r["stage"] == stage and r["controller"] == label and r["family"] in FAMILIES]
             per_run = [float(np.mean([r["rmse_w"] for r in part if r["run_id"] == i])) for i in sorted(set(r["run_id"] for r in part))]
             aggregate.append(dict(stage=stage, controller=label, runs=len(per_run), mean_rmse_w=float(np.mean(per_run)),
@@ -458,7 +493,8 @@ def audit_replays(root, selection):
         cost = np.mean((data["actions"] - data["obs"][:, :, 5:8]) ** 2, axis=(1, 2))
         expected_reward = cfg["reward_scale"] * (-data["next_obs"][:, 0, 9] ** 2 - cfg["action_change_weight"] * cost)
         np.testing.assert_allclose(data["rewards"], np.repeat(expected_reward[:, None], 3, axis=1), atol=5e-6, rtol=4e-6)
-        assert n == result["steps"] and digest(path) == before
+        expected_size = min(agent.replay.capacity, result.get("inherited_replay_size", 0) + result["steps"])
+        assert n == expected_size and digest(path) == before
         rows.append(dict(stage=result["stage"], run_id=result["run_id"], transitions=n, terminal_transitions=int(terminal.sum()),
             dynamic_speed_schedule_verified=bool(agent.config.speed_reference_schedule), reward_verified=True,
             max_heading_step_rad=float(max_steps[0]), max_pitch_step_rad=float(max_steps[1]),

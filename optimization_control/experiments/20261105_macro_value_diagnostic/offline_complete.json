@@ -1,0 +1,16 @@
+{
+  "arms": 6,
+  "updates_per_job": 481,
+  "optimizer_updates": 0,
+  "model_queries": 0,
+  "exact_update_q_td_available": false,
+  "checkpoint_points": [
+    0,
+    2048,
+    4096,
+    6144,
+    8192
+  ],
+  "historical_rows": 384,
+  "snapshot_summary_rows": 180
+}

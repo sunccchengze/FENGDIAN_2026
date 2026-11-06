@@ -24,6 +24,10 @@ class PitchController:
         e = self.env
         physical = np.tile(e.initial, (3, 1))
         if self.mode == "fixed":
+            if getattr(e, "speed_reference_mode", "legacy_physical") == "observation_float32_v1":
+                action = e.normalize_commands(physical)
+                action[:, 2] = e.scheduled_speed_action(obs)
+                return e.project_action(action)
             return e.project_action(e.normalize_commands(physical))
         if self.config.get("three_channel", False):
             physical[:, 0] = self.config.get("yaw_offset_rad", 0.0)
@@ -38,4 +42,8 @@ class PitchController:
             self.integral += e.dt * (self.config["ki"]*error + self.config["antiwindup_gain"]*(actual-pitch))
             self.integral = float(np.clip(self.integral, -self.config["integral_limit_rad"], self.config["integral_limit_rad"]))
         physical[:, 1] = np.clip(pitch, e.low[1], e.high[1])
+        if getattr(e, "speed_reference_mode", "legacy_physical") == "observation_float32_v1":
+            action = e.normalize_commands(physical)
+            action[:, 2] = e.scheduled_speed_action(obs)
+            return e.project_action(action)
         return e.project_action(e.normalize_commands(physical))

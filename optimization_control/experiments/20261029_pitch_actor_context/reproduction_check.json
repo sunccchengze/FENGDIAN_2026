@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "prepared": false,
+  "plant_rows": 0,
+  "optimizer_updates": 0,
+  "source_config_sha256": "7035d9c0aae7506563a2c3faf6a3baeb2468996b11ce77d2a16035ab2bfec92a",
+  "protected_inputs": 85
+}

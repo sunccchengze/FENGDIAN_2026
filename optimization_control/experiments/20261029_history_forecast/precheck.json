@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "future_invariant": true,
+  "persistence_adapter_exact": true,
+  "state_parent_rng_unchanged": true,
+  "zero_semantics_exact": true,
+  "batch_calls": 0,
+  "budget": {
+    "name": "real_precheck",
+    "reserve": 1179,
+    "actual": 845,
+    "api_calls": 845,
+    "status": "complete",
+    "kinds": {
+      "precheck_external": 5,
+      "internal_forecast": 816,
+      "zero_semantics": 24
+    }
+  }
+}

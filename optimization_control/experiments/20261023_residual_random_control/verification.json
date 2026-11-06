@@ -1,0 +1,227 @@
+{
+  "seed": 42,
+  "protected_files": 37,
+  "protected_unchanged": true,
+  "checkpoint_audit": [
+    {
+      "stage": "pitch_speed",
+      "run_id": 0,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 2
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": 0,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": 1,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": 1,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": 2,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": 2,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    },
+    {
+      "stage": "all",
+      "run_id": 0,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    },
+    {
+      "stage": "all_control",
+      "run_id": 0,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    },
+    {
+      "stage": "all",
+      "run_id": 1,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    },
+    {
+      "stage": "all_control",
+      "run_id": 1,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    },
+    {
+      "stage": "all",
+      "run_id": 2,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    },
+    {
+      "stage": "all_control",
+      "run_id": 2,
+      "zero_head_initial_state_exact": true,
+      "max_replay_handover_error": 0.0,
+      "load_noise_and_next_update_exact": true,
+      "resume_segments": 1
+    }
+  ],
+  "replay_audit": [
+    {
+      "stage": "pitch_speed",
+      "run_id": 0,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": 0,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": 1,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": 1,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": 2,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": 2,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "all",
+      "run_id": 0,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "all_control",
+      "run_id": 0,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "all",
+      "run_id": 1,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "all_control",
+      "run_id": 1,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "all",
+      "run_id": 2,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    },
+    {
+      "stage": "all_control",
+      "run_id": 2,
+      "retained_transitions": 32768,
+      "new_transitions": 8192,
+      "total_action_next_command_exact": true,
+      "physical_rates_reward_verified": true,
+      "dynamic_residual_envelope_verified": true
+    }
+  ],
+  "recovery_fork": {
+    "source_checkpoint": "optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_0\\segment_000\\step_00002048.pth",
+    "fork_steps": 128,
+    "fork_count": 2,
+    "actions_rewards_losses_noise_networks_exact": true,
+    "actual_resumed_replay_next_episode_exact": true,
+    "source_unchanged": true,
+    "experiment_steps_added": 0
+  },
+  "test_metrics": 1200,
+  "test_trace_rows": 153600,
+  "max_rmse_recompute_difference_w": 0.0,
+  "experiment_training_steps": 98304,
+  "physical_validation": false
+}

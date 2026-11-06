@@ -1,0 +1,1846 @@
+{
+  "limit": 100000,
+  "scopes": [
+    {
+      "name": "unit_mock_correctness",
+      "reserve": 1000,
+      "actual": 376,
+      "api_calls": 373,
+      "status": "complete",
+      "kinds": {
+        "mock_correctness": 376
+      }
+    },
+    {
+      "name": "real_precheck",
+      "reserve": 624,
+      "actual": 263,
+      "api_calls": 255,
+      "status": "complete",
+      "kinds": {
+        "precheck_external": 5,
+        "batch_single_gate": 18,
+        "internal_forecast": 216,
+        "zero_branch_check": 24
+      }
+    },
+    {
+      "name": "train_run0_stationary_2600000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_2600000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_2600000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_2600000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_2600000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_2600000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_2600000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_2600000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_3800000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_3800000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_3800000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_3800000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_3800000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_3800000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_3800000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_3800000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_2600000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_2600000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_2600000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_2600000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_2600000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_2600000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_2600000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_2600000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_3800000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_3800000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_3800000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_3800000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_3800000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_3800000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_3800000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_3800000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_2600000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_2600000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_2600000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_2600000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_2600000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_2600000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_2600000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_2600000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_3800000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_3800000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_3800000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_3800000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_3800000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_3800000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_3800000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_3800000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_2600000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_2600000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_2600000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_2600000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_2600000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_2600000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_2600000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_2600000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_3800000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_3800000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_3800000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_3800000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_3800000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_3800000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_3800000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_3800000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_2600000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_2600000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_2600000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_2600000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_2600000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_2600000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_2600000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_2600000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_3800000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_3800000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_3800000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_3800000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_3800000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_3800000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_3800000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_3800000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_2600000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_2600000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_2600000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_2600000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_2600000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_2600000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_2600000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_2600000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_3800000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_3800000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_3800000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_3800000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_3800000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_3800000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_3800000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_3800000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_2600000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_2600000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_2600000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_2600000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_2600000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_2600000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_2600000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_2600000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_3800000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_3800000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_3800000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_3800000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_3800000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_3800000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_3800000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_3800000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_2600000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_2600000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_2600000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_2600000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_2600000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_2600000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_2600000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_2600000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_3800000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_3800000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_3800000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_3800000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_3800000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_3800000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_3800000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_3800000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_2600000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_2600000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_2600000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_2600000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_2600000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_2600000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_2600000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_2600000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_3800000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_3800000:parent",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_3800000:n1_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_3800000:n1_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_3800000:n8_selected",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_3800000:n8_final",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_3800000:p",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_3800000:pi",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_stationary_2850000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_stationary_3450000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_ramp_2850000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_ramp_3450000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_gust_2850000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_gust_3450000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_stationary_2850000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_stationary_3450000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_ramp_2850000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_ramp_3450000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_gust_2850000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_gust_3450000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_stationary_2850000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_stationary_3450000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_ramp_2850000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_ramp_3450000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_gust_2850000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_gust_3450000:search",
+      "reserve": 1857,
+      "actual": 1821,
+      "api_calls": 1821,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 1692,
+        "external_transition": 128
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "power_difference_w": 0.0,
+  "action_difference": 0.0,
+  "reward_difference": 0.0,
+  "serial_steps": 408,
+  "batch_environment_steps": 408,
+  "complete": true
+}

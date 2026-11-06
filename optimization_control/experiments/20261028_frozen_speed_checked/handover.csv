@@ -1,0 +1,4 @@
+run_id,max_online_target_action_difference,max_rmse_difference_w,max_applied_difference,max_action_difference,max_power_difference_w,legacy_original_exact,old_mode_to_new_mode_max_power_difference_w,passed
+0,0.0,0.0,0.0,0.0,0.0,True,2.0,True
+1,0.0,0.0,0.0,0.0,0.0,True,2.5,True
+2,0.0,0.0,0.0,0.0,0.0,True,2.5,True

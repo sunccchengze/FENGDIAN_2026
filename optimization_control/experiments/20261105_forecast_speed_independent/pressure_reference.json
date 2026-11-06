@@ -1,0 +1,9 @@
+{
+  "reused": true,
+  "additional_PINN_rows": 0,
+  "source": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\pressure.csv",
+  "sha256": "9b488c92ab0b427d1b1643cf69e0e8d200a5557502291b8f60e55eb2f6d4d901",
+  "wind_m_s": 7.6,
+  "target_w": 4400000.0,
+  "initial_pitch_rad": 0.04
+}

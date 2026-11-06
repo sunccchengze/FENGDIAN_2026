@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "surrogate_calls": 0,
+  "training_steps": 0,
+  "independent_rmse_bias_max_error": 0.0,
+  "same_actual_observation_parent_commands_exact": true,
+  "parent_rng_unchanged": true,
+  "demo_steps": 4608,
+  "previous_commands_exact": true,
+  "offset_held_only_between_planning_decisions": true,
+  "observed_wind_feature_max_error": 0.0,
+  "charged_model_rows": 82449,
+  "hard_cap": 100000,
+  "old_inventory_unchanged": true,
+  "source_hashes_passed": true,
+  "supplementary_checker_sha256": "2a5fc18587a8d1d1948f96e6083fbcecce81577d5bf5937ee94e455dac092aa3"
+}

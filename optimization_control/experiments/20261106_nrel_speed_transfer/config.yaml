@@ -1,0 +1,39 @@
+seed: 42
+base_commit: 11ba03d18be653fe0f10b2d020ede55ce4561984
+task_start_commit: a98ef917f7826c553065163b26c81201655e495f
+initial_worktree_status: []
+purpose: frozen_old_policy_new_speed_rule_transfer
+radius_m: 63.0
+lambda_ref: 7.55
+new_slope: 0.11984126984126983
+new_speed_low: 0.7225663103256524
+speed_high: 1.267
+legacy_speed_low: 0.6
+legacy_slope: 0.11114035087719298
+schema: nrel_speed_transfer_old_coordinates_v1
+network_and_reward_speed_coordinates:
+- 0.6
+- 1.267
+final_execution_speed_bounds:
+- 0.7225663103256524
+- 1.267
+old_rollouts_referenced: 30
+old_original_rows: 3870
+new_performance_rollouts: 30
+new_performance_rows: 3870
+engineering_PINN_rows: 120
+engineering_mock_rows: 40
+planned_new_rows: 4030
+row_hard_cap: 10000
+disk_cap_MiB: 128
+training_steps: 0
+optimizer_updates: 0
+new_wind_generation: 0
+pressure_rollouts: 0
+source_url: https://www.nlr.gov/docs/fy09osti/38060.pdf
+source_sections:
+- Table 1-1
+- Section 7.2
+- Table 7-2
+plot_case: 4
+plot_stream: 2

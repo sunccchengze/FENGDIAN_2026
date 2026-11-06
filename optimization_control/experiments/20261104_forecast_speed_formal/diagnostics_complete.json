@@ -1,0 +1,331 @@
+{
+  "groups": [
+    {
+      "group": "diagnostics/parent0/validation",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\parent0\\validation\\complete.json",
+        "sha256": "17b8d50f5050a149c5787037c94d1f2c2a7776b5c580b4556c9eb6a2c7a9f02f",
+        "bytes": 938
+      }
+    },
+    {
+      "group": "diagnostics/parent0/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\parent0\\stress\\complete.json",
+        "sha256": "b13f1dc7e883ccbcaa40fc8a5e9cfdb7a140a5b5e73779c5a957a337301fe6f1",
+        "bytes": 924
+      }
+    },
+    {
+      "group": "diagnostics/parent1/validation",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\parent1\\validation\\complete.json",
+        "sha256": "c134450f89344b6ebc50b83b5447c2273ee963c2fb7975521bee1df3ab69be21",
+        "bytes": 938
+      }
+    },
+    {
+      "group": "diagnostics/parent1/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\parent1\\stress\\complete.json",
+        "sha256": "8bf9bbcbbe96fd70bcae0b460860df357a715b02b0a469a4113ad90a31e64780",
+        "bytes": 924
+      }
+    },
+    {
+      "group": "diagnostics/parent2/validation",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\parent2\\validation\\complete.json",
+        "sha256": "4c43cb35e92f4dfe50691d446f5cc1f83b2c5c64f1945fc5ea82d9161b138130",
+        "bytes": 938
+      }
+    },
+    {
+      "group": "diagnostics/parent2/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\parent2\\stress\\complete.json",
+        "sha256": "9e0f7ce9759769740d48cf6ad65f6b6ec2cb1dd32aac89c8c4c4cc6f34137af5",
+        "bytes": 924
+      }
+    },
+    {
+      "group": "diagnostics/p/validation",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\p\\validation\\complete.json",
+        "sha256": "0f3fe4173c28d38a1f66e486d12fdcdfeb27f07c12da8ed65fc6775c08bde89c",
+        "bytes": 920
+      }
+    },
+    {
+      "group": "diagnostics/p/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\p\\stress\\complete.json",
+        "sha256": "6f4f74a3ee62451d9070d60a065715744e397c587608b480a1cff273a1343629",
+        "bytes": 905
+      }
+    },
+    {
+      "group": "diagnostics/pi/validation",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\pi\\validation\\complete.json",
+        "sha256": "35d82ef1b5b51e49b56571c64538b4327fcfdd0b15167a743aa9323912b140a2",
+        "bytes": 923
+      }
+    },
+    {
+      "group": "diagnostics/pi/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\pi\\stress\\complete.json",
+        "sha256": "e237a2b9548873584e4c5e54d05ac1c1fe0d39a88b9d7f8fe5fa478c3892cb88",
+        "bytes": 908
+      }
+    },
+    {
+      "group": "diagnostics/A0/selected/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\A0\\selected\\stress\\complete.json",
+        "sha256": "0f66367408c9267db1af8474e99277680118d0eb87473658942f9a1e7a1be2df",
+        "bytes": 939
+      }
+    },
+    {
+      "group": "diagnostics/A0/final/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\A0\\final\\stress\\complete.json",
+        "sha256": "04b18d10d8e234c2d0a674ec640e24352e5e5a43928e7d55fd31f6663fc0f04e",
+        "bytes": 930
+      }
+    },
+    {
+      "group": "diagnostics/A1/selected/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\A1\\selected\\stress\\complete.json",
+        "sha256": "236b5a2d1c4e1a52fdbc5d11ecc9b5dd5c7056297bce23d559beed3320ef811b",
+        "bytes": 939
+      }
+    },
+    {
+      "group": "diagnostics/A1/final/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\A1\\final\\stress\\complete.json",
+        "sha256": "b1235f4535cbb162fdc60e75af5eb1b62d7076b85669585968f492e2bb2e7abc",
+        "bytes": 930
+      }
+    },
+    {
+      "group": "diagnostics/A2/selected/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\A2\\selected\\stress\\complete.json",
+        "sha256": "cb1e63500a0c8fe06ebe8b859094424de1da8073f00ccf65e41666e8f1d4c083",
+        "bytes": 939
+      }
+    },
+    {
+      "group": "diagnostics/A2/final/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\A2\\final\\stress\\complete.json",
+        "sha256": "eef4beb0e93b8b677196d1cb33606698db8a0106375c510dcec7442139011681",
+        "bytes": 930
+      }
+    },
+    {
+      "group": "diagnostics/B0/selected/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B0\\selected\\zero\\complete.json",
+        "sha256": "627b99d13988b0cf1a206def46b995b664600e6885832a8d79af624865e9b302",
+        "bytes": 935
+      }
+    },
+    {
+      "group": "diagnostics/B0/selected/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B0\\selected\\stress\\complete.json",
+        "sha256": "6ad761657e54fb36ac83c97aa4175eda911669913c55c7ec0c2bd06cc63e5dbc",
+        "bytes": 939
+      }
+    },
+    {
+      "group": "diagnostics/B0/final/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B0\\final\\zero\\complete.json",
+        "sha256": "35e7997925322ba44b09e041866722e7c33f8e5fbcc9dfb6d82c9bee0af75a0c",
+        "bytes": 926
+      }
+    },
+    {
+      "group": "diagnostics/B0/final/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B0\\final\\stress\\complete.json",
+        "sha256": "c1a7febd54518db2932f1dcf7667bb1daaae217a6c234e77c7e2cc2de4133b62",
+        "bytes": 930
+      }
+    },
+    {
+      "group": "diagnostics/B1/selected/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B1\\selected\\zero\\complete.json",
+        "sha256": "13166c8897ede74c2c3ac67e21af6366bb72adc700dd008a9cb5cb615e76cab4",
+        "bytes": 935
+      }
+    },
+    {
+      "group": "diagnostics/B1/selected/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B1\\selected\\stress\\complete.json",
+        "sha256": "1c45fa007b1262755df796c079deeedbee5670087ebe736123c15c026d7aae0e",
+        "bytes": 939
+      }
+    },
+    {
+      "group": "diagnostics/B1/final/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B1\\final\\zero\\complete.json",
+        "sha256": "0bcd3efa1ddc0810a47edafe94d530e8d4c0443a06f6ba92163978cd0709ea0e",
+        "bytes": 926
+      }
+    },
+    {
+      "group": "diagnostics/B1/final/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B1\\final\\stress\\complete.json",
+        "sha256": "cdf9eea30901b6ef6e7454525c05b0f34b1ec38497f30c90d98f2ab3825398fc",
+        "bytes": 930
+      }
+    },
+    {
+      "group": "diagnostics/B2/selected/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B2\\selected\\zero\\complete.json",
+        "sha256": "07f5033e3175244ed9438564e73b624282c0929a2ee4211629d20f5e26ac8e38",
+        "bytes": 935
+      }
+    },
+    {
+      "group": "diagnostics/B2/selected/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B2\\selected\\stress\\complete.json",
+        "sha256": "bd8deaec8c48a2f9460f39f4b25cca2e1517ea350c4b481372eadb549fa2cd66",
+        "bytes": 939
+      }
+    },
+    {
+      "group": "diagnostics/B2/final/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B2\\final\\zero\\complete.json",
+        "sha256": "820380e6d28721f8f275f83c9c20470fbcdc184acb3a7b0f627bc519ad0de9f0",
+        "bytes": 926
+      }
+    },
+    {
+      "group": "diagnostics/B2/final/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\B2\\final\\stress\\complete.json",
+        "sha256": "77a2916269eb8d8ea6e890a34e3e82c666dd6a3d5a3b728a27233156c50f61df",
+        "bytes": 930
+      }
+    },
+    {
+      "group": "diagnostics/C0/selected/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C0\\selected\\zero\\complete.json",
+        "sha256": "387e8e5319b6de236b058bc14191bfa758d317190a8432dfa2fba57961dbf8fb",
+        "bytes": 935
+      }
+    },
+    {
+      "group": "diagnostics/C0/selected/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C0\\selected\\stress\\complete.json",
+        "sha256": "a42840eb67059b6fd64d5e7e1e60cf8126712e6c3a12554678c6d44d500d874a",
+        "bytes": 939
+      }
+    },
+    {
+      "group": "diagnostics/C0/final/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C0\\final\\zero\\complete.json",
+        "sha256": "824447b91c62045f1a49b928700024cee1525eadd25dfe455f4f4fd28719159d",
+        "bytes": 926
+      }
+    },
+    {
+      "group": "diagnostics/C0/final/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C0\\final\\stress\\complete.json",
+        "sha256": "62b6f1c9e41408b28482e96c1e1cf97d676e610c8e24f3cc15d872ae6897b8fa",
+        "bytes": 930
+      }
+    },
+    {
+      "group": "diagnostics/C1/selected/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C1\\selected\\zero\\complete.json",
+        "sha256": "123dcf488399160b600edf4b05b46756efe7295b79f65a6eb3cb55a3e66c2c44",
+        "bytes": 935
+      }
+    },
+    {
+      "group": "diagnostics/C1/selected/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C1\\selected\\stress\\complete.json",
+        "sha256": "6acb1965d66fce5bd674b1be1931356f350e44ca7fb003c1f489f25854d446ee",
+        "bytes": 939
+      }
+    },
+    {
+      "group": "diagnostics/C1/final/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C1\\final\\zero\\complete.json",
+        "sha256": "e5242b437bd931d54e171dff4656e25ff64409da28832cddbc362981c42b46e3",
+        "bytes": 926
+      }
+    },
+    {
+      "group": "diagnostics/C1/final/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C1\\final\\stress\\complete.json",
+        "sha256": "72f47e6e350f01054c73fba866c735b7c1ad05ad49e8e2c2cdf778b35a48f5fb",
+        "bytes": 930
+      }
+    },
+    {
+      "group": "diagnostics/C2/selected/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C2\\selected\\zero\\complete.json",
+        "sha256": "2f14f9ce8132d079166a1398ca04c20aa9a52f0b27bfce0b998a3a22ce38e155",
+        "bytes": 935
+      }
+    },
+    {
+      "group": "diagnostics/C2/selected/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C2\\selected\\stress\\complete.json",
+        "sha256": "116c3137ac34221ac5ff53b13fc93b7bf685405250eb6c175db3e935335576e4",
+        "bytes": 939
+      }
+    },
+    {
+      "group": "diagnostics/C2/final/zero",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C2\\final\\zero\\complete.json",
+        "sha256": "7efdaa528cc7a5a11bc3b61d4d0f94985cdb9e01f2b3cb8def4f23e95a2165c3",
+        "bytes": 926
+      }
+    },
+    {
+      "group": "diagnostics/C2/final/stress",
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261104_forecast_speed_formal\\diagnostics\\C2\\final\\stress\\complete.json",
+        "sha256": "897268c939adb96de5aff691205d2b4ca211775d4f01ff028772a6bb24d8e0fb",
+        "bytes": 930
+      }
+    }
+  ],
+  "rows": 16125,
+  "formal_rows": 125259,
+  "formal_steps": 73728,
+  "engineering_rows": 1728,
+  "cumulative_model_rows": 126987,
+  "no_new_test": true,
+  "selection_sha": "f244fb0d4bd899b549e8933fbbeb2c4013323a4aa799e1ab956f16d371fe65dd"
+}

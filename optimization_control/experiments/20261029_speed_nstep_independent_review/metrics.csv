@@ -1,0 +1,4 @@
+check,passed,formal_training_steps,new_environment_steps,discarded_memory_updates
+scope_duplicates,True,0,0,0
+real_n1_n8_targets_and_n1_equivalence,True,0,0,3
+targeted_ring_reward_radius_cases,True,0,0,1

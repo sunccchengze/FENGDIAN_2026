@@ -1,0 +1,65 @@
+{
+  "seed": 42,
+  "formal_jobs": 6,
+  "steps_per_job": 8192,
+  "total_formal_environment_steps": 49152,
+  "extra_learning_smoke_steps": 0,
+  "updates_per_job": 3841,
+  "total_updates": 23046,
+  "episode_horizon": 128,
+  "episode_saves_per_job": 65,
+  "warmup_steps": 512,
+  "update_every": 2,
+  "evaluation_every": 2048,
+  "actor_frozen": true,
+  "parent_actor_optimizer_used": false,
+  "head_actor_lr": 0.0001,
+  "critic_lr": 0.001,
+  "inherited_critic_adam": true,
+  "gamma": 0.99,
+  "tau": 0.01,
+  "batch_size": 64,
+  "capacity": 32768,
+  "noise_kind": "white",
+  "noise_std": [
+    0.0,
+    0.0,
+    0.15
+  ],
+  "noise_end_fraction": 0.2,
+  "noise_seed_entropy": [
+    42,
+    20261028,
+    8405001,
+    3,
+    "run_id",
+    0
+  ],
+  "head_seed": "seed_for(42,8405,run)",
+  "rho": "0.02+0.08*min(1,k/4096); k pre-transition steps; same rho for ensuing update",
+  "eval_radius": 0.1,
+  "training_namespace": 41000000,
+  "validation_namespace": 42000000,
+  "test_namespace": 43000000,
+  "unused_inherited_protocol_fields": {
+    "smoke_steps_per_arm": 1024,
+    "smoke_episode_offset": 8450000,
+    "smoke_noise_namespace": 8454,
+    "noise_namespace": 8404
+  },
+  "unused_base_training_template": {
+    "total_steps": 2048,
+    "warmup_steps": 256,
+    "update_every": 2,
+    "noise_std": 0.15,
+    "episode_target_fractions": [
+      0.18440761875,
+      0.23014487916666668,
+      0.27588213958333335
+    ]
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "1.26.4",
+  "torch": "2.13.0+cpu",
+  "tensorflow": "2.16.1"
+}

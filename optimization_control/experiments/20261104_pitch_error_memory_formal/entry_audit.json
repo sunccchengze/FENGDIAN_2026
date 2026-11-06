@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "equivalent_first_512": true,
+  "paired_indices_and_m": true,
+  "planned_budget_steps": 2048,
+  "extra_model_rows": 0,
+  "config_sha": "63feab0690b2ca2c32d4f396104bf8cb9c3b32c11df5d0ac93833bef08e40e2b"
+}

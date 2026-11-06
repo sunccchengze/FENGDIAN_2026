@@ -1,0 +1,67 @@
+{
+  "source": "parent_training_replay_only",
+  "new_training_steps": 0,
+  "permission_granted": false,
+  "reports": [
+    {
+      "network": "actors",
+      "agent": 0,
+      "min_y": -0.3021847605705261,
+      "max_y": 0.6912038326263428,
+      "max_error": 0.28547087189339276,
+      "held_max": 0.28547087189339276,
+      "mean_error": 0.022813475806908422,
+      "nfev": 4
+    },
+    {
+      "network": "actors",
+      "agent": 1,
+      "min_y": -0.5435492396354675,
+      "max_y": 0.5452104806900024,
+      "max_error": 0.336273984819021,
+      "held_max": 0.336273984819021,
+      "mean_error": 0.03314022692991171,
+      "nfev": 4
+    },
+    {
+      "network": "actors",
+      "agent": 2,
+      "min_y": -0.6560440063476562,
+      "max_y": 0.3655279874801636,
+      "max_error": 0.3994717190931003,
+      "held_max": 0.3994717190931003,
+      "mean_error": 0.02029631700146491,
+      "nfev": 5
+    },
+    {
+      "network": "target_actors",
+      "agent": 0,
+      "min_y": -0.3021847605705261,
+      "max_y": 0.6912038326263428,
+      "max_error": 0.3098966068018696,
+      "held_max": 0.2480428098873669,
+      "mean_error": 0.019023495365073494,
+      "nfev": 5
+    },
+    {
+      "network": "target_actors",
+      "agent": 1,
+      "min_y": -0.5435492396354675,
+      "max_y": 0.5452104806900024,
+      "max_error": 0.35616660174536663,
+      "held_max": 0.35616660174536663,
+      "mean_error": 0.0318670402834331,
+      "nfev": 4
+    },
+    {
+      "network": "target_actors",
+      "agent": 2,
+      "min_y": -0.6560440063476562,
+      "max_y": 0.3655279874801636,
+      "max_error": 0.3956515943375988,
+      "held_max": 0.3956515943375988,
+      "mean_error": 0.021140851831829222,
+      "nfev": 4
+    }
+  ]
+}

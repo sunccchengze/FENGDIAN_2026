@@ -1,0 +1,9 @@
+{
+  "files": {
+    "all_case_paired_differences.png": "6be6507a7f174ea579dbece1cd6fcb9407aa2248776fbd3c8872df316e2ffb29",
+    "full_integral_timeseries.png": "7d79d96818c0f0c19f91817bc2aafebf8055778dc22eb8c7ce86a5fecb373ac6",
+    "primary_decomposition.png": "2cab35e759b4c616bd65f47037380ef7f2d5d546f14409955b890485fc5b116e"
+  },
+  "plotting_plant_rows": 0,
+  "full_steps": 128
+}

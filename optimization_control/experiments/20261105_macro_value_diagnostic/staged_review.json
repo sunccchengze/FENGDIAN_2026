@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "path": "optimization_control/experiments/20261105_macro_value_diagnostic/config.yaml",
+      "bytes": 544,
+      "sha256": "7f62687bf1f52e56696362ea4017699af446ffa874f8d33f16bb349e9d29ec51"
+    },
+    {
+      "path": "optimization_control/experiments/20261105_macro_value_diagnostic/metrics.csv",
+      "bytes": 495764,
+      "sha256": "50c0b482577e3261a572b6e75a64f3260cba08a7bac1b233a198a72f8f574305"
+    },
+    {
+      "path": "optimization_control/experiments/20261105_macro_value_diagnostic/summary.txt",
+      "bytes": 283,
+      "sha256": "0fda8da8c25c14b4313b973b6ff318a9274bdaeefd08d7ce8048456ad66bee1b"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/MACRO_VALUE_DIAGNOSTIC_PROTOCOL.md",
+      "bytes": 3872,
+      "sha256": "579623140ca96a000291e15428d123a15e70e354c7d9999f66cde937bef31f90"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/MACRO_VALUE_DIAGNOSTIC_RESULTS.md",
+      "bytes": 8646,
+      "sha256": "124f6235ae7e98ec31a5860ef5c62053831e6cea446f760c4a80b52c4b5302f5"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/macro_value_diagnostic.py",
+      "bytes": 17849,
+      "sha256": "d3449fd963345b271c67f620dba97122fe7fa53367056a9afa4c186a4f79c0c3"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/macro_value_report.py",
+      "bytes": 17803,
+      "sha256": "d81633ff44fae07d7e130f6d270c2b72341c64ed874a4eead0019845e8fec236"
+    }
+  ],
+  "diff_sha256": "5d13c9174b3ee16acf469c0e80406fef655824c7bdba85a7d650fd287472ef13"
+}

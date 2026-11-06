@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "PINN_mock_rows_added": 0,
+  "new_fits": 0,
+  "fit_only_normalization_exact": true,
+  "fit_only_targets_exact": true,
+  "normal_equation_residual": 3.3306690738754696e-16,
+  "fit_trajectories": 600,
+  "unique_score_trajectories": 24,
+  "unique_validation": 6,
+  "cached_trace_rows_exact": 41472,
+  "same_actual_obs_parent_actions_exact": true,
+  "parent_rng_unchanged": true,
+  "previous_action_feature_exact": true,
+  "actual_steps": 4608,
+  "raw_cost_recompute_max_error": 6.661338147750939e-16,
+  "model_sha256": "a5571a19354015c8b5997823748fafd7f0a6a355a0422d35b539e4faa3992877",
+  "old_inventory_unchanged": true,
+  "source_and_execution_hashes_unchanged": true,
+  "checker_sha256": "f72836ef67f21dd0365da145cbd88528f0a35982a1998b5491975a3b4e94f66e"
+}

@@ -1,0 +1,19 @@
+NREL fixed used-test-bank regression COMPLETE and STAGE CLOSED; seed42.
+Primary criterion each of3 family mean newY strictly below same-newPI: PASS3/3.
+New Y family432.050552/459.626697/454.080321kW; newPI488.041868/532.200097/523.087915kW.
+Overall oldY416.210058 -> newY448.585857; oldPI476.099547 -> newPI514.443293kW; newY-newPI -65.857436kW.
+New-old paired90:84 worse6 better; all180 old/new case metrics and90 pairs retained.
+New90 rollouts*129=11610 model rows (90reset +11520physical evaluation steps), cap12000, failures/retries0.
+Old same90 saved rollouts historical11610rows; current reference cost0. 18 unique winds74000000..17 reused, new winds0.
+Prior migration4030 and diagnosis1440 stay separately recorded; actual total across3 phases17080rows.
+Training/optimizer updates0; no new pressure cases, roles, grids or ablations.
+Original400mean/500worst precision old0/3/new0/3, separately reported, no training extension.
+Pitch rate boundary occupancy newY43.808%, P53.733%, PI48.785%; speed and heading rate boundary occupancy0.
+Actual speed all-new.794534..1.212216rad/s; actual TSR5.936096..8.988951; speed command/actual floor/ceiling0.
+Frozen Y2048/0/2048 and C0/0/4096; Y1 selected remains initial. No new learning-gain claim.
+Control adapter/core unchanged; network/command/reward old speed coordinates, new physical low separate.
+Handoff and dependencies delivered; standard-library read and frozen policy inference examples both exit0, extra PINN queries0.
+PINN48-point interface response note delivered, no teammate message/model/label modification or physical certification prerequisite.
+Used-test-bank configuration regression, not new unseen independent testing or generalization proof. Old curve acceptance retained; new rule separate.
+Full report optimization_control/maddpg_wind_farm/NREL_SPEED_REGRESSION_RESULTS_20261106.md; handoff NREL_THREE_CHANNEL_HANDOFF_20261106.md.
+Stop stage after delivery; no automatic further training/diagnostics/PPI tuning/reference rollback/new wind.

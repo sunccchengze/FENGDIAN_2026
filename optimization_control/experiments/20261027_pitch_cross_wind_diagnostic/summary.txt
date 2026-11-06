@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "complete": true,
+  "new_training_steps": 0,
+  "test_access": false,
+  "cases": 44,
+  "metric_rows": 220,
+  "trajectory_rows": 28160,
+  "protected_files": 80,
+  "protected_files_unchanged": true,
+  "original_validation_max_difference_w": 0.0,
+  "weak_variance_dominated_ramp_cases": [],
+  "forecast_gate": false,
+  "candidate_supported": false,
+  "elapsed_s": 241.9954863999992,
+  "global_upper_bound_certified": false,
+  "physical_validation": false
+}

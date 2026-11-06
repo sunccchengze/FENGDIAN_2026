@@ -1,0 +1,9 @@
+case_id,run_id,family,controller,target_mw,initial_pitch_rad,steps,rmse_kw
+test_gust_2_pitch0.025,1,gust,initial,3.9,0.025,128,940.8906715584399
+test_gust_2_pitch0.025,1,gust,p,3.9,0.025,128,391.8752726355436
+test_gust_2_pitch0.025,1,gust,pi,3.9,0.025,128,303.7810287313795
+test_gust_2_pitch0.025,1,gust,selected,3.9,0.025,128,254.95922149245277
+test_ramp_0_pitch0.055,1,ramp,initial,2.7,0.055,128,1635.3072162274873
+test_ramp_0_pitch0.055,1,ramp,p,2.7,0.055,128,682.2616303445961
+test_ramp_0_pitch0.055,1,ramp,pi,2.7,0.055,128,392.7255081375856
+test_ramp_0_pitch0.055,1,ramp,selected,2.7,0.055,128,278.2224806409765

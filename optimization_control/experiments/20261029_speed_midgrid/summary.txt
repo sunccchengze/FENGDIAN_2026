@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "formal_RL_steps": 0,
+  "model_rows": 120785,
+  "hard_cap": 170000,
+  "repeated_parent_improvement": false,
+  "metrics": 324,
+  "trace_rows": 41472,
+  "maximum_metric_recompute_error": 0.0,
+  "forecast_min_never_above_same_state_prefix9": true,
+  "positive_same_state_prediction_advantage_decisions": 106,
+  "decisions": 576,
+  "middle_decisions": 106,
+  "zero_decisions": 2,
+  "endpoint_decisions": 468,
+  "new_test_released": false,
+  "source_and_execution_hashes_unchanged": true,
+  "status": "verified",
+  "seed": 42,
+  "streams": [
+    {
+      "split": "train",
+      "run_id": 0,
+      "grid9_mean_w": 420842.33167831536,
+      "grid17_mean_w": 422121.68344850023,
+      "parent_mean_w": 438340.2479690658,
+      "fine_over_coarse": 1.0030399788088875,
+      "fine_over_parent": 0.963000056244641,
+      "improved_coarse_cases": 1,
+      "improved_parent_cases": 6
+    },
+    {
+      "split": "train",
+      "run_id": 1,
+      "grid9_mean_w": 326741.848951621,
+      "grid17_mean_w": 326824.26094993687,
+      "parent_mean_w": 349634.3988413874,
+      "fine_over_coarse": 1.0002522235782785,
+      "fine_over_parent": 0.9347600294277726,
+      "improved_coarse_cases": 3,
+      "improved_parent_cases": 5
+    },
+    {
+      "split": "train",
+      "run_id": 2,
+      "grid9_mean_w": 366315.2657837465,
+      "grid17_mean_w": 365254.04722144787,
+      "parent_mean_w": 381949.64741449826,
+      "fine_over_coarse": 0.9971029911624674,
+      "fine_over_parent": 0.9562884785833248,
+      "improved_coarse_cases": 3,
+      "improved_parent_cases": 3
+    },
+    {
+      "split": "validation",
+      "run_id": 0,
+      "grid9_mean_w": 354046.99764098023,
+      "grid17_mean_w": 353685.4328921182,
+      "parent_mean_w": 364337.8407931975,
+      "fine_over_coarse": 0.9989787662336606,
+      "fine_over_parent": 0.9707622796526212,
+      "improved_coarse_cases": 3,
+      "improved_parent_cases": 4
+    },
+    {
+      "split": "validation",
+      "run_id": 1,
+      "grid9_mean_w": 367372.0801150776,
+      "grid17_mean_w": 367832.77153438184,
+      "parent_mean_w": 360060.2835971525,
+      "fine_over_coarse": 1.0012540185937917,
+      "fine_over_parent": 1.021586629493203,
+      "improved_coarse_cases": 2,
+      "improved_parent_cases": 2
+    },
+    {
+      "split": "validation",
+      "run_id": 2,
+      "grid9_mean_w": 336593.10657657014,
+      "grid17_mean_w": 331243.4196903067,
+      "parent_mean_w": 336134.99461641826,
+      "fine_over_coarse": 0.984106368247781,
+      "fine_over_parent": 0.9854475880094139,
+      "improved_coarse_cases": 6,
+      "improved_parent_cases": 4
+    }
+  ],
+  "report": "../../maddpg_wind_farm/SPEED_MIDGRID_RESULTS.md"
+}

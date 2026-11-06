@@ -1,0 +1,3 @@
+n,run,saved_steps,committed_episode_shards,new_updates,selected_step,initial_state_exact,m_histogram,final_over_selected
+1,0,1024,8,257,0,True,"[0, 16448]",1.0041203467022106
+8,0,1024,8,257,0,True,"[0, 122, 129, 126, 131, 130, 137, 143, 15530]",1.014109390269075

@@ -1,0 +1,16 @@
+{
+  "seed": 42,
+  "passed": 6,
+  "command": "python -B -X utf8 -m unittest optimization_control.tests.test_speed_value_diagnostic -v",
+  "formal_training_steps": 0,
+  "optimizer_updates": 0,
+  "plant": "small deterministic coupled mock only",
+  "scope": [
+    "cloned environment and RNG",
+    "radius action contract",
+    "pulse continuation",
+    "centralized total-action Q gradient",
+    "offline parent pitch replay",
+    "clipping and numeric ties"
+  ]
+}

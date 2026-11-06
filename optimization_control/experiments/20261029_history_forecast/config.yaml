@@ -1,0 +1,1703 @@
+seed: 42
+protocol:
+  version: causal_history_forecast_v1
+  seed: 42
+  source_commit: 1a7221a3bcbceb351b5555111c1a58a687bdf1f6
+  history_samples: 32
+  forecast_horizon: 12
+  decision_interval: 8
+  ridge_alpha: 0.1
+  fit_trajectories_per_family: 200
+  fit_episode_offset: 65000000
+  families:
+  - stationary
+  - ramp
+  - gust
+  speed_bounds:
+  - 7.5
+  - 10.5
+  bootstrap_samples: 2000
+  screen:
+    primary_horizon: 8
+    minimum_improved_families: 2
+    maximum_family_MSE_ratio: 1.05
+  model_row_hard_cap: 170000
+  precheck_mock_reserve: 2000
+  conservative_closed_loop_reserve: 121700
+  formal_RL_steps: 0
+worktree: .
+source: .\optimization_control\experiments\20261029_speed_midgrid
+base_config:
+  schema_version: 1
+  seed: 42
+  purpose: frozen_parent_speed_software_only
+  plant:
+    kind: pinn
+    source: teammate_20261021_synthetic_test
+    power_semantics: synthetic_test_power_w_not_physical_validation
+    turbine_ids:
+    - T01
+    - T02
+    - T03
+    rated_power_w:
+    - 5000000
+    - 5000000
+    - 5000000
+    layout:
+      kind: fixed_collinear_equal_spacing
+      spacing_m: 378.0
+      source: demonstration_assumption_not_team_calibration
+    features:
+    - ambient_wind_speed_m_s
+    - ambient_wind_direction_rad
+    - turbulence_intensity
+    - gamma_1
+    - gamma_2
+    - gamma_3
+    - beta_1
+    - beta_2
+    - beta_3
+    - omega_1
+    - omega_2
+    - omega_3
+    bounds:
+      ambient_wind_speed_m_s:
+      - 7.499999
+      - 10.500001
+      ambient_wind_direction_rad:
+      - 0.0
+      - 6.283186307179586
+      turbulence_intensity:
+      - 0.019998999552965163
+      - 0.15000100596046448
+      gamma_1:
+      - -0.40000100596046445
+      - 0.40000100596046445
+      gamma_2:
+      - -0.40000100596046445
+      - 0.40000100596046445
+      gamma_3:
+      - -0.40000100596046445
+      - 0.40000100596046445
+      beta_1:
+      - -1.0e-06
+      - 0.2200009988079071
+      beta_2:
+      - -1.0e-06
+      - 0.2200009988079071
+      beta_3:
+      - -1.0e-06
+      - 0.2200009988079071
+      omega_1:
+      - 0.5999990238418579
+      - 1.2670009599456786
+      omega_2:
+      - 0.5999990238418579
+      - 1.2670009599456786
+      omega_3:
+      - 0.5999990238418579
+      - 1.2670009599456786
+    model_version: wind12-synthetic-7506554ac981
+    factory: optimization_control.environments.wind_pinn_backend:create_predictor
+    backend:
+      run_dir: .\optimization_control\experiments\20261022_wind_pinn_integration\model
+      script: .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\modify_pinn_wind_io.py
+      allow_synthetic_demo: true
+      model_sha256: 7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451
+      script_sha256: 4db850074b62a7f86720534f6286b48c2a024efd9218f1b243c376fd54d5a270
+  environment:
+    parameter_source:
+      kind: assumption
+      reference: configs/wind_pinn_demo.yaml
+      note: synthetic integration limits, not calibrated actuators
+    dt_s: 1.0
+    yaw_frame: nacelle_heading
+    heading_bounds_rad:
+    - -314.1592653589793
+    - 314.1592653589793
+    control_mask:
+    - 0
+    - 1
+    - 1
+    horizon: 128
+    wind_scale_m_s: 25.0
+    action_low:
+    - -0.25
+    - 0.0
+    - 0.6
+    action_high:
+    - 0.25
+    - 0.22
+    - 1.267
+    initial_operating_point:
+    - 0.0
+    - 0.04
+    - 0.9
+    rate_limits:
+    - 0.005
+    - 0.00872664626
+    - 0.1
+    time_constants_s:
+    - 5.0
+    - 2.0
+    - 5.0
+    target_w: 3452173.1875
+    wind_base_m_s: 9.0
+    wind_amplitude_m_s: 0.0
+    wind_period_steps: 128
+    wind_noise_std_m_s: 0.0
+    wind_direction_rad: 0.0
+    turbulence_intensity: 0.1
+    action_change_weight: 0.001
+    reward_scale: 100.0
+    inflow:
+      speed:
+        mean_min_m_s: 8.7
+        mean_max_m_s: 9.3
+        ti_values:
+        - 0.04
+        - 0.08
+        scenario: mixed
+        length_scale_m: 100.0
+        padding_factor: 8
+        ramp_amplitude_m_s: 0.35
+        gust_amplitude_m_s: 0.5
+        gust_duration_s: 32.0
+        speed_min_m_s: 7.5
+        speed_max_m_s: 10.5
+        max_attempts: 100
+      direction:
+        mean_rad: 0.0
+        amplitude_rad: 0.035
+        period_s: 180.0
+        ramp_rad: 0.04
+    reference_schedule:
+      yaw_offset_rad: 0.0
+      speed_per_wind_rad_m: 0.11114035087719298
+    speed_reference_mode: observation_float32_v1
+  algorithm:
+    hidden: 64
+    actor_lr: 0.0001
+    critic_lr: 0.001
+    gamma: 0.99
+    tau: 0.01
+    batch_size: 64
+    capacity: 32768
+    grad_clip: 1.0
+    actor_initial_action:
+    - 0.0
+    - -0.6363636363636364
+    - -0.10044977511244357
+  training:
+    total_steps: 2048
+    warmup_steps: 256
+    update_every: 2
+    noise_std: 0.15
+    episode_target_fractions:
+    - 0.18440761875
+    - 0.23014487916666668
+    - 0.27588213958333335
+  evaluation:
+    seed_offset: 10000
+    scenarios:
+    - name: fixed_0
+      target_w: 2766114.28125
+      wind_trajectory: &id001
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+    - name: fixed_1
+      target_w: 3452173.1875
+      wind_trajectory: *id001
+    - name: fixed_2
+      target_w: 4138232.09375
+      wind_trajectory: *id001
+    - name: stationary
+      target_w: 3452173.1875
+      inflow:
+        speed:
+          scenario: stationary
+    - name: ramp
+      target_w: 3452173.1875
+      inflow:
+        speed:
+          scenario: ramp
+    - name: gust
+      target_w: 3452173.1875
+      inflow:
+        speed:
+          scenario: gust
+  baselines:
+    three_channel: true
+    yaw_offset_rad: 0.0
+    speed_per_wind_rad_m: 0.11114035087719298
+    pitch_bias_rad: 0.04
+    kp: 1.5
+    ki: 0.08
+    antiwindup_gain: 0.2
+    integral_limit_rad: 0.3
+parents:
+- run_id: 0
+  checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_0\segment_000\step_00016384.pth
+  sha256: 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+  cumulative_parent_steps: 32768
+- run_id: 1
+  checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00012288.pth
+  sha256: 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+  cumulative_parent_steps: 28672
+- run_id: 2
+  checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00008192.pth
+  sha256: e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+  cumulative_parent_steps: 24576
+source_hashes:
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_0\segment_000\step_00016384.pth
+  : 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00012288.pth
+  : 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00008192.pth
+  : e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\modify_pinn_io.py: ae841a99bc1d27ef64d6e061e7457fc171d168f530017e706abf61984af26c8c
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\modify_pinn_wind_io.py: 4db850074b62a7f86720534f6286b48c2a024efd9218f1b243c376fd54d5a270
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\prepare_pinn_outputchange.py: 768af5bc0b8e0b236943bbcc50d93f74600596d0a241a484ccc8ecd88845b832
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\gitignore.txt: 5e2c671ddc9e301dafc241ad1a7c07aa85a91fef560a17721b41977b9eddba17
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\README_pinn_wind_zh.txt: 683414be7f2af902b0824ae30efb1e95a2e315e8f37891f1d607b69492b2407c
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\requirements.txt: 20f1b0519d5d21e7f705dc9c1c67cc5bbbe10cf3755052d092bb58c7770f8892
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\iochanged_9ms\build_report.json
+  : 0c4ffc38228777435d8735cfea36d1c2ac18328b1b4a69573126e8a4805823da
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\prepared_9ms\preparation_report.json
+  : 09bc88328734398b320f0e10a4ea54ee2c6b019adbfc5bb745d1790a9bd81233
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\project_config.json: 2aecb320606021ba089fd0440fdf9aadc651db0f594bb7e757d12b7b4b310a6d
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\wind_iochanged_9ms\build_report.json
+  : 2c2311286f5311df13fae6b7025ab2dfede0c5a11154383dcdf03d971f2696b2
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\wind_project_config.json: 7a62dd9e641eeb0e2cc9b87ca15690877de566923a6b38f2d8e35cb071859fe2
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\iochanged_9ms\untrained.keras
+  : 430742626cd4dc7cfc6f11f6f923db621d4789010a4a7f8456e959b40f690b12
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\prepared_9ms\original_frozen.keras
+  : 41ce925edb83ae0e38d73ebdc1c19bdfa21974ebb3800d7674a2c960a7aae303
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\prepared_9ms\original_frozen_features.keras
+  : f87b9f483510c7490bb6a7449a3645ee0819c3ae5c7751513704dccfc2de86fe
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\wind_iochanged_9ms\untrained.keras
+  : 9e93883785b3f5ea5d75b97eb101d36d85e98de13120dba99b753545683ed163
+  .\optimization_control\experiments\20261022_wind_pinn_integration\model\trained.keras: 7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451
+  .\optimization_control\experiments\20261022_wind_pinn_integration\model\training_report.json: 3996fbec8618e74e307d85a43224d667732d06ab2c39725a0dded98df74a25aa
+  .\optimization_control\experiments\20261022_wind_pinn_integration\model\config_used.json: 658163d05742215bf304839218115d2c7f75d5e4cd79ba0a043b1da8d9876034
+  .\optimization_control\environments\maddpg_farm_env.py: b1522730113bb14f62a51950f1dfa7ca7add05c93d268153466258acd75abae1
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00008192.pth
+  : 17cdc2329aee37942d0f0c383ac1254a0d7b3ef01c1c10b08a0ee9a2cba7612c
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000000.pth
+  : c5b0dc506a9084f0123d372618f83d85b1b536d97107ebceaa5db539f287f0b9
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00002048.pth
+  : 7b7e65bb713d8fda49a0d6c70b323ad6dd2e748162cb33d029d9cdd9b5fd90dd
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000000.pth
+  : 556ef7a90043abee04732dd0d77cf34203d030cb94bc7a833dc7bd8d8129ce70
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00008192.pth
+  : 3c3a89ec8fec431721da721b8735ed1338627db78a66417dd662833ad331cc4a
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004096.pth
+  : d11032c91f0f5e261500812da0444e4e6d5f11b5e0bb47380078c3df769eca20
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000000.pth
+  : 039b9dbcd36241cdb0513b21ec5816558673b1de9f244f7b686a7f7449f50bce
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00008192.pth
+  : abbf7a53f5a0c1faa5849cb8b3f2ff341d91942f3299de8c6a2131ffae0e4e71
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00008192.pth
+  : 1c49fe0cbb5f4cde3e81c9cab8a243e856779690a8718b5401bb4dcc7559ea3a
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004096.pth
+  : 2f2aff153d786bcc937907b2d6f4156fb508a82cd15659e5d562b67cd19c2863
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000000.pth
+  : 1342b445078575aa7d74d256127856d85b90da602d249081ec487c23e6ae6450
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002048.pth
+  : 17e2f9721fd094f4fdb354bad971ff7eda13b454e21233af7cf5ea1a70d88a94
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00008192.pth
+  : 1d2063a6e6a1989643f083e589826d3ce6f058af023827354423b01d1afa4fb5
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000000.pth
+  : 182152e9753f5a91da050f1d89ca77de79e88e426190d99eb82a38cb54dabc02
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00008192.pth
+  : a41bc00aaae5990c045c66ab4508daa20c504de496b3574553ff3ec58f6fc239
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002048.pth
+  : 00d524793b7848c1890afc9d37c27e40f85bfa2ba5b87e5936dd2415aa4adb2b
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000000.pth
+  : 9c2efd68b7855a0aa7e30cb6dd5abee771777acec9620e4e73f1bf8388e993ca
+  .\optimization_control\experiments\20261029_speed_nstep_control\config.yaml: 314a8fc345a8a2e6bfdcaf110f0b41a38ea199b1baa88e8f3de43b10fe182923
+  .\optimization_control\experiments\20261029_speed_nstep_control\selection.json: 1eaebb7a0b6f8e1a79fc73d149c7eded9979ddf886463958b11748196c3841c9
+  .\optimization_control\experiments\20261029_speed_nstep_control\validation_metrics.csv: 541f111df31197e8d9c151c4f37922ff48858761e629a66299b7ba0ab6e4a953
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\validation_trajectories.csv
+  : d2aa810425db1eda25ae8be3d0172cec7be41ec1dd66109d94bb4ee474f862fd
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\training_wind_preflight.csv
+  : cb0e491125c30c56c532550e3c1855f117272ae3fb5dff390e59dee7a375eae2
+  .\optimization_control\experiments\20261029_speed_nstep_control\bank\manifest.json: 5d3e4a8d500a120d98d1bd966c62e9ea99bbfe19db481e30f2055915208e1760
+  .\optimization_control\experiments\20261029_speed_nstep_control\git_delivery.json: 9b9529a519c1c602d7e306e67723a070504b5252a09b476d8fd60ab19b4560e9
+  .\optimization_control\experiments\20261029_speed_nstep_control\output_manifest.csv: e00171f8efb7c86c05a2dca34280d761d328ef78f8e95f1f4df809929622f096
+  .\optimization_control\maddpg_wind_farm\algorithm.py: ee89948d8d98aa33b9b4ee20675ccc588c2005a6f8bec01b41cd555ba271febb
+  .\optimization_control\maddpg_wind_farm\anchor_algorithm.py: f5033e0823601c10abd65c1ec375cddb37e665cadf506b657400745d7cef7b50
+  .\optimization_control\maddpg_wind_farm\anchor_closeout.py: ddfd451f4f67567e8ba438fe12332a2cce9c3a78e1387f25c8e11b8c998505ec
+  .\optimization_control\maddpg_wind_farm\anchor_closeout_diagnostic.py: f2fb4767b0a784e03015befe1e98da39a44c4b962aff91cf27444ef84d9e8e35
+  .\optimization_control\maddpg_wind_farm\anchor_closeout_figures.py: bd570081e17b0dc990ab2da83aab0e93290eb9ef59c6f3334d5159720c7b53f0
+  .\optimization_control\maddpg_wind_farm\anchor_closeout_final_checks.py: 753af09f5f99729330d6e8f60612fa47398b64458c7dc2e93b13a66ee68091c1
+  .\optimization_control\maddpg_wind_farm\anchor_heading_figures.py: 1ae15c8165c72ba2cad26eb52ed368d3967f42204e354cbb5088bdff4aca9cf4
+  .\optimization_control\maddpg_wind_farm\anchor_response_reference.py: fd97affc162859804552600a8466fdc07ec4ea95c0f8c88ab3e2f86a4f8b0da1
+  .\optimization_control\maddpg_wind_farm\anchor_takeover_precision.py: 4204c235a26172caf17caa965ef90dbc64c4c3b9293829cb24f5af058665184c
+  .\optimization_control\maddpg_wind_farm\anchor_training.py: a9b0da31ca1c21ec61610abec59d23796aaad3c0f4c3c4c0892fc9786a9ea33a
+  .\optimization_control\maddpg_wind_farm\audit_handover.py: 4b0c63534ee361edfe197fefbaf7e4ab1fbeb4b263451a77ac100315dea6b59d
+  .\optimization_control\maddpg_wind_farm\benchmark.py: bffe236acf9cdf47ddcc52cbd3a5aeaa0818593006b6b0e39a7054027b0d15a5
+  .\optimization_control\maddpg_wind_farm\controllers.py: c5696565c783487d365c7306002e0c7b259b01027a7d4f50453e95ae4df63bfb
+  .\optimization_control\maddpg_wind_farm\diagnose_fixed_pinn.py: 81b8bf86e09c8363ab70ed6db8679cca973a4ff361ced46ee76a856c0234265e
+  .\optimization_control\maddpg_wind_farm\diagnostics.py: eeeb0a19a00e9922ade5237ca543600382f1490ad67e274cbf50205010f8c68f
+  .\optimization_control\maddpg_wind_farm\fixed_curriculum.py: 624bd25fe43e4e3c2b21b9da78464a4844348f238d21e433655d58d9d6c7a63b
+  .\optimization_control\maddpg_wind_farm\fixed_pinn_demo.py: 74b040df4c6fdd4e31199f24400b79bed5e785d7c4aa77f40ce83215582ab6df
+  .\optimization_control\maddpg_wind_farm\frozen_speed_algorithm.py: eab8d8091174b268a5d37d97a1dfcc5b9f35224edc204e27cfc528b20a7db0f8
+  .\optimization_control\maddpg_wind_farm\frozen_speed_delivery.py: 9e44653fe14d680f068fb2a587e5c90b92b73c20d3306fe6b428d9d33460bb02
+  .\optimization_control\maddpg_wind_farm\frozen_speed_figures.py: 908393906b2971d72ad8a4e271e23102b3fa54a5502f97dbbf9757df849f2d19
+  .\optimization_control\maddpg_wind_farm\frozen_speed_training.py: d576ba89edeba83001b177c0f4cccdaf9f8da477414f1490a326127f900e7fc3
+  .\optimization_control\maddpg_wind_farm\frozen_speed_verify.py: f364cc1b80ddd538e47053d47046c05125f523a1f5fb4e49624ffe9e62c43278
+  .\optimization_control\maddpg_wind_farm\handoff_replay.py: f9900f7c746495eb74e937061137ac8a51699783c1e5c1c64b5dda0178322948
+  .\optimization_control\maddpg_wind_farm\inflow_workflow.py: 48265c9d6959a9eda4e44f88485c86fa1e1691d8d1b6bf42c71e3f706bdbb57b
+  .\optimization_control\maddpg_wind_farm\joint_distillation.py: 71db4c891b7c4852fa3bbea4477f971fe141e46678b56a5cff37d938bb40d22e
+  .\optimization_control\maddpg_wind_farm\midterm_best_cases.py: fa7094c2c7e401d1ce4209fe625fd16c77adff232935019c4ee94117185f656e
+  .\optimization_control\maddpg_wind_farm\midterm_figures.py: 967d06d1927dc81df5b6b6ac58c8fc9a7d2eae7fb154bf302a6d987d0c72389b
+  .\optimization_control\maddpg_wind_farm\mixed_stability.py: 71cf144b32f0c306b950b0efff2daaeabebe13c01002a65ee272f8ae6ba1a38e
+  .\optimization_control\maddpg_wind_farm\nstep_replay_core.py: 20f979700fcbe2f2aa479148fb1c12e2095431aa8da199fa47c704f79e44e8da
+  .\optimization_control\maddpg_wind_farm\portable_random_replay.py: c759fa1efce82d3da5badbd4def19c79b6f323813408ccd498c0d8d4bd5de5a4
+  .\optimization_control\maddpg_wind_farm\progressive_figures.py: 639fb0ee94abf7bf2fee71346b77e4926b6d1c50eeb5c240821462ccb4576101
+  .\optimization_control\maddpg_wind_farm\progressive_random_control.py: 21ae98c90ddfbe90a4fdcc0a88b445951a83b096c9e8f2d2d4be2ac64625fbe8
+  .\optimization_control\maddpg_wind_farm\random_wind_training.py: a1085f37dcb9bf9435da03f66bd2821bb4e4a305455f3c4ab499503453608917
+  .\optimization_control\maddpg_wind_farm\reachability.py: e6f3b581308a4ef9cae6087845a8a6658a704007a9d5da593c60995d83d7d3ce
+  .\optimization_control\maddpg_wind_farm\residual_algorithm.py: 0e88d7bc4480244cd300c0c20801ef114b3bdb12aa6df7e26c0c1b6e5fd0e497
+  .\optimization_control\maddpg_wind_farm\residual_figures.py: 02f003659e44ae3c77e29277e429881b8d925f3f902a928827492772a61b9da9
+  .\optimization_control\maddpg_wind_farm\residual_random_control.py: c45ae99f4df9b6bdea255d1d12afb20e0aba35af3699f9733e6665177e9685ef
+  .\optimization_control\maddpg_wind_farm\residual_stability.py: 6057ba3e5501f4b77aa1336c9650b450ce4b172d8fb8e5c346ef4e33f71d3188
+  .\optimization_control\maddpg_wind_farm\residual_stability_diagnostic.py: bc3e73ad34f7c3025c3c3cd7fe60c02e001dc33cb5b2193931119de89e5c47ac
+  .\optimization_control\maddpg_wind_farm\retrospective.py: f73b690c697d76c24b4ac442f21ea629d0661ebb6a62880b62168b22645327ba
+  .\optimization_control\maddpg_wind_farm\speed_nstep_algorithm.py: a85b3f2a134c64a8403bfdf556f01eced1c81f8b12b635f724df9303338d5274
+  .\optimization_control\maddpg_wind_farm\speed_nstep_audit.py: 753cae3a38d23f3f95817061000c83d309ab5cfff8d01a8241b7141a7ebaba4a
+  .\optimization_control\maddpg_wind_farm\speed_nstep_engineering.py: a620c11c1ee60978996c13d82413a1fbb424c48a962eca8b8a1e48dc4dbd6e18
+  .\optimization_control\maddpg_wind_farm\speed_nstep_training.py: 148612633392fa641d99edd14c48c387a9b6a6a792af6cfce06adff67fab4451
+  .\optimization_control\maddpg_wind_farm\speed_value_analysis.py: 9203ec2c369763573f69af2d408c52c0f8c98fcc30df858f6d9fd2469ddf9c0e
+  .\optimization_control\maddpg_wind_farm\speed_value_diagnostic.py: 0160a0fec523727fc986c6d74b6c8b663f5aa33a664cbde7fd7466d497da2c7e
+  .\optimization_control\maddpg_wind_farm\stable_workflow.py: 407a37cc2e11f4f4b3cee40a19fbb4f57ffafe06ad1eadaeec8298d8f6c52cb5
+  .\optimization_control\maddpg_wind_farm\tracking_study.py: c5d125b6f0e820975a4f020d20f52f55e4e381ebf5a000f076f504a7c6d0a5c3
+  .\optimization_control\maddpg_wind_farm\value_baseline_diagnostic.py: 778c04952f1c587e93ffe45f2a06a5a32911eaa254ff4a573dba83ed622bfad4
+  .\optimization_control\maddpg_wind_farm\verify_anchor.py: 1f1ca73b8c3b3ac984c981e143924e21246acf8d52fe7875604b4bff5257d58b
+  .\optimization_control\maddpg_wind_farm\verify_joint_distillation.py: 9218dac8a1c44161042e6dc958dcc9f9003cc87d376ed67533ab902a3e8fdaae
+  .\optimization_control\maddpg_wind_farm\verify_progressive.py: a78be4053279f8e06274ab489319d44ad282c8e71e602be4adc0a91b6297a412
+  .\optimization_control\maddpg_wind_farm\verify_residual.py: c924519d9abac8b2bdec0f5a09fa5ca454f2d1ab798804f2ed7d65a86581b5c7
+  .\optimization_control\maddpg_wind_farm\verify_residual_stability.py: fddf19a802ca743317fda778fbed761ee50612767186e2ed44ec650670b135c2
+  .\optimization_control\maddpg_wind_farm\verify_stable.py: 9591c029aba6bb15aebb705dbd70c0dee82559c44a6a3cbc8c9b59bb3ca3b022
+  .\optimization_control\maddpg_wind_farm\verify_workflow.py: 442ad722b22c0407edf3eb419354c862acc16569d0b85ffc49ae5e96e62c47df
+  .\optimization_control\maddpg_wind_farm\wind_pinn_curriculum.py: 0c3ca5aa93781ebf5fd05fce1f5dedcbae4e46fc62d281f61def16ae281d05be
+  .\optimization_control\maddpg_wind_farm\wind_pinn_demo.py: c1d78a658b09a322dd4cb90b03bfa3fac2ddb3930f0f56e50f14517aecdcbee5
+  .\optimization_control\maddpg_wind_farm\workflow.py: 37bdc49828d8008ea238d86cb849e941d66cc5db221878dca18b6a406ebe09a2
+  .\optimization_control\maddpg_wind_farm\__init__.py: a6a5747834cc2db1e24109f8d64322a6d8088bd5ff6d3551c2fae838b8075e6f
+  .\optimization_control\environments\farm_inflow.py: 9d34a780bead6f7bfe651df52b500363808a14ee5515e831b420ce65ea65c92f
+  .\optimization_control\environments\maddpg_farm_env.py: aa50e20134e1767b9b2df8afe4bfe8ad278eef027271edd94e460eea83a008f7
+  .\optimization_control\environments\mock_quasi_static_plant.py: ee28394bf253a714a86412079a517f77342043f9541deea845c52fb22d2cafee
+  .\optimization_control\environments\pinn_adapter.py: 45e28c8f5c6fd37c1ec13e1e2806629e35f6c0a372829070dc7555dab00f93df
+  .\optimization_control\environments\plant_model.py: 2a111ff0655f5af61bd2f3074e28e4c67de946a94a9feab410936014de356854
+  .\optimization_control\environments\quasi_static_wind_farm_env.py: 45f39149a663b0a148dcc2802b5d6f035db0f48c6ff9a49f9401ba20ed56d114
+  .\optimization_control\environments\simplified_turbine_env.py: 8e7d1fcdf5ef6a7e38808543dd2287c6629f8b1051d3836d7b9ef99576e1c5fc
+  .\optimization_control\environments\stochastic_turbine_env.py: 878a48a0c09a611cb42c6b166a77441f1f64f3d24116d240f565776c3f28d620
+  .\optimization_control\environments\teammate_pinn_backend.py: fc352eff2bea97a49bb015d7ebd174ca7fd3fe91d45bd358b314da4be5d5774c
+  .\optimization_control\environments\wind_generator.py: 0b91f8474077de49cb8477537c2b9b6910767228f472c980b5839f01213518a3
+  .\optimization_control\environments\wind_pinn_backend.py: a0ed3821aa308c14bc10370db328ad9d9c578a0223a41883ffeae7325ee5186e
+  .\optimization_control\environments\__init__.py: 626cc85c95eedebaaeddd1cba540e7083e2c43a99275ff43de424c4c0f25941d
+  .\optimization_control\utils\action_mapper.py: c2652387035770a14f3d87808384589b7a09b0e9ff6d4865a4909daadce38c9b
+  .\optimization_control\utils\actuator_model.py: f9557caa229e2be4992034712914f21fe668f9cfb678d38c5ba8467efe05c3cd
+  .\optimization_control\utils\reference_power.py: ff837c86e325e1ff42fe845f46f74dafd30ca44c21db2d36eeae2baa3fc7ad9d
+  .\optimization_control\utils\reference_schedule.py: 1059e2dfb175630ac3d39aae4c626446ffac4147157b39815490b2c9e308df23
+  .\optimization_control\utils\reward.py: 0fdd6f5147800a21b64110ce820329aa711eb1160c1010a5d409ecedd05bcf65
+  .\optimization_control\utils\state_pipeline.py: 22a82caa1600eb15771d63c21f37e4613b91fee050414abcabc8e64238ed062c
+  .\optimization_control\utils\__init__.py: 625f8e4d4b8052ba03a41fe70fcc972568931b645a1734666028a1f5abb9c12b
+  .\optimization_control\maddpg_wind_farm\configs\speed_nstep.yaml: 1ac66b3e1c261e2751ffaaa159f6c093fa25550946c4dae45a495aacbb67ba73
+  .\optimization_control\maddpg_wind_farm\SPEED_NSTEP_PROTOCOL.md: d5bf5f0a56094bb62cf6b6660b5e5a7eeceb2af26e456b7ed6c48cc0ace0f1f2
+  .\optimization_control\tests\test_speed_nstep_training.py: bd267a13f4ecabeeccd39d20cae685dce1daddc22322738c7acc897b1c66e900
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_0.csv
+  : cf6eac0699233465121617b7a6bd923f260d0098115d6a9b04d10a29a410d69a
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_0.json
+  : 92bdb2f0d2301f84eb356573b5c37d2c2dc36e265c322683dd9ae2732bc726c1
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_1.csv
+  : 3d34fc1eacf8330bf63178990584f8a870f6b23b75263b1b03ccf50c94f1d677
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_1.json
+  : 46f9de73c8eb7c837b954ac470a1c6b904b65748810bb8a4981462c3ab2e63b6
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_0.csv
+  : 4cc55a5ef451f3d76d46094ed0eb46fac2e6f78393f68352b422e916bd4caf97
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_0.json
+  : 72926dde4a068d875bb10009afd81d2dd842002588a84d395fe962b8d294082f
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_1.csv
+  : a58a89d83e544cff35457916e18d8927e01909fc4832f460e99a997f839f639d
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_1.json
+  : 6615f0c4c9cf20177b6354553de0894a81afb8e0c64abd1a35f269a1b8e88141
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_0.csv
+  : 67662c437c7ad39c29ea7083c9a4a1f6612859a26d49931bd4a5560555958ee2
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_0.json
+  : f600be3307bee6f1864b55527ee65b3ae325da1c085885d2d2d956bddb46bdf5
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_1.csv
+  : 6a4bbe3dc1d21357778d470913fbce01266980ba72025ee8e10b99342ff79243
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_1.json
+  : 5b1a8125a879790423a38ce6c1a9ada39ca90d341283425989ef32cd792d7144
+  .\optimization_control\maddpg_wind_farm\causal_speed_search.py: 0db7f25c3da04f2f3e604678c1775b32a1476b23903641e5d89b38f815ec1d0d
+  .\optimization_control\maddpg_wind_farm\causal_speed_report.py: eb4474e79094c0b9b1dc2383609a523135318bb112a32b7586d6bd339717195c
+  .\optimization_control\maddpg_wind_farm\configs\causal_speed_search.yaml: ef8cf787a1f97ec13b5bb4a3cee2c71ba31ae64ca37a9ddcac825e010612b70e
+  .\optimization_control\maddpg_wind_farm\SPEED_CAUSAL_SEARCH_PROTOCOL.md: bb5c0648e4f1654d7753e91e206327cfab5e53f34332aca5ca9f3e5035a3c92b
+  .\optimization_control\tests\test_causal_speed_search.py: 81f8ac5b5708a86b78f3e4097ef82782b67e10610cdf7fe3bfaddc2033123f3f
+  .\optimization_control\experiments\20261029_speed_causal_search\config.yaml: 9937435636a0f91699ce41dde3c75153a9e68b2372473dc9d195caa71e5d4d8a
+  .\optimization_control\experiments\20261029_speed_causal_search\metrics.csv: 212c071e5549f9f95595906e1cf9854957832875c8172471a4b4c57ca6548546
+  .\optimization_control\experiments\20261029_speed_causal_search\trajectories.csv: a9cfa98b3104343c067544bfa275899c8a0985cd32e102112f1122b511c9d959
+  .\optimization_control\experiments\20261029_speed_causal_search\bank\manifest.json: e4358b3ad12888f5793eea6c9ae9a2730a76cafc4892c0cff0660692adf4d66b
+  .\optimization_control\experiments\20261029_speed_causal_search\budget.json: a2f6a3e2330503d30fe1be0e31a7aeebee9d7c7da680f017a5993f85a2270423
+  .\optimization_control\experiments\20261029_speed_causal_search\git_delivery.json: e08694cb9b9ebe0ff4c9db875c72b5384e0e4d6955b8e44e2126164fbb17a44d
+  .\optimization_control\experiments\20261029_speed_causal_search\output_manifest.csv: 4da5b0b8829e11cfdb2c4fbb9f50e5f991a3490d2dd3fc0e7447244c7892f933
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run0_stationary_2600000\search.json
+  : 515ec1c86238b46a63d432ea3d7f85319b6685621a2a5f3b6ad65b8c25b52fa5
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run0_stationary_3800000\search.json
+  : 447a96f7b4d030f596926718743e6eff2797b053a54a1387093dddc8536330cf
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run0_ramp_2600000\search.json
+  : f41ab368523028092358c3ff63c345cd2e5f5760f6fcc3e77c387e2048d05ab9
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run0_ramp_3800000\search.json
+  : c33888237000dfeb12a58aaae0840d09d40c9fa51145d3afa4770d0b4406c98c
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run0_gust_2600000\search.json
+  : 1e2865fcc1abb3bf596f0fe69d46d143c98c9db5f54fa53435452e0ea7b8d19a
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run0_gust_3800000\search.json
+  : 341430eed2ae414f04811fe13307b5200e29778e84a3d791dd26d13f76e26036
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run1_stationary_2600000\search.json
+  : 39933c7e4fc2dd4bcfbdda5a8131290b4c609bba66d1e05bf1d7c454817f2cdf
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run1_stationary_3800000\search.json
+  : b6e4f7229ec6915fe6ef805005943a3a27919dc32f2d321c5bcc29babd7ba6b1
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run1_ramp_2600000\search.json
+  : 581d269c253bf8f3d3cf192dbac6bcab4c7589fc67b2984bce8611eee235a11b
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run1_ramp_3800000\search.json
+  : 5bd3ab8c82e908f726afeeed78c2e8334e2bf8d0015c0416df3811829a72b16c
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run1_gust_2600000\search.json
+  : ca34b2e5cc04e134b62b905f40adb6c69102c413e64d6282e680d2b794e32186
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run1_gust_3800000\search.json
+  : b680cbb1b43089ee33690abb889adc153e1d6879b7f8aef6d3de3d85f136c722
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run2_stationary_2600000\search.json
+  : 6cb6a8a67c3675fdefde5d2d35fe9eaf1338725b2c054bd3ff059500898c16b0
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run2_stationary_3800000\search.json
+  : 7c4504e11b392387cdde460708b422f71e06abd829f16e9a9310f22788c75064
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run2_ramp_2600000\search.json
+  : 23f7e2bcde90030bcbab47e2e05f8cbaf08aa3102298c4374d1352f348a916e7
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run2_ramp_3800000\search.json
+  : 8bdc0295943f9915e211c18eef1fe4b4b240c4b4b918bfbb7ea5ae718d705d65
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run2_gust_2600000\search.json
+  : 0a6306c1e81bc6d94392488f683aac91c94ede028c406d19a589199b30c19058
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\train_run2_gust_3800000\search.json
+  : 0c64d0d50c844fa7377435ba81aa96cd7a9c39838f994e95cc0c86554b9a7280
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run0_stationary_2850000\search.json
+  : 47e74733e07ee532d7fab8340dab815d7bc98a7df31e9f57efd7a59d0428dfba
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run0_stationary_3450000\search.json
+  : db13096efc1b767679e6df934c54d24b7344c4253f1417d1ff26869fcd68bc94
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run0_ramp_2850000\search.json
+  : 51ce003be0518b3e915cd225b2418fc01773b49dba153dfffd196d44fb5acbf1
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run0_ramp_3450000\search.json
+  : b3371a806fe91d35485d0198532cc07ead7da313fbdfcf449a3755671b46fa26
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run0_gust_2850000\search.json
+  : 0e2d89a38a9e5cb4619366860efae3c5be402c6ad0d290be70b216dcfb8e6865
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run0_gust_3450000\search.json
+  : c20b975dee1e3cedbecc840386b26ff44b0e83d33a14bd123bc3cc69cc20bc70
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run1_stationary_2850000\search.json
+  : 15ea7b3deff486e9047c976b4e58036e4738a41e67ef0c2e8599b242e5f107a3
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run1_stationary_3450000\search.json
+  : 82aaf8a62e8a9f10594d79ead03ef857876619477ef663e3f17ff1da946206a8
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run1_ramp_2850000\search.json
+  : 9472ffb0d487b9da5ab7fa38a341b473bf15a59571aed9cf8fd84e17d194d32f
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run1_ramp_3450000\search.json
+  : 546ba1d0131f835b10ae51eb06ce6de0195902f261acca31e61de8ecc7013b7a
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run1_gust_2850000\search.json
+  : 2a2638e24edc945299c7c4b6a38b697688f24e93effa2d0fc3062517bf3196b0
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run1_gust_3450000\search.json
+  : fd75422c6f93e6007a3fe40250a72b37d2a1dce9ff00ed117da38bf5745b5759
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run2_stationary_2850000\search.json
+  : bce060f34547146a9d858ef96f126f9cdf0365cf39c80677ce95c628713621d0
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run2_stationary_3450000\search.json
+  : 35a2ee926e5e6a293497a0e27c65c1dda960c9b5e69b4188ac28cae5c58da369
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run2_ramp_2850000\search.json
+  : fd57b81f2ae10359c6633f3ae6876ef3c3ce179b5c49e250cbf8f80e02f93024
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run2_ramp_3450000\search.json
+  : c326cc588be8c124e17636debb5d942eb006c1a533daec7ffd99fd2a9ca8cd95
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run2_gust_2850000\search.json
+  : 449cda92247c05eed4a56c7c9851435269e3efccbdbecc113338c7b58854a9a0
+  ? .\optimization_control\experiments\20261029_speed_causal_search\cases\validation_run2_gust_3450000\search.json
+  : 220423eba1981f0b73e69c7f83e40226e6bd6acdb391c7fc19b38abcdbb9ba03
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_gust_2600000.csv
+  : 05bc00a40f5eec9dca652af6ad3fafd00e93649e32f77220ddeaea70242c21c8
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_gust_2600000.json
+  : ff2f842624cd5ed26740cdf6b049d9d8eb8ace615a7b8a2ebebd3806ec973be5
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_gust_3800000.csv
+  : 3501008a9f8103150b022841859ed231e10ac1cc6e83e5409184e0b413f90d86
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_gust_3800000.json
+  : b022b9716318431ea109e56348238b022487a2f263dc4956928f7a4409dbcd70
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_ramp_2600000.csv
+  : bb821dbdb3704afe99328e50bf2ab4edf18fa15f65e43c5038df06e55dd6b205
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_ramp_2600000.json
+  : 77e5bfe63c569c85637785273d342bc5f4b3cb06634dc743e38be8b416aabd1c
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_ramp_3800000.csv
+  : 3a943a180bc245b39c3de2a4881abda119dc0dda43a1022e825d2bdb223cf54b
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_ramp_3800000.json
+  : 15147212bf95f5027cc5105f71f3a0d817f36aca81d81868e9476cfe17478091
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_stationary_2600000.csv
+  : 46b7ebc5cfe44441052131226971513b9398b02cf5d202f3659e9b5c88f986d6
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_stationary_2600000.json
+  : fbc8e9a76d7c97ce5b9e3b18772acb1f4699ef3f96c07d66a5ac1222b0f8f7d3
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_stationary_3800000.csv
+  : 064e5a36dab50c0f564e62043644aee776829d3bc41576ef39ac7bd699b67179
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run0_stationary_3800000.json
+  : 79979ae82c3791ea1a44333b7a61acead4e02082a5e27d76a74a665409beb438
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_gust_2600000.csv
+  : 57b181e1cbd22e5831e58f00645b310bdefce64da19e6e433860508e80cb0b29
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_gust_2600000.json
+  : a056de5d9704a6f83fd5172c46d249b75e63209f348b64011904b98dd0efb27c
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_gust_3800000.csv
+  : 2e481bfdf9df824abd9d6b1ae2ee5deb863d44fbb95a9d97c81a8df1cbf5d2af
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_gust_3800000.json
+  : 85c3bc5d233722248ed5c9a87a9fb9dd70df19b0bcaa2cb8f95f6a2e65962cd0
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_ramp_2600000.csv
+  : 5e6619f7558c9ec4aae55fd9bc35b715bc22256d264467a11681b63175a7fbcb
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_ramp_2600000.json
+  : 74f454584e1c49992ebf8b3a7a724a0224d09da18acfcf0fcdab667ff0682147
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_ramp_3800000.csv
+  : 9abb71237f97d0468fa2c6ba03029984a9f38d2f9949a48e0d75b062b0fac9f2
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_ramp_3800000.json
+  : a12994d545ae1d3ab1ccc9db0608f6a2f42022c4f39e6de9b4346c05b9bee181
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_stationary_2600000.csv
+  : b57608241918a699f430f983d0c9204bb0d53104021ef93820342b350aaa05e5
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_stationary_2600000.json
+  : 1fbd15c1bb2f192c0c736aae1b2c62487fe12b564a7f07af132d67b165dbaaff
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_stationary_3800000.csv
+  : 01e89ea7d69bc804a02f9c10f501650e3c4cce340003d7cee6168149ffe07dd9
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run1_stationary_3800000.json
+  : 09616b171131f25c6d40842061c3f20f5472fe494a520742f461150f2a029ffd
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_gust_2600000.csv
+  : 2a69df4a7890851c43843b89c7afb54bddcee0686f42f18e84b6e661af51dbd6
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_gust_2600000.json
+  : c747fd487b4bb42125935b6ef890282be75c35f8ef08e4dc650313f4e7595ce9
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_gust_3800000.csv
+  : 1a4d0b7ab4bce17d10760db394070d0df5c23d3ae137f4c3c0b6ceaf5ee53ebb
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_gust_3800000.json
+  : f64a3f43a8d8699d11c8673e265e3577e53310917efe56361bac61dafaa1da33
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_ramp_2600000.csv
+  : 9c64063ec1c0933230c6026031b8a275c1e6f50459d63d906d9f70a30ef59070
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_ramp_2600000.json
+  : 8c79e97c56981209fc0a097809c23cea11390f7253770017152d9af3286ba2c4
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_ramp_3800000.csv
+  : 30e32350dc2deae22d20f4ee5cc977c9f2283fad8c568a4edab319d0f99eb799
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_ramp_3800000.json
+  : 81d0ed58b7869c4dcac59dbb971b81c111cf2a6643bd191f46d0058888fcb85d
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_stationary_2600000.csv
+  : 4320e1cadb17b7bd8825ba03611787a8030331dbef3bdb781e25d485c6ce8f58
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_stationary_2600000.json
+  : c5f8223ca63a6d2e07e46a447c4b24474ba0973b3c9e802fe4d9450939cd3c10
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_stationary_3800000.csv
+  : 159eec4b013c7327aa3b5c76b5196de5bfddb008b4f86c6171566dd7ab999a85
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\train_run2_stationary_3800000.json
+  : 88dd495e97d9ff4087ad22bec6892789d7a5806bf86c87aeb64208a7f457f180
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_gust_2850000.csv
+  : 67662c437c7ad39c29ea7083c9a4a1f6612859a26d49931bd4a5560555958ee2
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_gust_2850000.json
+  : f600be3307bee6f1864b55527ee65b3ae325da1c085885d2d2d956bddb46bdf5
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_gust_3450000.csv
+  : 6a4bbe3dc1d21357778d470913fbce01266980ba72025ee8e10b99342ff79243
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_gust_3450000.json
+  : 5b1a8125a879790423a38ce6c1a9ada39ca90d341283425989ef32cd792d7144
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_ramp_2850000.csv
+  : 4cc55a5ef451f3d76d46094ed0eb46fac2e6f78393f68352b422e916bd4caf97
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_ramp_2850000.json
+  : 72926dde4a068d875bb10009afd81d2dd842002588a84d395fe962b8d294082f
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_ramp_3450000.csv
+  : a58a89d83e544cff35457916e18d8927e01909fc4832f460e99a997f839f639d
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_ramp_3450000.json
+  : 6615f0c4c9cf20177b6354553de0894a81afb8e0c64abd1a35f269a1b8e88141
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_stationary_2850000.csv
+  : cf6eac0699233465121617b7a6bd923f260d0098115d6a9b04d10a29a410d69a
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_stationary_2850000.json
+  : 92bdb2f0d2301f84eb356573b5c37d2c2dc36e265c322683dd9ae2732bc726c1
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_stationary_3450000.csv
+  : 3d34fc1eacf8330bf63178990584f8a870f6b23b75263b1b03ccf50c94f1d677
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run0_stationary_3450000.json
+  : 46f9de73c8eb7c837b954ac470a1c6b904b65748810bb8a4981462c3ab2e63b6
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_gust_2850000.csv
+  : 67662c437c7ad39c29ea7083c9a4a1f6612859a26d49931bd4a5560555958ee2
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_gust_2850000.json
+  : f600be3307bee6f1864b55527ee65b3ae325da1c085885d2d2d956bddb46bdf5
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_gust_3450000.csv
+  : 6a4bbe3dc1d21357778d470913fbce01266980ba72025ee8e10b99342ff79243
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_gust_3450000.json
+  : 5b1a8125a879790423a38ce6c1a9ada39ca90d341283425989ef32cd792d7144
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_ramp_2850000.csv
+  : 4cc55a5ef451f3d76d46094ed0eb46fac2e6f78393f68352b422e916bd4caf97
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_ramp_2850000.json
+  : 72926dde4a068d875bb10009afd81d2dd842002588a84d395fe962b8d294082f
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_ramp_3450000.csv
+  : a58a89d83e544cff35457916e18d8927e01909fc4832f460e99a997f839f639d
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_ramp_3450000.json
+  : 6615f0c4c9cf20177b6354553de0894a81afb8e0c64abd1a35f269a1b8e88141
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_stationary_2850000.csv
+  : cf6eac0699233465121617b7a6bd923f260d0098115d6a9b04d10a29a410d69a
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_stationary_2850000.json
+  : 92bdb2f0d2301f84eb356573b5c37d2c2dc36e265c322683dd9ae2732bc726c1
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_stationary_3450000.csv
+  : 3d34fc1eacf8330bf63178990584f8a870f6b23b75263b1b03ccf50c94f1d677
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run1_stationary_3450000.json
+  : 46f9de73c8eb7c837b954ac470a1c6b904b65748810bb8a4981462c3ab2e63b6
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_gust_2850000.csv
+  : 67662c437c7ad39c29ea7083c9a4a1f6612859a26d49931bd4a5560555958ee2
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_gust_2850000.json
+  : f600be3307bee6f1864b55527ee65b3ae325da1c085885d2d2d956bddb46bdf5
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_gust_3450000.csv
+  : 6a4bbe3dc1d21357778d470913fbce01266980ba72025ee8e10b99342ff79243
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_gust_3450000.json
+  : 5b1a8125a879790423a38ce6c1a9ada39ca90d341283425989ef32cd792d7144
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_ramp_2850000.csv
+  : 4cc55a5ef451f3d76d46094ed0eb46fac2e6f78393f68352b422e916bd4caf97
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_ramp_2850000.json
+  : 72926dde4a068d875bb10009afd81d2dd842002588a84d395fe962b8d294082f
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_ramp_3450000.csv
+  : a58a89d83e544cff35457916e18d8927e01909fc4832f460e99a997f839f639d
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_ramp_3450000.json
+  : 6615f0c4c9cf20177b6354553de0894a81afb8e0c64abd1a35f269a1b8e88141
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_stationary_2850000.csv
+  : cf6eac0699233465121617b7a6bd923f260d0098115d6a9b04d10a29a410d69a
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_stationary_2850000.json
+  : 92bdb2f0d2301f84eb356573b5c37d2c2dc36e265c322683dd9ae2732bc726c1
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_stationary_3450000.csv
+  : 3d34fc1eacf8330bf63178990584f8a870f6b23b75263b1b03ccf50c94f1d677
+  ? .\optimization_control\experiments\20261029_speed_causal_search\bank\validation_run2_stationary_3450000.json
+  : 46f9de73c8eb7c837b954ac470a1c6b904b65748810bb8a4981462c3ab2e63b6
+  .\optimization_control\maddpg_wind_farm\midgrid_speed_search.py: e0fa3c66a2c5b0e501854a650152f782dbdd54e166a86a529351d83d5860038b
+  .\optimization_control\maddpg_wind_farm\midgrid_speed_report.py: 25058e96acca10320a0666412bf2d1f12c11cbd088b676de9e0af5377aeffaea
+  .\optimization_control\maddpg_wind_farm\configs\midgrid_speed_search.yaml: 5d0893152af305b15327f7e7b4f734771539cbc4f91ec797234d35ebe5a57426
+  .\optimization_control\maddpg_wind_farm\SPEED_MIDGRID_PROTOCOL.md: 1338b2159df0c61f37075a1c9ac8a2a91a8252612d6eb9e9030b919cfb2e5dd3
+  .\optimization_control\tests\test_midgrid_speed_search.py: ccc5765625dd498ca0f8663361d6e26785cbad99933c5ca75f00938687890a74
+  .\optimization_control\experiments\20261029_speed_midgrid\config.yaml: 715ff0f758a8c18bf8103ab93a88f1a773e37885118cf318f2a87d160a74b37c
+  .\optimization_control\experiments\20261029_speed_midgrid\metrics.csv: d8b1a4ba184e528fd68c6b77af5f7a897f81462aaba7b09407d37a351bc2e937
+  .\optimization_control\experiments\20261029_speed_midgrid\trajectories.csv: beac81b0128599cbb2c1e56844d0d95b3336cd00f688350a836c3354d56883a7
+  .\optimization_control\experiments\20261029_speed_midgrid\bank\manifest.json: e4358b3ad12888f5793eea6c9ae9a2730a76cafc4892c0cff0660692adf4d66b
+  .\optimization_control\experiments\20261029_speed_midgrid\budget.json: 641bd629f2a03540b1c04be2c3defa68e651b2dd8352197db0d00893d002d920
+  .\optimization_control\experiments\20261029_speed_midgrid\summary.txt: 5cc549c4540a808c10930f30e38546793f801215e1bc5c6284e59d636051f485
+  .\optimization_control\experiments\20261029_speed_midgrid\git_delivery.json: d3957b77281fb2402abb665d17bd3a0ca960ee6f1da694d6f187f1716fea603c
+  .\optimization_control\experiments\20261029_speed_midgrid\output_manifest.csv: a3feb7eef2ac2533b7a4442c6f82fe34fc2d23616e454e8d629e6cc4e60d7304
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_2600000\plans.json
+  : d3afce1eebb673aa54730541c2b58bc2525f346224d6917dff127166d9f803b9
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_2600000\current_world.npz
+  : c359295ab20304079e267ab3550c97dcf2e9e7ad24428464871e50199e4abfb6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_2600000\grid17.csv
+  : 1a594c60c5b566c9db4c6fbb00fbbf6db2fc8e1c0bb34f9a796200f3019a1dba
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_2600000\complete.json
+  : 3d8d083252331c1f3d5715832bec19acff2615de17a6f0b8a13c544f48af6bca
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_3800000\plans.json
+  : 4d7c0791124038242d118454f588bcb544645a5f59c25f6141eab622766a83e6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_3800000\current_world.npz
+  : 4fe2a0a7c643ef7ae2547b7cadb67c644885ba123d19320692d472a140b738d6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_3800000\grid17.csv
+  : 520717c0fcd455e69e9f87db3fdfb40ac15fbe9c56a04fce8a1667bc0d08a509
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_3800000\complete.json
+  : b27f649a2b41a628e3dcb9fa4378a97a4dac15fc281340588724212a7950d150
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_2600000\plans.json
+  : 34dfef6b116d918d414c4dfa479706e0edb147408cb0cd2917331e22315583b3
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_2600000\current_world.npz
+  : 58ecae0ebbdfccfb4a1475f167c5f1575facd9860a8e7c35f326027192bf1f44
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_2600000\grid17.csv
+  : 4da17b27d0e6b93d83ce6a27dca74e291b72746583e754c0019ba72fc78a3d60
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_2600000\complete.json
+  : e362a769a38428e1c9664f8175c62242eee6b211b7967851ad90508fea35037a
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_3800000\plans.json
+  : b4c0ca10aafed0f8e5ebe726bb28cd72db480619afaebf6420788e857d026de8
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_3800000\current_world.npz
+  : 93ae1f5be9da3287f5ae40bd0749e8e5574db7589a9d3c7a772b50984b87b34d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_3800000\grid17.csv
+  : a38db2d93d6b5d86a67564e75a10d72bdb55561e41c20221950d5fdd17352a19
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_3800000\complete.json
+  : 93eacd9db8c6b89b349d116f4b59c92f09a6f8933ad20ab5f4b618ebbd757ecb
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_2600000\plans.json
+  : 7aa0fdfdbff5dfa4a53efb1f24c5395e788fb8f51b2ca17ef6931f99f5539b83
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_2600000\current_world.npz
+  : ca18b1757592624dc0cbedcac9a14632f794cab2bc09638753f3094dd4ccf72a
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_2600000\grid17.csv
+  : ea96ff67f769d7841315e41de8de0de0a44aad525477df1398471f9e6dbe05fb
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_2600000\complete.json
+  : c76b86861c46983b5fc0076bdec36c656bb992354c1f988397a7f2a81bfdefac
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_3800000\plans.json
+  : 3242d9f5b1a4e2be4cf846bbb8a26ae3c08f5be3a1ed79a44267449cabab13a1
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_3800000\current_world.npz
+  : 841c7442aecc207eaadac46a8ac6bfc695183d3051c133e13c214749cd20627e
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_3800000\grid17.csv
+  : d61635cc83a41ec6c0bea7faee95d6a8c1c631d4a23f0ae9c282167308cfcf7e
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_3800000\complete.json
+  : f585f57a9718fce3e41b41b8d3581c440dd0ba18d12179e95a123033482c331b
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_2600000\plans.json
+  : 79f40890d07783a9e04d32d8442214e27e4f6909e5d94ccff8b1ac760e3bbbb8
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_2600000\current_world.npz
+  : b511dc620ffa6728bbff0f6a2b0997e7271bce28f10654f5c9dbe9e7954d162b
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_2600000\grid17.csv
+  : 98f8e28c1a33438d72417d1215788f9a553e83192125f360f896ddcef588a501
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_2600000\complete.json
+  : 2727ae8318e7bf7c5248a1e116c5bff1d22377ed6077e1970215b5bfcb246f9f
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_3800000\plans.json
+  : dc58020b28a641e08c55e57e1ff901cb31ff237e20c977bd3400e9ea90feee43
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_3800000\current_world.npz
+  : f708739f0881e11b419fa8992b164bd58e5df2918726533cd454535ca5b728e6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_3800000\grid17.csv
+  : 932421cf642a31480b438a4d0da069a4aafc80c4dfdbc0f25ad755ff88e0d524
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_3800000\complete.json
+  : 523d132a1e18511941b7c1bf8883e35325ca261c2807d10528fedb4462e8f490
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_2600000\plans.json
+  : b025a5bf0e329bb9fca2904f58fd6bd2e882523022caec289d272664017ea0b2
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_2600000\current_world.npz
+  : 8a1b1c0f4bcb3d15126103920a2aef1937933000e322b66c28b47fcf64becddc
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_2600000\grid17.csv
+  : e6f454b229436e616e758a2316d03c59caae64ff049db7d0ff72c8284b3ce713
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_2600000\complete.json
+  : 6b470d00a5386ee7dcfdd0322100f0eb2938cbbd0ead146add2cdd10c88b4102
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_3800000\plans.json
+  : 19c2733ec512d45a6f8850ba17cd39691f70b6f844c79ff12596286dbc62dd98
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_3800000\current_world.npz
+  : d83f938890685c3245eedce49a3d3eee388bb8cf19dff82d53a6262934d8935d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_3800000\grid17.csv
+  : 602ada3583b18dfaba4672adf93ec567545e06c02e2b7296a9ecc81a363a5ad7
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_3800000\complete.json
+  : b0a3e6d3fbf9b4dc6949ff50f89f120595e25ab1f8cbff41995b1852d8de7f86
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_2600000\plans.json
+  : 6c680557c954b9060ad281e1404e292f69e2db961ecedb1ecbfc9224557ffaf3
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_2600000\current_world.npz
+  : 8faabb1b713c981cb576a4caab482a476daf01e5775742d23ac01e2e9291fa6b
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_2600000\grid17.csv
+  : 9a38349ce4852e17e9e60e745ca0d3907d1f2564add18974b724be44e58f4297
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_2600000\complete.json
+  : 98a94916458ef9b6185455812c1e408c77ef057aedac2b402f0a11c29031d278
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_3800000\plans.json
+  : e7f4ce6fc1cd0e4d3e22517732af1d7d8c53764073b33c0bdd257f23a57fb711
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_3800000\current_world.npz
+  : 3b5f5673d43f85019176d5521ce20db514638a05bcb3791e8ba81cb317df5348
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_3800000\grid17.csv
+  : 77493e638cfa501a5df363415f3f687bb4b584a2daed9e3cd5dc432fc69e11aa
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_3800000\complete.json
+  : de9703bf747c8cfb38331e7ce231d1d834e0f49f6670385b2d06cdfdf3c8660d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_2600000\plans.json
+  : f00e12b1696a5cdf7cd73b93df2ea77273738db7a65c43503d9230df2fc5733c
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_2600000\current_world.npz
+  : 4d138026bff9df50d7d0f993519982919adb45983e12a06b05ad47395eba9746
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_2600000\grid17.csv
+  : 3e733594c8066af6e07361c7f13f2670c7e1c3368823ade5508a55b278687807
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_2600000\complete.json
+  : 5aa00c5702ca99d30fdba3b3d6e2e4566abc63a61490fd8c4a7449937d82f06d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_3800000\plans.json
+  : 59cd538d6f9fccd82fb4f70417cef22df7206a37e7d8ad093e3fdbee3852abd6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_3800000\current_world.npz
+  : 2e479eea0582da242e7a83a46102436da69aa2b209b4a67b458b29ce753ec3cd
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_3800000\grid17.csv
+  : 2b593dffd304366498deee3062096b4f13c4c289333bd4dc5c48cffcc08fe4cb
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_3800000\complete.json
+  : fc3ed93e6f5c39190a8113ac97ef2b899706d892cd2f930fc55b53078dd0d8d8
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_2600000\plans.json
+  : df1a2b9b846645c6066409ba158901f1c78d71f15c034490f3701179fe77cd71
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_2600000\current_world.npz
+  : fb880d0e8b0af56e7183fa3d5fe2711f2a71bcfcd3c91757a98e390e7eecf3de
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_2600000\grid17.csv
+  : def1bdf7896881c5c4f28055ef5b3213a2ca36bcb394164ea18bb6db58d2496d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_2600000\complete.json
+  : c29555e82a762c71da5b872a3a3cd41dbc91b0498de531e96b938f0a1a7cc2c8
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_3800000\plans.json
+  : 88e17970a9d3dd345387ca80bcfeeb8d5b6241468833a27056303636ab854785
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_3800000\current_world.npz
+  : c9bfcb7e9fcb2e296c5867bc56727a09abf3559715aac53f52639d96ae8653f2
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_3800000\grid17.csv
+  : c11833134a65a8dabe90ca8c3c96a04b05355298075c749e9efa8a332e6105b6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_3800000\complete.json
+  : f55014d65ed8f4824722281947a63cbe018d25a916cf3b602faf55fbb0e94f26
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_2600000\plans.json
+  : e3964cb8404b16da6ce1eea06b95f7bb141472d26bc7677fc4a83271b81dc68c
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_2600000\current_world.npz
+  : 6da41837413ed3cafdb4fa6991e5ae3c20f634afc61396d86ef09431b6437ee4
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_2600000\grid17.csv
+  : 2dcffd8b2d2c30fc01901c68931fe0a50e78b614257b9a435ce79bfe80fb925d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_2600000\complete.json
+  : f39d5d3bdcb0fe8fb71e01e541aa77c348d3ab3ca6ee5cfdf3fe17e1bd7ac53e
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_3800000\plans.json
+  : c4efef1a62ed33b7ad5e861bf111c3493a582dc7148dc3e1336f5b2f79b665f2
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_3800000\current_world.npz
+  : 26f880e095acd3c39e2cfa33fb62616e2be99b65a33f024f5a9a20a59419f732
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_3800000\grid17.csv
+  : d59f1d056dbd19b0edfd27c78ac280c160edfef74421f989f9f87a910dc094fe
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_3800000\complete.json
+  : cb329300845ce77692b7a75a0480d28c73406ff16b05bdd52c249eefb1d8dde2
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_2850000\plans.json
+  : 10d823e7a09d9079a494366468d3d28f922c2ea7e89ff7aa408f609cacbf2ee3
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_2850000\current_world.npz
+  : 362555e4955e481391159eb58ea7f126b6350b6c1f0b9bf07aa32aa46dcf8828
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_2850000\grid17.csv
+  : 06ce0792899c2c78ecc90718d50e154783dff2d60633ccfd48afc396ae9a6c8d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_2850000\complete.json
+  : d68d81562c385e315aed32f2e480a19bb664edc3222230f40c9dad6a0b76406d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_3450000\plans.json
+  : c273abd0ed7420127fd51bab3b8c4174cc20b8e560b060db2cd8265345b7cf84
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_3450000\current_world.npz
+  : 788d14f322476c7fb6d1a157e55edf6e5a803c7e7dc3dba64b012cf55814cdb6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_3450000\grid17.csv
+  : 0ae2bf43015aaf698e176c28967eb3543264725e30953b4e7be2be90e3ac68f6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_3450000\complete.json
+  : 99d269e6a1fadbbe7c516d1cb712b21f30b88060888ebffb8297f448090a7d48
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_2850000\plans.json
+  : e1072df281641a238323f5f2676af1037c1e0f035f1cd8fd41c3e494741463fe
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_2850000\current_world.npz
+  : d23bb7865f1e433110bd00176eac98c973204ce4558cf29aadd9ad60258e96c8
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_2850000\grid17.csv
+  : e374c98beeddfb949a96d03f2cf460e0dfaea31a17b0fb310f2ef62ba3b6e4a8
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_2850000\complete.json
+  : 762aa0d107be86daa5777c3f31afeba926889c30198a9009be7168abdd86462f
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_3450000\plans.json
+  : 82fabaf9b9c490e83e6b5f9d6097a97e067368ad2805912df0fd2c138015ff87
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_3450000\current_world.npz
+  : 22118059c3644a57e6f956672759d79b19bb68732be4d2c5c08f9e6e45321336
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_3450000\grid17.csv
+  : a340bccef68a8a64496997a0cf31e5ca831715bff4f4cc83dd2a3b1b4090a155
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_3450000\complete.json
+  : e8ec5ef1daeb62c5dac28e5f139268f46446476da580b2dbd90c25522966070c
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_2850000\plans.json
+  : 3e5be84db8d4cb34481076aa990ce0f2611064e0c58e6dffdf7e1caae8d9d58a
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_2850000\current_world.npz
+  : cc0471ebf60c674b23da2a6acc4630456383a328f4d5d3f702d9e9a3aa075967
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_2850000\grid17.csv
+  : 72eedf235379c76de842475470c4b8e4525f7c56cf4b68043ccda328a2ea4e01
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_2850000\complete.json
+  : 6f4c5c4ee7d16cdd21191547f2211deb0ab09330b8d4ff6d2b376bb8fb39455f
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_3450000\plans.json
+  : d186f1abe2d8de4619d861716a4b438adb2e2824af042eb6c470d47d78c60861
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_3450000\current_world.npz
+  : 78e26a3a81f346ba0fb5a1772571f5bd154b937b1c7e7841d251872655eac9be
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_3450000\grid17.csv
+  : f27c8168b92f1f237b8e1ada6d925f309264e942cb4d92852a4f84cf63e7e599
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_3450000\complete.json
+  : 2a749948e7ce337ba4285e425ffcbf47bd23097294577cbb7b47059bd4ac945f
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_2850000\plans.json
+  : 266dbe7b4cd34b5ebe1bfceca8aced1d1e0c851746bb50cfa2f389a9979d8239
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_2850000\current_world.npz
+  : 9f822558fb172e08f4e09080972ef10bad1c25a2dc676115ab4b4f3bba3cdfbf
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_2850000\grid17.csv
+  : 8772eddbaf2f94f3ba8728d27a5e92c0c15cef24e92254fbb73afbafe9fb5631
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_2850000\complete.json
+  : 84295fa1cba245f5ec9674bd28a9754d374b43dc7b622c8be06faf3d15924ff0
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_3450000\plans.json
+  : fe54f64ca9374a2aeb5403a9136859f38c96aa1fc043866ff7137a5ef5052a85
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_3450000\current_world.npz
+  : b1e35588a3ca825ccb2ec35867bf4ad139832d799545ec799d42bd3f15975837
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_3450000\grid17.csv
+  : 360200169169f83aab694d275d5954ce81a50d58d128637339a80701a50f750c
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_3450000\complete.json
+  : 57c1c9cd5b9cde9952b869e360a9e69440abb8ac3cc38db121e3f9d439f28eea
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_2850000\plans.json
+  : b301a7272811882ab102c14ab9e872e913bc9cf9baaab4ad3d8c054006ace1b2
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_2850000\current_world.npz
+  : 4384f4264039d381968f2451e161d000acc03d2c345732ba5fea3258842aeb21
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_2850000\grid17.csv
+  : a4a7bbe947cbb145ba195070ececd6daa58c88e75b4972ae71f249a7fd1cb4ec
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_2850000\complete.json
+  : a5322296f22b3b16125ed2e1dc593d2e7e1267cf2c6aca37d5e7ebfa873f9f50
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_3450000\plans.json
+  : b639626b1935b1e029368572445298cadd5e28b98643be07845b1841dee0f6d0
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_3450000\current_world.npz
+  : 335047ebbb2db29fa0f22510c74776a34a0c237235cc47a13f8cc98a58153850
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_3450000\grid17.csv
+  : 51e75a0f143eac7dd6de9f2770a9d0b121948fc1962e6bdb5068e10593a69a4f
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_3450000\complete.json
+  : 3adf2aa4c1f4918b1f95cf38515ff6bef51300a07922a7904afd5a1c14dc4e02
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_2850000\plans.json
+  : 37a2d693a557177887343e5f0ffbca5b35d6a40170a28d77473e814d7cb7b4b2
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_2850000\current_world.npz
+  : b916aed0737489b8e1efce19457d6fd0ae31851d0651a164402fba3a058da644
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_2850000\grid17.csv
+  : 320522fc9f46647d6858d4e35d8c504b8a5a3ff776dd8d8fcf463a0f590b808a
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_2850000\complete.json
+  : ba3cd9f90f0a6b5d39722fb952ef4f2598770dc754645a48aa1e0b963e4817f0
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_3450000\plans.json
+  : b72316e49d8257079eb882443d4346ed3a112d11d1f782a9c0e1c7d7b595dfd8
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_3450000\current_world.npz
+  : bf052f41691292dc50b60c478dfb62e362931c1eac3c2b32488b85935f3a4486
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_3450000\grid17.csv
+  : 0fc1e8f51566c27bf193af265ed7613cdb30ae9a8ea68ed031b5eb89d9c41a48
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_3450000\complete.json
+  : b9a98c8b77f7629e04bea92a170e80d12dc698cf7c8e56c945b1e16d6247502d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_2850000\plans.json
+  : 4607bc5794907fda4f0b529e69238a8f68ffa048e7ed3326fd8fac0bd2ebfbfd
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_2850000\current_world.npz
+  : 18a637c329b2846c2402b2ff6d427f5f6f39c4025186f9eee206d7766662e4da
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_2850000\grid17.csv
+  : e85abb2bc3d2f6d713781f232bd52e721ac671b365c543e77dfeaa9f97eb2ba1
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_2850000\complete.json
+  : 9435319f5934fb747c7d973458d7f360aa23cd2eecd37a83959263ba77d6b1de
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_3450000\plans.json
+  : 05d3b913b8fd3d5fcde69a7b0505327707fe399d4aed9d9361e1545ec73c91f9
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_3450000\current_world.npz
+  : 7030a071398fd96cd219fb21d037019f100c230bb7a3e2be6e8ab16522047caf
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_3450000\grid17.csv
+  : dc8c666c35071418de5156b103ea48c43313044d422a7368602e7b2b70efdb7d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_3450000\complete.json
+  : 128a54cbea8005b5b9118dd77e6cfb2ac201cb6ccc33e018eab85886b120a3ba
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_2850000\plans.json
+  : 28ab7a31b2296c4ad7a6663d449bdde1ce981ba468de0d89140ec10a9d311480
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_2850000\current_world.npz
+  : 627b799068c0b142c1fc6a61ab866bc227b056dbab2ec9b258b7065655bc0940
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_2850000\grid17.csv
+  : b81a78b1579e8bf15ae5243e411876188b76b12044682f7af52f8eb3d1f1f5b9
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_2850000\complete.json
+  : 703d16828af19445f6677e6a5c0f4c81ddac598eb37dd35ba1ec116cdd663238
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_3450000\plans.json
+  : 47f4be5a3055379a599a412c884445a40b797424956a0248bc5b5d155eebff37
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_3450000\current_world.npz
+  : f4d32895b99e5013a9e11aad2a98ffd396c7309a40914fac9dfc939bd67cf1ce
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_3450000\grid17.csv
+  : 19617d73b8e7c5122d39d6a710a6579c7e8d14b7d967e3975363934319485875
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_3450000\complete.json
+  : aa13c4dcc4993b1328f3301ceb957967071772643d4e6b120dc6c1542d049fc2
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_2850000\plans.json
+  : f9c756d7912ec1e7a46aaddb5bb9627232f73c2e015d5b0351ad70ce52773fd6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_2850000\current_world.npz
+  : c65cf4e0b1f8ee704e1bee90f6f73bd2b331437ce797c21c8a93244739391bbf
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_2850000\grid17.csv
+  : 88bc751f1eefb0f681f730277f01488e6f76057546762c332f85bd5625d47cf7
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_2850000\complete.json
+  : aaef41adfae026c1f716b572eab53bc4915b81e819e6e0df75e6938fcbb65296
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_3450000\plans.json
+  : 1639bb30ff7a0b34d6b78d0e637e41feb7ecc00f8a73b4635099807c90c9acc4
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_3450000\current_world.npz
+  : bf6ac0e48023eb259bba28d179f0da3475ade11dc302b0d99010a465e08fa333
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_3450000\grid17.csv
+  : e73c16b51d4c03dbb23bbc098d820a6654597c9d18a85230606e4e5819484925
+  ? .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_3450000\complete.json
+  : c65b74d64d0ef7dd317dd75cbac2e7ece38f96e6161c6c0c3e0b3729e86b1772
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_stationary_2600000.csv
+  : 46b7ebc5cfe44441052131226971513b9398b02cf5d202f3659e9b5c88f986d6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_stationary_2600000.json
+  : fbc8e9a76d7c97ce5b9e3b18772acb1f4699ef3f96c07d66a5ac1222b0f8f7d3
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_stationary_3800000.csv
+  : 064e5a36dab50c0f564e62043644aee776829d3bc41576ef39ac7bd699b67179
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_stationary_3800000.json
+  : 79979ae82c3791ea1a44333b7a61acead4e02082a5e27d76a74a665409beb438
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_ramp_2600000.csv
+  : bb821dbdb3704afe99328e50bf2ab4edf18fa15f65e43c5038df06e55dd6b205
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_ramp_2600000.json
+  : 77e5bfe63c569c85637785273d342bc5f4b3cb06634dc743e38be8b416aabd1c
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_ramp_3800000.csv
+  : 3a943a180bc245b39c3de2a4881abda119dc0dda43a1022e825d2bdb223cf54b
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_ramp_3800000.json
+  : 15147212bf95f5027cc5105f71f3a0d817f36aca81d81868e9476cfe17478091
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_gust_2600000.csv
+  : 05bc00a40f5eec9dca652af6ad3fafd00e93649e32f77220ddeaea70242c21c8
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_gust_2600000.json
+  : ff2f842624cd5ed26740cdf6b049d9d8eb8ace615a7b8a2ebebd3806ec973be5
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_gust_3800000.csv
+  : 3501008a9f8103150b022841859ed231e10ac1cc6e83e5409184e0b413f90d86
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_gust_3800000.json
+  : b022b9716318431ea109e56348238b022487a2f263dc4956928f7a4409dbcd70
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_stationary_2600000.csv
+  : b57608241918a699f430f983d0c9204bb0d53104021ef93820342b350aaa05e5
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_stationary_2600000.json
+  : 1fbd15c1bb2f192c0c736aae1b2c62487fe12b564a7f07af132d67b165dbaaff
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_stationary_3800000.csv
+  : 01e89ea7d69bc804a02f9c10f501650e3c4cce340003d7cee6168149ffe07dd9
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_stationary_3800000.json
+  : 09616b171131f25c6d40842061c3f20f5472fe494a520742f461150f2a029ffd
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_ramp_2600000.csv
+  : 5e6619f7558c9ec4aae55fd9bc35b715bc22256d264467a11681b63175a7fbcb
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_ramp_2600000.json
+  : 74f454584e1c49992ebf8b3a7a724a0224d09da18acfcf0fcdab667ff0682147
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_ramp_3800000.csv
+  : 9abb71237f97d0468fa2c6ba03029984a9f38d2f9949a48e0d75b062b0fac9f2
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_ramp_3800000.json
+  : a12994d545ae1d3ab1ccc9db0608f6a2f42022c4f39e6de9b4346c05b9bee181
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_gust_2600000.csv
+  : 57b181e1cbd22e5831e58f00645b310bdefce64da19e6e433860508e80cb0b29
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_gust_2600000.json
+  : a056de5d9704a6f83fd5172c46d249b75e63209f348b64011904b98dd0efb27c
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_gust_3800000.csv
+  : 2e481bfdf9df824abd9d6b1ae2ee5deb863d44fbb95a9d97c81a8df1cbf5d2af
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_gust_3800000.json
+  : 85c3bc5d233722248ed5c9a87a9fb9dd70df19b0bcaa2cb8f95f6a2e65962cd0
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_stationary_2600000.csv
+  : 4320e1cadb17b7bd8825ba03611787a8030331dbef3bdb781e25d485c6ce8f58
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_stationary_2600000.json
+  : c5f8223ca63a6d2e07e46a447c4b24474ba0973b3c9e802fe4d9450939cd3c10
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_stationary_3800000.csv
+  : 159eec4b013c7327aa3b5c76b5196de5bfddb008b4f86c6171566dd7ab999a85
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_stationary_3800000.json
+  : 88dd495e97d9ff4087ad22bec6892789d7a5806bf86c87aeb64208a7f457f180
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_ramp_2600000.csv
+  : 9c64063ec1c0933230c6026031b8a275c1e6f50459d63d906d9f70a30ef59070
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_ramp_2600000.json
+  : 8c79e97c56981209fc0a097809c23cea11390f7253770017152d9af3286ba2c4
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_ramp_3800000.csv
+  : 30e32350dc2deae22d20f4ee5cc977c9f2283fad8c568a4edab319d0f99eb799
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_ramp_3800000.json
+  : 81d0ed58b7869c4dcac59dbb971b81c111cf2a6643bd191f46d0058888fcb85d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_gust_2600000.csv
+  : 2a69df4a7890851c43843b89c7afb54bddcee0686f42f18e84b6e661af51dbd6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_gust_2600000.json
+  : c747fd487b4bb42125935b6ef890282be75c35f8ef08e4dc650313f4e7595ce9
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_gust_3800000.csv
+  : 1a4d0b7ab4bce17d10760db394070d0df5c23d3ae137f4c3c0b6ceaf5ee53ebb
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_gust_3800000.json
+  : f64a3f43a8d8699d11c8673e265e3577e53310917efe56361bac61dafaa1da33
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_stationary_2850000.csv
+  : cf6eac0699233465121617b7a6bd923f260d0098115d6a9b04d10a29a410d69a
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_stationary_2850000.json
+  : 92bdb2f0d2301f84eb356573b5c37d2c2dc36e265c322683dd9ae2732bc726c1
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_stationary_3450000.csv
+  : 3d34fc1eacf8330bf63178990584f8a870f6b23b75263b1b03ccf50c94f1d677
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_stationary_3450000.json
+  : 46f9de73c8eb7c837b954ac470a1c6b904b65748810bb8a4981462c3ab2e63b6
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_ramp_2850000.csv
+  : 4cc55a5ef451f3d76d46094ed0eb46fac2e6f78393f68352b422e916bd4caf97
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_ramp_2850000.json
+  : 72926dde4a068d875bb10009afd81d2dd842002588a84d395fe962b8d294082f
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_ramp_3450000.csv
+  : a58a89d83e544cff35457916e18d8927e01909fc4832f460e99a997f839f639d
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_ramp_3450000.json
+  : 6615f0c4c9cf20177b6354553de0894a81afb8e0c64abd1a35f269a1b8e88141
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_gust_2850000.csv
+  : 67662c437c7ad39c29ea7083c9a4a1f6612859a26d49931bd4a5560555958ee2
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_gust_2850000.json
+  : f600be3307bee6f1864b55527ee65b3ae325da1c085885d2d2d956bddb46bdf5
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_gust_3450000.csv
+  : 6a4bbe3dc1d21357778d470913fbce01266980ba72025ee8e10b99342ff79243
+  ? .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_gust_3450000.json
+  : 5b1a8125a879790423a38ce6c1a9ada39ca90d341283425989ef32cd792d7144
+executed_code_hashes:
+  .\optimization_control\maddpg_wind_farm\history_forecast_experiment.py: 5ef6de90562ae8fcf9f993b0326f632fd9ccefdd1d0430a17edc4ddf4d24d8c8
+  .\optimization_control\maddpg_wind_farm\history_wind_forecast.py: 9397a743399105f9272da532098c53eb2ac481cf4d5965105541b562fe031d17
+  .\optimization_control\maddpg_wind_farm\configs\history_forecast.yaml: 8676d41e78dd5c1098660dc70b565ba7dc410d443f60ae6d234bb4797fa42769
+  .\optimization_control\maddpg_wind_farm\HISTORY_FORECAST_PROTOCOL.md: 02b9b6fe7eee0663daaeb3026dbf72c87c221a2a76a3db8a0a61172f67998707
+  .\optimization_control\tests\test_history_forecast.py: b11d00de2006ba1abf486a2d1571e6f73454cdd62f30bc8233c5f37f08329bb1
+bank_manifest_sha256: db6f429dbc03c75acb9057e547f015a82957041f852d4ba5cbeefa9ff59e8404
+source_inventory:
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\manifest.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_gust_2600000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_gust_2600000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_gust_3800000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_gust_3800000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_ramp_2600000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_ramp_2600000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_ramp_3800000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_ramp_3800000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_stationary_2600000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_stationary_2600000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_stationary_3800000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run0_stationary_3800000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_gust_2600000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_gust_2600000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_gust_3800000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_gust_3800000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_ramp_2600000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_ramp_2600000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_ramp_3800000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_ramp_3800000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_stationary_2600000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_stationary_2600000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_stationary_3800000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run1_stationary_3800000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_gust_2600000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_gust_2600000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_gust_3800000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_gust_3800000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_ramp_2600000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_ramp_2600000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_ramp_3800000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_ramp_3800000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_stationary_2600000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_stationary_2600000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_stationary_3800000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\train_run2_stationary_3800000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_gust_2850000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_gust_2850000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_gust_3450000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_gust_3450000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_ramp_2850000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_ramp_2850000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_ramp_3450000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_ramp_3450000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_stationary_2850000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_stationary_2850000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_stationary_3450000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run0_stationary_3450000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_gust_2850000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_gust_2850000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_gust_3450000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_gust_3450000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_ramp_2850000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_ramp_2850000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_ramp_3450000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_ramp_3450000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_stationary_2850000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_stationary_2850000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_stationary_3450000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run1_stationary_3450000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_gust_2850000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_gust_2850000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_gust_3450000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_gust_3450000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_ramp_2850000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_ramp_2850000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_ramp_3450000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_ramp_3450000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_stationary_2850000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_stationary_2850000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_stationary_3450000.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\bank\validation_run2_stationary_3450000.json
+- .\optimization_control\experiments\20261029_speed_midgrid\budget.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_2600000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_2600000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_2600000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_2600000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_3800000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_3800000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_3800000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_gust_3800000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_2600000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_2600000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_2600000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_2600000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_3800000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_3800000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_3800000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_ramp_3800000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_2600000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_2600000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_2600000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_2600000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_3800000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_3800000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_3800000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run0_stationary_3800000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_2600000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_2600000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_2600000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_2600000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_3800000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_3800000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_3800000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_gust_3800000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_2600000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_2600000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_2600000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_2600000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_3800000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_3800000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_3800000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_ramp_3800000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_2600000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_2600000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_2600000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_2600000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_3800000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_3800000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_3800000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run1_stationary_3800000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_2600000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_2600000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_2600000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_2600000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_3800000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_3800000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_3800000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_gust_3800000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_2600000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_2600000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_2600000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_2600000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_3800000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_3800000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_3800000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_ramp_3800000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_2600000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_2600000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_2600000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_2600000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_3800000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_3800000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_3800000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\train_run2_stationary_3800000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_2850000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_2850000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_2850000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_2850000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_3450000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_3450000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_3450000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_gust_3450000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_2850000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_2850000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_2850000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_2850000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_3450000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_3450000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_3450000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_ramp_3450000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_2850000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_2850000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_2850000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_2850000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_3450000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_3450000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_3450000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run0_stationary_3450000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_2850000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_2850000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_2850000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_2850000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_3450000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_3450000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_3450000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_gust_3450000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_2850000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_2850000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_2850000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_2850000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_3450000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_3450000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_3450000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_ramp_3450000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_2850000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_2850000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_2850000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_2850000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_3450000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_3450000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_3450000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run1_stationary_3450000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_2850000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_2850000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_2850000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_2850000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_3450000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_3450000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_3450000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_gust_3450000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_2850000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_2850000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_2850000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_2850000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_3450000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_3450000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_3450000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_ramp_3450000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_2850000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_2850000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_2850000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_2850000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_3450000\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_3450000\current_world.npz
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_3450000\grid17.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\cases\validation_run2_stationary_3450000\plans.json
+- .\optimization_control\experiments\20261029_speed_midgrid\channel_diagnostics.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\complete.json
+- .\optimization_control\experiments\20261029_speed_midgrid\config.yaml
+- .\optimization_control\experiments\20261029_speed_midgrid\delivery_analysis.json
+- .\optimization_control\experiments\20261029_speed_midgrid\delivery_check.py
+- .\optimization_control\experiments\20261029_speed_midgrid\delivery_files.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\delivery_verification.json
+- .\optimization_control\experiments\20261029_speed_midgrid\document_qa.json
+- .\optimization_control\experiments\20261029_speed_midgrid\execution_summary.json
+- .\optimization_control\experiments\20261029_speed_midgrid\figures\forecast_choices_cost.pdf
+- .\optimization_control\experiments\20261029_speed_midgrid\figures\forecast_choices_cost.png
+- .\optimization_control\experiments\20261029_speed_midgrid\figures\grid_actual_controls.pdf
+- .\optimization_control\experiments\20261029_speed_midgrid\figures\grid_actual_controls.png
+- .\optimization_control\experiments\20261029_speed_midgrid\figures\grid_case_comparison.pdf
+- .\optimization_control\experiments\20261029_speed_midgrid\figures\grid_case_comparison.png
+- .\optimization_control\experiments\20261029_speed_midgrid\figures\manifest.json
+- .\optimization_control\experiments\20261029_speed_midgrid\finalize_delivery.py
+- .\optimization_control\experiments\20261029_speed_midgrid\forecast_actual.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\forecast_summary.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\git_delivery.json
+- .\optimization_control\experiments\20261029_speed_midgrid\group_metrics.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\metrics.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\output_manifest.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\paired_cases.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\plot_cache\fontlist-v3.11.0.json
+- .\optimization_control\experiments\20261029_speed_midgrid\precheck.json
+- .\optimization_control\experiments\20261029_speed_midgrid\staged_review.json
+- .\optimization_control\experiments\20261029_speed_midgrid\stream_summary.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\summarize_delivery.py
+- .\optimization_control\experiments\20261029_speed_midgrid\summary.txt
+- .\optimization_control\experiments\20261029_speed_midgrid\tests.json
+- .\optimization_control\experiments\20261029_speed_midgrid\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_midgrid\verification.json
+- .\optimization_control\experiments\20261029_speed_midgrid\visual_qa.json

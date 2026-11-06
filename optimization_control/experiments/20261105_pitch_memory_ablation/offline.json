@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "predictor_rows": 0,
+  "anchor_states": 6144,
+  "probe_rows": 73728,
+  "saved_cases": 918,
+  "weight_rows": 216,
+  "validated_parent_initial_weights": true,
+  "config_sha": "3db658c2ee6c47b788724914437f9e80657ae257f47f58e780b30daa7e99eb8c",
+  "hashes": {
+    ".\\optimization_control\\experiments\\20261105_pitch_memory_ablation\\weights.csv": "875405306f80164d2a32fe426d75617f28c7f184a1e98f5941deea6eb6ec7c9d",
+    ".\\optimization_control\\experiments\\20261105_pitch_memory_ablation\\integrals.csv": "ce94c18ef9d541153eaebcba0c1ac19deccf5aeadb9676c5cdc7949687d48935",
+    ".\\optimization_control\\experiments\\20261105_pitch_memory_ablation\\probes.csv.gz": "51d11d7e4173cff740c24fe2228552ab8414b61158ef33a77b0068440a761f5f",
+    ".\\optimization_control\\experiments\\20261105_pitch_memory_ablation\\saved_metrics.csv": "afedf33cee7ab1d9836624661293fc8d56ef4bef2e357bf84fcff3e966ecba62",
+    ".\\optimization_control\\experiments\\20261105_pitch_memory_ablation\\initial_commands.json": "0b9bdc4d61c3620e602cefaa03a1e3ac64ab6fef0c2c70d66a2f784b0d9c1da7"
+  }
+}

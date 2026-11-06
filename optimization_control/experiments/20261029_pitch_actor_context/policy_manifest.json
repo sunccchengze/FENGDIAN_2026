@@ -1,0 +1,888 @@
+{
+  "seed": 42,
+  "policies": [
+    {
+      "arm": "replay",
+      "run": 0,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run0\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "a6b170853f9207179925d2bbdb14731fb7f3acd8a6541755cf1170b12c398492",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth",
+        "sha256": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a",
+        "selected_step": 16384,
+        "updates": 23811,
+        "replay_size": 32768,
+        "replay_position": 16384,
+        "insertions": 49152,
+        "m_histogram": [
+          0,
+          3931,
+          3964,
+          3986,
+          3980,
+          3972,
+          4064,
+          4117,
+          479954
+        ],
+        "initial_state_fingerprint": "2a007ec25f508a98957cc27b5f6ff2d1afd5e766ac2e9d7447efa777b039e2c1",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 94385858735819535997599727938598846571,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 118051432186015920511556593164786556843,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 1,
+          "uinteger": 3859955486
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "replay",
+      "run": 0,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run0\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "6642c7f2884431869de7ee3c878f42e4a60b777fcfc12aa5720931597bc7c0c4",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth",
+        "sha256": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a",
+        "selected_step": 16384,
+        "updates": 23811,
+        "replay_size": 32768,
+        "replay_position": 16384,
+        "insertions": 49152,
+        "m_histogram": [
+          0,
+          3931,
+          3964,
+          3986,
+          3980,
+          3972,
+          4064,
+          4117,
+          479954
+        ],
+        "initial_state_fingerprint": "2a007ec25f508a98957cc27b5f6ff2d1afd5e766ac2e9d7447efa777b039e2c1",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 94385858735819535997599727938598846571,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 118051432186015920511556593164786556843,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 1,
+          "uinteger": 3859955486
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "replay",
+      "run": 0,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run0\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "6642c7f2884431869de7ee3c878f42e4a60b777fcfc12aa5720931597bc7c0c4",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth",
+        "sha256": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a",
+        "selected_step": 16384,
+        "updates": 23811,
+        "replay_size": 32768,
+        "replay_position": 16384,
+        "insertions": 49152,
+        "m_histogram": [
+          0,
+          3931,
+          3964,
+          3986,
+          3980,
+          3972,
+          4064,
+          4117,
+          479954
+        ],
+        "initial_state_fingerprint": "2a007ec25f508a98957cc27b5f6ff2d1afd5e766ac2e9d7447efa777b039e2c1",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 94385858735819535997599727938598846571,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 118051432186015920511556593164786556843,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 1,
+          "uinteger": 3859955486
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "replay",
+      "run": 1,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run1\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "5b8ac3eeab206d8a5b8a26dfee7e81f4547e165c2c91e792c7d035ceb4a555b8",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth",
+        "sha256": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957",
+        "selected_step": 12288,
+        "updates": 19715,
+        "replay_size": 32768,
+        "replay_position": 8192,
+        "insertions": 40960,
+        "m_histogram": [
+          0,
+          2964,
+          2979,
+          2942,
+          3036,
+          3022,
+          3024,
+          2958,
+          355971
+        ],
+        "initial_state_fingerprint": "284b70cdc301d33e7c901ef80ae29bbf9ef2f9c5495fe2f8d15c9bd47f665fac",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 189049300701900032407339690722825745203,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 223997904064187111346173016691342876019,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 3305524480
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "replay",
+      "run": 1,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run1\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "5b8ac3eeab206d8a5b8a26dfee7e81f4547e165c2c91e792c7d035ceb4a555b8",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth",
+        "sha256": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957",
+        "selected_step": 12288,
+        "updates": 19715,
+        "replay_size": 32768,
+        "replay_position": 8192,
+        "insertions": 40960,
+        "m_histogram": [
+          0,
+          2964,
+          2979,
+          2942,
+          3036,
+          3022,
+          3024,
+          2958,
+          355971
+        ],
+        "initial_state_fingerprint": "284b70cdc301d33e7c901ef80ae29bbf9ef2f9c5495fe2f8d15c9bd47f665fac",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 189049300701900032407339690722825745203,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 223997904064187111346173016691342876019,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 3305524480
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "replay",
+      "run": 1,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run1\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "9fce7bda9d5f765b1a9ca9c0cf801e57586b4d84deb1b34a4709afc254a88fc1",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth",
+        "sha256": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957",
+        "selected_step": 12288,
+        "updates": 19715,
+        "replay_size": 32768,
+        "replay_position": 8192,
+        "insertions": 40960,
+        "m_histogram": [
+          0,
+          2964,
+          2979,
+          2942,
+          3036,
+          3022,
+          3024,
+          2958,
+          355971
+        ],
+        "initial_state_fingerprint": "284b70cdc301d33e7c901ef80ae29bbf9ef2f9c5495fe2f8d15c9bd47f665fac",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 189049300701900032407339690722825745203,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 223997904064187111346173016691342876019,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 3305524480
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "replay",
+      "run": 2,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run2\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "21e125909a4324f9167c450e07b045a0a36dd2f561ab142b3755d015bddf4ddb",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth",
+        "sha256": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b",
+        "selected_step": 4096,
+        "updates": 13571,
+        "replay_size": 28672,
+        "replay_position": 28672,
+        "insertions": 28672,
+        "m_histogram": [
+          0,
+          849,
+          924,
+          920,
+          827,
+          855,
+          929,
+          909,
+          108539
+        ],
+        "initial_state_fingerprint": "2848c9da1af15caaa57e0737dd95337d31a4f915b0adc87fb94533e12647d0b4",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 230731695819156196747665961280040953616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 7760741848728520883178944671880385616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 4121430321
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "replay",
+      "run": 2,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run2\\step_00008192\\attempt_000\\state.pth",
+      "sha256": "f12d91a622701107660f949f86786cdb48d56da264184db7f8ca4dc374afb0ab",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth",
+        "sha256": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b",
+        "selected_step": 4096,
+        "updates": 13571,
+        "replay_size": 28672,
+        "replay_position": 28672,
+        "insertions": 28672,
+        "m_histogram": [
+          0,
+          849,
+          924,
+          920,
+          827,
+          855,
+          929,
+          909,
+          108539
+        ],
+        "initial_state_fingerprint": "2848c9da1af15caaa57e0737dd95337d31a4f915b0adc87fb94533e12647d0b4",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 230731695819156196747665961280040953616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 7760741848728520883178944671880385616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 4121430321
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "replay",
+      "run": 2,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run2\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "4cc4e02b2fba9fda275231b9b600eb42c49038ff0bf5b6bda8687923c3ad1763",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth",
+        "sha256": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b",
+        "selected_step": 4096,
+        "updates": 13571,
+        "replay_size": 28672,
+        "replay_position": 28672,
+        "insertions": 28672,
+        "m_histogram": [
+          0,
+          849,
+          924,
+          920,
+          827,
+          855,
+          929,
+          909,
+          108539
+        ],
+        "initial_state_fingerprint": "2848c9da1af15caaa57e0737dd95337d31a4f915b0adc87fb94533e12647d0b4",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 230731695819156196747665961280040953616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 7760741848728520883178944671880385616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 4121430321
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "current_pitch",
+      "run": 0,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run0\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "90563290aef4af883bd0171fc14ff8bf23d4b80a7d28d451789f6a46f8b5dff3",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth",
+        "sha256": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a",
+        "selected_step": 16384,
+        "updates": 23811,
+        "replay_size": 32768,
+        "replay_position": 16384,
+        "insertions": 49152,
+        "m_histogram": [
+          0,
+          3931,
+          3964,
+          3986,
+          3980,
+          3972,
+          4064,
+          4117,
+          479954
+        ],
+        "initial_state_fingerprint": "2a007ec25f508a98957cc27b5f6ff2d1afd5e766ac2e9d7447efa777b039e2c1",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 94385858735819535997599727938598846571,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 118051432186015920511556593164786556843,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 1,
+          "uinteger": 3859955486
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "current_pitch",
+      "run": 0,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run0\\step_00004096\\attempt_000\\state.pth",
+      "sha256": "151b10c4cf77fb4471f5ebadf8590705e3fa1da6e738f650e8657cd89f3ae43a",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth",
+        "sha256": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a",
+        "selected_step": 16384,
+        "updates": 23811,
+        "replay_size": 32768,
+        "replay_position": 16384,
+        "insertions": 49152,
+        "m_histogram": [
+          0,
+          3931,
+          3964,
+          3986,
+          3980,
+          3972,
+          4064,
+          4117,
+          479954
+        ],
+        "initial_state_fingerprint": "2a007ec25f508a98957cc27b5f6ff2d1afd5e766ac2e9d7447efa777b039e2c1",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 94385858735819535997599727938598846571,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 118051432186015920511556593164786556843,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 1,
+          "uinteger": 3859955486
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "current_pitch",
+      "run": 0,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run0\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "9de48864158d4b9331d4ef58b8b444fe70aed53eeb2fba3b6d8625964aaa0ff3",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth",
+        "sha256": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a",
+        "selected_step": 16384,
+        "updates": 23811,
+        "replay_size": 32768,
+        "replay_position": 16384,
+        "insertions": 49152,
+        "m_histogram": [
+          0,
+          3931,
+          3964,
+          3986,
+          3980,
+          3972,
+          4064,
+          4117,
+          479954
+        ],
+        "initial_state_fingerprint": "2a007ec25f508a98957cc27b5f6ff2d1afd5e766ac2e9d7447efa777b039e2c1",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 94385858735819535997599727938598846571,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 118051432186015920511556593164786556843,
+            "inc": 273861786468042513937556062812059452695
+          },
+          "has_uint32": 1,
+          "uinteger": 3859955486
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "current_pitch",
+      "run": 1,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run1\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "99bfa2e3c9d235bd597ce45241237bdd0c5796674ace7e22a2ff2377feeb3da5",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth",
+        "sha256": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957",
+        "selected_step": 12288,
+        "updates": 19715,
+        "replay_size": 32768,
+        "replay_position": 8192,
+        "insertions": 40960,
+        "m_histogram": [
+          0,
+          2964,
+          2979,
+          2942,
+          3036,
+          3022,
+          3024,
+          2958,
+          355971
+        ],
+        "initial_state_fingerprint": "284b70cdc301d33e7c901ef80ae29bbf9ef2f9c5495fe2f8d15c9bd47f665fac",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 189049300701900032407339690722825745203,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 223997904064187111346173016691342876019,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 3305524480
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "current_pitch",
+      "run": 1,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run1\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "99bfa2e3c9d235bd597ce45241237bdd0c5796674ace7e22a2ff2377feeb3da5",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth",
+        "sha256": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957",
+        "selected_step": 12288,
+        "updates": 19715,
+        "replay_size": 32768,
+        "replay_position": 8192,
+        "insertions": 40960,
+        "m_histogram": [
+          0,
+          2964,
+          2979,
+          2942,
+          3036,
+          3022,
+          3024,
+          2958,
+          355971
+        ],
+        "initial_state_fingerprint": "284b70cdc301d33e7c901ef80ae29bbf9ef2f9c5495fe2f8d15c9bd47f665fac",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 189049300701900032407339690722825745203,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 223997904064187111346173016691342876019,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 3305524480
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "current_pitch",
+      "run": 1,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run1\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "5802dfd5d0f6ca4a9c378c8c32d3b67d437d09af963541a89bc058e686df9183",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth",
+        "sha256": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957",
+        "selected_step": 12288,
+        "updates": 19715,
+        "replay_size": 32768,
+        "replay_position": 8192,
+        "insertions": 40960,
+        "m_histogram": [
+          0,
+          2964,
+          2979,
+          2942,
+          3036,
+          3022,
+          3024,
+          2958,
+          355971
+        ],
+        "initial_state_fingerprint": "284b70cdc301d33e7c901ef80ae29bbf9ef2f9c5495fe2f8d15c9bd47f665fac",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 189049300701900032407339690722825745203,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 223997904064187111346173016691342876019,
+            "inc": 49269285523570623234098181721228314091
+          },
+          "has_uint32": 0,
+          "uinteger": 3305524480
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "current_pitch",
+      "run": 2,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run2\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "8f278ca6209041a36e796c7f5cf5c64db5c5fae54c58f1b2b5e2436eaeb284e3",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth",
+        "sha256": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b",
+        "selected_step": 4096,
+        "updates": 13571,
+        "replay_size": 28672,
+        "replay_position": 28672,
+        "insertions": 28672,
+        "m_histogram": [
+          0,
+          849,
+          924,
+          920,
+          827,
+          855,
+          929,
+          909,
+          108539
+        ],
+        "initial_state_fingerprint": "2848c9da1af15caaa57e0737dd95337d31a4f915b0adc87fb94533e12647d0b4",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 230731695819156196747665961280040953616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 7760741848728520883178944671880385616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 4121430321
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "current_pitch",
+      "run": 2,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run2\\step_00008192\\attempt_000\\state.pth",
+      "sha256": "5df8099da621d6549182feaf63036d2263e6b5755e2e7d0a64a059f3863dee96",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth",
+        "sha256": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b",
+        "selected_step": 4096,
+        "updates": 13571,
+        "replay_size": 28672,
+        "replay_position": 28672,
+        "insertions": 28672,
+        "m_histogram": [
+          0,
+          849,
+          924,
+          920,
+          827,
+          855,
+          929,
+          909,
+          108539
+        ],
+        "initial_state_fingerprint": "2848c9da1af15caaa57e0737dd95337d31a4f915b0adc87fb94533e12647d0b4",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 230731695819156196747665961280040953616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 7760741848728520883178944671880385616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 4121430321
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "current_pitch",
+      "run": 2,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run2\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "b35b5a31453fba566aebe5a39a8ef38eb908554b7924631eae66848e90797a3a",
+      "parent": {
+        "checkpoint": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth",
+        "sha256": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b",
+        "selected_step": 4096,
+        "updates": 13571,
+        "replay_size": 28672,
+        "replay_position": 28672,
+        "insertions": 28672,
+        "m_histogram": [
+          0,
+          849,
+          924,
+          920,
+          827,
+          855,
+          929,
+          909,
+          108539
+        ],
+        "initial_state_fingerprint": "2848c9da1af15caaa57e0737dd95337d31a4f915b0adc87fb94533e12647d0b4",
+        "algorithm_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 230731695819156196747665961280040953616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 0
+        },
+        "replay_rng": {
+          "bit_generator": "PCG64",
+          "state": {
+            "state": 7760741848728520883178944671880385616,
+            "inc": 45196580356398402747473135648458153627
+          },
+          "has_uint32": 0,
+          "uinteger": 4121430321
+        }
+      },
+      "loader": "PitchActorContextMADDPG.load(path, expected_arm)",
+      "version": "pitch_actor_context_v1",
+      "experimental_not_default": true
+    }
+  ],
+  "aliases_are_references_not_copies": true
+}

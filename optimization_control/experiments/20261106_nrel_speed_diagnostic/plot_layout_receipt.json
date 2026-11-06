@@ -1,0 +1,7 @@
+{
+  "source": "decomposition_groups.csv",
+  "change": "top margin only; same all-family case weighting and values",
+  "ylim_factor": 1.16,
+  "new_model_queries": 0,
+  "original_plot_retained": true
+}

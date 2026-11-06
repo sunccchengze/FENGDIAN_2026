@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "independent_primary_recomputed": true,
+  "code_frozen_before_release": true,
+  "protected_inputs": 65,
+  "links": 22,
+  "visually_reviewed_figures": 3,
+  "pdf_files": 3,
+  "expected_roles": 23,
+  "query_rows": 53406,
+  "extra_query_rows": 0,
+  "optimizer_updates": 0,
+  "yaw_proposal_only": true,
+  "pressure_reference_reused": true
+}

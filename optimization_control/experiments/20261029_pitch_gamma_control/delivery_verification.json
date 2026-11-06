@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "source_hashes_checked": 75,
+  "additional_model_contracts": 2,
+  "checkpoint_count": 774,
+  "formal_updates": 47622,
+  "engineering_updates_not_in_formal": 8,
+  "unit_tests": 4,
+  "budgets": {
+    "learning": 98304,
+    "evaluation": 152576
+  },
+  "test_steps": 78848,
+  "test_semantic_cases": 880,
+  "unique_test_episodes": 616,
+  "all_cases_retained": true,
+  "test_after_selection_and_pretest": true,
+  "independent_gates": {
+    "validation": {
+      "rows": 360,
+      "independently_recomputed": true,
+      "passed": false,
+      "stable_runs": 3,
+      "actual_motion_pass": false,
+      "max_decomposition_residual_w2": 0.0001220703125
+    },
+    "test": {
+      "rows": 880,
+      "independently_recomputed": true,
+      "passed": false,
+      "stable_runs": 2,
+      "actual_motion_pass": false,
+      "max_decomposition_residual_w2": 0.000244140625
+    }
+  },
+  "actual_run0_restart_pids_and_first_resumed_fragments_verified": true,
+  "images": {
+    "validation_history.png": {
+      "dimensions": [
+        1820,
+        1120
+      ],
+      "sha256": "a0df500190b324b485062f2f3034d9031dc96120401071708019d7063400a6b9",
+      "visually_checked": true
+    },
+    "test_comparison.png": {
+      "dimensions": [
+        2100,
+        1120
+      ],
+      "sha256": "1ce19bb78c2a11860859fdc8e71d1640e7a7aa5df5ef3c75de92af2b5fe62160",
+      "visually_checked": true
+    },
+    "full_timeseries.png": {
+      "dimensions": [
+        1960,
+        1400
+      ],
+      "sha256": "a700a1ca416a4c1e096afebe44e7b9a21c545a99089ca96c6d805c56e6b4224b",
+      "visually_checked": true
+    }
+  },
+  "links_checked": 30,
+  "sources": {
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_gamma_trial.py": "6ccb97aa9ca32ded7a5df330c537db1618c3d2b520086b3f0f13c0326d607d73",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_gamma_engineering.py": "7d006404d29d48efd0b1a1284c9f44bcba64b86735d98de2c2dd729f09a9df4d",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_gamma_review.py": "f40d7b4d42f58c4818109f590553d9ef1c87cb2edb7dea2444c8efbbe14ea28b",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_gamma_reproduce.py": "64968b2575ee0cf0f1a91a83d9f661b2ae48cf4d336324fc32fee68493b93568",
+    ".\\optimization_control\\tests\\test_pitch_gamma.py": "9fc08da22d0cba0fef57bdd2ac9b97409a4e7b72453d1c601ed936a67bfeaef0",
+    ".\\optimization_control\\tests\\test_pitch_gamma_reporting.py": "44a1cd6b00bc817dd2541f6bf31ef7c6acd4454d80a71fbb8eea378063e50f81",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\verify_delivery.py": "ac5f7b04f039c4ca6c76255db037b9af0dc7fc6f4d9ef792f432061638b88b4d",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_GAMMA_PROTOCOL.md": "6219a267779f1129d0f86006acc3a5ab44faeb7dff889818d8b61eca569a4df0",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_GAMMA_RESULTS.md": "f885bef7293ecdddf4b727b394340c022fb843eaa0e619630f82f980a4b56817",
+    ".\\optimization_control\\maddpg_wind_farm\\MADDPG_STAGE_HANDOFF_20261029.md": "46c99b2e01b6ae4f418442b9dec606c39c885f389f80b83f0faa4150d284e664"
+  },
+  "current_default_unchanged": true,
+  "shared_state_not_written": true,
+  "no_new_candidate_or_budget": true
+}

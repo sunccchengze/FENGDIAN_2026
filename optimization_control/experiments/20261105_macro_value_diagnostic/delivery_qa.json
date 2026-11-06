@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "local_links": 13,
+  "markdown_tables_checked": true,
+  "protected_inputs": 174,
+  "state_capsules": 144,
+  "candidate_rows": 1296,
+  "visual_qa": 3,
+  "report_sha256": "d81633ff44fae07d7e130f6d270c2b72341c64ed874a4eead0019845e8fec236",
+  "model_rows": 30089,
+  "optimizer_updates": 0,
+  "old_checkpoint_or_replay_copies": 0
+}

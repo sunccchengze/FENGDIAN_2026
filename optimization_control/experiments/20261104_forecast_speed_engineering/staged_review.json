@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "path": "optimization_control/experiments/20261104_forecast_speed_engineering/config.yaml",
+      "bytes": 1336,
+      "sha256": "7ec18564b802ce821041b8a0c8acf81e21699134e0c952a36ea80bc255d39a63"
+    },
+    {
+      "path": "optimization_control/experiments/20261104_forecast_speed_engineering/metrics.csv",
+      "bytes": 132,
+      "sha256": "f31f51c9c22e15a57cb9d02d9088a4ea2ee871de2603ccf6fc0e3291990af2c8"
+    },
+    {
+      "path": "optimization_control/experiments/20261104_forecast_speed_engineering/summary.txt",
+      "bytes": 251,
+      "sha256": "3897761c19a89c0c9bd6a0bca17a612e7d30092d4830c92ab49042fb1a1250e7"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_ENGINEERING.md",
+      "bytes": 6100,
+      "sha256": "a3062e8f10e0ace68d2a722feaec20a67625a91f814287397d92680289d5ba52"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_ENGINEERING_RESULTS.md",
+      "bytes": 7927,
+      "sha256": "2a6fb055939a638b1eaa9c7cf72b2d7fbe830f72da4f8d0db834aa4c3c236072"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/forecast_speed_macro.py",
+      "bytes": 19845,
+      "sha256": "144ecebf8ca288bf00e38b4c3f2d6c8957245f02285b30a72483b9d1b56d7fff"
+    },
+    {
+      "path": "optimization_control/tests/verify_forecast_speed_macro.py",
+      "bytes": 22260,
+      "sha256": "897e87ed5e24febf17c00abe6b9e93c091537257e8e6a12402eb10fc5a717bce"
+    }
+  ],
+  "only_engineering_files": true
+}

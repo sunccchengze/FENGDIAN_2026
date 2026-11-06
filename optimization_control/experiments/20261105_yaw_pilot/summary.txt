@@ -1,0 +1,4 @@
+Frozen Y/S yaw-speed pilot complete. seed=42, 12288 new physical steps, 582 joint updates.
+37023 model rows plus 3399 engineering = 40422/42000. New independent tests=0.
+Primary screening uses per-family equal-stream/case validation RMSE below shared PI.
+See YAW_PILOT_RESULTS.md, family_means.csv, stream_summary.csv, pressure.csv and selection.json.

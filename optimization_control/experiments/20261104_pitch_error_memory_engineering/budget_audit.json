@@ -1,0 +1,84 @@
+{
+  "status": "verified_engineering_and_proposed_formal_budget",
+  "engineering_real_rows": 297,
+  "engineering_mock_rows": 0,
+  "engineering_discarded_updates": 13,
+  "formal_training_executed_steps": 0,
+  "new_test_executed_steps": 0,
+  "snapshots": {
+    "memory_restart_input.pth": {
+      "bytes": 20469721,
+      "sha256": "13ffe3d88eb6da4f9e3cd618aab855110f8b077550bb3d89999cc5ffe4a296f9"
+    },
+    "memory_restart_output.pth": {
+      "bytes": 20469785,
+      "sha256": "ddd20ff12f25a32287b41512a1152e8652a693f8376be7a80a95131c8a5e668f"
+    },
+    "zero_restart_input.pth": {
+      "bytes": 20461821,
+      "sha256": "a0a7e6ee3692f34334120e38d46171039d784e8dee57c46c0f6dbe4ccf956a1b"
+    },
+    "zero_restart_output.pth": {
+      "bytes": 20461821,
+      "sha256": "121522e14f79e416079947697cfa2ef2f5221f5a883f8dc07952423255fd9da7"
+    }
+  },
+  "old_run0_bytes": 19682847,
+  "prior_largest_full_state_bytes": 19690453,
+  "largest_measured_private_state_bytes": 20469785,
+  "observed_run0_serialization_increase_bytes": 786938,
+  "projected_full_ring_bytes": 20477391,
+  "raw_added_fields_bytes": {
+    "replay_float64": 524288,
+    "online_target_weights": 3072,
+    "first_step_adam": 3096
+  },
+  "old_max_training_fragment_bytes": {
+    "transition": 42459,
+    "trace": 34684,
+    "loss": 12829
+  },
+  "old_max_single_registered_trace_gzip_bytes": 37504,
+  "proposed_episode_budgets": {
+    "training": {
+      "episodes": 768,
+      "steps": 98304,
+      "model_rows": 99072
+    },
+    "validation_policies": {
+      "episodes": 540,
+      "steps": 69120,
+      "model_rows": 69660
+    },
+    "validation_p_pi": {
+      "episodes": 36,
+      "steps": 4608,
+      "model_rows": 4644
+    },
+    "known_regression": {
+      "episodes": 432,
+      "steps": 55296,
+      "model_rows": 55728
+    },
+    "new_routine": {
+      "episodes": 720,
+      "steps": 92160,
+      "model_rows": 92880
+    },
+    "pressure": {
+      "episodes": 160,
+      "steps": 20480,
+      "model_rows": 20640
+    }
+  },
+  "proposed_formal_rows": 342624,
+  "proposed_formal_plus_engineering_cap_rows": 346720,
+  "proposed_complete_states": 102,
+  "proposed_per_state_bytes": 23068672,
+  "proposed_lightweight_cap_bytes": 536870912,
+  "proposed_formal_cap_bytes": 2889875456,
+  "proposed_combined_with_engineering_cap_bytes": 3158310912,
+  "global_limit_bytes": 3221225472,
+  "experiment_bytes_before_this_file": 81878686,
+  "experiment_bytes_including_this_file": 81881145
+}

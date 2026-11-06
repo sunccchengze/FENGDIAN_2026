@@ -1,0 +1,15 @@
+{
+  "config_sha256": "341da9216306487b70ba08ec31a26170d4d0c043393603baba946e28409e6a1e",
+  "code": {
+    ".\\optimization_control\\maddpg_wind_farm\\forecast_decision_contract.py": "24bf525e0c2e83ef4a70225f2df7e88651a9baf07caf5e0f4930c9b9eb392ef0",
+    ".\\optimization_control\\maddpg_wind_farm\\configs\\forecast_decision_contract.yaml": "5064db4e6f4fec6ea97ce939d4444629185c22d56ce9f628baf10abc694afc7f",
+    ".\\optimization_control\\maddpg_wind_farm\\FORECAST_DECISION_CONTRACT.md": "fc0d9dffb65fa85c26b48d5cf716e5c1ae604dc680f58eb358b76c08f22f1632",
+    ".\\optimization_control\\tests\\test_forecast_decision_contract.py": "a35948cb94957fcc6f88d3532a8a3d2bd01637097861f77740619fb0aad31609"
+  },
+  "cases_fixed_before_forward": true,
+  "expected_mock_rows": 333,
+  "hard_cap_rows": 4096,
+  "formal_RL_steps": 0,
+  "parameter_updates": 0,
+  "real_PINN_rows": 0
+}

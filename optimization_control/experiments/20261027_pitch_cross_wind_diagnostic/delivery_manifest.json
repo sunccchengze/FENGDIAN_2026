@@ -1,0 +1,24 @@
+{
+  "files": {
+    "optimization_control\\maddpg_wind_farm\\pitch_cross_wind_diagnostic.py": "db315a4b8f90fdbdaabc3fd2bfc304ea29aca1934ecfa2628d5978f31147ad5a",
+    "optimization_control\\maddpg_wind_farm\\pitch_cross_wind_review.py": "f2e29159625a25b17e7193568f8f7b9dfcb7c2fee04ce5b7f69c8f7dd30cfd40",
+    "optimization_control\\tests\\test_pitch_cross_wind_diagnostic.py": "b5679323b733356aa315e4754b61d1748b0ea8d7472510021cee4bd63abbcd92",
+    "optimization_control\\maddpg_wind_farm\\PITCH_CROSS_WIND_PROTOCOL.md": "d070823651dfd983163206825ac1f881e4a6b56921b9221273eea0e984e865c7",
+    "optimization_control\\maddpg_wind_farm\\PITCH_CROSS_WIND_RESULTS.md": "11554ffe4ed12d4f56277283626f842347541b08263d01911e772a77253c3df4",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\aggregate.csv": "48933aa3fccb3e10980fcac5fa5457de7b54113fbefc39f10d1c0eec152c44f7",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\command_spectrum.csv": "e0f4c01965035e167c85626483bba9b00778ee25ea1750bef2e79b3cac6ba1fb",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\forecast_metrics.csv": "9f155162b9693324a3a25a75e8c1dca3574e55e1f936b5faccf23fb56ae4df53",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\metrics.csv": "2fa8a33c1ab46024782e35caea8064f448a38612ac8a19615c204212475ca8bf",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\paired_differences.csv": "27a366f8357aa8c37cbc9f09c9a536c4e4d046fe25217f458f39a8de275c8339",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\response_correlations.csv": "6114812736e58f5b3020a5aafcf00063a312f2149445278efad4d47504f97db1",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\sampled_ranges.csv": "8daa7d9f290bf28e10a5b95695c9f5994b438fd9ec3aab915ebebdf3d0ba831b",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\trajectories.csv": "689881c2c7a1cc8ed2109ddfa1a80bb3e53a051d1004db80808131e6812a7242",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\config.yaml": "e1cd3e3e14a45ba39da059b749375719789396a21c7363cdd43d8bce77d24ebc",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\summary.txt": "d0cc0c70a7a31696980d18067d584315d3900d8a817090774f96adc2f4621f0e",
+    "optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\verification.json": "726b3965e61e6b3435625f8ff4bd12c74e5460234998fdf564a7a3f6ed028e4e"
+  },
+  "figures_visually_checked": true,
+  "all_44_cases_contact_sheets_checked": true,
+  "formal_training_steps": 0,
+  "independent_test_opened": false
+}

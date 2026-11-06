@@ -1,0 +1,82 @@
+{
+  "seed": 42,
+  "status": "completed",
+  "formal_RL_steps": 0,
+  "model_rows": 82449,
+  "model_rows_by_kind": {
+    "mock_correctness": 376,
+    "precheck_external": 5,
+    "batch_single_gate": 18,
+    "internal_forecast": 61128,
+    "zero_branch_check": 24,
+    "external_reset": 162,
+    "external_transition": 20736
+  },
+  "repeated_parent_improvement": false,
+  "stream_results": [
+    {
+      "split": "train",
+      "run_id": 0,
+      "parent_mean_w": 438340.2479690658,
+      "search_mean_w": 420842.33167831536,
+      "ratio": 0.9600814290455364,
+      "improved_cases": 6,
+      "cases": 6
+    },
+    {
+      "split": "train",
+      "run_id": 1,
+      "parent_mean_w": 349634.3988413874,
+      "search_mean_w": 326741.848951621,
+      "ratio": 0.9345243203597031,
+      "improved_cases": 5,
+      "cases": 6
+    },
+    {
+      "split": "train",
+      "run_id": 2,
+      "parent_mean_w": 381949.64741449826,
+      "search_mean_w": 366315.2657837465,
+      "ratio": 0.9590669038796492,
+      "improved_cases": 3,
+      "cases": 6
+    },
+    {
+      "split": "validation",
+      "run_id": 0,
+      "parent_mean_w": 364337.8407931975,
+      "search_mean_w": 354046.99764098023,
+      "ratio": 0.9717546683325203,
+      "improved_cases": 4,
+      "cases": 6
+    },
+    {
+      "split": "validation",
+      "run_id": 1,
+      "parent_mean_w": 360060.2835971525,
+      "search_mean_w": 367372.0801150776,
+      "ratio": 1.0203071453615413,
+      "improved_cases": 2,
+      "cases": 6
+    },
+    {
+      "split": "validation",
+      "run_id": 2,
+      "parent_mean_w": 336134.99461641826,
+      "search_mean_w": 336593.10657657014,
+      "ratio": 1.0013628808885986,
+      "improved_cases": 3,
+      "cases": 6
+    }
+  ],
+  "new_test_released": false,
+  "report": "../../maddpg_wind_farm/SPEED_CAUSAL_SEARCH_RESULTS.md",
+  "current_proxy_model_rows": 82073,
+  "mock_model_rows": 376,
+  "metrics": 288,
+  "trace_rows": 36864,
+  "model_row_hard_cap": 100000,
+  "new_policy_files": 0,
+  "optimizer_updates": 0,
+  "diagnostic_only": true
+}

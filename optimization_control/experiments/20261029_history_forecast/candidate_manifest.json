@@ -1,0 +1,158 @@
+{
+  "status": "frozen_diagnostic_candidate_only",
+  "independent_test_released": false,
+  "formal_RL_steps": 0,
+  "model": ".\\optimization_control\\experiments\\20261029_history_forecast\\forecast_model.npz",
+  "model_sha256": "a5571a19354015c8b5997823748fafd7f0a6a355a0422d35b539e4faa3992877",
+  "parents": [
+    {
+      "run_id": 0,
+      "checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+      "sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+      "cumulative_parent_steps": 32768
+    },
+    {
+      "run_id": 1,
+      "checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+      "sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+      "cumulative_parent_steps": 28672
+    },
+    {
+      "run_id": 2,
+      "checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth",
+      "sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+      "cumulative_parent_steps": 24576
+    }
+  ],
+  "protocol": {
+    "version": "causal_history_forecast_v1",
+    "seed": 42,
+    "source_commit": "1a7221a3bcbceb351b5555111c1a58a687bdf1f6",
+    "history_samples": 32,
+    "forecast_horizon": 12,
+    "decision_interval": 8,
+    "ridge_alpha": 0.1,
+    "fit_trajectories_per_family": 200,
+    "fit_episode_offset": 65000000,
+    "families": [
+      "stationary",
+      "ramp",
+      "gust"
+    ],
+    "speed_bounds": [
+      7.5,
+      10.5
+    ],
+    "bootstrap_samples": 2000,
+    "screen": {
+      "primary_horizon": 8,
+      "minimum_improved_families": 2,
+      "maximum_family_MSE_ratio": 1.05
+    },
+    "model_row_hard_cap": 170000,
+    "precheck_mock_reserve": 2000,
+    "conservative_closed_loop_reserve": 121700,
+    "formal_RL_steps": 0
+  },
+  "base_environment": {
+    "parameter_source": {
+      "kind": "assumption",
+      "reference": "configs/wind_pinn_demo.yaml",
+      "note": "synthetic integration limits, not calibrated actuators"
+    },
+    "dt_s": 1.0,
+    "yaw_frame": "nacelle_heading",
+    "heading_bounds_rad": [
+      -314.1592653589793,
+      314.1592653589793
+    ],
+    "control_mask": [
+      0,
+      1,
+      1
+    ],
+    "horizon": 128,
+    "wind_scale_m_s": 25.0,
+    "action_low": [
+      -0.25,
+      0.0,
+      0.6
+    ],
+    "action_high": [
+      0.25,
+      0.22,
+      1.267
+    ],
+    "initial_operating_point": [
+      0.0,
+      0.04,
+      0.9
+    ],
+    "rate_limits": [
+      0.005,
+      0.00872664626,
+      0.1
+    ],
+    "time_constants_s": [
+      5.0,
+      2.0,
+      5.0
+    ],
+    "target_w": 3452173.1875,
+    "wind_base_m_s": 9.0,
+    "wind_amplitude_m_s": 0.0,
+    "wind_period_steps": 128,
+    "wind_noise_std_m_s": 0.0,
+    "wind_direction_rad": 0.0,
+    "turbulence_intensity": 0.1,
+    "action_change_weight": 0.001,
+    "reward_scale": 100.0,
+    "inflow": {
+      "speed": {
+        "mean_min_m_s": 8.7,
+        "mean_max_m_s": 9.3,
+        "ti_values": [
+          0.04,
+          0.08
+        ],
+        "scenario": "mixed",
+        "length_scale_m": 100.0,
+        "padding_factor": 8,
+        "ramp_amplitude_m_s": 0.35,
+        "gust_amplitude_m_s": 0.5,
+        "gust_duration_s": 32.0,
+        "speed_min_m_s": 7.5,
+        "speed_max_m_s": 10.5,
+        "max_attempts": 100
+      },
+      "direction": {
+        "mean_rad": 0.0,
+        "amplitude_rad": 0.035,
+        "period_s": 180.0,
+        "ramp_rad": 0.04
+      }
+    },
+    "reference_schedule": {
+      "yaw_offset_rad": 0.0,
+      "speed_per_wind_rad_m": 0.11114035087719298
+    },
+    "speed_reference_mode": "observation_float32_v1"
+  },
+  "source_commit": "1a7221a3bcbceb351b5555111c1a58a687bdf1f6",
+  "executed_code_hashes": {
+    ".\\optimization_control\\maddpg_wind_farm\\history_forecast_experiment.py": "5ef6de90562ae8fcf9f993b0326f632fd9ccefdd1d0430a17edc4ddf4d24d8c8",
+    ".\\optimization_control\\maddpg_wind_farm\\history_wind_forecast.py": "9397a743399105f9272da532098c53eb2ac481cf4d5965105541b562fe031d17",
+    ".\\optimization_control\\maddpg_wind_farm\\configs\\history_forecast.yaml": "8676d41e78dd5c1098660dc70b565ba7dc410d443f60ae6d234bb4797fa42769",
+    ".\\optimization_control\\maddpg_wind_farm\\HISTORY_FORECAST_PROTOCOL.md": "02b9b6fe7eee0663daaeb3026dbf72c87c221a2a76a3db8a0a61172f67998707",
+    ".\\optimization_control\\tests\\test_history_forecast.py": "b11d00de2006ba1abf486a2d1571e6f73454cdd62f30bc8233c5f37f08329bb1",
+    ".\\optimization_control\\maddpg_wind_farm\\history_speed_search.py": "eb75afe4b1ef3dd55a5ba88ab2e2e41d74117601ea61520cb110399cfeb88ef4",
+    ".\\optimization_control\\tests\\test_history_speed_search.py": "2b3238692af70d5c3f99aac548b2d9f9a3150617747b071e831bd5247a1770b3"
+  },
+  "known_limitations": [
+    "validation 5/18 cases worse than parent",
+    "validation worst above parent and 500 kW",
+    "one 863.95 second planning wall-time outlier; cause unresolved",
+    "synthetic-label proxy only",
+    "no new RL learning evidence"
+  ]
+}

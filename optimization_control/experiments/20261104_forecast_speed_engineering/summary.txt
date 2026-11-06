@@ -1,0 +1,3 @@
+Engineering gate passed, seed=42, attempt_000. Current 1548 mock + 180 real rows, 6 engineering updates.
+Cumulative conservative charge: 1728/4096 rows, 6/24 joint updates.
+Formal RL steps=0, independent tests=0, yaw=0. Disk resume exact for B and C.

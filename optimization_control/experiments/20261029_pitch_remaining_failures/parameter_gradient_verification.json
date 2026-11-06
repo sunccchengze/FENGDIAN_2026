@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "source_sha256": "e9fb3b1fb65155725822bebcf26705546f0f044ff38260a39599e45c5c14159c",
+  "frozen_replay_selection": {
+    "points_per_state": 1024,
+    "selection": "chronological_linspace_including_endpoints",
+    "nearest_neighbors": 32,
+    "distance": "per_coordinate_replay_std_floor_1e-6",
+    "remove_query_self": true,
+    "rng_consumption": false
+  },
+  "unique_states": 5,
+  "logical_role_rows": 18,
+  "backward_parameter_gradients_only": true,
+  "optimizer_updates": 0,
+  "model_forward_rows": 0,
+  "environment_steps": 0,
+  "no_rng_consumed": true,
+  "no_parameter_or_optimizer_change": true,
+  "changed_context": "teammate_pitch_only_background_replay_preserved",
+  "cosine_is_context_sensitivity_not_correctness": true
+}

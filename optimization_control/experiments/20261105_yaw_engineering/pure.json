@@ -1,0 +1,40 @@
+{
+  "SI_three_markers": true,
+  "angle_cases": [
+    {
+      "heading": 6.282185307179586,
+      "direction": 0.001,
+      "yaw_rad": 0.017453292519943295,
+      "shortest_delta": 0.019453292519943766,
+      "actual_delta": 0.0035262836852441026
+    },
+    {
+      "heading": 0.001,
+      "direction": 6.282185307179586,
+      "yaw_rad": -0.017453292519943295,
+      "shortest_delta": -0.019453292519944654,
+      "actual_delta": -0.0035262836852440966
+    },
+    {
+      "heading": 0.0,
+      "direction": 0.0,
+      "yaw_rad": 0.017453292519943295,
+      "shortest_delta": 0.017453292519943098,
+      "actual_delta": 0.0031637451913997783
+    },
+    {
+      "heading": 0.0,
+      "direction": 0.0,
+      "yaw_rad": -0.017453292519943295,
+      "shortest_delta": -0.017453292519943098,
+      "actual_delta": -0.0031637451913997783
+    }
+  ],
+  "rate_limit_bound": true,
+  "private_schema_rejection": true,
+  "terminal_bootstrap_skipped": true,
+  "prefix_causal": true,
+  "all_three_empty_zero": true,
+  "rows": 0,
+  "updates": 0
+}

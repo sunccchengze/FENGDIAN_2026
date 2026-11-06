@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "episodes": 324,
+  "model_rows": 41796,
+  "rows_known": 27864,
+  "rows_validation": 13932,
+  "optimizer_updates": 0,
+  "new_test_cases": 0,
+  "config_sha": "3db658c2ee6c47b788724914437f9e80657ae257f47f58e780b30daa7e99eb8c",
+  "hashes": {
+    ".\\optimization_control\\experiments\\20261105_pitch_memory_ablation\\predictor_rows.bin": "7d42875f4a1273216471367d9b5c34fd9330cbc13e4f7e775514134c8cf80c20",
+    ".\\optimization_control\\experiments\\20261105_pitch_memory_ablation\\ablation_metrics.csv": "63237cf035f0e4c99a2ecc00d9c600712cd697aeda80d54bde4a87dd3342a97e",
+    ".\\optimization_control\\experiments\\20261105_pitch_memory_ablation\\trajectory_manifest.json": "496a996f253a38d65556ea20452a3bd098248a3dcde4dcde5be305af07b7d661",
+    ".\\optimization_control\\experiments\\20261105_pitch_memory_ablation\\offline.json": "863eecf21bd7904357e8e1602537b45e31bcacd8c748e37b77ef6870f260d870"
+  }
+}

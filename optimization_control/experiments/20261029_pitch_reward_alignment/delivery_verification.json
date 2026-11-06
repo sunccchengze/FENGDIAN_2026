@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "pinned_inputs_checked": 1831,
+  "source_data_unchanged": true,
+  "source_correction_snapshots_checked": true,
+  "numeric_outputs_unchanged_after_layout_fix": true,
+  "tests": 4,
+  "test_log_sha256": "bd862408345e760e84f9713e50a2b625f8bc59a88aeb29a19f25fa64f5b866b6",
+  "formal_training_steps": 0,
+  "new_environment_steps": 6912,
+  "reserved_environment_steps": 6912,
+  "budget_reservations": 72,
+  "supplement_jobs": 18,
+  "native_vs_reconstructed_discounted_max": 9.109650846994555e-07,
+  "native_quantization_conflict_changes": 0,
+  "document_links_checked": 31,
+  "python_ast_files_checked": 4,
+  "images": {
+    "attribution.png": {
+      "width_height": [
+        2100,
+        644
+      ],
+      "sha256": "b1445e0a87f722785ca70ef1c58d725fecd9a1e32660745d2128c08faf61f299",
+      "visually_inspected": true
+    },
+    "tracking_motion_cost.png": {
+      "width_height": [
+        1652,
+        630
+      ],
+      "sha256": "63aee00534993fe36151ccafe891172aa252c95e1534e6a8c55793e88c70ca3a",
+      "visually_inspected": true
+    },
+    "full_episode_examples.png": {
+      "width_height": [
+        2100,
+        1008
+      ],
+      "sha256": "382abd424d9f06359ce15e3048d49b10265786e10976185a3142f1ae2fad9763",
+      "visually_inspected": true
+    }
+  },
+  "candidate": "gamma_only_0.99_vs_1_proposed_not_executed",
+  "git_scope": "isolated pitch tree; no merge/push/shared status updates",
+  "source_files": {
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_REWARD_ALIGNMENT_PROTOCOL.md": "0d88e80656dcf57776cdf0f0d872ddd63e7d74c35996a1beb09090bd00d2831e",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_REWARD_ALIGNMENT_RESULTS.md": "11e92b8dde19692d8e06a97065bc52ae7f81c282d7a47f2949f747ca3d007d16",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_REWARD_ALIGNMENT_CANDIDATE.md": "6bf740fde16a6521c762f10c1cd557799a14ab2c44cecadf5fc5ccdef9b52f17",
+    ".\\optimization_control\\maddpg_wind_farm\\MADDPG_STAGE_HANDOFF_20261029.md": "12e5fc828e1f893a8f73b1f33bd3fedf6dc3d7fa0bf20c0ffcbe09ac4f78d10c",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_reward_alignment.py": "28c05e731c3195262ad35bf19f21a8ce55d17d2298d371e9e1260179af7d3ab8",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_reward_alignment_review.py": "7e728b5ca9c10b9c8f06efbaf00081f9776025d69be3b15b09cdaee53604e9a5",
+    ".\\optimization_control\\tests\\test_pitch_reward_alignment.py": "c8d58580237de6e5a9023e35fa7418fa15decd00f0ec703c13624344277857ac",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\detail.py": "67a594df7f0ae00e351fec97adeaa3dc92c693bfef8ae2d9f699dfdf70ed3ab5"
+  }
+}

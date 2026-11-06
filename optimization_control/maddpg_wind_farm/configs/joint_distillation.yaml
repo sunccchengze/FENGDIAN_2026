@@ -1,0 +1,97 @@
+version: wind12_joint_distillation_v1
+seed: 42
+runtime_site_packages: .venv/pinn_tf216
+source_experiment: optimization_control/experiments/20261022_wind_pinn_integration
+bootstrap_experiment: optimization_control/experiments/20261023_progressive_random_control
+horizon: 128
+dt_s: 1.0
+run_ids:
+- 0
+- 1
+- 2
+steps_per_run: 16384
+eval_every: 4096
+warmup_steps: 512
+update_every: 2
+actor_lr: 0.0001
+stage_noise_std:
+  pitch:
+  - 0.0
+  - 0.03
+  - 0.0
+  pitch_speed:
+  - 0.0
+  - 0.03
+  - 0.04
+  all:
+  - 0.02
+  - 0.03
+  - 0.04
+noise_end_fraction: 0.2
+training_targets_w:
+- 2600000.0
+- 3200000.0
+- 3800000.0
+validation_targets_w:
+- 2850000.0
+- 3450000.0
+test_targets_w:
+- 2750000.0
+- 3350000.0
+- 3850000.0
+test_initial_pitch_rad:
+- 0.025
+- 0.055
+training_initial_pitch_rad:
+- 0.025
+- 0.055
+training_episode_offset: 740000
+validation_episode_offset: 850000
+test_episode_offset: 960000
+stress_episode: 969000
+max_handover_ratio: 1.05
+head_max_action_error: 0.05
+background_schedule:
+  yaw_offset_rad: 0.0
+  speed_per_wind_rad_m: 0.11114035087719298
+inflow:
+  speed:
+    mean_min_m_s: 8.7
+    mean_max_m_s: 9.3
+    ti_values:
+    - 0.04
+    - 0.08
+    scenario: mixed
+    length_scale_m: 100.0
+    padding_factor: 8
+    ramp_amplitude_m_s: 0.35
+    gust_amplitude_m_s: 0.5
+    gust_duration_s: 32.0
+    speed_min_m_s: 7.5
+    speed_max_m_s: 10.5
+    max_attempts: 100
+  direction:
+    mean_rad: 0.0
+    amplitude_rad: 0.035
+    period_s: 180.0
+    ramp_rad: 0.04
+gate:
+  mean_validation_rmse_w: 400000.0
+  worst_validation_rmse_w: 500000.0
+  max_final_over_selected: 1.25
+scope: synthetic_wind12_inherited_control_only_not_physical_validation
+distillation:
+  sample_rows: 5120
+  batch_size: 512
+  old_max_error: 0.02
+  new_max_error: 0.05
+  old_loss_weight: 10.0
+  candidates:
+  - updates: 3000
+    lr: 0.001
+  - updates: 5000
+    lr: 0.0003
+engineering_gate:
+  max_parent_mean_ratio: 1.05
+  max_parent_worst_ratio: 1.05
+  max_final_over_selected: 1.25

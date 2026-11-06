@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "assessment": "retrospective_user_average_gate_after_published_results",
+  "families": ["stationary", "ramp", "gust"],
+  "criterion": "all three family means of complete-episode RMSE strictly below the paired common PI mean",
+  "weighting": "equal cases within each family, equal frozen parent streams, one common PI per case",
+  "main_batch": "20261104_pitch_error_memory_formal",
+  "additional_batches": ["20261028_pitch_nstep", "20261029_pitch_actor_context"],
+  "candidate_manifest": "20261028_pitch_nstep_mechanism/candidate_manifest.json",
+  "candidate_manifest_sha256": "77aa4e17b31feee7b8bf402be5bdcb945cb73044230e13adbd67445391920d31",
+  "candidate_steps": [16384, 12288, 4096],
+  "pressure": "separate known stress cases; also retained in the all-case descriptive row within each batch",
+  "model_rows": 0,
+  "optimizer_updates": 0,
+  "new_test_cases": 0,
+  "storage_cap_bytes": 33554432
+}

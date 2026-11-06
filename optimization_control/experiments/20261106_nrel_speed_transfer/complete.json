@@ -1,0 +1,100 @@
+{
+  "results": [
+    {
+      "controller": "Y0_selected",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y0_selected\\metrics.json",
+          "sha256": "9702967b4e05e2b1dbb3a79451af86e2f58dc8179f4a0724941362825ac03dfa",
+          "bytes": 7967
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y0_selected\\trace.npz",
+          "sha256": "81208fd59413758abcee27a08a5136021a7aece1be7590cad9ec5b5d7c89c4f7",
+          "bytes": 230078
+        }
+      },
+      "actual_rollouts": 6,
+      "input_rows": 774
+    },
+    {
+      "controller": "Y1_selected",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y1_selected\\metrics.json",
+          "sha256": "7c6115cc4ed16a1465f79bb77ca92abf0a51d742f85b8c22603bafd703ed3edb",
+          "bytes": 7958
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y1_selected\\trace.npz",
+          "sha256": "917694aeed4ad4022e06a6b4147aaf836af4ed6c051c5887a89b781c08f2ebc0",
+          "bytes": 204354
+        }
+      },
+      "actual_rollouts": 6,
+      "input_rows": 774
+    },
+    {
+      "controller": "Y2_selected",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\metrics.json",
+          "sha256": "aa2236712f53ee0b68169005a0a90dacc9804fdf9170c40e438c24255769e428",
+          "bytes": 7959
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+          "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+          "bytes": 241050
+        }
+      },
+      "actual_rollouts": 6,
+      "input_rows": 774
+    },
+    {
+      "controller": "p",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\p\\metrics.json",
+          "sha256": "ca2d54799ebc00fcff66982613480365bb0821aea7af5ddbc2fd40bf6339ddf3",
+          "bytes": 7862
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\p\\trace.npz",
+          "sha256": "531ab35359c622076b3b5ecf5fed6837a722bee12b1a628d5d22e03aabd68687",
+          "bytes": 173645
+        }
+      },
+      "actual_rollouts": 6,
+      "input_rows": 774
+    },
+    {
+      "controller": "pi",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\metrics.json",
+          "sha256": "6340241d1de467426f3fef8b388d8fa0a581096f733a201f72697a64251cf371",
+          "bytes": 7903
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+          "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+          "bytes": 173558
+        }
+      },
+      "actual_rollouts": 6,
+      "input_rows": 774
+    }
+  ],
+  "new_rows": 4030,
+  "performance_rows": 3870,
+  "engineering_rows": 160,
+  "old_rollouts_referenced": 30,
+  "new_performance_rollouts": 30,
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "pressure_cases": 0,
+  "new_wind_generation": 0,
+  "row_hard_cap": 10000,
+  "migration_only": true
+}

@@ -1,0 +1,36 @@
+{
+  "ramp_relative_improvement": 0.05391402382957533,
+  "ramp_improved_runs": 2,
+  "ramp_improvement_over_parent": 0.06287564126368173,
+  "ramp_improved_over_parent_runs": 2,
+  "other_family_ratios": {
+    "run0_stationary": 0.9814047358569055,
+    "run0_gust": 0.9310365342602224,
+    "run1_stationary": 0.9760810764249448,
+    "run1_gust": 0.9546023195668574,
+    "run2_stationary": 1.0432864308473473,
+    "run2_gust": 1.0338773148634937
+  },
+  "final_over_selected": {
+    "n1_run0": 0.9913190142989564,
+    "n1_run1": 0.9984091132816377,
+    "n1_run2": 1.0435282574558569,
+    "n8_run0": 1.0,
+    "n8_run1": 0.9904502816864227,
+    "n8_run2": 1.0277519173305412
+  },
+  "validation_final_over_selected": {
+    "n1_run0": 1.045829732095471,
+    "n1_run1": 1.0334497917530427,
+    "n1_run2": 1.0310876412264338,
+    "n8_run0": 1.0,
+    "n8_run1": 1.0058534053140058,
+    "n8_run2": 1.0248481336477226
+  },
+  "n8_selected_after_initial": 3,
+  "selected_initial_jobs": [
+    "n1_run0",
+    "n1_run1"
+  ],
+  "passed": true
+}

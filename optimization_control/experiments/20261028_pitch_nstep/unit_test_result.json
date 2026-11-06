@@ -1,0 +1,9 @@
+{
+  "seed": 42,
+  "command": "python -B -X utf8 -m unittest optimization_control.tests.test_pitch_nstep -v",
+  "tests_passed": 6,
+  "executed_before_smoke_and_formal": true,
+  "algorithm_unchanged_since_tests": true,
+  "real_parent_n1_exact_runs": 3,
+  "real_resume_forks_exact_arms": 2
+}

@@ -1,0 +1,4 @@
+Post-hoc demonstration cases from frozen 20261022 tests.
+54 routine run/case pairs ranked; global and ramp minima plotted over full 128 seconds.
+Three PNG/PDF/SVG figures; no new training or source changes.
+Case superiority does not establish stable aggregate superiority.

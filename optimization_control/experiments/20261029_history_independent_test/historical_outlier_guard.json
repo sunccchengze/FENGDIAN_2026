@@ -1,0 +1,9 @@
+{
+  "source_commit": "6e91ccc2900b303c14f6028eaa756f30cd827f89",
+  "path": ".\\optimization_control\\experiments\\20261029_history_forecast\\cases\\train_run0_ramp_3800000\\plans.json",
+  "expected_sha256_from_existing_manifest": "48f5dc77318a56c4d5c5eca6507421d426bf50cd21a2fa9d42b6e554c7ca11a2",
+  "step": 40,
+  "wall_seconds": 863.9507544999997,
+  "rerun": false,
+  "old_file_written": false
+}

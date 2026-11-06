@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "arm": "replay",
+      "initial_core_exact": true,
+      "validation4096_recomputed": true
+    },
+    {
+      "arm": "current_pitch",
+      "initial_core_exact": true,
+      "validation4096_recomputed": true
+    }
+  ],
+  "plant_rows": 0,
+  "optimizer_updates": 0
+}

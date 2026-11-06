@@ -1,0 +1,69 @@
+{
+  "core_correct": true,
+  "formal_learning_steps": 98304,
+  "new_updates": 47622,
+  "checkpoint_count": 774,
+  "processes": 10,
+  "all_normal_exit": true,
+  "planned_restore_at_4096": true,
+  "first128_within_budget": true,
+  "raw_reward_residual_max": 1.189023626224639e-07,
+  "validation_metric_residual_max": 0.0,
+  "regenerated_training_winds": 384,
+  "regenerated_noise_steps": 49152,
+  "validation_bank": {
+    "routine_cases": 18,
+    "known_pressure_cases": 0
+  },
+  "postprocessor_sha256": "f40d7b4d42f58c4818109f590553d9ef1c87cb2edb7dea2444c8efbbe14ea28b",
+  "sample_indices_and_actual_m_paired": true,
+  "source_inputs_unchanged": true,
+  "validation": {
+    "split": "validation",
+    "new_learning_runs": 2,
+    "new_learning_pass": false,
+    "ramp": {
+      "selected": {
+        "ratio": 1.0143053469892638,
+        "improved_runs": 0,
+        "passed": false
+      },
+      "final": {
+        "ratio": 0.9879266790272092,
+        "improved_runs": 2,
+        "passed": false
+      }
+    },
+    "other_capability_preserved": false,
+    "stability": [
+      {
+        "run": 0,
+        "final_over_selected": 1.0118647889027537,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "final_over_selected": 1.0087579542621052,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "final_over_selected": 1.0361232838197678,
+        "passed": true
+      }
+    ],
+    "stable_runs": 3,
+    "actual_motion_pass": false,
+    "physical_pass": true,
+    "passed": false,
+    "validation_decision_not_revised_by_test": true
+  },
+  "first512_behavior_identical_all_streams": true,
+  "hashes": {
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\selection.json": "bab8b3cfa3167a23f3171d7abf8f4d1b0df5e18f394cd49bcb8d3daf34212dd8",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\config.yaml": "a7736d478a6333f0838734888284b41406c12c6fab8b06d3febb6e4556ff4ed2",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\validation_acceptance.json": "de5c7231fb82e81a01afc7b87358d54b29e296b06ae05199c3b59aed81e378ca",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\checkpoint_manifest.csv": "68f7fc26b1bb1b717cd9ab13e75fb848b387d61d023746da41cc4cafc2369675",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\history.csv": "775699c3650e2c4c7813a3265984a9118f2e84d934487f63ccd1de714b95f3d4"
+  }
+}

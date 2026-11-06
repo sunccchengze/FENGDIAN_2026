@@ -1,0 +1,73 @@
+seed: 42
+source_commit: c6a27774ec7cd34113ed7e37b47947b279fef86a
+stage: engineering_only
+formal_RL_steps: 0
+new_independent_winds: 0
+row_hard_cap: 4096
+disk_cap_bytes: 134217728
+update_hard_cap: 12
+real_zero_rows: 2322
+real_nonzero_rows: 258
+mock_boundary_rows: 774
+mock_short_rows: 45
+planned_rows: 3399
+planned_updates: 3
+old_validation_indices:
+- 0
+- 2
+- 4
+nonzero_validation_index: 0
+identities:
+- schema: frozen_C_yaw_engineering_v1
+  parent:
+    path: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_0\segment_000\step_00016384.pth
+    sha256: 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+  forecast: &id001
+    path: .\optimization_control\experiments\20261029_history_forecast\forecast_model.npz
+    sha256: a5571a19354015c8b5997823748fafd7f0a6a355a0422d35b539e4faa3992877
+  run: 0
+  step: 0
+  snapshot:
+    path: .\optimization_control\experiments\20261104_forecast_speed_formal\jobs\C0\s0000\inference.pt
+    sha256: d3150ea9bb068b57c17db837740b9dd9303e57779583650f5a80b02b629df35b
+    bytes: 24831
+  source_lock_sha: 01049ab2a4252f98e562f9c58f3ba55c0369903d616a3fefaa67339e4e204b4b
+- schema: frozen_C_yaw_engineering_v1
+  parent:
+    path: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00012288.pth
+    sha256: 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+  forecast: *id001
+  run: 1
+  step: 0
+  snapshot:
+    path: .\optimization_control\experiments\20261104_forecast_speed_formal\jobs\C1\s0000\inference.pt
+    sha256: 393461cbd1822f3e338396fa81b80edf94781dfa910d87edea111110ea9efd92
+    bytes: 24831
+  source_lock_sha: 01049ab2a4252f98e562f9c58f3ba55c0369903d616a3fefaa67339e4e204b4b
+- schema: frozen_C_yaw_engineering_v1
+  parent:
+    path: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00008192.pth
+    sha256: e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+  forecast: *id001
+  run: 2
+  step: 4096
+  snapshot:
+    path: .\optimization_control\experiments\20261104_forecast_speed_formal\jobs\C2\s4096\inference.pt
+    sha256: 81744bf336d4d469b68b96d8ef6af91e1c937583827434f81d131ad26490592e
+    bytes: 24831
+  source_lock_sha: 01049ab2a4252f98e562f9c58f3ba55c0369903d616a3fefaa67339e4e204b4b
+action_atol: 2.0e-06
+applied_atol: 1.0e-06
+power_atol_w: 1.0
+rmse_atol_w: 1.0
+yaw_radius_rad: 0.017453292519943295
+yaw_interval_s: 8
+parent_speed_interval_s: 8
+parent_pitch_interval_s: 1
+actual_m_gamma: 0.99
+mock_formula: U=9+.0015*t+.06*sin(t/3+episode/5), direction=.0003*t, TI=.08
+short_resume_steps:
+- 5
+- 8
+short_horizon: 19
+full_resume_step: 512

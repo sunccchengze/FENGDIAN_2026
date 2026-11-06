@@ -1,0 +1,8 @@
+Completed 2026-10-30; seed=42. Recommend decision-boundary speed learning, proposed 51-input head / 84-input Critic.
+Six contract tests passed in attempt_001, 333 new mock rows; first failed serialization-representation assertion retained, 94 rows.
+Cumulative 427/4096 mock rows; real PINN rows=0; RL steps=0; parameter updates=0; new independent test=0.
+Zero B/C short closed loop bitwise equal to three original parents; m=[8,8,3], reset m=5; t5/t8 memory resume exact.
+Root config/verification preserve the failed first attempt; passing attempt config, execution source, verification and budget remain in attempt_001.
+Final post-run prepare/audit guards checked without plant calls; remaining contract functions AST identical.
+No production network/checkpoint/replay schema migration, old model/replay copy, yaw, shared status edits, merge or push.
+Future training proposal only: A/B/C x 3 x 8192 = 73728 physical steps, reserved 129355 query rows under 130000, not executed.

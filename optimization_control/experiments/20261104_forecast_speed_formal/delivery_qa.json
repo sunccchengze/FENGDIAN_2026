@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "protected_inputs": 32,
+  "local_links": 21,
+  "table_layout_checked": true,
+  "ast_checked": [
+    ".\\optimization_control\\maddpg_wind_farm\\forecast_speed_macro.py",
+    ".\\optimization_control\\maddpg_wind_farm\\forecast_speed_training.py",
+    ".\\optimization_control\\maddpg_wind_farm\\forecast_speed_report.py"
+  ],
+  "figures_visual_review": [
+    "validation_curves",
+    "paired_validation",
+    "actual_controls"
+  ],
+  "complete_processes": 14,
+  "planned_restarts": 3,
+  "query_rows": 125259,
+  "combined_rows": 126987,
+  "physical_steps": 73728,
+  "full_state_count": 36,
+  "inference_count": 42,
+  "role_selection_recomputed": true,
+  "new_test_generated": false
+}

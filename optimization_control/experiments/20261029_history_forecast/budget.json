@@ -1,0 +1,459 @@
+{
+  "limit": 170000,
+  "scopes": [
+    {
+      "name": "mock_planner",
+      "reserve": 2000,
+      "actual": 821,
+      "api_calls": 1,
+      "status": "complete",
+      "kinds": {
+        "mock_correctness": 821
+      }
+    },
+    {
+      "name": "real_precheck",
+      "reserve": 1179,
+      "actual": 845,
+      "api_calls": 845,
+      "status": "complete",
+      "kinds": {
+        "precheck_external": 5,
+        "internal_forecast": 816,
+        "zero_semantics": 24
+      }
+    },
+    {
+      "name": "train_run0_stationary_2600000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_stationary_3800000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_2600000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_ramp_3800000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_2600000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run0_gust_3800000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_2600000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_stationary_3800000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_2600000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_ramp_3800000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_2600000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run1_gust_3800000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_2600000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_stationary_3800000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_2600000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_ramp_3800000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_2600000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "train_run2_gust_3800000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_stationary_2850000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_stationary_3450000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_ramp_2850000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_ramp_3450000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_gust_2850000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run0_gust_3450000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_stationary_2850000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_stationary_3450000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_ramp_2850000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_ramp_3450000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_gust_2850000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run1_gust_3450000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_stationary_2850000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_stationary_3450000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_ramp_2850000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_ramp_3450000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_gust_2850000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    },
+    {
+      "name": "validation_run2_gust_3450000",
+      "reserve": 3393,
+      "actual": 3325,
+      "api_calls": 3325,
+      "status": "complete",
+      "kinds": {
+        "external_reset": 1,
+        "internal_forecast": 3196,
+        "external_transition": 128
+      }
+    }
+  ]
+}

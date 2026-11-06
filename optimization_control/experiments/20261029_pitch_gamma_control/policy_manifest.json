@@ -1,0 +1,943 @@
+{
+  "seed": 42,
+  "config_sha256": "a7736d478a6333f0838734888284b41406c12c6fab8b06d3febb6e4556ff4ed2",
+  "selection_sha256": "bab8b3cfa3167a23f3171d7abf8f4d1b0df5e18f394cd49bcb8d3daf34212dd8",
+  "policies": [
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 0,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run0\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "462dc95eb1183aae59f01aff2091b3ba7558cffe025c1c34081708a744c0af98",
+      "step": 0,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+      "parent_sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 0.99,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 52608584,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 0,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run0\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "bdc5af561372c340adb99e89fd17a9351d1fc71f8b09cd6aa79287bc81de33aa",
+      "step": 16384,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+      "parent_sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 0.99,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 52608584,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 0,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run0\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "bdc5af561372c340adb99e89fd17a9351d1fc71f8b09cd6aa79287bc81de33aa",
+      "step": 16384,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+      "parent_sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 0.99,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 52608584,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 1,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run1\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "f5765db777aa616ef7fd6a00987fc9cbe0cdb00e4832b7d9057117bacede6684",
+      "step": 0,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+      "parent_sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 0.99,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 151641374,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 1,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run1\\step_00004096\\attempt_000\\state.pth",
+      "sha256": "8c3537ec73a3f624b4ed71a1462684d52b1f35cd2c8ae180ff423684b3ec6642",
+      "step": 4096,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+      "parent_sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 0.99,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 151641374,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 1,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run1\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "675ed8d1c92677d996c2e2afbe52b9da0f759ed4a608c51924fbcea5edba69f8",
+      "step": 16384,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+      "parent_sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 0.99,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 151641374,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 2,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run2\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "19faf1eef69f72c99ee2a258bd1e169a98582443465d792b7c711ba6b17efcdb",
+      "step": 0,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth",
+      "parent_sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 0.99,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 1163223500,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 2,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run2\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "19faf1eef69f72c99ee2a258bd1e169a98582443465d792b7c711ba6b17efcdb",
+      "step": 0,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth",
+      "parent_sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 0.99,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 1163223500,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 2,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run2\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "7d9c4533c740a079b5dede9d4262e643423341165fe6e37a33deab148bc679a5",
+      "step": 16384,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth",
+      "parent_sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 0.99,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 1163223500,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 0,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run0\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "297b5259ef100f244177ce132222117b8477f80fb277fc77946a4208af802aae",
+      "step": 0,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+      "parent_sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 1.0,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 52608584,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 0,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run0\\step_00008192\\attempt_000\\state.pth",
+      "sha256": "d48b2580e8036ee9c4127ea38cb32c3fb825618e57656b5b6877e2719a357c76",
+      "step": 8192,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+      "parent_sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 1.0,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 52608584,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 0,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run0\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "90b017ca7c65332f2c903e538815e195da6db3f1fc6474326157cf3d8676a650",
+      "step": 16384,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+      "parent_sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 1.0,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 52608584,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 1,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run1\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "94c8d54367001fd61ce98263019e786a6c7f044c959da79fc694ed2d4badfe24",
+      "step": 0,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+      "parent_sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 1.0,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 151641374,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 1,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run1\\step_00004096\\attempt_000\\state.pth",
+      "sha256": "eb0e579fc66ab9f59b5382c09c17594a61c548fff66bd7ed8c68ad45243c57f0",
+      "step": 4096,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+      "parent_sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 1.0,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 151641374,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 1,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run1\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "063d6f1753555554ee3edb3ecc4f0ee25f19d0fb5fb8a0256cbf77ee534d494f",
+      "step": 16384,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+      "parent_sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 1.0,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 151641374,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 2,
+      "role": "initial",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run2\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "881197d20f18f54bb6cb23381b5fa062624aa95aa56a86e325083fb38aa835fb",
+      "step": 0,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth",
+      "parent_sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 1.0,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 1163223500,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 2,
+      "role": "selected",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run2\\step_00000000\\attempt_000\\state.pth",
+      "sha256": "881197d20f18f54bb6cb23381b5fa062624aa95aa56a86e325083fb38aa835fb",
+      "step": 0,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth",
+      "parent_sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 1.0,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 1163223500,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 2,
+      "role": "final",
+      "checkpoint": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run2\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "e12ce2411e88fc479f0380b4b4e5aa5f4d44fb8d544faaf23d84747d2bad4b13",
+      "step": 16384,
+      "parent": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth",
+      "parent_sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+      "version": "pitch_nstep_v1",
+      "n": 8,
+      "algorithm_config": {
+        "obs_dim": 15,
+        "action_dim": 3,
+        "agents": 3,
+        "hidden": 64,
+        "actor_lr": 0.0001,
+        "critic_lr": 0.001,
+        "gamma": 1.0,
+        "tau": 0.01,
+        "batch_size": 64,
+        "capacity": 32768,
+        "grad_clip": 1.0,
+        "seed": 1163223500,
+        "action_mask": [
+          0,
+          1,
+          0
+        ],
+        "fixed_action": [
+          0.0,
+          -0.6363636255264282,
+          -0.10044977813959122
+        ],
+        "actor_initial_action": [
+          0.0,
+          -0.6363636363636364,
+          -0.10044977511244357
+        ],
+        "actor_final_scale": 0.001,
+        "speed_reference_schedule": [
+          25.0,
+          0.11114035087719298,
+          0.6,
+          1.267
+        ]
+      },
+      "normalization": "normalization.json",
+      "loader": "optimization_control.maddpg_wind_farm.pitch_gamma_trial.load_agent(checkpoint, expected_gamma)",
+      "experimental_not_default": true
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+[
+  {
+    "arm": "zero",
+    "role": "initial",
+    "run": 0,
+    "legacy_reference": {
+      "arm": "parent",
+      "run": 0,
+      "collection": "known",
+      "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run0_initial\\attempt_000\\metrics.csv",
+      "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run0_initial\\attempt_000\\traces.csv.gz",
+      "metrics_sha256": "a62c38ef1549a792d64f7b8002d76f22d83c6161dd60462e36e96af5dea7d821",
+      "traces_sha256": "21d1ef4910b6adaca9f6c5c5a7e528d75ba50fab3dab8090381411ce51c547ae",
+      "cases": 36
+    }
+  },
+  {
+    "arm": "zero",
+    "role": "initial",
+    "run": 1,
+    "legacy_reference": {
+      "arm": "parent",
+      "run": 1,
+      "collection": "known",
+      "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run1_initial\\attempt_000\\metrics.csv",
+      "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run1_initial\\attempt_000\\traces.csv.gz",
+      "metrics_sha256": "ad35842907d08cc0bfd82017ce42adf712da269beba6c6a7c4017b12854a96c7",
+      "traces_sha256": "1195e34fdb88f5911abc47e31aa512bc1dbf49443dc653e47b3213eb89658147",
+      "cases": 36
+    }
+  },
+  {
+    "arm": "zero",
+    "role": "initial",
+    "run": 2,
+    "legacy_reference": {
+      "arm": "parent",
+      "run": 2,
+      "collection": "known",
+      "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run2_initial\\attempt_000\\metrics.csv",
+      "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run2_initial\\attempt_000\\traces.csv.gz",
+      "metrics_sha256": "47e44b9cfde431d614eb66ce52c378fc1337944d276b7fae11dc2ce05d2689a4",
+      "traces_sha256": "8cb376d7a29c0ab3942ff11fa588b059b5716666807ad225f621c83ca3dd0b92",
+      "cases": 36
+    }
+  },
+  {
+    "arm": "p",
+    "role": "p",
+    "run": -1,
+    "legacy_reference": {
+      "arm": "p",
+      "run": -1,
+      "collection": "known",
+      "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\p\\attempt_000\\metrics.csv",
+      "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\p\\attempt_000\\traces.csv.gz",
+      "metrics_sha256": "0da908c67218845efb61db961ea6c34d067f879e3fe251b974552d26b2d5cd69",
+      "traces_sha256": "bf862ed4430c57ec62f8ef34ee4f24292adda102f7268d0197ff7891214a7e0c",
+      "cases": 36
+    }
+  },
+  {
+    "arm": "pi",
+    "role": "pi",
+    "run": -1,
+    "legacy_reference": {
+      "arm": "pi",
+      "run": -1,
+      "collection": "known",
+      "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\pi\\attempt_000\\metrics.csv",
+      "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\pi\\attempt_000\\traces.csv.gz",
+      "metrics_sha256": "33e0ba5c803cec01edfb72cb3510d3ad4ffc682b5e72211dddfc543da82a7553",
+      "traces_sha256": "696f14167277eb301d160b9a8fa2f38d8dabe94b06f73b5a1d618279254eb4cd",
+      "cases": 36
+    }
+  },
+  {
+    "arm": "zero",
+    "run": 0,
+    "role": "selected",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_0_selected\\cases.json",
+    "state_sha256": "6416fbce74b9acd9b8bb79813e487751375577369f7c07542691ff7965cfff92"
+  },
+  {
+    "arm": "zero",
+    "run": 0,
+    "role": "final",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_0_final\\cases.json",
+    "state_sha256": "03b7139e82926eccb2fe972db64d27afe9b37494889634e1cd36a95e2e077c11"
+  },
+  {
+    "arm": "memory",
+    "run": 0,
+    "role": "selected",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_0_selected\\cases.json",
+    "state_sha256": "4856dfae61856ed2152383b9de19a75a504f179bf8795029819efbfe00b636b9"
+  },
+  {
+    "arm": "memory",
+    "run": 0,
+    "role": "final",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_0_final\\cases.json",
+    "state_sha256": "d6069718c80ee0e30e16cb06110adc047fedaa01927ae67434fcd9855558125d"
+  },
+  {
+    "arm": "zero",
+    "run": 1,
+    "role": "selected",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_1_selected\\cases.json",
+    "state_sha256": "89dfc6640d6e6841b1e0a6319c69c62437befef86e12a635a11b014ca65c7e68"
+  },
+  {
+    "arm": "zero",
+    "run": 1,
+    "role": "final",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_1_final\\cases.json",
+    "state_sha256": "adfecd99a585f764d4f6b39bffe78f728b8653f0c99496642b59cd40be726d4f"
+  },
+  {
+    "arm": "memory",
+    "run": 1,
+    "role": "selected",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_1_selected\\cases.json",
+    "state_sha256": "57e78a5a85b05b2836e4aca2fd5eb87f8f8c70902eb38ed232892fa3899cba70"
+  },
+  {
+    "arm": "memory",
+    "run": 1,
+    "role": "final",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_1_final\\cases.json",
+    "state_sha256": "74436ffbda6489c02396e86d229b523ee88a384e898f9b28c49731493dc04e4d"
+  },
+  {
+    "arm": "zero",
+    "run": 2,
+    "role": "selected",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_2_selected\\cases.json",
+    "state_sha256": "610da46dcf79c9413bf14041e6c8504ffd540b8d521c7b84115003ec436ef908"
+  },
+  {
+    "arm": "zero",
+    "run": 2,
+    "role": "final",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_2_final\\cases.json",
+    "state_sha256": "72ea2c51669dc328cd3f39a99d4562df491f7511cb42c886226693a7f0c93a51"
+  },
+  {
+    "arm": "memory",
+    "run": 2,
+    "role": "selected",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_2_selected\\cases.json",
+    "state_sha256": "5c8de222dc12ecea7f18f34b237835345afabb843af49e6033f4c8fc71dc2911"
+  },
+  {
+    "arm": "memory",
+    "run": 2,
+    "role": "final",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_2_final\\cases.json",
+    "state_sha256": "a728d9bf97ea2ac2059d5fa62102bd42f5d405bfaa8c27978d2c618a356f3bc4"
+  }
+]

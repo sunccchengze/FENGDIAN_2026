@@ -1,0 +1,566 @@
+{
+  "seed": 42,
+  "cases": [
+    {
+      "id": "train_episode_0_initial_0.025",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb.csv",
+      "wave_sha256": "4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb"
+    },
+    {
+      "id": "train_episode_0_initial_0.055",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb.csv",
+      "wave_sha256": "4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb"
+    },
+    {
+      "id": "train_episode_1_initial_0.025",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4.csv",
+      "wave_sha256": "2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4"
+    },
+    {
+      "id": "train_episode_1_initial_0.055",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4.csv",
+      "wave_sha256": "2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4"
+    },
+    {
+      "id": "train_episode_2_initial_0.025",
+      "split": "train",
+      "family": "gust",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1.csv",
+      "wave_sha256": "2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1"
+    },
+    {
+      "id": "train_episode_2_initial_0.055",
+      "split": "train",
+      "family": "gust",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1.csv",
+      "wave_sha256": "2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1"
+    },
+    {
+      "id": "train_episode_3_initial_0.025",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d.csv",
+      "wave_sha256": "7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d"
+    },
+    {
+      "id": "train_episode_3_initial_0.055",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d.csv",
+      "wave_sha256": "7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d"
+    },
+    {
+      "id": "train_episode_4_initial_0.025",
+      "split": "train",
+      "family": "gust",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de.csv",
+      "wave_sha256": "bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de"
+    },
+    {
+      "id": "train_episode_4_initial_0.055",
+      "split": "train",
+      "family": "gust",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de.csv",
+      "wave_sha256": "bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de"
+    },
+    {
+      "id": "train_episode_5_initial_0.025",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b.csv",
+      "wave_sha256": "c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b"
+    },
+    {
+      "id": "train_episode_5_initial_0.055",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b.csv",
+      "wave_sha256": "c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b"
+    },
+    {
+      "id": "train_episode_6_initial_0.025",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd.csv",
+      "wave_sha256": "9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd"
+    },
+    {
+      "id": "train_episode_6_initial_0.055",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd.csv",
+      "wave_sha256": "9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd"
+    },
+    {
+      "id": "train_episode_7_initial_0.025",
+      "split": "train",
+      "family": "gust",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f.csv",
+      "wave_sha256": "a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f"
+    },
+    {
+      "id": "train_episode_7_initial_0.055",
+      "split": "train",
+      "family": "gust",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f.csv",
+      "wave_sha256": "a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f"
+    },
+    {
+      "id": "train_episode_8_initial_0.025",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b.csv",
+      "wave_sha256": "e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b"
+    },
+    {
+      "id": "train_episode_8_initial_0.055",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b.csv",
+      "wave_sha256": "e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b"
+    },
+    {
+      "id": "validation_stationary_0_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1.csv",
+      "wave_sha256": "7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1"
+    },
+    {
+      "id": "validation_stationary_0_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1.csv",
+      "wave_sha256": "7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1"
+    },
+    {
+      "id": "validation_stationary_0_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1.csv",
+      "wave_sha256": "7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1"
+    },
+    {
+      "id": "validation_stationary_1_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98.csv",
+      "wave_sha256": "f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98"
+    },
+    {
+      "id": "validation_stationary_1_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98.csv",
+      "wave_sha256": "f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98"
+    },
+    {
+      "id": "validation_stationary_1_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98.csv",
+      "wave_sha256": "f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98"
+    },
+    {
+      "id": "validation_ramp_0_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1.csv",
+      "wave_sha256": "d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1"
+    },
+    {
+      "id": "validation_ramp_0_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1.csv",
+      "wave_sha256": "d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1"
+    },
+    {
+      "id": "validation_ramp_0_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1.csv",
+      "wave_sha256": "d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1"
+    },
+    {
+      "id": "validation_ramp_1_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb.csv",
+      "wave_sha256": "ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb"
+    },
+    {
+      "id": "validation_ramp_1_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb.csv",
+      "wave_sha256": "ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb"
+    },
+    {
+      "id": "validation_ramp_1_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb.csv",
+      "wave_sha256": "ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb"
+    },
+    {
+      "id": "validation_gust_0_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c.csv",
+      "wave_sha256": "14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c"
+    },
+    {
+      "id": "validation_gust_0_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c.csv",
+      "wave_sha256": "14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c"
+    },
+    {
+      "id": "validation_gust_0_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c.csv",
+      "wave_sha256": "14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c"
+    },
+    {
+      "id": "validation_gust_1_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8.csv",
+      "wave_sha256": "084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8"
+    },
+    {
+      "id": "validation_gust_1_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8.csv",
+      "wave_sha256": "084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8"
+    },
+    {
+      "id": "validation_gust_1_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8.csv",
+      "wave_sha256": "084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8"
+    },
+    {
+      "id": "validation_stationary_t2.9e+06_r0_p0.025",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 2900000.0,
+      "initial_pitch_rad": 0.025,
+      "episode": 62000000,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\cbc0053b98ddea6942f4a16ed6848c4b3e89eedc6bc520da390a85f62c0da4c3.csv",
+      "collection": "validation",
+      "wave_sha256": "cbc0053b98ddea6942f4a16ed6848c4b3e89eedc6bc520da390a85f62c0da4c3"
+    },
+    {
+      "id": "validation_stationary_t2.9e+06_r0_p0.04",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 2900000.0,
+      "initial_pitch_rad": 0.04,
+      "episode": 62000000,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\cbc0053b98ddea6942f4a16ed6848c4b3e89eedc6bc520da390a85f62c0da4c3.csv",
+      "collection": "validation",
+      "wave_sha256": "cbc0053b98ddea6942f4a16ed6848c4b3e89eedc6bc520da390a85f62c0da4c3"
+    },
+    {
+      "id": "validation_stationary_t2.9e+06_r0_p0.055",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 2900000.0,
+      "initial_pitch_rad": 0.055,
+      "episode": 62000000,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\cbc0053b98ddea6942f4a16ed6848c4b3e89eedc6bc520da390a85f62c0da4c3.csv",
+      "collection": "validation",
+      "wave_sha256": "cbc0053b98ddea6942f4a16ed6848c4b3e89eedc6bc520da390a85f62c0da4c3"
+    },
+    {
+      "id": "validation_stationary_t3.5e+06_r0_p0.025",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 3500000.0,
+      "initial_pitch_rad": 0.025,
+      "episode": 62000010,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\8603a43f44d2d499cb6c850efb27791b546ebc5c618d91c1c68f096e5f949a78.csv",
+      "collection": "validation",
+      "wave_sha256": "8603a43f44d2d499cb6c850efb27791b546ebc5c618d91c1c68f096e5f949a78"
+    },
+    {
+      "id": "validation_stationary_t3.5e+06_r0_p0.04",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 3500000.0,
+      "initial_pitch_rad": 0.04,
+      "episode": 62000010,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\8603a43f44d2d499cb6c850efb27791b546ebc5c618d91c1c68f096e5f949a78.csv",
+      "collection": "validation",
+      "wave_sha256": "8603a43f44d2d499cb6c850efb27791b546ebc5c618d91c1c68f096e5f949a78"
+    },
+    {
+      "id": "validation_stationary_t3.5e+06_r0_p0.055",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 3500000.0,
+      "initial_pitch_rad": 0.055,
+      "episode": 62000010,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\8603a43f44d2d499cb6c850efb27791b546ebc5c618d91c1c68f096e5f949a78.csv",
+      "collection": "validation",
+      "wave_sha256": "8603a43f44d2d499cb6c850efb27791b546ebc5c618d91c1c68f096e5f949a78"
+    },
+    {
+      "id": "validation_ramp_t2.9e+06_r0_p0.025",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 2900000.0,
+      "initial_pitch_rad": 0.025,
+      "episode": 62000100,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\724c5a26502ce17f4f6ac97e8fd865f20be82bbe617ebe3dbc6b28095109c238.csv",
+      "collection": "validation",
+      "wave_sha256": "724c5a26502ce17f4f6ac97e8fd865f20be82bbe617ebe3dbc6b28095109c238"
+    },
+    {
+      "id": "validation_ramp_t2.9e+06_r0_p0.04",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 2900000.0,
+      "initial_pitch_rad": 0.04,
+      "episode": 62000100,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\724c5a26502ce17f4f6ac97e8fd865f20be82bbe617ebe3dbc6b28095109c238.csv",
+      "collection": "validation",
+      "wave_sha256": "724c5a26502ce17f4f6ac97e8fd865f20be82bbe617ebe3dbc6b28095109c238"
+    },
+    {
+      "id": "validation_ramp_t2.9e+06_r0_p0.055",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 2900000.0,
+      "initial_pitch_rad": 0.055,
+      "episode": 62000100,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\724c5a26502ce17f4f6ac97e8fd865f20be82bbe617ebe3dbc6b28095109c238.csv",
+      "collection": "validation",
+      "wave_sha256": "724c5a26502ce17f4f6ac97e8fd865f20be82bbe617ebe3dbc6b28095109c238"
+    },
+    {
+      "id": "validation_ramp_t3.5e+06_r0_p0.025",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 3500000.0,
+      "initial_pitch_rad": 0.025,
+      "episode": 62000110,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\3b71d8d5a7997a4c6fea55f0a9952cff2a1a07c25d0c977d22173b9cf5947cdf.csv",
+      "collection": "validation",
+      "wave_sha256": "3b71d8d5a7997a4c6fea55f0a9952cff2a1a07c25d0c977d22173b9cf5947cdf"
+    },
+    {
+      "id": "validation_ramp_t3.5e+06_r0_p0.04",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 3500000.0,
+      "initial_pitch_rad": 0.04,
+      "episode": 62000110,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\3b71d8d5a7997a4c6fea55f0a9952cff2a1a07c25d0c977d22173b9cf5947cdf.csv",
+      "collection": "validation",
+      "wave_sha256": "3b71d8d5a7997a4c6fea55f0a9952cff2a1a07c25d0c977d22173b9cf5947cdf"
+    },
+    {
+      "id": "validation_ramp_t3.5e+06_r0_p0.055",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 3500000.0,
+      "initial_pitch_rad": 0.055,
+      "episode": 62000110,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\3b71d8d5a7997a4c6fea55f0a9952cff2a1a07c25d0c977d22173b9cf5947cdf.csv",
+      "collection": "validation",
+      "wave_sha256": "3b71d8d5a7997a4c6fea55f0a9952cff2a1a07c25d0c977d22173b9cf5947cdf"
+    },
+    {
+      "id": "validation_gust_t2.9e+06_r0_p0.025",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 2900000.0,
+      "initial_pitch_rad": 0.025,
+      "episode": 62000200,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f1813e10abbd29e0d9b3ceae8de551a4d9783579561075ea7311ede6842a4be.csv",
+      "collection": "validation",
+      "wave_sha256": "7f1813e10abbd29e0d9b3ceae8de551a4d9783579561075ea7311ede6842a4be"
+    },
+    {
+      "id": "validation_gust_t2.9e+06_r0_p0.04",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 2900000.0,
+      "initial_pitch_rad": 0.04,
+      "episode": 62000200,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f1813e10abbd29e0d9b3ceae8de551a4d9783579561075ea7311ede6842a4be.csv",
+      "collection": "validation",
+      "wave_sha256": "7f1813e10abbd29e0d9b3ceae8de551a4d9783579561075ea7311ede6842a4be"
+    },
+    {
+      "id": "validation_gust_t2.9e+06_r0_p0.055",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 2900000.0,
+      "initial_pitch_rad": 0.055,
+      "episode": 62000200,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f1813e10abbd29e0d9b3ceae8de551a4d9783579561075ea7311ede6842a4be.csv",
+      "collection": "validation",
+      "wave_sha256": "7f1813e10abbd29e0d9b3ceae8de551a4d9783579561075ea7311ede6842a4be"
+    },
+    {
+      "id": "validation_gust_t3.5e+06_r0_p0.025",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 3500000.0,
+      "initial_pitch_rad": 0.025,
+      "episode": 62000210,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\cbadaaf597a92dcd768c011939a54c87c7dbd00619063fa927b347dccc29e07e.csv",
+      "collection": "validation",
+      "wave_sha256": "cbadaaf597a92dcd768c011939a54c87c7dbd00619063fa927b347dccc29e07e"
+    },
+    {
+      "id": "validation_gust_t3.5e+06_r0_p0.04",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 3500000.0,
+      "initial_pitch_rad": 0.04,
+      "episode": 62000210,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\cbadaaf597a92dcd768c011939a54c87c7dbd00619063fa927b347dccc29e07e.csv",
+      "collection": "validation",
+      "wave_sha256": "cbadaaf597a92dcd768c011939a54c87c7dbd00619063fa927b347dccc29e07e"
+    },
+    {
+      "id": "validation_gust_t3.5e+06_r0_p0.055",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 3500000.0,
+      "initial_pitch_rad": 0.055,
+      "episode": 62000210,
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\cbadaaf597a92dcd768c011939a54c87c7dbd00619063fa927b347dccc29e07e.csv",
+      "collection": "validation",
+      "wave_sha256": "cbadaaf597a92dcd768c011939a54c87c7dbd00619063fa927b347dccc29e07e"
+    }
+  ],
+  "slots": 54,
+  "unique_waveforms": 21,
+  "not_independent_slot_count": true
+}

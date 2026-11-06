@@ -1,0 +1,27 @@
+{
+  "commit": "3941510c785771ab569771bce974399285fdb983",
+  "parent": "3ccadc45ad022e40e7edb33ff7e7b1ace8a36ce3",
+  "branch": "codex/speed-nstep-engineering-20261028",
+  "worktree_clean": true,
+  "protected_inputs": 174,
+  "manifest_verified_files": 65,
+  "manifest_sha256": "fb665dab89590b9c20a93c4fb0d8fe1188b76c87089941085b8c9e00f061a471",
+  "manifest_excludes": [
+    "output_manifest.csv",
+    "staged_review.json",
+    "git_delivery.json"
+  ],
+  "mock_rows": 65,
+  "real_PINN_rows": 30024,
+  "model_rows": 30089,
+  "anchors": 144,
+  "candidates": 1296,
+  "formal_RL_steps": 0,
+  "optimizer_updates": 0,
+  "new_independent_winds": 0,
+  "new_yaw_permission": 0,
+  "no_checkpoint_copies": true,
+  "shared_status_verified": true,
+  "merged_master": false,
+  "pushed": false
+}

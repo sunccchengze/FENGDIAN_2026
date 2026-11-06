@@ -1,0 +1,1855 @@
+{
+  "jobs": [
+    {
+      "arm": "Y",
+      "run": 0,
+      "initial": {
+        "rows": 774,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s0000\\reserved.json",
+          "sha256": "14e9c5101a368fc83b065e859bf779e5a6599132c69fc1ff3da99ba96f89bb9e",
+          "bytes": 76
+        },
+        "pid": 28196,
+        "arm": "Y",
+        "run": 0,
+        "step": 0,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s0000\\metrics.json",
+            "sha256": "f4d884dec3ec73703d11dd5ad16552ce76f5528ad2e5b1c600c2edb22ea9f420",
+            "bytes": 5040
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s0000\\trace.npz",
+            "sha256": "4fb5867c7af53d5455402530693b2dcb771b4045beb19c3dd4f3331b60ef24ec",
+            "bytes": 127706
+          }
+        },
+        "state": null,
+        "snapshot": {
+          "initial": true,
+          "arm": "Y",
+          "run": 0,
+          "step": 0,
+          "contract_sha": "bdc3613a2e4519d47bdd97ab6edf5bd485e67055cb27ed7d5a4b327de7409a8b"
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s0000\\episodes.json",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "bytes": 2
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 0,
+        "new_draws": 0,
+        "mean_w": 390042.385575128,
+        "worst_w": 508441.2309625974,
+        "restored_exact": false,
+        "elapsed_s": 14.685139399996842
+      },
+      "selected": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\reserved.json",
+          "sha256": "97421962b34a407723b6fd0d15d57af921d0a33a076eccad32d9f110a20ef1ad",
+          "bytes": 80
+        },
+        "pid": 28196,
+        "arm": "Y",
+        "run": 0,
+        "step": 2048,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\metrics.json",
+            "sha256": "1676ad442ea7caeee6a2be4e67ce2ffa333ac2e3bf09839b92b34833c1aa4c0e",
+            "bytes": 5133
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\trace.npz",
+            "sha256": "95719fcaff412b74ecde600d0ffdfbd21c044d7d5c2beed8df016b1d2c47c44a",
+            "bytes": 155984
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\state.pt",
+          "sha256": "bd7619d1b100505a0d76046efe67d4ba5b0e8659746c15d28ec322861ccbc0e7",
+          "bytes": 950735
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\inference.pt",
+          "sha256": "32fd20fba2283da7db75580d4dea937e0c9e06161680f9e3fabc38adfd0b40e5",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\episodes.json",
+          "sha256": "be23e1d4a0c42e0838cdcb25b3fa6bd2e8fd81280f7d11c1f9ccc907f8246249",
+          "bytes": 94248
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 97,
+        "new_draws": 256,
+        "mean_w": 389868.6747380623,
+        "worst_w": 508778.09796469175,
+        "restored_exact": true,
+        "elapsed_s": 16.810012899994035
+      },
+      "final": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\reserved.json",
+          "sha256": "97421962b34a407723b6fd0d15d57af921d0a33a076eccad32d9f110a20ef1ad",
+          "bytes": 80
+        },
+        "pid": 28196,
+        "arm": "Y",
+        "run": 0,
+        "step": 2048,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\metrics.json",
+            "sha256": "1676ad442ea7caeee6a2be4e67ce2ffa333ac2e3bf09839b92b34833c1aa4c0e",
+            "bytes": 5133
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\trace.npz",
+            "sha256": "95719fcaff412b74ecde600d0ffdfbd21c044d7d5c2beed8df016b1d2c47c44a",
+            "bytes": 155984
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\state.pt",
+          "sha256": "bd7619d1b100505a0d76046efe67d4ba5b0e8659746c15d28ec322861ccbc0e7",
+          "bytes": 950735
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\inference.pt",
+          "sha256": "32fd20fba2283da7db75580d4dea937e0c9e06161680f9e3fabc38adfd0b40e5",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\episodes.json",
+          "sha256": "be23e1d4a0c42e0838cdcb25b3fa6bd2e8fd81280f7d11c1f9ccc907f8246249",
+          "bytes": 94248
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 97,
+        "new_draws": 256,
+        "mean_w": 389868.6747380623,
+        "worst_w": 508778.09796469175,
+        "restored_exact": true,
+        "elapsed_s": 16.810012899994035
+      },
+      "points": [
+        {
+          "rows": 774,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s0000\\reserved.json",
+            "sha256": "14e9c5101a368fc83b065e859bf779e5a6599132c69fc1ff3da99ba96f89bb9e",
+            "bytes": 76
+          },
+          "pid": 28196,
+          "arm": "Y",
+          "run": 0,
+          "step": 0,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s0000\\metrics.json",
+              "sha256": "f4d884dec3ec73703d11dd5ad16552ce76f5528ad2e5b1c600c2edb22ea9f420",
+              "bytes": 5040
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s0000\\trace.npz",
+              "sha256": "4fb5867c7af53d5455402530693b2dcb771b4045beb19c3dd4f3331b60ef24ec",
+              "bytes": 127706
+            }
+          },
+          "state": null,
+          "snapshot": {
+            "initial": true,
+            "arm": "Y",
+            "run": 0,
+            "step": 0,
+            "contract_sha": "bdc3613a2e4519d47bdd97ab6edf5bd485e67055cb27ed7d5a4b327de7409a8b"
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s0000\\episodes.json",
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "bytes": 2
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 0,
+          "new_draws": 0,
+          "mean_w": 390042.385575128,
+          "worst_w": 508441.2309625974,
+          "restored_exact": false,
+          "elapsed_s": 14.685139399996842
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s1024\\reserved.json",
+            "sha256": "bd88b218099bc36fbaa48fe66fe19c0d47239b940ff25ccdbd2336b648c66108",
+            "bytes": 80
+          },
+          "pid": 28196,
+          "arm": "Y",
+          "run": 0,
+          "step": 1024,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s1024\\metrics.json",
+              "sha256": "70e4e4a1360702d6d240c3c3de5b577e4082aec57655be0a79161ef889f6b39f",
+              "bytes": 5125
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s1024\\trace.npz",
+              "sha256": "3bf7ea319ca0dd9210ccd88bbb517a4608843049254b9e6e50bff423324496ea",
+              "bytes": 155709
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s1024\\state.pt",
+            "sha256": "8030977a1e2b297176d793cf03c3a9443ffbeba0e615286b2da5aae13f6db441",
+            "bytes": 787215
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s1024\\inference.pt",
+            "sha256": "669bbf2254b6a2b09e65d252b69384dba6cf6b7d86fe8f967e2662b7a36387d8",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s1024\\episodes.json",
+            "sha256": "98a081cb4a32e3cc26a6ecb806e78390489263d78a94f67e1ebe7d698f64ae9b",
+            "bytes": 49408
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 33,
+          "new_draws": 128,
+          "mean_w": 390027.27075211535,
+          "worst_w": 508500.7405173714,
+          "restored_exact": true,
+          "elapsed_s": 14.782552799995756
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\reserved.json",
+            "sha256": "97421962b34a407723b6fd0d15d57af921d0a33a076eccad32d9f110a20ef1ad",
+            "bytes": 80
+          },
+          "pid": 28196,
+          "arm": "Y",
+          "run": 0,
+          "step": 2048,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\metrics.json",
+              "sha256": "1676ad442ea7caeee6a2be4e67ce2ffa333ac2e3bf09839b92b34833c1aa4c0e",
+              "bytes": 5133
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\trace.npz",
+              "sha256": "95719fcaff412b74ecde600d0ffdfbd21c044d7d5c2beed8df016b1d2c47c44a",
+              "bytes": 155984
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\state.pt",
+            "sha256": "bd7619d1b100505a0d76046efe67d4ba5b0e8659746c15d28ec322861ccbc0e7",
+            "bytes": 950735
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\inference.pt",
+            "sha256": "32fd20fba2283da7db75580d4dea937e0c9e06161680f9e3fabc38adfd0b40e5",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\episodes.json",
+            "sha256": "be23e1d4a0c42e0838cdcb25b3fa6bd2e8fd81280f7d11c1f9ccc907f8246249",
+            "bytes": 94248
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 97,
+          "new_draws": 256,
+          "mean_w": 389868.6747380623,
+          "worst_w": 508778.09796469175,
+          "restored_exact": true,
+          "elapsed_s": 16.810012899994035
+        }
+      ]
+    },
+    {
+      "arm": "Y",
+      "run": 1,
+      "initial": {
+        "rows": 774,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\reserved.json",
+          "sha256": "94c17bef666df2c71ec7b9fbe75d6bd797054b49b0c3459f46e38841c570d234",
+          "bytes": 76
+        },
+        "pid": 32228,
+        "arm": "Y",
+        "run": 1,
+        "step": 0,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\metrics.json",
+            "sha256": "f508d19260ca48266d58f537313e4f64f81b7f6dd2ddd3320d2c764a6244f2b0",
+            "bytes": 5030
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\trace.npz",
+            "sha256": "8192b9847dcbe98b70db4b5604b30070a1c7277c86cbbd34094cff3314fb416a",
+            "bytes": 127208
+          }
+        },
+        "state": null,
+        "snapshot": {
+          "initial": true,
+          "arm": "Y",
+          "run": 1,
+          "step": 0,
+          "contract_sha": "5d5b8d153079c39c5b791f360fab4be4218fa6521e61569344592939ba16b2e3"
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\episodes.json",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "bytes": 2
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 0,
+        "new_draws": 0,
+        "mean_w": 379426.728414506,
+        "worst_w": 483779.70574873086,
+        "restored_exact": false,
+        "elapsed_s": 14.694440299994312
+      },
+      "selected": {
+        "rows": 774,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\reserved.json",
+          "sha256": "94c17bef666df2c71ec7b9fbe75d6bd797054b49b0c3459f46e38841c570d234",
+          "bytes": 76
+        },
+        "pid": 32228,
+        "arm": "Y",
+        "run": 1,
+        "step": 0,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\metrics.json",
+            "sha256": "f508d19260ca48266d58f537313e4f64f81b7f6dd2ddd3320d2c764a6244f2b0",
+            "bytes": 5030
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\trace.npz",
+            "sha256": "8192b9847dcbe98b70db4b5604b30070a1c7277c86cbbd34094cff3314fb416a",
+            "bytes": 127208
+          }
+        },
+        "state": null,
+        "snapshot": {
+          "initial": true,
+          "arm": "Y",
+          "run": 1,
+          "step": 0,
+          "contract_sha": "5d5b8d153079c39c5b791f360fab4be4218fa6521e61569344592939ba16b2e3"
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\episodes.json",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "bytes": 2
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 0,
+        "new_draws": 0,
+        "mean_w": 379426.728414506,
+        "worst_w": 483779.70574873086,
+        "restored_exact": false,
+        "elapsed_s": 14.694440299994312
+      },
+      "final": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\reserved.json",
+          "sha256": "372a92647e538702cf5e46f3ff47e497fbc5eb157d425953e33bf125fe84134a",
+          "bytes": 80
+        },
+        "pid": 32228,
+        "arm": "Y",
+        "run": 1,
+        "step": 2048,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\metrics.json",
+            "sha256": "0bf5be3d608e2fe237b291684582e136ba0873346720058be612a219c34b3966",
+            "bytes": 5118
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\trace.npz",
+            "sha256": "447f2408ef40d104cdf71659b0933bfb81aa05893c37a048c8330052c970a572",
+            "bytes": 155523
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\state.pt",
+          "sha256": "31a5b3752388766cd7d9224e719266bec7f9bc5b0bdf11adad669003c45cc082",
+          "bytes": 949903
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\inference.pt",
+          "sha256": "379d36a507d649e745e0d55e46b2f34c6d8a01ec139890f2fa1575e3c83573c6",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\episodes.json",
+          "sha256": "9fa02fb8a6e9cf7dbbc72c9b1fabd16c8a123e5546b887c796767732802cab3c",
+          "bytes": 94389
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 97,
+        "new_draws": 256,
+        "mean_w": 379625.06016072864,
+        "worst_w": 483771.06207530276,
+        "restored_exact": true,
+        "elapsed_s": 16.853977899998426
+      },
+      "points": [
+        {
+          "rows": 774,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\reserved.json",
+            "sha256": "94c17bef666df2c71ec7b9fbe75d6bd797054b49b0c3459f46e38841c570d234",
+            "bytes": 76
+          },
+          "pid": 32228,
+          "arm": "Y",
+          "run": 1,
+          "step": 0,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\metrics.json",
+              "sha256": "f508d19260ca48266d58f537313e4f64f81b7f6dd2ddd3320d2c764a6244f2b0",
+              "bytes": 5030
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\trace.npz",
+              "sha256": "8192b9847dcbe98b70db4b5604b30070a1c7277c86cbbd34094cff3314fb416a",
+              "bytes": 127208
+            }
+          },
+          "state": null,
+          "snapshot": {
+            "initial": true,
+            "arm": "Y",
+            "run": 1,
+            "step": 0,
+            "contract_sha": "5d5b8d153079c39c5b791f360fab4be4218fa6521e61569344592939ba16b2e3"
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s0000\\episodes.json",
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "bytes": 2
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 0,
+          "new_draws": 0,
+          "mean_w": 379426.728414506,
+          "worst_w": 483779.70574873086,
+          "restored_exact": false,
+          "elapsed_s": 14.694440299994312
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s1024\\reserved.json",
+            "sha256": "6bc5078a16133e46474807f09bfa31c035bb3098a0e01db60f398566bebb3be5",
+            "bytes": 80
+          },
+          "pid": 32228,
+          "arm": "Y",
+          "run": 1,
+          "step": 1024,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s1024\\metrics.json",
+              "sha256": "43ee8fdd9fda7080cca56a5d04ec4fa5b8a9a2c03b60c3365351db18f84cc99a",
+              "bytes": 5136
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s1024\\trace.npz",
+              "sha256": "c7d51e3198d9a329e9614af32435e6c17dfe9c469725c0b647e5ff933506b85a",
+              "bytes": 155516
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s1024\\state.pt",
+            "sha256": "853c40029bd55afca18277c9e8b2b9b34389797651e97d2f2325248c9475e6f9",
+            "bytes": 787087
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s1024\\inference.pt",
+            "sha256": "32211c08042f6f30474916efd1972ce98ed0bc29821f07483948af52969fb36d",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s1024\\episodes.json",
+            "sha256": "acea69f0674688a822feb67aafbb7551a2ca8f91a0bfb4f1ad70c2502fea46e8",
+            "bytes": 49368
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 33,
+          "new_draws": 128,
+          "mean_w": 379483.5200589178,
+          "worst_w": 483787.78438626195,
+          "restored_exact": true,
+          "elapsed_s": 14.691358700001729
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\reserved.json",
+            "sha256": "372a92647e538702cf5e46f3ff47e497fbc5eb157d425953e33bf125fe84134a",
+            "bytes": 80
+          },
+          "pid": 32228,
+          "arm": "Y",
+          "run": 1,
+          "step": 2048,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\metrics.json",
+              "sha256": "0bf5be3d608e2fe237b291684582e136ba0873346720058be612a219c34b3966",
+              "bytes": 5118
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\trace.npz",
+              "sha256": "447f2408ef40d104cdf71659b0933bfb81aa05893c37a048c8330052c970a572",
+              "bytes": 155523
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\state.pt",
+            "sha256": "31a5b3752388766cd7d9224e719266bec7f9bc5b0bdf11adad669003c45cc082",
+            "bytes": 949903
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\inference.pt",
+            "sha256": "379d36a507d649e745e0d55e46b2f34c6d8a01ec139890f2fa1575e3c83573c6",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\episodes.json",
+            "sha256": "9fa02fb8a6e9cf7dbbc72c9b1fabd16c8a123e5546b887c796767732802cab3c",
+            "bytes": 94389
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 97,
+          "new_draws": 256,
+          "mean_w": 379625.06016072864,
+          "worst_w": 483771.06207530276,
+          "restored_exact": true,
+          "elapsed_s": 16.853977899998426
+        }
+      ]
+    },
+    {
+      "arm": "Y",
+      "run": 2,
+      "initial": {
+        "rows": 774,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s0000\\reserved.json",
+          "sha256": "ea55110a0a44773d2d8f4877e30d270c05594c2c327cef5be9f4d188f3b01a16",
+          "bytes": 76
+        },
+        "pid": 32412,
+        "arm": "Y",
+        "run": 2,
+        "step": 0,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s0000\\metrics.json",
+            "sha256": "fba5ea745d083fc4520898d4c3030224385771484b51c76fd719b8aa96c1eb67",
+            "bytes": 5004
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s0000\\trace.npz",
+            "sha256": "4c233fd378b71e0fa2d12600a8132c77d588d054ae781459aa9fcab307c82ba4",
+            "bytes": 138614
+          }
+        },
+        "state": null,
+        "snapshot": {
+          "initial": true,
+          "arm": "Y",
+          "run": 2,
+          "step": 0,
+          "contract_sha": "c0948892b0fc41f9d4b446bc9c1c2f2157239e2317547d8f0468adedd70b3b18"
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s0000\\episodes.json",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "bytes": 2
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 0,
+        "new_draws": 0,
+        "mean_w": 363028.2574446194,
+        "worst_w": 479135.2688372417,
+        "restored_exact": false,
+        "elapsed_s": 14.682265600000392
+      },
+      "selected": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\reserved.json",
+          "sha256": "8c35f9017a2c98e56db32461cf24defbfc42123aeeb3e93836a810d0ecd4f198",
+          "bytes": 80
+        },
+        "pid": 32412,
+        "arm": "Y",
+        "run": 2,
+        "step": 2048,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\metrics.json",
+            "sha256": "df3dde9543119670ff11537ef2ecc5bb93d3f0a0f3ef32831a75e315730a23cb",
+            "bytes": 5120
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+            "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+            "bytes": 163658
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\state.pt",
+          "sha256": "59b40ac48a14e35582f3548d05d1169542b95d7986ca0405ca5b519ee497f18d",
+          "bytes": 950287
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\inference.pt",
+          "sha256": "e893cb8590df776a931e0dc3de23f7f3cf57d35b46d1ed1d61a72687b51d6817",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\episodes.json",
+          "sha256": "703485dd72a6e34c416a2752e2d26b5baab5fb7662c2075018dea4a4153c4fe5",
+          "bytes": 94316
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 97,
+        "new_draws": 256,
+        "mean_w": 362879.26627632376,
+        "worst_w": 478895.1634137344,
+        "restored_exact": true,
+        "elapsed_s": 16.772870100001455
+      },
+      "final": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\reserved.json",
+          "sha256": "8c35f9017a2c98e56db32461cf24defbfc42123aeeb3e93836a810d0ecd4f198",
+          "bytes": 80
+        },
+        "pid": 32412,
+        "arm": "Y",
+        "run": 2,
+        "step": 2048,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\metrics.json",
+            "sha256": "df3dde9543119670ff11537ef2ecc5bb93d3f0a0f3ef32831a75e315730a23cb",
+            "bytes": 5120
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+            "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+            "bytes": 163658
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\state.pt",
+          "sha256": "59b40ac48a14e35582f3548d05d1169542b95d7986ca0405ca5b519ee497f18d",
+          "bytes": 950287
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\inference.pt",
+          "sha256": "e893cb8590df776a931e0dc3de23f7f3cf57d35b46d1ed1d61a72687b51d6817",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\episodes.json",
+          "sha256": "703485dd72a6e34c416a2752e2d26b5baab5fb7662c2075018dea4a4153c4fe5",
+          "bytes": 94316
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 97,
+        "new_draws": 256,
+        "mean_w": 362879.26627632376,
+        "worst_w": 478895.1634137344,
+        "restored_exact": true,
+        "elapsed_s": 16.772870100001455
+      },
+      "points": [
+        {
+          "rows": 774,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s0000\\reserved.json",
+            "sha256": "ea55110a0a44773d2d8f4877e30d270c05594c2c327cef5be9f4d188f3b01a16",
+            "bytes": 76
+          },
+          "pid": 32412,
+          "arm": "Y",
+          "run": 2,
+          "step": 0,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s0000\\metrics.json",
+              "sha256": "fba5ea745d083fc4520898d4c3030224385771484b51c76fd719b8aa96c1eb67",
+              "bytes": 5004
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s0000\\trace.npz",
+              "sha256": "4c233fd378b71e0fa2d12600a8132c77d588d054ae781459aa9fcab307c82ba4",
+              "bytes": 138614
+            }
+          },
+          "state": null,
+          "snapshot": {
+            "initial": true,
+            "arm": "Y",
+            "run": 2,
+            "step": 0,
+            "contract_sha": "c0948892b0fc41f9d4b446bc9c1c2f2157239e2317547d8f0468adedd70b3b18"
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s0000\\episodes.json",
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "bytes": 2
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 0,
+          "new_draws": 0,
+          "mean_w": 363028.2574446194,
+          "worst_w": 479135.2688372417,
+          "restored_exact": false,
+          "elapsed_s": 14.682265600000392
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s1024\\reserved.json",
+            "sha256": "87211a7e9f5e30ee245e866cd7fab4d3e851ddfe1ae4b0ed7f4b75136bbe5268",
+            "bytes": 80
+          },
+          "pid": 32412,
+          "arm": "Y",
+          "run": 2,
+          "step": 1024,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s1024\\metrics.json",
+              "sha256": "bec20cd070f5dab0dd676820621752d18c3fb4633550cf1eed46295e81f98749",
+              "bytes": 5111
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s1024\\trace.npz",
+              "sha256": "1233f858e3f3e57a8f1ee20b69072db2f41dbe2c56786aac237c6963cadfec9d",
+              "bytes": 163632
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s1024\\state.pt",
+            "sha256": "699187ef14d65f4e0ba7b1a81ceccf0382fb860f18a0255f258c33bfbc72177b",
+            "bytes": 787663
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s1024\\inference.pt",
+            "sha256": "72a19c1eaf55d7d7e3b87b66a0b8d6e724531dac568f60dde7e1325a4c1045ae",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s1024\\episodes.json",
+            "sha256": "a8f3997cdc4c09d5e291f117096ad03cc245dc8348a6c05abf1ebd9d69032e80",
+            "bytes": 49351
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 33,
+          "new_draws": 128,
+          "mean_w": 362992.1180759891,
+          "worst_w": 479101.1810164487,
+          "restored_exact": true,
+          "elapsed_s": 14.94180120000965
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\reserved.json",
+            "sha256": "8c35f9017a2c98e56db32461cf24defbfc42123aeeb3e93836a810d0ecd4f198",
+            "bytes": 80
+          },
+          "pid": 32412,
+          "arm": "Y",
+          "run": 2,
+          "step": 2048,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\metrics.json",
+              "sha256": "df3dde9543119670ff11537ef2ecc5bb93d3f0a0f3ef32831a75e315730a23cb",
+              "bytes": 5120
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+              "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+              "bytes": 163658
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\state.pt",
+            "sha256": "59b40ac48a14e35582f3548d05d1169542b95d7986ca0405ca5b519ee497f18d",
+            "bytes": 950287
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\inference.pt",
+            "sha256": "e893cb8590df776a931e0dc3de23f7f3cf57d35b46d1ed1d61a72687b51d6817",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\episodes.json",
+            "sha256": "703485dd72a6e34c416a2752e2d26b5baab5fb7662c2075018dea4a4153c4fe5",
+            "bytes": 94316
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 97,
+          "new_draws": 256,
+          "mean_w": 362879.26627632376,
+          "worst_w": 478895.1634137344,
+          "restored_exact": true,
+          "elapsed_s": 16.772870100001455
+        }
+      ]
+    },
+    {
+      "arm": "S",
+      "run": 0,
+      "initial": {
+        "rows": 774,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s0000\\reserved.json",
+          "sha256": "55f885694b5264790e8cae75e8e10b8e608a9743fb9f408aee83ec4db710e099",
+          "bytes": 75
+        },
+        "pid": 2160,
+        "arm": "S",
+        "run": 0,
+        "step": 0,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s0000\\metrics.json",
+            "sha256": "f4d884dec3ec73703d11dd5ad16552ce76f5528ad2e5b1c600c2edb22ea9f420",
+            "bytes": 5040
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s0000\\trace.npz",
+            "sha256": "4fb5867c7af53d5455402530693b2dcb771b4045beb19c3dd4f3331b60ef24ec",
+            "bytes": 127706
+          }
+        },
+        "state": null,
+        "snapshot": {
+          "initial": true,
+          "arm": "S",
+          "run": 0,
+          "step": 0,
+          "contract_sha": "13357905859485ecb73a8d9bfab7c2b6271f4eebb159d9b2d175749c1eedca31"
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s0000\\episodes.json",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "bytes": 2
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 0,
+        "new_draws": 0,
+        "mean_w": 390042.385575128,
+        "worst_w": 508441.2309625974,
+        "restored_exact": false,
+        "elapsed_s": 16.823366799988435
+      },
+      "selected": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\reserved.json",
+          "sha256": "76d71bc4a5da08b27c6e7664b1dcc16e69c8ff8c64a18885c2a084f69b117907",
+          "bytes": 79
+        },
+        "pid": 2160,
+        "arm": "S",
+        "run": 0,
+        "step": 2048,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\metrics.json",
+            "sha256": "7badd1c2844f8769b3e9d812638771f7efff9c0b43a390c78f5dc593be6b1f7c",
+            "bytes": 5050
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\trace.npz",
+            "sha256": "5125224ee5ceab60b1e56ef5d030f8673da07549ed5c88f2ec2ba98b8f9e32bc",
+            "bytes": 140545
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\state.pt",
+          "sha256": "09611f4438acc28f619e69513654c73af2364a6719fb62542a4ec738a626a879",
+          "bytes": 933263
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\inference.pt",
+          "sha256": "49d4ee17e8b4ffc972abb37c5a640cc352da33e773d6fef93c3155144b778489",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\episodes.json",
+          "sha256": "c9b4e0464ef84130392cee6f5758526f4a9d6e30cece4baf9773060774f88319",
+          "bytes": 94268
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 97,
+        "new_draws": 256,
+        "mean_w": 388792.08144145535,
+        "worst_w": 505494.3426060313,
+        "restored_exact": true,
+        "elapsed_s": 15.803129199994146
+      },
+      "final": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\reserved.json",
+          "sha256": "76d71bc4a5da08b27c6e7664b1dcc16e69c8ff8c64a18885c2a084f69b117907",
+          "bytes": 79
+        },
+        "pid": 2160,
+        "arm": "S",
+        "run": 0,
+        "step": 2048,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\metrics.json",
+            "sha256": "7badd1c2844f8769b3e9d812638771f7efff9c0b43a390c78f5dc593be6b1f7c",
+            "bytes": 5050
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\trace.npz",
+            "sha256": "5125224ee5ceab60b1e56ef5d030f8673da07549ed5c88f2ec2ba98b8f9e32bc",
+            "bytes": 140545
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\state.pt",
+          "sha256": "09611f4438acc28f619e69513654c73af2364a6719fb62542a4ec738a626a879",
+          "bytes": 933263
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\inference.pt",
+          "sha256": "49d4ee17e8b4ffc972abb37c5a640cc352da33e773d6fef93c3155144b778489",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\episodes.json",
+          "sha256": "c9b4e0464ef84130392cee6f5758526f4a9d6e30cece4baf9773060774f88319",
+          "bytes": 94268
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 97,
+        "new_draws": 256,
+        "mean_w": 388792.08144145535,
+        "worst_w": 505494.3426060313,
+        "restored_exact": true,
+        "elapsed_s": 15.803129199994146
+      },
+      "points": [
+        {
+          "rows": 774,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s0000\\reserved.json",
+            "sha256": "55f885694b5264790e8cae75e8e10b8e608a9743fb9f408aee83ec4db710e099",
+            "bytes": 75
+          },
+          "pid": 2160,
+          "arm": "S",
+          "run": 0,
+          "step": 0,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s0000\\metrics.json",
+              "sha256": "f4d884dec3ec73703d11dd5ad16552ce76f5528ad2e5b1c600c2edb22ea9f420",
+              "bytes": 5040
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s0000\\trace.npz",
+              "sha256": "4fb5867c7af53d5455402530693b2dcb771b4045beb19c3dd4f3331b60ef24ec",
+              "bytes": 127706
+            }
+          },
+          "state": null,
+          "snapshot": {
+            "initial": true,
+            "arm": "S",
+            "run": 0,
+            "step": 0,
+            "contract_sha": "13357905859485ecb73a8d9bfab7c2b6271f4eebb159d9b2d175749c1eedca31"
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s0000\\episodes.json",
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "bytes": 2
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 0,
+          "new_draws": 0,
+          "mean_w": 390042.385575128,
+          "worst_w": 508441.2309625974,
+          "restored_exact": false,
+          "elapsed_s": 16.823366799988435
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s1024\\reserved.json",
+            "sha256": "46e663b2563ccb272b746e1fe023547dc8cb865a443f1a3491de7b7f9aebb9ec",
+            "bytes": 79
+          },
+          "pid": 2160,
+          "arm": "S",
+          "run": 0,
+          "step": 1024,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s1024\\metrics.json",
+              "sha256": "709412e942ecf720de8dc17b9e60edc9cfc3ee6bcfcaa6645b1d5b6fba31a54e",
+              "bytes": 5045
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s1024\\trace.npz",
+              "sha256": "d493e817c687a57fc835fe1306a7711609ef6ac5b2594086da023ef45041477f",
+              "bytes": 140057
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s1024\\state.pt",
+            "sha256": "eebab7cd4d818ceb5f3308c9a34b9f8a6912a23d74c8e0dfc2e5da537bebaba3",
+            "bytes": 771599
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s1024\\inference.pt",
+            "sha256": "4e72664d0e072b891c556ea38ce7f688ac40cd075c8423c5bb0628f33ad4fffa",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s1024\\episodes.json",
+            "sha256": "00138ad96390fa992ab1f7fcca7d9ccc007561a3bca93e82b1cafa29c6c3317b",
+            "bytes": 49418
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 33,
+          "new_draws": 128,
+          "mean_w": 389725.7868454142,
+          "worst_w": 508032.16174071067,
+          "restored_exact": true,
+          "elapsed_s": 15.795874899995397
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\reserved.json",
+            "sha256": "76d71bc4a5da08b27c6e7664b1dcc16e69c8ff8c64a18885c2a084f69b117907",
+            "bytes": 79
+          },
+          "pid": 2160,
+          "arm": "S",
+          "run": 0,
+          "step": 2048,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\metrics.json",
+              "sha256": "7badd1c2844f8769b3e9d812638771f7efff9c0b43a390c78f5dc593be6b1f7c",
+              "bytes": 5050
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\trace.npz",
+              "sha256": "5125224ee5ceab60b1e56ef5d030f8673da07549ed5c88f2ec2ba98b8f9e32bc",
+              "bytes": 140545
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\state.pt",
+            "sha256": "09611f4438acc28f619e69513654c73af2364a6719fb62542a4ec738a626a879",
+            "bytes": 933263
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\inference.pt",
+            "sha256": "49d4ee17e8b4ffc972abb37c5a640cc352da33e773d6fef93c3155144b778489",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\episodes.json",
+            "sha256": "c9b4e0464ef84130392cee6f5758526f4a9d6e30cece4baf9773060774f88319",
+            "bytes": 94268
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 97,
+          "new_draws": 256,
+          "mean_w": 388792.08144145535,
+          "worst_w": 505494.3426060313,
+          "restored_exact": true,
+          "elapsed_s": 15.803129199994146
+        }
+      ]
+    },
+    {
+      "arm": "S",
+      "run": 1,
+      "initial": {
+        "rows": 774,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s0000\\reserved.json",
+          "sha256": "a1a157c77ca4d2ec3f07ef176debe6554cb1486fcfdeb93aeace02932e1e0ae7",
+          "bytes": 75
+        },
+        "pid": 4320,
+        "arm": "S",
+        "run": 1,
+        "step": 0,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s0000\\metrics.json",
+            "sha256": "f508d19260ca48266d58f537313e4f64f81b7f6dd2ddd3320d2c764a6244f2b0",
+            "bytes": 5030
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s0000\\trace.npz",
+            "sha256": "8192b9847dcbe98b70db4b5604b30070a1c7277c86cbbd34094cff3314fb416a",
+            "bytes": 127208
+          }
+        },
+        "state": null,
+        "snapshot": {
+          "initial": true,
+          "arm": "S",
+          "run": 1,
+          "step": 0,
+          "contract_sha": "ac313f45960408768af59fc3e283862114f97a51edf70ccc6a9b3ef647cf5c9a"
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s0000\\episodes.json",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "bytes": 2
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 0,
+        "new_draws": 0,
+        "mean_w": 379426.728414506,
+        "worst_w": 483779.70574873086,
+        "restored_exact": false,
+        "elapsed_s": 16.980280899995705
+      },
+      "selected": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\reserved.json",
+          "sha256": "1938a817bb7a01e02f4fb4bc3b4bc2171bd25e6984a9f9947da88e5d9cc4e1a4",
+          "bytes": 79
+        },
+        "pid": 4320,
+        "arm": "S",
+        "run": 1,
+        "step": 1024,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\metrics.json",
+            "sha256": "0a31be295593742c9a54a77e50091cf9ff334bcb8c9f328e824368c147f63474",
+            "bytes": 5019
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\trace.npz",
+            "sha256": "895b9afcf01af17937dafb485236046c3d3b2ffe5e33c3931f119041ed26fcb9",
+            "bytes": 139548
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\state.pt",
+          "sha256": "9db5044231f5bcffcc7b70f2b4a8a5cb780f23af7bdaa1cc5bb7543b12ddc5d2",
+          "bytes": 772047
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\inference.pt",
+          "sha256": "5edf1b22a8fe57ec7cb499546a0910fa7707447ee3406fdd1c340d4ad8c28052",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\episodes.json",
+          "sha256": "624338d71a5ac8836b01dce1564956432fc9b43ce9b92e4079d455ea2b57d68b",
+          "bytes": 49382
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 33,
+        "new_draws": 128,
+        "mean_w": 379170.5125540598,
+        "worst_w": 483338.5740366815,
+        "restored_exact": true,
+        "elapsed_s": 15.859282999997959
+      },
+      "final": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\reserved.json",
+          "sha256": "7166493062a76772d14409f62c5d6bc84c2be31a745aba6eae542354223c42ee",
+          "bytes": 79
+        },
+        "pid": 4320,
+        "arm": "S",
+        "run": 1,
+        "step": 2048,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\metrics.json",
+            "sha256": "2cf533b9211ed597cc344b0581dac3797250986911313c1d595df0e332e5c617",
+            "bytes": 5031
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\trace.npz",
+            "sha256": "0d6bbb935a966bc70ced109fca04ec0b27cc269c195c561ba39a1f94ec65d7f5",
+            "bytes": 140083
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\state.pt",
+          "sha256": "eb4e5d603477b1028a3b6016e9578cdc0e2631f7f3225f7208ad0ad418b180b2",
+          "bytes": 933391
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\inference.pt",
+          "sha256": "b884a1495dba34e8fe56c9f72f387ea0f1684009d2e20a861fb722cf0d17a85c",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\episodes.json",
+          "sha256": "523fe58cf50c89fa352895218d4b1c14785ee4bc67118e823c3e52a599678a7a",
+          "bytes": 94361
+        },
+        "origin": {
+          "steps": 0,
+          "episodes": 0,
+          "updates": 0,
+          "draws": 0
+        },
+        "new_updates": 97,
+        "new_draws": 256,
+        "mean_w": 379376.75279832864,
+        "worst_w": 483079.3447537258,
+        "restored_exact": true,
+        "elapsed_s": 15.613123000002815
+      },
+      "points": [
+        {
+          "rows": 774,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s0000\\reserved.json",
+            "sha256": "a1a157c77ca4d2ec3f07ef176debe6554cb1486fcfdeb93aeace02932e1e0ae7",
+            "bytes": 75
+          },
+          "pid": 4320,
+          "arm": "S",
+          "run": 1,
+          "step": 0,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s0000\\metrics.json",
+              "sha256": "f508d19260ca48266d58f537313e4f64f81b7f6dd2ddd3320d2c764a6244f2b0",
+              "bytes": 5030
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s0000\\trace.npz",
+              "sha256": "8192b9847dcbe98b70db4b5604b30070a1c7277c86cbbd34094cff3314fb416a",
+              "bytes": 127208
+            }
+          },
+          "state": null,
+          "snapshot": {
+            "initial": true,
+            "arm": "S",
+            "run": 1,
+            "step": 0,
+            "contract_sha": "ac313f45960408768af59fc3e283862114f97a51edf70ccc6a9b3ef647cf5c9a"
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s0000\\episodes.json",
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "bytes": 2
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 0,
+          "new_draws": 0,
+          "mean_w": 379426.728414506,
+          "worst_w": 483779.70574873086,
+          "restored_exact": false,
+          "elapsed_s": 16.980280899995705
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\reserved.json",
+            "sha256": "1938a817bb7a01e02f4fb4bc3b4bc2171bd25e6984a9f9947da88e5d9cc4e1a4",
+            "bytes": 79
+          },
+          "pid": 4320,
+          "arm": "S",
+          "run": 1,
+          "step": 1024,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\metrics.json",
+              "sha256": "0a31be295593742c9a54a77e50091cf9ff334bcb8c9f328e824368c147f63474",
+              "bytes": 5019
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\trace.npz",
+              "sha256": "895b9afcf01af17937dafb485236046c3d3b2ffe5e33c3931f119041ed26fcb9",
+              "bytes": 139548
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\state.pt",
+            "sha256": "9db5044231f5bcffcc7b70f2b4a8a5cb780f23af7bdaa1cc5bb7543b12ddc5d2",
+            "bytes": 772047
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\inference.pt",
+            "sha256": "5edf1b22a8fe57ec7cb499546a0910fa7707447ee3406fdd1c340d4ad8c28052",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\episodes.json",
+            "sha256": "624338d71a5ac8836b01dce1564956432fc9b43ce9b92e4079d455ea2b57d68b",
+            "bytes": 49382
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 33,
+          "new_draws": 128,
+          "mean_w": 379170.5125540598,
+          "worst_w": 483338.5740366815,
+          "restored_exact": true,
+          "elapsed_s": 15.859282999997959
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\reserved.json",
+            "sha256": "7166493062a76772d14409f62c5d6bc84c2be31a745aba6eae542354223c42ee",
+            "bytes": 79
+          },
+          "pid": 4320,
+          "arm": "S",
+          "run": 1,
+          "step": 2048,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\metrics.json",
+              "sha256": "2cf533b9211ed597cc344b0581dac3797250986911313c1d595df0e332e5c617",
+              "bytes": 5031
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\trace.npz",
+              "sha256": "0d6bbb935a966bc70ced109fca04ec0b27cc269c195c561ba39a1f94ec65d7f5",
+              "bytes": 140083
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\state.pt",
+            "sha256": "eb4e5d603477b1028a3b6016e9578cdc0e2631f7f3225f7208ad0ad418b180b2",
+            "bytes": 933391
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\inference.pt",
+            "sha256": "b884a1495dba34e8fe56c9f72f387ea0f1684009d2e20a861fb722cf0d17a85c",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\episodes.json",
+            "sha256": "523fe58cf50c89fa352895218d4b1c14785ee4bc67118e823c3e52a599678a7a",
+            "bytes": 94361
+          },
+          "origin": {
+            "steps": 0,
+            "episodes": 0,
+            "updates": 0,
+            "draws": 0
+          },
+          "new_updates": 97,
+          "new_draws": 256,
+          "mean_w": 379376.75279832864,
+          "worst_w": 483079.3447537258,
+          "restored_exact": true,
+          "elapsed_s": 15.613123000002815
+        }
+      ]
+    },
+    {
+      "arm": "S",
+      "run": 2,
+      "initial": {
+        "rows": 774,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s0000\\reserved.json",
+          "sha256": "f679580593b7f3209b084b9e6b21948a369bf3fbae1270c27454ac5a0477d9e4",
+          "bytes": 76
+        },
+        "pid": 27980,
+        "arm": "S",
+        "run": 2,
+        "step": 0,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s0000\\metrics.json",
+            "sha256": "fba5ea745d083fc4520898d4c3030224385771484b51c76fd719b8aa96c1eb67",
+            "bytes": 5004
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s0000\\trace.npz",
+            "sha256": "4c233fd378b71e0fa2d12600a8132c77d588d054ae781459aa9fcab307c82ba4",
+            "bytes": 138614
+          }
+        },
+        "state": null,
+        "snapshot": {
+          "initial": true,
+          "arm": "S",
+          "run": 2,
+          "step": 0,
+          "contract_sha": "fa506abfdde4f820973bb3520286107d52d28d321d21ffd7b0512795ea4ceb9c"
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s0000\\episodes.json",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "bytes": 2
+        },
+        "origin": {
+          "steps": 4096,
+          "episodes": 32,
+          "updates": 225,
+          "draws": 512
+        },
+        "new_updates": 0,
+        "new_draws": 0,
+        "mean_w": 363028.2574446194,
+        "worst_w": 479135.2688372417,
+        "restored_exact": false,
+        "elapsed_s": 17.03188239999872
+      },
+      "selected": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\reserved.json",
+          "sha256": "dc258148a9ba38bfe0d2ca0782e782829e870e7a80309df49879434406745ecd",
+          "bytes": 80
+        },
+        "pid": 27980,
+        "arm": "S",
+        "run": 2,
+        "step": 1024,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\metrics.json",
+            "sha256": "1a890b2f630e134f7969b5a55595921ef3a8592f8e59e116a856963e24bda948",
+            "bytes": 5017
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\trace.npz",
+            "sha256": "c96f2b0faf1f26483c869f50640096a4b0022a16a9e884dc9e5a708605981681",
+            "bytes": 138856
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\state.pt",
+          "sha256": "4464cc8b8cc8eef9a236b7a31f78ebebd0bd83003f83678086061c3da8447a97",
+          "bytes": 1415439
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\inference.pt",
+          "sha256": "7e405deb52b7c3db812ccbd684057b7c014b72da8bca81253a845c3aaa339996",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\episodes.json",
+          "sha256": "ce75746532194a1aa4903ebb638dba0d2a14c9463a32914aa1d13350ff067f21",
+          "bytes": 51103
+        },
+        "origin": {
+          "steps": 4096,
+          "episodes": 32,
+          "updates": 225,
+          "draws": 512
+        },
+        "new_updates": 33,
+        "new_draws": 128,
+        "mean_w": 362972.8553945094,
+        "worst_w": 480431.6080927909,
+        "restored_exact": true,
+        "elapsed_s": 16.138902799997595
+      },
+      "final": {
+        "rows": 1806,
+        "reservation": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\reserved.json",
+          "sha256": "fb1828610162f9c959cff3bd48149826717de7a478a438143b4a58a2d052caa1",
+          "bytes": 80
+        },
+        "pid": 27980,
+        "arm": "S",
+        "run": 2,
+        "step": 2048,
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\metrics.json",
+            "sha256": "32149648053f8697124b419e1c422fc5f33ccc6d3ade6f6c5d82c03e68a782de",
+            "bytes": 5004
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\trace.npz",
+            "sha256": "962abef7061b017ecc504c6e3d850a5de68294e4ea13c28b690ed0242061fff4",
+            "bytes": 138729
+          }
+        },
+        "state": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\state.pt",
+          "sha256": "35f0a1a377ff208257332151441f05a8ca5d9a8d43357abdc932718443b65927",
+          "bytes": 1576527
+        },
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\inference.pt",
+          "sha256": "0af207307d930b6cafd6fc8b8c0e7b4cc01c383e2021065a9d9183774c612135",
+          "bytes": 24959
+        },
+        "logs": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\episodes.json",
+          "sha256": "c51deb250aef7dfbfd09bc81214e420e8c17011abeba56160c0dd07e15b74837",
+          "bytes": 96048
+        },
+        "origin": {
+          "steps": 4096,
+          "episodes": 32,
+          "updates": 225,
+          "draws": 512
+        },
+        "new_updates": 97,
+        "new_draws": 256,
+        "mean_w": 366957.7007033615,
+        "worst_w": 488881.425768122,
+        "restored_exact": true,
+        "elapsed_s": 15.707571399994777
+      },
+      "points": [
+        {
+          "rows": 774,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s0000\\reserved.json",
+            "sha256": "f679580593b7f3209b084b9e6b21948a369bf3fbae1270c27454ac5a0477d9e4",
+            "bytes": 76
+          },
+          "pid": 27980,
+          "arm": "S",
+          "run": 2,
+          "step": 0,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s0000\\metrics.json",
+              "sha256": "fba5ea745d083fc4520898d4c3030224385771484b51c76fd719b8aa96c1eb67",
+              "bytes": 5004
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s0000\\trace.npz",
+              "sha256": "4c233fd378b71e0fa2d12600a8132c77d588d054ae781459aa9fcab307c82ba4",
+              "bytes": 138614
+            }
+          },
+          "state": null,
+          "snapshot": {
+            "initial": true,
+            "arm": "S",
+            "run": 2,
+            "step": 0,
+            "contract_sha": "fa506abfdde4f820973bb3520286107d52d28d321d21ffd7b0512795ea4ceb9c"
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s0000\\episodes.json",
+            "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "bytes": 2
+          },
+          "origin": {
+            "steps": 4096,
+            "episodes": 32,
+            "updates": 225,
+            "draws": 512
+          },
+          "new_updates": 0,
+          "new_draws": 0,
+          "mean_w": 363028.2574446194,
+          "worst_w": 479135.2688372417,
+          "restored_exact": false,
+          "elapsed_s": 17.03188239999872
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\reserved.json",
+            "sha256": "dc258148a9ba38bfe0d2ca0782e782829e870e7a80309df49879434406745ecd",
+            "bytes": 80
+          },
+          "pid": 27980,
+          "arm": "S",
+          "run": 2,
+          "step": 1024,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\metrics.json",
+              "sha256": "1a890b2f630e134f7969b5a55595921ef3a8592f8e59e116a856963e24bda948",
+              "bytes": 5017
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\trace.npz",
+              "sha256": "c96f2b0faf1f26483c869f50640096a4b0022a16a9e884dc9e5a708605981681",
+              "bytes": 138856
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\state.pt",
+            "sha256": "4464cc8b8cc8eef9a236b7a31f78ebebd0bd83003f83678086061c3da8447a97",
+            "bytes": 1415439
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\inference.pt",
+            "sha256": "7e405deb52b7c3db812ccbd684057b7c014b72da8bca81253a845c3aaa339996",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\episodes.json",
+            "sha256": "ce75746532194a1aa4903ebb638dba0d2a14c9463a32914aa1d13350ff067f21",
+            "bytes": 51103
+          },
+          "origin": {
+            "steps": 4096,
+            "episodes": 32,
+            "updates": 225,
+            "draws": 512
+          },
+          "new_updates": 33,
+          "new_draws": 128,
+          "mean_w": 362972.8553945094,
+          "worst_w": 480431.6080927909,
+          "restored_exact": true,
+          "elapsed_s": 16.138902799997595
+        },
+        {
+          "rows": 1806,
+          "reservation": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\reserved.json",
+            "sha256": "fb1828610162f9c959cff3bd48149826717de7a478a438143b4a58a2d052caa1",
+            "bytes": 80
+          },
+          "pid": 27980,
+          "arm": "S",
+          "run": 2,
+          "step": 2048,
+          "eval": {
+            "metrics": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\metrics.json",
+              "sha256": "32149648053f8697124b419e1c422fc5f33ccc6d3ade6f6c5d82c03e68a782de",
+              "bytes": 5004
+            },
+            "trace": {
+              "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\trace.npz",
+              "sha256": "962abef7061b017ecc504c6e3d850a5de68294e4ea13c28b690ed0242061fff4",
+              "bytes": 138729
+            }
+          },
+          "state": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\state.pt",
+            "sha256": "35f0a1a377ff208257332151441f05a8ca5d9a8d43357abdc932718443b65927",
+            "bytes": 1576527
+          },
+          "snapshot": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\inference.pt",
+            "sha256": "0af207307d930b6cafd6fc8b8c0e7b4cc01c383e2021065a9d9183774c612135",
+            "bytes": 24959
+          },
+          "logs": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\episodes.json",
+            "sha256": "c51deb250aef7dfbfd09bc81214e420e8c17011abeba56160c0dd07e15b74837",
+            "bytes": 96048
+          },
+          "origin": {
+            "steps": 4096,
+            "episodes": 32,
+            "updates": 225,
+            "draws": 512
+          },
+          "new_updates": 97,
+          "new_draws": 256,
+          "mean_w": 366957.7007033615,
+          "worst_w": 488881.425768122,
+          "restored_exact": true,
+          "elapsed_s": 15.707571399994777
+        }
+      ]
+    }
+  ],
+  "selection": "strict_validation_mean_then_earliest",
+  "lock_sha": "1ae777e80e197803cda5ab7a1fa9931f16970f7013669628048fd2d38905408f",
+  "steps": 12288,
+  "rows": 26316,
+  "no_new_test": true
+}

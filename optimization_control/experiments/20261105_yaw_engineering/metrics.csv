@@ -1,0 +1,6 @@
+check,model_rows,joint_updates,cases,passed
+SI_and_angles,0,0,1,True
+real_zero_full_trajectory,2322,0,9,True
+real_nonzero_yaw,258,0,2,True
+mock_update_disk_resume,774,3,1,True
+short_terminal_and_pending_resume,45,0,3,True

@@ -209,9 +209,12 @@ class MADDPG:
         # checkpoint still cannot execute arbitrary code. Checkpoints whose metadata
         # holds non-primitive objects will not load; keep metadata JSON-like.
         safe = [np.ndarray, np.dtype]
-        core = getattr(np, "_core", None) or getattr(np, "core", None)
-        if core is not None:
-            safe += [core.multiarray._reconstruct, core.multiarray.scalar]
+        # NumPy 1.26 exposes a partial _core shim without multiarray attributes.
+        # Import the actual reconstruction module for the installed major version.
+        from importlib import import_module
+        module = "numpy._core.multiarray" if int(np.__version__.split(".")[0]) >= 2 else "numpy.core.multiarray"
+        multiarray = import_module(module)
+        safe += [multiarray._reconstruct, multiarray.scalar]
         dtypes = getattr(np, "dtypes", None)
         if dtypes is not None:
             safe += [getattr(dtypes, n) for n in dir(dtypes) if n.endswith("DType")]

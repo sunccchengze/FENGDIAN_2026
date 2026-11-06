@@ -1,0 +1,8 @@
+test_full_ring_wrap_new_writes_and_actual_tail (optimization_control.tests.test_speed_nstep.SpeedNStepTests.test_full_ring_wrap_new_writes_and_actual_tail) ... ok
+test_terminal_missing_tail_and_scaled_reward_once (optimization_control.tests.test_speed_nstep.SpeedNStepTests.test_terminal_missing_tail_and_scaled_reward_once) ... ok
+test_endpoint_target_input_total_action_and_current_radius (optimization_control.tests.test_speed_nstep.SpeedNStepTests.test_endpoint_target_input_total_action_and_current_radius) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.191s
+
+OK

@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "formal_training_steps": 0,
+  "new_test_steps": 0,
+  "actual_mechanism_steps": 38016,
+  "actual_handoff_steps": 6912,
+  "actual_total_environment_steps": 44928,
+  "hard_limit": 65000,
+  "interrupted_uncommitted_reserved_steps": 0,
+  "initial_q_arms_max_difference": 0.0,
+  "own_zero_windows_verified": 216,
+  "maximum_own_zero_trace_error_difference_w": 0.0,
+  "common_first_action_and_response_pairs_exact": 324,
+  "horizon_sign_changes": 32,
+  "unique_horizon_comparisons": 576,
+  "protected_files_unchanged": true,
+  "parameters_unchanged": true,
+  "candidate_manifest_verified": true,
+  "new_hyperparameters_or_checkpoint_selection": false,
+  "default_or_speed_parent_changed": false
+}

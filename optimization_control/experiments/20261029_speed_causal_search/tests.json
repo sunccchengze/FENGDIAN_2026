@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "tests": 4,
+  "mock_model_rows": 376,
+  "mock_api_calls": 373,
+  "per_case_mock_rows": [
+    113,
+    221,
+    4,
+    5,
+    33
+  ],
+  "test_source_sha256": "81f8ac5b5708a86b78f3e4097ef82782b67e10610cdf7fe3bfaddc2033123f3f",
+  "current_proxy_model_rows": 0,
+  "command": "python -B -X utf8; activate documented runtime; unittest.loadTestsFromModule(test_causal_speed_search)"
+}

@@ -1,0 +1,39 @@
+Actor队友桨距条件单因素配对实验：已完成，性能验收失败
+Completed: 2026-10-30 (Asia/Shanghai); seed=42
+Branch: codex/pitch-cross-wind; source HEAD=99a48037ff0a39322fbb3df1117088b2b810e63e
+Experiment: ./optimization_control/experiments/20261029_pitch_actor_context
+Report: ./optimization_control/maddpg_wind_farm/PITCH_ACTOR_CONTEXT_RESULTS.md
+Protocol: ./optimization_control/maddpg_wind_farm/PITCH_ACTOR_CONTEXT_PROTOCOL.md
+
+唯一干预：Actor损失队友pitch从回放换成同update入口缓存的当前策略值并detach；本机梯度、队友yaw/speed回放不变。不是bug修复或真实Q修复。两臂n8、gamma=.99、raw reward和.001动作项、网络[3,15]、LR、tau、采样、权限[0,1,0]均不变。yaw跟踪风向，speed统一运行曲线。模型wind12-synthetic-7506554ac981及原执行器冻结，准静态合成模型，不代表真实风机。
+
+完整继承原n8 validation-selected16384/12288/4096的四组网络、六Adam、回放时序/m统计/全部随机状态；不是gamma实验.99 selected。父绝对路径/SHA见config.yaml和policy_manifest.json，原上游候选清单20261028_pitch_nstep_mechanism/candidate_manifest.json。父累计预算不同，三流SD不等于三个独立同起点seed。
+config SHA256=7035d9c0aae7506563a2c3faf6a3baeb2468996b11ce77d2a16035ab2bfec92a
+训练/初态/探索派生SeedSequence([42,20261029,6101|6102|6103,run,...])；探索种子2400279337/594427830/4274659687。所有实际状态/噪声和训练风况清单已保存。
+
+实际执行：2×3×16384=98304正式学习环境步；每job7937 update，总47622。warmup512，每2步更新，actor_lr=.0001、critic_lr=.001、tau=.01、batch64，pitch噪声std=.03末端.2倍；resolved_execution.json区分真实值与未使用旧训练模板。8次工程内存update全部丢弃，0Plant输入。6项针对性单元测试通过；初始动作差0、原更新下一步精确一致、peer梯度None/own非零、入口缓存不被顺序更新污染、新进程恢复下一更新精确一致。
+
+验证仅18新case完整128步均值选模，含initial，每4096步；候选selected4096/0/8192，对照16384/0/8192。新选中2/3，流1只是保留initial。六job及验证判定锁定后一次新test：36常规（三风况×2.725/3.325/3.925MW×两新波形×.03/.05）+8已知低风压力。P/PI不重整定，测试不反向选模或改门槛。
+
+主要已知3.8MW平稳两初态：candidate selected比对照差2.1803%、比固定父好1.3670%，改善流0/3和1/3；final分别好0.5453%和2.8077%，改善流1/3和2/3，均未达5%。能力保留、PI失败数、完整final稳定性在known/validation/test均失败。validation流0final慢变比对照差13.24%；流1final慢变实际行程比1.1254超1.10。硬pitch幅值/速率均通过。
+
+新test完整case-RMSE均值kW：
+范围             父        原selected 原final    候选selected 候选final    P         PI
+平稳           448.13      446.69     455.14      449.13       454.77     585.29    517.72
+慢变           518.90      514.93     525.65      520.03       519.10     653.15    608.88
+阵风           373.30      370.59     382.94      374.05       380.11     531.71    451.09
+常规36场       446.78      444.07     454.58      447.74       451.33     590.05    525.90
+压力8场       1496.59     1522.86    1532.83     1510.46      1495.39    1321.09   1321.09
+全44场         637.65      640.22     650.62      640.96       641.16     722.97    670.48
+
+candidate selected慢变比原更新差0.99%，final好1.25%但仍略差父；常规candidate selected也差原更新0.83%，final好0.71%但差父1.02%。三流常规selected/final均值kW为443.00/446.17、457.64/451.77、442.57/456.04；final较selected+0.72%/-1.28%/+3.04%。
+候选常规selected/final跨流样本SD8.58/4.95kW，慢变9.35/9.98。常规优PI78/108、81/108槽位，压力0/24、0/24。平均优PI不是本次干预新增收益，不是各场各流稳定优PI。全44场pooled candidate selected/final770.60/766.29kW反而差于PI750.74，即使case均值更低。压力未删除、未改成不可达证明。
+
+统计文件：known/validation/test_metrics或metrics.csv完整保留RMSE、signed bias、std、bias²、variance与残差；*_target_initial.csv按风况/目标/初态分组；*_aggregate.csv实际行程、速率、饱和、边界；*_paired_cases.csv和*_comparisons.csv给相对固定父/对照/P/PI的差值及跨流SD；*_cross_stream.csv并列case均值和pooled。policy_manifest.json仅引用initial/selected/final完整路径及SHA；normalization.json绑定固定归一化与执行器。
+
+实际计数：正式T输入99072=98304推进+768reset；E推进217088、E输入218784=推进+1696reset，总Plant输入317856<381088，评估推进<278528。一次新test78848推进；14条不同Actor身份时序被20角色引用，880语义指标不是880次独立执行。4次计划新进程恢复（两臂run0各128/4096），重算0，无failed片段，10worker/7stage退出0。
+存储：每1024完整状态，run0两臂额外128状态；104正式+1工程全状态，774轻量commit不冒充恢复权重。105权重合计2053774941B，最大19690453B；全目录最终字节与分类见storage_stats.json，硬上限3221225472B。未删除历史或复制旧目录。
+
+独立delivery_check.json：1696完整128步回合用math.fsum复算RMSE/bias/std/MSE分解，RMSE最大差0W；独立验收与冻结结论一致。85冻结输入和11分析源SHA均不变。三张Python图已逐张查看：validation_and_decomposition.png、test_comparison.png、full_timeseries.png，后者为事前指定已知主组代表，不冒称新test。所有逐机完整时序在evaluations/*/attempt_*/traces.csv.gz（complete.json.reused_from解析别名）。
+
+复现：使用原项目.venv/Scripts/python.exe；报告提供同数据新目录准备、工程测试、源码冻结、launch、finish及图后复算的完整命令。当前轮已执行reproduce --check-only，未启动第二轮复现训练。完成目录拒绝覆盖，不重跑写入型命令。原模型/历史只读，不改共享状态/README/PPT，不合并master、不推送、不默认升级、不接管speed预测。结论为研究候选未通过，不追加候选或预算。

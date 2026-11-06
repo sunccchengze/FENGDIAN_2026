@@ -1,0 +1,574 @@
+{
+  "passed": true,
+  "groups": [
+    {
+      "label": "diagnostics/fixed0/validation",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed0\\validation\\metrics.json",
+          "sha256": "f4d884dec3ec73703d11dd5ad16552ce76f5528ad2e5b1c600c2edb22ea9f420",
+          "bytes": 5040
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed0\\validation\\trace.npz",
+          "sha256": "4fb5867c7af53d5455402530693b2dcb771b4045beb19c3dd4f3331b60ef24ec",
+          "bytes": 127706
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed0\\validation\\complete.json",
+        "sha256": "332051c129e7e2865169a3fece7bced77d3b84f7806c129b7f8f79d5eaa4ea94",
+        "bytes": 898
+      }
+    },
+    {
+      "label": "diagnostics/fixed0/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed0\\stress\\metrics.json",
+          "sha256": "c34e37a36da54a38f70d12869b2708fc9a45672e10ff9126aa50aa0eba11b347",
+          "bytes": 801
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed0\\stress\\trace.npz",
+          "sha256": "1dd0bedb8710caa83ce9244d2700ef4dbf06f376d2df7e9719e3e0a23375355e",
+          "bytes": 16567
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed0\\stress\\complete.json",
+        "sha256": "005942b1fb9d7b8ef6dc06d754f88e1d99ba823254e0f7fb6cc3c9a34c533f79",
+        "bytes": 884
+      }
+    },
+    {
+      "label": "diagnostics/fixed1/validation",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed1\\validation\\metrics.json",
+          "sha256": "f508d19260ca48266d58f537313e4f64f81b7f6dd2ddd3320d2c764a6244f2b0",
+          "bytes": 5030
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed1\\validation\\trace.npz",
+          "sha256": "8192b9847dcbe98b70db4b5604b30070a1c7277c86cbbd34094cff3314fb416a",
+          "bytes": 127208
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed1\\validation\\complete.json",
+        "sha256": "68e023c03ddac7421a26fe43bb2969b6e1c1fb0d4b265eb4afc905cdeacaca0c",
+        "bytes": 898
+      }
+    },
+    {
+      "label": "diagnostics/fixed1/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed1\\stress\\metrics.json",
+          "sha256": "45b579f261dac75c0ca13d16fa28bfd51ee032fcec1dd9d1012768a3ad665539",
+          "bytes": 811
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed1\\stress\\trace.npz",
+          "sha256": "14f04c7a201101bc5579d5785492b264a57207129f8c59c4abcbf93d38feeb88",
+          "bytes": 16885
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed1\\stress\\complete.json",
+        "sha256": "dc2db4780117f77074802ceec93be162d90f19e523d3696950c69c43a991a97c",
+        "bytes": 884
+      }
+    },
+    {
+      "label": "diagnostics/fixed2/validation",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed2\\validation\\metrics.json",
+          "sha256": "fba5ea745d083fc4520898d4c3030224385771484b51c76fd719b8aa96c1eb67",
+          "bytes": 5004
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed2\\validation\\trace.npz",
+          "sha256": "4c233fd378b71e0fa2d12600a8132c77d588d054ae781459aa9fcab307c82ba4",
+          "bytes": 138614
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed2\\validation\\complete.json",
+        "sha256": "9c7aea55ccdf7d5fb142add7bd87b8d9206feb1df937efb606a11328fbc43aba",
+        "bytes": 898
+      }
+    },
+    {
+      "label": "diagnostics/fixed2/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed2\\stress\\metrics.json",
+          "sha256": "9b7b987fb4b29489bd5a83663d8b4ef577d452bedd6ebeb3661f6b8637f1a0b0",
+          "bytes": 810
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed2\\stress\\trace.npz",
+          "sha256": "8d433d7dd13748bd9d2cc4d46a11c6e4916df5c7e2537f124e6cb225731de6d9",
+          "bytes": 18005
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\fixed2\\stress\\complete.json",
+        "sha256": "04bb446d221587db3858409382c029f651f50f051a49290108500846a9d0931a",
+        "bytes": 884
+      }
+    },
+    {
+      "label": "diagnostics/p/validation",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\p\\validation\\metrics.json",
+          "sha256": "0d9e28e5ff4852c054a6ba5c60bc99ad9c9c2872044145125998efc111c2f2b5",
+          "bytes": 4951
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\p\\validation\\trace.npz",
+          "sha256": "fcce9b3749f7d87b58a8724ded05413e3739605e2bea649c2b3908613f6aebe7",
+          "bytes": 109667
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\p\\validation\\complete.json",
+        "sha256": "8142e95b2946237af8430f7cca28b51b14555a1b0fdb0b07362cbc4bd1f02942",
+        "bytes": 883
+      }
+    },
+    {
+      "label": "diagnostics/p/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\p\\stress\\metrics.json",
+          "sha256": "2bb22250c82c576b843927dca95ad875de9e3217f67dc274eaed54ff6f777210",
+          "bytes": 770
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\p\\stress\\trace.npz",
+          "sha256": "84a3479ce284a3badb6ad7132130fa3c2c336837b100fe7ae9024ddd1e0637dd",
+          "bytes": 8839
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\p\\stress\\complete.json",
+        "sha256": "71cb87737fb1bfbd39f3c624019ad7ac00da1f97f48821eb9bb54cf00b0547e2",
+        "bytes": 868
+      }
+    },
+    {
+      "label": "diagnostics/pi/validation",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\metrics.json",
+          "sha256": "d3ef6496b5495ac3d1b00a140882bab7b1b1e30ccedc79c6518ff37d18b1e830",
+          "bytes": 4955
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+          "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+          "bytes": 109708
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\complete.json",
+        "sha256": "8598a273828a764b160530b9e124e1ead4866cddd619c746dd0be5b981656b33",
+        "bytes": 886
+      }
+    },
+    {
+      "label": "diagnostics/pi/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\stress\\metrics.json",
+          "sha256": "2bb22250c82c576b843927dca95ad875de9e3217f67dc274eaed54ff6f777210",
+          "bytes": 770
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\stress\\trace.npz",
+          "sha256": "84a3479ce284a3badb6ad7132130fa3c2c336837b100fe7ae9024ddd1e0637dd",
+          "bytes": 8839
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\stress\\complete.json",
+        "sha256": "b2081cb3e1684cdced085dbb0220c7828287cec45d6563dc2f68d338ddb57b9a",
+        "bytes": 871
+      }
+    },
+    {
+      "label": "diagnostics/Y0/selected/zero",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\selected\\zero\\metrics.json",
+          "sha256": "f4d884dec3ec73703d11dd5ad16552ce76f5528ad2e5b1c600c2edb22ea9f420",
+          "bytes": 5040
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\selected\\zero\\trace.npz",
+          "sha256": "4fb5867c7af53d5455402530693b2dcb771b4045beb19c3dd4f3331b60ef24ec",
+          "bytes": 127706
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\selected\\zero\\complete.json",
+        "sha256": "b72f3eef18182836cdc5665a4ec5ab427442df91f5676868447a8571bcb32345",
+        "bytes": 898
+      }
+    },
+    {
+      "label": "diagnostics/Y0/selected/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\selected\\stress\\metrics.json",
+          "sha256": "11747b292574844f029de2feb82437191437a4ce8ec54bea49e30d8dbd616065",
+          "bytes": 874
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\selected\\stress\\trace.npz",
+          "sha256": "3fd83480cd58cb77a33c7829a7be24ca92aa2c5842f509350a6c71441c51b61c",
+          "bytes": 21869
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\selected\\stress\\complete.json",
+        "sha256": "64ab077dd22069ab4d2e467d533426f56cf5ea8938d87aee1005cd4d774b0ad9",
+        "bytes": 902
+      }
+    },
+    {
+      "label": "diagnostics/Y0/final/zero",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\final\\zero\\metrics.json",
+          "sha256": "f4d884dec3ec73703d11dd5ad16552ce76f5528ad2e5b1c600c2edb22ea9f420",
+          "bytes": 5040
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\final\\zero\\trace.npz",
+          "sha256": "4fb5867c7af53d5455402530693b2dcb771b4045beb19c3dd4f3331b60ef24ec",
+          "bytes": 127706
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\final\\zero\\complete.json",
+        "sha256": "0c0f3d5a3dac2cfd581f92d5e9302a8308c0593e872cf84dcbe5ae472468914a",
+        "bytes": 889
+      }
+    },
+    {
+      "label": "diagnostics/Y0/final/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\final\\stress\\metrics.json",
+          "sha256": "11747b292574844f029de2feb82437191437a4ce8ec54bea49e30d8dbd616065",
+          "bytes": 874
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\final\\stress\\trace.npz",
+          "sha256": "3fd83480cd58cb77a33c7829a7be24ca92aa2c5842f509350a6c71441c51b61c",
+          "bytes": 21869
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y0\\final\\stress\\complete.json",
+        "sha256": "c517519bfe3546bd21773f27a1e5285bbc798bd3b5dc0adf8ea884fccda9037a",
+        "bytes": 893
+      }
+    },
+    {
+      "label": "diagnostics/Y1/selected/zero",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\selected\\zero\\metrics.json",
+          "sha256": "f508d19260ca48266d58f537313e4f64f81b7f6dd2ddd3320d2c764a6244f2b0",
+          "bytes": 5030
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\selected\\zero\\trace.npz",
+          "sha256": "8192b9847dcbe98b70db4b5604b30070a1c7277c86cbbd34094cff3314fb416a",
+          "bytes": 127208
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\selected\\zero\\complete.json",
+        "sha256": "29ec907d3a2eefaf62569ed0531c2aef3584a5f2956b802555d162d905638729",
+        "bytes": 898
+      }
+    },
+    {
+      "label": "diagnostics/Y1/selected/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\selected\\stress\\metrics.json",
+          "sha256": "45b579f261dac75c0ca13d16fa28bfd51ee032fcec1dd9d1012768a3ad665539",
+          "bytes": 811
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\selected\\stress\\trace.npz",
+          "sha256": "14f04c7a201101bc5579d5785492b264a57207129f8c59c4abcbf93d38feeb88",
+          "bytes": 16885
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\selected\\stress\\complete.json",
+        "sha256": "e31bbe892b781e730645994d40c6b838d2890733f97ece79f5ccfa52fcf212fa",
+        "bytes": 902
+      }
+    },
+    {
+      "label": "diagnostics/Y1/final/zero",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\final\\zero\\metrics.json",
+          "sha256": "f508d19260ca48266d58f537313e4f64f81b7f6dd2ddd3320d2c764a6244f2b0",
+          "bytes": 5030
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\final\\zero\\trace.npz",
+          "sha256": "8192b9847dcbe98b70db4b5604b30070a1c7277c86cbbd34094cff3314fb416a",
+          "bytes": 127208
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\final\\zero\\complete.json",
+        "sha256": "517e56eecdeb53149c96fd332e6c7bb389d70b75f1562f2147df3b73e17a554f",
+        "bytes": 889
+      }
+    },
+    {
+      "label": "diagnostics/Y1/final/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\final\\stress\\metrics.json",
+          "sha256": "343b0ee67c3478c7cfe0d27d22d0dbe692dfa73a4aa9f4f802f476847709a51a",
+          "bytes": 880
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\final\\stress\\trace.npz",
+          "sha256": "7a5cf3b1d4b4c6871a1814b21c26f43058496765180222ed29eabeb9a32989c0",
+          "bytes": 22273
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y1\\final\\stress\\complete.json",
+        "sha256": "883b548f40ef3f130e28c706fad3ea79b260cb93361a525d9400f0443e3323cf",
+        "bytes": 893
+      }
+    },
+    {
+      "label": "diagnostics/Y2/selected/zero",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\selected\\zero\\metrics.json",
+          "sha256": "fba5ea745d083fc4520898d4c3030224385771484b51c76fd719b8aa96c1eb67",
+          "bytes": 5004
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\selected\\zero\\trace.npz",
+          "sha256": "4c233fd378b71e0fa2d12600a8132c77d588d054ae781459aa9fcab307c82ba4",
+          "bytes": 138614
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\selected\\zero\\complete.json",
+        "sha256": "970997170a069ad38a4b106864e631b738927ef56db037d029b8d5a976a2c2ac",
+        "bytes": 898
+      }
+    },
+    {
+      "label": "diagnostics/Y2/selected/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\selected\\stress\\metrics.json",
+          "sha256": "d1575b04d51ce4eda138b063ccd049ffe3349e4bddc0c85ef0aa36c770e97587",
+          "bytes": 874
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\selected\\stress\\trace.npz",
+          "sha256": "cd3885d4c338fc8b203ce07f88a748ca3884da886b26b5ec5ec77b57526c8544",
+          "bytes": 22507
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\selected\\stress\\complete.json",
+        "sha256": "d23ef4405ba795de7069046a1e91c9c4975e83bd1addc463f634ad37c843bd1e",
+        "bytes": 902
+      }
+    },
+    {
+      "label": "diagnostics/Y2/final/zero",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\final\\zero\\metrics.json",
+          "sha256": "fba5ea745d083fc4520898d4c3030224385771484b51c76fd719b8aa96c1eb67",
+          "bytes": 5004
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\final\\zero\\trace.npz",
+          "sha256": "4c233fd378b71e0fa2d12600a8132c77d588d054ae781459aa9fcab307c82ba4",
+          "bytes": 138614
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\final\\zero\\complete.json",
+        "sha256": "13c676b1fa786964adb98242cbe918966f1e6606b99a44c7768f2750c98057c5",
+        "bytes": 889
+      }
+    },
+    {
+      "label": "diagnostics/Y2/final/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\final\\stress\\metrics.json",
+          "sha256": "d1575b04d51ce4eda138b063ccd049ffe3349e4bddc0c85ef0aa36c770e97587",
+          "bytes": 874
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\final\\stress\\trace.npz",
+          "sha256": "cd3885d4c338fc8b203ce07f88a748ca3884da886b26b5ec5ec77b57526c8544",
+          "bytes": 22507
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\Y2\\final\\stress\\complete.json",
+        "sha256": "ad323c9b2dc91c312b7c4e59ff51ba89e989818af92bc89ceb72831ef4354ba7",
+        "bytes": 893
+      }
+    },
+    {
+      "label": "diagnostics/S0/selected/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S0\\selected\\stress\\metrics.json",
+          "sha256": "3261cf44225947ffdf0800d6c2ea5da51a3fd4797011b0fbaee8a90b024d1fb6",
+          "bytes": 803
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S0\\selected\\stress\\trace.npz",
+          "sha256": "005a475fcbb581997a21a02b938f5d779b85994fb5a0f798e25b6f26d5771bd6",
+          "bytes": 18454
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S0\\selected\\stress\\complete.json",
+        "sha256": "ab98d92f1b57bb8adcba555a789b330d739b9b3c1d000b32ac2b9eefbc5800bd",
+        "bytes": 902
+      }
+    },
+    {
+      "label": "diagnostics/S0/final/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S0\\final\\stress\\metrics.json",
+          "sha256": "3261cf44225947ffdf0800d6c2ea5da51a3fd4797011b0fbaee8a90b024d1fb6",
+          "bytes": 803
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S0\\final\\stress\\trace.npz",
+          "sha256": "005a475fcbb581997a21a02b938f5d779b85994fb5a0f798e25b6f26d5771bd6",
+          "bytes": 18454
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S0\\final\\stress\\complete.json",
+        "sha256": "b6037e7fdf95de471159693dfb2eba1fbd754afb217508c6e244826000386efc",
+        "bytes": 893
+      }
+    },
+    {
+      "label": "diagnostics/S1/selected/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S1\\selected\\stress\\metrics.json",
+          "sha256": "2dc694cad1c5b6ec8a76250fe3d15afa9af3ff642ac79dc10d923419f6e502d4",
+          "bytes": 808
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S1\\selected\\stress\\trace.npz",
+          "sha256": "7a859ae04cf8dea662a5fb7a16d058cf6fdc33c49915eccf13e40b0d22270fa0",
+          "bytes": 18613
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S1\\selected\\stress\\complete.json",
+        "sha256": "00fee50de3e44e27915cc664302221fcca3b0bd9babe622e7a3faa7082aac7bc",
+        "bytes": 902
+      }
+    },
+    {
+      "label": "diagnostics/S1/final/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S1\\final\\stress\\metrics.json",
+          "sha256": "e5e2af8ef7782415acc08f1231541c06534d88fe85b6e79b2d18716859ba6a19",
+          "bytes": 811
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S1\\final\\stress\\trace.npz",
+          "sha256": "9d4b3891522e2f898691e399bf880ffec42ab8cd5e06b0a8afd0b93d3ae8b056",
+          "bytes": 18732
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S1\\final\\stress\\complete.json",
+        "sha256": "8176f3799569aae85a803d1c35d918fa02e3f1a557282155d4a9a2b669532af0",
+        "bytes": 893
+      }
+    },
+    {
+      "label": "diagnostics/S2/selected/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S2\\selected\\stress\\metrics.json",
+          "sha256": "2b55fce4e3406a4575fcdf60671f5be79e9964a7bb850f0e5868bcaceb137f67",
+          "bytes": 809
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S2\\selected\\stress\\trace.npz",
+          "sha256": "74d46a905d88f0a77c7cd93b07fffc645c176d44e37f86105e69c9c8baf5bfdd",
+          "bytes": 17966
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S2\\selected\\stress\\complete.json",
+        "sha256": "1809c499022fad13e4e57983aff147c4e4bc9405ff72175d46056f24910170b3",
+        "bytes": 902
+      }
+    },
+    {
+      "label": "diagnostics/S2/final/stress",
+      "eval": {
+        "metrics": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S2\\final\\stress\\metrics.json",
+          "sha256": "1caf4b7b16cd32421cda2030c57372c1c016e9183f02de92c60c23ce2bc3e27a",
+          "bytes": 801
+        },
+        "trace": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S2\\final\\stress\\trace.npz",
+          "sha256": "37b65684aec30d450902421b99442aecc2c7f4ba211a61585da9489fdd16208c",
+          "bytes": 18011
+        }
+      },
+      "receipt": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\S2\\final\\stress\\complete.json",
+        "sha256": "3b2cdbad1d6fd47bf26920418c7bc4ab20fac7679abfeb8d4e0b8f128adb6e10",
+        "bytes": 893
+      }
+    }
+  ],
+  "diagnostics_rows": 10707,
+  "formal_rows": 37023,
+  "engineering_rows": 3399,
+  "cumulative_rows": 40422,
+  "hard_cap": 42000,
+  "steps": 12288,
+  "updates": 582,
+  "new_test_winds": 0,
+  "selection_sha": "ec95ad95c06050832f1ae4be6550c8e3754449bb52df196f5d18f8d84fb8a72a"
+}

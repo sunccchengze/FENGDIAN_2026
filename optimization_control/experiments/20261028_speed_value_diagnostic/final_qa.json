@@ -1,0 +1,40 @@
+{
+  "seed": 42,
+  "passed": true,
+  "formal_training_steps": 0,
+  "additional_surrogate_calls": 0,
+  "old_source_files": 422,
+  "frozen_execution_files": 77,
+  "old_experiment_file_inventory_unchanged": true,
+  "unit_tests": 6,
+  "python_syntax_files": 3,
+  "document_links": 7,
+  "all_saved_trace_and_q_values_finite": true,
+  "images": {
+    "pitch_feedback.png": [
+      2550,
+      765
+    ],
+    "radius_and_weights.png": [
+      2550,
+      816
+    ],
+    "value_ordering.png": [
+      2210,
+      782
+    ]
+  },
+  "pdf_pages": {
+    "pitch_feedback.pdf": 1,
+    "radius_and_weights.pdf": 1,
+    "value_ordering.pdf": 1
+  },
+  "visual_review_completed_all_three_png": true,
+  "source_report_sha256": "9a8c48c0dfc83ec65c76d3631a575d80961394730136c9865637a816509de0d6",
+  "supplemental_scripts": {
+    "check_saved_diagnostic.py": "7350685150568769f6e13cd172c11a59940c5d1e1649b69fc3e44abef029e4a1",
+    "final_qa.py": "96e0a1916fca6bcda6e948cd1dc1ac91dc457119f951a1191aad0adae74475eb",
+    "summarize_diagnostic.py": "590d130874d4538d399abf1d1276d2b9d00dc7f134d8a0097ba0173a2a3e1fb3",
+    "write_report_results.py": "26fa78a3754338c4671f08aa83960bdadd45944072a84254bd499ca96b8109dc"
+  }
+}

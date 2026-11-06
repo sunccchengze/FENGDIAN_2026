@@ -1,0 +1,8 @@
+{
+  "environment_steps": 480,
+  "rows": 54,
+  "selection_sha256": "1eaebb7a0b6f8e1a79fc73d149c7eded9979ddf886463958b11748196c3841c9",
+  "fixed_parent_continuation": true,
+  "finite_return_not_true_long_term_Q": true,
+  "no_candidate_selection": true
+}

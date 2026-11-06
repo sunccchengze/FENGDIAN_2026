@@ -1,0 +1,37 @@
+{
+  "recomputed_RMSE_records": 414,
+  "max_math_fsum_RMSE_diff_w": 0.0,
+  "exact_total_command_MSE_and_reward_records": 414,
+  "primary_independent_calculation": [
+    {
+      "family": "stationary",
+      "Y_mean_kW": 408.86552137678933,
+      "PI_mean_kW": 455.7297200620656,
+      "passed": true
+    },
+    {
+      "family": "ramp",
+      "Y_mean_kW": 418.7730159035241,
+      "PI_mean_kW": 484.4302236301322,
+      "passed": true
+    },
+    {
+      "family": "gust",
+      "Y_mean_kW": 420.9916356265391,
+      "PI_mean_kW": 488.1386985146929,
+      "passed": true
+    }
+  ],
+  "bootstrap_constant_oracle_passed": true,
+  "completed_case_scopes": 414,
+  "actual_rows": 53406,
+  "charged_rows": 53406,
+  "no_failed_or_retried_cases": true,
+  "prior_float32_waves": 3943,
+  "prior_saved_files": 5069,
+  "old_pilot_manifest_verified": 275,
+  "old_engineering_manifest_verified": 42,
+  "candidate_selection_sha": "ec95ad95c06050832f1ae4be6550c8e3754449bb52df196f5d18f8d84fb8a72a",
+  "additional_queries": 0,
+  "additional_updates": 0
+}

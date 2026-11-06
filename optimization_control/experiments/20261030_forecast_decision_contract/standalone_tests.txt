@@ -1,0 +1,9 @@
+test_actual_m_return_and_true_terminal (optimization_control.tests.test_forecast_decision_contract.DecisionContractTests.test_actual_m_return_and_true_terminal) ... ok
+test_budget_counts_rows_before_mock_forward (optimization_control.tests.test_forecast_decision_contract.DecisionContractTests.test_budget_counts_rows_before_mock_forward) ... ok
+test_clipped_total_action_does_not_identify_macro_offset (optimization_control.tests.test_forecast_decision_contract.DecisionContractTests.test_clipped_total_action_does_not_identify_macro_offset) ... ok
+test_holding_step_has_no_new_actor_gradient (optimization_control.tests.test_forecast_decision_contract.DecisionContractTests.test_holding_step_has_no_new_actor_gradient) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.038s
+
+OK

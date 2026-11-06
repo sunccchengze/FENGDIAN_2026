@@ -1,0 +1,17 @@
+{
+  "status": "limited_mean_gain_with_case_and_precision_failures",
+  "source_commit": "6e91ccc2900b303c14f6028eaa756f30cd827f89",
+  "forecast_model_sha256": "a5571a19354015c8b5997823748fafd7f0a6a355a0422d35b539e4faa3992877",
+  "parent_mean_gain_gate": true,
+  "forecast_increment_gate": true,
+  "all_cases_parent_noninferior": false,
+  "all_cases_persistence_noninferior": false,
+  "precision_400_500_streams": 0,
+  "forecast_increment_CI_covers_no_gain": true,
+  "all_scenarios_success": false,
+  "physical_validation": false,
+  "MADDPG_new_learning_success": false,
+  "next_stage": "forecast side-input wiring and initialization proposal only; no new network or training executed",
+  "RL_steps": 0,
+  "forecast_refits": 0
+}

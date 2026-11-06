@@ -1,0 +1,17 @@
+{
+  "forecast_unique_winds": 18,
+  "bootstrap_samples": 2000,
+  "bootstrap_seed": 42,
+  "plots": [
+    "all 18 case ratios for each parent stream",
+    "all horizons forecast metrics and every CPU/wall planning call",
+    "actual controls for ramp max target max initial pitch, all three parents"
+  ],
+  "actual_plot_selection": {
+    "family": "ramp",
+    "target_w": 3850000,
+    "initial_pitch_rad": 0.055
+  },
+  "selected_by_outcomes": false,
+  "conditional_next_learning_proposal_only": true
+}

@@ -1,0 +1,49 @@
+{
+  "lock_sha": "ca461e9a1abaff5ea5d1aec13843d0c5757ed5a9fd21d9538093690c0320b55a",
+  "selection_sha": "ec95ad95c06050832f1ae4be6550c8e3754449bb52df196f5d18f8d84fb8a72a",
+  "bank_manifest": {
+    "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\bank\\manifest.json",
+    "sha256": "86998ea79844b6ad6b70885e52b880d9fd4dacd9826cbe7e4ddbcdfbd66ed37b",
+    "bytes": 5577
+  },
+  "banks": {
+    "test": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\bank\\test.npz",
+      "sha256": "fbf174830597d9c593a569a130fa7a67d3a9d97649178ca4c8db816cfb26dd3a",
+      "bytes": 19115
+    }
+  },
+  "prior_inventory": {
+    "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\prior_waveforms.json",
+    "sha256": "1afc5ee2120c924f95504faf1dea5d12c1facf52e193531e7bae6450a66678fc",
+    "bytes": 2067736
+  },
+  "review": {
+    "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\review_at_release.md",
+    "sha256": "5f0b412277886a96a01fc5dc8390f5966d022c01fada6a6790061123d21db83c",
+    "bytes": 9286
+  },
+  "winds": 18,
+  "model_rows": 0,
+  "namespace": [
+    74000000,
+    74000001,
+    74000002,
+    74000003,
+    74000004,
+    74000005,
+    74000006,
+    74000007,
+    74000008,
+    74000009,
+    74000010,
+    74000011,
+    74000012,
+    74000013,
+    74000014,
+    74000015,
+    74000016,
+    74000017
+  ],
+  "release_once": true
+}

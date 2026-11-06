@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "batch_vs_single_max_abs_delta": [
+    0.875,
+    0.75,
+    1.6875,
+    1.9073486328125e-06,
+    9.5367431640625e-07,
+    2.384185791015625e-06
+  ],
+  "production_inference": "single_sample_only",
+  "future_change_did_not_change_plan": true,
+  "source_state_unchanged": true,
+  "clone_rng_independent": true,
+  "zero_branch_exact": true,
+  "budget": {
+    "name": "real_precheck",
+    "reserve": 624,
+    "actual": 263,
+    "api_calls": 255,
+    "status": "complete",
+    "kinds": {
+      "precheck_external": 5,
+      "batch_single_gate": 18,
+      "internal_forecast": 216,
+      "zero_branch_check": 24
+    }
+  }
+}

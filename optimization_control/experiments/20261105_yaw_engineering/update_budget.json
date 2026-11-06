@@ -1,0 +1,75 @@
+{
+  "limit": 12,
+  "scopes": [
+    {
+      "name": "real_zero",
+      "reserve": 0,
+      "actual": 0,
+      "api_calls": 0,
+      "status": "complete",
+      "kinds": {}
+    },
+    {
+      "name": "real_nonzero",
+      "reserve": 0,
+      "actual": 0,
+      "api_calls": 0,
+      "status": "complete",
+      "kinds": {}
+    },
+    {
+      "name": "mock_first_four",
+      "reserve": 1,
+      "actual": 1,
+      "api_calls": 1,
+      "status": "complete",
+      "kinds": {
+        "yaw_joint_engineering": 1
+      }
+    },
+    {
+      "name": "mock_continuous",
+      "reserve": 1,
+      "actual": 1,
+      "api_calls": 1,
+      "status": "complete",
+      "kinds": {
+        "yaw_joint_engineering": 1
+      }
+    },
+    {
+      "name": "mock_disk_resume",
+      "reserve": 1,
+      "actual": 1,
+      "api_calls": 1,
+      "status": "complete",
+      "kinds": {
+        "yaw_joint_engineering": 1
+      }
+    },
+    {
+      "name": "mock_short",
+      "reserve": 0,
+      "actual": 0,
+      "api_calls": 0,
+      "status": "complete",
+      "kinds": {}
+    },
+    {
+      "name": "mock_short_resume_t5",
+      "reserve": 0,
+      "actual": 0,
+      "api_calls": 0,
+      "status": "complete",
+      "kinds": {}
+    },
+    {
+      "name": "mock_short_resume_t8",
+      "reserve": 0,
+      "actual": 0,
+      "api_calls": 0,
+      "status": "complete",
+      "kinds": {}
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "updated_utc": "2026-10-29T02:26:34Z",
+  "committed_learning_steps": 98304,
+  "total_learning_budget": 98304,
+  "conservative_reserved": {
+    "learning": 98304,
+    "evaluation": 152576
+  },
+  "complete_jobs": 6,
+  "jobs": [
+    {
+      "arm": "g099",
+      "run": 0,
+      "committed_steps": 16384,
+      "complete": true,
+      "selected_step": 16384,
+      "initial_rmse_w": 447247.8844726874,
+      "selected_rmse_w": 432676.23115614126,
+      "final_rmse_w": 432676.23115614126
+    },
+    {
+      "arm": "g100",
+      "run": 0,
+      "committed_steps": 16384,
+      "complete": true,
+      "selected_step": 8192,
+      "initial_rmse_w": 447247.8844726874,
+      "selected_rmse_w": 446989.62116850563,
+      "final_rmse_w": 452293.05866539176
+    },
+    {
+      "arm": "g099",
+      "run": 1,
+      "committed_steps": 16384,
+      "complete": true,
+      "selected_step": 4096,
+      "initial_rmse_w": 440209.5273684666,
+      "selected_rmse_w": 431749.5723359864,
+      "final_rmse_w": 442200.5036478074
+    },
+    {
+      "arm": "g100",
+      "run": 1,
+      "committed_steps": 16384,
+      "complete": true,
+      "selected_step": 4096,
+      "initial_rmse_w": 440209.5273684666,
+      "selected_rmse_w": 431368.421766742,
+      "final_rmse_w": 435146.32667469163
+    },
+    {
+      "arm": "g099",
+      "run": 2,
+      "committed_steps": 16384,
+      "complete": true,
+      "selected_step": 0,
+      "initial_rmse_w": 422675.6840994135,
+      "selected_rmse_w": 422675.6840994135,
+      "final_rmse_w": 451757.2781082094
+    },
+    {
+      "arm": "g100",
+      "run": 2,
+      "committed_steps": 16384,
+      "complete": true,
+      "selected_step": 0,
+      "initial_rmse_w": 422675.6840994135,
+      "selected_rmse_w": 422675.6840994135,
+      "final_rmse_w": 437944.11779985117
+    }
+  ],
+  "active_processes": [],
+  "test_generated": true
+}

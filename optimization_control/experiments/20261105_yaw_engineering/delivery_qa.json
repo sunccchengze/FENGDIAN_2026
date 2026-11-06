@@ -1,0 +1,16 @@
+{
+  "AST_files": 3,
+  "document_links": 20,
+  "all_document_links_valid": true,
+  "balanced_fences": true,
+  "budget_rows": 3399,
+  "updates": 3,
+  "protected_source_files": 51,
+  "figure_size": [
+    1980,
+    1620
+  ],
+  "figure_visually_checked": true,
+  "old_data_preserved": true,
+  "additional_model_rows": 0
+}

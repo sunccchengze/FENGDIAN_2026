@@ -1,0 +1,9 @@
+{
+  "seed": 42,
+  "snapshot_rows": 15,
+  "case_rows": 90,
+  "tail_rows": 2160,
+  "additional_surrogate_calls": 0,
+  "formal_training_steps": 0,
+  "source_script_sha256": "590d130874d4538d399abf1d1276d2b9d00dc7f134d8a0097ba0173a2a3e1fb3"
+}

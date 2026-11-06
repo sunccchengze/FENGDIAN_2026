@@ -1,0 +1,49 @@
+{
+  "source": "recent_training_replay_only",
+  "permission_granted": false,
+  "new_training_steps": 0,
+  "reports": [
+    {
+      "network": "actors",
+      "agent": 0,
+      "fit_max": 0.24916590841317576,
+      "held_max": 0.2728529660204533,
+      "mean": 0.018284992138839738
+    },
+    {
+      "network": "actors",
+      "agent": 1,
+      "fit_max": 0.17580360583829724,
+      "held_max": 0.3220762936636009,
+      "mean": 0.02650173854865589
+    },
+    {
+      "network": "actors",
+      "agent": 2,
+      "fit_max": 0.1623721197107193,
+      "held_max": 0.29229245107945756,
+      "mean": 0.018797532885376455
+    },
+    {
+      "network": "target_actors",
+      "agent": 0,
+      "fit_max": 0.23085028592742088,
+      "held_max": 0.25177065875522775,
+      "mean": 0.014933265033265317
+    },
+    {
+      "network": "target_actors",
+      "agent": 1,
+      "fit_max": 0.16994065224649618,
+      "held_max": 0.5175900576933227,
+      "mean": 0.026706548201539282
+    },
+    {
+      "network": "target_actors",
+      "agent": 2,
+      "fit_max": 0.19073652920794187,
+      "held_max": 0.30007909562246626,
+      "mean": 0.019014905409784472
+    }
+  ]
+}

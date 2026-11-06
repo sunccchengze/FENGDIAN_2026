@@ -1,0 +1,263 @@
+{
+  "seed": 42,
+  "inherited_state_audit": [
+    {
+      "stage": "pitch",
+      "run_id": 0,
+      "inherited_state_exact": true,
+      "updates_at_initial": 7937,
+      "replay_at_initial": 16384,
+      "checkpoint_reload_action_noise_and_next_update_exact": true,
+      "best_step": 16384,
+      "passed": false
+    },
+    {
+      "stage": "pitch",
+      "run_id": 1,
+      "inherited_state_exact": true,
+      "updates_at_initial": 7937,
+      "replay_at_initial": 16384,
+      "checkpoint_reload_action_noise_and_next_update_exact": true,
+      "best_step": 12288,
+      "passed": true
+    },
+    {
+      "stage": "pitch",
+      "run_id": 2,
+      "inherited_state_exact": true,
+      "updates_at_initial": 7937,
+      "replay_at_initial": 16384,
+      "checkpoint_reload_action_noise_and_next_update_exact": true,
+      "best_step": 8192,
+      "passed": true
+    }
+  ],
+  "permission_order_and_gates_verified": true,
+  "test_metric_rows": 300,
+  "test_trace_rows": 38400,
+  "max_rmse_recompute_difference_w": 0.0,
+  "protected_files": 28,
+  "protected_files_unchanged": true,
+  "checkpoints_unchanged": true,
+  "regenerated_training_wind_episodes": 384,
+  "offline_next_head_readiness": [
+    {
+      "stage": "pitch",
+      "run_id": 0,
+      "next_stage": "pitch_speed",
+      "held_out_max_action_error": 0.39541763067245483,
+      "fit_passed": false,
+      "permission_granted": false,
+      "source": "selected_training_replay_only",
+      "new_environment_rollouts": 0,
+      "reports": [
+        {
+          "network": "actors",
+          "agent": 0,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.238931804895401,
+          "held_out_max_action_error": 0.2878592610359192,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "actors",
+          "agent": 1,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.3217191696166992,
+          "held_out_max_action_error": 0.33238810300827026,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "actors",
+          "agent": 2,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.2906435430049896,
+          "held_out_max_action_error": 0.39494550228118896,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "target_actors",
+          "agent": 0,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.3127886652946472,
+          "held_out_max_action_error": 0.2597491145133972,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "target_actors",
+          "agent": 1,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.3497120440006256,
+          "held_out_max_action_error": 0.35254645347595215,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "target_actors",
+          "agent": 2,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.2931594252586365,
+          "held_out_max_action_error": 0.39541763067245483,
+          "hidden_and_existing_rows_unchanged": true
+        }
+      ]
+    },
+    {
+      "stage": "pitch",
+      "run_id": 1,
+      "next_stage": "pitch_speed",
+      "held_out_max_action_error": 0.30365124344825745,
+      "fit_passed": false,
+      "permission_granted": false,
+      "source": "selected_training_replay_only",
+      "new_environment_rollouts": 0,
+      "reports": [
+        {
+          "network": "actors",
+          "agent": 0,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.3320196866989136,
+          "held_out_max_action_error": 0.22808776795864105,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "actors",
+          "agent": 1,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.3146781325340271,
+          "held_out_max_action_error": 0.2669493556022644,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "actors",
+          "agent": 2,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.29096370935440063,
+          "held_out_max_action_error": 0.2911946773529053,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "target_actors",
+          "agent": 0,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.29500335454940796,
+          "held_out_max_action_error": 0.2822924554347992,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "target_actors",
+          "agent": 1,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.28892982006073,
+          "held_out_max_action_error": 0.30365124344825745,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "target_actors",
+          "agent": 2,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.2157806009054184,
+          "held_out_max_action_error": 0.21024328470230103,
+          "hidden_and_existing_rows_unchanged": true
+        }
+      ]
+    },
+    {
+      "stage": "pitch",
+      "run_id": 2,
+      "next_stage": "pitch_speed",
+      "held_out_max_action_error": 0.33908236026763916,
+      "fit_passed": false,
+      "permission_granted": false,
+      "source": "selected_training_replay_only",
+      "new_environment_rollouts": 0,
+      "reports": [
+        {
+          "network": "actors",
+          "agent": 0,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.30630946159362793,
+          "held_out_max_action_error": 0.25367361307144165,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "actors",
+          "agent": 1,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.29458197951316833,
+          "held_out_max_action_error": 0.23781818151474,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "actors",
+          "agent": 2,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.25948768854141235,
+          "held_out_max_action_error": 0.30754557251930237,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "target_actors",
+          "agent": 0,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.2998690903186798,
+          "held_out_max_action_error": 0.25411248207092285,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "target_actors",
+          "agent": 1,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.36233198642730713,
+          "held_out_max_action_error": 0.2163519263267517,
+          "hidden_and_existing_rows_unchanged": true
+        },
+        {
+          "network": "target_actors",
+          "agent": 2,
+          "new_channel": 2,
+          "fit_rows": 4096,
+          "held_out_rows": 1024,
+          "fit_max_action_error": 0.2452017068862915,
+          "held_out_max_action_error": 0.33908236026763916,
+          "hidden_and_existing_rows_unchanged": true
+        }
+      ]
+    }
+  ],
+  "new_training": false,
+  "physical_validation": false
+}

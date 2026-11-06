@@ -1,0 +1,13 @@
+{
+  "metric_rows": 220,
+  "trajectory_rows": 28160,
+  "complete_cases": 220,
+  "max_metric_recompute_difference": 0.0,
+  "max_pitch_reconstruction_difference_rad": 5.863150076557133e-09,
+  "max_decision_response_wind_alignment_difference_m_s": 0.0,
+  "all_controllers_paired": true,
+  "protected_files": 80,
+  "protected_files_unchanged": true,
+  "formal_training_started": false,
+  "independent_test_opened": false
+}

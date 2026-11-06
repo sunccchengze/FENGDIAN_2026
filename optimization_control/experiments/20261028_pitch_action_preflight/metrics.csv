@@ -1,0 +1,2 @@
+stage,power_difference_w,action_difference,reward_difference,passed,formal_evaluation_started,resolution
+initial_batched_preflight,4.5,1.1652708053588867e-05,4.410743713378906e-06,False,False,canonical_single_row_original_env_step_without_tolerance_change

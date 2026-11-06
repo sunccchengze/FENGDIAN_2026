@@ -1,0 +1,57 @@
+{
+  "base": "a12288fd1dfdd2b299e4d949288d8a5908bcbe3f",
+  "staged_files": [
+    {
+      "path": "optimization_control/experiments/20261105_yaw_pilot/config.yaml",
+      "bytes": 886,
+      "sha256": "b98ab8511460afe7e3986535732d05876fd4990518459255e32616bc39cca872"
+    },
+    {
+      "path": "optimization_control/experiments/20261105_yaw_pilot/metrics.csv",
+      "bytes": 68209,
+      "sha256": "131f3204eaf43c4daee0a335867b27bc7fe583e75d2d5020f3a66ccb1cfff6f7"
+    },
+    {
+      "path": "optimization_control/experiments/20261105_yaw_pilot/summary.txt",
+      "bytes": 352,
+      "sha256": "6692d1deee27aa632454fb349f96ad29bd7c6efc35a8283122b292302d36035f"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/YAW_PILOT_PROTOCOL.md",
+      "bytes": 4007,
+      "sha256": "97846467bd0e113642c2bd8146d31c182886b9a0eb64d70e9bfa07e683850b4e"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/YAW_PILOT_RESULTS.md",
+      "bytes": 9776,
+      "sha256": "64689dfac710c7e11c21a8ae3c1f57f8d3a4ddd0a4787d17b718e8b277d6a5f6"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/yaw_pilot.py",
+      "bytes": 32776,
+      "sha256": "b1a01dfdbf58d34eff4e6fc48339b6c92221593223b6b287be99e83e0599f799"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/yaw_pilot_report.py",
+      "bytes": 11034,
+      "sha256": "76c3e2480ed9304ef791d5a53009cd4d0109fced65b103ba700bb6f9a650795a"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/yaw_pilot_saved_report.py",
+      "bytes": 779,
+      "sha256": "0921dbdfa92ecc0de592a5a256818e2c9c4b0f66bd7184d2b36328935902275a"
+    }
+  ],
+  "reviewed_staged_diff": true,
+  "cached_whitespace_check": true,
+  "numerical_rows_reviewed": 191,
+  "manifest_files": 275,
+  "source_guards": 64,
+  "formal_lock_sha": "1ae777e80e197803cda5ab7a1fa9931f16970f7013669628048fd2d38905408f",
+  "old_engineering_unchanged": true,
+  "model_rows": 40422,
+  "formal_steps": 12288,
+  "formal_updates": 582,
+  "independent_test_released": false,
+  "pilot_results_validation_only": true
+}

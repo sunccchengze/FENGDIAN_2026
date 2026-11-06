@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "tests": 2,
+  "plant_rows": 0,
+  "optimizer_updates": 0,
+  "mock_only": true,
+  "source_sha256": "befe40a388804481ae20179ffb6009f01304bc56edbcffcf221e286a41b50dab"
+}

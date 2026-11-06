@@ -1,0 +1,2179 @@
+{
+  "passed": false,
+  "noninitial_memory_selected": 3,
+  "primary": [
+    {
+      "role": "selected",
+      "reference": "parent",
+      "ratio": 0.9818894165713137,
+      "improved_flows": 2,
+      "passed": false,
+      "flows": [
+        {
+          "run": 0,
+          "candidate_w": 507972.4811661852,
+          "reference_w": 471373.82172665605
+        },
+        {
+          "run": 1,
+          "candidate_w": 502862.76987893437,
+          "reference_w": 560390.5107748213
+        },
+        {
+          "run": 2,
+          "candidate_w": 500544.88027469977,
+          "reference_w": 507492.6406487669
+        }
+      ]
+    },
+    {
+      "role": "selected",
+      "reference": "zero",
+      "ratio": 0.996566042489053,
+      "improved_flows": 2,
+      "passed": false,
+      "flows": [
+        {
+          "run": 0,
+          "candidate_w": 507972.4811661852,
+          "reference_w": 493233.40164485795
+        },
+        {
+          "run": 1,
+          "candidate_w": 502862.76987893437,
+          "reference_w": 515861.9878834334
+        },
+        {
+          "run": 2,
+          "candidate_w": 500544.88027469977,
+          "reference_w": 507492.6406487669
+        }
+      ]
+    },
+    {
+      "role": "final",
+      "reference": "parent",
+      "ratio": 0.9559357232044905,
+      "improved_flows": 2,
+      "passed": false,
+      "flows": [
+        {
+          "run": 0,
+          "candidate_w": 469160.92593978165,
+          "reference_w": 471373.82172665605
+        },
+        {
+          "run": 1,
+          "candidate_w": 485889.2746015567,
+          "reference_w": 560390.5107748213
+        },
+        {
+          "run": 2,
+          "candidate_w": 516380.5272845951,
+          "reference_w": 507492.6406487669
+        }
+      ]
+    },
+    {
+      "role": "final",
+      "reference": "zero",
+      "ratio": 0.9723313997414808,
+      "improved_flows": 3,
+      "passed": false,
+      "flows": [
+        {
+          "run": 0,
+          "candidate_w": 469160.92593978165,
+          "reference_w": 482474.4050979499
+        },
+        {
+          "run": 1,
+          "candidate_w": 485889.2746015567,
+          "reference_w": 492552.69369681075
+        },
+        {
+          "run": 2,
+          "candidate_w": 516380.5272845951,
+          "reference_w": 538274.5679179993
+        }
+      ]
+    }
+  ],
+  "known": {
+    "retention": [
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 0.9960085590341162,
+        "worst_ratio": 1.0013849993147974,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 0.9818761677044718,
+        "worst_ratio": 0.9899328253976741,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 1.0006725495321507,
+        "worst_ratio": 1.0063460026825155,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 0.9929356110413636,
+        "worst_ratio": 1.0071342392299203,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 1.003375435809084,
+        "worst_ratio": 0.9833251331490585,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 0.9691142607900626,
+        "worst_ratio": 0.9854096509161833,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 1.0476280714146256,
+        "worst_ratio": 1.0213637264829116,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 0.9977202890392535,
+        "worst_ratio": 1.0215227799251194,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 1.0348383336719469,
+        "worst_ratio": 0.9979918017108942,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 1.000532462859247,
+        "worst_ratio": 0.9812955108053519,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 1.092100449448786,
+        "worst_ratio": 1.0023174511040347,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 1.0588809472062166,
+        "worst_ratio": 0.9779090308434863,
+        "passed": false
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 0.9898920453371364,
+        "worst_ratio": 0.9986191830811061,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 0.9530379485795246,
+        "worst_ratio": 0.9893602542795604,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 0.9896434816505728,
+        "worst_ratio": 0.9834773749759178,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 0.95285267953017,
+        "worst_ratio": 0.9653872423130726,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 1.0040458826022183,
+        "worst_ratio": 0.9842544437935735,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 0.9952522735642843,
+        "worst_ratio": 0.9614442872636623,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 1.024539038229863,
+        "worst_ratio": 1.0043226511610617,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 1.0015549452065078,
+        "worst_ratio": 1.0112382611044266,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 1.009461933192222,
+        "worst_ratio": 0.9863433469002281,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 0.9681468948174481,
+        "worst_ratio": 0.9659491380316448,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 1.038204049104621,
+        "worst_ratio": 1.0041654168787741,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 1.0526473024250693,
+        "worst_ratio": 0.9737841655516806,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 1.0069441672616448,
+        "worst_ratio": 1.000090802570832,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 1.0069441672616448,
+        "worst_ratio": 1.000090802570832,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 0.9802622610795368,
+        "worst_ratio": 1.0080201393485384,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 0.9802622610795368,
+        "worst_ratio": 1.0080201393485384,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 1.0084179293948894,
+        "worst_ratio": 0.9923754348019281,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 1.0084179293948894,
+        "worst_ratio": 0.9923754348019281,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 0.9191430703907715,
+        "worst_ratio": 0.991459017624542,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 1.0381510529879001,
+        "worst_ratio": 1.006475817228675,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 0.9538386756751734,
+        "worst_ratio": 0.9798932145441,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 1.0337631122546915,
+        "worst_ratio": 1.0553699123568137,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 1.0024088231694077,
+        "worst_ratio": 0.9711313434876083,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 1.058492534314033,
+        "worst_ratio": 1.0107888078090232,
+        "passed": false
+      }
+    ],
+    "pi_failure_counts": [
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 2,
+        "reference_failures": 1,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 2,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 1,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 2,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 2,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 1,
+        "reference_failures": 1,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 1,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 2,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 1,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 2,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 2,
+        "reference_failures": 6,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 2,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 2,
+        "reference_failures": 2,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 1,
+        "reference_failures": 4,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 2,
+        "reference_failures": 1,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 1,
+        "reference_failures": 2,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "split": "train",
+        "reference": "control",
+        "candidate_failures": 2,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "split": "train",
+        "reference": "parent",
+        "candidate_failures": 2,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      }
+    ],
+    "motion": [
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "travel_ratio": 0.924847462923908,
+        "rms_rate_ratio": 0.946880975129547,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "travel_ratio": 0.9226331823913926,
+        "rms_rate_ratio": 0.944661259081723,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "travel_ratio": 0.927887393191169,
+        "rms_rate_ratio": 0.9536326848615766,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "travel_ratio": 0.9089285519847129,
+        "rms_rate_ratio": 0.9310824514365508,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "travel_ratio": 0.9313640081045204,
+        "rms_rate_ratio": 0.9443141026626831,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "travel_ratio": 0.920545440265461,
+        "rms_rate_ratio": 0.944062414064973,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "travel_ratio": 0.9855408446735929,
+        "rms_rate_ratio": 0.9925538868704236,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "travel_ratio": 0.9891788733188362,
+        "rms_rate_ratio": 0.9968224727201915,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "travel_ratio": 0.956030855970449,
+        "rms_rate_ratio": 0.9712837304623899,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "travel_ratio": 0.9200300664458667,
+        "rms_rate_ratio": 0.9589307344617481,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "travel_ratio": 0.8875663356510659,
+        "rms_rate_ratio": 0.9353389050213643,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "travel_ratio": 0.8934146303177257,
+        "rms_rate_ratio": 0.9396193501527556,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "travel_ratio": 0.900128495540839,
+        "rms_rate_ratio": 0.9668483136058932,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "travel_ratio": 0.832044181761931,
+        "rms_rate_ratio": 0.9212893280257144,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "travel_ratio": 0.8239602958610991,
+        "rms_rate_ratio": 0.9202329694906858,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "travel_ratio": 0.8710983709438479,
+        "rms_rate_ratio": 0.926903369240631,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "travel_ratio": 0.9070368113970421,
+        "rms_rate_ratio": 0.9560434749653929,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "travel_ratio": 0.8635082513916189,
+        "rms_rate_ratio": 0.9279428609917317,
+        "passed": true
+      }
+    ],
+    "stability": [
+      {
+        "run": 0,
+        "final_over_selected": 1.030206227852814,
+        "passed": false
+      },
+      {
+        "run": 1,
+        "final_over_selected": 1.0337845540131716,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "final_over_selected": 1.045493449852353,
+        "passed": false
+      }
+    ],
+    "physical_pass": true,
+    "retention_pass": false,
+    "pi_count_pass": false,
+    "motion_pass": true,
+    "stability_pass": false
+  },
+  "validation": {
+    "retention": [
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 0.9693109379069803,
+        "worst_ratio": 0.981330618487374,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 0.955499614404821,
+        "worst_ratio": 0.9693885726486415,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 1.0418712657228975,
+        "worst_ratio": 1.0110091145379974,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 1.0435790569173895,
+        "worst_ratio": 1.0283656004061796,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 1.0168935562754218,
+        "worst_ratio": 0.9982331912218648,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 0.9548573417580131,
+        "worst_ratio": 0.9890298299653829,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 1.059917696302959,
+        "worst_ratio": 1.073511498904035,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 0.9885529458431385,
+        "worst_ratio": 1.0596166711669348,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 1.1075088465892506,
+        "worst_ratio": 0.991150806979427,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 1.1914107345148375,
+        "worst_ratio": 0.9888395011124715,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 1.0839031248861133,
+        "worst_ratio": 0.995427463799128,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 1.0427785494987627,
+        "worst_ratio": 0.9706767704373466,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 0.9983234399742064,
+        "worst_ratio": 1.0107662582168708,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 0.9955516164506014,
+        "worst_ratio": 0.9977154409933898,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 1.0179590464367725,
+        "worst_ratio": 1.0079629945680888,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 1.004846913619734,
+        "worst_ratio": 0.9783871007653795,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 0.9941303064203759,
+        "worst_ratio": 0.996338776122462,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 0.9707296958257118,
+        "worst_ratio": 0.9767061256753199,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 1.0198788265221244,
+        "worst_ratio": 0.9854648162126685,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 1.0513672813587644,
+        "worst_ratio": 0.9989392119132785,
+        "passed": false
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 1.006698117899815,
+        "worst_ratio": 1.0191661919734756,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 1.0125394186751935,
+        "worst_ratio": 0.9635742493470544,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 1.0116832563994054,
+        "worst_ratio": 0.9858925831255761,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 1.013481610341793,
+        "worst_ratio": 0.987054595528555,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 1.0296666329450812,
+        "worst_ratio": 1.0387682690407674,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 1.0296666329450812,
+        "worst_ratio": 1.0387682690407674,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 0.964600803667667,
+        "worst_ratio": 0.9847392238501238,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 0.964600803667667,
+        "worst_ratio": 0.9847392238501238,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 0.9963311520660411,
+        "worst_ratio": 1.0058124140598235,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 0.9963311520660411,
+        "worst_ratio": 1.0058124140598235,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "reference": "control",
+        "mean_ratio": 1.014370259904877,
+        "worst_ratio": 1.033604068643107,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "reference": "parent",
+        "mean_ratio": 1.0641898614871905,
+        "worst_ratio": 1.062963963596138,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "reference": "control",
+        "mean_ratio": 1.0535607864146375,
+        "worst_ratio": 0.9450342585398629,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "reference": "parent",
+        "mean_ratio": 1.102591418857408,
+        "worst_ratio": 1.0427835650227049,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "reference": "control",
+        "mean_ratio": 1.0470461153174604,
+        "worst_ratio": 0.990566880790553,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "reference": "parent",
+        "mean_ratio": 1.052993805307812,
+        "worst_ratio": 1.0179372544826073,
+        "passed": false
+      }
+    ],
+    "pi_failure_counts": [
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 3,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 3,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 0,
+        "reference_failures": 0,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 1,
+        "reference_failures": 1,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "control",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "split": "validation",
+        "reference": "parent",
+        "candidate_failures": 1,
+        "reference_failures": 0,
+        "passed": false
+      }
+    ],
+    "motion": [
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "stationary",
+        "travel_ratio": 0.911805716227462,
+        "rms_rate_ratio": 0.9355500243455449,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "ramp",
+        "travel_ratio": 0.9078111117299221,
+        "rms_rate_ratio": 0.9437853973794449,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "selected",
+        "family": "gust",
+        "travel_ratio": 0.9131728992487694,
+        "rms_rate_ratio": 0.945594968681789,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "stationary",
+        "travel_ratio": 0.8929365771878122,
+        "rms_rate_ratio": 0.9201335184774115,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "ramp",
+        "travel_ratio": 0.8872601594245086,
+        "rms_rate_ratio": 0.914636938436206,
+        "passed": true
+      },
+      {
+        "run": 0,
+        "role": "final",
+        "family": "gust",
+        "travel_ratio": 0.9269761074560106,
+        "rms_rate_ratio": 0.9455224300158689,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "stationary",
+        "travel_ratio": 0.9570588811951486,
+        "rms_rate_ratio": 0.9792380857017933,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "ramp",
+        "travel_ratio": 0.9381080092625824,
+        "rms_rate_ratio": 0.9650771286549679,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "selected",
+        "family": "gust",
+        "travel_ratio": 0.9595291679689515,
+        "rms_rate_ratio": 0.9741047243959308,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "stationary",
+        "travel_ratio": 0.8190013018889734,
+        "rms_rate_ratio": 0.8880869808668471,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "ramp",
+        "travel_ratio": 0.8390194020396221,
+        "rms_rate_ratio": 0.9131036245656858,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "role": "final",
+        "family": "gust",
+        "travel_ratio": 0.8884771834404728,
+        "rms_rate_ratio": 0.9378548414584307,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "stationary",
+        "travel_ratio": 0.8449430879783513,
+        "rms_rate_ratio": 0.9365255100771573,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "ramp",
+        "travel_ratio": 0.8452838521762742,
+        "rms_rate_ratio": 0.9346370162809223,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "selected",
+        "family": "gust",
+        "travel_ratio": 0.8361492546504673,
+        "rms_rate_ratio": 0.9333602309360457,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "stationary",
+        "travel_ratio": 0.8575770785342947,
+        "rms_rate_ratio": 0.9347819168613444,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "ramp",
+        "travel_ratio": 0.8725774711641645,
+        "rms_rate_ratio": 0.9232790564627935,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "role": "final",
+        "family": "gust",
+        "travel_ratio": 0.9003352674169397,
+        "rms_rate_ratio": 0.9534171914558602,
+        "passed": true
+      }
+    ],
+    "stability": [
+      {
+        "run": 0,
+        "final_over_selected": 1.0868027915088307,
+        "passed": false
+      },
+      {
+        "run": 1,
+        "final_over_selected": 1.0369604477945666,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "final_over_selected": 1.0755227711470263,
+        "passed": false
+      }
+    ],
+    "physical_pass": true,
+    "retention_pass": false,
+    "pi_count_pass": false,
+    "motion_pass": true,
+    "stability_pass": false
+  },
+  "test_cannot_revise": true
+}

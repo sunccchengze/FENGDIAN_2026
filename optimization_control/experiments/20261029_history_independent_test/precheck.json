@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "proof": [
+    {
+      "controller": "history17",
+      "numerical_outputs_exact": true,
+      "timing": {
+        "wall_seconds": 0.9459849,
+        "cpu_seconds": 1.171875,
+        "utc_seconds": 0.9430528,
+        "start": {
+          "utc_ns": 1793255685813492000,
+          "perf_ns": 5421563851000,
+          "process_cpu_ns": 25781250000,
+          "pid": 14948,
+          "uptime_ms": 5421531,
+          "awake_100ns": 47014447193,
+          "machine_idle_100ns": 881070937500,
+          "machine_kernel_100ns": 933678750000,
+          "machine_user_100ns": 42138437500
+        },
+        "end": {
+          "utc_ns": 1793255686756544800,
+          "perf_ns": 5422509835900,
+          "process_cpu_ns": 26953125000,
+          "pid": 14948,
+          "uptime_ms": 5422484,
+          "awake_100ns": 47023877721,
+          "machine_idle_100ns": 881215000000,
+          "machine_kernel_100ns": 933829062500,
+          "machine_user_100ns": 42159062500
+        }
+      }
+    },
+    {
+      "controller": "persistence17",
+      "numerical_outputs_exact": true,
+      "timing": {
+        "wall_seconds": 0.9851402,
+        "cpu_seconds": 1.203125,
+        "utc_seconds": 0.9854307,
+        "start": {
+          "utc_ns": 1793255687815504100,
+          "perf_ns": 5423565934100,
+          "process_cpu_ns": 28281250000,
+          "pid": 14948,
+          "uptime_ms": 5423531,
+          "awake_100ns": 47034467314,
+          "machine_idle_100ns": 881361406250,
+          "machine_kernel_100ns": 933982343750,
+          "machine_user_100ns": 42197656250
+        },
+        "end": {
+          "utc_ns": 1793255688800934800,
+          "perf_ns": 5424551074300,
+          "process_cpu_ns": 29484375000,
+          "pid": 14948,
+          "uptime_ms": 5424515,
+          "awake_100ns": 47044321621,
+          "machine_idle_100ns": 881506250000,
+          "machine_kernel_100ns": 934134218750,
+          "machine_user_100ns": 42220312500
+        }
+      }
+    }
+  ],
+  "state_parent_rng_unchanged": true,
+  "budget": {
+    "name": "real_equivalence",
+    "reserve": 1000,
+    "actual": 821,
+    "api_calls": 821,
+    "status": "complete",
+    "kinds": {
+      "precheck_external": 5,
+      "internal_forecast": 816
+    }
+  },
+  "reused_engineering_evidence": ".\\optimization_control\\experiments\\20261029_history_forecast\\precheck.json",
+  "new_policy_parameters": false
+}

@@ -1,0 +1,57 @@
+{
+  "seed": 42,
+  "passed": true,
+  "base_commit": "eaacdef2015d80abb4f29d296ebc3c48e8ec3aee",
+  "files": [
+    {
+      "path": "optimization_control/experiments/20261028_speed_value_diagnostic/config.yaml",
+      "bytes": 121260,
+      "sha256": "23af8ef72e37636f6437bad222e7a654091065064fb5e85fea45fe5e42554fbc",
+      "git_blob": "6be75c400d5c6c035ffe211d7b6ce7f40cea96be"
+    },
+    {
+      "path": "optimization_control/experiments/20261028_speed_value_diagnostic/metrics.csv",
+      "bytes": 3889,
+      "sha256": "34912e35fc5520aaafbc62c556b5b970591ada66baa4024dabdfb594e5537185",
+      "git_blob": "72006553de24c5bd2de01d4eee51673cb771f07d"
+    },
+    {
+      "path": "optimization_control/experiments/20261028_speed_value_diagnostic/summary.txt",
+      "bytes": 1961,
+      "sha256": "a009a955643d9b3b26b0bc1c37fdf4588da14f9bc255157c9b839cf0adff4cc1",
+      "git_blob": "1906364c1cfdabac6eceed760e8c8046fd1d44fe"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/SPEED_VALUE_PROTOCOL.md",
+      "bytes": 5481,
+      "sha256": "0a21aeafdfffb828aad672acb77c0c6d32396bf65039630f1f80924cd45271bb",
+      "git_blob": "9c8f4af4cb53f79b7be0e0a9074940c833aef722"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/SPEED_VALUE_RESULTS.md",
+      "bytes": 11823,
+      "sha256": "9a8c48c0dfc83ec65c76d3631a575d80961394730136c9865637a816509de0d6",
+      "git_blob": "a218d47f89621a8fd749c54bbed8a8dccb050825"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/speed_value_analysis.py",
+      "bytes": 13484,
+      "sha256": "9203ec2c369763573f69af2d408c52c0f8c98fcc30df858f6d9fd2469ddf9c0e",
+      "git_blob": "81d5a06f31b7e6b9d25af6f1010474e5430d35c5"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/speed_value_diagnostic.py",
+      "bytes": 19221,
+      "sha256": "0160a0fec523727fc986c6d74b6c8b663f5aa33a664cbde7fd7466d497da2c7e",
+      "git_blob": "df3d39a27b66e3192907d7bf5d5afe7ef8de615d"
+    },
+    {
+      "path": "optimization_control/tests/test_speed_value_diagnostic.py",
+      "bytes": 5453,
+      "sha256": "f79c4d38c07ae386143ec288f0253af5a66c41f5bd2a38278db0a5d910a6969f",
+      "git_blob": "285fdc15263e322be5420cc6260b22afcc49bce1"
+    }
+  ],
+  "index_equals_executed_working_bytes": true,
+  "only_new_diagnostic_files": true
+}

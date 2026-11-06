@@ -1,0 +1,4 @@
+Frozen Y/S independent test, seed=42. Three-family mean Y selected below PI: True.
+18 new winds, corrected namespace 74000000..17, 23 roles, 414 actual rollouts, 53406/55000 rows.
+New training/optimizer updates=0. Known pressure reused from prior pilot with zero new pressure queries.
+See YAW_INDEPENDENT_TEST_RESULTS.md, primary_acceptance.json, identity_manifest.json and comparisons.csv.

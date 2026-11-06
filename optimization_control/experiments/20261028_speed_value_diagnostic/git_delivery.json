@@ -1,0 +1,26 @@
+{
+  "seed": 42,
+  "commit": "6b7314a809ca0331c191adaf6f1242fc17152985",
+  "branch": "codex/speed-value-diagnostic-20261028",
+  "worktree": ".",
+  "clean": true,
+  "committed_files": 8,
+  "source_commit_matches_reviewed_index": true,
+  "original_branch": "master",
+  "original_head": "999a3792cca1d66ac3fcfec3b54cfeffacc8a27a",
+  "original_coordination_files_unchanged": {
+    ".\\PROJECT_STATUS.md": true,
+    ".\\README.md": true,
+    ".\\optimization_control\\TASKFLOW.md": true
+  },
+  "old_experiments_read_only": true,
+  "formal_training_steps": 0,
+  "optimizer_updates": 0,
+  "new_policy_files": 0,
+  "counterfactual_environment_steps": 64512,
+  "master_merged": false,
+  "pushed": false,
+  "source_test_performance_read": false,
+  "next_proposal_pending_review": true,
+  "finalize_script_sha256": "7540f6d6a427294bebc5c9086db55b60451fe8b333a9d754bfc9bd692df43d55"
+}

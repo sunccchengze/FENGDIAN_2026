@@ -1,0 +1,2245 @@
+{
+  "code_and_evidence_files": [
+    "optimization_control/TASKFLOW.md",
+    "optimization_control/WORK_INDEX.md",
+    "optimization_control/environments/maddpg_farm_env.py",
+    "optimization_control/maddpg_wind_farm/JOINT_DISTILLATION.md",
+    "optimization_control/maddpg_wind_farm/JOINT_DISTILLATION_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/MIDTERM_FIGURES.md",
+    "optimization_control/maddpg_wind_farm/PROGRESSIVE_RANDOM_CONTROL.md",
+    "optimization_control/maddpg_wind_farm/README.md",
+    "optimization_control/maddpg_wind_farm/RESIDUAL_RANDOM_CONTROL.md",
+    "optimization_control/maddpg_wind_farm/RESIDUAL_RANDOM_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/RESIDUAL_STABILITY_DIAGNOSTIC.md",
+    "optimization_control/maddpg_wind_farm/RESIDUAL_STABILITY_DIAGNOSTIC_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/RESIDUAL_STABILITY_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/RESIDUAL_STABILITY_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/configs/joint_distillation.yaml",
+    "optimization_control/maddpg_wind_farm/configs/progressive_random_control.yaml",
+    "optimization_control/maddpg_wind_farm/configs/residual_random_control.yaml",
+    "optimization_control/maddpg_wind_farm/configs/residual_stability.yaml",
+    "optimization_control/maddpg_wind_farm/configs/residual_stability_diagnostic.yaml",
+    "optimization_control/maddpg_wind_farm/controllers.py",
+    "optimization_control/maddpg_wind_farm/joint_distillation.py",
+    "optimization_control/maddpg_wind_farm/midterm_best_cases.py",
+    "optimization_control/maddpg_wind_farm/progressive_figures.py",
+    "optimization_control/maddpg_wind_farm/progressive_random_control.py",
+    "optimization_control/maddpg_wind_farm/random_wind_training.py",
+    "optimization_control/maddpg_wind_farm/residual_algorithm.py",
+    "optimization_control/maddpg_wind_farm/residual_figures.py",
+    "optimization_control/maddpg_wind_farm/residual_random_control.py",
+    "optimization_control/maddpg_wind_farm/residual_stability.py",
+    "optimization_control/maddpg_wind_farm/residual_stability_diagnostic.py",
+    "optimization_control/maddpg_wind_farm/verify_joint_distillation.py",
+    "optimization_control/maddpg_wind_farm/verify_progressive.py",
+    "optimization_control/maddpg_wind_farm/verify_residual.py",
+    "optimization_control/maddpg_wind_farm/verify_residual_stability.py",
+    "optimization_control/tests/test_joint_distillation.py",
+    "optimization_control/tests/test_progressive_random_control.py",
+    "optimization_control/tests/test_residual_control.py",
+    "optimization_control/tests/test_residual_stability.py",
+    "optimization_control/tests/test_residual_stability_diagnostic.py",
+    "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/ANCHOR_NEXT_CANDIDATE.md",
+    "optimization_control/maddpg_wind_farm/ANCHOR_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/ANCHOR_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/ANCHOR_TAKEOVER_PRECISION.md",
+    "optimization_control/maddpg_wind_farm/anchor_algorithm.py",
+    "optimization_control/maddpg_wind_farm/anchor_closeout.py",
+    "optimization_control/maddpg_wind_farm/anchor_closeout_diagnostic.py",
+    "optimization_control/maddpg_wind_farm/anchor_closeout_figures.py",
+    "optimization_control/maddpg_wind_farm/anchor_closeout_final_checks.py",
+    "optimization_control/maddpg_wind_farm/anchor_heading_figures.py",
+    "optimization_control/maddpg_wind_farm/anchor_response_reference.py",
+    "optimization_control/maddpg_wind_farm/anchor_takeover_precision.py",
+    "optimization_control/maddpg_wind_farm/anchor_training.py",
+    "optimization_control/maddpg_wind_farm/configs/anchor_training.yaml",
+    "optimization_control/maddpg_wind_farm/verify_anchor.py",
+    "optimization_control/tests/test_anchor_closeout.py",
+    "optimization_control/tests/test_anchor_control.py",
+    "optimization_control/tests/test_anchor_heading_figures.py",
+    "optimization_control/maddpg_wind_farm/FINAL_OPTIMIZATION_REVIEW_20261106.md",
+    "optimization_control/maddpg_wind_farm/MADDPG_STAGE_HANDOFF_20261029.md",
+    "optimization_control/maddpg_wind_farm/NREL_SPEED_DIAGNOSTIC_FINAL_REVIEW_20261106.md",
+    "optimization_control/maddpg_wind_farm/NREL_SPEED_PERFORMANCE_REVIEW_20261106.md",
+    "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ACTION_DIAGNOSTIC_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ACTION_DIAGNOSTIC_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ACTOR_CONTEXT_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ACTOR_CONTEXT_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_CROSS_WIND_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_CROSS_WIND_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ERROR_MEMORY_ABLATION_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ERROR_MEMORY_ABLATION_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ERROR_MEMORY_CANDIDATE.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ERROR_MEMORY_ENGINEERING_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ERROR_MEMORY_ENGINEERING_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ERROR_MEMORY_FORMAL_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_ERROR_MEMORY_FORMAL_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_GAMMA_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_GAMMA_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_INTEGRAL_DIAGNOSTIC_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_INTEGRAL_DIAGNOSTIC_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_N8_AVERAGE_HANDOFF_20261105.md",
+    "optimization_control/maddpg_wind_farm/PITCH_NSTEP_MECHANISM_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_NSTEP_MECHANISM_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_NSTEP_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_REMAINING_FAILURE_CANDIDATE.md",
+    "optimization_control/maddpg_wind_farm/PITCH_REMAINING_FAILURE_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_REMAINING_FAILURE_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/PITCH_REWARD_ALIGNMENT_CANDIDATE.md",
+    "optimization_control/maddpg_wind_farm/PITCH_REWARD_ALIGNMENT_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/PITCH_REWARD_ALIGNMENT_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/SPEED_NSTEP_INDEPENDENT_REVIEW.md",
+    "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+    "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+    "optimization_control/maddpg_wind_farm/YAW_PILOT_INDEPENDENT_REVIEW_20261105.md",
+    "optimization_control/maddpg_wind_farm/nstep_algorithm.py",
+    "optimization_control/maddpg_wind_farm/pitch_action_diagnostic.py",
+    "optimization_control/maddpg_wind_farm/pitch_action_review.py",
+    "optimization_control/maddpg_wind_farm/pitch_actor_context_algorithm.py",
+    "optimization_control/maddpg_wind_farm/pitch_actor_context_engineering.py",
+    "optimization_control/maddpg_wind_farm/pitch_actor_context_figures.py",
+    "optimization_control/maddpg_wind_farm/pitch_actor_context_finish.py",
+    "optimization_control/maddpg_wind_farm/pitch_actor_context_reproduce.py",
+    "optimization_control/maddpg_wind_farm/pitch_actor_context_review.py",
+    "optimization_control/maddpg_wind_farm/pitch_actor_context_trial.py",
+    "optimization_control/maddpg_wind_farm/pitch_cross_wind_diagnostic.py",
+    "optimization_control/maddpg_wind_farm/pitch_cross_wind_review.py",
+    "optimization_control/maddpg_wind_farm/pitch_error_memory.py",
+    "optimization_control/maddpg_wind_farm/pitch_error_memory_engineering.py",
+    "optimization_control/maddpg_wind_farm/pitch_error_memory_review.py",
+    "optimization_control/maddpg_wind_farm/pitch_error_memory_trial.py",
+    "optimization_control/maddpg_wind_farm/pitch_gamma_engineering.py",
+    "optimization_control/maddpg_wind_farm/pitch_gamma_reproduce.py",
+    "optimization_control/maddpg_wind_farm/pitch_gamma_review.py",
+    "optimization_control/maddpg_wind_farm/pitch_gamma_trial.py",
+    "optimization_control/maddpg_wind_farm/pitch_integral_controller.py",
+    "optimization_control/maddpg_wind_farm/pitch_integral_diagnostic.py",
+    "optimization_control/maddpg_wind_farm/pitch_integral_report.py",
+    "optimization_control/maddpg_wind_farm/pitch_memory_ablation.py",
+    "optimization_control/maddpg_wind_farm/pitch_memory_ablation_report.py",
+    "optimization_control/maddpg_wind_farm/pitch_nstep_handoff.py",
+    "optimization_control/maddpg_wind_farm/pitch_nstep_mechanism.py",
+    "optimization_control/maddpg_wind_farm/pitch_nstep_mechanism_review.py",
+    "optimization_control/maddpg_wind_farm/pitch_nstep_review.py",
+    "optimization_control/maddpg_wind_farm/pitch_nstep_trial.py",
+    "optimization_control/maddpg_wind_farm/pitch_remaining_failure_audit.py",
+    "optimization_control/maddpg_wind_farm/pitch_remaining_failure_context.py",
+    "optimization_control/maddpg_wind_farm/pitch_remaining_failure_report.py",
+    "optimization_control/maddpg_wind_farm/pitch_reward_alignment.py",
+    "optimization_control/maddpg_wind_farm/pitch_reward_alignment_review.py",
+    "optimization_control/tests/test_pitch_action_diagnostic.py",
+    "optimization_control/tests/test_pitch_actor_context.py",
+    "optimization_control/tests/test_pitch_actor_context_bounds.py",
+    "optimization_control/tests/test_pitch_actor_context_reporting.py",
+    "optimization_control/tests/test_pitch_cross_wind_diagnostic.py",
+    "optimization_control/tests/test_pitch_error_memory.py",
+    "optimization_control/tests/test_pitch_gamma.py",
+    "optimization_control/tests/test_pitch_gamma_reporting.py",
+    "optimization_control/tests/test_pitch_integral_diagnostic.py",
+    "optimization_control/tests/test_pitch_nstep.py",
+    "optimization_control/tests/test_pitch_nstep_mechanism.py",
+    "optimization_control/tests/test_pitch_reward_alignment.py",
+    "optimization_control/maddpg_wind_farm/FORECAST_DECISION_CONTRACT.md",
+    "optimization_control/maddpg_wind_farm/FORECAST_DECISION_CONTRACT_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/FORECAST_SPEED_ENGINEERING.md",
+    "optimization_control/maddpg_wind_farm/FORECAST_SPEED_ENGINEERING_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/FORECAST_SPEED_FORMAL_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/FORECAST_SPEED_FORMAL_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/FORECAST_SPEED_USER_TEST_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/FORECAST_SPEED_USER_TEST_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/FROZEN_SPEED_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/FROZEN_SPEED_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/HISTORY_FORECAST_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/HISTORY_FORECAST_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/HISTORY_INDEPENDENT_TEST_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/HISTORY_INDEPENDENT_TEST_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/MACRO_VALUE_DIAGNOSTIC_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/MACRO_VALUE_DIAGNOSTIC_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/NREL_SPEED_REGRESSION_PROTOCOL_20261106.md",
+    "optimization_control/maddpg_wind_farm/NREL_SPEED_REGRESSION_RESULTS_20261106.md",
+    "optimization_control/maddpg_wind_farm/NREL_SPEED_RESPONSE_PROTOCOL_20261106.md",
+    "optimization_control/maddpg_wind_farm/NREL_SPEED_RESPONSE_RESULTS_20261106.md",
+    "optimization_control/maddpg_wind_farm/NREL_SPEED_TRANSFER_ENGINEERING_20261106.md",
+    "optimization_control/maddpg_wind_farm/NREL_SPEED_TRANSFER_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/NREL_SPEED_TRANSFER_RESULTS_20261106.md",
+    "optimization_control/maddpg_wind_farm/NREL_THREE_CHANNEL_HANDOFF_20261106.md",
+    "optimization_control/maddpg_wind_farm/PINN_SPEED_RESPONSE_INTERFACE_20261106.md",
+    "optimization_control/maddpg_wind_farm/PINN_YAW_RESPONSE_QUESTIONS.md",
+    "optimization_control/maddpg_wind_farm/SPEED_CAUSAL_SEARCH_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/SPEED_CAUSAL_SEARCH_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/SPEED_MIDGRID_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/SPEED_MIDGRID_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/SPEED_NSTEP_DRAFT.md",
+    "optimization_control/maddpg_wind_farm/SPEED_NSTEP_ENGINEERING_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/SPEED_NSTEP_ENGINEERING_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/SPEED_NSTEP_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/SPEED_NSTEP_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/SPEED_VALUE_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/SPEED_VALUE_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+    "optimization_control/maddpg_wind_farm/YAW_ENGINEERING_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/YAW_ENGINEERING_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/YAW_INDEPENDENT_TEST_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/YAW_INDEPENDENT_TEST_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/YAW_PILOT_PROTOCOL.md",
+    "optimization_control/maddpg_wind_farm/YAW_PILOT_RESULTS.md",
+    "optimization_control/maddpg_wind_farm/YAW_SOFTWARE_PILOT_PROPOSAL.md",
+    "optimization_control/maddpg_wind_farm/causal_speed_report.py",
+    "optimization_control/maddpg_wind_farm/causal_speed_search.py",
+    "optimization_control/maddpg_wind_farm/configs/causal_speed_search.yaml",
+    "optimization_control/maddpg_wind_farm/configs/forecast_decision_contract.yaml",
+    "optimization_control/maddpg_wind_farm/configs/frozen_speed.yaml",
+    "optimization_control/maddpg_wind_farm/configs/history_forecast.yaml",
+    "optimization_control/maddpg_wind_farm/configs/history_independent_test.yaml",
+    "optimization_control/maddpg_wind_farm/configs/midgrid_speed_search.yaml",
+    "optimization_control/maddpg_wind_farm/configs/speed_nstep.yaml",
+    "optimization_control/maddpg_wind_farm/forecast_decision_contract.py",
+    "optimization_control/maddpg_wind_farm/forecast_speed_macro.py",
+    "optimization_control/maddpg_wind_farm/forecast_speed_report.py",
+    "optimization_control/maddpg_wind_farm/forecast_speed_training.py",
+    "optimization_control/maddpg_wind_farm/forecast_speed_user_test.py",
+    "optimization_control/maddpg_wind_farm/forecast_speed_user_test_report.py",
+    "optimization_control/maddpg_wind_farm/frozen_speed_algorithm.py",
+    "optimization_control/maddpg_wind_farm/frozen_speed_delivery.py",
+    "optimization_control/maddpg_wind_farm/frozen_speed_figures.py",
+    "optimization_control/maddpg_wind_farm/frozen_speed_training.py",
+    "optimization_control/maddpg_wind_farm/frozen_speed_verify.py",
+    "optimization_control/maddpg_wind_farm/history_forecast_experiment.py",
+    "optimization_control/maddpg_wind_farm/history_forecast_report.py",
+    "optimization_control/maddpg_wind_farm/history_independent_report.py",
+    "optimization_control/maddpg_wind_farm/history_independent_test.py",
+    "optimization_control/maddpg_wind_farm/history_speed_search.py",
+    "optimization_control/maddpg_wind_farm/history_wind_forecast.py",
+    "optimization_control/maddpg_wind_farm/macro_value_diagnostic.py",
+    "optimization_control/maddpg_wind_farm/macro_value_report.py",
+    "optimization_control/maddpg_wind_farm/midgrid_speed_report.py",
+    "optimization_control/maddpg_wind_farm/midgrid_speed_search.py",
+    "optimization_control/maddpg_wind_farm/nrel_speed_adapter.py",
+    "optimization_control/maddpg_wind_farm/nrel_speed_regression.py",
+    "optimization_control/maddpg_wind_farm/nrel_speed_regression_report.py",
+    "optimization_control/maddpg_wind_farm/nrel_speed_response_audit.py",
+    "optimization_control/maddpg_wind_farm/nrel_speed_response_report.py",
+    "optimization_control/maddpg_wind_farm/nrel_speed_transfer.py",
+    "optimization_control/maddpg_wind_farm/nrel_speed_transfer_delivery.py",
+    "optimization_control/maddpg_wind_farm/nrel_speed_transfer_report.py",
+    "optimization_control/maddpg_wind_farm/nrel_speed_transfer_saved_report.py",
+    "optimization_control/maddpg_wind_farm/nstep_replay_core.py",
+    "optimization_control/maddpg_wind_farm/speed_nstep_algorithm.py",
+    "optimization_control/maddpg_wind_farm/speed_nstep_audit.py",
+    "optimization_control/maddpg_wind_farm/speed_nstep_engineering.py",
+    "optimization_control/maddpg_wind_farm/speed_nstep_training.py",
+    "optimization_control/maddpg_wind_farm/speed_value_analysis.py",
+    "optimization_control/maddpg_wind_farm/speed_value_diagnostic.py",
+    "optimization_control/maddpg_wind_farm/yaw_engineering_report.py",
+    "optimization_control/maddpg_wind_farm/yaw_independent_report.py",
+    "optimization_control/maddpg_wind_farm/yaw_independent_test.py",
+    "optimization_control/maddpg_wind_farm/yaw_macro.py",
+    "optimization_control/maddpg_wind_farm/yaw_pilot.py",
+    "optimization_control/maddpg_wind_farm/yaw_pilot_report.py",
+    "optimization_control/maddpg_wind_farm/yaw_pilot_saved_report.py",
+    "optimization_control/tests/test_causal_speed_search.py",
+    "optimization_control/tests/test_forecast_decision_contract.py",
+    "optimization_control/tests/test_frozen_speed.py",
+    "optimization_control/tests/test_history_forecast.py",
+    "optimization_control/tests/test_history_independent_test.py",
+    "optimization_control/tests/test_history_speed_search.py",
+    "optimization_control/tests/test_midgrid_speed_search.py",
+    "optimization_control/tests/test_speed_nstep.py",
+    "optimization_control/tests/test_speed_nstep_training.py",
+    "optimization_control/tests/test_speed_value_diagnostic.py",
+    "optimization_control/tests/verify_forecast_speed_macro.py",
+    "optimization_control/tests/verify_yaw_takeover.py",
+    "optimization_control/utils/reference_schedule.py",
+    "optimization_control/experiments/20261023_joint_distillation/config.yaml",
+    "optimization_control/experiments/20261023_joint_distillation/distillation_errors.png",
+    "optimization_control/experiments/20261023_joint_distillation/distillation_metrics.csv",
+    "optimization_control/experiments/20261023_joint_distillation/metrics.csv",
+    "optimization_control/experiments/20261023_joint_distillation/selection.json",
+    "optimization_control/experiments/20261023_joint_distillation/summary.txt",
+    "optimization_control/experiments/20261023_joint_distillation/training_wind_preflight.csv",
+    "optimization_control/experiments/20261023_joint_distillation/verification.json",
+    "optimization_control/experiments/20261023_joint_distillation/wind_statistics.csv",
+    "optimization_control/experiments/20261023_progressive_random_control/all_wind_preflight.csv",
+    "optimization_control/experiments/20261023_progressive_random_control/config.yaml",
+    "optimization_control/experiments/20261023_progressive_random_control/constrained_fit_probe.json",
+    "optimization_control/experiments/20261023_progressive_random_control/direct_tanh_fit_probe.json",
+    "optimization_control/experiments/20261023_progressive_random_control/figure_notes.md",
+    "optimization_control/experiments/20261023_progressive_random_control/head_fit_probe_run0.json",
+    "optimization_control/experiments/20261023_progressive_random_control/metrics.csv",
+    "optimization_control/experiments/20261023_progressive_random_control/pitch_speed_wind_preflight.csv",
+    "optimization_control/experiments/20261023_progressive_random_control/pitch_wind_preflight.csv",
+    "optimization_control/experiments/20261023_progressive_random_control/progressive_test_families.png",
+    "optimization_control/experiments/20261023_progressive_random_control/progressive_validation.png",
+    "optimization_control/experiments/20261023_progressive_random_control/random_wind_replay.png",
+    "optimization_control/experiments/20261023_progressive_random_control/recent_replay_fit_probe.json",
+    "optimization_control/experiments/20261023_progressive_random_control/replay_audit.csv",
+    "optimization_control/experiments/20261023_progressive_random_control/selection.json",
+    "optimization_control/experiments/20261023_progressive_random_control/stage_gates.json",
+    "optimization_control/experiments/20261023_progressive_random_control/summary.txt",
+    "optimization_control/experiments/20261023_progressive_random_control/training_and_test.png",
+    "optimization_control/experiments/20261023_progressive_random_control/training_wind_preflight.csv",
+    "optimization_control/experiments/20261023_progressive_random_control/validation_sampled_ranges.csv",
+    "optimization_control/experiments/20261023_progressive_random_control/verification.json",
+    "optimization_control/experiments/20261023_progressive_random_control/wind_statistics.csv",
+    "optimization_control/experiments/20261023_progressive_random_replay/config.yaml",
+    "optimization_control/experiments/20261023_progressive_random_replay/metrics.csv",
+    "optimization_control/experiments/20261023_progressive_random_replay/summary.txt",
+    "optimization_control/experiments/20261023_progressive_random_replay/trajectories.csv",
+    "optimization_control/experiments/20261023_residual_random_control/all_wind_preflight.csv",
+    "optimization_control/experiments/20261023_residual_random_control/config.yaml",
+    "optimization_control/experiments/20261023_residual_random_control/figure_inputs.json",
+    "optimization_control/experiments/20261023_residual_random_control/metrics.csv",
+    "optimization_control/experiments/20261023_residual_random_control/pitch_speed_wind_preflight.csv",
+    "optimization_control/experiments/20261023_residual_random_control/replay_audit.csv",
+    "optimization_control/experiments/20261023_residual_random_control/residual_paired_test.png",
+    "optimization_control/experiments/20261023_residual_random_control/residual_paired_validation.png",
+    "optimization_control/experiments/20261023_residual_random_control/residual_validation_test.png",
+    "optimization_control/experiments/20261023_residual_random_control/selection.json",
+    "optimization_control/experiments/20261023_residual_random_control/stage_gates.json",
+    "optimization_control/experiments/20261023_residual_random_control/summary.txt",
+    "optimization_control/experiments/20261023_residual_random_control/training_wind_preflight.csv",
+    "optimization_control/experiments/20261023_residual_random_control/verification.json",
+    "optimization_control/experiments/20261023_residual_random_control/wind_statistics.csv",
+    "optimization_control/experiments/20261024_parent_action_anchor/config.yaml",
+    "optimization_control/experiments/20261024_parent_action_anchor/metrics.csv",
+    "optimization_control/experiments/20261024_parent_action_anchor/selection.json",
+    "optimization_control/experiments/20261024_parent_action_anchor/summary.txt",
+    "optimization_control/experiments/20261024_parent_action_anchor/training_wind_preflight.csv",
+    "optimization_control/experiments/20261024_parent_action_anchor/wind_statistics.csv",
+    "optimization_control/experiments/20261024_residual_stability/actor_lr_validation_test.png",
+    "optimization_control/experiments/20261024_residual_stability/config.yaml",
+    "optimization_control/experiments/20261024_residual_stability/metrics.csv",
+    "optimization_control/experiments/20261024_residual_stability/paired_initial_audit.json",
+    "optimization_control/experiments/20261024_residual_stability/replay_audit.csv",
+    "optimization_control/experiments/20261024_residual_stability/selection.json",
+    "optimization_control/experiments/20261024_residual_stability/summary.txt",
+    "optimization_control/experiments/20261024_residual_stability/training_wind_preflight.csv",
+    "optimization_control/experiments/20261024_residual_stability/verification.json",
+    "optimization_control/experiments/20261024_residual_stability/wind_statistics.csv",
+    "optimization_control/experiments/20261024_residual_stability_diagnostic/case_metrics.csv",
+    "optimization_control/experiments/20261024_residual_stability_diagnostic/channel_swaps.png",
+    "optimization_control/experiments/20261024_residual_stability_diagnostic/config.yaml",
+    "optimization_control/experiments/20261024_residual_stability_diagnostic/metrics.csv",
+    "optimization_control/experiments/20261024_residual_stability_diagnostic/summary.txt",
+    "optimization_control/experiments/20261027_midterm_best_cases/01_lowest_rmse_gust.png",
+    "optimization_control/experiments/20261027_midterm_best_cases/02_lowest_rmse_ramp.png",
+    "optimization_control/experiments/20261027_midterm_best_cases/03_two_favorable_cases.png",
+    "optimization_control/experiments/20261027_midterm_best_cases/config.yaml",
+    "optimization_control/experiments/20261027_midterm_best_cases/metrics.csv",
+    "optimization_control/experiments/20261027_midterm_best_cases/selection_ranking.csv",
+    "optimization_control/experiments/20261027_midterm_best_cases/summary.txt",
+    "optimization_control/experiments/20261027_midterm_best_cases/validation.json",
+    "optimization_control/experiments/20261027_midterm_best_cases/图表说明.md",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/01_lowest_rmse_gust.png",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/02_lowest_rmse_ramp.png",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/03_two_favorable_cases.png",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/config.yaml",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/metrics.csv",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/selection_ranking.csv",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/summary.txt",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/validation.json",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/waveform_diagnostics.csv",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/图表说明.md",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/01_lowest_rmse_gust.png",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/02_lowest_rmse_ramp.png",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/03_two_favorable_cases.png",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/config.yaml",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/metrics.csv",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/selection_ranking.csv",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/summary.txt",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/validation.json",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/waveform_diagnostics.csv",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/图表说明.md",
+    "optimization_control/experiments/20261027_anchor_closeout/config.yaml",
+    "optimization_control/experiments/20261027_anchor_closeout/metrics.csv",
+    "optimization_control/experiments/20261027_anchor_closeout/output_manifest.json",
+    "optimization_control/experiments/20261027_anchor_closeout/summary.txt",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/aggregate.csv",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/case_manifest.json",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/command_spectrum.csv",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/config.yaml",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/delivery_manifest.json",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/forecast_coefficients.json",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/forecast_metrics.csv",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/metrics.csv",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/paired_differences.csv",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/response_correlations.csv",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/sampled_ranges.csv",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/summary.txt",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/trajectories.csv",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/verification.json",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/config.yaml",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/delivery_manifest.json",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/fork_aggregate.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/fork_metrics.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/fork_paired.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/full_aggregate.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/full_global_support.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/full_paired.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/gradients.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/gradient_alignment.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/horizon_reversals.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/jobs.json",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/metrics.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/preflight.json",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/ranking_summary.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/summary.txt",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/verification.json",
+    "optimization_control/experiments/20261028_pitch_action_preflight/config.yaml",
+    "optimization_control/experiments/20261028_pitch_action_preflight/failure.json",
+    "optimization_control/experiments/20261028_pitch_action_preflight/metrics.csv",
+    "optimization_control/experiments/20261028_pitch_action_preflight/protocol_before_serial_fix.md",
+    "optimization_control/experiments/20261028_pitch_action_preflight/summary.txt",
+    "optimization_control/experiments/20261028_pitch_nstep/acceptance.json",
+    "optimization_control/experiments/20261028_pitch_nstep/aggregate.csv",
+    "optimization_control/experiments/20261028_pitch_nstep/checkpoint_degradation.csv",
+    "optimization_control/experiments/20261028_pitch_nstep/config.yaml",
+    "optimization_control/experiments/20261028_pitch_nstep/cross_stream.csv",
+    "optimization_control/experiments/20261028_pitch_nstep/delivery_manifest.json",
+    "optimization_control/experiments/20261028_pitch_nstep/evaluation_audit.csv",
+    "optimization_control/experiments/20261028_pitch_nstep/evaluation_verification.json",
+    "optimization_control/experiments/20261028_pitch_nstep/metrics.csv",
+    "optimization_control/experiments/20261028_pitch_nstep/paired.csv",
+    "optimization_control/experiments/20261028_pitch_nstep/paired_groups.csv",
+    "optimization_control/experiments/20261028_pitch_nstep/review_stdout.txt",
+    "optimization_control/experiments/20261028_pitch_nstep/runtime_completion.json",
+    "optimization_control/experiments/20261028_pitch_nstep/runtime_execution.json",
+    "optimization_control/experiments/20261028_pitch_nstep/selection.json",
+    "optimization_control/experiments/20261028_pitch_nstep/summary.txt",
+    "optimization_control/experiments/20261028_pitch_nstep/training_audit.csv",
+    "optimization_control/experiments/20261028_pitch_nstep/training_manifest.csv",
+    "optimization_control/experiments/20261028_pitch_nstep/training_verification.json",
+    "optimization_control/experiments/20261028_pitch_nstep/unit_test_result.json",
+    "optimization_control/experiments/20261028_pitch_nstep/validation_groups.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/candidate_manifest.json",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/candidate_normalization.json",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/config.yaml",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/critic_transition_pairs.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/critic_transition_summary.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/delivery_manifest.json",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/final_verification.json",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/full_validation_reused.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/grid_rankings.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/grid_ranking_summary.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/horizon_sign_changes.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/metrics.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/own_policy.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/ranking_summary.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/retention_audit.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/summary.txt",
+    "optimization_control/experiments/20261028_pitch_nstep_smoke/config.yaml",
+    "optimization_control/experiments/20261028_pitch_nstep_smoke/metrics.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_smoke/summary.txt",
+    "optimization_control/experiments/20261028_pitch_nstep_smoke/training_audit.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_smoke/training_manifest.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_smoke/training_verification.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/actual_m_statistics.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/analysis_code_freeze.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/bounds_tests.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/checkpoint_manifest.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/config.yaml",
+    "optimization_control/experiments/20261029_pitch_actor_context/data_lock.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/delivery_check.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/engineering.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/figure_manifest.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/fragment_manifest.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/full_timeseries.png",
+    "optimization_control/experiments/20261029_pitch_actor_context/history.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/known_aggregate.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/known_comparisons.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/known_cross_stream.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/known_metrics.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/known_paired_cases.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/known_target_initial.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/metrics.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/namespace_audit.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/normalization.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/numerical_summary.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/pipeline_complete.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/policy_manifest.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/prepared.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/pretest_audit.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/random_states.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/reporting_tests.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/reproduction_check.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/resolved_execution.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/RUN_HANDOFF.md",
+    "optimization_control/experiments/20261029_pitch_actor_context/schema_preflight.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/selection.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/storage_stats.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/summary.txt",
+    "optimization_control/experiments/20261029_pitch_actor_context/test_acceptance.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/test_aggregate.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/test_comparison.png",
+    "optimization_control/experiments/20261029_pitch_actor_context/test_comparisons.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/test_cross_stream.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/test_paired_cases.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/test_target_initial.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/training_manifest.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/training_metrics.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/validation_acceptance.json",
+    "optimization_control/experiments/20261029_pitch_actor_context/validation_aggregate.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/validation_and_decomposition.png",
+    "optimization_control/experiments/20261029_pitch_actor_context/validation_comparisons.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/validation_cross_stream.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/validation_metrics.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/validation_paired_cases.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/validation_target_initial.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/acceptance.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/actual_m_statistics.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/checkpoint_manifest.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/config.yaml",
+    "optimization_control/experiments/20261029_pitch_gamma_control/data_lock.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/delivery_verification.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/engineering.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/full_timeseries.png",
+    "optimization_control/experiments/20261029_pitch_gamma_control/history.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/live_progress.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/metrics.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/model_contract_verification.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/namespace_audit.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/normalization.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/policy_manifest.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/pretest_audit.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/random_states.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/reporting_unittest.txt",
+    "optimization_control/experiments/20261029_pitch_gamma_control/reproduction_check.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/reproduction_prepare_verification.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/resolved_execution.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/selection.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/summary.txt",
+    "optimization_control/experiments/20261029_pitch_gamma_control/test_acceptance.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/test_aggregate.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/test_comparison.png",
+    "optimization_control/experiments/20261029_pitch_gamma_control/test_comparisons.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/test_cross_stream.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/test_paired_cases.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/test_paired_groups.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/test_target_initial.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/training_manifest.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/training_metrics.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/validation_acceptance.json",
+    "optimization_control/experiments/20261029_pitch_gamma_control/validation_aggregate.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/validation_comparisons.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/validation_cross_stream.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/validation_history.png",
+    "optimization_control/experiments/20261029_pitch_gamma_control/validation_metrics.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/validation_paired_cases.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/validation_paired_groups.csv",
+    "optimization_control/experiments/20261029_pitch_gamma_control/validation_target_initial.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/background_projection_check.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/candidate_proposal.yaml",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/config.yaml",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/decomposition_and_updates.png",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/delivery_check.json",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/excluded_pressure_identity.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/failure_map.png",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/figure_manifest.json",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/full_failure_timeseries.png",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/groups.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/metrics.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/namespace_scan.json",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/paired_cases.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/parameter_gradient.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/parameter_gradient_verification.json",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/recurrence.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/replay_gradient.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/replay_verification.json",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/selection_history.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/summary.txt",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/time_windows.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/training_behavior.csv",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/trajectory_verification.json",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/verification.json",
+    "optimization_control/experiments/20261029_pitch_remaining_failures/wind_bins.csv",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/attribution.png",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/audit.json",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/candidate_proposal.yaml",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/collection.json",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/config.yaml",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/delivery_verification.json",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/detail.json",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/examples.csv",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/figure_layout_correction.json",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/finite_menu_preferences.csv",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/full_episode_examples.png",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/metrics.csv",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/pairs.csv",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/postprocessing_correction.json",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/preference_groups.csv",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/role_groups.csv",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/summary.txt",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/supplement.json",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/tracking_motion_cost.png",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/trajectory_metrics.csv",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/trajectory_roles.csv",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/unittest.txt",
+    "optimization_control/experiments/20261029_speed_nstep_independent_review/config.yaml",
+    "optimization_control/experiments/20261029_speed_nstep_independent_review/metrics.csv",
+    "optimization_control/experiments/20261029_speed_nstep_independent_review/probe.json",
+    "optimization_control/experiments/20261029_speed_nstep_independent_review/review_manifest.json",
+    "optimization_control/experiments/20261029_speed_nstep_independent_review/summary.txt",
+    "optimization_control/experiments/20261029_speed_nstep_independent_review/unittest.txt",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/acceptance.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/aggregate.csv",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/all_case_paired_differences.png",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/all_pi_failure_counts.csv",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/case_manifest.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/config.yaml",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/cross_stream.csv",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/delivery_check.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/engineering.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/figure_manifest.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/full_integral_timeseries.png",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/hybrid_metrics.csv",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/independent_screening.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/input_lock.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/memory_replay_readiness.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/metrics.csv",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/numerical_summary.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/paired_cases.csv",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/primary_decomposition.png",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/reference_metrics.csv",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/reference_reuse.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/response_windows.csv",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/run_complete.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/screening_gates.csv",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/storage_stats.json",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/summary.txt",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/target_initial.csv",
+    "optimization_control/experiments/20261030_pitch_integral_feasibility/wave_identity.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_engineering/budget_audit.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_engineering/config.yaml",
+    "optimization_control/experiments/20261104_pitch_error_memory_engineering/memory_child.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_engineering/metrics.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_engineering/summary.txt",
+    "optimization_control/experiments/20261104_pitch_error_memory_engineering/verification.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_engineering/zero_child.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/checkpoint_manifest.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/config.yaml",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/delivery_check.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/development_acceptance.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/entry_audit.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/history.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/independent_test.png",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/input_lock.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_aggregate.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_comparisons.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_cross_stream.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_full_timeseries.png",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_full_timeseries_v2.png",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_index.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_metrics.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_paired_cases.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_sources.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_target_initial.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/light_manifest.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/metrics.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/namespace_audit.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/numerical_summary.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/pipeline_complete.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/pipeline_started.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/pretest_lock.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/random_states.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/selection.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/summary.txt",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/test_acceptance.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/test_aggregate.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/test_comparisons.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/test_cross_stream.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/test_full_timeseries.png",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/test_full_timeseries_v2.png",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/test_index.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/test_paired_cases.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/test_spec.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/test_target_initial.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/training_manifest.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/validation_aggregate.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/validation_and_decomposition.png",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/validation_comparisons.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/validation_cross_stream.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/validation_index.json",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/validation_metrics.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/validation_paired_cases.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/validation_target_initial.csv",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/ablation_metrics.csv",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/aggregate.csv",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/config.yaml",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/delivery_check.json",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/execution.json",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/full_episode_ablation.png",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/initial_commands.json",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/integrals.csv",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/integrals_verified.csv",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/metrics.csv",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/offline.json",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/paired_ablation.png",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/paired_cases.csv",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/probe_aggregate.csv",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/saved_metrics.csv",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/summary.txt",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/trajectory_manifest.json",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/weights.csv",
+    "optimization_control/experiments/20261105_pitch_n8_average_handoff/config.yaml",
+    "optimization_control/experiments/20261105_pitch_n8_average_handoff/metrics.csv",
+    "optimization_control/experiments/20261105_pitch_n8_average_handoff/paired_cases.csv",
+    "optimization_control/experiments/20261105_pitch_n8_average_handoff/summary.txt",
+    "optimization_control/experiments/20261028_frozen_speed/config.yaml",
+    "optimization_control/experiments/20261028_frozen_speed/engineering_only.json",
+    "optimization_control/experiments/20261028_frozen_speed/handover.csv",
+    "optimization_control/experiments/20261028_frozen_speed/handover.json",
+    "optimization_control/experiments/20261028_frozen_speed/metrics.csv",
+    "optimization_control/experiments/20261028_frozen_speed/metrics_before_retirement.csv",
+    "optimization_control/experiments/20261028_frozen_speed/output_manifest.csv",
+    "optimization_control/experiments/20261028_frozen_speed/summary.txt",
+    "optimization_control/experiments/20261028_frozen_speed/summary_before_retirement.json",
+    "optimization_control/experiments/20261028_frozen_speed/training_wind_preflight.csv",
+    "optimization_control/experiments/20261028_frozen_speed/wind_statistics.csv",
+    "optimization_control/experiments/20261028_frozen_speed_checked/checkpoint_manifest.csv",
+    "optimization_control/experiments/20261028_frozen_speed_checked/config.yaml",
+    "optimization_control/experiments/20261028_frozen_speed_checked/continuation_record.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/core_verification.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/delivery_files.csv",
+    "optimization_control/experiments/20261028_frozen_speed_checked/delivery_verification.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/git_delivery.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/handover.csv",
+    "optimization_control/experiments/20261028_frozen_speed_checked/handover.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/history.csv",
+    "optimization_control/experiments/20261028_frozen_speed_checked/metrics.csv",
+    "optimization_control/experiments/20261028_frozen_speed_checked/normalization_baseline.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/normalization_speed.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/output_manifest.csv",
+    "optimization_control/experiments/20261028_frozen_speed_checked/qa_delivery.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/resolved_execution.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/selection.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/staged_review.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/summary.txt",
+    "optimization_control/experiments/20261028_frozen_speed_checked/summary_full.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/supplementary_code.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/tests_passed.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/training_wind_preflight.csv",
+    "optimization_control/experiments/20261028_frozen_speed_checked/verification.json",
+    "optimization_control/experiments/20261028_frozen_speed_checked/wind_statistics.csv",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/complete.json",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/config.yaml",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/delivery_files.csv",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/git_delivery.json",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/metrics.csv",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/migration_proofs.json",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/output_manifest.csv",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/qa_documents.json",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/qa_saved_data.json",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/staged_review.json",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/summary.txt",
+    "optimization_control/experiments/20261028_speed_nstep_engineering/updates.json",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/case_summary.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/complete.json",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/config.yaml",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/cross_final_policy.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/delivery_files.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/final_qa.json",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/finite_returns.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/git_delivery.json",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/metrics.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/output_manifest.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/own_state_radius_summary.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/pairwise.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/pitch_feedback.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/radius_comparison.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/saved_data_qa.json",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/snapshot_summary.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/staged_review.json",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/summary.txt",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/summary_before_review.json",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/summary_review.json",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/tail_check.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/unit_tests.json",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/verification.json",
+    "optimization_control/experiments/20261029_history_forecast/bank_manifest.json",
+    "optimization_control/experiments/20261029_history_forecast/budget.json",
+    "optimization_control/experiments/20261029_history_forecast/candidate_manifest.json",
+    "optimization_control/experiments/20261029_history_forecast/channel_diagnostics.csv",
+    "optimization_control/experiments/20261029_history_forecast/cold_warm_metrics.csv",
+    "optimization_control/experiments/20261029_history_forecast/config.yaml",
+    "optimization_control/experiments/20261029_history_forecast/delivery_analysis.json",
+    "optimization_control/experiments/20261029_history_forecast/delivery_files.csv",
+    "optimization_control/experiments/20261029_history_forecast/delivery_verification.json",
+    "optimization_control/experiments/20261029_history_forecast/document_qa.json",
+    "optimization_control/experiments/20261029_history_forecast/fit_summary.json",
+    "optimization_control/experiments/20261029_history_forecast/forecast_groups.csv",
+    "optimization_control/experiments/20261029_history_forecast/forecast_lock.json",
+    "optimization_control/experiments/20261029_history_forecast/forecast_realization.csv",
+    "optimization_control/experiments/20261029_history_forecast/git_delivery.json",
+    "optimization_control/experiments/20261029_history_forecast/group_metrics.csv",
+    "optimization_control/experiments/20261029_history_forecast/loop_code_lock.json",
+    "optimization_control/experiments/20261029_history_forecast/loop_complete.json",
+    "optimization_control/experiments/20261029_history_forecast/loop_metrics.csv",
+    "optimization_control/experiments/20261029_history_forecast/loop_trajectories.csv",
+    "optimization_control/experiments/20261029_history_forecast/metrics.csv",
+    "optimization_control/experiments/20261029_history_forecast/next_test_proposal.json",
+    "optimization_control/experiments/20261029_history_forecast/output_manifest.csv",
+    "optimization_control/experiments/20261029_history_forecast/paired_cases.csv",
+    "optimization_control/experiments/20261029_history_forecast/precheck.json",
+    "optimization_control/experiments/20261029_history_forecast/predictions.csv",
+    "optimization_control/experiments/20261029_history_forecast/report_code_lock.json",
+    "optimization_control/experiments/20261029_history_forecast/screen.json",
+    "optimization_control/experiments/20261029_history_forecast/staged_review.json",
+    "optimization_control/experiments/20261029_history_forecast/stream_summary.csv",
+    "optimization_control/experiments/20261029_history_forecast/summary.txt",
+    "optimization_control/experiments/20261029_history_forecast/tests.json",
+    "optimization_control/experiments/20261029_history_forecast/verification.json",
+    "optimization_control/experiments/20261029_history_forecast/visual_qa.json",
+    "optimization_control/experiments/20261029_history_independent_test/analysis_design.json",
+    "optimization_control/experiments/20261029_history_independent_test/budget.json",
+    "optimization_control/experiments/20261029_history_independent_test/candidate_assessment.json",
+    "optimization_control/experiments/20261029_history_independent_test/complete.json",
+    "optimization_control/experiments/20261029_history_independent_test/config.yaml",
+    "optimization_control/experiments/20261029_history_independent_test/delivery_analysis.json",
+    "optimization_control/experiments/20261029_history_independent_test/delivery_files.csv",
+    "optimization_control/experiments/20261029_history_independent_test/document_qa.json",
+    "optimization_control/experiments/20261029_history_independent_test/execution_lock.json",
+    "optimization_control/experiments/20261029_history_independent_test/forecast_groups.csv",
+    "optimization_control/experiments/20261029_history_independent_test/forecast_metrics.csv",
+    "optimization_control/experiments/20261029_history_independent_test/forecast_predictions.csv",
+    "optimization_control/experiments/20261029_history_independent_test/forecast_realization.csv",
+    "optimization_control/experiments/20261029_history_independent_test/git_delivery.json",
+    "optimization_control/experiments/20261029_history_independent_test/group_metrics.csv",
+    "optimization_control/experiments/20261029_history_independent_test/historical_outlier_guard.json",
+    "optimization_control/experiments/20261029_history_independent_test/metrics.csv",
+    "optimization_control/experiments/20261029_history_independent_test/namespace_check.json",
+    "optimization_control/experiments/20261029_history_independent_test/output_manifest.csv",
+    "optimization_control/experiments/20261029_history_independent_test/paired_cases.csv",
+    "optimization_control/experiments/20261029_history_independent_test/physical_bounds.csv",
+    "optimization_control/experiments/20261029_history_independent_test/planning_times.csv",
+    "optimization_control/experiments/20261029_history_independent_test/precheck.json",
+    "optimization_control/experiments/20261029_history_independent_test/progress.json",
+    "optimization_control/experiments/20261029_history_independent_test/release.json",
+    "optimization_control/experiments/20261029_history_independent_test/report_code_lock.json",
+    "optimization_control/experiments/20261029_history_independent_test/run_attempt.json",
+    "optimization_control/experiments/20261029_history_independent_test/space_budget.json",
+    "optimization_control/experiments/20261029_history_independent_test/staged_review.json",
+    "optimization_control/experiments/20261029_history_independent_test/static_check.json",
+    "optimization_control/experiments/20261029_history_independent_test/stream_summary.csv",
+    "optimization_control/experiments/20261029_history_independent_test/summary.txt",
+    "optimization_control/experiments/20261029_history_independent_test/tests.json",
+    "optimization_control/experiments/20261029_history_independent_test/uncertainty.csv",
+    "optimization_control/experiments/20261029_history_independent_test/verification.json",
+    "optimization_control/experiments/20261029_history_independent_test/visual_qa.json",
+    "optimization_control/experiments/20261029_speed_causal_search/aggregate.csv",
+    "optimization_control/experiments/20261029_speed_causal_search/analysis_summary.json",
+    "optimization_control/experiments/20261029_speed_causal_search/budget.json",
+    "optimization_control/experiments/20261029_speed_causal_search/complete.json",
+    "optimization_control/experiments/20261029_speed_causal_search/config.yaml",
+    "optimization_control/experiments/20261029_speed_causal_search/delivery_files.csv",
+    "optimization_control/experiments/20261029_speed_causal_search/delivery_verification.json",
+    "optimization_control/experiments/20261029_speed_causal_search/execution_summary.json",
+    "optimization_control/experiments/20261029_speed_causal_search/git_delivery.json",
+    "optimization_control/experiments/20261029_speed_causal_search/metrics.csv",
+    "optimization_control/experiments/20261029_speed_causal_search/output_manifest.csv",
+    "optimization_control/experiments/20261029_speed_causal_search/paired_parent.csv",
+    "optimization_control/experiments/20261029_speed_causal_search/precheck.json",
+    "optimization_control/experiments/20261029_speed_causal_search/qa_documents.json",
+    "optimization_control/experiments/20261029_speed_causal_search/staged_review.json",
+    "optimization_control/experiments/20261029_speed_causal_search/stream_summary.csv",
+    "optimization_control/experiments/20261029_speed_causal_search/summary.txt",
+    "optimization_control/experiments/20261029_speed_causal_search/tests.json",
+    "optimization_control/experiments/20261029_speed_causal_search/trajectories.csv",
+    "optimization_control/experiments/20261029_speed_causal_search/verification.json",
+    "optimization_control/experiments/20261029_speed_causal_search/visual_qa.json",
+    "optimization_control/experiments/20261029_speed_midgrid/budget.json",
+    "optimization_control/experiments/20261029_speed_midgrid/channel_diagnostics.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/complete.json",
+    "optimization_control/experiments/20261029_speed_midgrid/config.yaml",
+    "optimization_control/experiments/20261029_speed_midgrid/delivery_analysis.json",
+    "optimization_control/experiments/20261029_speed_midgrid/delivery_files.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/delivery_verification.json",
+    "optimization_control/experiments/20261029_speed_midgrid/document_qa.json",
+    "optimization_control/experiments/20261029_speed_midgrid/execution_summary.json",
+    "optimization_control/experiments/20261029_speed_midgrid/forecast_actual.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/forecast_summary.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/git_delivery.json",
+    "optimization_control/experiments/20261029_speed_midgrid/group_metrics.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/metrics.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/output_manifest.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/paired_cases.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/precheck.json",
+    "optimization_control/experiments/20261029_speed_midgrid/staged_review.json",
+    "optimization_control/experiments/20261029_speed_midgrid/stream_summary.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/summary.txt",
+    "optimization_control/experiments/20261029_speed_midgrid/tests.json",
+    "optimization_control/experiments/20261029_speed_midgrid/trajectories.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/verification.json",
+    "optimization_control/experiments/20261029_speed_midgrid/visual_qa.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/actual_m_statistics.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/checkpoint_manifest.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/config.yaml",
+    "optimization_control/experiments/20261029_speed_nstep_control/core_verification.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/delivery_files.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/delivery_verification.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/direction.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/direction.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/direction_summary.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/entry_static_check.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/git_delivery.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/handover.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/handover.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/history.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/independent_review_read.md",
+    "optimization_control/experiments/20261029_speed_nstep_control/metrics.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/namespace_audit.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/normalization_n1.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/normalization_n8.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/output_manifest.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/prelaunch_entry_check.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/qa_documents.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/resolved_execution.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/review_acceptance.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/selection.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/staged_review.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/summary.txt",
+    "optimization_control/experiments/20261029_speed_nstep_control/training_wind_preflight.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/validation_metrics.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/validation_trajectories.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/visual_qa.json",
+    "optimization_control/experiments/20261029_speed_nstep_control/waiting_point.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/audit_attempt.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/budget.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/config.yaml",
+    "optimization_control/experiments/20261030_forecast_decision_contract/delivery_verification.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/document_qa.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/git_delivery.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/metrics.csv",
+    "optimization_control/experiments/20261030_forecast_decision_contract/output_manifest.csv",
+    "optimization_control/experiments/20261030_forecast_decision_contract/post_run_guard_review.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/proposal_arithmetic.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/run0_intervals.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/run_lock.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/staged_review.json",
+    "optimization_control/experiments/20261030_forecast_decision_contract/standalone_tests.txt",
+    "optimization_control/experiments/20261030_forecast_decision_contract/summary.txt",
+    "optimization_control/experiments/20261030_forecast_decision_contract/tests.txt",
+    "optimization_control/experiments/20261030_forecast_decision_contract/verification.json",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/arithmetic_checks.json",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/complete.json",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/config.yaml",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/delivery_check.json",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/git_delivery.json",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/metrics.csv",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/model_budget.json",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/output_manifest.csv",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/staged_review.json",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/summary.txt",
+    "optimization_control/experiments/20261104_forecast_speed_engineering/update_budget.json",
+    "optimization_control/experiments/20261104_forecast_speed_formal/baselines.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/config.yaml",
+    "optimization_control/experiments/20261104_forecast_speed_formal/curves.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/delivery_qa.json",
+    "optimization_control/experiments/20261104_forecast_speed_formal/diagnostics_complete.json",
+    "optimization_control/experiments/20261104_forecast_speed_formal/future_test_proposal.json",
+    "optimization_control/experiments/20261104_forecast_speed_formal/gates.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/git_delivery.json",
+    "optimization_control/experiments/20261104_forecast_speed_formal/lock.json",
+    "optimization_control/experiments/20261104_forecast_speed_formal/metrics.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/namespace_check.json",
+    "optimization_control/experiments/20261104_forecast_speed_formal/output_manifest.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/paired.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/pressure.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/roles.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/selection.json",
+    "optimization_control/experiments/20261104_forecast_speed_formal/speed_controls.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/stability.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/staged_review.json",
+    "optimization_control/experiments/20261104_forecast_speed_formal/summary.txt",
+    "optimization_control/experiments/20261104_forecast_speed_formal/takeover.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/training_episodes.csv",
+    "optimization_control/experiments/20261104_forecast_speed_formal/verification.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/comparisons.csv",
+    "optimization_control/experiments/20261105_forecast_speed_independent/complete.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/config.yaml",
+    "optimization_control/experiments/20261105_forecast_speed_independent/delivery_qa.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/family_summary.csv",
+    "optimization_control/experiments/20261105_forecast_speed_independent/git_delivery.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/lock.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/metrics.csv",
+    "optimization_control/experiments/20261105_forecast_speed_independent/namespace_check.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/output_manifest.csv",
+    "optimization_control/experiments/20261105_forecast_speed_independent/paired_cases.csv",
+    "optimization_control/experiments/20261105_forecast_speed_independent/pressure_reference.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/primary_acceptance.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/query_receipts.csv",
+    "optimization_control/experiments/20261105_forecast_speed_independent/release.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/release_attempt.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/run_attempt.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/staged_review.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/stream_summary.csv",
+    "optimization_control/experiments/20261105_forecast_speed_independent/summary.txt",
+    "optimization_control/experiments/20261105_forecast_speed_independent/verification.json",
+    "optimization_control/experiments/20261105_forecast_speed_independent/yaw_mapping_review.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/anchors.csv",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/budget.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/clone_gate.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/complete.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/config.yaml",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/critic_snapshots.csv",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/delivery_qa.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/git_delivery.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/groups.csv",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/local_direction.csv",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/lock.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/metrics.csv",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/next_proposal.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/offline_complete.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/output_manifest.csv",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/run_attempt.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/staged_review.json",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/summary.txt",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/update_episode_means.csv",
+    "optimization_control/experiments/20261105_macro_value_diagnostic/verification.json",
+    "optimization_control/experiments/20261105_yaw_engineering/complete.json",
+    "optimization_control/experiments/20261105_yaw_engineering/config.yaml",
+    "optimization_control/experiments/20261105_yaw_engineering/delivery_qa.json",
+    "optimization_control/experiments/20261105_yaw_engineering/git_delivery.json",
+    "optimization_control/experiments/20261105_yaw_engineering/lock.json",
+    "optimization_control/experiments/20261105_yaw_engineering/metrics.csv",
+    "optimization_control/experiments/20261105_yaw_engineering/model_budget.json",
+    "optimization_control/experiments/20261105_yaw_engineering/nonzero_physical.csv",
+    "optimization_control/experiments/20261105_yaw_engineering/output_manifest.csv",
+    "optimization_control/experiments/20261105_yaw_engineering/pure.json",
+    "optimization_control/experiments/20261105_yaw_engineering/real_nonzero.json",
+    "optimization_control/experiments/20261105_yaw_engineering/real_zero.json",
+    "optimization_control/experiments/20261105_yaw_engineering/saved_artifact_audit.json",
+    "optimization_control/experiments/20261105_yaw_engineering/staged_review.json",
+    "optimization_control/experiments/20261105_yaw_engineering/summary.txt",
+    "optimization_control/experiments/20261105_yaw_engineering/update_budget.json",
+    "optimization_control/experiments/20261105_yaw_engineering/zero_pairs.csv",
+    "optimization_control/experiments/20261105_yaw_independent/comparisons.csv",
+    "optimization_control/experiments/20261105_yaw_independent/complete.json",
+    "optimization_control/experiments/20261105_yaw_independent/config.yaml",
+    "optimization_control/experiments/20261105_yaw_independent/delivery_qa.json",
+    "optimization_control/experiments/20261105_yaw_independent/family_summary.csv",
+    "optimization_control/experiments/20261105_yaw_independent/git_delivery.json",
+    "optimization_control/experiments/20261105_yaw_independent/identity_manifest.json",
+    "optimization_control/experiments/20261105_yaw_independent/independent_numeric_audit.json",
+    "optimization_control/experiments/20261105_yaw_independent/known_pressure.csv",
+    "optimization_control/experiments/20261105_yaw_independent/known_pressure_source.json",
+    "optimization_control/experiments/20261105_yaw_independent/lock.json",
+    "optimization_control/experiments/20261105_yaw_independent/metrics.csv",
+    "optimization_control/experiments/20261105_yaw_independent/namespace_correction.json",
+    "optimization_control/experiments/20261105_yaw_independent/output_manifest.csv",
+    "optimization_control/experiments/20261105_yaw_independent/paired_cases.csv",
+    "optimization_control/experiments/20261105_yaw_independent/part0_budget.json",
+    "optimization_control/experiments/20261105_yaw_independent/part1_budget.json",
+    "optimization_control/experiments/20261105_yaw_independent/part2_budget.json",
+    "optimization_control/experiments/20261105_yaw_independent/per_stream_stability.csv",
+    "optimization_control/experiments/20261105_yaw_independent/primary_acceptance.json",
+    "optimization_control/experiments/20261105_yaw_independent/prior_waveforms.json",
+    "optimization_control/experiments/20261105_yaw_independent/processes.json",
+    "optimization_control/experiments/20261105_yaw_independent/query_receipts.csv",
+    "optimization_control/experiments/20261105_yaw_independent/release.json",
+    "optimization_control/experiments/20261105_yaw_independent/release_attempt.json",
+    "optimization_control/experiments/20261105_yaw_independent/review_at_prepare.md",
+    "optimization_control/experiments/20261105_yaw_independent/review_at_release.md",
+    "optimization_control/experiments/20261105_yaw_independent/run_attempt.json",
+    "optimization_control/experiments/20261105_yaw_independent/staged_review.json",
+    "optimization_control/experiments/20261105_yaw_independent/stream_summary.csv",
+    "optimization_control/experiments/20261105_yaw_independent/summary.txt",
+    "optimization_control/experiments/20261105_yaw_independent/verification.json",
+    "optimization_control/experiments/20261105_yaw_pilot/complete.json",
+    "optimization_control/experiments/20261105_yaw_pilot/config.yaml",
+    "optimization_control/experiments/20261105_yaw_pilot/delivery_qa.json",
+    "optimization_control/experiments/20261105_yaw_pilot/family_means.csv",
+    "optimization_control/experiments/20261105_yaw_pilot/final_saved_audit.json",
+    "optimization_control/experiments/20261105_yaw_pilot/future_test_proposal.json",
+    "optimization_control/experiments/20261105_yaw_pilot/git_delivery.json",
+    "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+    "optimization_control/experiments/20261105_yaw_pilot/lock.json",
+    "optimization_control/experiments/20261105_yaw_pilot/metrics.csv",
+    "optimization_control/experiments/20261105_yaw_pilot/namespace.json",
+    "optimization_control/experiments/20261105_yaw_pilot/output_manifest.csv",
+    "optimization_control/experiments/20261105_yaw_pilot/paired_differences.csv",
+    "optimization_control/experiments/20261105_yaw_pilot/preflight.json",
+    "optimization_control/experiments/20261105_yaw_pilot/preflight_001.json",
+    "optimization_control/experiments/20261105_yaw_pilot/pressure.csv",
+    "optimization_control/experiments/20261105_yaw_pilot/processes.json",
+    "optimization_control/experiments/20261105_yaw_pilot/processes_001.json",
+    "optimization_control/experiments/20261105_yaw_pilot/report_contract_note.json",
+    "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+    "optimization_control/experiments/20261105_yaw_pilot/run_attempt.json",
+    "optimization_control/experiments/20261105_yaw_pilot/run_attempt_001.json",
+    "optimization_control/experiments/20261105_yaw_pilot/selection.json",
+    "optimization_control/experiments/20261105_yaw_pilot/staged_review.json",
+    "optimization_control/experiments/20261105_yaw_pilot/stream_summary.csv",
+    "optimization_control/experiments/20261105_yaw_pilot/summary.txt",
+    "optimization_control/experiments/20261105_yaw_pilot/summary_metrics.csv",
+    "optimization_control/experiments/20261105_yaw_pilot/validation_progress.csv",
+    "optimization_control/experiments/20261105_yaw_pilot/verification.json",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/anchors.json",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/closed_loop_decomposition.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/complete.json",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/config.yaml",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/cross_response_audit.json",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/decomposition_changes.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/decomposition_groups.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/decomposition_paired_cases.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/final_audit.json",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/fixed_anchor_grid.png",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/local_cross_response.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/local_response.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/local_response_groups.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/lock.json",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/mean_local_response_matrix.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/metrics.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/model_budget.json",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/mse_decomposition.png",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/mse_decomposition_readable.png",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/output_manifest.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/plot_layout_receipt.json",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/queries.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/reference_groups.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/replay.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/report.md",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/sampled_grid.csv",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/saved_audit.json",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/semantic_requests.json",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/summary.txt",
+    "optimization_control/experiments/20261106_nrel_speed_diagnostic/ueff_reference_changes.csv",
+    "optimization_control/experiments/20261106_nrel_speed_regression/complete.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/config.yaml",
+    "optimization_control/experiments/20261106_nrel_speed_regression/dependencies.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/documentation_receipt.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/examples_execution.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/family.csv",
+    "optimization_control/experiments/20261106_nrel_speed_regression/family_changes.csv",
+    "optimization_control/experiments/20261106_nrel_speed_regression/family_comparison.png",
+    "optimization_control/experiments/20261106_nrel_speed_regression/final_qa.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/fixed_case17_stream2.png",
+    "optimization_control/experiments/20261106_nrel_speed_regression/handoff.md",
+    "optimization_control/experiments/20261106_nrel_speed_regression/lock.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/metrics.csv",
+    "optimization_control/experiments/20261106_nrel_speed_regression/model_budget.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/new_Y_PI_pairs.csv",
+    "optimization_control/experiments/20261106_nrel_speed_regression/old_references.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/operating_summary.csv",
+    "optimization_control/experiments/20261106_nrel_speed_regression/output_manifest.csv",
+    "optimization_control/experiments/20261106_nrel_speed_regression/paired.csv",
+    "optimization_control/experiments/20261106_nrel_speed_regression/pinn_response_interface.md",
+    "optimization_control/experiments/20261106_nrel_speed_regression/primary_acceptance.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/report.md",
+    "optimization_control/experiments/20261106_nrel_speed_regression/saved_audit.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/stage_closed.json",
+    "optimization_control/experiments/20261106_nrel_speed_regression/summary.txt",
+    "optimization_control/experiments/20261106_nrel_speed_regression/wind_identity.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/complete.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/config.yaml",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/controller_changes.csv",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/delivery_audit.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/document_qa_correction.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/engineering.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/engineering_metrics.csv",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/engineering_prefix_Y2.png",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/engineering_saved_audit.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/engineering_trajectories.csv",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/family.csv",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/family_paired_changes.csv",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/final_qa.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/final_report.md",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/fixed_case4_stream2.png",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/legacy_reuse.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/lock.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/metrics.csv",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/model_budget.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/new_case_physical_audit.csv",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/output_manifest.csv",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/paired.csv",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/performance_delivery_audit.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/performance_report_draft.md",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/physical.csv",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/pure.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/reference_curves.png",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/report_preparation.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/report_serialization_failure.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/review_admission.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/review_status.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/saved_audit.json",
+    "optimization_control/experiments/20261106_nrel_speed_transfer/summary.txt",
+    "optimization_control/WORK_INDEX.md",
+    "optimization_control/TASKFLOW.md"
+  ],
+  "link_targets_in_archive": [
+    {
+      "document": "optimization_control/WORK_INDEX.md",
+      "original_target": "../deliverables/20261022_optimization_handoff/readme.md"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/RESIDUAL_STABILITY_RESULTS.md",
+      "original_target": "../experiments/20261024_residual_stability/actor_lr_validation_test.pdf"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/audit/takeover_precision/summary.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/figures/paired_validation.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/figures/locked_test.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/figures/parent_action_drift.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/figures/channel_interventions.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/figures/local_model_response.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/figures/fixed_offset_validation.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/figures/actual_controls_unwrapped_stream_0.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/figures/actual_controls_unwrapped_stream_1.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/figures/actual_controls_unwrapped_stream_2.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/audit/checkpoint_manifest.csv"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/ANCHOR_CLOSEOUT_RESULTS.md",
+      "original_target": "../experiments/20261027_anchor_closeout/audit/normalization.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FINAL_OPTIMIZATION_REVIEW_20261106.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_independent/bank/manifest.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FINAL_OPTIMIZATION_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_independent_test.py:108"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FINAL_OPTIMIZATION_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_independent_report.py:96"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/MADDPG_STAGE_HANDOFF_20261029.md",
+      "original_target": "./optimization_control/experiments/20261022_wind_pinn_integration/model/trained.keras"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/MADDPG_STAGE_HANDOFF_20261029.md",
+      "original_target": "./optimization_control/experiments/20261028_pitch_nstep_mechanism/handoff_validation_replay/summary.txt"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/MADDPG_STAGE_HANDOFF_20261029.md",
+      "original_target": "./optimization_control/experiments/20261027_anchor_closeout/diagnostic/local_response.csv"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/MADDPG_STAGE_HANDOFF_20261029.md",
+      "original_target": "./optimization_control/experiments/20261029_speed_nstep_control/"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_DIAGNOSTIC_FINAL_REVIEW_20261106.md",
+      "original_target": "./optimization_control/experiments/20261106_nrel_speed_diagnostic"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_PERFORMANCE_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/wind_pinn_demo.py:33"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:48"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:100"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/algorithm.py:122"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:67"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:70"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:177"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:79"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:113"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_transfer.py:116"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:23"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:228"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_SPEED_REVIEW_20261106.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/wind_pinn_demo.py:33"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_ACTION_DIAGNOSTIC_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_action_diagnostic/figures/weak_full_grid.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_ACTION_DIAGNOSTIC_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_action_diagnostic/figures/q_return_directions.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_ACTION_DIAGNOSTIC_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_action_diagnostic/figures/all_case_regressions.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_ACTION_DIAGNOSTIC_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_action_diagnostic/figures/full_case_1.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_ACTOR_CONTEXT_RESULTS.md",
+      "original_target": "./optimization_control/experiments/20261029_pitch_actor_context/"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_ACTOR_CONTEXT_RESULTS.md",
+      "original_target": "./optimization_control/experiments/20261022_wind_pinn_integration/model/trained.keras"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_ERROR_MEMORY_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261104_pitch_error_memory_engineering/"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_ERROR_MEMORY_FORMAL_RESULTS.md",
+      "original_target": "../experiments/20261104_pitch_error_memory_formal/"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_GAMMA_RESULTS.md",
+      "original_target": "../experiments/20261029_pitch_gamma_control/"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_INTEGRAL_DIAGNOSTIC_RESULTS.md",
+      "original_target": "./optimization_control/experiments/20261030_pitch_integral_feasibility/"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_N8_AVERAGE_HANDOFF_20261105.md",
+      "original_target": "../experiments/20261028_pitch_nstep_mechanism/handoff_validation_replay/summary.txt"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_N8_AVERAGE_HANDOFF_20261105.md",
+      "original_target": "../experiments/20261028_pitch_nstep/n8_run0/step_00016384/attempt_000/state.pth"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_N8_AVERAGE_HANDOFF_20261105.md",
+      "original_target": "../experiments/20261028_pitch_nstep/n8_run1/step_00012288/attempt_000/state.pth"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_N8_AVERAGE_HANDOFF_20261105.md",
+      "original_target": "../experiments/20261028_pitch_nstep/n8_run2/step_00004096/attempt_000/state.pth"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_MECHANISM_RESULTS.md",
+      "original_target": "./optimization_control/experiments/20261028_pitch_nstep/n8_run0/step_00016384/attempt_000/state.pth"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_MECHANISM_RESULTS.md",
+      "original_target": "./optimization_control/experiments/20261028_pitch_nstep/n8_run1/step_00012288/attempt_000/state.pth"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_MECHANISM_RESULTS.md",
+      "original_target": "./optimization_control/experiments/20261028_pitch_nstep/n8_run2/step_00004096/attempt_000/state.pth"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_MECHANISM_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep_mechanism/handoff_validation_replay/summary.txt"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/validation.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/effective_m.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/independent_test.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/all_test_paired.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/error_decomposition.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/known_weak_decomposition.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/full_series_0.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/full_series_1.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/full_series_2.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/full_series_3.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/full_series_4.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_NSTEP_RESULTS.md",
+      "original_target": "../experiments/20261028_pitch_nstep/figures_v2/full_series_5.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_REMAINING_FAILURE_RESULTS.md",
+      "original_target": "../experiments/20261029_pitch_remaining_failures/"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PITCH_REWARD_ALIGNMENT_RESULTS.md",
+      "original_target": "../experiments/20261029_pitch_reward_alignment/"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/SPEED_NSTEP_INDEPENDENT_REVIEW.md",
+      "original_target": "../experiments/20261029_speed_nstep_independent_review/review_probe.py"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:32"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/tests/verify_yaw_takeover.py:123"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:74"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/tests/verify_yaw_takeover.py:405"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:152"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:35"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:67"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:191"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:81"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/tests/verify_yaw_takeover.py:245"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/tests/verify_yaw_takeover.py:38"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:136"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:48"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:124"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_engineering/mock_boundary/verification.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_IMPLEMENTATION_REVIEW_20261105.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_engineering/short/reference.pt"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/YAW_SOFTWARE_PILOT_PROPOSAL.md:19"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_training.py:387"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_training.py:435"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:331"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_decision_contract.py:111"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_training.py:298"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:106"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:364"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/causal_speed_search.py:44"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:181"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:191"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:24"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:267"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:348"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:56"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:182"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:216"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/utils/actuator_model.py:243"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/environments/pinn_adapter.py:61"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/environments/wind_pinn_backend.py:22"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:242"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PARENT_INTERFACE_REVIEW_20261105.md",
+      "original_target": "./optimization_control/utils/actuator_model.py:177"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_INDEPENDENT_REVIEW_20261105.md",
+      "original_target": "../experiments/20261104_pitch_error_memory_formal/train_bank/71000000.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_INDEPENDENT_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:434"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_INDEPENDENT_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:96"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_INDEPENDENT_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:477"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_INDEPENDENT_REVIEW_20261105.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_pilot/run_000.log"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_INDEPENDENT_REVIEW_20261105.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_pilot/repair_001/amendment.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_INDEPENDENT_REVIEW_20261105.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:151"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_INDEPENDENT_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot_saved_report.py:9"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_INDEPENDENT_REVIEW_20261105.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:375"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "original_target": "../experiments/20261030_forecast_decision_contract/failed_executed_review_source.py"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "original_target": "../experiments/20261030_forecast_decision_contract/attempt_001/verification.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "original_target": "../experiments/20261030_forecast_decision_contract/attempt_001/budget.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "original_target": "../experiments/20261030_forecast_decision_contract/attempt_001/parent_replay_review.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "original_target": "../experiments/20261030_forecast_decision_contract/attempt_001/executed_review_source.py"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "original_target": "../experiments/20261030_forecast_decision_contract/attempt_001/executed_contract_tests.py"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261104_forecast_speed_engineering/attempt_000/real_verification.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261104_forecast_speed_engineering/attempt_000/mock_verification.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261104_forecast_speed_engineering/attempt_000/storage.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261104_forecast_speed_engineering/arithmetic_checks.py"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_FORMAL_RESULTS.md",
+      "original_target": "../experiments/20261104_forecast_speed_formal/figures/validation_curves.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_FORMAL_RESULTS.md",
+      "original_target": "../experiments/20261104_forecast_speed_formal/figures/paired_validation.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_FORMAL_RESULTS.md",
+      "original_target": "../experiments/20261104_forecast_speed_formal/figures/actual_controls.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_USER_TEST_RESULTS.md",
+      "original_target": "../experiments/20261105_forecast_speed_independent/figures/family_mean.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_USER_TEST_RESULTS.md",
+      "original_target": "../experiments/20261105_forecast_speed_independent/figures/C_paired_against_PI.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_USER_TEST_RESULTS.md",
+      "original_target": "../experiments/20261105_forecast_speed_independent/figures/actual_controls_gust17.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/FORECAST_SPEED_USER_TEST_RESULTS.md",
+      "original_target": "../experiments/20261105_forecast_speed_independent/bank/manifest.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/HISTORY_FORECAST_RESULTS.md",
+      "original_target": "../experiments/20261029_history_forecast/forecast_model.npz"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/HISTORY_FORECAST_RESULTS.md",
+      "original_target": "../experiments/20261029_history_forecast/figures/forecast_information.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/HISTORY_FORECAST_RESULTS.md",
+      "original_target": "../experiments/20261029_history_forecast/figures/forecast_control_value.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/HISTORY_FORECAST_RESULTS.md",
+      "original_target": "../experiments/20261029_history_forecast/figures/forecast_actual_controls.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/HISTORY_INDEPENDENT_TEST_RESULTS.md",
+      "original_target": "../experiments/20261029_history_independent_test/figures/independent_case_comparison.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/HISTORY_INDEPENDENT_TEST_RESULTS.md",
+      "original_target": "../experiments/20261029_history_independent_test/figures/independent_forecast_timing.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/HISTORY_INDEPENDENT_TEST_RESULTS.md",
+      "original_target": "../experiments/20261029_history_independent_test/figures/independent_actual_controls.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/HISTORY_INDEPENDENT_TEST_RESULTS.md",
+      "original_target": "../experiments/20261029_history_independent_test/bank/manifest.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/MACRO_VALUE_DIAGNOSTIC_RESULTS.md",
+      "original_target": "../experiments/20261105_macro_value_diagnostic/figures/critic_progress.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/MACRO_VALUE_DIAGNOSTIC_RESULTS.md",
+      "original_target": "../experiments/20261105_macro_value_diagnostic/figures/candidate_alignment.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/MACRO_VALUE_DIAGNOSTIC_RESULTS.md",
+      "original_target": "../experiments/20261105_macro_value_diagnostic/figures/largest_final_regret.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/NREL_THREE_CHANNEL_HANDOFF_20261106.md",
+      "original_target": "./.venv/Scripts/python.exe"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PINN_SPEED_RESPONSE_INTERFACE_20261106.md",
+      "original_target": "./optimization_control/experiments/20261022_wind_pinn_integration/model/trained.keras"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/PINN_SPEED_RESPONSE_INTERFACE_20261106.md",
+      "original_target": "./optimization_control/experiments/20261106_nrel_speed_diagnostic/requests.npz"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/SPEED_MIDGRID_RESULTS.md",
+      "original_target": "../experiments/20261029_speed_midgrid/figures/grid_case_comparison.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/SPEED_MIDGRID_RESULTS.md",
+      "original_target": "../experiments/20261029_speed_midgrid/figures/forecast_choices_cost.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/SPEED_MIDGRID_RESULTS.md",
+      "original_target": "../experiments/20261029_speed_midgrid/figures/grid_actual_controls.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/SPEED_NSTEP_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261028_speed_nstep_engineering/"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/SPEED_VALUE_RESULTS.md",
+      "original_target": "../experiments/20261028_speed_value_diagnostic/figures/value_ordering.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/SPEED_VALUE_RESULTS.md",
+      "original_target": "../experiments/20261028_speed_value_diagnostic/figures/radius_and_weights.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/SPEED_VALUE_RESULTS.md",
+      "original_target": "../experiments/20261028_speed_value_diagnostic/figures/pitch_feedback.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261023_progressive_random_control/pitch_run_0/segment_000/step_00016384.pth"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261104_forecast_speed_formal/jobs/C0/s0000/inference.pt"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_pilot/jobs/Y0/s2048/inference.pt"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261023_progressive_random_control/pitch_run_1/segment_000/step_00012288.pth"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261104_forecast_speed_formal/jobs/C1/s0000/inference.pt"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261023_progressive_random_control/pitch_run_2/segment_000/step_00008192.pth"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261104_forecast_speed_formal/jobs/C2/s4096/inference.pt"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_pilot/jobs/Y2/s2048/inference.pt"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261029_history_forecast/forecast_model.npz"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261022_wind_pinn_integration/model/trained.keras"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./pinn/2026_1021/PINNs_multi_turbine_wake_simulation-outputchange/modify_pinn_wind_io.py"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./.venv/Scripts/python.exe"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./.venv/pinn_tf216"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_pilot/repair_001/amendment.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_independent/figures/family_means.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_independent/figures/actual_controls_case17.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/THREE_CHANNEL_STAGE_HANDOFF_20261106.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_independent/figures/selected_final.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_engineering/figures/yaw_physical_controls.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_engineering/figures/yaw_physical_controls.pdf"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_engineering/mock_boundary/verification.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_engineering/short/resume_t5.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_ENGINEERING_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_engineering/short/resume_t8.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_INDEPENDENT_TEST_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_independent/bank/manifest.json"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_INDEPENDENT_TEST_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_independent/figures/family_means.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_INDEPENDENT_TEST_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_independent/figures/selected_final.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_INDEPENDENT_TEST_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_independent/figures/actual_controls_case17.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_pilot/figures/validation_curves.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_pilot/figures/yaw_actual_trajectories.png"
+    },
+    {
+      "document": "optimization_control/maddpg_wind_farm/YAW_PILOT_RESULTS.md",
+      "original_target": "../experiments/20261105_yaw_pilot/repair_001/amendment.json"
+    },
+    {
+      "document": "optimization_control/experiments/20261029_speed_nstep_control/independent_review_read.md",
+      "original_target": "../experiments/20261029_speed_nstep_independent_review/probe.json"
+    },
+    {
+      "document": "optimization_control/experiments/20261029_speed_nstep_control/independent_review_read.md",
+      "original_target": "../experiments/20261029_speed_nstep_independent_review/review_probe.py"
+    },
+    {
+      "document": "optimization_control/experiments/20261029_speed_nstep_control/independent_review_read.md",
+      "original_target": "../experiments/20261029_speed_nstep_independent_review/unittest.txt"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_prepare.md",
+      "original_target": "../experiments/20261104_pitch_error_memory_formal/train_bank/71000000.json"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_prepare.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:434"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_prepare.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:96"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_prepare.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:477"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_prepare.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_pilot/run_000.log"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_prepare.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_pilot/repair_001/amendment.json"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_prepare.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:151"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_prepare.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot_saved_report.py:9"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_prepare.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:375"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_release.md",
+      "original_target": "../experiments/20261104_pitch_error_memory_formal/train_bank/71000000.json"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_release.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:434"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_release.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:96"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_release.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:477"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_release.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_pilot/run_000.log"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_release.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_pilot/repair_001/amendment.json"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_release.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:151"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_release.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot_saved_report.py:9"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_independent/review_at_release.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_pilot.py:375"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/YAW_SOFTWARE_PILOT_PROPOSAL.md:19"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_training.py:387"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_training.py:435"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "MADDPG_STAGE_HANDOFF_20261029.md"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:331"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_decision_contract.py:111"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_training.py:298"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:106"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:364"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/causal_speed_search.py:44"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:181"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:191"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:24"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:267"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:348"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:56"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:182"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:216"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/utils/actuator_model.py:243"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/environments/pinn_adapter.py:61"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/environments/wind_pinn_backend.py:22"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:242"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/interface_review_snapshot.md",
+      "original_target": "./optimization_control/utils/actuator_model.py:177"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:32"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/tests/verify_yaw_takeover.py:123"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:74"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/tests/verify_yaw_takeover.py:405"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:152"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:35"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:67"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/forecast_speed_macro.py:191"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:81"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/tests/verify_yaw_takeover.py:245"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/tests/verify_yaw_takeover.py:38"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:136"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:48"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:124"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_engineering/mock_boundary/verification.json"
+    },
+    {
+      "document": "optimization_control/experiments/20261105_yaw_pilot/review_snapshot.md",
+      "original_target": "./optimization_control/experiments/20261105_yaw_engineering/short/reference.pt"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_regression/handoff.md",
+      "original_target": "./.venv/Scripts/python.exe"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_regression/pinn_response_interface.md",
+      "original_target": "./optimization_control/experiments/20261022_wind_pinn_integration/model/trained.keras"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_regression/pinn_response_interface.md",
+      "original_target": "./optimization_control/experiments/20261106_nrel_speed_diagnostic/requests.npz"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:197"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/causal_speed_search.py:44"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:74"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/algorithm.py:122"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:67"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:177"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/controllers.py:23"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:99"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:228"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_engineering.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/wind_pinn_demo.py:33"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:48"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:100"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/algorithm.py:122"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:67"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:70"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/yaw_macro.py:177"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:79"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:113"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_transfer.py:116"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/nrel_speed_adapter.py:23"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/environments/maddpg_farm_env.py:228"
+    },
+    {
+      "document": "optimization_control/experiments/20261106_nrel_speed_transfer/review_at_performance.md",
+      "original_target": "./optimization_control/maddpg_wind_farm/wind_pinn_demo.py:33"
+    }
+  ],
+  "raw_sources_preserved_in_zip": true
+}

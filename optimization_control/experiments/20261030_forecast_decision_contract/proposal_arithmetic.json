@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "formal_query_rows": {
+    "training": 74304,
+    "validation": 34830,
+    "baselines": 3870,
+    "zero_diagnostic": 9288,
+    "stress": 2967
+  },
+  "total_formal": 125259,
+  "reserved": 129355,
+  "hard_cap": 130000,
+  "proposed_head_parameters_per_agent": 1697,
+  "proposed_critic_parameters_per_agent": 9665,
+  "total_online_trainable_B_C": 34086,
+  "instantiated_new_production_networks": 0,
+  "formal_training_executed": 0
+}

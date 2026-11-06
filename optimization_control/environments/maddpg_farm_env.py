@@ -56,6 +56,11 @@ class MADDPGFarmEnv:
         if self.low.shape != (3,) or self.high.shape != (3,) or self.initial.shape != (3,):
             raise ValueError("action bounds and initial point must each have three channels")
         self.reference_schedule = dict(config.get("reference_schedule") or {})
+        self.speed_reference_mode = config.get("speed_reference_mode", "legacy_physical")
+        if self.speed_reference_mode not in ("legacy_physical", "observation_float32_v1"):
+            raise ValueError("unknown speed reference numerical mode")
+        if self.speed_reference_mode == "observation_float32_v1" and not self.reference_schedule:
+            raise ValueError("observation speed mode requires an explicit reference schedule")
         if self.reference_schedule:
             if set(self.reference_schedule) != {"yaw_offset_rad", "speed_per_wind_rad_m"}:
                 raise ValueError("reference schedule requires yaw offset and speed curve")
@@ -87,7 +92,16 @@ class MADDPGFarmEnv:
             result.update(yaw_frame="nacelle_heading", control_mask=self.control_mask.tolist())
         if self.reference_schedule:
             result["reference_schedule"] = dict(self.reference_schedule)
+        if self.speed_reference_mode != "legacy_physical":
+            result["speed_reference_mode"] = self.speed_reference_mode
         return result
+
+    def scheduled_speed_action(self, obs=None):
+        from ..utils.reference_schedule import speed_numpy
+        if self.speed_reference_mode != "observation_float32_v1":
+            raise ValueError("explicit observation reference mode required")
+        schedule = (self.wind_scale, self.reference_schedule["speed_per_wind_rad_m"], self.low[2], self.high[2])
+        return speed_numpy(self._observe() if obs is None else obs, schedule)
 
     def project_action(self, action):
         physical = np.tile(self.initial, (3, 1))
@@ -95,6 +109,8 @@ class MADDPGFarmEnv:
             physical[:, 0] = self.reference_schedule["yaw_offset_rad"]
             physical[:, 2] = np.clip(self.reference_schedule["speed_per_wind_rad_m"] * self.effective_wind, self.low[2], self.high[2])
         fixed = self.normalize_commands(physical)
+        if self.speed_reference_mode == "observation_float32_v1":
+            fixed[:, 2] = self.scheduled_speed_action()
         return np.where(self.control_mask, action, fixed).astype(np.float32)
 
     def normalize_commands(self, physical):

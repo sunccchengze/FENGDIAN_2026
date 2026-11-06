@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "figure_groups": 3,
+  "pngs_visually_inspected": [
+    "independent_case_comparison.png",
+    "independent_forecast_timing.png",
+    "independent_actual_controls.png"
+  ],
+  "pdf_same_matplotlib_figures": true,
+  "all_negative_cases_preserved": true,
+  "axes_units_titles_legends_checked": true,
+  "sha256": {
+    "independent_case_comparison.png": "6552ae5e49e774e5db60ef9d9a11fc056d551e29bf9e9de6515fcf4d55ff9e95",
+    "independent_case_comparison.pdf": "4b2aecd13ae9106369f62479db3607499bc77e17c45750688d97e8bad8197f74",
+    "independent_forecast_timing.png": "b03812dbc24cf07d5f5839f0775e50cf0c384a06b79685937a1f8e788fec8289",
+    "independent_forecast_timing.pdf": "c2cf67f86627ead954a4a56df7316ab4c6075c5312b3cea22fb743f44927668d",
+    "independent_actual_controls.png": "8635ac4840d2f5adfd6da78001c15b9994b739b770c2c7ce23dd7523dae55e7b",
+    "independent_actual_controls.pdf": "faacc84ca03c4c2b967ebb3906f7a3e57895e24bde5da245daf097b2ef118cbe"
+  }
+}

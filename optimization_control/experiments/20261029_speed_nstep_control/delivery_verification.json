@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "model_calls": 0,
+  "optimizer_updates": 0,
+  "metric_rows": 720,
+  "trace_rows": 92160,
+  "max_rmse_difference_w": 0.0,
+  "channel_diagnostic_rows": 240,
+  "maximum_saved_policy_action_error": 1.043081283569336e-06,
+  "pitch_mapping_drift_same_obs": 0.0,
+  "first_step_inclusive_maximum_rates": [
+    0.0019545848680708744,
+    0.008726646260000012,
+    0.054380774076605465
+  ],
+  "eight_processes_exited_normally": true,
+  "uncommitted_attempts": 0,
+  "uncommitted_recomputed_steps": 0,
+  "coordination_hashes_unchanged": {
+    ".\\PROJECT_STATUS.md": true,
+    ".\\README.md": true,
+    ".\\optimization_control\\TASKFLOW.md": true
+  },
+  "direction_reward_component_max_error": 2.1953287382414644e-08,
+  "final_parent_targets_and_replay_rng_paired": true,
+  "actual_m_statistics": "actual_m_statistics.json",
+  "frozen_source_and_execution_hashes_checked": true,
+  "supplementary_checker_sha256": "9196f5af09eb0d492cbd47015e30c65d45f64347c616530460d2f6865d0a420d"
+}

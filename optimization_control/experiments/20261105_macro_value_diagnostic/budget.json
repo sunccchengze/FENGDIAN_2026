@@ -1,0 +1,135 @@
+{
+  "limit": 40000,
+  "scopes": [
+    {
+      "name": "clone_mock",
+      "reserve": 65,
+      "actual": 65,
+      "api_calls": 65,
+      "status": "complete",
+      "kinds": {
+        "mock": 65
+      }
+    },
+    {
+      "name": "B0_selected",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "B0_final",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "B1_selected",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "B1_final",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "B2_selected",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "B2_final",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "C0_selected",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "C0_final",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "C1_selected",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "C1_final",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "C2_selected",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    },
+    {
+      "name": "C2_final",
+      "reserve": 2502,
+      "actual": 2502,
+      "api_calls": 2502,
+      "status": "complete",
+      "kinds": {
+        "real_PINN": 2502
+      }
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "passed": true,
+  "utf8_LF_files": 8,
+  "AST_files": 2,
+  "links": [
+    {
+      "document": "FORECAST_DECISION_CONTRACT.md",
+      "target": "https://people.cs.umass.edu/~barto/courses/cs687/Sutton-Precup-Singh-AIJ99.pdf",
+      "kind": "primary_source"
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT.md",
+      "target": "https://papers.neurips.cc/paper_files/paper/2017/file/68a9750337a418a86fe06c1991a1d64c-Paper.pdf",
+      "kind": "primary_source"
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "FORECAST_DECISION_CONTRACT.md",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "https://people.cs.umass.edu/~barto/courses/cs687/Sutton-Precup-Singh-AIJ99.pdf",
+      "kind": "primary_source"
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "https://papers.neurips.cc/paper_files/paper/2017/file/68a9750337a418a86fe06c1991a1d64c-Paper.pdf",
+      "kind": "primary_source"
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/verification.json",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/tests.txt",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/budget.json",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/failed_executed_review_source.py",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/attempt_001/verification.json",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/attempt_001/budget.json",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/attempt_001/parent_replay_review.json",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/attempt_001/executed_review_source.py",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/post_run_guard_review.json",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/attempt_001/executed_contract_tests.py",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/standalone_tests.txt",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/output_manifest.csv",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/delivery_verification.json",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "forecast_decision_contract.py",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../tests/test_forecast_decision_contract.py",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "configs/forecast_decision_contract.yaml",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/metrics.csv",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    },
+    {
+      "document": "FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "target": "../experiments/20261030_forecast_decision_contract/summary.txt",
+      "kind": "local",
+      "exists_or_final_delivery": true
+    }
+  ],
+  "query_rows": 0
+}

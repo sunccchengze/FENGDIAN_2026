@@ -1,0 +1,10 @@
+run_id,controller,max_online_target_action_difference,max_rmse_difference_w,max_applied_difference,max_action_difference,max_power_difference_w,passed
+0,v4,0.0,0.0,0.0,0.0,0.0,True
+0,n1,0.0,0.0,0.0,0.0,0.0,True
+0,n8,0.0,0.0,0.0,0.0,0.0,True
+1,v4,0.0,0.0,0.0,0.0,0.0,True
+1,n1,0.0,0.0,0.0,0.0,0.0,True
+1,n8,0.0,0.0,0.0,0.0,0.0,True
+2,v4,0.0,0.0,0.0,0.0,0.0,True
+2,n1,0.0,0.0,0.0,0.0,0.0,True
+2,n8,0.0,0.0,0.0,0.0,0.0,True

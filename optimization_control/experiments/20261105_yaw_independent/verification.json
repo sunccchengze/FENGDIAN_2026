@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "rollouts": 414,
+  "input_rows": 53406,
+  "unique_winds": 18,
+  "optimizer_updates": 0,
+  "training_steps": 0,
+  "role_aliases_reused": false,
+  "recomputed_metric_records": 414,
+  "zero_yaw_fixed_exact_roles": [
+    "Y0_selected_zero",
+    "Y0_final_zero",
+    "Y1_selected_zero",
+    "Y1_final_zero",
+    "Y2_selected_zero",
+    "Y2_final_zero"
+  ],
+  "zero_yaw_fixed_exact_cases": 108,
+  "selected_initial_exact_fixed": "Y1_selected",
+  "duplicate_roles_exact": [
+    "Y0",
+    "Y2",
+    "S0"
+  ],
+  "max_heading_rate": 0.001972033554658026,
+  "max_pitch_rate": 0.008726646260000012,
+  "max_speed_rate": 0.048538687758486354,
+  "stage_primary_passed": true,
+  "prior_model_and_learning_limits_retained": true
+}

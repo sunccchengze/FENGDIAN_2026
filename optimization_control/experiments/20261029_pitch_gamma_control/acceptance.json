@@ -1,0 +1,83 @@
+{
+  "validation": {
+    "split": "validation",
+    "new_learning_runs": 2,
+    "new_learning_pass": false,
+    "ramp": {
+      "selected": {
+        "ratio": 1.0143053469892638,
+        "improved_runs": 0,
+        "passed": false
+      },
+      "final": {
+        "ratio": 0.9879266790272092,
+        "improved_runs": 2,
+        "passed": false
+      }
+    },
+    "other_capability_preserved": false,
+    "stability": [
+      {
+        "run": 0,
+        "final_over_selected": 1.0118647889027537,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "final_over_selected": 1.0087579542621052,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "final_over_selected": 1.0361232838197678,
+        "passed": true
+      }
+    ],
+    "stable_runs": 3,
+    "actual_motion_pass": false,
+    "physical_pass": true,
+    "passed": false,
+    "validation_decision_not_revised_by_test": true
+  },
+  "test": {
+    "split": "test",
+    "new_learning_runs": 2,
+    "new_learning_pass": false,
+    "ramp": {
+      "selected": {
+        "ratio": 1.0245225390059203,
+        "improved_runs": 0,
+        "passed": false
+      },
+      "final": {
+        "ratio": 0.9897375499912942,
+        "improved_runs": 2,
+        "passed": false
+      }
+    },
+    "other_capability_preserved": false,
+    "stability": [
+      {
+        "run": 0,
+        "final_over_selected": 1.0260962004229452,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "final_over_selected": 0.9806431018942271,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "final_over_selected": 1.0598860545964865,
+        "passed": false
+      }
+    ],
+    "stable_runs": 2,
+    "actual_motion_pass": false,
+    "physical_pass": true,
+    "passed": false,
+    "validation_decision_not_revised_by_test": true
+  },
+  "overall_pass": false
+}

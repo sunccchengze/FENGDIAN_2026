@@ -1,0 +1,16 @@
+Frozen speed-response audit COMPLETE; seed42.
+48 fixed anchors: old/new Y2_selected and PI, all6 validation, response t32/96.
+1440 PINN rows, 96 API calls, 48 completed scopes, failures/retries0; hard cap2048rows/32MiB.
+Earlier transfer4030 rows recorded separately; combined5470 <=6078 hard cap.
+Actual replay48/48 exact P and Ueff; no unit/order/source mismatch found.
+Synthetic teacher calls48/inputrows1440, separate from PINN, not physical truth.
+New-reference static farm power: model increases12/decreases36, mean-8.449993kW; teacher increases48, mean+23.131036kW.
+Local own directions130/144 match teacher; farm124/144; T2 weakest37/48 and33/48.
+All60 saved closed-loop cases decomposed per-case MSE=bias^2+variance then equal-weight aggregate.
+Y MSE increment40948.806920kW2: bias^2 2852.575578(6.9662%), variance38096.231342(93.0338%).
+PI MSE increment50748.766209kW2: bias^2 12223.545112(24.0864%), variance38525.221097(75.9136%).
+Y signed bias55.710987->86.363260kW; PI267.561074->288.497417kW; higher bias alone does not explain most MSE increase.
+Environment steps/training/optimizer updates/new winds0. NREL curve/bounds, PINN, labels, source weights and controllers unchanged.
+No causal uniqueness or Cp-efficiency/global-optimum claim. Static probes are not executable closed-loop policy actions.
+One recommendation: clarify surrogate speed-response scope/acceptance with model owner using48-point fixtures before deciding control retraining; not started.
+Full report optimization_control/maddpg_wind_farm/NREL_SPEED_RESPONSE_RESULTS_20261106.md and local report.md.

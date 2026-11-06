@@ -1,0 +1,1130 @@
+{
+  "files": [
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\anchor_training.yaml",
+      "occupied": [],
+      "sha256": "44e3f3d5c5e7302ddd3ad6332453a6726e5619aa7ecdf09fdcb8018642312331"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\default.yaml",
+      "occupied": [],
+      "sha256": "e63e0188598d24ef3a95a58927c401d8d1395de08b7f233f44956ff8910b4e6d"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_all_probe.yaml",
+      "occupied": [],
+      "sha256": "053db0b9a4f528361f825bc2865e8b56152d7a708b4ee504e64a323ac56533a8"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_curriculum.yaml",
+      "occupied": [],
+      "sha256": "c4493eed2d1709c321d36f25d25f85aa135e3f65bd085c64be936cd0417389c4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_pinn_demo.yaml",
+      "occupied": [],
+      "sha256": "15e10cdf34f00fd0c6929382eb3d90b75d70ee5452aa909bfc472aa0fe760621"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_pitch_speed_probe.yaml",
+      "occupied": [],
+      "sha256": "bc0121ad14795cedfce312c58b64f5df4d44736413f70fbee5775f5b7dc2d87e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\joint_distillation.yaml",
+      "occupied": [],
+      "sha256": "1cb18f58f5d819b985c5ef63d8c4a9b8c00b96d95c2ce98bcab737a10c4e39fd"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\mixed_stability.yaml",
+      "occupied": [],
+      "sha256": "b3879f4531cc65a52ee04050771daedf93cf33483f7e16c60298a6a62a71f638"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\progressive_random_control.yaml",
+      "occupied": [],
+      "sha256": "fae38a0262c2c8b727ee0bbdbe1db215316314e2e734601fc32f0d86d436cadc"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\random_wind_training.yaml",
+      "occupied": [],
+      "sha256": "733018c651e514594f3c996ffe6c987b5188e90998edc437e0f49e4611bf2317"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_random_control.yaml",
+      "occupied": [],
+      "sha256": "30e32e6af7c7082370b7d53eeb86dcbd8a21788f9664558c1055daa0d2c18410"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_stability.yaml",
+      "occupied": [],
+      "sha256": "77a62c60167428c73cfea54ca72b69e67d1272205abd405a12c352b1486cd019"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_stability_diagnostic.yaml",
+      "occupied": [],
+      "sha256": "3d7750ad2845e3d393ffd981f59c1d27f68d0fd7e30c167074777567e574cb13"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\stable_training.yaml",
+      "occupied": [],
+      "sha256": "ad15dd62756a9cd23e62a38d3ac646d3d9e13ea99d5836c583c562034e74a3c2"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\stochastic_inflow.yaml",
+      "occupied": [],
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\tracking_study.yaml",
+      "occupied": [],
+      "sha256": "f22b07adfe9fc7fbf4d54d5021eb93ff2731246cb1eec9a2b74e704f516b0731"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\wind_pinn_curriculum.yaml",
+      "occupied": [],
+      "sha256": "3c3672a84871704f960e6d354a0dc1a4861e005805d3c8fc8a6a42f76045b959"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\wind_pinn_demo.yaml",
+      "occupied": [],
+      "sha256": "d9beac274ad228bdd4bba73417cf5d2621755dff308997dc1e0654c49a8cd30b"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260808_ppo_single_turbine\\config.yaml",
+      "occupied": [],
+      "sha256": "4e46670efcb47bd2b8db3a6715feff3ea2e346b088a0e664c1921c3cc8fad919"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260913_kaimal_ppo_smoke\\config.yaml",
+      "occupied": [],
+      "sha256": "1223bd15345f122aee14f2037941852bb296368c8487c3d23cd417227725576a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260913_kaimal_replay_check\\config.yaml",
+      "occupied": [],
+      "sha256": "8f6e72f8b39e1cc8a7e5395fe848af5691950a7fc815b98deaf92df8a910c370"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260913_kaimal_wind_validation\\config.yaml",
+      "occupied": [],
+      "sha256": "8399abb4cec7b8229e428e5100c975822ccc2256b5c9059163aa6ae4a023af75"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_farm_inflow_validation\\config.yaml",
+      "occupied": [],
+      "sha256": "53652a76b7269ac444d5c5bb6fb872a06723a817413b731b1afe3d7bcc7abeaa"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_channel_diagnosis\\config.yaml",
+      "occupied": [],
+      "sha256": "a358ad247eccb8eea9e97944ff363498cab96aee2750f9ec7c83a86580ac0417"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_channel_rollback\\config.yaml",
+      "occupied": [],
+      "sha256": "7fc7ba04e94f064714be5fc1aaa56655888a551b9258a06350cf4d8ac51c681e"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_eval\\config.yaml",
+      "occupied": [],
+      "sha256": "4c195a75d33ac3c9b06244d9c480aa22563cf14721b84a4d511e674d461bc5f3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_eval_final\\config.yaml",
+      "occupied": [],
+      "sha256": "4c195a75d33ac3c9b06244d9c480aa22563cf14721b84a4d511e674d461bc5f3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_mixed_stability\\config.yaml",
+      "occupied": [],
+      "sha256": "cf33000dcda3c1d4995c4a3c5ba63c0b7cc35bc67811d310774d80aa6a45102a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_reachability\\config.yaml",
+      "occupied": [],
+      "sha256": "6e7dc6c86f0486af622af57b181b125f533175c2cc703f7f0fbae5a2f3519c2c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_reachability_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "6e7dc6c86f0486af622af57b181b125f533175c2cc703f7f0fbae5a2f3519c2c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_retrospective\\config.yaml",
+      "occupied": [],
+      "sha256": "fd59c403f4c6d542a6d09bde646265596a3cece250ad7fc27216ffa03a5349e2"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_reward_diagnosis\\config.yaml",
+      "occupied": [],
+      "sha256": "1d7a9a0af5a72f8006bce090c7208dada59f275ac4d53dce03a1172a98b7c27a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_smoke\\config.yaml",
+      "occupied": [],
+      "sha256": "4c195a75d33ac3c9b06244d9c480aa22563cf14721b84a4d511e674d461bc5f3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stable_training\\config.yaml",
+      "occupied": [],
+      "sha256": "3af39980548f1ef7e37b7a95a3ab35a0c28d7ce37aa049694f53369ffb928797"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stochastic_eval\\config.yaml",
+      "occupied": [],
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stochastic_resume\\config.yaml",
+      "occupied": [],
+      "sha256": "8720191b6a086adba47e1b702fbc37a04a105854f44604841c5809e5ab477904"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stochastic_train\\config.yaml",
+      "occupied": [],
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_tracking_study\\config.yaml",
+      "occupied": [],
+      "sha256": "89d7c426de9adfe45da47edc07b872a344a0d0c12f2af682de11682dadff8e5b"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_verification\\config.yaml",
+      "occupied": [],
+      "sha256": "72c9bd5ceebee7fd7cc11d9bc20dde6834456aea4c42520935b81260cc5e7359"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_stable_workflow_verification\\config.yaml",
+      "occupied": [],
+      "sha256": "70cebb1a0064b950ab86a91cb10c3e3509e6d6639ef8834e00c42223ae901440"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260923_maddpg_value_baseline_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "3ff1d15edcd8bfac13341e5799c19808ed7acc7344949be193898a830f3af587"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260923_maddpg_value_baseline_terminal\\config.yaml",
+      "occupied": [],
+      "sha256": "e685e739e078e9a5a9a3fb8c77cd33e6c8424aa7a2fc8509f40e7a0d07dc7663"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_all_probe\\config.yaml",
+      "occupied": [],
+      "sha256": "f801bfbe88b258788bbe65d85a27e625729d4690a4b01e986b490378fe495d51"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_curriculum\\config.yaml",
+      "occupied": [],
+      "sha256": "deb2cea42cc604851e7b3178e024fe6ec9688971b0b17598d9bce5a65a80f281"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_demo\\config.yaml",
+      "occupied": [],
+      "sha256": "4661ae5c809576de7ebf57ee7c826a5862b222757139834f69b3b966c2301c29"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_demo_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "4661ae5c809576de7ebf57ee7c826a5862b222757139834f69b3b966c2301c29"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "9ae952ac0199a6e6129a5917168304cd89cbf928d0cc464aaf85a6502f87ca53"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_diagnostic_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "7a1a18073057471b0f3c889057567de82af0f41cf25a788c5c141ab029895ea4"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_pitch_speed_probe\\config.yaml",
+      "occupied": [],
+      "sha256": "88f9fad77634ce2089ccd2d177dbec537828937108cd0f0057694772c112469a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_pinn_handover_audit\\config.yaml",
+      "occupied": [],
+      "sha256": "b05b6e48cbc4e3aa677279f2765bf3b5ff46406d8e9fb9825068d9ab38a03176"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_legacy_pinn_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "08742a2686a85e7d8bfa332e4819c06e66fa98924b24636fd60e0c65dd87824c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_midterm_figures\\config.yaml",
+      "occupied": [],
+      "sha256": "d439515c0733b235c8bd3a79fe7eba4eb137e1ddd680f0e9fe04964553030e1c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_random_training_legacy_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "5606dcdf01f0d9e9ddfca028ea9c7853306fe0b00516026a71afb42e61fac207"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_random_wind_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "e841cbe1515e8fe6ad6782e286fd7a0b12e12b5964180cf9f9eb5e2c7252d8bf"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_random_wind_training\\config.yaml",
+      "occupied": [],
+      "sha256": "10f8d1f52168f8ffaab0e6a1537ea0a74f89266e9cdd6d784f5dd3dddad6094b"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\config.yaml",
+      "occupied": [],
+      "sha256": "32068f07b2c22ca897e9567eab90fa354ed27a9dbe2e2b4f111c7c40edd2f52d"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_wind_pinn_integration\\config.yaml",
+      "occupied": [],
+      "sha256": "57bf7ab1f2240f76b4514ec20cb80cffc6fdd952257647f56871b48d13dd5008"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_wind_pinn_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "e9504a97fea90fc67f9ab2e12153535ff1d9f90b9b80e6d38c98fe169da70fd6"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_joint_distillation\\config.yaml",
+      "occupied": [],
+      "sha256": "d90f82523f80de8bae6421de6f2f1a5723c709b1929363a60f85edb7ad514b5d"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\config.yaml",
+      "occupied": [],
+      "sha256": "af2c9f0c3c7bdf207624e2e33f4bc6842ce2f7116db7d1c50323cd57ee33b5bc"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_progressive_random_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "89d9b966fa6976067012f6e0b22b1651b50f49f45ef9dd2f19281d743b7b4124"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_residual_random_control\\config.yaml",
+      "occupied": [],
+      "sha256": "fb093c7a2baf61b0bf15997c9c9966c15af19a9981d6e94ce7a2b6dec1d4b3c0"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261024_parent_action_anchor\\config.yaml",
+      "occupied": [],
+      "sha256": "32c0b1f1785ed65c00f979a44eeea252662b61ca7df88f2a2d18f424c7c56412"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261024_residual_stability\\config.yaml",
+      "occupied": [],
+      "sha256": "7a59b6ec7bfe6103e14cf11769139b0fca0d68ea7512a7516753a3b3792bed63"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261024_residual_stability_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "bef413c722bd79b718d6cc8a6520b97a7a61a9e52779060c1d2633bd6712c913"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261027_midterm_best_cases\\config.yaml",
+      "occupied": [],
+      "sha256": "1914c595107799dbe860718ce425ff671af1281b214eaa24678baede9b8e9506"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261027_midterm_best_cases_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "f300877ca1a98e4c1a6bf9ee187ace71addc0e0f4a45e0e5207aea1cab57f759"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261027_midterm_best_cases_labels\\config.yaml",
+      "occupied": [],
+      "sha256": "f300877ca1a98e4c1a6bf9ee187ace71addc0e0f4a45e0e5207aea1cab57f759"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\default.yaml",
+      "occupied": [],
+      "sha256": "e63e0188598d24ef3a95a58927c401d8d1395de08b7f233f44956ff8910b4e6d"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_all_probe.yaml",
+      "occupied": [],
+      "sha256": "053db0b9a4f528361f825bc2865e8b56152d7a708b4ee504e64a323ac56533a8"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_curriculum.yaml",
+      "occupied": [],
+      "sha256": "c4493eed2d1709c321d36f25d25f85aa135e3f65bd085c64be936cd0417389c4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_pinn_demo.yaml",
+      "occupied": [],
+      "sha256": "15e10cdf34f00fd0c6929382eb3d90b75d70ee5452aa909bfc472aa0fe760621"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_pitch_speed_probe.yaml",
+      "occupied": [],
+      "sha256": "bc0121ad14795cedfce312c58b64f5df4d44736413f70fbee5775f5b7dc2d87e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\joint_distillation.yaml",
+      "occupied": [],
+      "sha256": "1cb18f58f5d819b985c5ef63d8c4a9b8c00b96d95c2ce98bcab737a10c4e39fd"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\mixed_stability.yaml",
+      "occupied": [],
+      "sha256": "b3879f4531cc65a52ee04050771daedf93cf33483f7e16c60298a6a62a71f638"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\progressive_random_control.yaml",
+      "occupied": [],
+      "sha256": "fae38a0262c2c8b727ee0bbdbe1db215316314e2e734601fc32f0d86d436cadc"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\random_wind_training.yaml",
+      "occupied": [],
+      "sha256": "733018c651e514594f3c996ffe6c987b5188e90998edc437e0f49e4611bf2317"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_random_control.yaml",
+      "occupied": [],
+      "sha256": "30e32e6af7c7082370b7d53eeb86dcbd8a21788f9664558c1055daa0d2c18410"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_stability.yaml",
+      "occupied": [],
+      "sha256": "77a62c60167428c73cfea54ca72b69e67d1272205abd405a12c352b1486cd019"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_stability_diagnostic.yaml",
+      "occupied": [],
+      "sha256": "3d7750ad2845e3d393ffd981f59c1d27f68d0fd7e30c167074777567e574cb13"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\stable_training.yaml",
+      "occupied": [],
+      "sha256": "ad15dd62756a9cd23e62a38d3ac646d3d9e13ea99d5836c583c562034e74a3c2"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\stochastic_inflow.yaml",
+      "occupied": [],
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\tracking_study.yaml",
+      "occupied": [],
+      "sha256": "f22b07adfe9fc7fbf4d54d5021eb93ff2731246cb1eec9a2b74e704f516b0731"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\wind_pinn_curriculum.yaml",
+      "occupied": [],
+      "sha256": "3c3672a84871704f960e6d354a0dc1a4861e005805d3c8fc8a6a42f76045b959"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\wind_pinn_demo.yaml",
+      "occupied": [],
+      "sha256": "d9beac274ad228bdd4bba73417cf5d2621755dff308997dc1e0654c49a8cd30b"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260808_ppo_single_turbine\\config.yaml",
+      "occupied": [],
+      "sha256": "4e46670efcb47bd2b8db3a6715feff3ea2e346b088a0e664c1921c3cc8fad919"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260913_kaimal_ppo_smoke\\config.yaml",
+      "occupied": [],
+      "sha256": "1223bd15345f122aee14f2037941852bb296368c8487c3d23cd417227725576a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260913_kaimal_replay_check\\config.yaml",
+      "occupied": [],
+      "sha256": "8f6e72f8b39e1cc8a7e5395fe848af5691950a7fc815b98deaf92df8a910c370"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260913_kaimal_wind_validation\\config.yaml",
+      "occupied": [],
+      "sha256": "8399abb4cec7b8229e428e5100c975822ccc2256b5c9059163aa6ae4a023af75"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_farm_inflow_validation\\config.yaml",
+      "occupied": [],
+      "sha256": "53652a76b7269ac444d5c5bb6fb872a06723a817413b731b1afe3d7bcc7abeaa"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_channel_diagnosis\\config.yaml",
+      "occupied": [],
+      "sha256": "a358ad247eccb8eea9e97944ff363498cab96aee2750f9ec7c83a86580ac0417"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_channel_rollback\\config.yaml",
+      "occupied": [],
+      "sha256": "7fc7ba04e94f064714be5fc1aaa56655888a551b9258a06350cf4d8ac51c681e"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_eval\\config.yaml",
+      "occupied": [],
+      "sha256": "4c195a75d33ac3c9b06244d9c480aa22563cf14721b84a4d511e674d461bc5f3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_eval_final\\config.yaml",
+      "occupied": [],
+      "sha256": "4c195a75d33ac3c9b06244d9c480aa22563cf14721b84a4d511e674d461bc5f3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_mixed_stability\\config.yaml",
+      "occupied": [],
+      "sha256": "cf33000dcda3c1d4995c4a3c5ba63c0b7cc35bc67811d310774d80aa6a45102a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_reachability\\config.yaml",
+      "occupied": [],
+      "sha256": "6e7dc6c86f0486af622af57b181b125f533175c2cc703f7f0fbae5a2f3519c2c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_reachability_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "6e7dc6c86f0486af622af57b181b125f533175c2cc703f7f0fbae5a2f3519c2c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_retrospective\\config.yaml",
+      "occupied": [],
+      "sha256": "fd59c403f4c6d542a6d09bde646265596a3cece250ad7fc27216ffa03a5349e2"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_reward_diagnosis\\config.yaml",
+      "occupied": [],
+      "sha256": "1d7a9a0af5a72f8006bce090c7208dada59f275ac4d53dce03a1172a98b7c27a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_smoke\\config.yaml",
+      "occupied": [],
+      "sha256": "4c195a75d33ac3c9b06244d9c480aa22563cf14721b84a4d511e674d461bc5f3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stable_training\\config.yaml",
+      "occupied": [],
+      "sha256": "3af39980548f1ef7e37b7a95a3ab35a0c28d7ce37aa049694f53369ffb928797"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stochastic_eval\\config.yaml",
+      "occupied": [],
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stochastic_resume\\config.yaml",
+      "occupied": [],
+      "sha256": "8720191b6a086adba47e1b702fbc37a04a105854f44604841c5809e5ab477904"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stochastic_train\\config.yaml",
+      "occupied": [],
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_tracking_study\\config.yaml",
+      "occupied": [],
+      "sha256": "89d7c426de9adfe45da47edc07b872a344a0d0c12f2af682de11682dadff8e5b"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_verification\\config.yaml",
+      "occupied": [],
+      "sha256": "72c9bd5ceebee7fd7cc11d9bc20dde6834456aea4c42520935b81260cc5e7359"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_stable_workflow_verification\\config.yaml",
+      "occupied": [],
+      "sha256": "70cebb1a0064b950ab86a91cb10c3e3509e6d6639ef8834e00c42223ae901440"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260923_maddpg_value_baseline_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "3ff1d15edcd8bfac13341e5799c19808ed7acc7344949be193898a830f3af587"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260923_maddpg_value_baseline_terminal\\config.yaml",
+      "occupied": [],
+      "sha256": "e685e739e078e9a5a9a3fb8c77cd33e6c8424aa7a2fc8509f40e7a0d07dc7663"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_all_probe\\config.yaml",
+      "occupied": [],
+      "sha256": "f801bfbe88b258788bbe65d85a27e625729d4690a4b01e986b490378fe495d51"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_curriculum\\config.yaml",
+      "occupied": [],
+      "sha256": "deb2cea42cc604851e7b3178e024fe6ec9688971b0b17598d9bce5a65a80f281"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_demo\\config.yaml",
+      "occupied": [],
+      "sha256": "4661ae5c809576de7ebf57ee7c826a5862b222757139834f69b3b966c2301c29"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_demo_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "4661ae5c809576de7ebf57ee7c826a5862b222757139834f69b3b966c2301c29"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "9ae952ac0199a6e6129a5917168304cd89cbf928d0cc464aaf85a6502f87ca53"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_diagnostic_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "7a1a18073057471b0f3c889057567de82af0f41cf25a788c5c141ab029895ea4"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_pitch_speed_probe\\config.yaml",
+      "occupied": [],
+      "sha256": "88f9fad77634ce2089ccd2d177dbec537828937108cd0f0057694772c112469a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_pinn_handover_audit\\config.yaml",
+      "occupied": [],
+      "sha256": "b05b6e48cbc4e3aa677279f2765bf3b5ff46406d8e9fb9825068d9ab38a03176"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_legacy_pinn_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "2dd25e39f0941d689b4e8d8becb0bf30fa701fe5af6c609f0fb37c91b853e7db"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_midterm_figures\\config.yaml",
+      "occupied": [],
+      "sha256": "d439515c0733b235c8bd3a79fe7eba4eb137e1ddd680f0e9fe04964553030e1c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_random_training_legacy_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "5606dcdf01f0d9e9ddfca028ea9c7853306fe0b00516026a71afb42e61fac207"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_random_wind_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "e841cbe1515e8fe6ad6782e286fd7a0b12e12b5964180cf9f9eb5e2c7252d8bf"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_random_wind_training\\config.yaml",
+      "occupied": [],
+      "sha256": "10f8d1f52168f8ffaab0e6a1537ea0a74f89266e9cdd6d784f5dd3dddad6094b"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\config.yaml",
+      "occupied": [],
+      "sha256": "728fb55fd358b33475f0ae0e90b277e0068d435047bc828c9450e8366dc9cc1d"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_wind_pinn_integration\\config.yaml",
+      "occupied": [],
+      "sha256": "357f0150371944dcdff8d4740fc936de1c42a8be359af4bf37c0f644907d2055"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_wind_pinn_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "5606dcdf01f0d9e9ddfca028ea9c7853306fe0b00516026a71afb42e61fac207"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_joint_distillation\\config.yaml",
+      "occupied": [],
+      "sha256": "d90f82523f80de8bae6421de6f2f1a5723c709b1929363a60f85edb7ad514b5d"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\config.yaml",
+      "occupied": [],
+      "sha256": "af2c9f0c3c7bdf207624e2e33f4bc6842ce2f7116db7d1c50323cd57ee33b5bc"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_progressive_random_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "89d9b966fa6976067012f6e0b22b1651b50f49f45ef9dd2f19281d743b7b4124"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_residual_random_control\\config.yaml",
+      "occupied": [],
+      "sha256": "fb093c7a2baf61b0bf15997c9c9966c15af19a9981d6e94ce7a2b6dec1d4b3c0"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261024_residual_stability\\config.yaml",
+      "occupied": [],
+      "sha256": "7a59b6ec7bfe6103e14cf11769139b0fca0d68ea7512a7516753a3b3792bed63"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261024_residual_stability_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "bef413c722bd79b718d6cc8a6520b97a7a61a9e52779060c1d2633bd6712c913"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261027_midterm_best_cases_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "f300877ca1a98e4c1a6bf9ee187ace71addc0e0f4a45e0e5207aea1cab57f759"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261027_midterm_best_cases_labels\\config.yaml",
+      "occupied": [],
+      "sha256": "f300877ca1a98e4c1a6bf9ee187ace71addc0e0f4a45e0e5207aea1cab57f759"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261027_pitch_cross_wind_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "e1cd3e3e14a45ba39da059b749375719789396a21c7363cdd43d8bce77d24ebc"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261028_pitch_action_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "787de11309945e9cd024459d2225b8cf9fcfe989d98b3800aadb44a12206d09f"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261028_pitch_action_preflight\\config.yaml",
+      "occupied": [],
+      "sha256": "ad6aa487a1510813649cf906bbf5ca337225863c13a8df4f76f98bb283172927"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\config.yaml",
+      "occupied": [],
+      "sha256": "396cb7f00d6d6d89fd8e2d0036e23f53b7ab5cd0cdc2632dce0ebfcd0d08314a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261028_pitch_nstep_mechanism\\config.yaml",
+      "occupied": [],
+      "sha256": "7869b58fc51a619cc4ebdfa0245a9081323c54b581c287ab8cd954b8c5c309a5"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261028_pitch_nstep_smoke\\config.yaml",
+      "occupied": [],
+      "sha256": "04d435e9e9271ed4fbcce547ee1df9a3dd9340de7e46397d3c8c444078fc82b3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\config.yaml",
+      "occupied": [],
+      "sha256": "a7736d478a6333f0838734888284b41406c12c6fab8b06d3febb6e4556ff4ed2"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261029_pitch_remaining_failures\\config.yaml",
+      "occupied": [],
+      "sha256": "116a8b8045bdffd7306320bc4ddeb5e6e7ec8bfc7acf59873ac323001c4ab099"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\config.yaml",
+      "occupied": [],
+      "sha256": "9815fb25471b41ec097080fe21b55f6ac79577b3236ee6c01ca6a15de183a210"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261029_speed_nstep_independent_review\\config.yaml",
+      "occupied": [],
+      "sha256": "3051bddfb85a673563a69bb1c8b2b66e6bec9e0267161d5236e60f2b4cde735e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\anchor_training.yaml",
+      "occupied": [],
+      "sha256": "44e3f3d5c5e7302ddd3ad6332453a6726e5619aa7ecdf09fdcb8018642312331"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\causal_speed_search.yaml",
+      "occupied": [],
+      "sha256": "ef8cf787a1f97ec13b5bb4a3cee2c71ba31ae64ca37a9ddcac825e010612b70e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\default.yaml",
+      "occupied": [],
+      "sha256": "e63e0188598d24ef3a95a58927c401d8d1395de08b7f233f44956ff8910b4e6d"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_all_probe.yaml",
+      "occupied": [],
+      "sha256": "053db0b9a4f528361f825bc2865e8b56152d7a708b4ee504e64a323ac56533a8"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_curriculum.yaml",
+      "occupied": [],
+      "sha256": "c4493eed2d1709c321d36f25d25f85aa135e3f65bd085c64be936cd0417389c4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_pinn_demo.yaml",
+      "occupied": [],
+      "sha256": "15e10cdf34f00fd0c6929382eb3d90b75d70ee5452aa909bfc472aa0fe760621"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_pitch_speed_probe.yaml",
+      "occupied": [],
+      "sha256": "bc0121ad14795cedfce312c58b64f5df4d44736413f70fbee5775f5b7dc2d87e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\frozen_speed.yaml",
+      "occupied": [],
+      "sha256": "e0d4deb711f293de73e6fcb3661e8442fd19f0dfbba72c258a1689f2bcbad6bd"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\history_forecast.yaml",
+      "occupied": [],
+      "sha256": "8676d41e78dd5c1098660dc70b565ba7dc410d443f60ae6d234bb4797fa42769"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\history_independent_test.yaml",
+      "occupied": [],
+      "sha256": "8a9be6d39f92afe78bc5f1f8dafced2b7cec90d259e00568b2194c3a2a3edeac"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\joint_distillation.yaml",
+      "occupied": [],
+      "sha256": "1cb18f58f5d819b985c5ef63d8c4a9b8c00b96d95c2ce98bcab737a10c4e39fd"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\midgrid_speed_search.yaml",
+      "occupied": [],
+      "sha256": "5d0893152af305b15327f7e7b4f734771539cbc4f91ec797234d35ebe5a57426"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\mixed_stability.yaml",
+      "occupied": [],
+      "sha256": "b3879f4531cc65a52ee04050771daedf93cf33483f7e16c60298a6a62a71f638"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\progressive_random_control.yaml",
+      "occupied": [],
+      "sha256": "fae38a0262c2c8b727ee0bbdbe1db215316314e2e734601fc32f0d86d436cadc"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\random_wind_training.yaml",
+      "occupied": [],
+      "sha256": "733018c651e514594f3c996ffe6c987b5188e90998edc437e0f49e4611bf2317"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_random_control.yaml",
+      "occupied": [],
+      "sha256": "30e32e6af7c7082370b7d53eeb86dcbd8a21788f9664558c1055daa0d2c18410"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_stability.yaml",
+      "occupied": [],
+      "sha256": "77a62c60167428c73cfea54ca72b69e67d1272205abd405a12c352b1486cd019"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_stability_diagnostic.yaml",
+      "occupied": [],
+      "sha256": "3d7750ad2845e3d393ffd981f59c1d27f68d0fd7e30c167074777567e574cb13"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\speed_nstep.yaml",
+      "occupied": [],
+      "sha256": "1ac66b3e1c261e2751ffaaa159f6c093fa25550946c4dae45a495aacbb67ba73"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\stable_training.yaml",
+      "occupied": [],
+      "sha256": "ad15dd62756a9cd23e62a38d3ac646d3d9e13ea99d5836c583c562034e74a3c2"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\stochastic_inflow.yaml",
+      "occupied": [],
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\tracking_study.yaml",
+      "occupied": [],
+      "sha256": "f22b07adfe9fc7fbf4d54d5021eb93ff2731246cb1eec9a2b74e704f516b0731"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\wind_pinn_curriculum.yaml",
+      "occupied": [],
+      "sha256": "3c3672a84871704f960e6d354a0dc1a4861e005805d3c8fc8a6a42f76045b959"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\wind_pinn_demo.yaml",
+      "occupied": [],
+      "sha256": "d9beac274ad228bdd4bba73417cf5d2621755dff308997dc1e0654c49a8cd30b"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260808_ppo_single_turbine\\config.yaml",
+      "occupied": [],
+      "sha256": "4e46670efcb47bd2b8db3a6715feff3ea2e346b088a0e664c1921c3cc8fad919"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260913_kaimal_ppo_smoke\\config.yaml",
+      "occupied": [],
+      "sha256": "1223bd15345f122aee14f2037941852bb296368c8487c3d23cd417227725576a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260913_kaimal_replay_check\\config.yaml",
+      "occupied": [],
+      "sha256": "8f6e72f8b39e1cc8a7e5395fe848af5691950a7fc815b98deaf92df8a910c370"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260913_kaimal_wind_validation\\config.yaml",
+      "occupied": [],
+      "sha256": "8399abb4cec7b8229e428e5100c975822ccc2256b5c9059163aa6ae4a023af75"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_farm_inflow_validation\\config.yaml",
+      "occupied": [],
+      "sha256": "53652a76b7269ac444d5c5bb6fb872a06723a817413b731b1afe3d7bcc7abeaa"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_channel_diagnosis\\config.yaml",
+      "occupied": [],
+      "sha256": "a358ad247eccb8eea9e97944ff363498cab96aee2750f9ec7c83a86580ac0417"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_channel_rollback\\config.yaml",
+      "occupied": [],
+      "sha256": "7fc7ba04e94f064714be5fc1aaa56655888a551b9258a06350cf4d8ac51c681e"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_eval\\config.yaml",
+      "occupied": [],
+      "sha256": "4c195a75d33ac3c9b06244d9c480aa22563cf14721b84a4d511e674d461bc5f3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_eval_final\\config.yaml",
+      "occupied": [],
+      "sha256": "4c195a75d33ac3c9b06244d9c480aa22563cf14721b84a4d511e674d461bc5f3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_mixed_stability\\config.yaml",
+      "occupied": [],
+      "sha256": "cf33000dcda3c1d4995c4a3c5ba63c0b7cc35bc67811d310774d80aa6a45102a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_reachability\\config.yaml",
+      "occupied": [],
+      "sha256": "6e7dc6c86f0486af622af57b181b125f533175c2cc703f7f0fbae5a2f3519c2c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_reachability_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "6e7dc6c86f0486af622af57b181b125f533175c2cc703f7f0fbae5a2f3519c2c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_retrospective\\config.yaml",
+      "occupied": [],
+      "sha256": "fd59c403f4c6d542a6d09bde646265596a3cece250ad7fc27216ffa03a5349e2"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_reward_diagnosis\\config.yaml",
+      "occupied": [],
+      "sha256": "1d7a9a0af5a72f8006bce090c7208dada59f275ac4d53dce03a1172a98b7c27a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_smoke\\config.yaml",
+      "occupied": [],
+      "sha256": "4c195a75d33ac3c9b06244d9c480aa22563cf14721b84a4d511e674d461bc5f3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stable_training\\config.yaml",
+      "occupied": [],
+      "sha256": "3af39980548f1ef7e37b7a95a3ab35a0c28d7ce37aa049694f53369ffb928797"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stochastic_eval\\config.yaml",
+      "occupied": [],
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stochastic_resume\\config.yaml",
+      "occupied": [],
+      "sha256": "8720191b6a086adba47e1b702fbc37a04a105854f44604841c5809e5ab477904"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_stochastic_train\\config.yaml",
+      "occupied": [],
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_tracking_study\\config.yaml",
+      "occupied": [],
+      "sha256": "89d7c426de9adfe45da47edc07b872a344a0d0c12f2af682de11682dadff8e5b"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_maddpg_verification\\config.yaml",
+      "occupied": [],
+      "sha256": "72c9bd5ceebee7fd7cc11d9bc20dde6834456aea4c42520935b81260cc5e7359"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260922_stable_workflow_verification\\config.yaml",
+      "occupied": [],
+      "sha256": "70cebb1a0064b950ab86a91cb10c3e3509e6d6639ef8834e00c42223ae901440"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260923_maddpg_value_baseline_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "3ff1d15edcd8bfac13341e5799c19808ed7acc7344949be193898a830f3af587"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20260923_maddpg_value_baseline_terminal\\config.yaml",
+      "occupied": [],
+      "sha256": "e685e739e078e9a5a9a3fb8c77cd33e6c8424aa7a2fc8509f40e7a0d07dc7663"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_all_probe\\config.yaml",
+      "occupied": [],
+      "sha256": "f801bfbe88b258788bbe65d85a27e625729d4690a4b01e986b490378fe495d51"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_curriculum\\config.yaml",
+      "occupied": [],
+      "sha256": "deb2cea42cc604851e7b3178e024fe6ec9688971b0b17598d9bce5a65a80f281"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_demo\\config.yaml",
+      "occupied": [],
+      "sha256": "4661ae5c809576de7ebf57ee7c826a5862b222757139834f69b3b966c2301c29"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_demo_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "4661ae5c809576de7ebf57ee7c826a5862b222757139834f69b3b966c2301c29"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "9ae952ac0199a6e6129a5917168304cd89cbf928d0cc464aaf85a6502f87ca53"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_diagnostic_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "7a1a18073057471b0f3c889057567de82af0f41cf25a788c5c141ab029895ea4"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_fixed_pinn_pitch_speed_probe\\config.yaml",
+      "occupied": [],
+      "sha256": "88f9fad77634ce2089ccd2d177dbec537828937108cd0f0057694772c112469a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261007_pinn_handover_audit\\config.yaml",
+      "occupied": [],
+      "sha256": "b05b6e48cbc4e3aa677279f2765bf3b5ff46406d8e9fb9825068d9ab38a03176"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_legacy_pinn_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "2dd25e39f0941d689b4e8d8becb0bf30fa701fe5af6c609f0fb37c91b853e7db"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_midterm_figures\\config.yaml",
+      "occupied": [],
+      "sha256": "d439515c0733b235c8bd3a79fe7eba4eb137e1ddd680f0e9fe04964553030e1c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_random_training_legacy_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "5606dcdf01f0d9e9ddfca028ea9c7853306fe0b00516026a71afb42e61fac207"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_random_wind_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "e841cbe1515e8fe6ad6782e286fd7a0b12e12b5964180cf9f9eb5e2c7252d8bf"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_random_wind_training\\config.yaml",
+      "occupied": [],
+      "sha256": "10f8d1f52168f8ffaab0e6a1537ea0a74f89266e9cdd6d784f5dd3dddad6094b"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_wind_pinn_curriculum\\config.yaml",
+      "occupied": [],
+      "sha256": "728fb55fd358b33475f0ae0e90b277e0068d435047bc828c9450e8366dc9cc1d"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_wind_pinn_integration\\config.yaml",
+      "occupied": [],
+      "sha256": "357f0150371944dcdff8d4740fc936de1c42a8be359af4bf37c0f644907d2055"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261022_wind_pinn_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "5606dcdf01f0d9e9ddfca028ea9c7853306fe0b00516026a71afb42e61fac207"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_joint_distillation\\config.yaml",
+      "occupied": [],
+      "sha256": "d90f82523f80de8bae6421de6f2f1a5723c709b1929363a60f85edb7ad514b5d"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\config.yaml",
+      "occupied": [],
+      "sha256": "af2c9f0c3c7bdf207624e2e33f4bc6842ce2f7116db7d1c50323cd57ee33b5bc"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_progressive_random_replay\\config.yaml",
+      "occupied": [],
+      "sha256": "89d9b966fa6976067012f6e0b22b1651b50f49f45ef9dd2f19281d743b7b4124"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261023_residual_random_control\\config.yaml",
+      "occupied": [],
+      "sha256": "fb093c7a2baf61b0bf15997c9c9966c15af19a9981d6e94ce7a2b6dec1d4b3c0"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261024_residual_stability\\config.yaml",
+      "occupied": [],
+      "sha256": "7a59b6ec7bfe6103e14cf11769139b0fca0d68ea7512a7516753a3b3792bed63"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261024_residual_stability_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "bef413c722bd79b718d6cc8a6520b97a7a61a9e52779060c1d2633bd6712c913"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261027_anchor_closeout\\config.yaml",
+      "occupied": [],
+      "sha256": "fa3d5f326e6883d48c353933e44ffe182d639ab0bd06a8e554d2fdd73dd0f08c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261027_midterm_best_cases_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "f300877ca1a98e4c1a6bf9ee187ace71addc0e0f4a45e0e5207aea1cab57f759"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261027_midterm_best_cases_labels\\config.yaml",
+      "occupied": [],
+      "sha256": "f300877ca1a98e4c1a6bf9ee187ace71addc0e0f4a45e0e5207aea1cab57f759"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261028_frozen_speed\\config.yaml",
+      "occupied": [],
+      "sha256": "ecd589970f08f65739ac5fb6c4c90c068312e6743f0b27953a00e29da628b89e"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261028_frozen_speed_checked\\config.yaml",
+      "occupied": [],
+      "sha256": "c040423ddd550bb0a1e57127e14f1bc94c6a8aed7f530ac196c23d410d341d90"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261028_speed_nstep_engineering\\config.yaml",
+      "occupied": [],
+      "sha256": "25ab68e2edffd05462ddb9f85627c3fa0e69e54b3a67daecae56c006f7ba1a4d"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261028_speed_value_diagnostic\\config.yaml",
+      "occupied": [],
+      "sha256": "23af8ef72e37636f6437bad222e7a654091065064fb5e85fea45fe5e42554fbc"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261029_history_forecast\\config.yaml",
+      "occupied": [],
+      "sha256": "02a5d7d3b6449e9e11f90c381279b26390ee77e9d3cd918af5ef65fe747e4b0a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261029_history_independent_test\\config.yaml",
+      "occupied": [],
+      "sha256": "bfed98f2743ddf5629a677ae07b725283e27a96464074f422980522d4f39939e"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261029_speed_causal_search\\config.yaml",
+      "occupied": [],
+      "sha256": "9937435636a0f91699ce41dde3c75153a9e68b2372473dc9d195caa71e5d4d8a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261029_speed_midgrid\\config.yaml",
+      "occupied": [],
+      "sha256": "715ff0f758a8c18bf8103ab93a88f1a773e37885118cf318f2a87d160a74b37c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261029_speed_nstep_control\\config.yaml",
+      "occupied": [],
+      "sha256": "314a8fc345a8a2e6bfdcaf110f0b41a38ea199b1baa88e8f3de43b10fe182923"
+    }
+  ],
+  "collisions": []
+}

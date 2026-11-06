@@ -1,0 +1,9 @@
+{
+  "unique_trajectories": 3522,
+  "semantic_trajectories": 3660,
+  "files": {
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\trajectory_metrics.csv": "7342a61595b3d571e098723abee1c24ae1bc95a97ab2a84644f158765a764ee6",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\trajectory_roles.csv": "8e96f72420730b8c31ef65ba9759b5ad54ec5ba9a38f31dfaf20c2dc23e74a48"
+  },
+  "formal_training_steps": 0
+}

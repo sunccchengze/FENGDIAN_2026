@@ -1,0 +1,17 @@
+{
+  "status": "waiting_independent_review",
+  "seed": 42,
+  "formal_training_steps": 0,
+  "new_training_updates": 0,
+  "gate_passed": true,
+  "gate_checks": 9,
+  "gate_evaluation_steps": 9216,
+  "new_tests_passed": 3,
+  "engineering_updates_repeated": 0,
+  "test_generated": false,
+  "test_released": false,
+  "root_config_sha256": "314a8fc345a8a2e6bfdcaf110f0b41a38ea199b1baa88e8f3de43b10fe182923",
+  "required_review": "./optimization_control/maddpg_wind_farm/SPEED_NSTEP_INDEPENDENT_REVIEW.md",
+  "prospective_training_authorization_already_received": true,
+  "next_step": "Read independent review; resolve any correctness/fairness blocker; accept review identity; run authorized fixed budget without seeking repeated permission."
+}

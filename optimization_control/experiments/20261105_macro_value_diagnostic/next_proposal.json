@@ -1,0 +1,14 @@
+{
+  "status": "proposal_only",
+  "change": "train_only_16s_paired_ranking_auxiliary_head",
+  "base_arm": "B",
+  "counterfactual_labels": "first8_forced_next8_frozen_policy_realization",
+  "data": "training_winds_only_predeclared_holdout",
+  "main_td_and_actor_update_unchanged": true,
+  "observed_meaningful_trained": 20,
+  "value_suppressed": 14,
+  "main_critic_rank_transfer_must_be_measured": true,
+  "long_training_approved": false,
+  "new_test": false,
+  "yaw": false
+}

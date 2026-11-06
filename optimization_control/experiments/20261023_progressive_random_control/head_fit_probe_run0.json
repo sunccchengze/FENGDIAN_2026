@@ -1,0 +1,133 @@
+{
+  "seed": 42,
+  "source_checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+  "source": "training_replay_only",
+  "new_environment_rollouts": 0,
+  "new_training_steps": 0,
+  "permission_granted": false,
+  "speed_head_reports": [
+    {
+      "network": "actors",
+      "agent": 0,
+      "new_channel": 2,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.238931804895401,
+      "held_out_max_action_error": 0.2878592610359192,
+      "hidden_and_existing_rows_unchanged": true
+    },
+    {
+      "network": "actors",
+      "agent": 1,
+      "new_channel": 2,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.3217191696166992,
+      "held_out_max_action_error": 0.33238810300827026,
+      "hidden_and_existing_rows_unchanged": true
+    },
+    {
+      "network": "actors",
+      "agent": 2,
+      "new_channel": 2,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.2906435430049896,
+      "held_out_max_action_error": 0.39494550228118896,
+      "hidden_and_existing_rows_unchanged": true
+    },
+    {
+      "network": "target_actors",
+      "agent": 0,
+      "new_channel": 2,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.3127886652946472,
+      "held_out_max_action_error": 0.2597491145133972,
+      "hidden_and_existing_rows_unchanged": true
+    },
+    {
+      "network": "target_actors",
+      "agent": 1,
+      "new_channel": 2,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.3497120440006256,
+      "held_out_max_action_error": 0.35254645347595215,
+      "hidden_and_existing_rows_unchanged": true
+    },
+    {
+      "network": "target_actors",
+      "agent": 2,
+      "new_channel": 2,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.2931594252586365,
+      "held_out_max_action_error": 0.39541763067245483,
+      "hidden_and_existing_rows_unchanged": true
+    }
+  ],
+  "speed_fit_ready": false,
+  "yaw_head_reports": [
+    {
+      "network": "actors",
+      "agent": 0,
+      "new_channel": 0,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.0,
+      "held_out_max_action_error": 0.0,
+      "hidden_and_existing_rows_unchanged": true
+    },
+    {
+      "network": "actors",
+      "agent": 1,
+      "new_channel": 0,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.0,
+      "held_out_max_action_error": 0.0,
+      "hidden_and_existing_rows_unchanged": true
+    },
+    {
+      "network": "actors",
+      "agent": 2,
+      "new_channel": 0,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.0,
+      "held_out_max_action_error": 0.0,
+      "hidden_and_existing_rows_unchanged": true
+    },
+    {
+      "network": "target_actors",
+      "agent": 0,
+      "new_channel": 0,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.0,
+      "held_out_max_action_error": 0.0,
+      "hidden_and_existing_rows_unchanged": true
+    },
+    {
+      "network": "target_actors",
+      "agent": 1,
+      "new_channel": 0,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.0,
+      "held_out_max_action_error": 0.0,
+      "hidden_and_existing_rows_unchanged": true
+    },
+    {
+      "network": "target_actors",
+      "agent": 2,
+      "new_channel": 0,
+      "fit_rows": 4096,
+      "held_out_rows": 1024,
+      "fit_max_action_error": 0.0,
+      "held_out_max_action_error": 0.0,
+      "hidden_and_existing_rows_unchanged": true
+    }
+  ]
+}

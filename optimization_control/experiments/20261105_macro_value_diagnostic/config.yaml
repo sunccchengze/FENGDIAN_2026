@@ -1,0 +1,30 @@
+seed: 42
+formal_source_commit: 3ccadc45ad022e40e7edb33ff7e7b1ace8a36ce3
+train_bank: formal_frozen
+validation_bank: formal_frozen
+anchor_times:
+- 32
+- 80
+candidate_labels:
+- own
+- zero
+- half
+- t0_minus
+- t0_plus
+- t1_minus
+- t1_plus
+- t2_minus
+- t2_plus
+normalized_perturbation: 0.25
+first_hold: 8
+continuation: 8
+minimum_return_gain: 0.01
+minimum_rmse_gain_fraction: 0.05
+meaningful_sign_tol: 1.0e-07
+planned_mock_rows: 65
+planned_PINN_rows: 30024
+row_hard_cap: 40000
+disk_hard_cap_MiB: 128
+formal_RL_steps: 0
+optimizer_updates: 0
+new_test: 0

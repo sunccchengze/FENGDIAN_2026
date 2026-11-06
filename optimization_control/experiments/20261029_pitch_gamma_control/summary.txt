@@ -1,0 +1,249 @@
+{
+  "status": "complete",
+  "seed": 42,
+  "formal_learning_steps": 98304,
+  "new_updates": 47622,
+  "engineering_discarded_updates": 8,
+  "evaluation_steps": 152576,
+  "independent_test_steps": 78848,
+  "canonical_test_actor_traces": 14,
+  "semantic_test_metrics": 880,
+  "test_metric_residual_max": 0.0,
+  "validation": {
+    "split": "validation",
+    "new_learning_runs": 2,
+    "new_learning_pass": false,
+    "ramp": {
+      "selected": {
+        "ratio": 1.0143053469892638,
+        "improved_runs": 0,
+        "passed": false
+      },
+      "final": {
+        "ratio": 0.9879266790272092,
+        "improved_runs": 2,
+        "passed": false
+      }
+    },
+    "other_capability_preserved": false,
+    "stability": [
+      {
+        "run": 0,
+        "final_over_selected": 1.0118647889027537,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "final_over_selected": 1.0087579542621052,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "final_over_selected": 1.0361232838197678,
+        "passed": true
+      }
+    ],
+    "stable_runs": 3,
+    "actual_motion_pass": false,
+    "physical_pass": true,
+    "passed": false,
+    "validation_decision_not_revised_by_test": true
+  },
+  "test": {
+    "split": "test",
+    "new_learning_runs": 2,
+    "new_learning_pass": false,
+    "ramp": {
+      "selected": {
+        "ratio": 1.0245225390059203,
+        "improved_runs": 0,
+        "passed": false
+      },
+      "final": {
+        "ratio": 0.9897375499912942,
+        "improved_runs": 2,
+        "passed": false
+      }
+    },
+    "other_capability_preserved": false,
+    "stability": [
+      {
+        "run": 0,
+        "final_over_selected": 1.0260962004229452,
+        "passed": true
+      },
+      {
+        "run": 1,
+        "final_over_selected": 0.9806431018942271,
+        "passed": true
+      },
+      {
+        "run": 2,
+        "final_over_selected": 1.0598860545964865,
+        "passed": false
+      }
+    ],
+    "stable_runs": 2,
+    "actual_motion_pass": false,
+    "physical_pass": true,
+    "passed": false,
+    "validation_decision_not_revised_by_test": true
+  },
+  "regenerated_test_bank": {
+    "routine_cases": 36,
+    "known_pressure_cases": 8
+  },
+  "shared_wind_and_yaw_heading_verified": true,
+  "max_heading_difference_rad": 0.0,
+  "overall_pass": false,
+  "test_not_used_for_selection": true,
+  "source_unchanged": true,
+  "files": {
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\.gitattributes": "4d77744a066c2df6bb78ef84051626b8212d9327ac7fa2b4dd2bd80d2c9da39b",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\acceptance.json": "c298092290cd9c2dda789814c8950b984e58e8faa366e8587b916bf2271a3e3e",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\actual_m_statistics.json": "54b6a479835a35f272bd150240389374d1c4f45a87042033557a2f7f660cbf45",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\checkpoint_manifest.csv": "68f7fc26b1bb1b717cd9ab13e75fb848b387d61d023746da41cc4cafc2369675",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\config.yaml": "a7736d478a6333f0838734888284b41406c12c6fab8b06d3febb6e4556ff4ed2",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\data_lock.json": "e396bb67cefef797c012c912a050f5c90ca9563d0f765000aa7dad079610f85c",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\delivery_verification.json": "2048936081735b2afa6d7f435446c21e76ef1ea3c762fd751621a5c3bacf04c2",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\engineering.json": "aced54c3c18b09fcfebd35c6809e84c5f19a2e983f7e7364ae04290993991a78",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\evaluation_budget.jsonl": "a486f9af339fb72a02356679fc06ac08063b6ba73a8ae59eeeaa336ff2916bed",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\final_review.log": "75601294f3aa6f5336bbf9065e97b9ad0c68266fa83e5b4af4e5a91e88789664",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\full_timeseries.png": "a700a1ca416a4c1e096afebe44e7b9a21c545a99089ca96c6d805c56e6b4224b",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\history.csv": "775699c3650e2c4c7813a3265984a9118f2e84d934487f63ccd1de714b95f3d4",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\independent_test.log": "06d1ae51cf67410a47cda0aa2eebf2c76d77de3d0d3cd34fd8442f9ca1705ec9",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\learning_budget.jsonl": "85553579dfc9bca1e2194472dd62fbe6e6281109f924d3de4f3ef8878a69e17f",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\live_progress.json": "e1cfc6dc1dac692482fe6a02ecadd05a141283aabf94756a4c0ca1e6da662cc3",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\metrics.csv": "1fc257f0511e0142fd40310838f37bd1fe4fce3a2fdba057bd39b4aa556bf3e3",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\model_contract_verification.json": "af71fae0d5513bab4370382397113026ab32aec9346e1f4cf395870766c38ac4",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\namespace_audit.json": "d5697c22ee2afc9185cf1c29f0fef847434f4e2f5dbff5b04c323a5fafcbe2b8",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\noise_run0.npz": "708c16532f2c9206e44dcccb977b6695738029744e9f4bd7636b6c322a346832",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\noise_run1.npz": "350202c935b04a79984e0a87f93c5475f075a8a4094c7ad71cfe13345bb09e31",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\noise_run2.npz": "2154706dd917884df95176220b6ccb9c3bf6e35e1e6bf42538b6d719d59f1f32",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\normalization.json": "fea48469419a479fa569832072d01fc57198246b1ebfc9e87c61f989edc78933",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\policy_manifest.json": "f0bcaeae31919d788e917b24350f7fba25730d58f2e66b3dcaa94cf9109d108e",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\pretest_audit.json": "ebb1b2eed04f852e5897aecb00a797e5b1f88eeef27d26d17a2a1610bc68d69e",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\pretest_audit.log": "a33e16c412c92c0fa8dc76664c160c5549c8775d4a25175be552a5e13174947f",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\random_states.json": "ea6ebc7e2c4f33f8167eefe586d0988c53c7cd12a9165c0b65c7463d7fc1b3ed",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\reporting_unittest.txt": "2bbd7b3a0ada99dac97f83ce4a9f9d690731f604bf9ccaa379a369eb8de0dbd8",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\reproduction_check.json": "2f4022ece9fe3344503a4694af15d0fae034a5c90c95fc00e044e934144e7c12",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\reproduction_prepare_verification.json": "f0b2fb8fdce0329bb1d2ce86672c4a5ed83066d383c09d3276a86563d923541e",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\resolved_execution.json": "04f7bcb4a79b6eae1be44c09102a06ffd69a7a767ad9d42551ca981a9d1cda18",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\selection.json": "bab8b3cfa3167a23f3171d7abf8f4d1b0df5e18f394cd49bcb8d3daf34212dd8",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\test_acceptance.json": "7aa4c577bcd2497e35ef42fb3f92c32e485a94c673b2d72e154e7090c3b0507c",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\test_aggregate.csv": "aad13dba0213fec6950c77addb3de2daaa8e8ab384037b11c75942c8422af993",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\test_comparison.png": "1ce19bb78c2a11860859fdc8e71d1640e7a7aa5df5ef3c75de92af2b5fe62160",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\test_comparisons.csv": "0c7d1b86544cc120035ce4d18fc320995010fefd223fe69bd1df26717fbf92a9",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\test_cross_stream.csv": "e353c1b1537e9afccdd092ea00cdd5fca5a41f334cce1ab626172defba549f8f",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\test_paired_cases.csv": "1790c76744947fb4ce1092b8c2ff3c5041caa23770f764fd58e3f69663172564",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\test_paired_groups.csv": "f7540af21fcf197b0f1a962679498f2079cff6eb5124ad12c27dae8469bc4556",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\test_target_initial.csv": "e385bfe0f474ff0f57fd8cec17d94635555fde4e00f45c921253eecee431be70",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\training_manifest.csv": "aa03c015edbffbc7b7a4095585b00bda7f1d74bd7ac779b731e5a9a63dd2c003",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\training_metrics.csv": "1b92ebaa12d47eb89844eea6474ba72ba45e6127f154d3c05b28e702c863e20a",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\validation_acceptance.json": "de5c7231fb82e81a01afc7b87358d54b29e296b06ae05199c3b59aed81e378ca",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\validation_aggregate.csv": "3a49e7ca4bba4627c261da8922d3d5c8f9f66af2be49a9fc36a6ab82d78b6d4c",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\validation_comparisons.csv": "d3700f1c41d17dff4cf27e85f9c717fbd0a8daf781876cd843b12eceab33b91b",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\validation_cross_stream.csv": "d14a0d816e43548af362f4a8e940215bab4f04e6365b8d8816adc4239e945dcc",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\validation_history.png": "a0df500190b324b485062f2f3034d9031dc96120401071708019d7063400a6b9",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\validation_metrics.csv": "d3a09f074b6a1a62ccf606a6dab3c49fa3c62a168d9646d8b523e1f4786a0c28",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\validation_paired_cases.csv": "3fba529ba07e54cc99169ee46d0ebd039c820ce464e62ee19b35e58c8aaaa3e0",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\validation_paired_groups.csv": "2f79276d91e6aac65dcd7b19e11c820adf77c944fb64c88fc6077ddbe54d4102",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\validation_target_initial.csv": "e9150c41c98fdd80412ae2c1f8af2a434babc7aacc0932dcbd0589b65055eccc",
+    ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\verify_delivery.py": "ac5f7b04f039c4ca6c76255db037b9af0dc7fc6f4d9ef792f432061638b88b4d"
+  },
+  "delivery_verification": {
+    "status": "passed",
+    "source_hashes_checked": 75,
+    "additional_model_contracts": 2,
+    "checkpoint_count": 774,
+    "formal_updates": 47622,
+    "engineering_updates_not_in_formal": 8,
+    "unit_tests": 4,
+    "budgets": {
+      "learning": 98304,
+      "evaluation": 152576
+    },
+    "test_steps": 78848,
+    "test_semantic_cases": 880,
+    "unique_test_episodes": 616,
+    "all_cases_retained": true,
+    "test_after_selection_and_pretest": true,
+    "independent_gates": {
+      "validation": {
+        "rows": 360,
+        "independently_recomputed": true,
+        "passed": false,
+        "stable_runs": 3,
+        "actual_motion_pass": false,
+        "max_decomposition_residual_w2": 0.0001220703125
+      },
+      "test": {
+        "rows": 880,
+        "independently_recomputed": true,
+        "passed": false,
+        "stable_runs": 2,
+        "actual_motion_pass": false,
+        "max_decomposition_residual_w2": 0.000244140625
+      }
+    },
+    "actual_run0_restart_pids_and_first_resumed_fragments_verified": true,
+    "images": {
+      "validation_history.png": {
+        "dimensions": [
+          1820,
+          1120
+        ],
+        "sha256": "a0df500190b324b485062f2f3034d9031dc96120401071708019d7063400a6b9",
+        "visually_checked": true
+      },
+      "test_comparison.png": {
+        "dimensions": [
+          2100,
+          1120
+        ],
+        "sha256": "1ce19bb78c2a11860859fdc8e71d1640e7a7aa5df5ef3c75de92af2b5fe62160",
+        "visually_checked": true
+      },
+      "full_timeseries.png": {
+        "dimensions": [
+          1960,
+          1400
+        ],
+        "sha256": "a700a1ca416a4c1e096afebe44e7b9a21c545a99089ca96c6d805c56e6b4224b",
+        "visually_checked": true
+      }
+    },
+    "links_checked": 30,
+    "sources": {
+      ".\\optimization_control\\maddpg_wind_farm\\pitch_gamma_trial.py": "6ccb97aa9ca32ded7a5df330c537db1618c3d2b520086b3f0f13c0326d607d73",
+      ".\\optimization_control\\maddpg_wind_farm\\pitch_gamma_engineering.py": "7d006404d29d48efd0b1a1284c9f44bcba64b86735d98de2c2dd729f09a9df4d",
+      ".\\optimization_control\\maddpg_wind_farm\\pitch_gamma_review.py": "f40d7b4d42f58c4818109f590553d9ef1c87cb2edb7dea2444c8efbbe14ea28b",
+      ".\\optimization_control\\maddpg_wind_farm\\pitch_gamma_reproduce.py": "64968b2575ee0cf0f1a91a83d9f661b2ae48cf4d336324fc32fee68493b93568",
+      ".\\optimization_control\\tests\\test_pitch_gamma.py": "9fc08da22d0cba0fef57bdd2ac9b97409a4e7b72453d1c601ed936a67bfeaef0",
+      ".\\optimization_control\\tests\\test_pitch_gamma_reporting.py": "44a1cd6b00bc817dd2541f6bf31ef7c6acd4454d80a71fbb8eea378063e50f81",
+      ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\verify_delivery.py": "ac5f7b04f039c4ca6c76255db037b9af0dc7fc6f4d9ef792f432061638b88b4d",
+      ".\\optimization_control\\maddpg_wind_farm\\PITCH_GAMMA_PROTOCOL.md": "6219a267779f1129d0f86006acc3a5ab44faeb7dff889818d8b61eca569a4df0",
+      ".\\optimization_control\\maddpg_wind_farm\\PITCH_GAMMA_RESULTS.md": "f885bef7293ecdddf4b727b394340c022fb843eaa0e619630f82f980a4b56817",
+      ".\\optimization_control\\maddpg_wind_farm\\MADDPG_STAGE_HANDOFF_20261029.md": "46c99b2e01b6ae4f418442b9dec606c39c885f389f80b83f0faa4150d284e664"
+    },
+    "current_default_unchanged": true,
+    "shared_state_not_written": true,
+    "no_new_candidate_or_budget": true
+  },
+  "reproduction_preparation_only": {
+    "status": "passed",
+    "prepared_only": true,
+    "environment_steps": 0,
+    "optimizer_updates": 0,
+    "second_training_executed": false,
+    "source_config_sha256": "a7736d478a6333f0838734888284b41406c12c6fab8b06d3febb6e4556ff4ed2",
+    "prepared_config_sha256": "643f9075b3313dabe284bd58b9b1b9bb2b009698c59fb3d2b77c87bab78ea188",
+    "protected_inputs": 77,
+    "only_coordination_paths_relocated": true,
+    "additional_prior_model_contracts": 2,
+    "base_environment_algorithm_parents_gates_equal": true,
+    "training_validation_inputs_identical": true,
+    "no_candidates_selection_or_test_copied": true
+  },
+  "default_policy_changed": false
+}

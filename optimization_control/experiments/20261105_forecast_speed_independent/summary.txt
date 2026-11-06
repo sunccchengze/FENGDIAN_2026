@@ -1,0 +1,4 @@
+Frozen A/B/C independent comparison, seed=42. User family-average PI criterion: True.
+18 independent winds, 414 physical rollouts and 53406 PINN input rows including resets.
+Formal RL, optimizer updates and new weights=0. Prior formal learning failure remains part of the record.
+See primary_acceptance.json, comparisons.csv, stream_summary.csv and metrics.csv.

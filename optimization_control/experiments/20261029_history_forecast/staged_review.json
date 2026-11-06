@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "files": {
+    "optimization_control/experiments/20261029_history_forecast/config.yaml": "02a5d7d3b6449e9e11f90c381279b26390ee77e9d3cd918af5ef65fe747e4b0a",
+    "optimization_control/experiments/20261029_history_forecast/metrics.csv": "9ed8c49f781f1b48f6a266efed62156d4d04899439f5c6e7b7925a52e958cfd1",
+    "optimization_control/experiments/20261029_history_forecast/summary.txt": "51fc02843361e027ae869ab09d7129e2205fbe5883712d42fb2670c2b80e96ee",
+    "optimization_control/maddpg_wind_farm/HISTORY_FORECAST_PROTOCOL.md": "02b9b6fe7eee0663daaeb3026dbf72c87c221a2a76a3db8a0a61172f67998707",
+    "optimization_control/maddpg_wind_farm/HISTORY_FORECAST_RESULTS.md": "802168a847ac567f4f9258b1289e8cc8fec0ae337e307e9cd10a9ef6628cf70d",
+    "optimization_control/maddpg_wind_farm/configs/history_forecast.yaml": "8676d41e78dd5c1098660dc70b565ba7dc410d443f60ae6d234bb4797fa42769",
+    "optimization_control/maddpg_wind_farm/history_forecast_experiment.py": "5ef6de90562ae8fcf9f993b0326f632fd9ccefdd1d0430a17edc4ddf4d24d8c8",
+    "optimization_control/maddpg_wind_farm/history_forecast_report.py": "6604f62d2c427be7a277da22e3f3a96d1455ba56cf328a7ecc82b1751d92e131",
+    "optimization_control/maddpg_wind_farm/history_speed_search.py": "eb75afe4b1ef3dd55a5ba88ab2e2e41d74117601ea61520cb110399cfeb88ef4",
+    "optimization_control/maddpg_wind_farm/history_wind_forecast.py": "9397a743399105f9272da532098c53eb2ac481cf4d5965105541b562fe031d17",
+    "optimization_control/tests/test_history_forecast.py": "b11d00de2006ba1abf486a2d1571e6f73454cdd62f30bc8233c5f37f08329bb1",
+    "optimization_control/tests/test_history_speed_search.py": "2b3238692af70d5c3f99aac548b2d9f9a3150617747b071e831bd5247a1770b3"
+  },
+  "frozen_execution_hashes_matched": 8,
+  "forecast_metrics": 336,
+  "loop_metrics": 360,
+  "source_inventory_files": 252,
+  "PINN_mock_rows": 121366,
+  "wall_time_outlier_preserved": true
+}

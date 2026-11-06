@@ -1,0 +1,155 @@
+{
+  "status": "passed",
+  "parents": [
+    {
+      "run": 0,
+      "parent_sha256": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a",
+      "full_episodes": 256,
+      "old_fields_exact": true,
+      "effective_clip_calls": 4,
+      "memory_gradient_norms": {
+        "actor_optimizers": [
+          0.10692626982927322,
+          0.06339740008115768,
+          0.07640787214040756
+        ],
+        "critic_optimizers": [
+          0.14156372845172882,
+          0.10625181347131729,
+          0.12925761938095093
+        ]
+      },
+      "zero_adam_uninitialized": true,
+      "memory_adam_first_step": 1,
+      "target_exact": true,
+      "short_loop_equal": true,
+      "loop": [
+        {
+          "label": "original",
+          "nonzero_next_integral": 32,
+          "final_integral": -0.011923317261971534
+        },
+        {
+          "label": "zero",
+          "nonzero_next_integral": 32,
+          "final_integral": -0.011923317261971534
+        },
+        {
+          "label": "memory",
+          "nonzero_next_integral": 32,
+          "final_integral": -0.011923317261971534
+        }
+      ]
+    },
+    {
+      "run": 1,
+      "parent_sha256": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957",
+      "full_episodes": 256,
+      "old_fields_exact": true,
+      "effective_clip_calls": 3,
+      "memory_gradient_norms": {
+        "actor_optimizers": [
+          0.1392545849084854,
+          0.04410714656114578,
+          0.022688819095492363
+        ],
+        "critic_optimizers": [
+          0.1174151673913002,
+          0.10639148205518723,
+          0.07184683531522751
+        ]
+      },
+      "zero_adam_uninitialized": true,
+      "memory_adam_first_step": 1,
+      "target_exact": true,
+      "short_loop_equal": true,
+      "loop": [
+        {
+          "label": "original",
+          "nonzero_next_integral": 32,
+          "final_integral": -0.02
+        },
+        {
+          "label": "zero",
+          "nonzero_next_integral": 32,
+          "final_integral": -0.02
+        },
+        {
+          "label": "memory",
+          "nonzero_next_integral": 32,
+          "final_integral": -0.02
+        }
+      ]
+    },
+    {
+      "run": 2,
+      "parent_sha256": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b",
+      "full_episodes": 224,
+      "old_fields_exact": true,
+      "effective_clip_calls": 3,
+      "memory_gradient_norms": {
+        "actor_optimizers": [
+          0.07699907571077347,
+          0.10943333804607391,
+          0.35154959559440613
+        ],
+        "critic_optimizers": [
+          0.34484177827835083,
+          0.3943624198436737,
+          0.3750435411930084
+        ]
+      },
+      "zero_adam_uninitialized": true,
+      "memory_adam_first_step": 1,
+      "target_exact": true,
+      "short_loop_equal": true,
+      "loop": [
+        {
+          "label": "original",
+          "nonzero_next_integral": 32,
+          "final_integral": -0.015613246839493514
+        },
+        {
+          "label": "zero",
+          "nonzero_next_integral": 32,
+          "final_integral": -0.015613246839493514
+        },
+        {
+          "label": "memory",
+          "nonzero_next_integral": 32,
+          "final_integral": -0.015613246839493514
+        }
+      ]
+    }
+  ],
+  "restores": [
+    {
+      "arm": "zero",
+      "initial_and_next_fields_equal": true,
+      "next_sample_equal": true,
+      "parent_pid": 29020,
+      "child_pid": 32040,
+      "formal_load_rejected": true,
+      "input_bytes": 20461821,
+      "output_bytes": 20461821
+    },
+    {
+      "arm": "memory",
+      "initial_and_next_fields_equal": true,
+      "next_sample_equal": true,
+      "parent_pid": 29020,
+      "child_pid": 35676,
+      "formal_load_rejected": true,
+      "input_bytes": 20469721,
+      "output_bytes": 20469785
+    }
+  ],
+  "real_rows": 297,
+  "mock_rows": 0,
+  "discarded_joint_updates": 13,
+  "formal_training_steps": 0,
+  "new_test_steps": 0,
+  "old_format_and_wrong_rule_rejected": true,
+  "artifacts_before_reports_bytes": 81874191,
+  "artifact_limit_bytes": 268435456
+}

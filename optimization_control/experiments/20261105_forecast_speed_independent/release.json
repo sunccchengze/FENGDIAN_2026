@@ -1,0 +1,14 @@
+{
+  "lock_sha": "150410deb1606fdd997c62d2fda7d955d31d35d633bb8a86031007f3fa76f76d",
+  "bank_manifest_sha": "819cdfd24b3d9051b9e576f812fe4dc6d72b0b09607adac2018c61d318820230",
+  "banks": {
+    "test": {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\bank\\test.npz",
+      "sha256": "a56350cf880ae23d9ca47fc500c25efbefdf6e732187f0f8c7d6d3708d82cfe5",
+      "bytes": 19149
+    }
+  },
+  "selection_sha": "f244fb0d4bd899b549e8933fbbeb2c4013323a4aa799e1ab956f16d371fe65dd",
+  "frozen": true,
+  "model_rows": 0
+}

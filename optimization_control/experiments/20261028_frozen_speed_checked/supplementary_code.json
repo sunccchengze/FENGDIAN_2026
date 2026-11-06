@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "formal_selection_locked": true,
+  "source_sha256": {
+    "optimization_control\\maddpg_wind_farm\\frozen_speed_delivery.py": "9e44653fe14d680f068fb2a587e5c90b92b73c20d3306fe6b428d9d33460bb02"
+  },
+  "scope": "Post-selection saved-artifact audit and compact summary only; no training or surrogate calls; frozen learning/test code unchanged."
+}

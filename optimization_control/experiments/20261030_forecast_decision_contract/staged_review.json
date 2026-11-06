@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "files": [
+    {
+      "path": "optimization_control/experiments/20261030_forecast_decision_contract/config.yaml",
+      "bytes": 17896,
+      "staged_sha256": "341da9216306487b70ba08ec31a26170d4d0c043393603baba946e28409e6a1e",
+      "working_sha256": "341da9216306487b70ba08ec31a26170d4d0c043393603baba946e28409e6a1e"
+    },
+    {
+      "path": "optimization_control/experiments/20261030_forecast_decision_contract/metrics.csv",
+      "bytes": 650,
+      "staged_sha256": "d3fd101191095e0348bf291167847c5cc551a25e064b24763c24ac6b074a2221",
+      "working_sha256": "d3fd101191095e0348bf291167847c5cc551a25e064b24763c24ac6b074a2221"
+    },
+    {
+      "path": "optimization_control/experiments/20261030_forecast_decision_contract/summary.txt",
+      "bytes": 979,
+      "staged_sha256": "6472caf82b1a7ef447653a1f4523e03c1bc6dbc354e74fdc0bf4697c1039cff0",
+      "working_sha256": "6472caf82b1a7ef447653a1f4523e03c1bc6dbc354e74fdc0bf4697c1039cff0"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/FORECAST_DECISION_CONTRACT.md",
+      "bytes": 15087,
+      "staged_sha256": "fc0d9dffb65fa85c26b48d5cf716e5c1ae604dc680f58eb358b76c08f22f1632",
+      "working_sha256": "fc0d9dffb65fa85c26b48d5cf716e5c1ae604dc680f58eb358b76c08f22f1632"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/FORECAST_DECISION_CONTRACT_RESULTS.md",
+      "bytes": 16380,
+      "staged_sha256": "4582f191e2e3c5c73a153f29bb92b05673f66578c518262c0b40226482421d97",
+      "working_sha256": "4582f191e2e3c5c73a153f29bb92b05673f66578c518262c0b40226482421d97"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/configs/forecast_decision_contract.yaml",
+      "bytes": 1635,
+      "staged_sha256": "5064db4e6f4fec6ea97ce939d4444629185c22d56ce9f628baf10abc694afc7f",
+      "working_sha256": "5064db4e6f4fec6ea97ce939d4444629185c22d56ce9f628baf10abc694afc7f"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/forecast_decision_contract.py",
+      "bytes": 25308,
+      "staged_sha256": "a0f95b6a3a95e4e66a355797877f0e8f2b66e0cf8f70b413092b42bf888dbe37",
+      "working_sha256": "a0f95b6a3a95e4e66a355797877f0e8f2b66e0cf8f70b413092b42bf888dbe37"
+    },
+    {
+      "path": "optimization_control/tests/test_forecast_decision_contract.py",
+      "bytes": 6730,
+      "staged_sha256": "99fba6c6362bafe494aaa49fba8aff2f1f399617e22da239caec5196bfd2f551",
+      "working_sha256": "99fba6c6362bafe494aaa49fba8aff2f1f399617e22da239caec5196bfd2f551"
+    }
+  ],
+  "deleted_paths": [],
+  "full_diff_reviewed": true,
+  "diff_check_passed": true,
+  "unrelated_files": 0
+}

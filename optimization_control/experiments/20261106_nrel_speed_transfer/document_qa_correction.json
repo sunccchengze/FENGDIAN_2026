@@ -1,0 +1,6 @@
+{
+  "initial_check_exit_code": 1,
+  "issue": "doc table row assertion used substring count, also matching physical-table interior cells",
+  "correction": "count lines starting with controller cell; numerical results unchanged",
+  "extra_model_rows": 0
+}

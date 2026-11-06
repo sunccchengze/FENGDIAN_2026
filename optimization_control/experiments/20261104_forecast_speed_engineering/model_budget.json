@@ -1,0 +1,75 @@
+{
+  "limit": 4096,
+  "scopes": [
+    {
+      "name": "attempt_000/B_first_boundary",
+      "reserve": 516,
+      "actual": 516,
+      "api_calls": 516,
+      "status": "complete",
+      "kinds": {
+        "mock": 516
+      }
+    },
+    {
+      "name": "attempt_000/B_continuous",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "mock": 129
+      }
+    },
+    {
+      "name": "attempt_000/B_disk_resume",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "mock": 129
+      }
+    },
+    {
+      "name": "attempt_000/C_first_boundary",
+      "reserve": 516,
+      "actual": 516,
+      "api_calls": 516,
+      "status": "complete",
+      "kinds": {
+        "mock": 516
+      }
+    },
+    {
+      "name": "attempt_000/C_continuous",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "mock": 129
+      }
+    },
+    {
+      "name": "attempt_000/C_disk_resume",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "mock": 129
+      }
+    },
+    {
+      "name": "attempt_000/real_takeover",
+      "reserve": 180,
+      "actual": 180,
+      "api_calls": 180,
+      "status": "complete",
+      "kinds": {
+        "pinn": 180
+      }
+    }
+  ]
+}

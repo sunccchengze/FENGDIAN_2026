@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "status": "mechanism_complete",
+  "formal_training_steps": 0,
+  "test_rollout": false,
+  "jobs": 18,
+  "actual_mechanism_steps": 38016,
+  "reused_new_run_steps": 13824,
+  "conservative_reserved_steps": 44928,
+  "actual_handoff_steps": 6912,
+  "maximum_possible_uncommitted_steps": 0,
+  "maximum_metric_difference": 0.0,
+  "maximum_reward_components_difference": 2.9446424276800137e-08,
+  "branch_trace_rows": 31104,
+  "cross_direction_rows": 6912,
+  "own_direction_rows": 864,
+  "reused_full_validation_rows": 108,
+  "protected_files": 141,
+  "protected_files_unchanged": true,
+  "parameters_unchanged": true,
+  "actual_total_environment_steps": 44928,
+  "handoff_complete": true
+}

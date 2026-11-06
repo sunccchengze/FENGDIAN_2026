@@ -1,0 +1,23 @@
+{
+  "query_rows": 0,
+  "si_permutation_check": true,
+  "wrapped_sign_check": true,
+  "control_input_implementation_unchanged": true,
+  "three_turbine_marks": [
+    [
+      9.0,
+      -0.0010000000000012221,
+      0.08,
+      -0.016999999999999904,
+      0.045,
+      0.88,
+      0.01200000000000001,
+      0.054,
+      0.94,
+      0.027000000000000135,
+      0.069,
+      1.07
+    ]
+  ],
+  "known_model_limit": "response_compression_and_sign_disagreement_vs_synthetic_labels"
+}

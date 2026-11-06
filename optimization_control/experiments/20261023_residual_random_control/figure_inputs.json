@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "input_hashes": {
+    "optimization_control\\experiments\\20261023_residual_random_control\\selection.json": "06ca6f5584a8f674132cd539429b87aa9be9cc6c0fa33d6cfec692acef5e1aef",
+    "optimization_control\\experiments\\20261023_residual_random_control\\test\\metrics.csv": "7b9514f0ba907a960d2ad0c6d450060d0cde9ce10b1de20427bd60de84625932",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_0\\segment_001\\metrics.csv": "83daad1bbc83def7381278b061c27e8fffbd552ffcba900476eb63ebac9e16a2",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_control_run_0\\segment_000\\metrics.csv": "b87935707febfd36ee64b08fdbd8950e582414317557ddbb5e6e3ca9e8ae3ec6",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_1\\segment_000\\metrics.csv": "05d614666f8f4bc46292cd44a3d9eb3368436cbe3eeeaa19b078901388b84110",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_control_run_1\\segment_000\\metrics.csv": "a312f4294588b23ea6c2d4b452ee77b46a8caa08a26f17998f734bbcab0fbdd6",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_2\\segment_000\\metrics.csv": "d2c406d51c1e395c84d723c5148834fa8360ceaa1e3c44227f30ec7437ec1d4b",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_control_run_2\\segment_000\\metrics.csv": "fd54ec7d4cbcebe91f7c95038cdc2831aa60dda361fd722cc07c1c68d3e3015b",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_run_0\\segment_000\\metrics.csv": "6cf1d06aa573824285708fed2a30eef954ba2572551ce1cabdf7cbb5a53b21de",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_control_run_0\\segment_000\\metrics.csv": "7d4bd2d873ebb0fea353e31a204059895b7f008661dd0a7636205eaaa49b9a9d",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_run_1\\segment_000\\metrics.csv": "38bd1648b09f4566d7c03c0d93bed27dc0e791a8da72a2896c8a3cd48aa7ffb2",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_control_run_1\\segment_000\\metrics.csv": "a83f97c4cded5a21034e84b1453bda1a4307351b92b484a60ee01757383651d4",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_run_2\\segment_000\\metrics.csv": "e6204fb1de14855ba0b3359bf33c9f3a1b92fa40db19e6423f3bc450c87f459b",
+    ".\\optimization_control\\experiments\\20261023_residual_random_control\\all_control_run_2\\segment_000\\metrics.csv": "09580f0086f64ae7699bf2c2aaa792da85d626657085d88f2c8661d1550c1fa1"
+  },
+  "source_unchanged": true,
+  "new_policy_evaluations": 0,
+  "new_training_steps": 0
+}

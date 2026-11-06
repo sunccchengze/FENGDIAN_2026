@@ -1,0 +1,105 @@
+{
+  "results": [
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\A0_selected\\evaluation\\complete.json",
+      "sha256": "86005bf2f770b1e51cfe2f7eea7880f64a5f0db7eecf517b0be6c3320aca858d"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\A0_final\\evaluation\\complete.json",
+      "sha256": "14228ce3e343dc01b492bd0801a0c578be142d6f9ef3a610d07de8045ae0edd2"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\A1_selected\\evaluation\\complete.json",
+      "sha256": "4314bb59f5b756bd5703492219c670038dfad32e4182548fdb2c4ac314f1652f"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\A1_final\\evaluation\\complete.json",
+      "sha256": "37c265732273a003b8758242b1e73aef67c39a44bb31f9b7a0429efb0a7408f7"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\A2_selected\\evaluation\\complete.json",
+      "sha256": "4f681772950d0d2b641969a39bb1ab02cacaf260544da34cdb103e300b8a765a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\A2_final\\evaluation\\complete.json",
+      "sha256": "216be670d11ac0c3832202c30c1584655cfc160bc850568c3215c991958423c8"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\B0_selected\\evaluation\\complete.json",
+      "sha256": "97c1e45895c5db11ca25cf508bdd0b2f50ae952707c3a7c47a5de1f627a4bc1b"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\B0_final\\evaluation\\complete.json",
+      "sha256": "a783636a444cefe5cfd1a6f9d7162f116c64f1e40fcee1f9f27f02559b7bdf7f"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\B1_selected\\evaluation\\complete.json",
+      "sha256": "43cc25633ecae1d3072c0a6a06cb691805c678fca19a5bd4288ae404b9a2a9b4"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\B1_final\\evaluation\\complete.json",
+      "sha256": "2ccd6372eea6a0abf25fbec0ba0b8a477d60f537f31ce8c8350aa959415d75c2"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\B2_selected\\evaluation\\complete.json",
+      "sha256": "0b2f8983ba3199de3c8fc5f0c2bd903052615d2397206229e0f400ae9c11c9ed"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\B2_final\\evaluation\\complete.json",
+      "sha256": "e417069d04bc92bc8f48fed8c66418f8c9eff2e9b1032e74f3acb69a1f4133a7"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\C0_selected\\evaluation\\complete.json",
+      "sha256": "ffa14ea4571fac9cfc2a455445ba9406b5ec3e608c3edd2b825547b4db5695cf"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\C0_final\\evaluation\\complete.json",
+      "sha256": "50522be998dd84d93c590ccc68e97298fb9476e9e5b08c8c9c1ef8815cf8ccce"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\C1_selected\\evaluation\\complete.json",
+      "sha256": "738ec3567d16fce3758ef128478ce49291cdbc411f38b9f3f5438d9834c94188"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\C1_final\\evaluation\\complete.json",
+      "sha256": "33a37f045263a4793bd3710edf5b4cbbec64cb0288d680a7150595a2287340d8"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\C2_selected\\evaluation\\complete.json",
+      "sha256": "796611c75854e0433fba7c25394fcb10a331d93f334168ae702b3bb879cbccac"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\C2_final\\evaluation\\complete.json",
+      "sha256": "876f480a4577aa58ba4ade547b88861643c91f51acd70832f1b74e6afb9625df"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\parent0\\evaluation\\complete.json",
+      "sha256": "ffe5cd890c19a4fd13776ec625d5dcabbd5f4a3b0c89e0140a5e5664b3ba18c1"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\parent1\\evaluation\\complete.json",
+      "sha256": "a94f179c50d4ed53195fdf9eaff954bcd6eb5145025a2b1950724ba8cf78d930"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\parent2\\evaluation\\complete.json",
+      "sha256": "355bc97aced821a18b0744bdd364417ea3529f7df52618376eaeb5db4e10a5d0"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\p\\evaluation\\complete.json",
+      "sha256": "2375e285d6e8112e2b9976c37701dfab6b26b484653332ce4f605be66d99a6ee"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_forecast_speed_independent\\jobs\\pi\\evaluation\\complete.json",
+      "sha256": "550393659e2931c1fcb9aabcab8ba3246ba3d9a4f4e36c98b6bd60349f0053c9"
+    }
+  ],
+  "roles": 23,
+  "rollouts": 414,
+  "test_winds": 18,
+  "rows": 53406,
+  "additional_queries": 0,
+  "formal_RL_steps": 0,
+  "optimizer_updates": 0,
+  "new_weights": 0,
+  "selection_sha": "f244fb0d4bd899b549e8933fbbeb2c4013323a4aa799e1ab956f16d371fe65dd"
+}

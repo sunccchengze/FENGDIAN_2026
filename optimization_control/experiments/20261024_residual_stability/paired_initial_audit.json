@@ -1,0 +1,53 @@
+{
+  "paired_initials": [
+    {
+      "run_id": 0,
+      "initial_equal_except_actor_lr": true,
+      "noise_equal": true
+    },
+    {
+      "run_id": 1,
+      "initial_equal_except_actor_lr": true,
+      "noise_equal": true
+    },
+    {
+      "run_id": 2,
+      "initial_equal_except_actor_lr": true,
+      "noise_equal": true
+    }
+  ],
+  "all_checkpoint_lr_count": 30,
+  "all_checkpoint_lr_correct": true,
+  "checkpoints": [
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_000\\step_00000000.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_000\\step_00002048.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_001\\step_00004096.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_001\\step_00006144.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_0\\segment_001\\step_00008192.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_1\\segment_000\\step_00000000.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_1\\segment_000\\step_00002048.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_1\\segment_000\\step_00004096.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_1\\segment_000\\step_00006144.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_1\\segment_000\\step_00008192.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_2\\segment_000\\step_00000000.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_2\\segment_000\\step_00002048.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_2\\segment_000\\step_00004096.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_2\\segment_000\\step_00006144.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\baseline_run_2\\segment_000\\step_00008192.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_0\\segment_000\\step_00000000.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_0\\segment_000\\step_00002048.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_0\\segment_000\\step_00004096.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_0\\segment_000\\step_00006144.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_0\\segment_000\\step_00008192.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_1\\segment_000\\step_00000000.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_1\\segment_000\\step_00002048.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_1\\segment_000\\step_00004096.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_1\\segment_000\\step_00006144.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_1\\segment_000\\step_00008192.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_2\\segment_000\\step_00000000.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_2\\segment_000\\step_00002048.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_2\\segment_000\\step_00004096.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_2\\segment_000\\step_00006144.pth",
+    "optimization_control\\experiments\\20261024_residual_stability\\low_lr_run_2\\segment_000\\step_00008192.pth"
+  ]
+}
