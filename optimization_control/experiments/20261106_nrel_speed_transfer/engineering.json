@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "rows": 160,
+  "PINN_rows": 120,
+  "mock_rows": 40,
+  "outcomes": [
+    {
+      "controller": "Y0_selected",
+      "rule": "legacy",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\engineering\\Y0_selected_legacy.pt",
+        "sha256": "6f83a7f90bef0d73f2e13ec58c2184ed4fcaac89e351a389769ba62cf95e7617",
+        "bytes": 24109
+      },
+      "budget": {
+        "name": "engineering/Y0_selected_legacy",
+        "reserve": 20,
+        "actual": 20,
+        "api_calls": 20,
+        "status": "complete",
+        "kinds": {
+          "PINN": 20
+        }
+      },
+      "old_path_exact": true
+    },
+    {
+      "controller": "Y0_selected",
+      "rule": "nrel",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\engineering\\Y0_selected_nrel.pt",
+        "sha256": "f1c50320cafd54faa9be1b6f6759dd58d59c69fd8386b2df760f8a9c2a2cb247",
+        "bytes": 23725
+      },
+      "budget": {
+        "name": "engineering/Y0_selected_nrel",
+        "reserve": 20,
+        "actual": 20,
+        "api_calls": 20,
+        "status": "complete",
+        "kinds": {
+          "PINN": 20
+        }
+      },
+      "old_path_exact": false
+    },
+    {
+      "controller": "Y1_selected",
+      "rule": "legacy",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\engineering\\Y1_selected_legacy.pt",
+        "sha256": "0a52c41bb64e33a496ba169ca62d7957c1774d103a0a7e17cfc8e1b68410c538",
+        "bytes": 23789
+      },
+      "budget": {
+        "name": "engineering/Y1_selected_legacy",
+        "reserve": 20,
+        "actual": 20,
+        "api_calls": 20,
+        "status": "complete",
+        "kinds": {
+          "PINN": 20
+        }
+      },
+      "old_path_exact": true
+    },
+    {
+      "controller": "Y1_selected",
+      "rule": "nrel",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\engineering\\Y1_selected_nrel.pt",
+        "sha256": "6e21246374b5d2d1909288ae22db175ee553534be9f8b6d723803e37f909246f",
+        "bytes": 23341
+      },
+      "budget": {
+        "name": "engineering/Y1_selected_nrel",
+        "reserve": 20,
+        "actual": 20,
+        "api_calls": 20,
+        "status": "complete",
+        "kinds": {
+          "PINN": 20
+        }
+      },
+      "old_path_exact": false
+    },
+    {
+      "controller": "Y2_selected",
+      "rule": "legacy",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\engineering\\Y2_selected_legacy.pt",
+        "sha256": "d3a4806d0106f9445c706308e5400d23c0c26860f872159765a03cd5f75481ab",
+        "bytes": 24109
+      },
+      "budget": {
+        "name": "engineering/Y2_selected_legacy",
+        "reserve": 20,
+        "actual": 20,
+        "api_calls": 20,
+        "status": "complete",
+        "kinds": {
+          "PINN": 20
+        }
+      },
+      "old_path_exact": true
+    },
+    {
+      "controller": "Y2_selected",
+      "rule": "nrel",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\engineering\\Y2_selected_nrel.pt",
+        "sha256": "ac3386c9633978cdb4e82be6a69a0c1abe062b0c8579e57f993dabfb90e469b2",
+        "bytes": 23981
+      },
+      "budget": {
+        "name": "engineering/Y2_selected_nrel",
+        "reserve": 20,
+        "actual": 20,
+        "api_calls": 20,
+        "status": "complete",
+        "kinds": {
+          "PINN": 20
+        }
+      },
+      "old_path_exact": false
+    }
+  ],
+  "old_prefix_pairs_exact": 3,
+  "old_observation_speed_previous_action_checked": true,
+  "actual_bounds_and_rates_passed": true,
+  "same_mock_reset_trajectory_exact": true,
+  "training_steps": 0,
+  "optimizer_updates": 0
+}

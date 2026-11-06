@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "passed": true,
+  "branches": 1902,
+  "environment_steps": 64512,
+  "formal_training_steps": 0,
+  "optimizer_updates": 0,
+  "max_return_recompute_error": 0.0,
+  "max_reward_terms_rounding": 1.4899916201023544e-08,
+  "max_power_error_w": 0.0,
+  "max_gamma_error": 0.0,
+  "old_experiments_read_only": true,
+  "finite_return_not_long_run_Q": true
+}

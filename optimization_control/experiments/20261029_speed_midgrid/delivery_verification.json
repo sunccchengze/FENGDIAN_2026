@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "surrogate_calls": 0,
+  "formal_RL_steps": 0,
+  "independent_metric_error": 0.0,
+  "independent_cost_error": 4.440892098500626e-16,
+  "same_actual_obs_parent_actions_exact": true,
+  "parent_rng_unchanged": true,
+  "saved_action_trace_exact": true,
+  "previous_action_features_exact": true,
+  "parent_pitch_yaw_commands_exact": true,
+  "initial_common_world_prefix9_exact_cases": 36,
+  "actual_steps": 4608,
+  "observed_wind_feature_max_error": 0.0,
+  "original_cached_trace_rows_exact": 36864,
+  "all_scenarios_same_wind_target": true,
+  "charged_model_rows": 120785,
+  "old_inventory_unchanged": true,
+  "source_and_execution_hashes_unchanged": true,
+  "checker_sha256": "ff9092f2c36c277cb0bb50074d47c55ff84670025a7b252ed413134a084eeea4"
+}

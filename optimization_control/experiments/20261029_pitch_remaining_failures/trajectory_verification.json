@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "routine_cases": 36,
+  "distinct_waveforms": 15,
+  "selected_slots": 108,
+  "selected_worse_pi": 11,
+  "recurrent_cases_at_least_2_runs": 3,
+  "recurrent_waveforms_at_least_2_runs": 2,
+  "failures_with_positive_bias_square_difference": 10,
+  "failures_with_negative_variance_difference": 10,
+  "saved_metric_max_abs_residual": 0.00018310546875,
+  "shared_weather_verified": true,
+  "original_selection_cases_without_pi": 18,
+  "pressure_excluded_from_candidate": true,
+  "model_forward_rows": 0,
+  "environment_steps": 0,
+  "optimizer_updates": 0
+}

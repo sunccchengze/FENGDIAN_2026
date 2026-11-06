@@ -1,0 +1,1055 @@
+{
+  "seed": 42,
+  "row_cap": 50000,
+  "planned_rows": 41796,
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "new_test_cases": 0,
+  "storage_cap_bytes": 134217728,
+  "cases": {
+    "known": [
+      {
+        "id": "train_episode_0_initial_0.025",
+        "split": "train",
+        "family": "ramp",
+        "target_w": 3800000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb.csv",
+        "wave_sha256": "4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb"
+      },
+      {
+        "id": "train_episode_0_initial_0.055",
+        "split": "train",
+        "family": "ramp",
+        "target_w": 3800000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb.csv",
+        "wave_sha256": "4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb"
+      },
+      {
+        "id": "train_episode_1_initial_0.025",
+        "split": "train",
+        "family": "stationary",
+        "target_w": 3200000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4.csv",
+        "wave_sha256": "2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4"
+      },
+      {
+        "id": "train_episode_1_initial_0.055",
+        "split": "train",
+        "family": "stationary",
+        "target_w": 3200000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4.csv",
+        "wave_sha256": "2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4"
+      },
+      {
+        "id": "train_episode_2_initial_0.025",
+        "split": "train",
+        "family": "gust",
+        "target_w": 3200000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1.csv",
+        "wave_sha256": "2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1"
+      },
+      {
+        "id": "train_episode_2_initial_0.055",
+        "split": "train",
+        "family": "gust",
+        "target_w": 3200000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1.csv",
+        "wave_sha256": "2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1"
+      },
+      {
+        "id": "train_episode_3_initial_0.025",
+        "split": "train",
+        "family": "stationary",
+        "target_w": 2600000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d.csv",
+        "wave_sha256": "7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d"
+      },
+      {
+        "id": "train_episode_3_initial_0.055",
+        "split": "train",
+        "family": "stationary",
+        "target_w": 2600000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d.csv",
+        "wave_sha256": "7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d"
+      },
+      {
+        "id": "train_episode_4_initial_0.025",
+        "split": "train",
+        "family": "gust",
+        "target_w": 2600000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de.csv",
+        "wave_sha256": "bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de"
+      },
+      {
+        "id": "train_episode_4_initial_0.055",
+        "split": "train",
+        "family": "gust",
+        "target_w": 2600000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de.csv",
+        "wave_sha256": "bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de"
+      },
+      {
+        "id": "train_episode_5_initial_0.025",
+        "split": "train",
+        "family": "ramp",
+        "target_w": 3200000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b.csv",
+        "wave_sha256": "c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b"
+      },
+      {
+        "id": "train_episode_5_initial_0.055",
+        "split": "train",
+        "family": "ramp",
+        "target_w": 3200000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b.csv",
+        "wave_sha256": "c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b"
+      },
+      {
+        "id": "train_episode_6_initial_0.025",
+        "split": "train",
+        "family": "ramp",
+        "target_w": 2600000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd.csv",
+        "wave_sha256": "9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd"
+      },
+      {
+        "id": "train_episode_6_initial_0.055",
+        "split": "train",
+        "family": "ramp",
+        "target_w": 2600000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd.csv",
+        "wave_sha256": "9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd"
+      },
+      {
+        "id": "train_episode_7_initial_0.025",
+        "split": "train",
+        "family": "gust",
+        "target_w": 3800000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f.csv",
+        "wave_sha256": "a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f"
+      },
+      {
+        "id": "train_episode_7_initial_0.055",
+        "split": "train",
+        "family": "gust",
+        "target_w": 3800000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f.csv",
+        "wave_sha256": "a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f"
+      },
+      {
+        "id": "train_episode_8_initial_0.025",
+        "split": "train",
+        "family": "stationary",
+        "target_w": 3800000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b.csv",
+        "wave_sha256": "e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b"
+      },
+      {
+        "id": "train_episode_8_initial_0.055",
+        "split": "train",
+        "family": "stationary",
+        "target_w": 3800000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b.csv",
+        "wave_sha256": "e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b"
+      },
+      {
+        "id": "validation_stationary_0_pitch0.04_initial_0.025",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 2850000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1.csv",
+        "wave_sha256": "7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1"
+      },
+      {
+        "id": "validation_stationary_0_pitch0.04_initial_0.04",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 2850000.0,
+        "initial_pitch_rad": 0.04,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1.csv",
+        "wave_sha256": "7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1"
+      },
+      {
+        "id": "validation_stationary_0_pitch0.04_initial_0.055",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 2850000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1.csv",
+        "wave_sha256": "7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1"
+      },
+      {
+        "id": "validation_stationary_1_pitch0.04_initial_0.025",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 3450000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98.csv",
+        "wave_sha256": "f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98"
+      },
+      {
+        "id": "validation_stationary_1_pitch0.04_initial_0.04",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 3450000.0,
+        "initial_pitch_rad": 0.04,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98.csv",
+        "wave_sha256": "f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98"
+      },
+      {
+        "id": "validation_stationary_1_pitch0.04_initial_0.055",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 3450000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98.csv",
+        "wave_sha256": "f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98"
+      },
+      {
+        "id": "validation_ramp_0_pitch0.04_initial_0.025",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 2850000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1.csv",
+        "wave_sha256": "d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1"
+      },
+      {
+        "id": "validation_ramp_0_pitch0.04_initial_0.04",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 2850000.0,
+        "initial_pitch_rad": 0.04,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1.csv",
+        "wave_sha256": "d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1"
+      },
+      {
+        "id": "validation_ramp_0_pitch0.04_initial_0.055",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 2850000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1.csv",
+        "wave_sha256": "d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1"
+      },
+      {
+        "id": "validation_ramp_1_pitch0.04_initial_0.025",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 3450000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb.csv",
+        "wave_sha256": "ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb"
+      },
+      {
+        "id": "validation_ramp_1_pitch0.04_initial_0.04",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 3450000.0,
+        "initial_pitch_rad": 0.04,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb.csv",
+        "wave_sha256": "ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb"
+      },
+      {
+        "id": "validation_ramp_1_pitch0.04_initial_0.055",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 3450000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb.csv",
+        "wave_sha256": "ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb"
+      },
+      {
+        "id": "validation_gust_0_pitch0.04_initial_0.025",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 2850000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c.csv",
+        "wave_sha256": "14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c"
+      },
+      {
+        "id": "validation_gust_0_pitch0.04_initial_0.04",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 2850000.0,
+        "initial_pitch_rad": 0.04,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c.csv",
+        "wave_sha256": "14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c"
+      },
+      {
+        "id": "validation_gust_0_pitch0.04_initial_0.055",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 2850000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c.csv",
+        "wave_sha256": "14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c"
+      },
+      {
+        "id": "validation_gust_1_pitch0.04_initial_0.025",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 3450000.0,
+        "initial_pitch_rad": 0.025,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8.csv",
+        "wave_sha256": "084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8"
+      },
+      {
+        "id": "validation_gust_1_pitch0.04_initial_0.04",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 3450000.0,
+        "initial_pitch_rad": 0.04,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8.csv",
+        "wave_sha256": "084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8"
+      },
+      {
+        "id": "validation_gust_1_pitch0.04_initial_0.055",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 3450000.0,
+        "initial_pitch_rad": 0.055,
+        "collection": "known",
+        "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8.csv",
+        "wave_sha256": "084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8"
+      }
+    ],
+    "validation": [
+      {
+        "id": "validation_stationary_t2.9e+06_r0_p0.025",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 2900000.0,
+        "initial_pitch_rad": 0.025,
+        "episode": 72000000,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000000.csv"
+      },
+      {
+        "id": "validation_stationary_t2.9e+06_r0_p0.04",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 2900000.0,
+        "initial_pitch_rad": 0.04,
+        "episode": 72000000,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000000.csv"
+      },
+      {
+        "id": "validation_stationary_t2.9e+06_r0_p0.055",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 2900000.0,
+        "initial_pitch_rad": 0.055,
+        "episode": 72000000,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000000.csv"
+      },
+      {
+        "id": "validation_stationary_t3.5e+06_r0_p0.025",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 3500000.0,
+        "initial_pitch_rad": 0.025,
+        "episode": 72000010,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000010.csv"
+      },
+      {
+        "id": "validation_stationary_t3.5e+06_r0_p0.04",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 3500000.0,
+        "initial_pitch_rad": 0.04,
+        "episode": 72000010,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000010.csv"
+      },
+      {
+        "id": "validation_stationary_t3.5e+06_r0_p0.055",
+        "split": "validation",
+        "family": "stationary",
+        "target_w": 3500000.0,
+        "initial_pitch_rad": 0.055,
+        "episode": 72000010,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000010.csv"
+      },
+      {
+        "id": "validation_ramp_t2.9e+06_r0_p0.025",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 2900000.0,
+        "initial_pitch_rad": 0.025,
+        "episode": 72000100,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000100.csv"
+      },
+      {
+        "id": "validation_ramp_t2.9e+06_r0_p0.04",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 2900000.0,
+        "initial_pitch_rad": 0.04,
+        "episode": 72000100,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000100.csv"
+      },
+      {
+        "id": "validation_ramp_t2.9e+06_r0_p0.055",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 2900000.0,
+        "initial_pitch_rad": 0.055,
+        "episode": 72000100,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000100.csv"
+      },
+      {
+        "id": "validation_ramp_t3.5e+06_r0_p0.025",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 3500000.0,
+        "initial_pitch_rad": 0.025,
+        "episode": 72000110,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000110.csv"
+      },
+      {
+        "id": "validation_ramp_t3.5e+06_r0_p0.04",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 3500000.0,
+        "initial_pitch_rad": 0.04,
+        "episode": 72000110,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000110.csv"
+      },
+      {
+        "id": "validation_ramp_t3.5e+06_r0_p0.055",
+        "split": "validation",
+        "family": "ramp",
+        "target_w": 3500000.0,
+        "initial_pitch_rad": 0.055,
+        "episode": 72000110,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000110.csv"
+      },
+      {
+        "id": "validation_gust_t2.9e+06_r0_p0.025",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 2900000.0,
+        "initial_pitch_rad": 0.025,
+        "episode": 72000200,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000200.csv"
+      },
+      {
+        "id": "validation_gust_t2.9e+06_r0_p0.04",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 2900000.0,
+        "initial_pitch_rad": 0.04,
+        "episode": 72000200,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000200.csv"
+      },
+      {
+        "id": "validation_gust_t2.9e+06_r0_p0.055",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 2900000.0,
+        "initial_pitch_rad": 0.055,
+        "episode": 72000200,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000200.csv"
+      },
+      {
+        "id": "validation_gust_t3.5e+06_r0_p0.025",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 3500000.0,
+        "initial_pitch_rad": 0.025,
+        "episode": 72000210,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000210.csv"
+      },
+      {
+        "id": "validation_gust_t3.5e+06_r0_p0.04",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 3500000.0,
+        "initial_pitch_rad": 0.04,
+        "episode": 72000210,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000210.csv"
+      },
+      {
+        "id": "validation_gust_t3.5e+06_r0_p0.055",
+        "split": "validation",
+        "family": "gust",
+        "target_w": 3500000.0,
+        "initial_pitch_rad": 0.055,
+        "episode": 72000210,
+        "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000210.csv"
+      }
+    ]
+  },
+  "sources": {
+    "known": [
+      {
+        "arm": "parent",
+        "role": "initial",
+        "run": 0,
+        "legacy_reference": {
+          "arm": "parent",
+          "run": 0,
+          "collection": "known",
+          "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run0_initial\\attempt_000\\metrics.csv",
+          "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run0_initial\\attempt_000\\traces.csv.gz",
+          "metrics_sha256": "a62c38ef1549a792d64f7b8002d76f22d83c6161dd60462e36e96af5dea7d821",
+          "traces_sha256": "21d1ef4910b6adaca9f6c5c5a7e528d75ba50fab3dab8090381411ce51c547ae",
+          "cases": 36
+        }
+      },
+      {
+        "arm": "parent",
+        "role": "initial",
+        "run": 1,
+        "legacy_reference": {
+          "arm": "parent",
+          "run": 1,
+          "collection": "known",
+          "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run1_initial\\attempt_000\\metrics.csv",
+          "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run1_initial\\attempt_000\\traces.csv.gz",
+          "metrics_sha256": "ad35842907d08cc0bfd82017ce42adf712da269beba6c6a7c4017b12854a96c7",
+          "traces_sha256": "1195e34fdb88f5911abc47e31aa512bc1dbf49443dc653e47b3213eb89658147",
+          "cases": 36
+        }
+      },
+      {
+        "arm": "parent",
+        "role": "initial",
+        "run": 2,
+        "legacy_reference": {
+          "arm": "parent",
+          "run": 2,
+          "collection": "known",
+          "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run2_initial\\attempt_000\\metrics.csv",
+          "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run2_initial\\attempt_000\\traces.csv.gz",
+          "metrics_sha256": "47e44b9cfde431d614eb66ce52c378fc1337944d276b7fae11dc2ce05d2689a4",
+          "traces_sha256": "8cb376d7a29c0ab3942ff11fa588b059b5716666807ad225f621c83ca3dd0b92",
+          "cases": 36
+        }
+      },
+      {
+        "arm": "p",
+        "role": "p",
+        "run": -1,
+        "legacy_reference": {
+          "arm": "p",
+          "run": -1,
+          "collection": "known",
+          "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\p\\attempt_000\\metrics.csv",
+          "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\p\\attempt_000\\traces.csv.gz",
+          "metrics_sha256": "0da908c67218845efb61db961ea6c34d067f879e3fe251b974552d26b2d5cd69",
+          "traces_sha256": "bf862ed4430c57ec62f8ef34ee4f24292adda102f7268d0197ff7891214a7e0c",
+          "cases": 36
+        }
+      },
+      {
+        "arm": "pi",
+        "role": "pi",
+        "run": -1,
+        "legacy_reference": {
+          "arm": "pi",
+          "run": -1,
+          "collection": "known",
+          "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\pi\\attempt_000\\metrics.csv",
+          "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\pi\\attempt_000\\traces.csv.gz",
+          "metrics_sha256": "33e0ba5c803cec01edfb72cb3510d3ad4ffc682b5e72211dddfc543da82a7553",
+          "traces_sha256": "696f14167277eb301d160b9a8fa2f38d8dabe94b06f73b5a1d618279254eb4cd",
+          "cases": 36
+        }
+      },
+      {
+        "arm": "zero",
+        "run": 0,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_0_selected\\cases.json",
+        "state_sha256": "6416fbce74b9acd9b8bb79813e487751375577369f7c07542691ff7965cfff92"
+      },
+      {
+        "arm": "zero",
+        "run": 0,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_0_final\\cases.json",
+        "state_sha256": "03b7139e82926eccb2fe972db64d27afe9b37494889634e1cd36a95e2e077c11"
+      },
+      {
+        "arm": "memory",
+        "run": 0,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_0_selected\\cases.json",
+        "state_sha256": "4856dfae61856ed2152383b9de19a75a504f179bf8795029819efbfe00b636b9"
+      },
+      {
+        "arm": "memory",
+        "run": 0,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_0_final\\cases.json",
+        "state_sha256": "d6069718c80ee0e30e16cb06110adc047fedaa01927ae67434fcd9855558125d"
+      },
+      {
+        "arm": "zero",
+        "run": 1,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_1_selected\\cases.json",
+        "state_sha256": "89dfc6640d6e6841b1e0a6319c69c62437befef86e12a635a11b014ca65c7e68"
+      },
+      {
+        "arm": "zero",
+        "run": 1,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_1_final\\cases.json",
+        "state_sha256": "adfecd99a585f764d4f6b39bffe78f728b8653f0c99496642b59cd40be726d4f"
+      },
+      {
+        "arm": "memory",
+        "run": 1,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_1_selected\\cases.json",
+        "state_sha256": "57e78a5a85b05b2836e4aca2fd5eb87f8f8c70902eb38ed232892fa3899cba70"
+      },
+      {
+        "arm": "memory",
+        "run": 1,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_1_final\\cases.json",
+        "state_sha256": "74436ffbda6489c02396e86d229b523ee88a384e898f9b28c49731493dc04e4d"
+      },
+      {
+        "arm": "zero",
+        "run": 2,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_2_selected\\cases.json",
+        "state_sha256": "610da46dcf79c9413bf14041e6c8504ffd540b8d521c7b84115003ec436ef908"
+      },
+      {
+        "arm": "zero",
+        "run": 2,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_2_final\\cases.json",
+        "state_sha256": "72ea2c51669dc328cd3f39a99d4562df491f7511cb42c886226693a7f0c93a51"
+      },
+      {
+        "arm": "memory",
+        "run": 2,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_2_selected\\cases.json",
+        "state_sha256": "5c8de222dc12ecea7f18f34b237835345afabb843af49e6033f4c8fc71dc2911"
+      },
+      {
+        "arm": "memory",
+        "run": 2,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_2_final\\cases.json",
+        "state_sha256": "a728d9bf97ea2ac2059d5fa62102bd42f5d405bfaa8c27978d2c618a356f3bc4"
+      }
+    ],
+    "validation": [
+      {
+        "arm": "p",
+        "run": -1,
+        "role": "p",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\validation\\p\\cases.json"
+      },
+      {
+        "arm": "pi",
+        "run": -1,
+        "role": "pi",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\validation\\pi\\cases.json"
+      },
+      {
+        "arm": "zero",
+        "run": 0,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00012288\\validation\\cases.json"
+      },
+      {
+        "arm": "zero",
+        "run": 0,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00016384\\validation\\cases.json"
+      },
+      {
+        "arm": "memory",
+        "run": 0,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00012288\\validation\\cases.json"
+      },
+      {
+        "arm": "memory",
+        "run": 0,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00016384\\validation\\cases.json"
+      },
+      {
+        "arm": "zero",
+        "run": 1,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00008192\\validation\\cases.json"
+      },
+      {
+        "arm": "zero",
+        "run": 1,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00016384\\validation\\cases.json"
+      },
+      {
+        "arm": "memory",
+        "run": 1,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00008192\\validation\\cases.json"
+      },
+      {
+        "arm": "memory",
+        "run": 1,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00016384\\validation\\cases.json"
+      },
+      {
+        "arm": "zero",
+        "run": 2,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00000000\\validation\\cases.json"
+      },
+      {
+        "arm": "zero",
+        "run": 2,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00016384\\validation\\cases.json"
+      },
+      {
+        "arm": "memory",
+        "run": 2,
+        "role": "selected",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00008192\\validation\\cases.json"
+      },
+      {
+        "arm": "memory",
+        "run": 2,
+        "role": "final",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00016384\\validation\\cases.json"
+      },
+      {
+        "arm": "parent",
+        "run": 0,
+        "role": "initial",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00000000\\validation\\cases.json"
+      },
+      {
+        "arm": "parent",
+        "run": 1,
+        "role": "initial",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00000000\\validation\\cases.json"
+      },
+      {
+        "arm": "parent",
+        "run": 2,
+        "role": "initial",
+        "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00000000\\validation\\cases.json"
+      }
+    ]
+  },
+  "states": [
+    {
+      "arm": "zero",
+      "run": 0,
+      "role": "initial",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00000000\\state.pth",
+      "sha256": "61330b2c0e28ab5cd94a140a39f03c61304211a3a0ffbeacdc005efd24aeb1af"
+    },
+    {
+      "arm": "zero",
+      "run": 0,
+      "role": "selected",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00012288\\state.pth",
+      "sha256": "6416fbce74b9acd9b8bb79813e487751375577369f7c07542691ff7965cfff92"
+    },
+    {
+      "arm": "zero",
+      "run": 0,
+      "role": "final",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00016384\\state.pth",
+      "sha256": "03b7139e82926eccb2fe972db64d27afe9b37494889634e1cd36a95e2e077c11"
+    },
+    {
+      "arm": "memory",
+      "run": 0,
+      "role": "initial",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00000000\\state.pth",
+      "sha256": "b3a8aa44c96d44788a636b2b3754408f0c9ef19335647aafbfa855236bb1a682"
+    },
+    {
+      "arm": "memory",
+      "run": 0,
+      "role": "selected",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00012288\\state.pth",
+      "sha256": "4856dfae61856ed2152383b9de19a75a504f179bf8795029819efbfe00b636b9"
+    },
+    {
+      "arm": "memory",
+      "run": 0,
+      "role": "final",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00016384\\state.pth",
+      "sha256": "d6069718c80ee0e30e16cb06110adc047fedaa01927ae67434fcd9855558125d"
+    },
+    {
+      "arm": "zero",
+      "run": 1,
+      "role": "initial",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00000000\\state.pth",
+      "sha256": "3229dc65e86813c87fe360ffd691a15237091338de22115824ebf30981a45db8"
+    },
+    {
+      "arm": "zero",
+      "run": 1,
+      "role": "selected",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00008192\\state.pth",
+      "sha256": "89dfc6640d6e6841b1e0a6319c69c62437befef86e12a635a11b014ca65c7e68"
+    },
+    {
+      "arm": "zero",
+      "run": 1,
+      "role": "final",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00016384\\state.pth",
+      "sha256": "adfecd99a585f764d4f6b39bffe78f728b8653f0c99496642b59cd40be726d4f"
+    },
+    {
+      "arm": "memory",
+      "run": 1,
+      "role": "initial",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00000000\\state.pth",
+      "sha256": "9ba482007b97c4981cceb13f04a8826c748d756d2a8ad0301c405b19388a4497"
+    },
+    {
+      "arm": "memory",
+      "run": 1,
+      "role": "selected",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00008192\\state.pth",
+      "sha256": "57e78a5a85b05b2836e4aca2fd5eb87f8f8c70902eb38ed232892fa3899cba70"
+    },
+    {
+      "arm": "memory",
+      "run": 1,
+      "role": "final",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00016384\\state.pth",
+      "sha256": "74436ffbda6489c02396e86d229b523ee88a384e898f9b28c49731493dc04e4d"
+    },
+    {
+      "arm": "zero",
+      "run": 2,
+      "role": "initial",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00000000\\state.pth",
+      "sha256": "610da46dcf79c9413bf14041e6c8504ffd540b8d521c7b84115003ec436ef908"
+    },
+    {
+      "arm": "zero",
+      "run": 2,
+      "role": "selected",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00000000\\state.pth",
+      "sha256": "610da46dcf79c9413bf14041e6c8504ffd540b8d521c7b84115003ec436ef908"
+    },
+    {
+      "arm": "zero",
+      "run": 2,
+      "role": "final",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00016384\\state.pth",
+      "sha256": "72ea2c51669dc328cd3f39a99d4562df491f7511cb42c886226693a7f0c93a51"
+    },
+    {
+      "arm": "memory",
+      "run": 2,
+      "role": "initial",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00000000\\state.pth",
+      "sha256": "e0339d85a9d1d87318d2d5e27294043dbef9efdbcc18d4f1fbc713f3476e9244"
+    },
+    {
+      "arm": "memory",
+      "run": 2,
+      "role": "selected",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00008192\\state.pth",
+      "sha256": "5c8de222dc12ecea7f18f34b237835345afabb843af49e6033f4c8fc71dc2911"
+    },
+    {
+      "arm": "memory",
+      "run": 2,
+      "role": "final",
+      "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00016384\\state.pth",
+      "sha256": "a728d9bf97ea2ac2059d5fa62102bd42f5d405bfaa8c27978d2c618a356f3bc4"
+    },
+    {
+      "arm": "parent",
+      "run": 0,
+      "role": "initial",
+      "path": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth",
+      "sha256": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a"
+    },
+    {
+      "arm": "parent",
+      "run": 1,
+      "role": "initial",
+      "path": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth",
+      "sha256": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957"
+    },
+    {
+      "arm": "parent",
+      "run": 2,
+      "role": "initial",
+      "path": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth",
+      "sha256": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b"
+    }
+  ],
+  "hashes": {
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_ERROR_MEMORY_ABLATION_PROTOCOL.md": "8d7bb9fa6633c7a125a767c980a4168b99a9d3dd2847e3bc978efe4e6972845e",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_memory_ablation.py": "df23f33ce9afab08b3f980a2ea0e3b1484c6eda60ddad6757e690685c51e9775",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_memory_ablation_report.py": "0a1e3a4cdd53a84948f21ec93f3188e2e1af9401d2a2f440fe7ff43c5cc45ccd",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\config.yaml": "63feab0690b2ca2c32d4f396104bf8cb9c3b32c11df5d0ac93833bef08e40e2b",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\input_lock.json": "d8b4b1ddebe53fef98234f1ab9c67c7df6ffbe0ced71ab7aaa3877e58e4e1478",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\selection.json": "25db8663ebeaec2f13f8098443af162f9f789cce4b79ae8fb70a1a810bf609ee",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\known_sources.json": "d207167e4652e356f08ca39f3b9142348139ad03b718251f7ca63d43dce3361c",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\known_index.json": "139736ed2a74eb5be34f2e73791b2475ab50b4d2c479fdc5af65e4fb21418c86",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_index.json": "aca9970b1aea1c4fd1d19fea36312e5825ed2f5968aa2d184b4aadc93eba9efe",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\manifest.json": "e13c23e6c9835dcd446738dd2633e14729dcede116745f8cd9fb567bdcd06929",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\light_manifest.csv": "ed31b3bfaf4b122e9ff645157eb7f1483afa1046bfd6bf55ecf153f062e70b76",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\training_manifest.csv": "8ae26b37c1ec734644370ea21fc8a59e38162616ea242eb1f59b324a887632b5",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb.csv": "d6a57c1fbba71ca3bfa65f8e968094f6e0414f02ff5fdc95cc7de10d4ae635e6",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4.csv": "c10737c15352ead4b26cf42981dcbe0d651ffdedc6b8741da668075f075fd9cc",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1.csv": "3012fdd630817f6afdfb73170511ff9786332abda71d6977adc3c2a28888d774",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d.csv": "37f47a309bab184db79c37af76af43b6966d966ed90edb02bcdb96b24bdaf679",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de.csv": "2ce95638e341a103ee6c31e988eeb8866324093245e212504fe47bd8bcc51e71",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b.csv": "efe6b7db145a5caac17e3dc3295a1cb5de285baebf5cc035c43a6b5a404fd742",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd.csv": "a173ee95718840b62bbd7ffd0a84b30222136a424b9dc29e016ae52fd4a294d9",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f.csv": "7b87d49730823e896421ac637a608cd805b695e57dc250c276c469a397449c26",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b.csv": "438ae9a5a920f8960e61b4845813655a81eddbb9ec9c9f78ec74c770e811c2be",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1.csv": "0a3b91543f302887d7e634c9480727a129136e4eb9ed088ae58019dad1255263",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98.csv": "1b3334d5e268b8c7a7e9b40f91bf782507657edfde199998114f28c4a367429a",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1.csv": "c50f6d56c58b405417362e318a2b3c35bfc8a2ff3cbb9a178edafea638824b4d",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb.csv": "bf3fc0ee619f31d6765ee52dcefaff1f73107445d00253486cde92185dd57e2d",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c.csv": "6ea6b0b01c91d41ece38b7063ce1acae84a1db3f3810b8c8c0b6f36e69016c7b",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8.csv": "0f51f4fb0ef828b453d708a41dbe6ac5db30beb88de87105afd0c39dd048b5d7",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000000.csv": "d94571af8ad7b5b8fab1e2dd0edde0395984791092224a0338c4e5a3ca798f65",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000010.csv": "7e5ca062469ffdab60a845940d5188a36cb5c46fe7b9f39a919ea17e4a547732",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000100.csv": "2177a6db989bb4525f5a759cef833aead012eb446a8781271d669acb9c0ada9b",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000110.csv": "f03e1a74cbf710fa5646c61331e3deb6e95b0a5b616bae0bbb70c00a9aed1a10",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000200.csv": "c98c4854d254524d9677a43f7ded0e00b1dd4e0d9bbaa5a0ef1b00fc51bace84",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000210.csv": "6d197bd7c6ecbbc4bc40038203276dfbfb0c8f4620b9322d36e2b757d6db5c07",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00000000\\state.pth": "61330b2c0e28ab5cd94a140a39f03c61304211a3a0ffbeacdc005efd24aeb1af",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00012288\\state.pth": "6416fbce74b9acd9b8bb79813e487751375577369f7c07542691ff7965cfff92",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00016384\\state.pth": "03b7139e82926eccb2fe972db64d27afe9b37494889634e1cd36a95e2e077c11",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00000000\\state.pth": "b3a8aa44c96d44788a636b2b3754408f0c9ef19335647aafbfa855236bb1a682",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00012288\\state.pth": "4856dfae61856ed2152383b9de19a75a504f179bf8795029819efbfe00b636b9",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00016384\\state.pth": "d6069718c80ee0e30e16cb06110adc047fedaa01927ae67434fcd9855558125d",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00000000\\state.pth": "3229dc65e86813c87fe360ffd691a15237091338de22115824ebf30981a45db8",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00008192\\state.pth": "89dfc6640d6e6841b1e0a6319c69c62437befef86e12a635a11b014ca65c7e68",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00016384\\state.pth": "adfecd99a585f764d4f6b39bffe78f728b8653f0c99496642b59cd40be726d4f",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00000000\\state.pth": "9ba482007b97c4981cceb13f04a8826c748d756d2a8ad0301c405b19388a4497",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00008192\\state.pth": "57e78a5a85b05b2836e4aca2fd5eb87f8f8c70902eb38ed232892fa3899cba70",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00016384\\state.pth": "74436ffbda6489c02396e86d229b523ee88a384e898f9b28c49731493dc04e4d",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00000000\\state.pth": "610da46dcf79c9413bf14041e6c8504ffd540b8d521c7b84115003ec436ef908",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00016384\\state.pth": "72ea2c51669dc328cd3f39a99d4562df491f7511cb42c886226693a7f0c93a51",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00000000\\state.pth": "e0339d85a9d1d87318d2d5e27294043dbef9efdbcc18d4f1fbc713f3476e9244",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00008192\\state.pth": "5c8de222dc12ecea7f18f34b237835345afabb843af49e6033f4c8fc71dc2911",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00016384\\state.pth": "a728d9bf97ea2ac2059d5fa62102bd42f5d405bfaa8c27978d2c618a356f3bc4",
+    ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a",
+    ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957",
+    ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_0_selected\\cases.json": "c4ef3a00e9104651cde10ac379f64ddd4d19152dace8cf87fb1c1d23179c0f6c",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_0_final\\cases.json": "9d8a1bf94884a91f51277ebd74afb6c6fe617314cc9062e88724b9fc16133d64",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_0_selected\\cases.json": "6ee77fe32168cde24c424af108a1135642031a7b32f1cae402c88a097d3ed183",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_0_final\\cases.json": "316372840d4cdb3ebaa31800d99be6766942176583bff604aea3bfaecae8f29e",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_1_selected\\cases.json": "55394be16490c378b835b46f60ae0856203032b61e3145f2456ba8a68569fcc1",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_1_final\\cases.json": "9f3e620f3370cbf894985b436cad687883c3e0ee7dd53320f9b3c6fe49329df6",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_1_selected\\cases.json": "5c381d02b100bad0a5143bb6c6599cd36abf7464f467d9fee8740926a69b716f",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_1_final\\cases.json": "c09e192518b7a9d31dc41a7e6ccbd923ca293a21a159728184f5fb6ad896d56d",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_2_selected\\cases.json": "d230f3ad680a358c56c6434000cb49c50abcea287ee50bde891d045ab6ab7512",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\zero_2_final\\cases.json": "72d201568c18bc8f655141175ea65bda0ac3c08dd6e588abb57d40ae9cb57016",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_2_selected\\cases.json": "ea8da3c5c9e40e85fc466873ed84a647ff2a1a8d5e26ede504c5c9932914fb4c",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\known\\memory_2_final\\cases.json": "75e6a1d23fc98fdc4fbd0da190ef8e2bdb7e5da39b5f8019180073c57b50e8ef",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\validation\\p\\cases.json": "71299816c0099dafc8138e5e52473353cc2b175cb4737fb826a54a53b7093e02",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\validation\\pi\\cases.json": "72653b2dcba85551afa0e01bef9918bf7020e5389be509e9c2a3980b78bb9d12",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00012288\\validation\\cases.json": "530e1a965d0b6e28dc0b7d9ff5a1a5b750fe5a2e4805c8d5b42a9e93858599e6",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00016384\\validation\\cases.json": "c992f5d25f65f4a29c2d75d8285bab21cf9cadac1d76fb4b97d6072317b148a1",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00012288\\validation\\cases.json": "3a1a8c90253a0a37866c0081a3bc6b051cf3214fa03971a0e9e3f4bbedfccb84",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00016384\\validation\\cases.json": "5d005fc8f1d57c5a0a51edd2c9b87890fdb93b028dec3288738993d48f9b9ee1",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00008192\\validation\\cases.json": "0cce82469f2a53ebcc9dd797cbe8c037d0035402680a7f46ba5a4bdf87e94495",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00016384\\validation\\cases.json": "1e7d9cb13cbc3e99218aadaa4ad59388dd3035c9c2e8aecd2999a1989226297b",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00008192\\validation\\cases.json": "e178cc0c0279a999e99e195a7f4bf85ebedda2307fbefa2578d6dfcd22058565",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00016384\\validation\\cases.json": "7d1795047adf260b1d02ac5d34d903e465c7b596aa3c583674f88ca1746ef080",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00000000\\validation\\cases.json": "69cbc43aba4524f7c3017c2add42c8821f069f806b8c7450f29a320fb9beb474",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00016384\\validation\\cases.json": "83bda5a5db71b2fd1031bacfa9293541d6a300fbc087d09ae0f979e488752150",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00008192\\validation\\cases.json": "8361e2c4c6d4a6cb16705d7ac244c4fafcc3561e7e217d2164c9d348ba31a51c",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00016384\\validation\\cases.json": "d96c1d038a68c55693565c1f0004f43609863703c7eba504af9539e0d4491612",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00000000\\validation\\cases.json": "adce97354a4a8d846e04b81f211632d98d00d71dd954d2090c4f7cbd0de8cebf",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00000000\\validation\\cases.json": "07668d47a621e165def1ee745a224d9e0815bb2aca395e62c60214fb12470699",
+    ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00000000\\validation\\cases.json": "b3046dbef440e3075beb86f053cf4c8e7ac1f63d7c523284c84f1abc6ad84852"
+  },
+  "anchor_steps": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72,
+    80,
+    88,
+    96,
+    104,
+    112,
+    120
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "seed": 42,
+  "purpose": "engineering_discard",
+  "memory_rule": "current_obs9_float32_clipped_total_pitch_conditional_integral_v1",
+  "formal_steps": 0,
+  "new_test_steps": 0,
+  "predictor_input_cap": 4096,
+  "joint_update_cap": 24,
+  "artifact_cap_bytes": 268435456,
+  "short_loop_steps": 32,
+  "case": {
+    "id": "train_episode_8_initial_0.025",
+    "split": "train",
+    "family": "stationary",
+    "target_w": 3800000.0,
+    "initial_pitch_rad": 0.025,
+    "collection": "known",
+    "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b.csv",
+    "wave_sha256": "e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b"
+  },
+  "protected_hashes": {
+    ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a",
+    ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957",
+    ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b",
+    ".\\optimization_control\\experiments\\20261028_pitch_nstep_mechanism\\candidate_manifest.json": "77aa4e17b31feee7b8bf402be5bdcb945cb73044230e13adbd67445391920d31",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\config.yaml": "d7ec075b804b1112d9be53f5bb241e4b47a4293b3ab3324cb79c761276692ccd",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\input_lock.json": "5af00172b602782681e4d4e8eea5e70d4086be6ba20a973b7d32b3eda13c9793",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\case_manifest.json": "f004f1a50adc9f03827eac6c3808a5e3b868983b9ea729af58a45999da79a1e0",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b.csv": "438ae9a5a920f8960e61b4845813655a81eddbb9ec9c9f78ec74c770e811c2be",
+    ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b.json": "ebd4b5f2ce810477369e2f26df9b951650e9e5a28bbc3b7934cd5db6befe9030",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_error_memory_engineering.py": "277dd7bf9522ad1c714e6fa17585f3089874ea8407c994daf49eeabee8f84f70",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_error_memory.py": "9345c91d18554a745547b7a25b4eb819a330ac0ae6b71d54301675f2653954e2",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_ERROR_MEMORY_ENGINEERING_PROTOCOL.md": "b6cab83b154636ac7015a7c0c26aec9730fe49bc802f3786a1ac184506ca4362"
+  }
+}

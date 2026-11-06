@@ -1,0 +1,7 @@
+stage,run_id,retained_transitions,new_transitions,total_action_next_command_exact,physical_rates_reward_verified,dynamic_residual_envelope_verified
+baseline,0,32768,8192,True,True,True
+low_lr,0,32768,8192,True,True,True
+baseline,1,32768,8192,True,True,True
+low_lr,1,32768,8192,True,True,True
+baseline,2,32768,8192,True,True,True
+low_lr,2,32768,8192,True,True,True

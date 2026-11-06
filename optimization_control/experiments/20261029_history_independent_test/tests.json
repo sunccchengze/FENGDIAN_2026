@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "unique_tests": 1,
+  "test_executions": 1,
+  "mock_model_rows": 821,
+  "mock_api_calls": 821,
+  "test": "timing_wrapper_preserves_both_numeric_policies"
+}

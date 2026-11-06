@@ -1,0 +1,14 @@
+[
+  {
+    "stage": "pitch_speed",
+    "passed": true,
+    "passed_runs": 3,
+    "runs": 3
+  },
+  {
+    "stage": "all",
+    "passed": false,
+    "passed_runs": 2,
+    "runs": 3
+  }
+]

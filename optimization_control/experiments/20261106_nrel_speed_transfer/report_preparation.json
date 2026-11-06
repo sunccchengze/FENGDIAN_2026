@@ -1,0 +1,15 @@
+{
+  "base_commit": "faeb02940c4819796a2914d7991249d3826525aa",
+  "model_rows_before_performance": 160,
+  "planned_performance_rows": 3870,
+  "planned_total_rows": 4030,
+  "training_steps": 0,
+  "new_winds": 0,
+  "report_code": {
+    "path": ".\\optimization_control\\maddpg_wind_farm\\nrel_speed_transfer_delivery.py",
+    "sha256": "e1fac14b750e92b2e3ea6e5854ab1ed44b06086dc83495c7d5179c6c656df98d"
+  },
+  "old_full_cases": 30,
+  "new_full_cases": 30,
+  "old_1720_not_rechecked": true
+}

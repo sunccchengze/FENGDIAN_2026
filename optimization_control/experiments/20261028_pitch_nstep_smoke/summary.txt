@@ -1,0 +1,9 @@
+{
+  "seed": 42,
+  "status": "smoke_complete",
+  "saved_training_steps": 2048,
+  "paired_checks_passed": true,
+  "test_locked": true,
+  "formal_training": false,
+  "recovery_audit": "recovery_audit/summary.txt"
+}

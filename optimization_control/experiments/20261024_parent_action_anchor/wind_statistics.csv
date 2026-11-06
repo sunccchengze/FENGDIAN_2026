@@ -1,0 +1,4 @@
+family,records,ensemble_psd_ratio,ensemble_mean_square_ratio,total_rejected_attempts,max_rejected_attempts
+stationary,64,0.9630466482804965,0.8151440114549082,169,25
+ramp,64,1.0231218099808896,0.8204167693250645,272,74
+gust,64,0.9695466049721357,0.8337529849074719,181,22

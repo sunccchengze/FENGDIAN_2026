@@ -1,0 +1,13 @@
+{
+  "seed": 42,
+  "status": "preflight_failed_no_formal_evaluation",
+  "reason": "batch versus canonical action drift exceeded unchanged 1e-5 tolerance",
+  "power_difference_w": 4.5,
+  "action_difference": 1.1652708053588867e-05,
+  "reward_difference": 4.410743713378906e-06,
+  "source_snapshot": "source_before_serial_fix.py",
+  "protocol_snapshot": "protocol_before_serial_fix.md",
+  "snapshots_match_frozen_sha256": true,
+  "resolution": "formal run uses original single-row env.step",
+  "rl_training_steps": 0
+}

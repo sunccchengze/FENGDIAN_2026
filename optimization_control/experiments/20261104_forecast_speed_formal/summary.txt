@@ -1,0 +1,4 @@
+Formal A/B/C experiment completed. seed=42. 73728 physical training steps.
+125259 formal query rows, 1728 prior engineering rows, 0 entry model queries, total 126987.
+All checkpoints, validation selection and post-selection diagnostics preserved.
+No independent test released. See roles.csv, gates.csv, stability.csv and pressure.csv.

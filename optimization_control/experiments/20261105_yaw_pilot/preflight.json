@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "G1_mixed_mapping": true,
+  "G2_reused_exact_pairs": 9,
+  "G3_deployment_online_only": true,
+  "C2_online_target_different_tensors": 12,
+  "G4_contract_mutations_rejected": true,
+  "runs": [
+    {
+      "run": 0,
+      "S_origin": {
+        "steps": 0,
+        "episodes": 0,
+        "updates": 0,
+        "draws": 0
+      },
+      "S_inherited_replay": 0,
+      "mixed_yaw_rad": [
+        0.01745329238474369,
+        0.0,
+        -0.01745329238474369
+      ],
+      "state_upper_bytes": {
+        "Y": 1301392,
+        "S": 1301392
+      }
+    },
+    {
+      "run": 1,
+      "S_origin": {
+        "steps": 0,
+        "episodes": 0,
+        "updates": 0,
+        "draws": 0
+      },
+      "S_inherited_replay": 0,
+      "mixed_yaw_rad": [
+        0.01745329238474369,
+        0.0,
+        -0.01745329238474369
+      ],
+      "state_upper_bytes": {
+        "Y": 1301392,
+        "S": 1301392
+      }
+    },
+    {
+      "run": 2,
+      "S_origin": {
+        "steps": 4096,
+        "episodes": 32,
+        "updates": 225,
+        "draws": 512
+      },
+      "S_inherited_replay": 512,
+      "mixed_yaw_rad": [
+        0.01745329238474369,
+        0.0,
+        -0.01745329238474369
+      ],
+      "state_upper_bytes": {
+        "Y": 1301392,
+        "S": 1743760
+      }
+    }
+  ],
+  "new_model_rows": 0,
+  "new_updates": 0,
+  "inherited_C2_full_state": true,
+  "no_engineering_state_loaded": true,
+  "checkpoint_cap_bytes": 4194304,
+  "independence_review_sha": "40892662577ef62507278aafcd2a77c6889fd37a0b66988822ae817fcf92dfb3"
+}

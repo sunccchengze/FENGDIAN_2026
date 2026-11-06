@@ -1,0 +1,87 @@
+status: proposal_only_not_implemented
+seed: 42
+one_change: actor_teammate_pitch_replay_vs_current_detached_entry_snapshot
+parents:
+- run: 0
+  checkpoint: .\optimization_control\experiments\20261028_pitch_nstep\n8_run0\step_00016384\attempt_000\state.pth
+  sha256: 1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a
+  selected_step: 16384
+- run: 1
+  checkpoint: .\optimization_control\experiments\20261028_pitch_nstep\n8_run1\step_00012288\attempt_000\state.pth
+  sha256: cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957
+  selected_step: 12288
+- run: 2
+  checkpoint: .\optimization_control\experiments\20261028_pitch_nstep\n8_run2\step_00004096\attempt_000\state.pth
+  sha256: 0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b
+  selected_step: 4096
+inherited:
+- actors
+- critics
+- target_actors
+- target_critics
+- six_Adam
+- replay
+- sequence
+- m_histogram
+- algorithm_rng
+- replay_rng
+- torch_rng
+unchanged:
+  observation:
+  - 3
+  - 15
+  action:
+  - 3
+  - 3
+  control_mask:
+  - 0
+  - 1
+  - 0
+  n: 8
+  gamma: 0.99
+  action_penalty: 0.001
+  actor_lr: 0.0001
+  critic_lr: 0.001
+  tau: 0.01
+  batch_size: 64
+  capacity: 32768
+  warmup: 512
+  update_every: 2
+  noise_std:
+  - 0
+  - 0.03
+  - 0
+  noise_end_fraction: 0.2
+future_budget:
+  arms: 2
+  streams: 3
+  steps_per_job: 16384
+  formal_rl_steps: 98304
+  updates_per_job: 7937
+  formal_updates: 47622
+  evaluation_transition_steps: 278528
+  evaluation_episode_reset_upper: 2176
+  evaluation_model_input_row_cap: 282000
+  training_model_input_row_cap: 99088
+  total_model_input_row_cap: 381088
+current_round:
+  formal_rl_steps: 0
+  optimizer_updates: 0
+  model_forward_rows: 0
+  new_test: false
+protocol: .\optimization_control\maddpg_wind_farm\PITCH_REMAINING_FAILURE_CANDIDATE.md
+protocol_sha256: 2a37dddc5afd344fba6d96275c5df6441a27a2a5f159dbe0f2a97fe142cf72d6
+project_PI_goal_unchanged: true
+local_gain_is_not_full_PI_acceptance: true
+future_test:
+  targets_w:
+  - 2725000
+  - 3325000
+  - 3925000
+  target_rule: training_targets_plus_125000_w_no_test_performance_selection
+  initial_pitch_rad:
+  - 0.03
+  - 0.05
+  normal_cases: 36
+  known_pressure_cases: 8
+  generated: false

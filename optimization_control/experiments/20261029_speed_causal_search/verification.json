@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "metrics": 288,
+  "trace_rows": 36864,
+  "maximum_metric_recompute_difference": 0.0,
+  "source_and_execution_hashes_unchanged": true,
+  "model_rows": 82449,
+  "model_rows_by_kind": {
+    "mock_correctness": 376,
+    "precheck_external": 5,
+    "batch_single_gate": 18,
+    "internal_forecast": 61128,
+    "zero_branch_check": 24,
+    "external_reset": 162,
+    "external_transition": 20736
+  },
+  "model_row_hard_cap": 100000,
+  "formal_RL_steps": 0,
+  "repeated_parent_improvement": false,
+  "new_test_released": false
+}

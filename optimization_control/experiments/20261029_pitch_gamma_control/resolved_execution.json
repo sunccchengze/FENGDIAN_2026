@@ -1,0 +1,68 @@
+{
+  "python": "3.12.14",
+  "numpy": "1.26.4",
+  "torch": "2.13.0+cpu",
+  "tensorflow": "2.16.1",
+  "torch_threads": 1,
+  "seed": 42,
+  "device": "cpu",
+  "n": 8,
+  "arms": {
+    "g099": 0.99,
+    "g100": 1.0
+  },
+  "actual_steps_per_job": 16384,
+  "actual_updates_per_job": 7937,
+  "warmup_steps": 512,
+  "update_every": 2,
+  "actual_noise_std": [
+    0.0,
+    0.03,
+    0.0
+  ],
+  "noise_kind": "white",
+  "noise_end_fraction": 0.2,
+  "unused_base_config_training_template": {
+    "total_steps": 2048,
+    "warmup_steps": 256,
+    "update_every": 2,
+    "noise_std": 0.15,
+    "episode_target_fractions": [
+      0.18440761875,
+      0.23014487916666668,
+      0.27588213958333335
+    ]
+  },
+  "actual_exploration_seeds": [
+    {
+      "run": 0,
+      "entropy": [
+        42,
+        20261029,
+        5103,
+        0
+      ],
+      "integer_seed": 3136298109
+    },
+    {
+      "run": 1,
+      "entropy": [
+        42,
+        20261029,
+        5103,
+        1
+      ],
+      "integer_seed": 535851581
+    },
+    {
+      "run": 2,
+      "entropy": [
+        42,
+        20261029,
+        5103,
+        2
+      ],
+      "integer_seed": 3377689212
+    }
+  ]
+}

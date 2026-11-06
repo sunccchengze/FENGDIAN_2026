@@ -1,0 +1,9 @@
+{
+  "source": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\pressure.csv",
+  "sha256": "275bc38d8e4bfb231ef34b46f844ef1de770f95808a423dda42d06d558687ba2",
+  "reused": true,
+  "description": "Prior pilot known-pressure evaluation, not a new independent pressure test",
+  "new_model_rows": 0,
+  "new_pressure_cases": 0,
+  "candidate_selection_sha": "ec95ad95c06050832f1ae4be6550c8e3754449bb52df196f5d18f8d84fb8a72a"
+}

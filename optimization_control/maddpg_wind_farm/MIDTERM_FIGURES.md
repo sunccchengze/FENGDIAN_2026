@@ -43,3 +43,20 @@
 ```
 
 复现时使用不存在的新输出目录。源代码、摘要和绘图数值纳入Git，图片及长讲稿按可再生产物保留在本地实验目录。
+
+## 答辩表现较好案例补图（2026-10-27）
+
+`midterm_best_cases.py`只读同一批20261022冻结测试，按完整128步RMSE在
+3条训练流×18场常规测试中选出MADDPG误差最低案例，并另选慢变类最低案例。
+这是明确标注的事后展示选择，不改变原图06的预定场景、策略选模、独立测试结果或总体结论。
+不截取有利时段、不平滑、不重训、不修改模型和P/PI；比较仍用相同轨迹、目标、初态和执行器。
+
+产物沿用`experiments/YYYYMMDD_简短描述/`，最终核验版为`20261027_midterm_best_cases_checked/`；
+含配置、全部54条候选排名、比较指标、源文件摘要、逐组RMSE复算、PNG/PDF/SVG和讲解说明。
+原7张图保持不变。新图适合说明“部分场景能优于传统控制”，须结合原总体图04呈现，不能代表跨风况稳定优势。
+
+```powershell
+.venv\Scripts\python.exe -B -X utf8 -W error -m optimization_control.maddpg_wind_farm.midterm_best_cases --output optimization_control/experiments/20261027_midterm_best_cases_reproduce
+```
+
+输出目录必须不存在；复现时指定新的目录。

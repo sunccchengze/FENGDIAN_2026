@@ -1,0 +1,30 @@
+{
+  "seed": 42,
+  "passed": true,
+  "additional_surrogate_calls": 0,
+  "formal_training_steps": 0,
+  "zero_radius_canonical_rows_exact": 2880,
+  "own_radius_groups_identical_start": 30,
+  "offline_pitch_scripts_and_applied_pitch_exact": 72,
+  "common_future_wind_for_all_1902_branches": true,
+  "pair_rows_recomputed": 21600,
+  "max_pair_arithmetic_error": 0.0,
+  "coordination_files": {
+    ".\\PROJECT_STATUS.md": {
+      "before": "0d591407d1499700b58f2ce1a96e1c73a10729557fdba1d1bdb6aa0ddb5ec528",
+      "after": "0d591407d1499700b58f2ce1a96e1c73a10729557fdba1d1bdb6aa0ddb5ec528",
+      "unchanged": true
+    },
+    ".\\README.md": {
+      "before": "4ec167cf913d8095bb1ccac570419f36b460e639bb3500dfb1a84dd12a5e6ed9",
+      "after": "4ec167cf913d8095bb1ccac570419f36b460e639bb3500dfb1a84dd12a5e6ed9",
+      "unchanged": true
+    },
+    ".\\optimization_control\\TASKFLOW.md": {
+      "before": "b6bdd82eb164a39e08ff3f98ba10ce5dfc62c799cecd36d777e6a025a760ff5e",
+      "after": "b6bdd82eb164a39e08ff3f98ba10ce5dfc62c799cecd36d777e6a025a760ff5e",
+      "unchanged": true
+    }
+  },
+  "supplementary_script_sha256": "7350685150568769f6e13cd172c11a59940c5d1e1649b69fc3e44abef029e4a1"
+}

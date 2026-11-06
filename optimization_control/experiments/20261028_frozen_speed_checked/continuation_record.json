@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "reason": "Desktop continuation found no live training process; completed run0 arms preserved and baseline1 resumed from saved step4096 in a new segment.",
+  "formal_state_budget": 49152,
+  "parent_restart": false,
+  "selection_changed": false,
+  "unknown_uncheckpointed_discarded_work": "Previous process had no retained output after checkpoint4096. No additional updates from it are inherited; host execution count beyond durable checkpoints cannot be reconstructed."
+}

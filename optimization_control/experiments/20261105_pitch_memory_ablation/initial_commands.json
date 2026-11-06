@@ -1,0 +1,3566 @@
+[
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_0_initial_0.025",
+    "pitch": [
+      0.1895759207010269,
+      0.05075003683567047,
+      0.19932708501815796
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_0_initial_0.055",
+    "pitch": [
+      0.11180437352508306,
+      0.1667989820241928,
+      0.07247734367847443
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_1_initial_0.025",
+    "pitch": [
+      0.2194881856441498,
+      0.13428158909082413,
+      0.21997258067131042
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_1_initial_0.055",
+    "pitch": [
+      0.21667148232460023,
+      0.2142853319644928,
+      0.21922735452651979
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_2_initial_0.025",
+    "pitch": [
+      0.21903834342956544,
+      0.09041730657219887,
+      0.2199625426530838
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_2_initial_0.055",
+    "pitch": [
+      0.21426237761974334,
+      0.20593008816242217,
+      0.2191319900751114
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_3_initial_0.025",
+    "pitch": [
+      0.21996844351291656,
+      0.18027060568332673,
+      0.21999954760074616
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_3_initial_0.055",
+    "pitch": [
+      0.2197990036010742,
+      0.21852410972118377,
+      0.2199890637397766
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_4_initial_0.025",
+    "pitch": [
+      0.21984796106815338,
+      0.11431096535176039,
+      0.21999610543251039
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_4_initial_0.055",
+    "pitch": [
+      0.21925021708011627,
+      0.2118460476398468,
+      0.21993163526058196
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_5_initial_0.025",
+    "pitch": [
+      0.21991747319698335,
+      0.17024580538272857,
+      0.21999928534030913
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_5_initial_0.055",
+    "pitch": [
+      0.21928979218006134,
+      0.21789551734924317,
+      0.2199737870693207
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_6_initial_0.025",
+    "pitch": [
+      0.21994445323944092,
+      0.13750132769346238,
+      0.21999942302703857
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_6_initial_0.055",
+    "pitch": [
+      0.2197187912464142,
+      0.21521662533283234,
+      0.21998788356781007
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_7_initial_0.025",
+    "pitch": [
+      0.2102110242843628,
+      0.05561055868864059,
+      0.2178260314464569
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_7_initial_0.055",
+    "pitch": [
+      0.16690565645694733,
+      0.17751969695091246,
+      0.1784290063381195
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_8_initial_0.025",
+    "pitch": [
+      0.17427741050720216,
+      0.054291378855705265,
+      0.1832611745595932
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "train_episode_8_initial_0.055",
+    "pitch": [
+      0.08925224244594573,
+      0.17403788805007936,
+      0.04756425440311432
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21931028127670288,
+      0.08760888248682022,
+      0.21994651854038239
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.2183927172422409,
+      0.16164172559976578,
+      0.21976203799247743
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.2164195615053177,
+      0.20473907828330995,
+      0.21909378528594972
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.1526906555891037,
+      0.047058190107345584,
+      0.11795159138739109
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.11322521964088082,
+      0.085578922778368,
+      0.053193661570549014
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.07482073575258255,
+      0.15378403902053833,
+      0.01860729932785034
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21984615802764892,
+      0.1514241114258766,
+      0.21999695777893066
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.21956949293613434,
+      0.2023366415500641,
+      0.21998430371284486
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.21904511630535126,
+      0.2165847396850586,
+      0.21993025183677672
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.15457992404699325,
+      0.0497894424200058,
+      0.117028903439641
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.11532093726098537,
+      0.09337663367390632,
+      0.05263667941093445
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.07655861437320709,
+      0.1609547343850136,
+      0.01829535365104675
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21015126824378969,
+      0.058694485723972324,
+      0.21381864607334136
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.2012379014492035,
+      0.11421516161412,
+      0.20286316215991973
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.1866968321800232,
+      0.17978287994861603,
+      0.17410825908184052
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.2035718423128128,
+      0.06892632752656937,
+      0.20637791752815246
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.1851033902168274,
+      0.13618093490600586,
+      0.17356527507305144
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.15433683156967162,
+      0.19149141192436217,
+      0.11073106643743813
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_0_initial_0.025",
+    "pitch": [
+      0.1277394959330559,
+      0.06582711070775986,
+      0.14284936875104903
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_0_initial_0.055",
+    "pitch": [
+      0.041132776141166685,
+      0.11521295726299285,
+      0.025502454042434692
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_1_initial_0.025",
+    "pitch": [
+      0.21833180725574494,
+      0.10606625694781542,
+      0.21970359981060028
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_1_initial_0.055",
+    "pitch": [
+      0.20736234486103058,
+      0.17351505875587464,
+      0.2143099319934845
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_2_initial_0.025",
+    "pitch": [
+      0.21600829780101777,
+      0.08638646200299263,
+      0.21954829573631288
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_2_initial_0.055",
+    "pitch": [
+      0.19586145102977753,
+      0.14687754154205324,
+      0.21268827080726624
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_3_initial_0.025",
+    "pitch": [
+      0.21990007221698762,
+      0.13084996044635772,
+      0.2199941909313202
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_3_initial_0.055",
+    "pitch": [
+      0.21924267053604127,
+      0.20042086839675904,
+      0.21989202737808228
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_4_initial_0.025",
+    "pitch": [
+      0.21936895549297333,
+      0.09685564868152141,
+      0.21994594156742095
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_4_initial_0.055",
+    "pitch": [
+      0.21636731266975404,
+      0.16101512640714646,
+      0.21924196243286134
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_5_initial_0.025",
+    "pitch": [
+      0.21971215605735778,
+      0.12153321988880635,
+      0.21999125361442565
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_5_initial_0.055",
+    "pitch": [
+      0.2173248517513275,
+      0.19185091853141784,
+      0.2197577828168869
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_6_initial_0.025",
+    "pitch": [
+      0.2197764164209366,
+      0.10513242088258266,
+      0.21999140441417694
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_6_initial_0.055",
+    "pitch": [
+      0.21849694609642029,
+      0.17242783844470977,
+      0.21985489785671233
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_7_initial_0.025",
+    "pitch": [
+      0.17836458206176758,
+      0.06644851058721542,
+      0.20448978662490844
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_7_initial_0.055",
+    "pitch": [
+      0.08357720196247101,
+      0.1161380448937416,
+      0.09653599746525288
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_8_initial_0.025",
+    "pitch": [
+      0.10806117169559001,
+      0.07111522197723388,
+      0.11421646431088447
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "train_episode_8_initial_0.055",
+    "pitch": [
+      0.032460656166076664,
+      0.12310141026973724,
+      0.01678133726119995
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21707628130912782,
+      0.08659901425242424,
+      0.21939983665943147
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.21312444925308227,
+      0.11174157198518515,
+      0.21781155467033386
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.20476308166980745,
+      0.14716710329055785,
+      0.21276171684265135
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.08215798616409302,
+      0.06783564537763595,
+      0.04962472319602966
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.048620344400405885,
+      0.0866104455292225,
+      0.018511961102485656
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.02638243615627289,
+      0.11571939937770366,
+      0.00599739134311676
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21951454281806945,
+      0.11616155531257391,
+      0.2199638670682907
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.21863038420677186,
+      0.14648446887731553,
+      0.21984017193317412
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.2164029997587204,
+      0.18583265125751494,
+      0.21936753928661346
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.08666529566049576,
+      0.07053506582975387,
+      0.04974119961261749
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.051882431507110596,
+      0.09049264416098594,
+      0.01871841907501221
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.0285462486743927,
+      0.12036699444055557,
+      0.006043490171432495
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.18678280770778657,
+      0.0765200325846672,
+      0.19118767499923706
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.1623467406630516,
+      0.09881095677614211,
+      0.15642983704805374
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.13159964993596077,
+      0.13016908317804338,
+      0.10259569451212883
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.1702662944793701,
+      0.08039864480495452,
+      0.16719043850898743
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.13015127241611482,
+      0.10517712153494359,
+      0.10560477118939161
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.08699748128652572,
+      0.13930414855480194,
+      0.04822862565517425
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_0_initial_0.025",
+    "pitch": [
+      0.056873080432415006,
+      0.21999027013778685,
+      0.1276866865158081
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_0_initial_0.055",
+    "pitch": [
+      0.013782828450202941,
+      0.21976835191249847,
+      0.053446795344352725
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_1_initial_0.025",
+    "pitch": [
+      0.21721445977687837,
+      0.2199999737739563,
+      0.21458493173122406
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_1_initial_0.055",
+    "pitch": [
+      0.21274750888347627,
+      0.2199988853931427,
+      0.1987320750951767
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_2_initial_0.025",
+    "pitch": [
+      0.2063973444700241,
+      0.21999971807003021,
+      0.2090463387966156
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_2_initial_0.055",
+    "pitch": [
+      0.18817044734954835,
+      0.2199912929534912,
+      0.1811551970243454
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_3_initial_0.025",
+    "pitch": [
+      0.21987679660320283,
+      0.22,
+      0.21905616402626038
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_3_initial_0.055",
+    "pitch": [
+      0.2197868412733078,
+      0.21999993443489074,
+      0.21585517048835753
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_4_initial_0.025",
+    "pitch": [
+      0.21834583163261415,
+      0.21999995410442352,
+      0.21294554829597473
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_4_initial_0.055",
+    "pitch": [
+      0.21743617475032806,
+      0.21999870836734772,
+      0.1966276317834854
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_5_initial_0.025",
+    "pitch": [
+      0.21956254959106444,
+      0.22,
+      0.21928326189517974
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_5_initial_0.055",
+    "pitch": [
+      0.21884016633033754,
+      0.21999984920024873,
+      0.21595616698265077
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_6_initial_0.025",
+    "pitch": [
+      0.21953159630298616,
+      0.21999999344348908,
+      0.2171638697385788
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_6_initial_0.055",
+    "pitch": [
+      0.21922734141349792,
+      0.21999973118305208,
+      0.20955938577651978
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_7_initial_0.025",
+    "pitch": [
+      0.11954297460615634,
+      0.21999862313270568,
+      0.17329803168773653
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_7_initial_0.055",
+    "pitch": [
+      0.041950110793113705,
+      0.2199520456790924,
+      0.09608558237552643
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_8_initial_0.025",
+    "pitch": [
+      0.036429259777069095,
+      0.21996935486793517,
+      0.1284720368683338
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "train_episode_8_initial_0.055",
+    "pitch": [
+      0.007819950580596924,
+      0.21942014873027801,
+      0.05673828184604645
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21087425470352172,
+      0.219999737739563,
+      0.202000515460968
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.2072514808177948,
+      0.2199985510110855,
+      0.1879500502347946
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.20347309470176697,
+      0.21999343037605285,
+      0.16553383111953734
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.023819620609283446,
+      0.2198877066373825,
+      0.056885721385478975
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.013870128393173219,
+      0.21960195422172546,
+      0.036172251105308535
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.006067670583724975,
+      0.21871460914611818,
+      0.022092320919036866
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21902515828609467,
+      0.2199999737739563,
+      0.21736864268779754
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.21857998430728912,
+      0.21999985575675965,
+      0.21501617312431334
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.21810872852802277,
+      0.21999916076660156,
+      0.21059585869312286
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.02819733738899231,
+      0.21990566492080688,
+      0.06283354878425598
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.016523227095603943,
+      0.21965330481529236,
+      0.04038583219051361
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.007248353958129883,
+      0.21887026727199554,
+      0.024524216055870057
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.09965558126568794,
+      0.21995752036571503,
+      0.11978503361344338
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.08240655332803726,
+      0.21986633241176606,
+      0.09229986280202866
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.05702073305845261,
+      0.21959734499454497,
+      0.06559791147708893
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.12157868027687073,
+      0.2199942696094513,
+      0.15015849500894546
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.08515982568264008,
+      0.21997204959392547,
+      0.11589710213243962
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.0503130716085434,
+      0.21987776041030885,
+      0.07944577723741532
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_0_initial_0.025",
+    "pitch": [
+      0.01625341355800629,
+      0.21999011933803558,
+      0.20009923875331878
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_0_initial_0.055",
+    "pitch": [
+      0.004429788589477539,
+      0.21982781946659088,
+      0.12490078404545785
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_1_initial_0.025",
+    "pitch": [
+      0.2049131077528,
+      0.21999999344348908,
+      0.21986570954322815
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_1_initial_0.055",
+    "pitch": [
+      0.19159832894802092,
+      0.21999967873096465,
+      0.21743104755878448
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_2_initial_0.025",
+    "pitch": [
+      0.16290127724409104,
+      0.2199999213218689,
+      0.2191827702522278
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_2_initial_0.055",
+    "pitch": [
+      0.1255666944384575,
+      0.21999809861183167,
+      0.21000532686710358
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_3_initial_0.025",
+    "pitch": [
+      0.21923957586288453,
+      0.22,
+      0.21999120116233825
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_3_initial_0.055",
+    "pitch": [
+      0.21885136485099793,
+      0.21999999344348908,
+      0.21985140979290008
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_4_initial_0.025",
+    "pitch": [
+      0.20832431614398955,
+      0.21999999344348908,
+      0.21967604279518127
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_4_initial_0.055",
+    "pitch": [
+      0.20557323694229127,
+      0.21999990165233613,
+      0.21567567944526672
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_5_initial_0.025",
+    "pitch": [
+      0.21770809948444367,
+      0.22,
+      0.21999255180358887
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_5_initial_0.055",
+    "pitch": [
+      0.215138019323349,
+      0.21999996721744539,
+      0.21982455432415007
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_6_initial_0.025",
+    "pitch": [
+      0.21643297612667084,
+      0.22,
+      0.2199370574951172
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_6_initial_0.055",
+    "pitch": [
+      0.2151805317401886,
+      0.21999998688697814,
+      0.218917179107666
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_7_initial_0.025",
+    "pitch": [
+      0.04141909897327423,
+      0.2199994033575058,
+      0.21306038558483123
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_7_initial_0.055",
+    "pitch": [
+      0.012412970066070556,
+      0.2199835169315338,
+      0.17096831321716308
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_8_initial_0.025",
+    "pitch": [
+      0.012421493530273437,
+      0.21993323504924775,
+      0.19778712451457978
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "train_episode_8_initial_0.055",
+    "pitch": [
+      0.0033743149042129517,
+      0.21906960487365723,
+      0.12208231210708619
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.17320401787757875,
+      0.21999995410442352,
+      0.21834443509578705
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.16284898579120635,
+      0.21999975740909578,
+      0.21470573544502258
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.15680841654539107,
+      0.219999121427536,
+      0.2062581890821457
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.006822246313095093,
+      0.21977975368499755,
+      0.1457781031727791
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.0043321621417999265,
+      0.21931710004806518,
+      0.10253845617175102
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.0023388254642486574,
+      0.21821632087230683,
+      0.05780669808387756
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21490196526050567,
+      0.21999999344348908,
+      0.21994570553302764
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.21342498660087586,
+      0.21999996066093444,
+      0.21977711141109466
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.21187574207782744,
+      0.21999980330467225,
+      0.21906258940696716
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.008485639691352844,
+      0.21978576600551605,
+      0.15486884653568267
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.005401168465614319,
+      0.21932642340660094,
+      0.11306286895647645
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.0028530853986740113,
+      0.21819174706935882,
+      0.06614711433649063
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.03724108040332794,
+      0.21996329665184022,
+      0.18712943732738496
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.03349624395370483,
+      0.21989702343940734,
+      0.16226717084646225
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.02280303359031677,
+      0.21976284444332123,
+      0.12226426757872105
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.05088167190551758,
+      0.2199915224313736,
+      0.20810205698013307
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.036763753294944766,
+      0.2199660438299179,
+      0.19300993919372558
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.02003639578819275,
+      0.21987828493118286,
+      0.16018425911664963
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_0_initial_0.025",
+    "pitch": [
+      0.20612825214862823,
+      0.2149947202205658,
+      0.2157745975255966
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_0_initial_0.055",
+    "pitch": [
+      0.13549602702260016,
+      0.10185509398579598,
+      0.14095117688179015
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_1_initial_0.025",
+    "pitch": [
+      0.21990747451782228,
+      0.21999969840049743,
+      0.21998423159122468
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_1_initial_0.055",
+    "pitch": [
+      0.2190699851512909,
+      0.21998022556304933,
+      0.21950703561306
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_2_initial_0.025",
+    "pitch": [
+      0.21947058141231537,
+      0.21999598741531373,
+      0.21993202865123748
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_2_initial_0.055",
+    "pitch": [
+      0.21530589878559112,
+      0.21977972090244294,
+      0.21805038869380952
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_3_initial_0.025",
+    "pitch": [
+      0.21999345660209657,
+      0.22,
+      0.21999931156635286
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_3_initial_0.055",
+    "pitch": [
+      0.2199400669336319,
+      0.2199999213218689,
+      0.21998031079769134
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_4_initial_0.025",
+    "pitch": [
+      0.21992810130119325,
+      0.21999984920024873,
+      0.2199934631586075
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_4_initial_0.055",
+    "pitch": [
+      0.2194487351179123,
+      0.21999409914016724,
+      0.21983361542224883
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_5_initial_0.025",
+    "pitch": [
+      0.21998252034187318,
+      0.21999999344348908,
+      0.2199977707862854
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_5_initial_0.055",
+    "pitch": [
+      0.21979375183582306,
+      0.21999940991401673,
+      0.21991817474365236
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_6_initial_0.025",
+    "pitch": [
+      0.21998113691806792,
+      0.21999998688697814,
+      0.21999846577644347
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_6_initial_0.055",
+    "pitch": [
+      0.21983471691608428,
+      0.2199993050098419,
+      0.21995411098003387
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_7_initial_0.025",
+    "pitch": [
+      0.21669741988182067,
+      0.21961430668830872,
+      0.2192239648103714
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_7_initial_0.055",
+    "pitch": [
+      0.18929798364639283,
+      0.19556459844112398,
+      0.19620002925395966
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_8_initial_0.025",
+    "pitch": [
+      0.1879762041568756,
+      0.20914327681064607,
+      0.20908839225769044
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "train_episode_8_initial_0.055",
+    "pitch": [
+      0.08820823773741722,
+      0.06489193588495254,
+      0.09512024268507957
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.2196362316608429,
+      0.2199966037273407,
+      0.2199560123682022
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.21897325694561004,
+      0.21997713088989257,
+      0.21976908624172212
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.2172811198234558,
+      0.21987765550613403,
+      0.21893206894397735
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.16128700852394104,
+      0.16519162714481353,
+      0.19549061477184296
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.11298589469864964,
+      0.07534368306398392,
+      0.13817119002342224
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.06598899424076081,
+      0.024586955308914183,
+      0.06624617993831634
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.2199409520626068,
+      0.2199999475479126,
+      0.2199934434890747
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.21981993198394775,
+      0.21999961972236634,
+      0.2199626737833023
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.21948184549808503,
+      0.219997718334198,
+      0.21982114493846894
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.16766246795654297,
+      0.17719470381736754,
+      0.19780152916908264
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.12119802318513394,
+      0.09096620619297027,
+      0.1435799640417099
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.07294135123491287,
+      0.03076795518398285,
+      0.07155986815690994
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.20075687646865845,
+      0.21786925196647644,
+      0.21658213675022125
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.17923999428749085,
+      0.21072258293628693,
+      0.20621735513210296
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.14551798343658448,
+      0.19024121642112732,
+      0.17731220960617067
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21303903102874755,
+      0.2190896874666214,
+      0.2180313354730606
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.20063792169094086,
+      0.2141486418247223,
+      0.20980279624462128
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.1747564160823822,
+      0.1895925545692444,
+      0.18162040114402772
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_0_initial_0.025",
+    "pitch": [
+      0.2030208331346512,
+      0.2168850016593933,
+      0.21689117789268494
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_0_initial_0.055",
+    "pitch": [
+      0.12143261760473252,
+      0.10481807757169008,
+      0.16646542608737946
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_1_initial_0.025",
+    "pitch": [
+      0.21990953326225282,
+      0.2199998950958252,
+      0.2199871361255646
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_1_initial_0.055",
+    "pitch": [
+      0.21906701505184173,
+      0.21999165356159212,
+      0.21968871653079985
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_2_initial_0.025",
+    "pitch": [
+      0.219648597240448,
+      0.21999912798404694,
+      0.21994296491146087
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_2_initial_0.055",
+    "pitch": [
+      0.21681284725666047,
+      0.21994365334510804,
+      0.21875942289829253
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_3_initial_0.025",
+    "pitch": [
+      0.2199950236082077,
+      0.22,
+      0.21999948859214782
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_3_initial_0.055",
+    "pitch": [
+      0.21995023608207703,
+      0.21999998033046722,
+      0.2199878966808319
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_4_initial_0.025",
+    "pitch": [
+      0.2199549436569214,
+      0.21999998033046722,
+      0.2199944531917572
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_4_initial_0.055",
+    "pitch": [
+      0.21963827729225158,
+      0.21999915421009064,
+      0.21988665103912353
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_5_initial_0.025",
+    "pitch": [
+      0.21998798847198486,
+      0.22,
+      0.21999792158603668
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_5_initial_0.055",
+    "pitch": [
+      0.219853258728981,
+      0.21999980986118317,
+      0.21994215190410615
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_6_initial_0.025",
+    "pitch": [
+      0.21998909652233123,
+      0.22,
+      0.21999845921993255
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_6_initial_0.055",
+    "pitch": [
+      0.2199005115032196,
+      0.21999990820884704,
+      0.2199644637107849
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_7_initial_0.025",
+    "pitch": [
+      0.21664523005485534,
+      0.21981124460697174,
+      0.21919701755046844
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_7_initial_0.055",
+    "pitch": [
+      0.18809874534606932,
+      0.20299502670764924,
+      0.20100009679794312
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_8_initial_0.025",
+    "pitch": [
+      0.182478169798851,
+      0.21316089034080504,
+      0.21439491748809814
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "train_episode_8_initial_0.055",
+    "pitch": [
+      0.07796710044145584,
+      0.0693548709154129,
+      0.14329198241233826
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21972743272781373,
+      0.21999935746192933,
+      0.2199654471874237
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.2192273086309433,
+      0.21999575138092042,
+      0.21983771324157714
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.21790030360221863,
+      0.21997256100177764,
+      0.2193299835920334
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.14409874469041825,
+      0.18108881890773773,
+      0.2087625730037689
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.09418037831783295,
+      0.09387070447206497,
+      0.18091341257095336
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.05214428544044495,
+      0.025570831894874572,
+      0.12215006791055202
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21995982825756072,
+      0.21999999344348908,
+      0.21999557435512543
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.21987643599510193,
+      0.21999992787837983,
+      0.2199784880876541
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.2196236890554428,
+      0.2199994558095932,
+      0.21990427494049072
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.14928989827632905,
+      0.18853824138641356,
+      0.210427867770195
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.09944064982235432,
+      0.10629796650260687,
+      0.18593310356140136
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.05560924082994461,
+      0.030403268933296205,
+      0.13048208609223366
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.025",
+    "pitch": [
+      0.20377660870552064,
+      0.2194117432832718,
+      0.2185997521877289
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.04",
+    "pitch": [
+      0.18526570975780488,
+      0.2175270938873291,
+      0.21499139606952666
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_0_pitch0.04_initial_0.055",
+    "pitch": [
+      0.15200198262929918,
+      0.20887768566608428,
+      0.20377363860607148
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.025",
+    "pitch": [
+      0.21061804592609407,
+      0.21945177078247072,
+      0.21897701382637025
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.04",
+    "pitch": [
+      0.19425224065780639,
+      0.2160493677854538,
+      0.21543950736522674
+    ]
+  },
+  {
+    "collection": "known",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_1_pitch0.04_initial_0.055",
+    "pitch": [
+      0.1602604031562805,
+      0.19414543509483337,
+      0.20197907567024231
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.16674067497253417,
+      0.049422061443328856,
+      0.12630484610795975
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.13828447341918945,
+      0.0878301663696766,
+      0.06842714101076126
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.10582799620926381,
+      0.15926475763320924,
+      0.032365855574607846
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.2183077120780945,
+      0.07769120246171951,
+      0.2199362051486969
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.21551471710205078,
+      0.15156891524791719,
+      0.21962805569171906
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.2090398347377777,
+      0.20035289704799653,
+      0.2181646293401718
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.2199549502134323,
+      0.1504132941365242,
+      0.21999967873096465
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.2198734986782074,
+      0.2018064296245575,
+      0.21999812483787537
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.2196960598230362,
+      0.21632116794586181,
+      0.2199905061721802
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.2135469573736191,
+      0.06626646906137466,
+      0.21826410472393035
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.20450764000415803,
+      0.13189764335751533,
+      0.21209050714969635
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.18602320313453674,
+      0.19013913810253144,
+      0.19132977426052095
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.21984741032123567,
+      0.11977560207247734,
+      0.2199985247850418
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.21960820257663727,
+      0.18768841922283172,
+      0.21999209940433503
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.2191198343038559,
+      0.212980979681015,
+      0.219964719414711
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.16777524650096892,
+      0.04950088381767273,
+      0.14958761632442474
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.13025059863924981,
+      0.09341719716787339,
+      0.08030610293149948
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "selected",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.08919713497161866,
+      0.160592500269413,
+      0.029904423356056215
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.10832545225508511,
+      0.07377964049577714,
+      0.056828892827033996
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.07355043470859528,
+      0.09353102639317512,
+      0.025174431800842285
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.04723298013210297,
+      0.12295365028083324,
+      0.010833342671394347
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.21232174217700958,
+      0.07824636846780778,
+      0.2192278528213501
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.1996566677093506,
+      0.10283831164240838,
+      0.21632348895072936
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.17379527747631074,
+      0.13519642889499664,
+      0.20575374424457551
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.21980460941791535,
+      0.10802471585571766,
+      0.21999518752098082
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.21941012382507324,
+      0.13707830652594566,
+      0.21997612774372102
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.21839457929134368,
+      0.1770029389858246,
+      0.2198889982700348
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.19436808109283446,
+      0.07488951027393341,
+      0.2078196680545807
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.16438697278499603,
+      0.09815009325742721,
+      0.17936033248901367
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.12125912249088287,
+      0.129948897510767,
+      0.12363153778016567
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.219377760887146,
+      0.09725617364048958,
+      0.21997875034809114
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.2182086956501007,
+      0.12428243130445481,
+      0.21990495681762695
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.21553481936454774,
+      0.16127840638160706,
+      0.21960939586162567
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.0992957279831171,
+      0.06889802306890487,
+      0.07422692239284516
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.06033885210752487,
+      0.08859640941023826,
+      0.030400541424751282
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 0,
+    "role": "final",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.033554944396018985,
+      0.11843682564795018,
+      0.009680327773094178
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.022978348135948182,
+      0.21957961618900299,
+      0.043806180357933044
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.01728028118610382,
+      0.21874823093414306,
+      0.03073636591434479
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.00887896478176117,
+      0.21677180349826813,
+      0.021321898102760316
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.19340708017349242,
+      0.2199996852874756,
+      0.20730906665325166
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.1771393471956253,
+      0.21999784290790558,
+      0.19456153750419616
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.1512413814663887,
+      0.2199882048368454,
+      0.17177837014198302
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.21966971576213837,
+      0.22,
+      0.21859600841999055
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.21950556039810182,
+      0.21999998688697814,
+      0.21683560490608214
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.21933370113372802,
+      0.21999990165233613,
+      0.2134246587753296
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.15546795427799226,
+      0.2199986034631729,
+      0.17762743353843688
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.12089664250612259,
+      0.2199917584657669,
+      0.14791603714227677
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.08343408808112145,
+      0.219961473941803,
+      0.10903870885260403
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.2182144457101822,
+      0.21999996721744539,
+      0.21644551873207094
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.21736755430698396,
+      0.2199997901916504,
+      0.21297515749931337
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.21648649036884307,
+      0.2199987804889679,
+      0.20650530397891997
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.034712345600128175,
+      0.21994276821613312,
+      0.07614993065595627
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.01993951678276062,
+      0.21976809620857238,
+      0.04931878328323364
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "selected",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.008970434665679932,
+      0.21922353863716126,
+      0.029558534622192382
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.0076987272500991825,
+      0.2187355375289917,
+      0.10806693302467466
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.006190959215164184,
+      0.21695223867893218,
+      0.07548853605985642
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.004017102122306823,
+      0.21426832437515259,
+      0.04431821763515473
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.12834542736411095,
+      0.21999990820884704,
+      0.21894506394863128
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.10599062144756317,
+      0.2199994295835495,
+      0.21575226604938508
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.07216363102197647,
+      0.21999726593494415,
+      0.2068382042646408
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.21753229975700378,
+      0.22,
+      0.21998083531856538
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.21670956254005433,
+      0.22,
+      0.2199120706319809
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.2158188146352768,
+      0.21999999344348908,
+      0.21958722174167633
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.0709178939461708,
+      0.21999928534030913,
+      0.21406608879566194
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.05237795293331146,
+      0.21999624967575074,
+      0.20443233847618103
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.030250980854034423,
+      0.2199847561120987,
+      0.18102715492248536
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.2090524035692215,
+      0.21999999344348908,
+      0.2198805731534958
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.20562796413898468,
+      0.2199999737739563,
+      0.21948846757411958
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.20304531514644622,
+      0.21999987542629243,
+      0.21785346388816834
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.010086687207221985,
+      0.2199042946100235,
+      0.1680150508880615
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.006484677791595459,
+      0.21967072546482086,
+      0.12781427457928657
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 1,
+    "role": "final",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.003271358013153076,
+      0.2190602946281433,
+      0.07784083843231202
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.11546260379254818,
+      0.1408296650648117,
+      0.1763882726430893
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.07587412446737289,
+      0.0694454163312912,
+      0.11500333290547132
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.04521094560623169,
+      0.03228814125061035,
+      0.05704732298851013
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.21921637237071992,
+      0.21998940467834474,
+      0.2198839432001114
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.21742487132549285,
+      0.2198991870880127,
+      0.21928126871585846
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.21210434794425964,
+      0.21918999552726745,
+      0.21616219222545624
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.21999015867710114,
+      0.21999999344348908,
+      0.21999906241893769
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.2199666404724121,
+      0.2199999475479126,
+      0.2199938040971756
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.21989275515079498,
+      0.2199996131658554,
+      0.2199651390314102
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.2175323784351349,
+      0.2198315042257309,
+      0.21947363674640655
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.21253688752651215,
+      0.2186744439601898,
+      0.21697704195976258
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.19952458024024963,
+      0.21159645438194274,
+      0.20582382678985595
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.21992289543151855,
+      0.21999990165233613,
+      0.2199930304288864
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.21975912034511566,
+      0.219999121427536,
+      0.2199593234062195
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.21928934633731842,
+      0.21999435484409333,
+      0.21978995561599732
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.1809106522798538,
+      0.19409736931324006,
+      0.2056768888235092
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.13859397679567337,
+      0.11999864719808102,
+      0.1634732410311699
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "selected",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.08760452732443809,
+      0.04580128729343414,
+      0.09109993934631348
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.11235526325181126,
+      0.1787758982181549,
+      0.20681410908699036
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.07593667685985565,
+      0.11497366715222597,
+      0.1836911505460739
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.04312617838382721,
+      0.05093561887741089,
+      0.13924219608306884
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.21946795880794526,
+      0.21999718725681305,
+      0.21988335311412813
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.21822089731693267,
+      0.21997431814670562,
+      0.21939955472946168
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_stationary_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.21443834781646728,
+      0.21974537789821624,
+      0.21712647140026092
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.21999398112297058,
+      0.22,
+      0.2199988394975662
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.2199792617559433,
+      0.21999999344348908,
+      0.21999361395835876
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.2199323958158493,
+      0.21999992787837983,
+      0.21996757805347442
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.21739705204963683,
+      0.2199300879240036,
+      0.21957812130451201
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.2120630419254303,
+      0.2194394773244858,
+      0.2179395705461502
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_ramp_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.19817955136299134,
+      0.2152065283060074,
+      0.21098510563373565
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.025",
+    "pitch": [
+      0.21995989382266998,
+      0.21999998688697814,
+      0.21999343037605285
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.04",
+    "pitch": [
+      0.21987330853939058,
+      0.21999988853931426,
+      0.2199666666984558
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_t2.9e+06_r0_p0.055",
+    "pitch": [
+      0.21962296783924104,
+      0.21999911487102508,
+      0.21984729230403902
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.025",
+    "pitch": [
+      0.16867969751358033,
+      0.20270690083503723,
+      0.21296860098838807
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.04",
+    "pitch": [
+      0.1205109778791666,
+      0.13896663576364518,
+      0.19321730196475984
+    ]
+  },
+  {
+    "collection": "validation",
+    "run": 2,
+    "role": "final",
+    "case_id": "validation_gust_t3.5e+06_r0_p0.055",
+    "pitch": [
+      0.07179289311170578,
+      0.04719373285770416,
+      0.14215773552656175
+    ]
+  }
+]

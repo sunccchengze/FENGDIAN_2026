@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "prepared_only": true,
+  "environment_steps": 0,
+  "optimizer_updates": 0,
+  "second_training_executed": false,
+  "source_config_sha256": "a7736d478a6333f0838734888284b41406c12c6fab8b06d3febb6e4556ff4ed2",
+  "prepared_config_sha256": "643f9075b3313dabe284bd58b9b1b9bb2b009698c59fb3d2b77c87bab78ea188",
+  "protected_inputs": 77,
+  "only_coordination_paths_relocated": true,
+  "additional_prior_model_contracts": 2,
+  "base_environment_algorithm_parents_gates_equal": true,
+  "training_validation_inputs_identical": true,
+  "no_candidates_selection_or_test_copied": true
+}

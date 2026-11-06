@@ -1,0 +1,24 @@
+{
+  "reason": "visual QA: wrap the rightmost long panel title within the canvas",
+  "prior_review_sha256": "5da6658e8fd0847f187f448d470d37da8fc8ab1aa114397440877377a9347c94",
+  "current_review_sha256": "7e728b5ca9c10b9c8f06efbaf00081f9776025d69be3b15b09cdaee53604e9a5",
+  "numerical_changes": false,
+  "new_environment_steps": 0,
+  "new_training_steps": 0,
+  "preserved_files": {
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v2\\attribution.png": "b1445e0a87f722785ca70ef1c58d725fecd9a1e32660745d2128c08faf61f299",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v2\\config.yaml": "bcf71f6f124ceecbc224c580437d77af3d8a16694720e876949492ac999055c1",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v2\\full_episode_examples.png": "213423c707a316bf5fb5293444abcd10108019dfca31f765cc5b00099da5bf0b",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v2\\pitch_reward_alignment_review.py": "5da6658e8fd0847f187f448d470d37da8fc8ab1aa114397440877377a9347c94",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v2\\summary.txt": "cfdace99fd38f68bebca79ee90ee0ecad60e8f65d92080b034fa61de03008a31",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v2\\tracking_motion_cost.png": "63aee00534993fe36151ccafe891172aa252c95e1534e6a8c55793e88c70ca3a"
+  },
+  "prior_numeric_outputs": {
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\metrics.csv": "bb40c7a451dbae3b6505c048018b4a605f6a7c764f45b51fa3683a4fa390b3c1",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\pairs.csv": "b29016ba64f6730629479ff25b89e628332e5b001c058678f8fb628f9472a933",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\trajectory_metrics.csv": "7342a61595b3d571e098723abee1c24ae1bc95a97ab2a84644f158765a764ee6",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\preference_groups.csv": "1b936d67a688df0b6d97d5b560b7d7bcb336538c85cf9639eada2a1a12836a7e",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\role_groups.csv": "9e58fe67290ed11122bd7511b780dbba71a5ea725e9a07bde7edb8632d2a945f",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\examples.csv": "c985ace98af68a0264c50f0e6ca050f75301d30a08c1b66816e7544fdbbb8023"
+  }
+}

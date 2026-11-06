@@ -1,0 +1,12 @@
+{
+  "source_sha256": "f2fbe7ff1fa23c95d1f39708f9144908cea144c28ac0d4a2164ee0ae7dd62a11",
+  "full_timeseries_case": "train_episode_8_initial_0.025",
+  "complete_steps": 128,
+  "files": {
+    "full_timeseries.png": "86ac2144f727557bbeda8190617190de8919baea262e8c27daaffc714ed9a0e5",
+    "test_comparison.png": "050c42a95d61f84c0fa513f506a341cd8702976fc8d49fe4b2c765af4d0fdee7",
+    "validation_and_decomposition.png": "ae9f2409eb7e4aa3adc717bf8eb97f6d01f90078ff0bb8923b747794b12e0708"
+  },
+  "plotting_environment_steps": 0,
+  "storage_bytes": 2188143390
+}

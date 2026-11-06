@@ -1,0 +1,4 @@
+Fixed 8/16-step macro value diagnostic completed. seed=42.
+144 anchors, 1296 branches, 30024 true model input rows and 65 mock rows.
+Formal RL and optimizer updates 0. No independent wind released.
+See groups.csv, anchors.csv, metrics.csv, local_direction.csv and verification.json.

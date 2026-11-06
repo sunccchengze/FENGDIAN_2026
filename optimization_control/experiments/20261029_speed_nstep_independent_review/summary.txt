@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "status": "review_probe_passed",
+  "formal_training_steps": 0,
+  "new_environment_steps": 0,
+  "discarded_memory_updates": 4,
+  "tests": 3
+}

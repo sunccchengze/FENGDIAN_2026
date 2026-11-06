@@ -1,0 +1,9 @@
+test_attribution_keeps_repairs_and_non_action_conflicts (optimization_control.tests.test_pitch_reward_alignment.RewardAlignmentTests.test_attribution_keeps_repairs_and_non_action_conflicts) ... ok
+test_duplicate_only_case_stays_in_coverage_denominator (optimization_control.tests.test_pitch_reward_alignment.RewardAlignmentTests.test_duplicate_only_case_stays_in_coverage_denominator) ... ok
+test_full_horizon_formula_and_timing_weight (optimization_control.tests.test_pitch_reward_alignment.RewardAlignmentTests.test_full_horizon_formula_and_timing_weight) ... ok
+test_preference_loss_never_confuses_max_reward_with_min_cost (optimization_control.tests.test_pitch_reward_alignment.RewardAlignmentTests.test_preference_loss_never_confuses_max_reward_with_min_cost) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.004s
+
+OK

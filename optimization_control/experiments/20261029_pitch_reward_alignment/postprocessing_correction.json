@@ -1,0 +1,31 @@
+{
+  "reasons": [
+    "report low_wind_stress separately without removing any cases",
+    "keep duplicate-only cases in coverage denominator",
+    "show tracking-only discount counts in figure"
+  ],
+  "previous_config_sha256": "a446ee7f42d0c6105c5ffa1bc96e4d10983ca24eb0bed01bd3a8cbd00c49dc0b",
+  "previous_review_sha256": "5900d5ca34ff58744fc2cb863f790b99c2ddb48abb7c3ecfc8e42e3267f57e9a",
+  "current_review_sha256": "5da6658e8fd0847f187f448d470d37da8fc8ab1aa114397440877377a9347c94",
+  "no_change_to_raw_trajectories": true,
+  "no_change_to_replay_code": true,
+  "new_environment_steps": 0,
+  "new_training_steps": 0,
+  "unchanged_thresholds": true,
+  "unchanged_score_formulas": true,
+  "preserved_files": {
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\attribution.png": "009eeb4d95227ffdfd5c68bf90283b298d76f2ce32df83d864df40484b578cc3",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\audit.json": "11b8b112ba6318dae7090dceb7d868bfa8bb49db7218278af255b39139752601",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\config.yaml": "a446ee7f42d0c6105c5ffa1bc96e4d10983ca24eb0bed01bd3a8cbd00c49dc0b",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\examples.csv": "c985ace98af68a0264c50f0e6ca050f75301d30a08c1b66816e7544fdbbb8023",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\finite_menu_preferences.csv": "fb3f6c67cbf268e1f67ace3790f59c3c947979e6b3d2e50bc559fa22ee724e7c",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\full_episode_examples.png": "213423c707a316bf5fb5293444abcd10108019dfca31f765cc5b00099da5bf0b",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\metrics.csv": "9c713e13010980f658e5926d4c70e91f46b7a818b8366fc54d5431a05656c781",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\pairs.csv": "5a49af913b2f44dfb9fea0a5e2b8a4f28cfd2f778d2680343327b52e3cca83f1",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\pitch_reward_alignment_review.py": "5900d5ca34ff58744fc2cb863f790b99c2ddb48abb7c3ecfc8e42e3267f57e9a",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\preference_groups.csv": "97222cc37f430287dea779f0aa1d0c23fe535c196b65cc4149af7dba63db39ee",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\role_groups.csv": "1fa0d823b7b96365407fe4d059506867eded50b7595d25ed7cbaa41ec78ae224",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\summary.txt": "2b6afe009f7d7e41c30276a7733a31977c84bb3692954c7504e1cdd249dd5e64",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\postprocess_v1\\tracking_motion_cost.png": "63aee00534993fe36151ccafe891172aa252c95e1534e6a8c55793e88c70ca3a"
+  }
+}

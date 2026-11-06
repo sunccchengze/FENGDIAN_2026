@@ -1,0 +1,20 @@
+version: causal_history_forecast_v1
+seed: 42
+source_commit: 1a7221a3bcbceb351b5555111c1a58a687bdf1f6
+history_samples: 32
+forecast_horizon: 12
+decision_interval: 8
+ridge_alpha: 0.1
+fit_trajectories_per_family: 200
+fit_episode_offset: 65000000
+families: [stationary, ramp, gust]
+speed_bounds: [7.5, 10.5]
+bootstrap_samples: 2000
+screen:
+  primary_horizon: 8
+  minimum_improved_families: 2
+  maximum_family_MSE_ratio: 1.05
+model_row_hard_cap: 170000
+precheck_mock_reserve: 2000
+conservative_closed_loop_reserve: 121700
+formal_RL_steps: 0

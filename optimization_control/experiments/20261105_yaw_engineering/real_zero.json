@@ -1,0 +1,204 @@
+{
+  "cases": [
+    {
+      "run": 0,
+      "case": "val_stationary_2850000",
+      "original_step": 0,
+      "max_differences": {
+        "trace": 0.0,
+        "obs": 0.0,
+        "rewards": 0.0,
+        "speed": 0.0,
+        "inputs": 0.0
+      },
+      "rmse_w": 431723.29221365904,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_engineering\\real_zero\\run0_case0.pt",
+        "sha256": "75491142962d802ae520f59e5e36b8c5a5d0b550a7a12ed21374e7bbe95bd4aa",
+        "bytes": 272237
+      },
+      "online_target_zero": true,
+      "full_trajectory_exact": true
+    },
+    {
+      "run": 0,
+      "case": "val_ramp_2850000",
+      "original_step": 0,
+      "max_differences": {
+        "trace": 0.0,
+        "obs": 0.0,
+        "rewards": 0.0,
+        "speed": 0.0,
+        "inputs": 0.0
+      },
+      "rmse_w": 508441.2309625974,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_engineering\\real_zero\\run0_case2.pt",
+        "sha256": "0a7e80d368618ba5b602e0856d2a5c9de4594a815b2da680b65e97601a75ddf3",
+        "bytes": 270317
+      },
+      "online_target_zero": true,
+      "full_trajectory_exact": true
+    },
+    {
+      "run": 0,
+      "case": "val_gust_2850000",
+      "original_step": 0,
+      "max_differences": {
+        "trace": 0.0,
+        "obs": 0.0,
+        "rewards": 0.0,
+        "speed": 0.0,
+        "inputs": 0.0
+      },
+      "rmse_w": 326140.49133665534,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_engineering\\real_zero\\run0_case4.pt",
+        "sha256": "85e8685a09e10b5014d667c55cf3954347fdc87870eaaebd22b2148ec900faab",
+        "bytes": 270573
+      },
+      "online_target_zero": true,
+      "full_trajectory_exact": true
+    },
+    {
+      "run": 1,
+      "case": "val_stationary_2850000",
+      "original_step": 0,
+      "max_differences": {
+        "trace": 0.0,
+        "obs": 0.0,
+        "rewards": 0.0,
+        "speed": 0.0,
+        "inputs": 0.0
+      },
+      "rmse_w": 431089.397108408,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_engineering\\real_zero\\run1_case0.pt",
+        "sha256": "1e8ff90e74e3e210cce4a349b93fe61e1c714529de46c6b46d5755bd1c838f8f",
+        "bytes": 271917
+      },
+      "online_target_zero": true,
+      "full_trajectory_exact": true
+    },
+    {
+      "run": 1,
+      "case": "val_ramp_2850000",
+      "original_step": 0,
+      "max_differences": {
+        "trace": 0.0,
+        "obs": 0.0,
+        "rewards": 0.0,
+        "speed": 0.0,
+        "inputs": 0.0
+      },
+      "rmse_w": 445903.2846316739,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_engineering\\real_zero\\run1_case2.pt",
+        "sha256": "e30005c52b86df79fb3c7ff43d670b85e23907ea565f14306f1eddcf626c2b80",
+        "bytes": 269613
+      },
+      "online_target_zero": true,
+      "full_trajectory_exact": true
+    },
+    {
+      "run": 1,
+      "case": "val_gust_2850000",
+      "original_step": 0,
+      "max_differences": {
+        "trace": 0.0,
+        "obs": 0.0,
+        "rewards": 0.0,
+        "speed": 0.0,
+        "inputs": 0.0
+      },
+      "rmse_w": 310606.9699508242,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_engineering\\real_zero\\run1_case4.pt",
+        "sha256": "3a45a1e0a7289ce54aaa633c2be6dd9936fb9372fd561056070b3e528e306639",
+        "bytes": 270445
+      },
+      "online_target_zero": true,
+      "full_trajectory_exact": true
+    },
+    {
+      "run": 2,
+      "case": "val_stationary_2850000",
+      "original_step": 4096,
+      "max_differences": {
+        "trace": 0.0,
+        "obs": 0.0,
+        "rewards": 0.0,
+        "speed": 0.0,
+        "inputs": 0.0
+      },
+      "rmse_w": 418954.71409170085,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_engineering\\real_zero\\run2_case0.pt",
+        "sha256": "5bb86ce23e13b14ccdea499136921430e21b9236a20cb1f4dccb59ff526de4ec",
+        "bytes": 276461
+      },
+      "online_target_zero": true,
+      "full_trajectory_exact": true
+    },
+    {
+      "run": 2,
+      "case": "val_ramp_2850000",
+      "original_step": 4096,
+      "max_differences": {
+        "trace": 0.0,
+        "obs": 0.0,
+        "rewards": 0.0,
+        "speed": 0.0,
+        "inputs": 0.0
+      },
+      "rmse_w": 444110.7022717532,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_engineering\\real_zero\\run2_case2.pt",
+        "sha256": "af130b8dfdd93c38f4477d50ac7712c72c6dc03e21f3f965a6fe45419fff8503",
+        "bytes": 274221
+      },
+      "online_target_zero": true,
+      "full_trajectory_exact": true
+    },
+    {
+      "run": 2,
+      "case": "val_gust_2850000",
+      "original_step": 4096,
+      "max_differences": {
+        "trace": 0.0,
+        "obs": 0.0,
+        "rewards": 0.0,
+        "speed": 0.0,
+        "inputs": 0.0
+      },
+      "rmse_w": 298630.9242145149,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_engineering\\real_zero\\run2_case4.pt",
+        "sha256": "0210aa95472945f1d4e102c9ab5534e7a15e05b8c22b4fae3eb4565e84b0aa80",
+        "bytes": 275181
+      },
+      "online_target_zero": true,
+      "full_trajectory_exact": true
+    }
+  ],
+  "accounting": {
+    "rows": {
+      "name": "real_zero",
+      "reserve": 2322,
+      "actual": 2322,
+      "api_calls": 2322,
+      "status": "complete",
+      "kinds": {
+        "PINN": 2322
+      }
+    },
+    "updates": {
+      "name": "real_zero",
+      "reserve": 0,
+      "actual": 0,
+      "api_calls": 0,
+      "status": "complete",
+      "kinds": {}
+    }
+  }
+}

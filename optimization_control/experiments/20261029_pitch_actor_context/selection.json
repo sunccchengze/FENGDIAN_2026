@@ -1,0 +1,359 @@
+{
+  "seed": 42,
+  "results": [
+    {
+      "arm": "replay",
+      "run": 0,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run0\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run0\\step_00016384\\attempt_000\\state.pth",
+      "selected_step": 16384,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run0\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 392508.17699569324,
+          "best_rmse_w": 392508.17699569324,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 388530.798038579,
+          "best_rmse_w": 388530.798038579,
+          "selected_step": 4096
+        },
+        {
+          "step": 8192,
+          "rmse_w": 391495.4541181595,
+          "best_rmse_w": 388530.798038579,
+          "selected_step": 4096
+        },
+        {
+          "step": 12288,
+          "rmse_w": 390115.60791664966,
+          "best_rmse_w": 388530.798038579,
+          "selected_step": 4096
+        },
+        {
+          "step": 16384,
+          "rmse_w": 387427.1863270826,
+          "best_rmse_w": 387427.1863270826,
+          "selected_step": 16384
+        }
+      ],
+      "updates": 31748,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        8001,
+        7985,
+        7869,
+        8031,
+        8031,
+        8098,
+        8123,
+        959798
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run0\\step_00000000\\attempt_000\\state.pth": "a6b170853f9207179925d2bbdb14731fb7f3acd8a6541755cf1170b12c398492",
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run0\\step_00016384\\attempt_000\\state.pth": "6642c7f2884431869de7ee3c878f42e4a60b777fcfc12aa5720931597bc7c0c4"
+      }
+    },
+    {
+      "arm": "replay",
+      "run": 1,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run1\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run1\\step_00000000\\attempt_000\\state.pth",
+      "selected_step": 0,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run1\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 387921.4477341292,
+          "best_rmse_w": 387921.4477341292,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 396772.82967089827,
+          "best_rmse_w": 387921.4477341292,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 388700.9281281063,
+          "best_rmse_w": 387921.4477341292,
+          "selected_step": 0
+        },
+        {
+          "step": 12288,
+          "rmse_w": 405230.82418478426,
+          "best_rmse_w": 387921.4477341292,
+          "selected_step": 0
+        },
+        {
+          "step": 16384,
+          "rmse_w": 413967.694292283,
+          "best_rmse_w": 387921.4477341292,
+          "selected_step": 0
+        }
+      ],
+      "updates": 27652,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        6970,
+        7008,
+        6950,
+        7001,
+        6964,
+        6960,
+        6836,
+        836175
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run1\\step_00000000\\attempt_000\\state.pth": "5b8ac3eeab206d8a5b8a26dfee7e81f4547e165c2c91e792c7d035ceb4a555b8",
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run1\\step_00016384\\attempt_000\\state.pth": "9fce7bda9d5f765b1a9ca9c0cf801e57586b4d84deb1b34a4709afc254a88fc1"
+      }
+    },
+    {
+      "arm": "replay",
+      "run": 2,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run2\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run2\\step_00008192\\attempt_000\\state.pth",
+      "selected_step": 8192,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run2\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 391293.81667118106,
+          "best_rmse_w": 391293.81667118106,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 407460.3682543385,
+          "best_rmse_w": 391293.81667118106,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 390259.6219462839,
+          "best_rmse_w": 390259.6219462839,
+          "selected_step": 8192
+        },
+        {
+          "step": 12288,
+          "rmse_w": 393213.6073445834,
+          "best_rmse_w": 390259.6219462839,
+          "selected_step": 8192
+        },
+        {
+          "step": 16384,
+          "rmse_w": 419190.3750078914,
+          "best_rmse_w": 390259.6219462839,
+          "selected_step": 8192
+        }
+      ],
+      "updates": 21508,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        4836,
+        4956,
+        5105,
+        4713,
+        4775,
+        4842,
+        4887,
+        588606
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run2\\step_00016384\\attempt_000\\state.pth": "4cc4e02b2fba9fda275231b9b600eb42c49038ff0bf5b6bda8687923c3ad1763",
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run2\\step_00000000\\attempt_000\\state.pth": "21e125909a4324f9167c450e07b045a0a36dd2f561ab142b3755d015bddf4ddb",
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\replay_run2\\step_00008192\\attempt_000\\state.pth": "f12d91a622701107660f949f86786cdb48d56da264184db7f8ca4dc374afb0ab"
+      }
+    },
+    {
+      "arm": "current_pitch",
+      "run": 0,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run0\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run0\\step_00004096\\attempt_000\\state.pth",
+      "selected_step": 4096,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run0\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 392508.17699569324,
+          "best_rmse_w": 392508.17699569324,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 387997.35148932145,
+          "best_rmse_w": 387997.35148932145,
+          "selected_step": 4096
+        },
+        {
+          "step": 8192,
+          "rmse_w": 393934.3312359418,
+          "best_rmse_w": 387997.35148932145,
+          "selected_step": 4096
+        },
+        {
+          "step": 12288,
+          "rmse_w": 393368.84269256284,
+          "best_rmse_w": 387997.35148932145,
+          "selected_step": 4096
+        },
+        {
+          "step": 16384,
+          "rmse_w": 401454.54213628254,
+          "best_rmse_w": 387997.35148932145,
+          "selected_step": 4096
+        }
+      ],
+      "updates": 31748,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        8001,
+        7985,
+        7869,
+        8031,
+        8031,
+        8098,
+        8123,
+        959798
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run0\\step_00000000\\attempt_000\\state.pth": "90563290aef4af883bd0171fc14ff8bf23d4b80a7d28d451789f6a46f8b5dff3",
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run0\\step_00004096\\attempt_000\\state.pth": "151b10c4cf77fb4471f5ebadf8590705e3fa1da6e738f650e8657cd89f3ae43a",
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run0\\step_00016384\\attempt_000\\state.pth": "9de48864158d4b9331d4ef58b8b444fe70aed53eeb2fba3b6d8625964aaa0ff3"
+      }
+    },
+    {
+      "arm": "current_pitch",
+      "run": 1,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run1\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run1\\step_00000000\\attempt_000\\state.pth",
+      "selected_step": 0,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run1\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 387921.4477341292,
+          "best_rmse_w": 387921.4477341292,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 398468.1806528488,
+          "best_rmse_w": 387921.4477341292,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 390789.88322213,
+          "best_rmse_w": 387921.4477341292,
+          "selected_step": 0
+        },
+        {
+          "step": 12288,
+          "rmse_w": 398494.04110592447,
+          "best_rmse_w": 387921.4477341292,
+          "selected_step": 0
+        },
+        {
+          "step": 16384,
+          "rmse_w": 395674.36261527636,
+          "best_rmse_w": 387921.4477341292,
+          "selected_step": 0
+        }
+      ],
+      "updates": 27652,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        6970,
+        7008,
+        6950,
+        7001,
+        6964,
+        6960,
+        6836,
+        836175
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run1\\step_00000000\\attempt_000\\state.pth": "99bfa2e3c9d235bd597ce45241237bdd0c5796674ace7e22a2ff2377feeb3da5",
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run1\\step_00016384\\attempt_000\\state.pth": "5802dfd5d0f6ca4a9c378c8c32d3b67d437d09af963541a89bc058e686df9183"
+      }
+    },
+    {
+      "arm": "current_pitch",
+      "run": 2,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run2\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run2\\step_00008192\\attempt_000\\state.pth",
+      "selected_step": 8192,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run2\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 391293.81667118106,
+          "best_rmse_w": 391293.81667118106,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 402735.49114026694,
+          "best_rmse_w": 391293.81667118106,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 391092.88097899477,
+          "best_rmse_w": 391092.88097899477,
+          "selected_step": 8192
+        },
+        {
+          "step": 12288,
+          "rmse_w": 396026.55971965217,
+          "best_rmse_w": 391092.88097899477,
+          "selected_step": 8192
+        },
+        {
+          "step": 16384,
+          "rmse_w": 412077.4615187251,
+          "best_rmse_w": 391092.88097899477,
+          "selected_step": 8192
+        }
+      ],
+      "updates": 21508,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        4836,
+        4956,
+        5105,
+        4713,
+        4775,
+        4842,
+        4887,
+        588606
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run2\\step_00016384\\attempt_000\\state.pth": "b35b5a31453fba566aebe5a39a8ef38eb908554b7924631eae66848e90797a3a",
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run2\\step_00008192\\attempt_000\\state.pth": "5df8099da621d6549182feaf63036d2263e6b5755e2e7d0a64a059f3863dee96",
+        ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\current_pitch_run2\\step_00000000\\attempt_000\\state.pth": "8f278ca6209041a36e796c7f5cf5c64db5c5fae54c58f1b2b5e2436eaeb284e3"
+      }
+    }
+  ],
+  "config_sha256": "7035d9c0aae7506563a2c3faf6a3baeb2468996b11ce77d2a16035ab2bfec92a",
+  "logical_learning_steps": 98304,
+  "test_used_for_selection": false
+}

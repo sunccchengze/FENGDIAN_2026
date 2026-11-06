@@ -1,0 +1,939 @@
+seed: 42
+source_commit: 740d04044e6b046dfe6256bfa3c2d4ef88925783
+trial: .\optimization_control\experiments\20261028_pitch_nstep
+base_config:
+  schema_version: 1
+  seed: 42
+  purpose: synthetic_wind12_inherited_control_only_not_physical_validation
+  plant:
+    kind: pinn
+    source: teammate_20261021_synthetic_test
+    power_semantics: synthetic_test_power_w_not_physical_validation
+    turbine_ids:
+    - T01
+    - T02
+    - T03
+    rated_power_w:
+    - 5000000
+    - 5000000
+    - 5000000
+    layout:
+      kind: fixed_collinear_equal_spacing
+      spacing_m: 378.0
+      source: demonstration_assumption_not_team_calibration
+    features:
+    - ambient_wind_speed_m_s
+    - ambient_wind_direction_rad
+    - turbulence_intensity
+    - gamma_1
+    - gamma_2
+    - gamma_3
+    - beta_1
+    - beta_2
+    - beta_3
+    - omega_1
+    - omega_2
+    - omega_3
+    bounds:
+      ambient_wind_speed_m_s:
+      - 7.499999
+      - 10.500001
+      ambient_wind_direction_rad:
+      - 0.0
+      - 6.283186307179586
+      turbulence_intensity:
+      - 0.019998999552965163
+      - 0.15000100596046448
+      gamma_1:
+      - -0.40000100596046445
+      - 0.40000100596046445
+      gamma_2:
+      - -0.40000100596046445
+      - 0.40000100596046445
+      gamma_3:
+      - -0.40000100596046445
+      - 0.40000100596046445
+      beta_1:
+      - -1.0e-06
+      - 0.2200009988079071
+      beta_2:
+      - -1.0e-06
+      - 0.2200009988079071
+      beta_3:
+      - -1.0e-06
+      - 0.2200009988079071
+      omega_1:
+      - 0.5999990238418579
+      - 1.2670009599456786
+      omega_2:
+      - 0.5999990238418579
+      - 1.2670009599456786
+      omega_3:
+      - 0.5999990238418579
+      - 1.2670009599456786
+    model_version: wind12-synthetic-7506554ac981
+    factory: optimization_control.environments.wind_pinn_backend:create_predictor
+    backend:
+      run_dir: .\optimization_control\experiments\20261022_wind_pinn_integration\model
+      script: .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\modify_pinn_wind_io.py
+      allow_synthetic_demo: true
+      model_sha256: 7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451
+      script_sha256: 4db850074b62a7f86720534f6286b48c2a024efd9218f1b243c376fd54d5a270
+  environment:
+    parameter_source:
+      kind: assumption
+      reference: configs/wind_pinn_demo.yaml
+      note: synthetic integration limits, not calibrated actuators
+    dt_s: 1.0
+    yaw_frame: nacelle_heading
+    heading_bounds_rad:
+    - -314.1592653589793
+    - 314.1592653589793
+    control_mask:
+    - 0
+    - 1
+    - 0
+    horizon: 128
+    wind_scale_m_s: 25.0
+    action_low:
+    - -0.25
+    - 0.0
+    - 0.6
+    action_high:
+    - 0.25
+    - 0.22
+    - 1.267
+    initial_operating_point:
+    - 0.0
+    - 0.04
+    - 0.9
+    rate_limits:
+    - 0.005
+    - 0.00872664626
+    - 0.1
+    time_constants_s:
+    - 5.0
+    - 2.0
+    - 5.0
+    target_w: 3452173.1875
+    wind_base_m_s: 9.0
+    wind_amplitude_m_s: 0.0
+    wind_period_steps: 128
+    wind_noise_std_m_s: 0.0
+    wind_direction_rad: 0.0
+    turbulence_intensity: 0.1
+    action_change_weight: 0.001
+    reward_scale: 100.0
+    inflow:
+      speed:
+        mean_min_m_s: 8.7
+        mean_max_m_s: 9.3
+        ti_values:
+        - 0.04
+        - 0.08
+        scenario: mixed
+        length_scale_m: 100.0
+        padding_factor: 8
+        ramp_amplitude_m_s: 0.35
+        gust_amplitude_m_s: 0.5
+        gust_duration_s: 32.0
+        speed_min_m_s: 7.5
+        speed_max_m_s: 10.5
+        max_attempts: 100
+      direction:
+        mean_rad: 0.0
+        amplitude_rad: 0.035
+        period_s: 180.0
+        ramp_rad: 0.04
+    reference_schedule:
+      yaw_offset_rad: 0.0
+      speed_per_wind_rad_m: 0.11114035087719298
+  algorithm:
+    hidden: 64
+    actor_lr: 0.0001
+    critic_lr: 0.001
+    gamma: 0.99
+    tau: 0.01
+    batch_size: 64
+    capacity: 32768
+    grad_clip: 1.0
+    actor_initial_action:
+    - 0.0
+    - -0.6363636363636364
+    - -0.10044977511244357
+  training:
+    total_steps: 2048
+    warmup_steps: 256
+    update_every: 2
+    noise_std: 0.15
+    episode_target_fractions:
+    - 0.18440761875
+    - 0.23014487916666668
+    - 0.27588213958333335
+  evaluation:
+    seed_offset: 10000
+    scenarios:
+    - name: fixed_0
+      target_w: 2766114.28125
+      wind_trajectory: &id001
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+    - name: fixed_1
+      target_w: 3452173.1875
+      wind_trajectory: *id001
+    - name: fixed_2
+      target_w: 4138232.09375
+      wind_trajectory: *id001
+    - name: stationary
+      target_w: 3452173.1875
+      inflow:
+        speed:
+          scenario: stationary
+    - name: ramp
+      target_w: 3452173.1875
+      inflow:
+        speed:
+          scenario: ramp
+    - name: gust
+      target_w: 3452173.1875
+      inflow:
+        speed:
+          scenario: gust
+  baselines:
+    three_channel: true
+    yaw_offset_rad: 0.0
+    speed_per_wind_rad_m: 0.11114035087719298
+    pitch_bias_rad: 0.04
+    kp: 1.5
+    ki: 0.08
+    antiwindup_gain: 0.2
+    integral_limit_rad: 0.3
+selection_sha256: d8081f0525987b8d6057a6902ad22c88460b1f5a103be36ce0531472d686f8e7
+anchors:
+- 32
+- 96
+horizons:
+- 8
+- 32
+cases:
+- id: validation_stationary_t2.9e+06_r0_p0.04
+  split: validation
+  family: stationary
+  target_w: 2900000.0
+  initial_pitch_rad: 0.04
+  episode: 32000000
+  path: .\optimization_control\experiments\20261028_pitch_nstep\validation_bank\stationary_0_0.csv
+- id: validation_stationary_t3.5e+06_r0_p0.04
+  split: validation
+  family: stationary
+  target_w: 3500000.0
+  initial_pitch_rad: 0.04
+  episode: 32000010
+  path: .\optimization_control\experiments\20261028_pitch_nstep\validation_bank\stationary_1_0.csv
+- id: validation_ramp_t2.9e+06_r0_p0.04
+  split: validation
+  family: ramp
+  target_w: 2900000.0
+  initial_pitch_rad: 0.04
+  episode: 32000100
+  path: .\optimization_control\experiments\20261028_pitch_nstep\validation_bank\ramp_0_0.csv
+- id: validation_ramp_t3.5e+06_r0_p0.04
+  split: validation
+  family: ramp
+  target_w: 3500000.0
+  initial_pitch_rad: 0.04
+  episode: 32000110
+  path: .\optimization_control\experiments\20261028_pitch_nstep\validation_bank\ramp_1_0.csv
+- id: validation_gust_t2.9e+06_r0_p0.04
+  split: validation
+  family: gust
+  target_w: 2900000.0
+  initial_pitch_rad: 0.04
+  episode: 32000200
+  path: .\optimization_control\experiments\20261028_pitch_nstep\validation_bank\gust_0_0.csv
+- id: validation_gust_t3.5e+06_r0_p0.04
+  split: validation
+  family: gust
+  target_w: 3500000.0
+  initial_pitch_rad: 0.04
+  episode: 32000210
+  path: .\optimization_control\experiments\20261028_pitch_nstep\validation_bank\gust_1_0.csv
+variants:
+- id: zero
+  direction: none
+  delta_rad: 0.0
+  vector:
+  - 0.0
+  - 0.0
+  - 0.0
+- id: common_-0.005
+  direction: common
+  delta_rad: -0.005
+  vector:
+  - -0.005
+  - -0.005
+  - -0.005
+- id: common_+0.005
+  direction: common
+  delta_rad: 0.005
+  vector:
+  - 0.005
+  - 0.005
+  - 0.005
+- id: unit1_-0.005
+  direction: unit1
+  delta_rad: -0.005
+  vector:
+  - -0.005
+  - -0.0
+  - -0.0
+- id: unit1_+0.005
+  direction: unit1
+  delta_rad: 0.005
+  vector:
+  - 0.005
+  - 0.0
+  - 0.0
+- id: unit2_-0.005
+  direction: unit2
+  delta_rad: -0.005
+  vector:
+  - -0.0
+  - -0.005
+  - -0.0
+- id: unit2_+0.005
+  direction: unit2
+  delta_rad: 0.005
+  vector:
+  - 0.0
+  - 0.005
+  - 0.0
+- id: unit3_-0.005
+  direction: unit3
+  delta_rad: -0.005
+  vector:
+  - -0.0
+  - -0.0
+  - -0.005
+- id: unit3_+0.005
+  direction: unit3
+  delta_rad: 0.005
+  vector:
+  - 0.0
+  - 0.0
+  - 0.005
+own_variants:
+- id: zero
+  direction: none
+  delta_rad: 0.0
+  vector:
+  - 0.0
+  - 0.0
+  - 0.0
+- id: common_-0.005
+  direction: common
+  delta_rad: -0.005
+  vector:
+  - -0.005
+  - -0.005
+  - -0.005
+- id: common_+0.005
+  direction: common
+  delta_rad: 0.005
+  vector:
+  - 0.005
+  - 0.005
+  - 0.005
+evaluation_limit: 65000
+worst_mechanism_steps: 51840
+handoff_steps: 6912
+worst_total_steps: 58752
+formal_training_steps: 0
+test_rollout: false
+protected_hashes:
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\modify_pinn_io.py: ae841a99bc1d27ef64d6e061e7457fc171d168f530017e706abf61984af26c8c
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\modify_pinn_wind_io.py: 4db850074b62a7f86720534f6286b48c2a024efd9218f1b243c376fd54d5a270
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\prepare_pinn_outputchange.py: 768af5bc0b8e0b236943bbcc50d93f74600596d0a241a484ccc8ecd88845b832
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\gitignore.txt: 5e2c671ddc9e301dafc241ad1a7c07aa85a91fef560a17721b41977b9eddba17
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\README_pinn_wind_zh.txt: 683414be7f2af902b0824ae30efb1e95a2e315e8f37891f1d607b69492b2407c
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\requirements.txt: 20f1b0519d5d21e7f705dc9c1c67cc5bbbe10cf3755052d092bb58c7770f8892
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\README.md: 2a11b0316029fd36b78fc73a1be995036c1ed9a80517963793ad94a808a3c85c
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\iochanged_9ms\build_report.json
+  : 0c4ffc38228777435d8735cfea36d1c2ac18328b1b4a69573126e8a4805823da
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\prepared_9ms\preparation_report.json
+  : 09bc88328734398b320f0e10a4ea54ee2c6b019adbfc5bb745d1790a9bd81233
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\project_config.json: 2aecb320606021ba089fd0440fdf9aadc651db0f594bb7e757d12b7b4b310a6d
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\wind_iochanged_9ms\build_report.json
+  : 2c2311286f5311df13fae6b7025ab2dfede0c5a11154383dcdf03d971f2696b2
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\wind_project_config.json: 7a62dd9e641eeb0e2cc9b87ca15690877de566923a6b38f2d8e35cb071859fe2
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\iochanged_9ms\untrained.keras
+  : 430742626cd4dc7cfc6f11f6f923db621d4789010a4a7f8456e959b40f690b12
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\prepared_9ms\original_frozen.keras
+  : 41ce925edb83ae0e38d73ebdc1c19bdfa21974ebb3800d7674a2c960a7aae303
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\prepared_9ms\original_frozen_features.keras
+  : f87b9f483510c7490bb6a7449a3645ee0819c3ae5c7751513704dccfc2de86fe
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\wind_iochanged_9ms\untrained.keras
+  : 9e93883785b3f5ea5d75b97eb101d36d85e98de13120dba99b753545683ed163
+  .\optimization_control\experiments\20261022_wind_pinn_integration\model\trained.keras: 7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451
+  .\optimization_control\experiments\20261022_wind_pinn_integration\model\training_report.json: 3996fbec8618e74e307d85a43224d667732d06ab2c39725a0dded98df74a25aa
+  .\optimization_control\experiments\20261022_wind_pinn_integration\model\config_used.json: 658163d05742215bf304839218115d2c7f75d5e4cd79ba0a043b1da8d9876034
+  .\optimization_control\experiments\20261022_random_wind_training\selection.json: 9e12bf608548845a22a5f9357392dcb97dc1f5a487a1fc6bc7d8f3bd9d850d9e
+  .\optimization_control\experiments\20261022_random_wind_training\pitch_run_0\segment_000\step_00016384.pth: a14ffe30b0556e23e5bf328f64290260b7035f41d31b9c3210f1ad90db8d0fee
+  .\optimization_control\experiments\20261022_random_wind_training\pitch_run_1\segment_000\step_00016384.pth: 3dd7e8770618620d846977fd5d79af0bac3cbfc18c89185ed5f0aebc43bdb454
+  .\optimization_control\experiments\20261022_random_wind_training\pitch_run_2\segment_000\step_00016384.pth: f270020ab1f92462bb719aed5dfc8c35eb596ffc2100cae986337faf7e472029
+  .\optimization_control\maddpg_wind_farm\progressive_random_control.py: 21ae98c90ddfbe90a4fdcc0a88b445951a83b096c9e8f2d2d4be2ac64625fbe8
+  .\optimization_control\maddpg_wind_farm\random_wind_training.py: a1085f37dcb9bf9435da03f66bd2821bb4e4a305455f3c4ab499503453608917
+  .\optimization_control\maddpg_wind_farm\algorithm.py: ee89948d8d98aa33b9b4ee20675ccc588c2005a6f8bec01b41cd555ba271febb
+  .\optimization_control\maddpg_wind_farm\controllers.py: 10b69e09ee99a0b7516ebb1c8b4c9ca875442b236aeab0c6c2c98c255ed27a70
+  .\optimization_control\maddpg_wind_farm\workflow.py: 37bdc49828d8008ea238d86cb849e941d66cc5db221878dca18b6a406ebe09a2
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_0\segment_000\step_00016384.pth
+  : 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_0\segment_000\step_00000000.pth
+  : dd5254069342df1bdf347a5a3c29bb79195ddc2beb1036d36d2df845059a15a7
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00012288.pth
+  : 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00016384.pth
+  : f8f7ec1a9f9a8e4586b6e04092f4aa4a82af77f78f888ddaa13792aea126cd5b
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00000000.pth
+  : 1693837c4dc6bb45eb35e5cafa68e62624bf7a9f491422ff1f93816b8f6bddd2
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00000000.pth
+  : 4b8ee052f6e166355e78da3bacaad8bd966980d2832a8831c28555bdc3757318
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00016384.pth
+  : 4fa1e5b2d8f4ea539678c44fee2b4ecfbc9bcd919e0910d66b7027d19ae05e7f
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00008192.pth
+  : e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+  .\optimization_control\experiments\20261023_progressive_random_control\config.yaml: af2c9f0c3c7bdf207624e2e33f4bc6842ce2f7116db7d1c50323cd57ee33b5bc
+  .\optimization_control\experiments\20261023_progressive_random_control\selection.json: 8baafbf35e0c3e23bb68b37b0f7cfa365c677b4c1d1c0dadfa13f4b201aa6b18
+  .\PROJECT_STATUS.md: 0d591407d1499700b58f2ce1a96e1c73a10729557fdba1d1bdb6aa0ddb5ec528
+  .\optimization_control\TASKFLOW.md: b6bdd82eb164a39e08ff3f98ba10ce5dfc62c799cecd36d777e6a025a760ff5e
+  .\README.md: 4ec167cf913d8095bb1ccac570419f36b460e639bb3500dfb1a84dd12a5e6ed9
+  .\optimization_control\maddpg_wind_farm\algorithm.py: ee89948d8d98aa33b9b4ee20675ccc588c2005a6f8bec01b41cd555ba271febb
+  .\optimization_control\maddpg_wind_farm\audit_handover.py: 4b0c63534ee361edfe197fefbaf7e4ab1fbeb4b263451a77ac100315dea6b59d
+  .\optimization_control\maddpg_wind_farm\benchmark.py: bffe236acf9cdf47ddcc52cbd3a5aeaa0818593006b6b0e39a7054027b0d15a5
+  .\optimization_control\maddpg_wind_farm\controllers.py: 10b69e09ee99a0b7516ebb1c8b4c9ca875442b236aeab0c6c2c98c255ed27a70
+  .\optimization_control\maddpg_wind_farm\diagnose_fixed_pinn.py: 81b8bf86e09c8363ab70ed6db8679cca973a4ff361ced46ee76a856c0234265e
+  .\optimization_control\maddpg_wind_farm\diagnostics.py: eeeb0a19a00e9922ade5237ca543600382f1490ad67e274cbf50205010f8c68f
+  .\optimization_control\maddpg_wind_farm\fixed_curriculum.py: 624bd25fe43e4e3c2b21b9da78464a4844348f238d21e433655d58d9d6c7a63b
+  .\optimization_control\maddpg_wind_farm\fixed_pinn_demo.py: 74b040df4c6fdd4e31199f24400b79bed5e785d7c4aa77f40ce83215582ab6df
+  .\optimization_control\maddpg_wind_farm\handoff_replay.py: f9900f7c746495eb74e937061137ac8a51699783c1e5c1c64b5dda0178322948
+  .\optimization_control\maddpg_wind_farm\inflow_workflow.py: 48265c9d6959a9eda4e44f88485c86fa1e1691d8d1b6bf42c71e3f706bdbb57b
+  .\optimization_control\maddpg_wind_farm\joint_distillation.py: 71db4c891b7c4852fa3bbea4477f971fe141e46678b56a5cff37d938bb40d22e
+  .\optimization_control\maddpg_wind_farm\midterm_best_cases.py: fa7094c2c7e401d1ce4209fe625fd16c77adff232935019c4ee94117185f656e
+  .\optimization_control\maddpg_wind_farm\midterm_figures.py: 967d06d1927dc81df5b6b6ac58c8fc9a7d2eae7fb154bf302a6d987d0c72389b
+  .\optimization_control\maddpg_wind_farm\mixed_stability.py: 71cf144b32f0c306b950b0efff2daaeabebe13c01002a65ee272f8ae6ba1a38e
+  .\optimization_control\maddpg_wind_farm\nstep_algorithm.py: 17badc54c0be33dfb97447c6c17eee448d8d3c2c788cf27b94e4561662f73590
+  .\optimization_control\maddpg_wind_farm\pitch_action_diagnostic.py: 017f8a1fc7c65a07dbf483d14cfbcbca21b49340250a2a56ced529142f054fbc
+  .\optimization_control\maddpg_wind_farm\pitch_action_review.py: be197adc4e7c22688804fe687ab353df5b9ea28564749ab752698fb56669acaa
+  .\optimization_control\maddpg_wind_farm\pitch_cross_wind_diagnostic.py: db315a4b8f90fdbdaabc3fd2bfc304ea29aca1934ecfa2628d5978f31147ad5a
+  .\optimization_control\maddpg_wind_farm\pitch_cross_wind_review.py: f2e29159625a25b17e7193568f8f7b9dfcb7c2fee04ce5b7f69c8f7dd30cfd40
+  .\optimization_control\maddpg_wind_farm\pitch_nstep_trial.py: 2ba3a50908768017246b613c9c81c2557dfaa1a189e40f0bba0fefd055d4930c
+  .\optimization_control\maddpg_wind_farm\portable_random_replay.py: c759fa1efce82d3da5badbd4def19c79b6f323813408ccd498c0d8d4bd5de5a4
+  .\optimization_control\maddpg_wind_farm\progressive_figures.py: 639fb0ee94abf7bf2fee71346b77e4926b6d1c50eeb5c240821462ccb4576101
+  .\optimization_control\maddpg_wind_farm\progressive_random_control.py: 21ae98c90ddfbe90a4fdcc0a88b445951a83b096c9e8f2d2d4be2ac64625fbe8
+  .\optimization_control\maddpg_wind_farm\random_wind_training.py: a1085f37dcb9bf9435da03f66bd2821bb4e4a305455f3c4ab499503453608917
+  .\optimization_control\maddpg_wind_farm\reachability.py: e6f3b581308a4ef9cae6087845a8a6658a704007a9d5da593c60995d83d7d3ce
+  .\optimization_control\maddpg_wind_farm\residual_algorithm.py: 0e88d7bc4480244cd300c0c20801ef114b3bdb12aa6df7e26c0c1b6e5fd0e497
+  .\optimization_control\maddpg_wind_farm\residual_figures.py: 02f003659e44ae3c77e29277e429881b8d925f3f902a928827492772a61b9da9
+  .\optimization_control\maddpg_wind_farm\residual_random_control.py: c45ae99f4df9b6bdea255d1d12afb20e0aba35af3699f9733e6665177e9685ef
+  .\optimization_control\maddpg_wind_farm\residual_stability.py: 6057ba3e5501f4b77aa1336c9650b450ce4b172d8fb8e5c346ef4e33f71d3188
+  .\optimization_control\maddpg_wind_farm\residual_stability_diagnostic.py: bc3e73ad34f7c3025c3c3cd7fe60c02e001dc33cb5b2193931119de89e5c47ac
+  .\optimization_control\maddpg_wind_farm\retrospective.py: f73b690c697d76c24b4ac442f21ea629d0661ebb6a62880b62168b22645327ba
+  .\optimization_control\maddpg_wind_farm\stable_workflow.py: 407a37cc2e11f4f4b3cee40a19fbb4f57ffafe06ad1eadaeec8298d8f6c52cb5
+  .\optimization_control\maddpg_wind_farm\tracking_study.py: c5d125b6f0e820975a4f020d20f52f55e4e381ebf5a000f076f504a7c6d0a5c3
+  .\optimization_control\maddpg_wind_farm\value_baseline_diagnostic.py: 778c04952f1c587e93ffe45f2a06a5a32911eaa254ff4a573dba83ed622bfad4
+  .\optimization_control\maddpg_wind_farm\verify_joint_distillation.py: 9218dac8a1c44161042e6dc958dcc9f9003cc87d376ed67533ab902a3e8fdaae
+  .\optimization_control\maddpg_wind_farm\verify_progressive.py: a78be4053279f8e06274ab489319d44ad282c8e71e602be4adc0a91b6297a412
+  .\optimization_control\maddpg_wind_farm\verify_residual.py: c924519d9abac8b2bdec0f5a09fa5ca454f2d1ab798804f2ed7d65a86581b5c7
+  .\optimization_control\maddpg_wind_farm\verify_residual_stability.py: fddf19a802ca743317fda778fbed761ee50612767186e2ed44ec650670b135c2
+  .\optimization_control\maddpg_wind_farm\verify_stable.py: 9591c029aba6bb15aebb705dbd70c0dee82559c44a6a3cbc8c9b59bb3ca3b022
+  .\optimization_control\maddpg_wind_farm\verify_workflow.py: 442ad722b22c0407edf3eb419354c862acc16569d0b85ffc49ae5e96e62c47df
+  .\optimization_control\maddpg_wind_farm\wind_pinn_curriculum.py: 0c3ca5aa93781ebf5fd05fce1f5dedcbae4e46fc62d281f61def16ae281d05be
+  .\optimization_control\maddpg_wind_farm\wind_pinn_demo.py: c1d78a658b09a322dd4cb90b03bfa3fac2ddb3930f0f56e50f14517aecdcbee5
+  .\optimization_control\maddpg_wind_farm\workflow.py: 37bdc49828d8008ea238d86cb849e941d66cc5db221878dca18b6a406ebe09a2
+  .\optimization_control\maddpg_wind_farm\__init__.py: a6a5747834cc2db1e24109f8d64322a6d8088bd5ff6d3551c2fae838b8075e6f
+  .\optimization_control\maddpg_wind_farm\PITCH_NSTEP_PROTOCOL.md: 6f553d9f914ca8af98dbfd63be585931e9c493e9030922b82fd80a3aa475182a
+  .\optimization_control\experiments\20261028_pitch_nstep\config.yaml: 396cb7f00d6d6d89fd8e2d0036e23f53b7ab5cd0cdc2632dce0ebfcd0d08314a
+  .\optimization_control\experiments\20261028_pitch_nstep\selection.json: d8081f0525987b8d6057a6902ad22c88460b1f5a103be36ce0531472d686f8e7
+  .\optimization_control\experiments\20261028_pitch_nstep\cross_stream.csv: cef7be0a13abecfd52f53337fbc73c1fb2271f33b0c48018e6a2d2dec43ace46
+  .\optimization_control\experiments\20261028_pitch_nstep\aggregate.csv: 22e1df8e688340fecbd1de7ce2e128020d710abbf8d02ac9f656166fd2dedf5d
+  .\optimization_control\experiments\20261028_pitch_nstep\paired_groups.csv: 94c0d71448ef675bd5f0b5f5fbce64afeb2c2ea35f9f0fde9221b620f6eccdbf
+  .\optimization_control\experiments\20261028_pitch_nstep\checkpoint_degradation.csv: 02f7726bba79336acee9003d0ad2635f2f7f3d3ca5047125a69b97d35edc010e
+  .\optimization_control\experiments\20261028_pitch_nstep\acceptance.json: 6aba189256646747ac6c4fb97618a470af883faba811d9471852d24212847718
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run0\step_00000000\attempt_000\state.pth
+  : 63302cf2ef711e27f60f9e85587ffd2e233dc04ca0fbd82a6010b2eaf78a0932
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run0\step_00000000\attempt_000\validation_metrics.csv
+  : 7d4e20520bcc254d20fb8d27ea20fc2b576f56be974c2feaa7c501f35095bcac
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run0\step_00000000\attempt_000\validation_traces.csv.gz
+  : 4721fa6f63a28f5c5f8f9d4b2f7e42bf0e725b4b5a5e6b103d9ba8307c6022fd
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run0\step_00016384\attempt_000\state.pth
+  : 4cb0ea4b5e58bc713f7968de436d92f093d6fe579600fa8a7436dbb05464fa80
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run0\step_00016384\attempt_000\validation_metrics.csv
+  : d0d52ffd03d3b2ff72c9e93971ec0b1450ad0106bfc6758f61f9ef0699405a38
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run0\step_00016384\attempt_000\validation_traces.csv.gz
+  : b473f3dc8b0b06e17065dea1dd1de9ba72cf9b78f849d71377905e3d9530e22a
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run1\step_00000000\attempt_000\state.pth
+  : 1b3935503b841c79a18c8e19b3a08592ba0a0bf96005a0ece07878008978e06f
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run1\step_00000000\attempt_000\validation_metrics.csv
+  : a1df3a149ed6f762f5c80f0ba4f5cc45091202941269a66705e1c54f8cb8202d
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run1\step_00000000\attempt_000\validation_traces.csv.gz
+  : 24829694b26f47763babd657ca436a789467fc337a88917855144fe5d9a62f46
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run1\step_00016384\attempt_000\state.pth
+  : 41cf8dc2c99b1e00154e3b8a9e3a066e1fa4958478d06524a6ef94c33c9d2ead
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run1\step_00016384\attempt_000\validation_metrics.csv
+  : c017db7d0245e313181f9cc9a7613d647ba890c9e1ecf8af0a90621120cfc29b
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run1\step_00016384\attempt_000\validation_traces.csv.gz
+  : 36fc7644ff1ee207d7b3c50d044ef9645dda4df58de32d9e0a0dab24a5d228e7
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run2\step_00000000\attempt_000\state.pth
+  : 32677c7d00464a0d1656990213fdc05e68f371f39f71c3f89a8fcbb715c3a5a7
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run2\step_00000000\attempt_000\validation_metrics.csv
+  : 4e398a3fec5f4339b7f3f9d70b3af80453dce47bc6f11d37d7641572336837a9
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run2\step_00000000\attempt_000\validation_traces.csv.gz
+  : 662b27dd5d64eb22a2721542f07ba579a4a80f648636a49454b70e72504a04d2
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run2\step_00012288\attempt_000\state.pth
+  : cdf432614a23f38c8ac466309d30b599930f8894fcd44eb4879eb8848a17d5c4
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run2\step_00012288\attempt_000\validation_metrics.csv
+  : e236eb91997883b97f459e00b0425a7a9684347df5a077a81fccdcdbf05fd756
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run2\step_00012288\attempt_000\validation_traces.csv.gz
+  : 65fc564e0cf8cd688718053661218ce7781453f91f264212cbd08566c4d305d4
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run2\step_00016384\attempt_000\state.pth
+  : a54fbc0552ae5cf4efc1d42c9e1cd3bedc96d3e66e269e095d151cad3ead386e
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run2\step_00016384\attempt_000\validation_metrics.csv
+  : 0807c9d7108d9d105f6435828fbf7cf0da79ebf8b85b0ce2d84c4d8b81b56f89
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n1_run2\step_00016384\attempt_000\validation_traces.csv.gz
+  : 88475c65db161f35bb491972e1c3f09c5cf1ba296562c662ff8cca9f6e172ab7
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run0\step_00000000\attempt_000\state.pth
+  : 9334ebbd99eec50d9a6494eace963ac856c330c7f5fb7a469f9fdf78c1db8fc1
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run0\step_00000000\attempt_000\validation_metrics.csv
+  : 7d4e20520bcc254d20fb8d27ea20fc2b576f56be974c2feaa7c501f35095bcac
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run0\step_00000000\attempt_000\validation_traces.csv.gz
+  : 8136684f9b3f879d5296ab3fbb42484de548aef4536ae5660a99f5a235c004d3
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run0\step_00016384\attempt_000\state.pth
+  : 1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run0\step_00016384\attempt_000\validation_metrics.csv
+  : 0c1c78653a9dd19682b177ca1c10fedd8d04804a69d61a21feb060c2ce093804
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run0\step_00016384\attempt_000\validation_traces.csv.gz
+  : f861cfc23a072f95d7f09d13f410f17cb1d72ca032d3eb5730903295c99ac1ab
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run1\step_00000000\attempt_000\state.pth
+  : 1a6df63acfe16df6c9f2e0226de68941dbea653ff61224aebda11a0c4a9a8d2a
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run1\step_00000000\attempt_000\validation_metrics.csv
+  : a1df3a149ed6f762f5c80f0ba4f5cc45091202941269a66705e1c54f8cb8202d
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run1\step_00000000\attempt_000\validation_traces.csv.gz
+  : 21f73a323829b3c3a4c8252e81d06d6daf1714d50bf09e8df9c5e71b6127f351
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run1\step_00012288\attempt_000\state.pth
+  : cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run1\step_00012288\attempt_000\validation_metrics.csv
+  : 11ec4c93830e59cbc86dc1e2debad5f181dc50bda75049e62e2ddb78ef7a8c10
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run1\step_00012288\attempt_000\validation_traces.csv.gz
+  : 999a797d324855efe3b09ef074cb60860be9ffcbcfb16130d8e3c0d504b3cc20
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run1\step_00016384\attempt_000\state.pth
+  : 2ffb8f11a15022f6683f72e1a392501d49eaa2a7c8d964518017e1cfaab6f28f
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run1\step_00016384\attempt_000\validation_metrics.csv
+  : e16a14cf7561327463d2485d574f16750ef1ef1f166531017b52501fc60d2fcd
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run1\step_00016384\attempt_000\validation_traces.csv.gz
+  : ec2e333f1ffc882b8ada20f481c14589858bed877e411d07b9640d49ad18a955
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run2\step_00000000\attempt_000\state.pth
+  : 593d139ed8c50348f4eca5d1667cc023b4bdd0367059897dd19d6aa5f75d1d9d
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run2\step_00000000\attempt_000\validation_metrics.csv
+  : 4e398a3fec5f4339b7f3f9d70b3af80453dce47bc6f11d37d7641572336837a9
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run2\step_00000000\attempt_000\validation_traces.csv.gz
+  : d5c124638a7aec4f8b3b49edb9746a5bd2cc470259908f04fd221affa75c40ff
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run2\step_00004096\attempt_000\state.pth
+  : 0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run2\step_00004096\attempt_000\validation_metrics.csv
+  : 06fcc0bd9210dfa2e7cf24eef648a7b81a9da7ee9ee9fc21be62745038ae5889
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run2\step_00004096\attempt_000\validation_traces.csv.gz
+  : 253983862e6147038dc14078851c3317c4f03c4f33678dbc06b7e408bffce403
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run2\step_00016384\attempt_000\state.pth
+  : 4bafdba8048bcf9035fd0772caf1c839eb026b30ea2079a18740f1949c276d5b
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run2\step_00016384\attempt_000\validation_metrics.csv
+  : b2f82bec2adea7214ccdc57175d008d6839427f72c2088a5315aa876955c2ebc
+  ? .\optimization_control\experiments\20261028_pitch_nstep\n8_run2\step_00016384\attempt_000\validation_traces.csv.gz
+  : 34b334ca036f7c0d3f588d19843a605fd09ed9d8c8569123d4f8d4a294ec2ad2
+  .\optimization_control\maddpg_wind_farm\pitch_nstep_mechanism.py: ec3a468158040c90caba8ce60507d76f8d20ef32d051d5a9bc42f0951092a89e
+  .\optimization_control\maddpg_wind_farm\pitch_nstep_handoff.py: 8f598eeb4a7c898ecb82b0e452fea0362778f133c53139f6c391ae6f64edab63
+  .\optimization_control\maddpg_wind_farm\PITCH_NSTEP_MECHANISM_PROTOCOL.md: 5a2d66d9a363116ee4f4fadc8d344dc993ea21e6ecd3116a948d07dba13517ac

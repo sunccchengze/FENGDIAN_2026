@@ -1,0 +1,23 @@
+{
+  "documents": [
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\NREL_SPEED_REGRESSION_RESULTS_20261106.md",
+      "sha256": "37b26498a4005725020d1d2b312de42f14dd4691700c85bb043cb246068c3786",
+      "local_copy": "report.md"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\NREL_THREE_CHANNEL_HANDOFF_20261106.md",
+      "sha256": "34a9ebe3f8a9ec08f22695328422c11a31d23e2389dd02e27bfd9a6c085cbfe4",
+      "local_copy": "handoff.md"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PINN_SPEED_RESPONSE_INTERFACE_20261106.md",
+      "sha256": "57a2c734a114c097fe112398ead7a4c30d6b9c123738fb65f6c312bb36affb4f",
+      "local_copy": "pinn_response_interface.md"
+    }
+  ],
+  "examples": "examples_execution.json",
+  "no_large_weights_copied": true,
+  "no_public_deployment_interface_added": true,
+  "no_teammate_messages_sent": true
+}

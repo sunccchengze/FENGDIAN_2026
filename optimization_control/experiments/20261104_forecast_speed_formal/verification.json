@@ -1,0 +1,322 @@
+{
+  "formal_rows": 125259,
+  "engineering_rows": 1728,
+  "entry_rows": 0,
+  "cumulative_rows": 126987,
+  "formal_steps": 73728,
+  "training_resets": 576,
+  "validation_diagnostic_rollouts": 395,
+  "eval_trace_rows": 50955,
+  "max_rmse_recompute_diff_w": 0.0,
+  "passed_takeover": 21,
+  "takeover_checks": 21,
+  "whole_macro_hold_verified": true,
+  "all_motion_rates_valid": true,
+  "no_new_independent_test": true,
+  "selection_sha": "f244fb0d4bd899b549e8933fbbeb2c4013323a4aa799e1ab956f16d371fe65dd",
+  "checkpoint_checks": {
+    "states": 36,
+    "verified_final_macro_rows": 6144,
+    "B_C_noise_and_sampling_rng_paired": true,
+    "snapshot_tensor_identity": true,
+    "bytes_by_arm": {
+      "A": [
+        19452373,
+        19444053,
+        19444949,
+        19425749,
+        18262997,
+        19432405,
+        19420245,
+        19410645,
+        15875157,
+        17033301,
+        18199957,
+        19363541
+      ],
+      "B": [
+        886353,
+        1173265,
+        1461649,
+        1748241,
+        885841,
+        1173073,
+        1459409,
+        1745297,
+        885329,
+        1172369,
+        1460177,
+        1747793
+      ],
+      "C": [
+        920977,
+        1242641,
+        1565265,
+        1887185,
+        921169,
+        1243537,
+        1564305,
+        1884945,
+        920337,
+        1241617,
+        1563729,
+        1885009
+      ]
+    },
+    "clocks": [
+      {
+        "arm": "A",
+        "run": 0,
+        "step": 2048,
+        "updates": 769,
+        "bytes": 19452373
+      },
+      {
+        "arm": "A",
+        "run": 0,
+        "step": 4096,
+        "updates": 1793,
+        "bytes": 19444053
+      },
+      {
+        "arm": "A",
+        "run": 0,
+        "step": 6144,
+        "updates": 2817,
+        "bytes": 19444949
+      },
+      {
+        "arm": "A",
+        "run": 0,
+        "step": 8192,
+        "updates": 3841,
+        "bytes": 19425749
+      },
+      {
+        "arm": "A",
+        "run": 1,
+        "step": 2048,
+        "updates": 769,
+        "bytes": 18262997
+      },
+      {
+        "arm": "A",
+        "run": 1,
+        "step": 4096,
+        "updates": 1793,
+        "bytes": 19432405
+      },
+      {
+        "arm": "A",
+        "run": 1,
+        "step": 6144,
+        "updates": 2817,
+        "bytes": 19420245
+      },
+      {
+        "arm": "A",
+        "run": 1,
+        "step": 8192,
+        "updates": 3841,
+        "bytes": 19410645
+      },
+      {
+        "arm": "A",
+        "run": 2,
+        "step": 2048,
+        "updates": 769,
+        "bytes": 15875157
+      },
+      {
+        "arm": "A",
+        "run": 2,
+        "step": 4096,
+        "updates": 1793,
+        "bytes": 17033301
+      },
+      {
+        "arm": "A",
+        "run": 2,
+        "step": 6144,
+        "updates": 2817,
+        "bytes": 18199957
+      },
+      {
+        "arm": "A",
+        "run": 2,
+        "step": 8192,
+        "updates": 3841,
+        "bytes": 19363541
+      },
+      {
+        "arm": "B",
+        "run": 0,
+        "step": 2048,
+        "updates": 97,
+        "bytes": 886353
+      },
+      {
+        "arm": "B",
+        "run": 0,
+        "step": 4096,
+        "updates": 225,
+        "bytes": 1173265
+      },
+      {
+        "arm": "B",
+        "run": 0,
+        "step": 6144,
+        "updates": 353,
+        "bytes": 1461649
+      },
+      {
+        "arm": "B",
+        "run": 0,
+        "step": 8192,
+        "updates": 481,
+        "bytes": 1748241
+      },
+      {
+        "arm": "B",
+        "run": 1,
+        "step": 2048,
+        "updates": 97,
+        "bytes": 885841
+      },
+      {
+        "arm": "B",
+        "run": 1,
+        "step": 4096,
+        "updates": 225,
+        "bytes": 1173073
+      },
+      {
+        "arm": "B",
+        "run": 1,
+        "step": 6144,
+        "updates": 353,
+        "bytes": 1459409
+      },
+      {
+        "arm": "B",
+        "run": 1,
+        "step": 8192,
+        "updates": 481,
+        "bytes": 1745297
+      },
+      {
+        "arm": "B",
+        "run": 2,
+        "step": 2048,
+        "updates": 97,
+        "bytes": 885329
+      },
+      {
+        "arm": "B",
+        "run": 2,
+        "step": 4096,
+        "updates": 225,
+        "bytes": 1172369
+      },
+      {
+        "arm": "B",
+        "run": 2,
+        "step": 6144,
+        "updates": 353,
+        "bytes": 1460177
+      },
+      {
+        "arm": "B",
+        "run": 2,
+        "step": 8192,
+        "updates": 481,
+        "bytes": 1747793
+      },
+      {
+        "arm": "C",
+        "run": 0,
+        "step": 2048,
+        "updates": 97,
+        "bytes": 920977
+      },
+      {
+        "arm": "C",
+        "run": 0,
+        "step": 4096,
+        "updates": 225,
+        "bytes": 1242641
+      },
+      {
+        "arm": "C",
+        "run": 0,
+        "step": 6144,
+        "updates": 353,
+        "bytes": 1565265
+      },
+      {
+        "arm": "C",
+        "run": 0,
+        "step": 8192,
+        "updates": 481,
+        "bytes": 1887185
+      },
+      {
+        "arm": "C",
+        "run": 1,
+        "step": 2048,
+        "updates": 97,
+        "bytes": 921169
+      },
+      {
+        "arm": "C",
+        "run": 1,
+        "step": 4096,
+        "updates": 225,
+        "bytes": 1243537
+      },
+      {
+        "arm": "C",
+        "run": 1,
+        "step": 6144,
+        "updates": 353,
+        "bytes": 1564305
+      },
+      {
+        "arm": "C",
+        "run": 1,
+        "step": 8192,
+        "updates": 481,
+        "bytes": 1884945
+      },
+      {
+        "arm": "C",
+        "run": 2,
+        "step": 2048,
+        "updates": 97,
+        "bytes": 920337
+      },
+      {
+        "arm": "C",
+        "run": 2,
+        "step": 4096,
+        "updates": 225,
+        "bytes": 1241617
+      },
+      {
+        "arm": "C",
+        "run": 2,
+        "step": 6144,
+        "updates": 353,
+        "bytes": 1563729
+      },
+      {
+        "arm": "C",
+        "run": 2,
+        "step": 8192,
+        "updates": 481,
+        "bytes": 1885009
+      }
+    ]
+  },
+  "report_source_sha": "246dd5955097b899dd2728f87d8aec64e84b000bd005e20e673cc07e05c85239"
+}

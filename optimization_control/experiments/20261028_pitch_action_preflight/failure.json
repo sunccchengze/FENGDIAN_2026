@@ -1,0 +1,9 @@
+{
+  "stage": "initial_batched_preflight",
+  "power_difference_w": 4.5,
+  "action_difference": 1.1652708053588867e-05,
+  "reward_difference": 4.410743713378906e-06,
+  "passed": false,
+  "formal_evaluation_started": false,
+  "resolution": "canonical_single_row_original_env_step_without_tolerance_change"
+}

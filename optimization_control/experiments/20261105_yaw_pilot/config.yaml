@@ -1,0 +1,50 @@
+seed: 42
+base: a12288fd1dfdd2b299e4d949288d8a5908bcbe3f
+arms:
+- Y
+- S
+runs:
+- 0
+- 1
+- 2
+points:
+- 0
+- 1024
+- 2048
+formal_steps: 12288
+expected_updates_per_job: 97
+rows: 37023
+engineering_rows: 3399
+cumulative_rows: 40422
+cumulative_cap: 42000
+row_retry_margin: 1578
+pilot_disk_MiB: 120
+jobs_disk_MiB: 12
+shared_disk_MiB: 48
+combined_disk_MiB: 128
+engineering_bytes: 5725533
+prior_waveform_hashes: 858
+new_train_waveforms: 48
+training_design:
+  design_entropy:
+  - 42
+  - 20261105
+  - 9041
+  training_targets_w:
+  - 2600000.0
+  - 3200000.0
+  - 3800000.0
+  training_initial_pitch_rad:
+  - 0.025
+  - 0.055
+test_release: false
+main_criterion: each_family_equal_parent_case_mean_RMSE_strictly_below_shared_PI
+ratios_are_diagnostics: true
+selection: strict_validation_mean_then_earliest
+new_budget_schedule: true
+noise_std: 0.15
+noise_entropy:
+- 42
+- 20261105
+- 9042
+no_auxiliary_heads: true

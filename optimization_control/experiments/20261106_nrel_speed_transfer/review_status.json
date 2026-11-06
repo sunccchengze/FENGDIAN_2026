@@ -1,0 +1,8 @@
+{
+  "review_path": ".\\optimization_control\\maddpg_wind_farm\\NREL_SPEED_REVIEW_20261106.md",
+  "review_sha256": "3c91c6149a637e0cd9c109e4f0bbd06d3a0f6bd8a48a79da07779d4a7e27368e",
+  "classification": "design_review_only_implementation_pending",
+  "performance_allowed": false,
+  "performance_started": false,
+  "review_admission_created": false
+}

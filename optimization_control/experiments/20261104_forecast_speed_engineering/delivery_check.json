@@ -1,0 +1,15 @@
+{
+  "source_protection_passed": true,
+  "protected_files": 31,
+  "artifact_gamma_max_diff": 0.0,
+  "all_rows_budget_verified": true,
+  "four_engineering_states_verified": true,
+  "local_document_links": 12,
+  "document_tables_passed": true,
+  "AST_passed": true,
+  "formal_RL_steps": 0,
+  "test_cases_generated": 0,
+  "model_rows": 1728,
+  "updates": 6,
+  "prior_experiment_reruns": 0
+}

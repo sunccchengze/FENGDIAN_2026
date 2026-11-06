@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "markdown": [
+    {
+      "path": "optimization_control\\maddpg_wind_farm\\SPEED_CAUSAL_SEARCH_PROTOCOL.md",
+      "sha256": "bb5c0648e4f1654d7753e91e206327cfab5e53f34332aca5ca9f3e5035a3c92b"
+    },
+    {
+      "path": "optimization_control\\maddpg_wind_farm\\SPEED_CAUSAL_SEARCH_RESULTS.md",
+      "sha256": "7b208df6b4242c635a2c975240ca8bd45bfe4a5ec07b6999af1ec91dbce51f92"
+    }
+  ],
+  "links_tables_fences": true,
+  "python_AST_files": 5,
+  "contract_tests_passed": 4
+}

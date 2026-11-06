@@ -1,0 +1,4 @@
+stage,run_id,transitions,terminal_transitions,dynamic_speed_schedule_verified,reward_verified,max_heading_step_rad,max_pitch_step_rad,max_speed_step_rad_s,checkpoint_unchanged
+pitch,0,32768,256,True,True,0.0019714832305908203,0.008726650476455688,0.047905568890273566,True
+pitch,1,32768,256,True,True,0.001971006393432617,0.008726650476455688,0.047955592252314085,True
+pitch,2,32768,256,True,True,0.0019707679748535156,0.008726650476455688,0.04633882784843444,True

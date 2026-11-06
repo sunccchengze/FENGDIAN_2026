@@ -1,0 +1,8 @@
+{
+  "release_sha": "f3a1a7414964feac4ed92688f32f421c5c4d87b2999783f1f7401cf6794c7f43",
+  "roles": 23,
+  "workers": 3,
+  "formal_rows": 53406,
+  "max_rows": 55000,
+  "query_precheck": 0
+}

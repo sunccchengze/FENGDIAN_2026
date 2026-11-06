@@ -1,0 +1,39 @@
+seed: 42
+base_commit: 9467cfc169156b58218aa37b707471019b4fb971
+start_commit: 93370066992012c61bb9244912ee0481200abf1f
+anchors: 48
+times:
+- 32
+- 96
+rules:
+- legacy
+- nrel
+controllers:
+- Y2_selected
+- pi
+cases: 6
+planned_PINN_rows: 1440
+row_hard_cap: 2048
+disk_cap_MiB: 32
+inherited_completed_rows: 4030
+combined_planned_rows: 5470
+combined_hard_cap: 6078
+speed_low: 0.7225663103256524
+speed_high: 1.267
+grid_points: 7
+local_radius_rad_s: 0.01
+replay_power_atol_w: 2.0
+replay_ueff_atol_m_s: 2.0e-05
+replay_farm_atol_w: 6.0
+direction_zero_band_w: 2.0
+environment_steps: 0
+training_steps: 0
+optimizer_updates: 0
+new_winds: 0
+reference_ueff: same_response_anchor_output_once_no_fixed_point_iteration
+intervention: speed_only_fixed_ambient_gamma_pitch_positions
+static_query_not_actuator_feasibility: true
+plot_anchor: 0
+mse_units: kW_squared
+variance_ddof: 0
+threshold_error_sign: 0.0

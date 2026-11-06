@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "additional_model_rows": 0,
+  "additional_updates": 0,
+  "replay_lengths": [
+    8,
+    8,
+    3
+  ],
+  "partial_episode_disk_rejected": true,
+  "terminal_reward": [
+    3.340118646621704,
+    3.340118646621704,
+    3.340118646621704
+  ],
+  "terminal_target_skipped": true,
+  "next_macro_input_dimensions": 84,
+  "live_target_rows": 2,
+  "target_max_abs_difference": 0.0,
+  "forecast_and_joint_z_inputs_verified": true,
+  "formal_storage_budget_MiB": 253.25
+}

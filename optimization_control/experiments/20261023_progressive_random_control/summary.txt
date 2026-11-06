@@ -1,0 +1,118 @@
+{
+  "seed": 42,
+  "completed": true,
+  "physical_validation": false,
+  "gates": [
+    {
+      "stage": "pitch",
+      "passed": false,
+      "passed_runs": 2,
+      "runs": 3
+    }
+  ],
+  "training_steps": 49152,
+  "jobs": 3,
+  "aggregate": [
+    {
+      "stage": "pitch",
+      "controller": "initial",
+      "runs": 3,
+      "mean_rmse_w": 359918.84823987616,
+      "std_across_runs_w": 34423.54406480385
+    },
+    {
+      "stage": "pitch",
+      "controller": "selected",
+      "runs": 3,
+      "mean_rmse_w": 338193.99453099427,
+      "std_across_runs_w": 23823.2043209956
+    },
+    {
+      "stage": "pitch",
+      "controller": "final",
+      "runs": 3,
+      "mean_rmse_w": 342943.97978362907,
+      "std_across_runs_w": 24706.09911301781
+    },
+    {
+      "stage": "pitch",
+      "controller": "fixed",
+      "runs": 1,
+      "mean_rmse_w": 1044331.193524721,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "pitch",
+      "controller": "p",
+      "runs": 1,
+      "mean_rmse_w": 504871.8499894974,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "pitch",
+      "controller": "pi",
+      "runs": 1,
+      "mean_rmse_w": 399614.8736076766,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "pitch",
+      "controller": "parent",
+      "runs": 3,
+      "mean_rmse_w": 359918.84823987616,
+      "std_across_runs_w": 34423.54406480385
+    }
+  ],
+  "test_used_for_selection": false,
+  "source_files_unchanged": true,
+  "test_rows": 300,
+  "trace_rows": 38400,
+  "reachability_certified": false,
+  "comparison": "shared actuator and background rules; pitch stage has identical yaw/speed schedules for RL and P/PI",
+  "progression_complete": false,
+  "executed_control_masks": [
+    [
+      0,
+      1,
+      0
+    ]
+  ],
+  "not_started_stages": [
+    "pitch_speed",
+    "all"
+  ],
+  "stop_reason": "pitch validation 2/3; run0 ramp target 2.85 MW worst RMSE 504684.02 W exceeds 500000 W",
+  "module_tests_passed": 136,
+  "inherited_state_exact": true,
+  "retained_replay_transitions": 98304,
+  "regenerated_training_episodes": 384,
+  "test_rmse_recompute_max_difference_w": 0.0,
+  "protected_files": 28,
+  "next_speed_head_fit_passed": false,
+  "next_speed_head_held_out_max_action_errors": [
+    0.39541763067245483,
+    0.30365124344825745,
+    0.33908236026763916
+  ],
+  "fresh_process_replay": {
+    "seed": 42,
+    "full_trace_equal": true,
+    "rows": 10240,
+    "metric_rows": 80,
+    "checkpoint_unchanged": true,
+    "new_training": false,
+    "physical_validation": false,
+    "stage": "pitch",
+    "run_id": 0
+  },
+  "replay_experiment": "optimization_control\\experiments\\20261023_progressive_random_replay",
+  "evidence": [
+    "verification.json",
+    "replay_audit.csv",
+    "stage_gates.json",
+    "test/aggregate.csv",
+    "progressive_validation.png",
+    "progressive_test_families.png",
+    "figure_notes.md"
+  ]
+}

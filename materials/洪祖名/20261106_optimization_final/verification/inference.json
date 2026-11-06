@@ -1,0 +1,24 @@
+{
+  "mode": "inference",
+  "case": 0,
+  "results": [
+    {
+      "controller": "Y0_selected",
+      "saved_action_exact": true,
+      "model_queries": 0
+    },
+    {
+      "controller": "Y1_selected",
+      "saved_action_exact": true,
+      "model_queries": 0
+    },
+    {
+      "controller": "Y2_selected",
+      "saved_action_exact": true,
+      "model_queries": 0
+    }
+  ],
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "original_worktrees_used": false
+}

@@ -1,0 +1,7 @@
+{
+  "formal_steps": 0,
+  "smoke_steps": 0,
+  "strict_takeover_passed": 3,
+  "reason_retired": "Public inherited policy entry needed explicit version4 composition dispatch before learning. Core act/total_action gate passed; archive preserved. New final directory will re-run gate after the API fix.",
+  "code_snapshot": "code_snapshot"
+}

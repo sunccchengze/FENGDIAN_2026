@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "status": "completed",
+  "formal_training_steps": 0,
+  "optimizer_updates": 0,
+  "checkpoints": 15,
+  "canonical_states": 18,
+  "additional_own_states": 30,
+  "branches": 1902,
+  "horizon_rows": 3804,
+  "pair_rows": 21600,
+  "counterfactual_environment_steps": 64512,
+  "source_test_performance_read": false,
+  "physical_validation": false,
+  "interpretation": "Finite deterministic returns and model-local directions; not long-run expected Q.",
+  "verification": "verification.json",
+  "next_proposal": "See SPEED_VALUE_RESULTS.md; no new training is authorized by this diagnostic."
+}

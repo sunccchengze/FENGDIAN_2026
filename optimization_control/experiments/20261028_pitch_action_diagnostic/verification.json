@@ -1,0 +1,12 @@
+{
+  "jobs": 132,
+  "full_trajectory_rows": 287232,
+  "fork_trajectory_rows": 143616,
+  "max_metric_recompute_difference": 0.0,
+  "max_reward_components_difference": 5.960246816094641e-08,
+  "max_actuator_reconstruction_difference_rad": 0.0,
+  "protected_files_unchanged": true,
+  "rl_training_steps": 0,
+  "test_access": false,
+  "baseline_max_replay_difference_w": 0.0
+}

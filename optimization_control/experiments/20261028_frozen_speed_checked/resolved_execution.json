@@ -1,0 +1,36 @@
+{
+  "seed": 42,
+  "formal_steps_per_job": 8192,
+  "smoke_steps_per_job": 1024,
+  "formal_jobs": 6,
+  "warmup_steps": 512,
+  "update_every": 2,
+  "evaluation_every": 2048,
+  "evaluation_speed_radius_rad_s": 0.1,
+  "actor_and_head_lr": 0.0001,
+  "critic_lr": 0.001,
+  "tau": 0.01,
+  "gamma": 0.99,
+  "batch_size": 64,
+  "inherited_critic_optimizer_and_replay": true,
+  "actor_moments_reset_both_arms": true,
+  "baseline_white_noise_active_column": 1,
+  "baseline_white_noise_std": 0.03,
+  "speed_white_noise_active_column": 2,
+  "speed_white_noise_std": 0.15,
+  "noise_decay_floor": 0.2,
+  "initial_speed_radius_rad_s": 0.02,
+  "radius_ramp_steps": 4096,
+  "authoritative": "frozen_speed.yaml protocol + frozen_speed_training.py; parent algorithm fields inherited",
+  "inherited_template_training_fields_not_read_by_this_driver": {
+    "total_steps": 2048,
+    "warmup_steps": 256,
+    "update_every": 2,
+    "noise_std": 0.15,
+    "episode_target_fractions": [
+      0.18440761875,
+      0.23014487916666668,
+      0.27588213958333335
+    ]
+  }
+}

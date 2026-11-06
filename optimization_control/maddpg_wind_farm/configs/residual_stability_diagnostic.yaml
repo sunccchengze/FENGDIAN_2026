@@ -1,0 +1,13 @@
+version: residual_stability_diagnostic_v1
+seed: 42
+runtime_site_packages: .venv/pinn_tf216
+source_experiment: optimization_control/experiments/20261023_residual_random_control
+split: validation
+run_ids: [0, 1, 2]
+channel_order: [yaw, pitch, speed]
+mixtures: [SSS, SSF, SFS, SFF, FSS, FSF, FFS, FFF]
+ablations: [zero_yaw, zero_speed, zero_both]
+control_endpoints: [selected, final]
+max_policy_case_rollouts: 234
+max_environment_steps: 29952
+new_training_steps: 0

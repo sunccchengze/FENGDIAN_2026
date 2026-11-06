@@ -1,0 +1,39 @@
+{
+  "mode": "replay",
+  "case": 17,
+  "results": [
+    {
+      "controller": "Y0_selected",
+      "full_trace_exact": true,
+      "model_queries": 129,
+      "rmse_kW": 634.2191491213972
+    },
+    {
+      "controller": "Y1_selected",
+      "full_trace_exact": true,
+      "model_queries": 129,
+      "rmse_kW": 628.118766059544
+    },
+    {
+      "controller": "Y2_selected",
+      "full_trace_exact": true,
+      "model_queries": 129,
+      "rmse_kW": 616.2678127504772
+    },
+    {
+      "controller": "p",
+      "full_trace_exact": true,
+      "model_queries": 129,
+      "rmse_kW": 599.8990079622423
+    },
+    {
+      "controller": "pi",
+      "full_trace_exact": true,
+      "model_queries": 129,
+      "rmse_kW": 600.6702963485315
+    }
+  ],
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "original_worktrees_used": false
+}

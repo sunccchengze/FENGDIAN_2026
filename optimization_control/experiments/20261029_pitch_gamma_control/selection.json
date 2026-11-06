@@ -1,0 +1,371 @@
+{
+  "seed": 42,
+  "results": [
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 0,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run0\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run0\\step_00016384\\attempt_000\\state.pth",
+      "selected_step": 16384,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run0\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 447247.8844726874,
+          "best_rmse_w": 447247.8844726874,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 451650.06633821095,
+          "best_rmse_w": 447247.8844726874,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 449640.9449135386,
+          "best_rmse_w": 447247.8844726874,
+          "selected_step": 0
+        },
+        {
+          "step": 12288,
+          "rmse_w": 441935.16877658357,
+          "best_rmse_w": 441935.16877658357,
+          "selected_step": 12288
+        },
+        {
+          "step": 16384,
+          "rmse_w": 432676.23115614126,
+          "best_rmse_w": 432676.23115614126,
+          "selected_step": 16384
+        }
+      ],
+      "final_over_selected": 1.0,
+      "updates": 23811,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        3931,
+        3964,
+        3986,
+        3980,
+        3972,
+        4064,
+        4117,
+        479954
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run0\\step_00016384\\attempt_000\\state.pth": "bdc5af561372c340adb99e89fd17a9351d1fc71f8b09cd6aa79287bc81de33aa",
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run0\\step_00000000\\attempt_000\\state.pth": "462dc95eb1183aae59f01aff2091b3ba7558cffe025c1c34081708a744c0af98"
+      }
+    },
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 1,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run1\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run1\\step_00004096\\attempt_000\\state.pth",
+      "selected_step": 4096,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run1\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 440209.5273684666,
+          "best_rmse_w": 440209.5273684666,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 431749.5723359864,
+          "best_rmse_w": 431749.5723359864,
+          "selected_step": 4096
+        },
+        {
+          "step": 8192,
+          "rmse_w": 446288.4397234955,
+          "best_rmse_w": 431749.5723359864,
+          "selected_step": 4096
+        },
+        {
+          "step": 12288,
+          "rmse_w": 454779.9390894131,
+          "best_rmse_w": 431749.5723359864,
+          "selected_step": 4096
+        },
+        {
+          "step": 16384,
+          "rmse_w": 442200.5036478074,
+          "best_rmse_w": 431749.5723359864,
+          "selected_step": 4096
+        }
+      ],
+      "final_over_selected": 1.024206002695674,
+      "updates": 21763,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        3990,
+        4021,
+        3985,
+        4087,
+        4047,
+        4030,
+        3935,
+        479873
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run1\\step_00000000\\attempt_000\\state.pth": "f5765db777aa616ef7fd6a00987fc9cbe0cdb00e4832b7d9057117bacede6684",
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run1\\step_00016384\\attempt_000\\state.pth": "675ed8d1c92677d996c2e2afbe52b9da0f759ed4a608c51924fbcea5edba69f8",
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run1\\step_00004096\\attempt_000\\state.pth": "8c3537ec73a3f624b4ed71a1462684d52b1f35cd2c8ae180ff423684b3ec6642"
+      }
+    },
+    {
+      "arm": "g099",
+      "gamma": 0.99,
+      "run": 2,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run2\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run2\\step_00000000\\attempt_000\\state.pth",
+      "selected_step": 0,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run2\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 422675.6840994135,
+          "best_rmse_w": 422675.6840994135,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 430699.3452299829,
+          "best_rmse_w": 422675.6840994135,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 435979.3075418392,
+          "best_rmse_w": 422675.6840994135,
+          "selected_step": 0
+        },
+        {
+          "step": 12288,
+          "rmse_w": 458026.55336856726,
+          "best_rmse_w": 422675.6840994135,
+          "selected_step": 0
+        },
+        {
+          "step": 16384,
+          "rmse_w": 451757.2781082094,
+          "best_rmse_w": 422675.6840994135,
+          "selected_step": 0
+        }
+      ],
+      "final_over_selected": 1.0688035652459154,
+      "updates": 19715,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        3915,
+        4029,
+        4081,
+        3965,
+        4000,
+        3966,
+        3918,
+        480094
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run2\\step_00000000\\attempt_000\\state.pth": "19faf1eef69f72c99ee2a258bd1e169a98582443465d792b7c711ba6b17efcdb",
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g099_run2\\step_00016384\\attempt_000\\state.pth": "7d9c4533c740a079b5dede9d4262e643423341165fe6e37a33deab148bc679a5"
+      }
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 0,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run0\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run0\\step_00008192\\attempt_000\\state.pth",
+      "selected_step": 8192,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run0\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 447247.8844726874,
+          "best_rmse_w": 447247.8844726874,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 461631.8484498252,
+          "best_rmse_w": 447247.8844726874,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 446989.62116850563,
+          "best_rmse_w": 446989.62116850563,
+          "selected_step": 8192
+        },
+        {
+          "step": 12288,
+          "rmse_w": 471181.30776657164,
+          "best_rmse_w": 446989.62116850563,
+          "selected_step": 8192
+        },
+        {
+          "step": 16384,
+          "rmse_w": 452293.05866539176,
+          "best_rmse_w": 446989.62116850563,
+          "selected_step": 8192
+        }
+      ],
+      "final_over_selected": 1.0118647889027537,
+      "updates": 23811,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        3931,
+        3964,
+        3986,
+        3980,
+        3972,
+        4064,
+        4117,
+        479954
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run0\\step_00016384\\attempt_000\\state.pth": "90b017ca7c65332f2c903e538815e195da6db3f1fc6474326157cf3d8676a650",
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run0\\step_00008192\\attempt_000\\state.pth": "d48b2580e8036ee9c4127ea38cb32c3fb825618e57656b5b6877e2719a357c76",
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run0\\step_00000000\\attempt_000\\state.pth": "297b5259ef100f244177ce132222117b8477f80fb277fc77946a4208af802aae"
+      }
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 1,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run1\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run1\\step_00004096\\attempt_000\\state.pth",
+      "selected_step": 4096,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run1\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 440209.5273684666,
+          "best_rmse_w": 440209.5273684666,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 431368.421766742,
+          "best_rmse_w": 431368.421766742,
+          "selected_step": 4096
+        },
+        {
+          "step": 8192,
+          "rmse_w": 443650.61061062175,
+          "best_rmse_w": 431368.421766742,
+          "selected_step": 4096
+        },
+        {
+          "step": 12288,
+          "rmse_w": 448309.6159039595,
+          "best_rmse_w": 431368.421766742,
+          "selected_step": 4096
+        },
+        {
+          "step": 16384,
+          "rmse_w": 435146.32667469163,
+          "best_rmse_w": 431368.421766742,
+          "selected_step": 4096
+        }
+      ],
+      "final_over_selected": 1.0087579542621052,
+      "updates": 21763,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        3990,
+        4021,
+        3985,
+        4087,
+        4047,
+        4030,
+        3935,
+        479873
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run1\\step_00004096\\attempt_000\\state.pth": "eb0e579fc66ab9f59b5382c09c17594a61c548fff66bd7ed8c68ad45243c57f0",
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run1\\step_00000000\\attempt_000\\state.pth": "94c8d54367001fd61ce98263019e786a6c7f044c959da79fc694ed2d4badfe24",
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run1\\step_00016384\\attempt_000\\state.pth": "063d6f1753555554ee3edb3ecc4f0ee25f19d0fb5fb8a0256cbf77ee534d494f"
+      }
+    },
+    {
+      "arm": "g100",
+      "gamma": 1.0,
+      "run": 2,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run2\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run2\\step_00000000\\attempt_000\\state.pth",
+      "selected_step": 0,
+      "final": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run2\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 422675.6840994135,
+          "best_rmse_w": 422675.6840994135,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 434654.0114838182,
+          "best_rmse_w": 422675.6840994135,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 434095.141955331,
+          "best_rmse_w": 422675.6840994135,
+          "selected_step": 0
+        },
+        {
+          "step": 12288,
+          "rmse_w": 468860.8018531135,
+          "best_rmse_w": 422675.6840994135,
+          "selected_step": 0
+        },
+        {
+          "step": 16384,
+          "rmse_w": 437944.11779985117,
+          "best_rmse_w": 422675.6840994135,
+          "selected_step": 0
+        }
+      ],
+      "final_over_selected": 1.0361232838197678,
+      "updates": 19715,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        3915,
+        4029,
+        4081,
+        3965,
+        4000,
+        3966,
+        3918,
+        480094
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run2\\step_00000000\\attempt_000\\state.pth": "881197d20f18f54bb6cb23381b5fa062624aa95aa56a86e325083fb38aa835fb",
+        ".\\optimization_control\\experiments\\20261029_pitch_gamma_control\\g100_run2\\step_00016384\\attempt_000\\state.pth": "e12ce2411e88fc479f0380b4b4e5aa5f4d44fb8d544faaf23d84747d2bad4b13"
+      }
+    }
+  ],
+  "config_sha256": "a7736d478a6333f0838734888284b41406c12c6fab8b06d3febb6e4556ff4ed2",
+  "new_training_steps": 98304,
+  "test_used_for_selection": false
+}

@@ -1,0 +1,10 @@
+{
+  "status": "engineering_retired",
+  "seed": 42,
+  "formal_training_steps": 0,
+  "smoke_training_steps": 0,
+  "strict_takeover_passed": 3,
+  "reason": "Explicit public policy dispatch fixed before any learning; complete code snapshot retained. Use 20261028_frozen_speed_checked for all learning and held-out results.",
+  "replacement": "20261028_frozen_speed_checked",
+  "previous_summary": "summary_before_retirement.json"
+}

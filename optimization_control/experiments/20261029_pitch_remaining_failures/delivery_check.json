@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "protected_sources": 841,
+  "source_files_unchanged": true,
+  "ordinary_cases": 36,
+  "ordinary_waveforms": 15,
+  "pair_rows": 324,
+  "selected_slots": 108,
+  "failures_vs_PI": 11,
+  "all_counterexamples_retained": true,
+  "pressure_excluded_from_candidate": true,
+  "new_test_used_for_candidate": false,
+  "formal_rl_steps": 0,
+  "optimizer_updates": 0,
+  "plant_model_forward_rows": 0,
+  "environment_steps": 0,
+  "actual_parameter_gradient_probes": true,
+  "background_context_gradient_difference": 0,
+  "candidate_count": 1,
+  "candidate_learning_implemented": false,
+  "future_budget_arithmetic": "passed",
+  "local_links_checked": 34,
+  "ast_sources_checked": 4,
+  "images": {
+    "failure_map.png": {
+      "sha256": "396019874d0a7f5ffda40cf2de1ae04b7583de235b941e48c22b930e2e8e7941",
+      "dimensions": [
+        1600,
+        2080
+      ],
+      "visually_checked": true
+    },
+    "full_failure_timeseries.png": {
+      "sha256": "e9d714719e332c4295b9102debbc0760a360aa95fc35684229f0672d907ae01b",
+      "dimensions": [
+        2250,
+        1500
+      ],
+      "visually_checked": true
+    },
+    "decomposition_and_updates.png": {
+      "sha256": "8aee73d91b145b576db77f5e20da674b8518b4fc197d4ebb2fcbb25754f48c52",
+      "dimensions": [
+        2080,
+        1440
+      ],
+      "visually_checked": true
+    }
+  },
+  "files": {
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_remaining_failure_audit.py": "c5a0504bc8c969a8629226348c480e9f7a1963ee1104a8357d08fc2cbb497789",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_remaining_failure_context.py": "e9fb3b1fb65155725822bebcf26705546f0f044ff38260a39599e45c5c14159c",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_remaining_failure_report.py": "a6c2e2e55b322afceae4e13740bccc7cc51d49d922b131a36f0360d5362568b5",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_REMAINING_FAILURE_PROTOCOL.md": "8daa2c1f1d554da5a90265927000f4815714a3051b09e24d7d5bae8db89e71ab",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_REMAINING_FAILURE_RESULTS.md": "75aef2465a6d2af0bf41c7c5ec50d7d7bc8ce8bb3d78e96f392c3a1b3233254a",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_REMAINING_FAILURE_CANDIDATE.md": "2a37dddc5afd344fba6d96275c5df6441a27a2a5f159dbe0f2a97fe142cf72d6",
+    ".\\optimization_control\\maddpg_wind_farm\\MADDPG_STAGE_HANDOFF_20261029.md": "7eb06a5dfd04394dea2971bd980f8d2c1d075f3b60d52d40acfcc5cd53827567",
+    ".\\optimization_control\\experiments\\20261029_pitch_remaining_failures\\verify_delivery.py": "b6dd424895b940aa92e33acd27ec0ba464a093ec8f43cc3efe709c2979b16c99"
+  }
+}

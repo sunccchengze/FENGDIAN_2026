@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "unique_tests": 4,
+  "forecast_tests": 3,
+  "planner_tests": 1,
+  "mock_model_rows": 821,
+  "mock_api_calls": 821,
+  "forecast_test_PINN_mock_rows": 0
+}

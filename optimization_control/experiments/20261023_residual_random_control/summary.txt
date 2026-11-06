@@ -1,0 +1,1356 @@
+{
+  "seed": 42,
+  "completed": true,
+  "training_steps": 98304,
+  "gates": [
+    {
+      "stage": "pitch_speed",
+      "passed": true,
+      "passed_runs": 3,
+      "runs": 3
+    },
+    {
+      "stage": "all",
+      "passed": false,
+      "passed_runs": 2,
+      "runs": 3
+    }
+  ],
+  "test_rows": 1200,
+  "trace_rows": 153600,
+  "physical_validation": false,
+  "test_used_for_selection": false,
+  "action_semantics": "baseline_plus_residual_total_absolute_targets",
+  "verification": {
+    "seed": 42,
+    "protected_files": 37,
+    "protected_unchanged": true,
+    "checkpoint_audit": [
+      {
+        "stage": "pitch_speed",
+        "run_id": 0,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 2
+      },
+      {
+        "stage": "pitch_speed_control",
+        "run_id": 0,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "pitch_speed",
+        "run_id": 1,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "pitch_speed_control",
+        "run_id": 1,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "pitch_speed",
+        "run_id": 2,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "pitch_speed_control",
+        "run_id": 2,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "all",
+        "run_id": 0,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "all_control",
+        "run_id": 0,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "all",
+        "run_id": 1,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "all_control",
+        "run_id": 1,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "all",
+        "run_id": 2,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      },
+      {
+        "stage": "all_control",
+        "run_id": 2,
+        "zero_head_initial_state_exact": true,
+        "max_replay_handover_error": 0.0,
+        "load_noise_and_next_update_exact": true,
+        "resume_segments": 1
+      }
+    ],
+    "replay_audit": [
+      {
+        "stage": "pitch_speed",
+        "run_id": 0,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "pitch_speed_control",
+        "run_id": 0,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "pitch_speed",
+        "run_id": 1,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "pitch_speed_control",
+        "run_id": 1,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "pitch_speed",
+        "run_id": 2,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "pitch_speed_control",
+        "run_id": 2,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "all",
+        "run_id": 0,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "all_control",
+        "run_id": 0,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "all",
+        "run_id": 1,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "all_control",
+        "run_id": 1,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "all",
+        "run_id": 2,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      },
+      {
+        "stage": "all_control",
+        "run_id": 2,
+        "retained_transitions": 32768,
+        "new_transitions": 8192,
+        "total_action_next_command_exact": true,
+        "physical_rates_reward_verified": true,
+        "dynamic_residual_envelope_verified": true
+      }
+    ],
+    "recovery_fork": {
+      "source_checkpoint": "optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_0\\segment_000\\step_00002048.pth",
+      "fork_steps": 128,
+      "fork_count": 2,
+      "actions_rewards_losses_noise_networks_exact": true,
+      "actual_resumed_replay_next_episode_exact": true,
+      "source_unchanged": true,
+      "experiment_steps_added": 0
+    },
+    "test_metrics": 1200,
+    "test_trace_rows": 153600,
+    "max_rmse_recompute_difference_w": 0.0,
+    "experiment_training_steps": 98304,
+    "physical_validation": false
+  },
+  "aggregate": [
+    {
+      "stage": "pitch_speed",
+      "controller": "initial",
+      "mean_rmse_w": 351742.49337572133,
+      "std_across_runs_w": 13887.529592850036
+    },
+    {
+      "stage": "pitch_speed",
+      "controller": "selected",
+      "mean_rmse_w": 338839.8644079226,
+      "std_across_runs_w": 22448.159089072084
+    },
+    {
+      "stage": "pitch_speed",
+      "controller": "final",
+      "mean_rmse_w": 355195.9749296059,
+      "std_across_runs_w": 18609.55517688417
+    },
+    {
+      "stage": "pitch_speed",
+      "controller": "parent",
+      "mean_rmse_w": 351742.4956149012,
+      "std_across_runs_w": 13887.538796054137
+    },
+    {
+      "stage": "pitch_speed",
+      "controller": "fixed",
+      "mean_rmse_w": 1068100.7290460141,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "pitch_speed",
+      "controller": "p",
+      "mean_rmse_w": 518573.43222279154,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "pitch_speed",
+      "controller": "pi",
+      "mean_rmse_w": 437247.902555809,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "pitch_speed_control",
+      "controller": "initial",
+      "mean_rmse_w": 351742.4956149012,
+      "std_across_runs_w": 13887.538796054137
+    },
+    {
+      "stage": "pitch_speed_control",
+      "controller": "selected",
+      "mean_rmse_w": 351742.4956149012,
+      "std_across_runs_w": 13887.538796054137
+    },
+    {
+      "stage": "pitch_speed_control",
+      "controller": "final",
+      "mean_rmse_w": 354683.7243868017,
+      "std_across_runs_w": 10932.781572810309
+    },
+    {
+      "stage": "pitch_speed_control",
+      "controller": "parent",
+      "mean_rmse_w": 351742.4956149012,
+      "std_across_runs_w": 13887.538796054137
+    },
+    {
+      "stage": "pitch_speed_control",
+      "controller": "fixed",
+      "mean_rmse_w": 1102031.7544213668,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "pitch_speed_control",
+      "controller": "p",
+      "mean_rmse_w": 518573.43222279154,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "pitch_speed_control",
+      "controller": "pi",
+      "mean_rmse_w": 437247.902555809,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "all",
+      "controller": "initial",
+      "mean_rmse_w": 338839.8644079226,
+      "std_across_runs_w": 22448.159089072084
+    },
+    {
+      "stage": "all",
+      "controller": "selected",
+      "mean_rmse_w": 326147.02791002,
+      "std_across_runs_w": 7616.659937544803
+    },
+    {
+      "stage": "all",
+      "controller": "final",
+      "mean_rmse_w": 391176.29292047984,
+      "std_across_runs_w": 72996.00796476656
+    },
+    {
+      "stage": "all",
+      "controller": "parent",
+      "mean_rmse_w": 338839.8644079226,
+      "std_across_runs_w": 22448.159089072084
+    },
+    {
+      "stage": "all",
+      "controller": "fixed",
+      "mean_rmse_w": 1068100.7290460141,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "all",
+      "controller": "p",
+      "mean_rmse_w": 518573.43222279154,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "all",
+      "controller": "pi",
+      "mean_rmse_w": 437247.902555809,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "all_control",
+      "controller": "initial",
+      "mean_rmse_w": 338839.8644079226,
+      "std_across_runs_w": 22448.159089072084
+    },
+    {
+      "stage": "all_control",
+      "controller": "selected",
+      "mean_rmse_w": 331221.13586213515,
+      "std_across_runs_w": 13877.317580792998
+    },
+    {
+      "stage": "all_control",
+      "controller": "final",
+      "mean_rmse_w": 416387.1115183817,
+      "std_across_runs_w": 133548.43336824162
+    },
+    {
+      "stage": "all_control",
+      "controller": "parent",
+      "mean_rmse_w": 338839.8644079226,
+      "std_across_runs_w": 22448.159089072084
+    },
+    {
+      "stage": "all_control",
+      "controller": "fixed",
+      "mean_rmse_w": 1068100.7290460141,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "all_control",
+      "controller": "p",
+      "mean_rmse_w": 518573.43222279154,
+      "std_across_runs_w": 0.0
+    },
+    {
+      "stage": "all_control",
+      "controller": "pi",
+      "mean_rmse_w": 437247.902555809,
+      "std_across_runs_w": 0.0
+    }
+  ],
+  "results": [
+    {
+      "stage": "pitch_speed",
+      "run_id": 0,
+      "selected_step": 0,
+      "mean_w": 366937.1532846875,
+      "worst_w": 504860.06412328203,
+      "final_over_selected": 1.0391855387027138,
+      "engineering_pass": true,
+      "strict_accuracy_pass": false,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+        "parent_sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+        "cumulative_parent_steps": 32768,
+        "inherited_replay_size": 32768,
+        "inherited_updates": 15874,
+        "parent_mean_w": 366937.17109817546,
+        "parent_worst_w": 504860.10326511133,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 65536,
+        "initial_mean_w": 366937.1532846875,
+        "initial_worst_w": 504860.06412328203,
+        "passed": true
+      }
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": 0,
+      "selected_step": 0,
+      "mean_w": 366937.17109817546,
+      "worst_w": 504860.10326511133,
+      "final_over_selected": 1.0155304378142331,
+      "engineering_pass": true,
+      "strict_accuracy_pass": false,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+        "parent_sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+        "cumulative_parent_steps": 32768,
+        "inherited_replay_size": 32768,
+        "inherited_updates": 15874,
+        "parent_mean_w": 366937.17109817546,
+        "parent_worst_w": 504860.10326511133,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 65536,
+        "initial_mean_w": 366937.17109817546,
+        "initial_worst_w": 504860.10326511133,
+        "passed": true
+      }
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": 1,
+      "selected_step": 2048,
+      "mean_w": 329416.82844907214,
+      "worst_w": 470971.3473202156,
+      "final_over_selected": 1.1106241432067903,
+      "engineering_pass": true,
+      "strict_accuracy_pass": true,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+        "parent_sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+        "cumulative_parent_steps": 28672,
+        "inherited_replay_size": 28672,
+        "inherited_updates": 13826,
+        "parent_mean_w": 373210.90524641034,
+        "parent_worst_w": 534858.0873663111,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 57344,
+        "initial_mean_w": 373210.94636902516,
+        "initial_worst_w": 534858.0835377432,
+        "passed": true
+      }
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": 1,
+      "selected_step": 0,
+      "mean_w": 373210.90524641034,
+      "worst_w": 534858.0873663111,
+      "final_over_selected": 1.0604362856783536,
+      "engineering_pass": true,
+      "strict_accuracy_pass": false,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+        "parent_sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+        "cumulative_parent_steps": 28672,
+        "inherited_replay_size": 28672,
+        "inherited_updates": 13826,
+        "parent_mean_w": 373210.90524641034,
+        "parent_worst_w": 534858.0873663111,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 57344,
+        "initial_mean_w": 373210.90524641034,
+        "initial_worst_w": 534858.0873663111,
+        "passed": true
+      }
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": 2,
+      "selected_step": 8192,
+      "mean_w": 330383.16657962516,
+      "worst_w": 459573.4916689033,
+      "final_over_selected": 1.0,
+      "engineering_pass": true,
+      "strict_accuracy_pass": true,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth",
+        "parent_sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+        "cumulative_parent_steps": 24576,
+        "inherited_replay_size": 24576,
+        "inherited_updates": 11778,
+        "parent_mean_w": 340258.8003572046,
+        "parent_worst_w": 481556.7719852819,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 49152,
+        "initial_mean_w": 340258.7779354942,
+        "initial_worst_w": 481556.68232857715,
+        "passed": true
+      }
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": 2,
+      "selected_step": 0,
+      "mean_w": 340258.8003572046,
+      "worst_w": 481556.7719852819,
+      "final_over_selected": 1.0494246837189223,
+      "engineering_pass": true,
+      "strict_accuracy_pass": true,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth",
+        "parent_sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+        "cumulative_parent_steps": 24576,
+        "inherited_replay_size": 24576,
+        "inherited_updates": 11778,
+        "parent_mean_w": 340258.8003572046,
+        "parent_worst_w": 481556.7719852819,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 49152,
+        "initial_mean_w": 340258.8003572046,
+        "initial_worst_w": 481556.7719852819,
+        "passed": true
+      }
+    },
+    {
+      "stage": "all",
+      "run_id": 0,
+      "selected_step": 4096,
+      "mean_w": 333292.05865373363,
+      "worst_w": 465224.8182430132,
+      "final_over_selected": 1.2116520230666314,
+      "engineering_pass": true,
+      "strict_accuracy_pass": true,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_0\\segment_000\\step_00000000.pth",
+        "parent_sha256": "f1eb18c91020dbf94008a2c804652bbc39c038c9636fe922a37f6e5a38774759",
+        "cumulative_parent_steps": 32768,
+        "inherited_replay_size": 32768,
+        "inherited_updates": 15874,
+        "parent_mean_w": 366937.1532846875,
+        "parent_worst_w": 504860.06412328203,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 65536,
+        "initial_mean_w": 366937.1532846875,
+        "initial_worst_w": 504860.06412328203,
+        "passed": true
+      }
+    },
+    {
+      "stage": "all_control",
+      "run_id": 0,
+      "selected_step": 4096,
+      "mean_w": 353800.0143285582,
+      "worst_w": 503822.4490173937,
+      "final_over_selected": 1.0852463492299638,
+      "engineering_pass": true,
+      "strict_accuracy_pass": false,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_0\\segment_000\\step_00000000.pth",
+        "parent_sha256": "f1eb18c91020dbf94008a2c804652bbc39c038c9636fe922a37f6e5a38774759",
+        "cumulative_parent_steps": 32768,
+        "inherited_replay_size": 32768,
+        "inherited_updates": 15874,
+        "parent_mean_w": 366937.1532846875,
+        "parent_worst_w": 504860.06412328203,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 65536,
+        "initial_mean_w": 366937.1532846875,
+        "initial_worst_w": 504860.06412328203,
+        "passed": true
+      }
+    },
+    {
+      "stage": "all",
+      "run_id": 1,
+      "selected_step": 0,
+      "mean_w": 329416.82844907214,
+      "worst_w": 470971.3473202156,
+      "final_over_selected": 1.4722459188870711,
+      "engineering_pass": false,
+      "strict_accuracy_pass": false,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_1\\segment_000\\step_00002048.pth",
+        "parent_sha256": "b31463b227033e8838e8cf0f828255f5f022b81099aaab6fcb80a20313282966",
+        "cumulative_parent_steps": 30720,
+        "inherited_replay_size": 30720,
+        "inherited_updates": 14595,
+        "parent_mean_w": 329416.82844907214,
+        "parent_worst_w": 470971.3473202156,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 61440,
+        "initial_mean_w": 329416.82844907214,
+        "initial_worst_w": 470971.3473202156,
+        "passed": true
+      }
+    },
+    {
+      "stage": "all_control",
+      "run_id": 1,
+      "selected_step": 0,
+      "mean_w": 329416.82844907214,
+      "worst_w": 470971.3473202156,
+      "final_over_selected": 1.7830648921881944,
+      "engineering_pass": false,
+      "strict_accuracy_pass": false,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_1\\segment_000\\step_00002048.pth",
+        "parent_sha256": "b31463b227033e8838e8cf0f828255f5f022b81099aaab6fcb80a20313282966",
+        "cumulative_parent_steps": 30720,
+        "inherited_replay_size": 30720,
+        "inherited_updates": 14595,
+        "parent_mean_w": 329416.82844907214,
+        "parent_worst_w": 470971.3473202156,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 61440,
+        "initial_mean_w": 329416.82844907214,
+        "initial_worst_w": 470971.3473202156,
+        "passed": true
+      }
+    },
+    {
+      "stage": "all",
+      "run_id": 2,
+      "selected_step": 2048,
+      "mean_w": 318604.3070324745,
+      "worst_w": 445053.7495244666,
+      "final_over_selected": 1.0447291521590372,
+      "engineering_pass": true,
+      "strict_accuracy_pass": true,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_2\\segment_000\\step_00008192.pth",
+        "parent_sha256": "d244f5b3ab53f40d3bf6a261f3e7067e097ea25193d38e6cb304032d9b6016ba",
+        "cumulative_parent_steps": 32768,
+        "inherited_replay_size": 32768,
+        "inherited_updates": 15619,
+        "parent_mean_w": 330383.16657962516,
+        "parent_worst_w": 459573.4916689033,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 65536,
+        "initial_mean_w": 330383.16657962516,
+        "initial_worst_w": 459573.4916689033,
+        "passed": true
+      }
+    },
+    {
+      "stage": "all_control",
+      "run_id": 2,
+      "selected_step": 2048,
+      "mean_w": 319582.6879566487,
+      "worst_w": 443683.04896584724,
+      "final_over_selected": 1.0490663780597023,
+      "engineering_pass": true,
+      "strict_accuracy_pass": true,
+      "lineage": {
+        "parent_checkpoint": ".\\optimization_control\\experiments\\20261023_residual_random_control\\pitch_speed_run_2\\segment_000\\step_00008192.pth",
+        "parent_sha256": "d244f5b3ab53f40d3bf6a261f3e7067e097ea25193d38e6cb304032d9b6016ba",
+        "cumulative_parent_steps": 32768,
+        "inherited_replay_size": 32768,
+        "inherited_updates": 15619,
+        "parent_mean_w": 330383.16657962516,
+        "parent_worst_w": 459573.4916689033,
+        "actor_optimizer_reset": true,
+        "critic_optimizer_replay_rng_inherited": true
+      },
+      "handover": {
+        "max_replay_total_action_error": 0.0,
+        "replay_observations_checked": 65536,
+        "initial_mean_w": 330383.16657962516,
+        "initial_worst_w": 459573.4916689033,
+        "passed": true
+      }
+    }
+  ],
+  "test_corrections": [
+    {
+      "stage": "pitch_speed",
+      "run_id": "0",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "0",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "0",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.0871152078157448",
+      "speed_correction_max_rad_s": "0.0999942557066679",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.300390625",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0022135416666666666"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "0",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "0",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "0",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "0",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "0",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "1",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "1",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.09259340695403623",
+      "speed_correction_max_rad_s": "0.09994681650400161",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013020833333333334",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "1",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.08149573143645532",
+      "speed_correction_max_rad_s": "0.09799705831706523",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "1",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "1",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "1",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "1",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "1",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "2",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "2",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.08493894827370582",
+      "speed_correction_max_rad_s": "0.09999966256320475",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.365625",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "2",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.08493894827370582",
+      "speed_correction_max_rad_s": "0.09999966256320475",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.365625",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "pitch_speed",
+      "run_id": "2",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "2",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "2",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "2",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "pitch_speed_control",
+      "run_id": "2",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all",
+      "run_id": "0",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all",
+      "run_id": "0",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.07458756668822612",
+      "speed_correction_max_rad_s": "0.09950832441449164",
+      "yaw_correction_rms_rad": "0.05575525554505845",
+      "yaw_correction_max_rad": "0.08726628869771957",
+      "speed_raw_saturation_fraction": "0.07591145833333333",
+      "yaw_raw_saturation_fraction": "0.3333333333333333",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "all",
+      "run_id": "0",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.06931965113359656",
+      "speed_correction_max_rad_s": "0.09992854848504065",
+      "yaw_correction_rms_rad": "0.08519328828902258",
+      "yaw_correction_max_rad": "0.08726619929075241",
+      "speed_raw_saturation_fraction": "0.11158854166666667",
+      "yaw_raw_saturation_fraction": "0.4993489583333333",
+      "speed_total_clip_fraction": "0.0018229166666666667"
+    },
+    {
+      "stage": "all",
+      "run_id": "0",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "0",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "0",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.04142755423874931",
+      "speed_correction_max_rad_s": "0.09768961292505263",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.032942708333333334"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "0",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.05511514210749333",
+      "speed_correction_max_rad_s": "0.09931335952877997",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.00013020833333333333",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0006510416666666666"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "0",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.0",
+      "speed_correction_max_rad_s": "0.0",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.0",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all",
+      "run_id": "1",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.09259340695403623",
+      "speed_correction_max_rad_s": "0.09994681650400161",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013020833333333334",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all",
+      "run_id": "1",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.09259340695403623",
+      "speed_correction_max_rad_s": "0.09994681650400161",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013020833333333334",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all",
+      "run_id": "1",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.09235411611389192",
+      "speed_correction_max_rad_s": "0.09999546827375888",
+      "yaw_correction_rms_rad": "0.08685945956067005",
+      "yaw_correction_max_rad": "0.08726643770933151",
+      "speed_raw_saturation_fraction": "0.3587239583333333",
+      "yaw_raw_saturation_fraction": "0.9135416666666667",
+      "speed_total_clip_fraction": "0.0006510416666666666"
+    },
+    {
+      "stage": "all",
+      "run_id": "1",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.09259340695403623",
+      "speed_correction_max_rad_s": "0.09994681650400161",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013020833333333334",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "1",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.09259340695403623",
+      "speed_correction_max_rad_s": "0.09994681650400161",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013020833333333334",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "1",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.09259340695403623",
+      "speed_correction_max_rad_s": "0.09994681650400161",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013020833333333334",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "1",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.08837607757118206",
+      "speed_correction_max_rad_s": "0.09988824553787708",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.22174479166666666",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0005208333333333333"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "1",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.09259340695403623",
+      "speed_correction_max_rad_s": "0.09994681650400161",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.013020833333333334",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0"
+    },
+    {
+      "stage": "all",
+      "run_id": "2",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.08493894827370582",
+      "speed_correction_max_rad_s": "0.09999966256320475",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.365625",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "all",
+      "run_id": "2",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.09056261841936487",
+      "speed_correction_max_rad_s": "0.09999997067451476",
+      "yaw_correction_rms_rad": "0.06243218152615032",
+      "yaw_correction_max_rad": "0.08718245476484299",
+      "speed_raw_saturation_fraction": "0.665625",
+      "yaw_raw_saturation_fraction": "0.29921875",
+      "speed_total_clip_fraction": "0.0006510416666666666"
+    },
+    {
+      "stage": "all",
+      "run_id": "2",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.09133709117967888",
+      "speed_correction_max_rad_s": "0.10000000049173831",
+      "yaw_correction_rms_rad": "0.08377526374856506",
+      "yaw_correction_max_rad": "0.08726529777050018",
+      "speed_raw_saturation_fraction": "0.6013020833333333",
+      "yaw_raw_saturation_fraction": "0.6078125",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "all",
+      "run_id": "2",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.08493894827370582",
+      "speed_correction_max_rad_s": "0.09999966256320475",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.365625",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "2",
+      "controller": "initial",
+      "speed_correction_rms_rad_s": "0.08493894827370582",
+      "speed_correction_max_rad_s": "0.09999966256320475",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.365625",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "2",
+      "controller": "selected",
+      "speed_correction_rms_rad_s": "0.08606783282615937",
+      "speed_correction_max_rad_s": "0.09999998061358928",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.33372395833333335",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.0006510416666666666"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "2",
+      "controller": "final",
+      "speed_correction_rms_rad_s": "0.09139169874979308",
+      "speed_correction_max_rad_s": "0.10000000049173831",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.5498697916666667",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    },
+    {
+      "stage": "all_control",
+      "run_id": "2",
+      "controller": "parent",
+      "speed_correction_rms_rad_s": "0.08493894827370582",
+      "speed_correction_max_rad_s": "0.09999966256320475",
+      "yaw_correction_rms_rad": "0.0",
+      "yaw_correction_max_rad": "0.0",
+      "speed_raw_saturation_fraction": "0.365625",
+      "yaw_raw_saturation_fraction": "0.0",
+      "speed_total_clip_fraction": "0.03307291666666667"
+    }
+  ],
+  "unit_tests": {
+    "distinct_passed": 31,
+    "residual": 9,
+    "random_reference": 8,
+    "maddpg_interface_environment": 14
+  },
+  "figures": {
+    "script": "optimization_control.maddpg_wind_farm.residual_figures",
+    "policy_evaluations_added": 0,
+    "training_steps_added": 0,
+    "visual_review_passed": true
+  },
+  "reproducible_commands": [
+    ".venv/Scripts/python.exe -B -m optimization_control.maddpg_wind_farm.residual_random_control prepare --output NEW_DIRECTORY",
+    ".venv/Scripts/python.exe -B -m optimization_control.maddpg_wind_farm.residual_random_control worker --output NEW_DIRECTORY --stage pitch_speed --run-id 0 --stop-after 2048",
+    ".venv/Scripts/python.exe -B -m optimization_control.maddpg_wind_farm.residual_random_control run --output NEW_DIRECTORY",
+    ".venv/Scripts/python.exe -B -m optimization_control.maddpg_wind_farm.verify_residual --output NEW_DIRECTORY",
+    ".venv/Scripts/python.exe -B -m optimization_control.maddpg_wind_farm.residual_figures --output NEW_DIRECTORY"
+  ]
+}

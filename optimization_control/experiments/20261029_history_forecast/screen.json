@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "primary_split": "decision_validation",
+  "primary_interval": "1_8",
+  "improved_families": 3,
+  "maximum_family_ratio": 0.7700755383974879,
+  "overall_ratio": 0.7461047928313902,
+  "exploratory_only": true,
+  "final_control_gate_unchanged": true
+}

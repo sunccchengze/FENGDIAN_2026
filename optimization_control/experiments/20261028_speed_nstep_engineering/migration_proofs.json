@@ -1,0 +1,110 @@
+[
+  {
+    "run_id": 0,
+    "source": "original_pitch_parent",
+    "retained": 32768,
+    "position": 0,
+    "insertion_count": 32768,
+    "horizon": 128,
+    "nonterminal_edges": 32512,
+    "terminal_edges": 255,
+    "digest": "3e22ff7d76b3fc106be772ced2688b42a04fed988aae68958eec2deb0f9efe45",
+    "full_retained_ring_checked": true,
+    "evidence": {
+      "expected_insertions": 32768,
+      "source_sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+      "derivation": "metadata.lineage.cumulative_parent_steps + metadata.steps"
+    },
+    "epoch": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea"
+  },
+  {
+    "run_id": 0,
+    "source": "old_speed_final",
+    "retained": 32768,
+    "position": 8192,
+    "insertion_count": 40960,
+    "horizon": 128,
+    "nonterminal_edges": 32512,
+    "terminal_edges": 255,
+    "digest": "f9888d747e9ab1910019092ab25baf767696977c6fca2588bfecd2fecfc3aa4d",
+    "full_retained_ring_checked": true,
+    "evidence": {
+      "expected_insertions": 40960,
+      "source_sha256": "418a65fc6c7924bcf7b30c4eaf078a2770f65d0b2a2e464a294dd36e477b700f",
+      "derivation": "v4 metadata.parent.cumulative_parent_steps + metadata.step"
+    },
+    "epoch": "418a65fc6c7924bcf7b30c4eaf078a2770f65d0b2a2e464a294dd36e477b700f"
+  },
+  {
+    "run_id": 1,
+    "source": "original_pitch_parent",
+    "retained": 28672,
+    "position": 28672,
+    "insertion_count": 28672,
+    "horizon": 128,
+    "nonterminal_edges": 28448,
+    "terminal_edges": 223,
+    "digest": "8d8b33b43cb77a2ff45ac3eb01470189290634257fe5e6a7f88c18cbe4a83c5b",
+    "full_retained_ring_checked": true,
+    "evidence": {
+      "expected_insertions": 28672,
+      "source_sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+      "derivation": "metadata.lineage.cumulative_parent_steps + metadata.steps"
+    },
+    "epoch": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821"
+  },
+  {
+    "run_id": 1,
+    "source": "old_speed_final",
+    "retained": 32768,
+    "position": 4096,
+    "insertion_count": 36864,
+    "horizon": 128,
+    "nonterminal_edges": 32512,
+    "terminal_edges": 255,
+    "digest": "7e6af61df742a74f21542f2224368d4ad08f2015cf20cb833ae24abecad7e746",
+    "full_retained_ring_checked": true,
+    "evidence": {
+      "expected_insertions": 36864,
+      "source_sha256": "64f14d7f611033b8ac52a912b67200d666983e2e268867d2a9dbe98f19bc7ced",
+      "derivation": "v4 metadata.parent.cumulative_parent_steps + metadata.step"
+    },
+    "epoch": "64f14d7f611033b8ac52a912b67200d666983e2e268867d2a9dbe98f19bc7ced"
+  },
+  {
+    "run_id": 2,
+    "source": "original_pitch_parent",
+    "retained": 24576,
+    "position": 24576,
+    "insertion_count": 24576,
+    "horizon": 128,
+    "nonterminal_edges": 24384,
+    "terminal_edges": 191,
+    "digest": "afbd2afc03e33aa7abedc1d34c3cd9a77c4d440475e7d3a55067b6a848625d24",
+    "full_retained_ring_checked": true,
+    "evidence": {
+      "expected_insertions": 24576,
+      "source_sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+      "derivation": "metadata.lineage.cumulative_parent_steps + metadata.steps"
+    },
+    "epoch": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05"
+  },
+  {
+    "run_id": 2,
+    "source": "old_speed_final",
+    "retained": 32768,
+    "position": 0,
+    "insertion_count": 32768,
+    "horizon": 128,
+    "nonterminal_edges": 32512,
+    "terminal_edges": 255,
+    "digest": "03e8a6fe342ffe1fc6df370154f9e899774c7232b9e0d4bdc95bdc45170f8732",
+    "full_retained_ring_checked": true,
+    "evidence": {
+      "expected_insertions": 32768,
+      "source_sha256": "eae67659f9cfcb51dea18b3a5b90d1de8f32334ce278dcd0a39984ecc41e08a2",
+      "derivation": "v4 metadata.parent.cumulative_parent_steps + metadata.step"
+    },
+    "epoch": "eae67659f9cfcb51dea18b3a5b90d1de8f32334ce278dcd0a39984ecc41e08a2"
+  }
+]

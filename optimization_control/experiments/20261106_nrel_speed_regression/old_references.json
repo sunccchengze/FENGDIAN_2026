@@ -1,0 +1,1893 @@
+{
+  "Y0_selected": {
+    "role": {
+      "arm": "Y",
+      "run": 0,
+      "role": "selected",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\inference.pt",
+        "sha256": "32fd20fba2283da7db75580d4dea937e0c9e06161680f9e3fabc38adfd0b40e5",
+        "bytes": 24959
+      },
+      "kind": "policy",
+      "id": "Y0_selected"
+    },
+    "complete": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\complete.json",
+      "sha256": "080334cc367246a5fb4bf6638a16603ffab1a688ee0047fbed6bcd37301aac0a"
+    },
+    "cases": [
+      {
+        "case_id": "test_00_stationary_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\00\\complete.json",
+          "sha256": "05a0cd8955d3d5f37c66b7b274f42f8d207bb40ab8be787195ba94620616c4cb",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\00\\metrics.json",
+            "sha256": "c521adecde1872831a79f6887ae3e5b1f6ea39e9188ab8c660eebb6df56e3da6",
+            "bytes": 863
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\00\\trace.npz",
+            "sha256": "30acc89c1ba3b5e17911a782f5b4222c196a2e692b94bf2fb66c86e2ca042b74",
+            "bytes": 26551
+          }
+        }
+      },
+      {
+        "case_id": "test_01_stationary_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\01\\complete.json",
+          "sha256": "440a85cf1442aada3bed4f678e5a7bd4ff6a7b8f0839627ded9f669dc645659e",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\01\\metrics.json",
+            "sha256": "9ec97edfcaf3bc5a111b952fc2dc0f6313c17f7f46c14abe332a10291a26aa0f",
+            "bytes": 877
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\01\\trace.npz",
+            "sha256": "cecf11e004aaa00dd97be47a4d9510bea036181e24935d5436f71254f7882695",
+            "bytes": 26805
+          }
+        }
+      },
+      {
+        "case_id": "test_02_stationary_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\02\\complete.json",
+          "sha256": "0bd33c403a997164069924b5349bd75aed1e41a284af0899f7c5dd3b11edbba0",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\02\\metrics.json",
+            "sha256": "cc40780b21d8ba0dcf6e257d5033d6ccdf0926076c6e99f1af461251bab0061c",
+            "bytes": 873
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\02\\trace.npz",
+            "sha256": "906fbaec16fdce4932168e3cff80f40e2a6ed919b83ab088e23973dbd3b38913",
+            "bytes": 26741
+          }
+        }
+      },
+      {
+        "case_id": "test_03_stationary_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\03\\complete.json",
+          "sha256": "9662a3ca7ed33a4e1f3474e5ff20c2963bf5795d848c94dffaf73de7d571e122",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\03\\metrics.json",
+            "sha256": "d5250d4740d9dc0dc0342512135847f407104c118aba7354effb764a2db9f732",
+            "bytes": 863
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\03\\trace.npz",
+            "sha256": "7720f5d748d66258633121330ccabe1bf0e5e8ffd327971b64365b9f09dd3adf",
+            "bytes": 26690
+          }
+        }
+      },
+      {
+        "case_id": "test_04_stationary_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\04\\complete.json",
+          "sha256": "e2767e592d842b6ca4e0c237b39dbeb3344e3873c6e7798a051691c1a1de3dfc",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\04\\metrics.json",
+            "sha256": "8c17dc91f963e14947694fb035961ee12e1c298dcc250bb49cb4bbfce1805d76",
+            "bytes": 872
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\04\\trace.npz",
+            "sha256": "a2f5c15725fe3aaf353ec3e18a39d0be551dc3cf35f098e296e007bc94e776a2",
+            "bytes": 26573
+          }
+        }
+      },
+      {
+        "case_id": "test_05_stationary_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\05\\complete.json",
+          "sha256": "5024c4e41925cb3fa88ef75241dec0b83cec4555824f495d6fae1c2263a9a72e",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\05\\metrics.json",
+            "sha256": "8c8cba81106a69c19f3c037039023d3c944cb8e6e1263cef4e1642cc692c8e5c",
+            "bytes": 870
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\05\\trace.npz",
+            "sha256": "1a22e8f44d681387cb1ff700f6e97d640b76c687b8ca83e597545e47a165ea15",
+            "bytes": 26486
+          }
+        }
+      },
+      {
+        "case_id": "test_06_ramp_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\06\\complete.json",
+          "sha256": "9b4ac917a341bea408281c061802db855c87c07e0f5c1d0518c8f5f3e6f25d94",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\06\\metrics.json",
+            "sha256": "c00fed1defc276cfdde1cef0f2437f0af3a090bf40657ff1d40d8a85f3bf407c",
+            "bytes": 853
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\06\\trace.npz",
+            "sha256": "7b1b2d262700849c3616040d9d630ef1acad0d749c75b02f3bb1cc15ed281395",
+            "bytes": 26752
+          }
+        }
+      },
+      {
+        "case_id": "test_07_ramp_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\07\\complete.json",
+          "sha256": "18da0d494d2ab2b33afab27953ce926b1cef3b7e21c04ab214ae76e0d06813af",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\07\\metrics.json",
+            "sha256": "0bd86d29d9521d61ca06ee8bdbc763237a14de90dab9feafb2b6d63362e005e0",
+            "bytes": 861
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\07\\trace.npz",
+            "sha256": "3d2eeac1bac8c10963ec7f27c0c2789dc487fd75e941b03fb5943cfbce779f3f",
+            "bytes": 26431
+          }
+        }
+      },
+      {
+        "case_id": "test_08_ramp_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\08\\complete.json",
+          "sha256": "fcc0547c018db2bbf4bff195d9e3eb6604d555cb3d9d2e99cd9f1e684fb62cb9",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\08\\metrics.json",
+            "sha256": "03c4b723235ca933bb549f35e866a441635cbf60cf922d220783d18b0a5911a0",
+            "bytes": 862
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\08\\trace.npz",
+            "sha256": "b51f7fe15a75ea3336fad342b7d12931108c796b0979cb16d0aa08ca56336429",
+            "bytes": 26638
+          }
+        }
+      },
+      {
+        "case_id": "test_09_ramp_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\09\\complete.json",
+          "sha256": "28c8f5a4b5dfad277f8acb6e1541ad5361079376d3ad8b1ed07e1a9ff33f142b",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\09\\metrics.json",
+            "sha256": "b3029c95949bc0d15b753b8f723fd48da28762bffb24d67140849ed91f4df0ee",
+            "bytes": 856
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\09\\trace.npz",
+            "sha256": "8b067860b41fe7be1192cfdac94b3baec08a825935346908c3325a8ec889abd0",
+            "bytes": 26930
+          }
+        }
+      },
+      {
+        "case_id": "test_10_ramp_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\10\\complete.json",
+          "sha256": "51d091e61f00e245744b41d3c9c71df1ca06a1779134a27a04267d11a65697a0",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\10\\metrics.json",
+            "sha256": "7c1f5a2351f9cb72fc3c829e07e518bd0a3fa8bc9ddc6570b18ed4c707c67c66",
+            "bytes": 851
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\10\\trace.npz",
+            "sha256": "a2fa5c890a51471dc891330432525ae4fea9e774feb267c939c79e3f16571284",
+            "bytes": 26684
+          }
+        }
+      },
+      {
+        "case_id": "test_11_ramp_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\11\\complete.json",
+          "sha256": "2f6c40b549673bd7d9af399d7b92951abb6996ff9a335d239ea5c88c7b0defcd",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\11\\metrics.json",
+            "sha256": "d6512357e8684d2a87676ad54f0e6a23230b02826f73e8e81a03be3bd0156908",
+            "bytes": 861
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\11\\trace.npz",
+            "sha256": "5d513c9cdf83864ff065b655f9ef6211e82d85dc96c1e75e65886e92ed65bfb3",
+            "bytes": 26125
+          }
+        }
+      },
+      {
+        "case_id": "test_12_gust_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\12\\complete.json",
+          "sha256": "ccd689689ce5f09bb7e0c7227721f8fd80c8d79791f2489d35c5db31f4eca451",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\12\\metrics.json",
+            "sha256": "22886d4313bc09aa5818cdff726bac39f5f39e9518bae57d9aa93ca4bdd39e7d",
+            "bytes": 854
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\12\\trace.npz",
+            "sha256": "83710e4f45950a124308fe7c3632582406bc7c91ef80ee4845d515313b71b040",
+            "bytes": 26749
+          }
+        }
+      },
+      {
+        "case_id": "test_13_gust_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\13\\complete.json",
+          "sha256": "5f5a815079391fcfaae017a51b72c5e8305a15e1e80acaaeb60f1605c5c42b63",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\13\\metrics.json",
+            "sha256": "fb39427334f0f1cc15f4a58a6d22528d605d78fad65e71f7892d97a3a199d900",
+            "bytes": 850
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\13\\trace.npz",
+            "sha256": "fbd43ccd26f2a0da80cf56da91625675687354e8c20197c5760320a7b86fa689",
+            "bytes": 26465
+          }
+        }
+      },
+      {
+        "case_id": "test_14_gust_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\14\\complete.json",
+          "sha256": "1fede3391b8737814a923e8c96ed959c59510fd4e66e1a03afaee46d08336060",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\14\\metrics.json",
+            "sha256": "c897bc6c604a535b2e26c6bb795090678f12767e40c7fbd1026770102d969124",
+            "bytes": 863
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\14\\trace.npz",
+            "sha256": "8fc1382f85e55b366e68f102b1d7a02ff063c0e33cc61c6ebb58ffc1d9803ed9",
+            "bytes": 26745
+          }
+        }
+      },
+      {
+        "case_id": "test_15_gust_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\15\\complete.json",
+          "sha256": "460cb490048cfca0c0b19210daf2505103ace3fa95cc797a37907a4579348b14",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\15\\metrics.json",
+            "sha256": "ca35ad3633d1fe2f74d217022ad85bdb6fc0f63240e622d0ac662ebb91f582a6",
+            "bytes": 864
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\15\\trace.npz",
+            "sha256": "fea69fabf564d20048da137e1321f9c7b745951644576f1a8667e4b8da329ff5",
+            "bytes": 26444
+          }
+        }
+      },
+      {
+        "case_id": "test_16_gust_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\16\\complete.json",
+          "sha256": "623a203b0e2b86b782ecedf89d4a2f317ed2501e9d7e0693f63ffa5a7de97a71",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\16\\metrics.json",
+            "sha256": "84dd1980d03275d35149847a8460418b0c5f98f3ae816f0fcab2d415883a38f8",
+            "bytes": 860
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\16\\trace.npz",
+            "sha256": "7cf1174db5be388aaf662711aa87361de1ea114cc263e3e346191120da0a2538",
+            "bytes": 26770
+          }
+        }
+      },
+      {
+        "case_id": "test_17_gust_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\17\\complete.json",
+          "sha256": "2687da01937596bb4a5b3ec275ef32221bfc39abaf10d7e38db1d1874e96c322",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\17\\metrics.json",
+            "sha256": "c8ec54e33438b857e2fc0eb225eaa5379233be3bc356e575a63925f5dc92687a",
+            "bytes": 845
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\cases\\17\\trace.npz",
+            "sha256": "0626b10db75f8b30061a1ac1c098cbea5da1facbd6abd7b21f3095abdc40d94f",
+            "bytes": 26806
+          }
+        }
+      }
+    ]
+  },
+  "Y1_selected": {
+    "role": {
+      "arm": "Y",
+      "run": 1,
+      "role": "selected",
+      "step": 0,
+      "snapshot": {
+        "initial": true,
+        "arm": "Y",
+        "run": 1,
+        "step": 0,
+        "contract_sha": "5d5b8d153079c39c5b791f360fab4be4218fa6521e61569344592939ba16b2e3"
+      },
+      "kind": "policy",
+      "id": "Y1_selected"
+    },
+    "complete": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\complete.json",
+      "sha256": "e370b63473de9daafcf2edcba11cb1d16831e7007d6c66f7ee43b85bba2f3687"
+    },
+    "cases": [
+      {
+        "case_id": "test_00_stationary_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\00\\complete.json",
+          "sha256": "7722a7801c1d19e57db47113b79bfda39b91e6803b70d5b138b661814f3884d8",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\00\\metrics.json",
+            "sha256": "7501524b197e556e16dc7f9861f51e8664cd32eddcec80c72beca1afe7847e79",
+            "bytes": 857
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\00\\trace.npz",
+            "sha256": "5c8338e416256f8b6eff8d3a9f44be8c3eb36960bc15a9d42f56ceee6e834d41",
+            "bytes": 21710
+          }
+        }
+      },
+      {
+        "case_id": "test_01_stationary_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\01\\complete.json",
+          "sha256": "628729a759f7f1def0504b53d0a17da6e7f01576dcf228621ffa340bcd4ba1b7",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\01\\metrics.json",
+            "sha256": "b8e1d4032d271bb72c9c1a74bb93a8a167d9fb63c926c333438abe7c34a2a352",
+            "bytes": 857
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\01\\trace.npz",
+            "sha256": "c6ce8fbf95ecb1dc85632d107c1310f759889efc88ff925b78e0641c240c5e38",
+            "bytes": 21935
+          }
+        }
+      },
+      {
+        "case_id": "test_02_stationary_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\02\\complete.json",
+          "sha256": "b1f754dbc3acb1e464735598ee195a1d055d15df9fbd30a13fc8fd203e3f3be2",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\02\\metrics.json",
+            "sha256": "3597a3ec03a3393ef8d48d8b165dfd2c40094395e7ddf6750511b034289b5e0d",
+            "bytes": 853
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\02\\trace.npz",
+            "sha256": "fb077ffd5c92b79de1a669eba13f2f7b7fedbab536b463865f8d7f92594375a4",
+            "bytes": 21869
+          }
+        }
+      },
+      {
+        "case_id": "test_03_stationary_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\03\\complete.json",
+          "sha256": "189d31739b1a51fc90f726cbba0f3b08096c5593444b377b5394711c10bdf85a",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\03\\metrics.json",
+            "sha256": "1f07bd8306cbfe7a6a3d6a73216965f0be416fbf01b992b853da8807c107e52c",
+            "bytes": 858
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\03\\trace.npz",
+            "sha256": "e706bc50ebb0552b32495c064c93df1a325b60c2a4c0a0caab5b33eeb22a9b1e",
+            "bytes": 21692
+          }
+        }
+      },
+      {
+        "case_id": "test_04_stationary_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\04\\complete.json",
+          "sha256": "e3746a9edc9bb8ea855666c5fc1b4518a42bb0246f667b6d119df97cc61d6493",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\04\\metrics.json",
+            "sha256": "d559003ebc820616767ad383f1ebe497868fb81f3e95b6b5ae23efa0df70a497",
+            "bytes": 841
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\04\\trace.npz",
+            "sha256": "4629c2512cfc32fd44a8cf33dd3c94967e909ac2d2184d25eb50f28db1165fe5",
+            "bytes": 22120
+          }
+        }
+      },
+      {
+        "case_id": "test_05_stationary_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\05\\complete.json",
+          "sha256": "397885c4c2e8a5d5c1cc42d653e8881cbbd2d5f914d8d7d28a20ab590ad3ac04",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\05\\metrics.json",
+            "sha256": "2cdf5c42b7efa1c358fdc39d8bb67e5940bd3c8ae7d7d3f0423b1ae441cd3d55",
+            "bytes": 840
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\05\\trace.npz",
+            "sha256": "2f244910764bef60056e4b9986e66d95812c4024ff30d02e0e486dcd6bd73856",
+            "bytes": 22119
+          }
+        }
+      },
+      {
+        "case_id": "test_06_ramp_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\06\\complete.json",
+          "sha256": "28e46c4fc7918898c3a91b78abe1bb883ad9fab3e826e1be4a5aae34695af62e",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\06\\metrics.json",
+            "sha256": "a1dfa22ef57bba38976398f3f381b6a826076b76a12a9b6a266f40fe98be9f2c",
+            "bytes": 838
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\06\\trace.npz",
+            "sha256": "cda89c94582253973586d5b4a02c6d09e7f8db4c54ba739e64f422ef7c522c92",
+            "bytes": 21680
+          }
+        }
+      },
+      {
+        "case_id": "test_07_ramp_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\07\\complete.json",
+          "sha256": "69c5c59b67349fbdc0ca03a7abbe2378eeec2f154b312b94cb244aa0143aace8",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\07\\metrics.json",
+            "sha256": "a4db3e63350a4429a32647f3f67090cc3774818ee426bf6c7ce039ffc8a16b56",
+            "bytes": 848
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\07\\trace.npz",
+            "sha256": "3f65f35a5f8445f1a7cbc61295529f25732dd11aa28ce6e0e7ae5d7d2a965339",
+            "bytes": 21874
+          }
+        }
+      },
+      {
+        "case_id": "test_08_ramp_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\08\\complete.json",
+          "sha256": "188e344d2b4bbc5948e7034f1fbae34e0fe03929b59a2c4ddab108e3bb837848",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\08\\metrics.json",
+            "sha256": "f67aa9432ba545a06dc2c321649ea4bc8246a837a60bc2da2cab49d4a203716b",
+            "bytes": 848
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\08\\trace.npz",
+            "sha256": "f0601698f9763dfb149886dbdcadeaa4bbf3acfe1db2cbb14e3c76ca09b052a0",
+            "bytes": 22091
+          }
+        }
+      },
+      {
+        "case_id": "test_09_ramp_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\09\\complete.json",
+          "sha256": "d9f35f531fdff37cd5080b6d8bb673a038b15c40aba693357457d500b098b53d",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\09\\metrics.json",
+            "sha256": "0ac171eee82d67fc3a42640672d8bc86c85068c0339d6a1dcf87fb7c53232fd7",
+            "bytes": 823
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\09\\trace.npz",
+            "sha256": "c06771301592c763c97b2b566c04cd8fdde979fa953fb2fb0f66292b0745a0ea",
+            "bytes": 21937
+          }
+        }
+      },
+      {
+        "case_id": "test_10_ramp_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\10\\complete.json",
+          "sha256": "cd3b4c4cf33dbe6f53552444484a7823aed8d16e8a50e5345958aded45e51788",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\10\\metrics.json",
+            "sha256": "e1c7c6ad72f1f76265bdde4c2457f87c7814426f8cb0e0561ab23444470ce736",
+            "bytes": 848
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\10\\trace.npz",
+            "sha256": "55f843a63dc5c745ab2842fe90d3a42449bf8e3bd9185c73e47b78a4185042f3",
+            "bytes": 22008
+          }
+        }
+      },
+      {
+        "case_id": "test_11_ramp_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\11\\complete.json",
+          "sha256": "5423e657dd0790347e64c38062d2c45e96a9cab43d9a59c1193544ab6836e0aa",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\11\\metrics.json",
+            "sha256": "12f5a9d3a7db41f8cbcbf95b3531ebb301a171ab9caffff2b52d3ac40986c907",
+            "bytes": 843
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\11\\trace.npz",
+            "sha256": "de89cbe0e63c80f3b39d74cec1c06fdc35305c78f37be7077b5c5e1404e0236c",
+            "bytes": 21862
+          }
+        }
+      },
+      {
+        "case_id": "test_12_gust_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\12\\complete.json",
+          "sha256": "201305ed743f09ae93f7b883ffcc2f6f10fb34f8d6019f4b40922ba31389328e",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\12\\metrics.json",
+            "sha256": "0bfcbec24bc066bd4954c9f91d966d2bc1fcc828d18aa5c2681910aa12872ce6",
+            "bytes": 843
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\12\\trace.npz",
+            "sha256": "2d1b532d1e4021bb4f821a94d78260ab7a73e184b59ebe2e883e19bbe4a66a3f",
+            "bytes": 21890
+          }
+        }
+      },
+      {
+        "case_id": "test_13_gust_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\13\\complete.json",
+          "sha256": "b58172a5dad96aa0447c27f8dba421a3c02a1043dfbcaf85a1f30fbe8b2d5b2e",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\13\\metrics.json",
+            "sha256": "ef211b63bf5bc01e3350016cae72da7f8d9817fbb91b12213795390c4ace8c43",
+            "bytes": 834
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\13\\trace.npz",
+            "sha256": "d7db54b0fc36a02b4697d3cf82eda009f10800c77954784e57bdfbfc9548154a",
+            "bytes": 21940
+          }
+        }
+      },
+      {
+        "case_id": "test_14_gust_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\14\\complete.json",
+          "sha256": "5093231b02f01a7e01c4f368d36a3bb20c97ef0f16a7ba0de422d4326c322b97",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\14\\metrics.json",
+            "sha256": "188b7ac7cbf2a2ac357752aef9966ba9da3145c186cfb763f222ede84254a8f1",
+            "bytes": 847
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\14\\trace.npz",
+            "sha256": "569c5e9a74b1880993047563be61d9589a6fcba7dab4af0c06f5c57c4e0faecf",
+            "bytes": 21816
+          }
+        }
+      },
+      {
+        "case_id": "test_15_gust_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\15\\complete.json",
+          "sha256": "9c38f90cdc8aee6fee0c4ac3e45e579942134aaf703ebb161bbb5c2df164b89e",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\15\\metrics.json",
+            "sha256": "f5cee82c76891cb6cf960bda86f578ef718017cf3483b15a79b90f7a51d23b04",
+            "bytes": 844
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\15\\trace.npz",
+            "sha256": "a38f2b30982e97839f7ed54f447324a132eb7082111edcfe52ebfbf5e2274dd4",
+            "bytes": 21808
+          }
+        }
+      },
+      {
+        "case_id": "test_16_gust_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\16\\complete.json",
+          "sha256": "0fba465943c9a492544a4744b6d9b073275899eac940a730c48ba15e236f958e",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\16\\metrics.json",
+            "sha256": "9283cafb89306d5f2c29aca1b6fa74703f28ed64dbb0ae7cddce5b53790f1f43",
+            "bytes": 846
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\16\\trace.npz",
+            "sha256": "3433b011fd14b0f1119c9fbe960d0da995c408698e390334b63784beff2817f9",
+            "bytes": 22078
+          }
+        }
+      },
+      {
+        "case_id": "test_17_gust_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\17\\complete.json",
+          "sha256": "939efe73890f5a65405bc45b6a90b01c51ebe7c25f282bf4f943f48960301316",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\17\\metrics.json",
+            "sha256": "049b7e414ac1c779e72aedbeb5b3a9f13b18f8c670ab7333f1a89e71482f00ce",
+            "bytes": 844
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\cases\\17\\trace.npz",
+            "sha256": "4662e1e4de8699ef9af9ae4c6172d374073761c19786417903d7c7af02fa2e11",
+            "bytes": 22048
+          }
+        }
+      }
+    ]
+  },
+  "Y2_selected": {
+    "role": {
+      "arm": "Y",
+      "run": 2,
+      "role": "selected",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\inference.pt",
+        "sha256": "e893cb8590df776a931e0dc3de23f7f3cf57d35b46d1ed1d61a72687b51d6817",
+        "bytes": 24959
+      },
+      "kind": "policy",
+      "id": "Y2_selected"
+    },
+    "complete": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\complete.json",
+      "sha256": "cc32852a36f1c89154cbb6e22f09da8966d1790c5cc3725849bda9e4842fe9a9"
+    },
+    "cases": [
+      {
+        "case_id": "test_00_stationary_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\00\\complete.json",
+          "sha256": "7567dbd26cb20aeac44eee17286b21c753ee5e33135d2f1b84bb4f2d80d0d9b0",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\00\\metrics.json",
+            "sha256": "16b412f1f72114855bebabb383073db63e544ae6e0e8c5b06ff717a1151136ca",
+            "bytes": 864
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\00\\trace.npz",
+            "sha256": "cbfdc0bc14297255bed847c0cb6b0004195981cb46ea426ab5a41234d55a6c1e",
+            "bytes": 27631
+          }
+        }
+      },
+      {
+        "case_id": "test_01_stationary_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\01\\complete.json",
+          "sha256": "101c133b32035756c8eb2228f4f05c68243acbc2ec2cc39c4b2a890a6cd8d682",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\01\\metrics.json",
+            "sha256": "a552f228c5d77978453d2030a2cf71eb031c3a7b7b233d88bebb0c90540f36cc",
+            "bytes": 872
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\01\\trace.npz",
+            "sha256": "136dace043e259f756fe791916ddc5f06c6bbdb275850736d5a6ee78205ea35e",
+            "bytes": 28167
+          }
+        }
+      },
+      {
+        "case_id": "test_02_stationary_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\02\\complete.json",
+          "sha256": "ca02c7c6f6738c02081fa0ed6f36fd2752e05eae98cb1000309cb649cf8b65aa",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\02\\metrics.json",
+            "sha256": "53a057e9300ef9e8ad38893914439aea67f9e4b556024c49e9db28ca60dac064",
+            "bytes": 874
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\02\\trace.npz",
+            "sha256": "088471fa4fc08b7b725d175fcbfac76c7ca75c103e5878a2e0e0c8cc67e9b476",
+            "bytes": 28044
+          }
+        }
+      },
+      {
+        "case_id": "test_03_stationary_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\03\\complete.json",
+          "sha256": "fb806f454d5a101d19f7a3ce830b9601fd785a8ca1e1448000c1168e9378a280",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\03\\metrics.json",
+            "sha256": "bee1901102b80b107011e5ba19ffe24ea3a37daaea6698e1cc003192dc88e431",
+            "bytes": 862
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\03\\trace.npz",
+            "sha256": "6e797ad395efec43ada9a4e03c54a434cbaf7b8b0d199689ac1f7e9a2fee0c7e",
+            "bytes": 28058
+          }
+        }
+      },
+      {
+        "case_id": "test_04_stationary_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\04\\complete.json",
+          "sha256": "dcb1bf2db4496edd469ab31b0e44134e4297feac4bad163839c4a73eeea63b51",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\04\\metrics.json",
+            "sha256": "cf893c6740b50bb1912d2012cbe4b65c28c3fb00b9ea96286c35f824d60b2990",
+            "bytes": 851
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\04\\trace.npz",
+            "sha256": "87279ce6a208e78f949f2f8c5199bd953e318ec7d189b430cf6d2d83ba805080",
+            "bytes": 28035
+          }
+        }
+      },
+      {
+        "case_id": "test_05_stationary_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\05\\complete.json",
+          "sha256": "944621cf2e8f1851c8a440aebe794f9fdd5489582203077c78bf94a56b263a10",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\05\\metrics.json",
+            "sha256": "596992c818b82ff82905674a0ba55a60d9e6e933d26634f76e66be0d5fd71a5f",
+            "bytes": 849
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\05\\trace.npz",
+            "sha256": "9b3a8102e73813f585d6d896c4b62cb9827cb71d8ad6c251e089e9aae15f3cbc",
+            "bytes": 28074
+          }
+        }
+      },
+      {
+        "case_id": "test_06_ramp_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\06\\complete.json",
+          "sha256": "338fbe7b1b01da288c99b07dbe24adeb1a96d53d70a39b60e467c589dbd812a8",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\06\\metrics.json",
+            "sha256": "4e075ab0af5b8208f7788d59c28bbf1f986ba501ec6373123102ea7cdaa862c9",
+            "bytes": 860
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\06\\trace.npz",
+            "sha256": "218d88b4e6e38a357be73f6e9102b9ad6d1a7ec966ff57975839c969eaa66e6a",
+            "bytes": 27923
+          }
+        }
+      },
+      {
+        "case_id": "test_07_ramp_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\07\\complete.json",
+          "sha256": "77ba3c07fed1a3867474b04658b99ec7c16fee01930f75eafce4635399400234",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\07\\metrics.json",
+            "sha256": "251df1b68eef93d74bc06b61029a47aa21ae9c3fa3eda840beef497a39cec732",
+            "bytes": 861
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\07\\trace.npz",
+            "sha256": "2d62e01212515fa4fcbde98649a413870dc1c68805b6d36d6d53a4e6b5b63252",
+            "bytes": 27672
+          }
+        }
+      },
+      {
+        "case_id": "test_08_ramp_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\08\\complete.json",
+          "sha256": "f072756894b80261bb6a6b17aa1eebf365a0fb619b6670085f94dd89d3c91b3b",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\08\\metrics.json",
+            "sha256": "c83888e58bb85ff1b4aab46d723ade5e67500e933e75e9d9753d56d8577b8f89",
+            "bytes": 851
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\08\\trace.npz",
+            "sha256": "27cba94c24ec57e668a0c4371c28d66908c377dc9db05f5177c357edfa2bf1e5",
+            "bytes": 27884
+          }
+        }
+      },
+      {
+        "case_id": "test_09_ramp_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\09\\complete.json",
+          "sha256": "2720a07ccd794c4a8ba8ef02285d3ab2c818a970c765d3b4bdc2af34631d4740",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\09\\metrics.json",
+            "sha256": "cdaf017cbd1df24c5296ca7b96f75cfb466650df1bd5c83022808e812f6e51b7",
+            "bytes": 850
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\09\\trace.npz",
+            "sha256": "490325416e63493b7a66d3b84f04182e72062b94c03c592ea4b25369eac3be87",
+            "bytes": 28261
+          }
+        }
+      },
+      {
+        "case_id": "test_10_ramp_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\10\\complete.json",
+          "sha256": "d8ef0e99802689012bd52acb59e25668184b51ae2af083b36df7162f5f38471c",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\10\\metrics.json",
+            "sha256": "edc8139119395cbf36cabc14a841729fb55ec012e7b8ea387d1cfa0056086a31",
+            "bytes": 865
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\10\\trace.npz",
+            "sha256": "98b59810762be06630fa2a0799fbfeaafbe551746df4a1fd264cb395a46ab024",
+            "bytes": 28308
+          }
+        }
+      },
+      {
+        "case_id": "test_11_ramp_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\11\\complete.json",
+          "sha256": "2fb51459ab028ad2c812ff9ce5abfc8cab684d6c04b91adf905efd3a2eb85c44",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\11\\metrics.json",
+            "sha256": "e25e62c5504245d0de2b94017aed3f52aebb642cb80caa1c2dfc11db64dfe701",
+            "bytes": 844
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\11\\trace.npz",
+            "sha256": "3228c1b9e4d6093fc42cfc422c9a70523350b63a4d8197e8833912cefbbbbfbc",
+            "bytes": 27867
+          }
+        }
+      },
+      {
+        "case_id": "test_12_gust_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\12\\complete.json",
+          "sha256": "0552007d90cef3352c63e0166054a8c78e3af1232a45931ede88e08869fade8e",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\12\\metrics.json",
+            "sha256": "258c34b7d16a699ac62773bf02022f8fe7dd85b4e9d1e43d66e44faa41e1cf95",
+            "bytes": 858
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\12\\trace.npz",
+            "sha256": "0902462db3c759ba47e1d733e6f49ab414219f9ca6338945af7ab8590e6cde00",
+            "bytes": 28090
+          }
+        }
+      },
+      {
+        "case_id": "test_13_gust_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\13\\complete.json",
+          "sha256": "3b27c0b383f21161aa9864eebb2d921dd0475e0ae0f5f1b4b2be00c711316082",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\13\\metrics.json",
+            "sha256": "8dd09ad753e19a45b27e7c12f87b58d913da02226dd23eaee5425b0fc4c023ad",
+            "bytes": 863
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\13\\trace.npz",
+            "sha256": "ba2a123cc4337dcd04aafbab67b6f060f57b42b98667d7e211a35f7a20993d08",
+            "bytes": 27839
+          }
+        }
+      },
+      {
+        "case_id": "test_14_gust_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\14\\complete.json",
+          "sha256": "e7c0c41f295e8a5f312d54724a63dc52186b408541314bff86669ec6d7eaf658",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\14\\metrics.json",
+            "sha256": "ef0fe9e9c0769c4eb05416166a475638754e1291f20422430bca06ec8d3bf81f",
+            "bytes": 851
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\14\\trace.npz",
+            "sha256": "ab7200ca39dd0d974beae1d6f1b61f99ba403f7d1c895014814b10488987c2ad",
+            "bytes": 28057
+          }
+        }
+      },
+      {
+        "case_id": "test_15_gust_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\15\\complete.json",
+          "sha256": "705fc49ffbc6f9cb9734fe36422fdb8bbc8a2c8eacfdc92a14832f5cd03d1240",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\15\\metrics.json",
+            "sha256": "cd23bd000f4712d654f365cbb5c33cae8c6473660a922a72de7de8173efd2336",
+            "bytes": 862
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\15\\trace.npz",
+            "sha256": "17e7c0a3a3ce381d1933ae41022bd970e6c0d911c6e04724985e0c22d0bed37e",
+            "bytes": 27725
+          }
+        }
+      },
+      {
+        "case_id": "test_16_gust_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\16\\complete.json",
+          "sha256": "fd7a30d9c9880c84a6f75d8e7cd3a82439abed1dcd9585d8a84a77358bb40a8b",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\16\\metrics.json",
+            "sha256": "55324b5e055df196ca8e1cb65cf323e754d09167d1a153bd32690038fdea47fe",
+            "bytes": 864
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\16\\trace.npz",
+            "sha256": "6a4f886c9da4e45d6996ce7304fbbe10b4f465f571358e1273066fa931ad0b50",
+            "bytes": 28258
+          }
+        }
+      },
+      {
+        "case_id": "test_17_gust_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\17\\complete.json",
+          "sha256": "23aff10447b110919b3cc97bbbd3f9668d8d91e58c2ce51d902e1ecc4ab7121c",
+          "bytes": 1107
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\17\\metrics.json",
+            "sha256": "7e751a1496a9c14c9b33def199144fc45f25cb0f86b1f2f119fdbe442f6e73d1",
+            "bytes": 859
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\cases\\17\\trace.npz",
+            "sha256": "3818ed4d815de65359e8fa9b9a5e107ae9d612d64f4c8177a23b0f677626b443",
+            "bytes": 28368
+          }
+        }
+      }
+    ]
+  },
+  "p": {
+    "role": {
+      "kind": "baseline",
+      "mode": "p",
+      "id": "p"
+    },
+    "complete": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\complete.json",
+      "sha256": "a750ea8aaa7a32ba48c6664bbf0772e8c7563698657d606740fc15bc821a46a7"
+    },
+    "cases": [
+      {
+        "case_id": "test_00_stationary_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\00\\complete.json",
+          "sha256": "ad88d7d72640e84d9abaea630b48cc7036ff8de9513c5b019e7362ffb39d50ee",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\00\\metrics.json",
+            "sha256": "89635866ad6a799407eaf953ddad8062cb289ff357d4c696ae5863e5d95b539c",
+            "bytes": 847
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\00\\trace.npz",
+            "sha256": "2d5f6056e4b8a3054924f2f09f2d17a25e92eff8311e685e8bf2ccf306b9ca4f",
+            "bytes": 18998
+          }
+        }
+      },
+      {
+        "case_id": "test_01_stationary_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\01\\complete.json",
+          "sha256": "1232071bc7b15612ef6650cfa52641a87563b60b39af5c8b4cd5627fb8faff0d",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\01\\metrics.json",
+            "sha256": "47b7094f4c049a7f38520b5ffd36bc7c7ce35d9fba6da6b7d3f2d9e55c5a5b7a",
+            "bytes": 828
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\01\\trace.npz",
+            "sha256": "01f0b9a37ac53db97cac63697de98fdfea663d0bb6e89432b42311f5ced4b314",
+            "bytes": 18962
+          }
+        }
+      },
+      {
+        "case_id": "test_02_stationary_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\02\\complete.json",
+          "sha256": "77feeeac5e3cb39f8f8a2b1e2f5243c345e3594f3866c7dcf96220b657637610",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\02\\metrics.json",
+            "sha256": "9e529c8eb7d074d9d05a81491b2da1873de1aaf60acf89b01c119c9ef814f8ee",
+            "bytes": 837
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\02\\trace.npz",
+            "sha256": "540742f3d83e50b83c9f2ebce1df9511adaa55cc542e76d6a6646b760a9c71dd",
+            "bytes": 18878
+          }
+        }
+      },
+      {
+        "case_id": "test_03_stationary_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\03\\complete.json",
+          "sha256": "4751fc38161099660df239e0d0b9aed4751f19b9e1e75bda2dfbb0eea14c022e",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\03\\metrics.json",
+            "sha256": "fa5163e79e0f869549426dd4793faa67f27100347e5e8208b68ae4f4166a5c8e",
+            "bytes": 834
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\03\\trace.npz",
+            "sha256": "fc7a7f9b65c8a9ebebbd328c6409cef9a7e4041597a811ef6f8d72416faf11af",
+            "bytes": 18815
+          }
+        }
+      },
+      {
+        "case_id": "test_04_stationary_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\04\\complete.json",
+          "sha256": "04afd298a82ce64b2298c5ea6c19cec61c3d34036e2d0fb142a69076c70acf5e",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\04\\metrics.json",
+            "sha256": "7cd8826d0dcbe71a484c134486f18acfc53c03312102603b23b6a17952fca6e0",
+            "bytes": 847
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\04\\trace.npz",
+            "sha256": "7c486cda80709a75e397a7f38d7be0f7ffe5dfc7e86fa09c4b2c3ac3657929cc",
+            "bytes": 19043
+          }
+        }
+      },
+      {
+        "case_id": "test_05_stationary_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\05\\complete.json",
+          "sha256": "c6acbaa360767e5b3b9e149715a71814dce095a7d0ab40e595fd25413fd1a5c5",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\05\\metrics.json",
+            "sha256": "f313105d042bf19ae69b92fedbd3c460e4d4694c4cc25baa7c2512adb1b26b48",
+            "bytes": 824
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\05\\trace.npz",
+            "sha256": "15ed27e20adc983f864f329c68e994dbde517ebc4c31fb1c108b37e0bf578c9f",
+            "bytes": 18997
+          }
+        }
+      },
+      {
+        "case_id": "test_06_ramp_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\06\\complete.json",
+          "sha256": "b30c267ff452fd1da7b41a2792b1e7a87d2f02ae97a9e1754b8885ef80dee156",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\06\\metrics.json",
+            "sha256": "f074de3f66382ce98a371e645e27a7eb3444e6208207cb4901f0caed976cfd55",
+            "bytes": 835
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\06\\trace.npz",
+            "sha256": "5b4829af94949eebbcd37e04225b72e525d4aed11371d33b7f3d380e3338be2f",
+            "bytes": 18860
+          }
+        }
+      },
+      {
+        "case_id": "test_07_ramp_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\07\\complete.json",
+          "sha256": "58b143334e40afaa9efc82cea5ae3acc3e687a9060fc2b4f03aca8f4a0540fdd",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\07\\metrics.json",
+            "sha256": "b0ccdaa616d1282d5ec458b8d06d8ad37c70e10d65a4271d6550eedf815abb47",
+            "bytes": 812
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\07\\trace.npz",
+            "sha256": "b192afe7e6e95c7fa0b9144d533d1c56d57efd4de2cc64a6b27732d2c5472918",
+            "bytes": 18869
+          }
+        }
+      },
+      {
+        "case_id": "test_08_ramp_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\08\\complete.json",
+          "sha256": "6c188553c867c0d74dd8450316d563d144ede47229ca33eb8c3344e5c6f93f11",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\08\\metrics.json",
+            "sha256": "125a47d56fdc228345d130fc9e8ae3171998569113c6eeb28e9b5571889dc74b",
+            "bytes": 828
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\08\\trace.npz",
+            "sha256": "74383158369281b71ca336a71ed86b5bed4e8a9df70137d524bf90ceb64de00b",
+            "bytes": 19071
+          }
+        }
+      },
+      {
+        "case_id": "test_09_ramp_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\09\\complete.json",
+          "sha256": "09052393adac5d3aaa435fbc94aff6d07554a84a0b697c428286dc31842ac126",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\09\\metrics.json",
+            "sha256": "8ded3f668414d2448b670cc5ad458a37ef47acb40871f39158dd6cadba8f6219",
+            "bytes": 827
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\09\\trace.npz",
+            "sha256": "5abc044760e99ae2cc2247b9f56b8cd757b851690b0db6f58dcc80573bf631ef",
+            "bytes": 18918
+          }
+        }
+      },
+      {
+        "case_id": "test_10_ramp_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\10\\complete.json",
+          "sha256": "94265703d12929d0b91e21ef1cc7e521322097d7540f622e8d33f697e3dbbfe2",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\10\\metrics.json",
+            "sha256": "d3fbaf782fbd5b341bb354b70465f8e67fb47e0c943b48783fbeeeb71c373ef0",
+            "bytes": 835
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\10\\trace.npz",
+            "sha256": "29b69049bafdd916dffb3904e0af59c1af22bbccee581699a52c87302a72c545",
+            "bytes": 18798
+          }
+        }
+      },
+      {
+        "case_id": "test_11_ramp_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\11\\complete.json",
+          "sha256": "1555ea31b87284f6290a65ad4aee8d47d42dcfde666a43b50ba261e903fc3636",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\11\\metrics.json",
+            "sha256": "bab9f5427a3415b02260311ca72f50f6705d8996a24576b9e1020ceb243280f3",
+            "bytes": 831
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\11\\trace.npz",
+            "sha256": "b2f4579dae2534f272e1774235121a605fc799dce525aa4f6414a9f3e5d1b731",
+            "bytes": 18795
+          }
+        }
+      },
+      {
+        "case_id": "test_12_gust_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\12\\complete.json",
+          "sha256": "fe0313f514dadec208ded624bad6fc28eebc17c6b536dc614bcae6b1926002f5",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\12\\metrics.json",
+            "sha256": "f53e2a23e2b224bc811311ae1e2e62233646d59ec15bb0f9711d4ed717b411d5",
+            "bytes": 829
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\12\\trace.npz",
+            "sha256": "886f654ac203eba959bc73e42a191a260c9713f5cdc2c6240003930e73c2f48b",
+            "bytes": 18971
+          }
+        }
+      },
+      {
+        "case_id": "test_13_gust_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\13\\complete.json",
+          "sha256": "d7a1060eec40630dd7349810c41df5b5bc51cb2958e07fe454a9e818eb5fdb4f",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\13\\metrics.json",
+            "sha256": "5a4357e1fc15422085582d90808de18d3ee7eca4da774ef1fb3af0072f51208a",
+            "bytes": 828
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\13\\trace.npz",
+            "sha256": "c3a6c021f011cef24ce800a19260f29ae1a56f5b637497a89125f031d829bf90",
+            "bytes": 18945
+          }
+        }
+      },
+      {
+        "case_id": "test_14_gust_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\14\\complete.json",
+          "sha256": "03449e4ac385ae189972a34f5e3d352197d74629fa5cc4a3aff0930914e2eb13",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\14\\metrics.json",
+            "sha256": "8005b37bf91efe52b26a56ea5c96269b4a81ed82fd071cf6ee8405b7da7cb0f0",
+            "bytes": 829
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\14\\trace.npz",
+            "sha256": "8dead3fc01db747df0f4087cb2c65376dc7dbbc01cec86d16d510ba19e645bd0",
+            "bytes": 18883
+          }
+        }
+      },
+      {
+        "case_id": "test_15_gust_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\15\\complete.json",
+          "sha256": "aaf02ece278a6189f4ae104b55afaa8659cbb64eb2ed1ac0bf797b919ab3ff06",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\15\\metrics.json",
+            "sha256": "472e8b06d6a6bfcb689e3f5c84fd93cc75dea37e7676e0e4ac57f9c1540c830a",
+            "bytes": 835
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\15\\trace.npz",
+            "sha256": "07cc39ddd4aed368ca9dd0db8d9b3c697e4e18edad5cb3f95218a3391d9316d5",
+            "bytes": 18817
+          }
+        }
+      },
+      {
+        "case_id": "test_16_gust_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\16\\complete.json",
+          "sha256": "88eb4c45c9bcc8e6a7cbd99c0747574558def2ec4321227bc032d2c9625e28b0",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\16\\metrics.json",
+            "sha256": "e32733d1192e928580f43f38d2ba8b7f001bd533672b426a5c81643fcafe4616",
+            "bytes": 828
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\16\\trace.npz",
+            "sha256": "9e4743e8fedce1f90562a35ef125990ca08b9785b860e1bb2ae615b3c50ad5a2",
+            "bytes": 18922
+          }
+        }
+      },
+      {
+        "case_id": "test_17_gust_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\17\\complete.json",
+          "sha256": "1027132a5d2834f168d5471920fda5c5ff056f8b855d7a79ec7f2c7e6f39fb7b",
+          "bytes": 1067
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\17\\metrics.json",
+            "sha256": "c9643b4cbabc3dea6afe66bdbbdac4f9cc44540c8e9476e00093ec8f2315d5ef",
+            "bytes": 814
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\cases\\17\\trace.npz",
+            "sha256": "83269bda2ebc7460a85554b7f4434a4eef194cd8f099bc312569f790db9551a2",
+            "bytes": 18839
+          }
+        }
+      }
+    ]
+  },
+  "pi": {
+    "role": {
+      "kind": "baseline",
+      "mode": "pi",
+      "id": "pi"
+    },
+    "complete": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\complete.json",
+      "sha256": "7e626684b630b031758ae00372e75c092cc7c46a102cbd8f8958ab5e29476dd3"
+    },
+    "cases": [
+      {
+        "case_id": "test_00_stationary_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\00\\complete.json",
+          "sha256": "0025c4ce9c783cd4fda97f2fdcb35e3fbe8a427203e15f1872dcdba43334b6d8",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\00\\metrics.json",
+            "sha256": "60cfeab611a519a0afd2559350b8bfa27a3946c92081256d5fed04353014190c",
+            "bytes": 849
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\00\\trace.npz",
+            "sha256": "3221d727586968717eb03b95e785644dab4ce8165fcba864c44e305e2f884869",
+            "bytes": 18996
+          }
+        }
+      },
+      {
+        "case_id": "test_01_stationary_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\01\\complete.json",
+          "sha256": "0beb8280c0d06d234a4cff81341d03e7f11178a30b2ff05680cf45db0eef66e9",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\01\\metrics.json",
+            "sha256": "b28cf81596599939fdb4db40727dcb61238a082ced2ac494d85dc730ab474b52",
+            "bytes": 839
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\01\\trace.npz",
+            "sha256": "64066e8784fa28f1fc04378070f326083fd592892a577b1cff3ff5d17c41afbf",
+            "bytes": 18946
+          }
+        }
+      },
+      {
+        "case_id": "test_02_stationary_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\02\\complete.json",
+          "sha256": "75d3a19933730a61bc071fd4e449796784199e8d7c5ebf5139e08e09fb8654e2",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\02\\metrics.json",
+            "sha256": "f2b1c726bd22e009f31d3ca94e984231e931dd3ee8ffcac2bcb4fc9b2e441201",
+            "bytes": 841
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\02\\trace.npz",
+            "sha256": "089bf3d52194f3b65cae28f2645f05e3fbfd0cc5e0cdca41fcca2c74bc2b4ef1",
+            "bytes": 18864
+          }
+        }
+      },
+      {
+        "case_id": "test_03_stationary_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\03\\complete.json",
+          "sha256": "18b27f08cfd2c3e2e13fb25fea6196d52296ac0d352ff4747da9e3e77bff1200",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\03\\metrics.json",
+            "sha256": "c15fe65a9661ccbac924cbfbea2e421566312fb8ef443f4af4447b4dcf04c634",
+            "bytes": 843
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\03\\trace.npz",
+            "sha256": "60a9875d52e11661ed8a03295a8f1a8ad30d8d5333bb7918626706662910c22f",
+            "bytes": 18846
+          }
+        }
+      },
+      {
+        "case_id": "test_04_stationary_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\04\\complete.json",
+          "sha256": "55228dd0d1d5d8960534dd28fbe7b13898a61dfd900ea892bad525da7bd49ad6",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\04\\metrics.json",
+            "sha256": "f6ff8bbfd17a04b2e1499b1ef15d7148197e5298f91eb99f10848349a8643fa3",
+            "bytes": 841
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\04\\trace.npz",
+            "sha256": "c97e1a155719919753ad9b46c1533f4e2f655164d2aef6084d651cdc163fddc9",
+            "bytes": 19050
+          }
+        }
+      },
+      {
+        "case_id": "test_05_stationary_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\05\\complete.json",
+          "sha256": "58f76e54db4650c13fe4ffdad87fecd5733d60917c8437084b5885c8db2c43b2",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\05\\metrics.json",
+            "sha256": "61c0c6ab771e04e12f3e5e5ed44b76d1938a6adfb3cb9e92fd1005910b929388",
+            "bytes": 842
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\05\\trace.npz",
+            "sha256": "bb383cd1aa1a024095e878593933eb5ea3f8ab4a5c31d23cfc66c4a4f12608bb",
+            "bytes": 19032
+          }
+        }
+      },
+      {
+        "case_id": "test_06_ramp_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\06\\complete.json",
+          "sha256": "4031d95f92e97bbe3acd8dfc04b650df85f8b0dd03d0dd96ba63d563803b13c0",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\06\\metrics.json",
+            "sha256": "a0d3fce45befcd1bde30973b4b71425bf43fe0f591d3c4396520682468d4cef1",
+            "bytes": 836
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\06\\trace.npz",
+            "sha256": "d81973800ea8c3a88a92268aad5d784094de1309a5dedda5ea1c9ac2940a7dbc",
+            "bytes": 18832
+          }
+        }
+      },
+      {
+        "case_id": "test_07_ramp_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\07\\complete.json",
+          "sha256": "05bc8186b991acf382a4e5a80f55182e6d7f2e14cfa490379b32848381855c0b",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\07\\metrics.json",
+            "sha256": "cd2152a90a44352ba315a93bd1d97d41e7a23deaed51181824d0ae3aec22fa18",
+            "bytes": 831
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\07\\trace.npz",
+            "sha256": "9ece26526bc2092d59fd736359c6cab6700beb72ab30d1adc32a09bf727e6af2",
+            "bytes": 18819
+          }
+        }
+      },
+      {
+        "case_id": "test_08_ramp_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\08\\complete.json",
+          "sha256": "e3966acca90568e6817c60ee2c04ea3cc5c02b74067f773faf07f884a96e14dc",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\08\\metrics.json",
+            "sha256": "63284f3197263b549f52e30a38162b7eca01b8451538c46ea9e9a868bb8137ff",
+            "bytes": 832
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\08\\trace.npz",
+            "sha256": "349fa93b5e4b9b156094095047f9f1fcc4e34de1ee29574fb839289c6afd6e9c",
+            "bytes": 19027
+          }
+        }
+      },
+      {
+        "case_id": "test_09_ramp_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\09\\complete.json",
+          "sha256": "352c87b1ab26af957310bf4591240ce10d60d89793000110c74db8c9588a063a",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\09\\metrics.json",
+            "sha256": "9e0706574c6b0688b0361948ee4cda6723035067e9e803f01f6aba1999d895fc",
+            "bytes": 816
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\09\\trace.npz",
+            "sha256": "1c5b742ad33d0ce5b86e3d951f03f0695ac841ae9e6efb3371f859797773aaa2",
+            "bytes": 18982
+          }
+        }
+      },
+      {
+        "case_id": "test_10_ramp_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\10\\complete.json",
+          "sha256": "577ce0e14fc05efe967025f281fe59365d87d9867d64870c9eb84db1c358a747",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\10\\metrics.json",
+            "sha256": "4dd02688c4c2feb04cfcfd0d5b9e459e781503baa74ccaf731642f285561b71d",
+            "bytes": 837
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\10\\trace.npz",
+            "sha256": "b30aaeca7d0e91cd140b618b685126521ce52abc4ca1481c1bf2fca92c78b612",
+            "bytes": 18840
+          }
+        }
+      },
+      {
+        "case_id": "test_11_ramp_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\11\\complete.json",
+          "sha256": "586d7b62f9acf6bd2256ff11492177d75894aba62c6d225e019218e518c0c114",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\11\\metrics.json",
+            "sha256": "ee47bf948dd54f8a660d6f5052dcb72f7a4c028a89d8b0cb63901538e87e47ad",
+            "bytes": 830
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\11\\trace.npz",
+            "sha256": "2e4bce4298197ee460d152f42a4ba4495a71ced2c2e71ccb1f0ff7a9906d2e61",
+            "bytes": 18805
+          }
+        }
+      },
+      {
+        "case_id": "test_12_gust_2750000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\12\\complete.json",
+          "sha256": "a76f1f018e6037432385ed493bf21ddf621a952e0367df962a0d9d34e281689a",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\12\\metrics.json",
+            "sha256": "a4e71d0a2c211f6d3aea63d0f05d565d176c20df5df2d2275257b6be5bb81f97",
+            "bytes": 837
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\12\\trace.npz",
+            "sha256": "ad5fb73336da7cc579a84a62ae62e964d3b0b2663969821a036fb1250415c246",
+            "bytes": 18998
+          }
+        }
+      },
+      {
+        "case_id": "test_13_gust_2750000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\13\\complete.json",
+          "sha256": "44ce21dad8b83e39125795f1372f9275f1bc5501061459ee8364782d3500feb1",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\13\\metrics.json",
+            "sha256": "92f2abbad5fe26b25f4812701e08381510b5d8dfdaed4eb4b1cce262087b6d0b",
+            "bytes": 827
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\13\\trace.npz",
+            "sha256": "09307f379f17d27cc1c02cc1c2c18c88769c63775b4e9a9a877c299f3f00f415",
+            "bytes": 18913
+          }
+        }
+      },
+      {
+        "case_id": "test_14_gust_3350000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\14\\complete.json",
+          "sha256": "359a27058be055b45a73df7b93d50a7222d7e19d1112a60279e39438b4a9d055",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\14\\metrics.json",
+            "sha256": "10290a425503bc972b12c7a9ac13d210a347e212888cbbcbdda21f9c62902656",
+            "bytes": 818
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\14\\trace.npz",
+            "sha256": "eca2c47a2504af24be995ddb33603f6d6e177fcecc2756b5f8eb70fd5b23e892",
+            "bytes": 18883
+          }
+        }
+      },
+      {
+        "case_id": "test_15_gust_3350000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\15\\complete.json",
+          "sha256": "25f8545c215ca8a9b39b5cb9ce3707f92f93913557d8eece3bce24d406f4da88",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\15\\metrics.json",
+            "sha256": "6fd3ddebad004716d85089e3f3b8e2e475bb077fc674fae6faaeda939eeaebb5",
+            "bytes": 833
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\15\\trace.npz",
+            "sha256": "4a15a2543d0e13dd2d999d9e8e3aee6404d045db1913d5d0eb5c58c3a367b839",
+            "bytes": 18801
+          }
+        }
+      },
+      {
+        "case_id": "test_16_gust_3850000_pitch025",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\16\\complete.json",
+          "sha256": "5daf6548ea11a89e31b92ab7783d1835754ebc690c8c7af2dccee79d2200eb98",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\16\\metrics.json",
+            "sha256": "e21399feae60595458a60403f1613eea9aa13c789215863c83b80011963fe73c",
+            "bytes": 835
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\16\\trace.npz",
+            "sha256": "9b8c600a621493fee4ee6fcd6659cd6bc7fc02857c337d06ce77ad75161f4298",
+            "bytes": 18930
+          }
+        }
+      },
+      {
+        "case_id": "test_17_gust_3850000_pitch055",
+        "receipt": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\17\\complete.json",
+          "sha256": "32bb7e137e8e260346304763896a917dfc14b732cb1ef0f006fac001cfe3485f",
+          "bytes": 1071
+        },
+        "eval": {
+          "metrics": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\17\\metrics.json",
+            "sha256": "198e9c4e5d370569c07d792613f83411e62f55b454b6ddc55d4714b0fb9fdbb3",
+            "bytes": 827
+          },
+          "trace": {
+            "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\cases\\17\\trace.npz",
+            "sha256": "c5cf6074384f5a4763a991abe351de1c9b44e72597243e972b8f11c4aa3bfdeb",
+            "bytes": 18816
+          }
+        }
+      }
+    ]
+  }
+}

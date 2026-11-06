@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "results": [],
+  "gates": [
+    {
+      "stage": "pitch_speed",
+      "handover_passed_runs": 0,
+      "engineering_pass": false
+    }
+  ],
+  "bank_sha256": "055956b91ba717fd924163f8e722ed1efa306e9bac291c13928723572f2d26b7",
+  "hashes": {
+    ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+    ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+    ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05"
+  },
+  "root_config_sha256": "d90f82523f80de8bae6421de6f2f1a5723c709b1929363a60f85edb7ad514b5d"
+}

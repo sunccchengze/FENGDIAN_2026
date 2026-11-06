@@ -1,5 +1,11 @@
 # 三台风机 MADDPG
 
+2026-10-24 [残差通道诊断](RESIDUAL_STABILITY_DIAGNOSTIC_RESULTS.md)与[单项学习率对照结果](RESIDUAL_STABILITY_RESULTS.md)完成：两臂三流49152步，六次selected均initial；新常规测试low_lr终点0/3配对改善，完整稳定化失败，保留现有默认。7项不同测试及源保护、真实恢复、回放审计通过；图表与复现命令见报告。
+
+2026-10-23 基线参考加MADDPG有界修正的[冻结协议](RESIDUAL_RANDOM_CONTROL.md)与[实测结果](RESIDUAL_RANDOM_RESULTS.md)：98304步，speed工程3/3、all2/3，完整稳定性未通过。新version2保存总动作语义与修正权限，回合边界恢复、零头接管和独立测试/物理回放已审计；图表由Python读取冻结CSV绘制。
+
+2026-10-23 联合蒸馏接管的[冻结协议](JOINT_DISTILLATION.md)与[实测结果](JOINT_DISTILLATION_RESULTS.md)：三流两候选未通过speed接管，按协议停止，新增RL环境步0。`joint_distillation.py`实现拟合与配对流程，`verify_joint_distillation.py`检查源摘要、恢复并绘制Python诊断图；原实验及PINN保留。
+
 中期答辩图表使用保存实验数据和 Python 绘制，图组、说明与复现入口见 [MIDTERM_FIGURES.md](MIDTERM_FIGURES.md)。
 
 `portable_random_replay.py`用于2026-10-22交付包的移动目录验收：仅在内存重定位冻结记录的模型/脚本路径，校验摘要并逐行核对原测试；不训练、不改写原记录，输出必须为新目录。
@@ -216,3 +222,21 @@ CSV 七列为时间、风速、方向、背景 TI、背景风、湍流、事件�
 不逐条强制均值或方差。1 s 步长以上的高频能量被舍弃，不能据此报告高频载荷精度。
 评估三类测试轨迹共 39 个控制器/权限组合，另做全部组合的磁盘/内存精确一致验收。
 具体结果与原因判断见 [本轮诊断报告](DIAGNOSTIC_REPORT.md)。
+
+## 随机风下逐次接管
+
+`progressive_random_control.py` 在冻结十二输入联调网络上接着训练已有pitch策略，
+仅当三个派生训练流都通过验证门槛时才依次开放speed、yaw；每次只增加一种权限。
+继承同流Actor/Critic、目标网络、优化器和联合回放，只初始化新开放的输出行。
+入口、预算、门槛、独立测试及后台转速调度的假设见
+[逐次接管协议与结果](PROGRESSIVE_RANDOM_CONTROL.md)。实现通过测试不等于学习晋级通过。
+
+
+## 残差后期稳定性诊断与单因素验证
+
+三通道策略使用绝对pitch和基线yaw/speed加MADDPG有界修正，完整说明见
+[残差流程](RESIDUAL_RANDOM_CONTROL.md)与[上一轮实测](RESIDUAL_RANDOM_RESULTS.md)。
+[验证集通道组合诊断](RESIDUAL_STABILITY_DIAGNOSTIC_RESULTS.md)记录每步当前状态上的S/F混合及残差关闭实验；它没有读取旧独立测试。
+据此只检验Actor学习率1e-4降至3e-5，
+[运行前协议](RESIDUAL_STABILITY_PROTOCOL.md)与[实际结果、恢复验证和复现命令](RESIDUAL_STABILITY_RESULTS.md)分开保存，冻结协议不追加结果。
+5%工程不劣容差、真实配对差值、400/500kW精度与是否选中initial分别报告；已知低风压力回归不算新独立样本。

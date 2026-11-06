@@ -1,0 +1,321 @@
+{
+  "seed": 42,
+  "jobs": [
+    {
+      "arm": "zero",
+      "run": 0,
+      "steps": 16384,
+      "selected_step": 12288,
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 393447.1505041771
+        },
+        {
+          "step": 4096,
+          "rmse_w": 388341.3698053822
+        },
+        {
+          "step": 8192,
+          "rmse_w": 409560.64631772833
+        },
+        {
+          "step": 12288,
+          "rmse_w": 383794.186261368
+        },
+        {
+          "step": 16384,
+          "rmse_w": 387599.3265067303
+        }
+      ],
+      "roles": {
+        "initial": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00000000\\state.pth",
+        "selected": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00012288\\state.pth",
+        "final": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00016384\\state.pth"
+      },
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00000000\\state.pth": "61330b2c0e28ab5cd94a140a39f03c61304211a3a0ffbeacdc005efd24aeb1af",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00012288\\state.pth": "6416fbce74b9acd9b8bb79813e487751375577369f7c07542691ff7965cfff92",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run0\\step_00016384\\state.pth": "03b7139e82926eccb2fe972db64d27afe9b37494889634e1cd36a95e2e077c11"
+      },
+      "added_updates": 7937,
+      "added_insertions": 16384,
+      "m_histogram": [
+        0,
+        8001,
+        7985,
+        7869,
+        8031,
+        8031,
+        8098,
+        8123,
+        959798
+      ]
+    },
+    {
+      "arm": "memory",
+      "run": 0,
+      "steps": 16384,
+      "selected_step": 12288,
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 393447.1505041771
+        },
+        {
+          "step": 4096,
+          "rmse_w": 388444.37606867024
+        },
+        {
+          "step": 8192,
+          "rmse_w": 404880.89443678496
+        },
+        {
+          "step": 12288,
+          "rmse_w": 386271.7130248522
+        },
+        {
+          "step": 16384,
+          "rmse_w": 419801.17599630734
+        }
+      ],
+      "roles": {
+        "initial": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00000000\\state.pth",
+        "selected": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00012288\\state.pth",
+        "final": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00016384\\state.pth"
+      },
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00000000\\state.pth": "b3a8aa44c96d44788a636b2b3754408f0c9ef19335647aafbfa855236bb1a682",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00012288\\state.pth": "4856dfae61856ed2152383b9de19a75a504f179bf8795029819efbfe00b636b9",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run0\\step_00016384\\state.pth": "d6069718c80ee0e30e16cb06110adc047fedaa01927ae67434fcd9855558125d"
+      },
+      "added_updates": 7937,
+      "added_insertions": 16384,
+      "m_histogram": [
+        0,
+        8001,
+        7985,
+        7869,
+        8031,
+        8031,
+        8098,
+        8123,
+        959798
+      ]
+    },
+    {
+      "arm": "zero",
+      "run": 1,
+      "steps": 16384,
+      "selected_step": 8192,
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 395998.95585966867
+        },
+        {
+          "step": 4096,
+          "rmse_w": 398732.1261826325
+        },
+        {
+          "step": 8192,
+          "rmse_w": 390980.0359063854
+        },
+        {
+          "step": 12288,
+          "rmse_w": 408113.42446189234
+        },
+        {
+          "step": 16384,
+          "rmse_w": 401389.16505731473
+        }
+      ],
+      "roles": {
+        "initial": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00000000\\state.pth",
+        "selected": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00008192\\state.pth",
+        "final": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00016384\\state.pth"
+      },
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00000000\\state.pth": "3229dc65e86813c87fe360ffd691a15237091338de22115824ebf30981a45db8",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00008192\\state.pth": "89dfc6640d6e6841b1e0a6319c69c62437befef86e12a635a11b014ca65c7e68",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run1\\step_00016384\\state.pth": "adfecd99a585f764d4f6b39bffe78f728b8653f0c99496642b59cd40be726d4f"
+      },
+      "added_updates": 7937,
+      "added_insertions": 16384,
+      "m_histogram": [
+        0,
+        6970,
+        7008,
+        6950,
+        7001,
+        6964,
+        6960,
+        6836,
+        836175
+      ]
+    },
+    {
+      "arm": "memory",
+      "run": 1,
+      "steps": 16384,
+      "selected_step": 8192,
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 395998.95585966867
+        },
+        {
+          "step": 4096,
+          "rmse_w": 394800.403789313
+        },
+        {
+          "step": 8192,
+          "rmse_w": 392183.01708147814
+        },
+        {
+          "step": 12288,
+          "rmse_w": 403474.46993830276
+        },
+        {
+          "step": 16384,
+          "rmse_w": 406678.2770102337
+        }
+      ],
+      "roles": {
+        "initial": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00000000\\state.pth",
+        "selected": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00008192\\state.pth",
+        "final": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00016384\\state.pth"
+      },
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00000000\\state.pth": "9ba482007b97c4981cceb13f04a8826c748d756d2a8ad0301c405b19388a4497",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00008192\\state.pth": "57e78a5a85b05b2836e4aca2fd5eb87f8f8c70902eb38ed232892fa3899cba70",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run1\\step_00016384\\state.pth": "74436ffbda6489c02396e86d229b523ee88a384e898f9b28c49731493dc04e4d"
+      },
+      "added_updates": 7937,
+      "added_insertions": 16384,
+      "m_histogram": [
+        0,
+        6970,
+        7008,
+        6950,
+        7001,
+        6964,
+        6960,
+        6836,
+        836175
+      ]
+    },
+    {
+      "arm": "zero",
+      "run": 2,
+      "steps": 16384,
+      "selected_step": 0,
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 399501.85213604994
+        },
+        {
+          "step": 4096,
+          "rmse_w": 461137.19721992064
+        },
+        {
+          "step": 8192,
+          "rmse_w": 404069.61912463815
+        },
+        {
+          "step": 12288,
+          "rmse_w": 444029.07597043365
+        },
+        {
+          "step": 16384,
+          "rmse_w": 413229.16742112883
+        }
+      ],
+      "roles": {
+        "initial": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00000000\\state.pth",
+        "selected": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00000000\\state.pth",
+        "final": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00016384\\state.pth"
+      },
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00000000\\state.pth": "610da46dcf79c9413bf14041e6c8504ffd540b8d521c7b84115003ec436ef908",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\zero_run2\\step_00016384\\state.pth": "72ea2c51669dc328cd3f39a99d4562df491f7511cb42c886226693a7f0c93a51"
+      },
+      "added_updates": 7937,
+      "added_insertions": 16384,
+      "m_histogram": [
+        0,
+        4836,
+        4956,
+        5105,
+        4713,
+        4775,
+        4842,
+        4887,
+        588606
+      ]
+    },
+    {
+      "arm": "memory",
+      "run": 2,
+      "steps": 16384,
+      "selected_step": 8192,
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 399501.85213604994
+        },
+        {
+          "step": 4096,
+          "rmse_w": 429285.3664882069
+        },
+        {
+          "step": 8192,
+          "rmse_w": 398611.4793139023
+        },
+        {
+          "step": 12288,
+          "rmse_w": 429075.30946211575
+        },
+        {
+          "step": 16384,
+          "rmse_w": 428715.7228427038
+        }
+      ],
+      "roles": {
+        "initial": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00000000\\state.pth",
+        "selected": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00008192\\state.pth",
+        "final": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00016384\\state.pth"
+      },
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00000000\\state.pth": "e0339d85a9d1d87318d2d5e27294043dbef9efdbcc18d4f1fbc713f3476e9244",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00008192\\state.pth": "5c8de222dc12ecea7f18f34b237835345afabb843af49e6033f4c8fc71dc2911",
+        ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\memory_run2\\step_00016384\\state.pth": "a728d9bf97ea2ac2059d5fa62102bd42f5d405bfaa8c27978d2c618a356f3bc4"
+      },
+      "added_updates": 7937,
+      "added_insertions": 16384,
+      "m_histogram": [
+        0,
+        4836,
+        4956,
+        5105,
+        4713,
+        4775,
+        4842,
+        4887,
+        588606
+      ]
+    }
+  ],
+  "rule": "strict minimum validation case RMSE then earliest step",
+  "config_sha": "63feab0690b2ca2c32d4f396104bf8cb9c3b32c11df5d0ac93833bef08e40e2b",
+  "train_steps": 98304,
+  "updates": 47622,
+  "indices_and_actual_m_paired_all_runs": true,
+  "validation_only": true,
+  "restart_steps": [
+    1024,
+    1024
+  ],
+  "recomputed_steps": 0
+}

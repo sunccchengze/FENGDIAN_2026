@@ -1,0 +1,16 @@
+{
+  "performance_allowed": true,
+  "review_path": ".\\optimization_control\\maddpg_wind_farm\\NREL_SPEED_REVIEW_20261106.md",
+  "review_sha256": "eb9737e37fc1d49c181b7e2fd2a59f968f909709151a1fcb1a171f2f7f298c6f",
+  "implementation_commit": "faeb02940c4819796a2914d7991249d3826525aa",
+  "basis": "actual implementation review explicitly covers three frozen source SHAs, N1-N5 passed, permits existing six-wind frozen transfer protocol",
+  "scope": "30 new full validation cases, 30 verified old cases referenced",
+  "source_hashes_unchanged": true,
+  "engineering_rows_already_used": 160,
+  "new_performance_rows_allowed": 3870,
+  "planned_total_rows": 4030,
+  "hard_row_cap": 10000,
+  "disk_cap_MiB": 128,
+  "training_steps": 0,
+  "new_wind_generation": 0
+}

@@ -1,0 +1,14 @@
+{
+  "source_files": 51,
+  "sources_verified": true,
+  "zero_pairs": 9,
+  "zero_trace_RMSE_and_replay_exact": true,
+  "physical_nonzero_cases": 2,
+  "SI_pitch_speed_gamma": true,
+  "disk_state_exact": true,
+  "comparator_matches_base": true,
+  "saved_current_target_Adam_replay_rng_checked": true,
+  "additional_model_rows": 0,
+  "additional_updates": 0,
+  "plotted_old_validation_only": true
+}

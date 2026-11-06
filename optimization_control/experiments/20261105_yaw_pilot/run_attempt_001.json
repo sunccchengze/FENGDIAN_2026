@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "jobs": 6,
+  "lock_sha": "1ae777e80e197803cda5ab7a1fa9931f16970f7013669628048fd2d38905408f",
+  "formal_rows": 26316,
+  "no_new_test": true,
+  "independence_review_sha": "40892662577ef62507278aafcd2a77c6889fd37a0b66988822ae817fcf92dfb3"
+}

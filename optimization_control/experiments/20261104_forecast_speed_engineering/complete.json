@@ -1,0 +1,12 @@
+{
+  "attempt": "attempt_000",
+  "passed": true,
+  "totals": {
+    "model": 1728,
+    "update": 6
+  },
+  "formal_RL_steps": 0,
+  "new_independent_winds": 0,
+  "source_hashes_verified": true,
+  "engineering_states_only": true
+}

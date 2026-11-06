@@ -1,0 +1,25 @@
+{
+  "kind": "same_input_reproduction_not_independent",
+  "source": ".\\optimization_control\\experiments\\20261029_pitch_gamma_control",
+  "output": ".\\optimization_control\\experiments\\20261029_pitch_gamma_reproduction",
+  "environment_steps": 0,
+  "optimizer_updates": 0,
+  "trained_candidate_selection_test_not_read": true,
+  "shared_readonly_wind_paths": true,
+  "source_config_sha256": "a7736d478a6333f0838734888284b41406c12c6fab8b06d3febb6e4556ff4ed2",
+  "coordination_only_relocations": {
+    ".\\PROJECT_STATUS.md": ".\\optimization_control\\experiments\\20261029_pitch_gamma_reproduction\\source_coordination\\PROJECT_STATUS.md",
+    ".\\optimization_control\\TASKFLOW.md": ".\\optimization_control\\experiments\\20261029_pitch_gamma_reproduction\\source_coordination\\TASKFLOW.md"
+  },
+  "files": {
+    "training_manifest.csv": "aa03c015edbffbc7b7a4095585b00bda7f1d74bd7ac779b731e5a9a63dd2c003",
+    "random_states.json": "ea6ebc7e2c4f33f8167eefe586d0988c53c7cd12a9165c0b65c7463d7fc1b3ed",
+    "data_lock.json": "e396bb67cefef797c012c912a050f5c90ca9563d0f765000aa7dad079610f85c",
+    "validation_bank/manifest.json": "2c01a0ad92daf2332c1c5e65604ee942a556418985a63a04d251a0254c59a35f",
+    "noise_run0.npz": "708c16532f2c9206e44dcccb977b6695738029744e9f4bd7636b6c322a346832",
+    "noise_run1.npz": "350202c935b04a79984e0a87f93c5475f075a8a4094c7ad71cfe13345bb09e31",
+    "noise_run2.npz": "2154706dd917884df95176220b6ccb9c3bf6e35e1e6bf42538b6d719d59f1f32",
+    "source_coordination/PROJECT_STATUS.md": "0d591407d1499700b58f2ce1a96e1c73a10729557fdba1d1bdb6aa0ddb5ec528",
+    "source_coordination/TASKFLOW.md": "b6bdd82eb164a39e08ff3f98ba10ce5dfc62c799cecd36d777e6a025a760ff5e"
+  }
+}

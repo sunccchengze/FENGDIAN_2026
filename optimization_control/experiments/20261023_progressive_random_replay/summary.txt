@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "full_trace_equal": true,
+  "rows": 10240,
+  "metric_rows": 80,
+  "checkpoint_unchanged": true,
+  "new_training": false,
+  "physical_validation": false,
+  "stage": "pitch",
+  "run_id": 0
+}

@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "complete": true,
+  "jobs": 132,
+  "full_metric_rows": 2244,
+  "fork_metric_rows": 8976,
+  "gradient_rows": 792,
+  "rl_training_steps": 0,
+  "evaluation_environment_steps": 430848,
+  "protected_files": 96,
+  "protected_files_unchanged": true,
+  "parameters_unchanged": true,
+  "maximum_parent_replay_difference_w": 0.0,
+  "elapsed_s": 552.2356991999986,
+  "test_access": false,
+  "physical_validation": false
+}

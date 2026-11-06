@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "raw_trace_independent_recalculation": true,
+  "pair_rows": 324,
+  "selected_slots": 108,
+  "ordinary_cases": 36,
+  "ordinary_waveforms": 15,
+  "selected_worse_pi": 11,
+  "metric_max_abs_residual": 0.0,
+  "exact_validation_selection_reproduced": true,
+  "all_cases_retained": true,
+  "pressure_split_trap_fixture_pass": true,
+  "hard_pitch_constraints_pass": true,
+  "source_hashes_checked": 841,
+  "formal_rl_steps": 0,
+  "optimizer_updates": 0,
+  "model_forward_rows": 0,
+  "environment_steps": 0,
+  "new_test_released": false
+}

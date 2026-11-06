@@ -1,0 +1,52 @@
+{
+  "passed_saved_data_audit": true,
+  "rollout_metric_records": 191,
+  "formal_steps": 12288,
+  "formal_updates": 582,
+  "model_rows": 37023,
+  "engineering_rows": 3399,
+  "cumulative_rows": 40422,
+  "selected_Y": [
+    2048,
+    0,
+    2048
+  ],
+  "selected_S": [
+    2048,
+    1024,
+    1024
+  ],
+  "primary_validation_three_families_passed": true,
+  "primary_validation": [
+    {
+      "controller": "Y_selected",
+      "family": "stationary",
+      "case_stream_pairs": 6,
+      "mean_kW": 457.5934017049225,
+      "PI_mean_kW": 580.2086868165685,
+      "difference_kW": -122.61528511164599,
+      "strict_below_PI": true
+    },
+    {
+      "controller": "Y_selected",
+      "family": "ramp",
+      "case_stream_pairs": 6,
+      "mean_kW": 404.1686815944787,
+      "PI_mean_kW": 511.38078795178274,
+      "difference_kW": -107.21210635730402,
+      "strict_below_PI": true
+    },
+    {
+      "controller": "Y_selected",
+      "family": "gust",
+      "case_stream_pairs": 6,
+      "mean_kW": 270.4125861294909,
+      "PI_mean_kW": 357.94427033093024,
+      "difference_kW": -87.53168420143938,
+      "strict_below_PI": true
+    }
+  ],
+  "ratios_are_diagnostics": true,
+  "independent_test": false,
+  "additional_queries": 0
+}

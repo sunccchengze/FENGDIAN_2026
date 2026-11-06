@@ -1,0 +1,8 @@
+{
+  "lock_sha": "ca461e9a1abaff5ea5d1aec13843d0c5757ed5a9fd21d9538093690c0320b55a",
+  "release_sha": "a10f05001e96a8e435f441202c033178b00253b95102c1256e7f2841e259a464",
+  "rows": 53406,
+  "cap": 55000,
+  "workers": 3,
+  "optimizer_updates": 0
+}

@@ -1,11 +1,24 @@
+## 2026-11-06 最终阶段交付（优先入口）
+
+当前冻结运行版本为 [NREL 三通道交接](maddpg_wind_farm/NREL_THREE_CHANNEL_HANDOFF_20261106.md)，完整 ZIP 和移动回放见 [最终交付](../materials/洪祖名/20261106_optimization_final/README.md)。
+
+三类平均 RMSE 低于同规则 PI；新规则总体 448.586 kW，对照 PI 514.443 kW，旧规则策略 416.210 kW。新规则是既有 18 条风的配置回归，并非新独立测试。新增通道收益弱、低风压力和物理精度限制仍保留。
+
+后续工作包含逐通道学习、残差与锚定失败、冻结父策略、n8 桨距、历史来流预测、8 秒决策转速、偏航接管、误差记忆消融、独立测试和转速迁移诊断。桨距 [n8 交接](maddpg_wind_farm/PITCH_N8_AVERAGE_HANDOFF_20261105.md) 是另一冻结策略，不与三通道结果拼接。早期工作以下方历史索引为准。
+
 # 优化控制工作总索引
 
-更新日期 2026-10-22。主责为优化控制；包括代理模型优化、PPO、随机入口、统一执行器与传统对照、三机 MADDPG、PINN 接口适配、评估与失败诊断。队友原始仿真数据和 PINN 主体不属于本人独立成果。
+更新日期 2026-10-24。主责为优化控制；包括代理模型优化、PPO、随机入口、统一执行器与传统对照、三机 MADDPG、PINN 接口适配、评估与失败诊断。队友原始仿真数据和 PINN 主体不属于本人独立成果。
 
 ## 按工作阶段查找
 
 | 阶段 | 实现与证据入口 | 当前判断 |
 |---|---|---|
+| 残差退化诊断与单项学习率对照 | [诊断](maddpg_wind_farm/RESIDUAL_STABILITY_DIAGNOSTIC_RESULTS.md)、[冻结协议](maddpg_wind_farm/RESIDUAL_STABILITY_PROTOCOL.md)、[实测结果](maddpg_wind_farm/RESIDUAL_STABILITY_RESULTS.md) | 49152步、六次选中均initial；常规测试low_lr终点429.57 vs baseline419.38 kW，0/3改善，稳定化失败；7项测试与恢复／回放审计通过 |
+| 基线参考加有界MADDPG修正 | [协议](maddpg_wind_farm/RESIDUAL_RANDOM_CONTROL.md)、[实测与复现](maddpg_wind_farm/RESIDUAL_RANDOM_RESULTS.md) | 98304步、精确零头接管；speed工程3/3、all2/3，完整稳定性未过；1200独立测试指标，31项不同测试与真实恢复通过 |
+| 联合蒸馏通道接管 | [冻结协议](maddpg_wind_farm/JOINT_DISTILLATION.md)、[实测与复现](maddpg_wind_farm/JOINT_DISTILLATION_RESULTS.md) | 三流两候选143400次蒸馏更新，speed接管0/3，RL新增0步；34项不同测试，未释放新测试 |
+| 随机风下继承式逐次接管 | [协议与实测结果](maddpg_wind_farm/PROGRESSIVE_RANDOM_CONTROL.md) | 新增49152步、桨距2/3通过；常规测试338.19±23.82 kW，未晋级转速/偏航，接管头拟合仍需修正 |
+| 本轮ZIP与GitHub增量交付 | [PR #19](https://github.com/sunccchengze/FENGDIAN_2026/pull/19)、[详细接手说明（交付范围说明）](../materials/洪祖名/20261106_optimization_final/README.md) | 上次成果已进入main，本次补齐后续工作；432文件与10240行移动回放通过，未合并PR |
 | 中期答辩图表与讲稿 | [7张图、说明与复现](maddpg_wind_farm/MIDTERM_FIGURES.md) | Python绘制，覆盖接口、风况、学习、对照与失败场景；240条指标复算一致，不新增训练 |
 | 随机入口正式训练与统一后台调度 | [完整报告与复现](maddpg_wind_farm/RANDOM_WIND_TRAINING.md) | 三流49152步、独立测试和新进程回放完成；常规449.72±40.11 kW，精度门槛未过，慢变/低风仍弱于PI |
 | 新版十二输入 PINN 联调 | [完整报告与复现](maddpg_wind_farm/WIND_PINN_INTEGRATION.md) | 随机入口、三通道执行器和 P/PI 已跑通；单目标 2/3 通过，高目标初始最优且退化，按门槛停止后续学习 |
@@ -24,11 +37,11 @@
 
 先读本索引和 `TASKFLOW.md`，再读相关模块报告及实验的 `config.yaml / metrics.csv / summary.txt`。当前十二输入联调模型来自 `pinn/2026_1021` 的冻结主体和新增参数合成拟合，可在报告约定的小范围入口下联调；不是物理精度验证。旧九输入模型已移至 `pinn/2026_1007`，仍只在固定 9 m/s、方向 0、TI 0.1 下使用。
 
-本轮 ZIP 配有 `任务说明.docx`、`readme.md`、`manifest.json` 和可移动回放入口。全部历史产物按原实验目录保留在分卷中，不只保留成功结果。GitHub 分支只用于交付和审阅，没有合并到团队 main。（2026-10-22 仓库注：本交付其后已并入 main，此句为交付当时状态；ZIP 内 `readme.md` 的仓库副本已改名为 `接手说明.md`，见 `materials/洪祖名/20261022_optimization_handoff/README.md`。）
+本轮 ZIP 配有 `任务说明.docx`、`readme.md`、`manifest.json` 和可移动回放入口。全部历史产物按原实验目录保留在分卷中，不只保留成功结果。GitHub 分支只用于交付和审阅，没有合并到团队 main。
 
 ## 交付入口
 
-- [GitHub 交付分支](https://github.com/sunccchengze/FENGDIAN_2026/tree/782368a31e412ff318595d7166a7e8eae30104fe)
-- [个人交付目录](https://github.com/sunccchengze/FENGDIAN_2026/tree/782368a31e412ff318595d7166a7e8eae30104fe/materials/洪祖名/20261007_optimization_handoff)
+- [当前交付PR](https://github.com/sunccchengze/FENGDIAN_2026/pull/19)
+- [历史交付固定快照](https://github.com/sunccchengze/FENGDIAN_2026/tree/782368a31e412ff318595d7166a7e8eae30104fe/materials/洪祖名/20261007_optimization_handoff)
 
-本轮 ZIP 和全部历史原文件均已验证恢复。GitHub 中 ZIP 分片由 tools/unpack_optimization.py 自动校验并重组；加 --all-history 恢复全部历史成果。首批完整上传为 84d6f4b，2026-10-08 核验远程目录树一致；main 未改动。（2026-10-22 仓库注：其后已两度并入 main，此句为当时状态。）软件测试与回放通过不代表策略稳定性或真实物理精度验收通过。
+本轮 ZIP 和全部历史原文件均已验证恢复。GitHub 中 ZIP 分片由 tools/unpack_optimization.py 自动校验并重组；加 --all-history 恢复全部历史成果。首批完整上传为 84d6f4b，2026-10-08 核验远程目录树一致；main 未改动。软件测试与回放通过不代表策略稳定性或真实物理精度验收通过。

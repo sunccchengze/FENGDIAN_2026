@@ -1,0 +1,107 @@
+{
+  "results": [
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected\\complete.json",
+      "sha256": "080334cc367246a5fb4bf6638a16603ffab1a688ee0047fbed6bcd37301aac0a"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_final\\complete.json",
+      "sha256": "1741f500dbcda1fc5949c87b1538b592ebd1e062356a89d32de64f0806580ac7"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected\\complete.json",
+      "sha256": "e370b63473de9daafcf2edcba11cb1d16831e7007d6c66f7ee43b85bba2f3687"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_final\\complete.json",
+      "sha256": "dde6444e3bd05f12f85d6b9cee6fe0cf5e56df97185412e107b24086f3b2a834"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected\\complete.json",
+      "sha256": "cc32852a36f1c89154cbb6e22f09da8966d1790c5cc3725849bda9e4842fe9a9"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_final\\complete.json",
+      "sha256": "2926935a705cf32d005b1665f7df378ca866f5ecc630f86a819769b93cdcc06c"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\S0_selected\\complete.json",
+      "sha256": "411f3aa1fb70c6b388640f68a24803454aff7735de386409fcc960c28473acc2"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\S0_final\\complete.json",
+      "sha256": "ce5d1134614087ecdf73dec5e2aa218168f0388ffb663f2d5f53ddc1cf87a230"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\S1_selected\\complete.json",
+      "sha256": "77f3a8f886686c7d34ba1dccdcdceaf3e71d1110973eadc4013b43a815a10661"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\S1_final\\complete.json",
+      "sha256": "1fb843a26d92b5e5703aa23fab1cf6a3a699935a39effab325af1de3aaaf8811"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\S2_selected\\complete.json",
+      "sha256": "264d597a2fc784e845deb62470d442df81a28e5e18f17f6f24ee6d75e989e8e7"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\S2_final\\complete.json",
+      "sha256": "06947b3049f6e9db018ba015af17caa7cd2f453a65e0c3bb084b10c1d70f2982"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\fixed0\\complete.json",
+      "sha256": "f80b0a51c0a3dc08e2627cd9cf845468b4e448c22efd15a6e153ac49ad6bc418"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\fixed1\\complete.json",
+      "sha256": "664865b71f38a8f30ef41e6e3d0a2e42a8f991f0da5bb8c75b2a6549fb4ec13d"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\fixed2\\complete.json",
+      "sha256": "23e0bd856f68c0855fa257a9848f949d81de036ebd6193456b391173100a75e4"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\p\\complete.json",
+      "sha256": "a750ea8aaa7a32ba48c6664bbf0772e8c7563698657d606740fc15bc821a46a7"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\pi\\complete.json",
+      "sha256": "7e626684b630b031758ae00372e75c092cc7c46a102cbd8f8958ab5e29476dd3"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_selected_zero\\complete.json",
+      "sha256": "62864f8bc5cd0b49f571a7b6d847718bf7b9cd62907224e413dbcd0a0cfd03c5"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y0_final_zero\\complete.json",
+      "sha256": "9c318fae5d22f96d63fd0a925264a24dbafc51f220d38dc79e508b0fdea12626"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_selected_zero\\complete.json",
+      "sha256": "b413342feb9d7403e64bc47ea67aa07b147d43c735a777f6c48b031b6a74dca5"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y1_final_zero\\complete.json",
+      "sha256": "8aca8107704881c35ab02b8f3be6671005b420344271cbe11137378e0314de28"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_selected_zero\\complete.json",
+      "sha256": "e7f78e060fb40a6a3d7a63fe2756706a887742704a9f30ad6702a88c394883c4"
+    },
+    {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_independent\\jobs\\Y2_final_zero\\complete.json",
+      "sha256": "04880657001d6ccac3f17353c38c38cfaf6ddb23d56af08e348e149f85f1d5b8"
+    }
+  ],
+  "roles": 23,
+  "rollouts": 414,
+  "unique_winds": 18,
+  "rows": 53406,
+  "charged_rows": 53406,
+  "hard_cap": 55000,
+  "optimizer_updates": 0,
+  "training_steps": 0,
+  "roles_aliased": false,
+  "selection_sha": "ec95ad95c06050832f1ae4be6550c8e3754449bb52df196f5d18f8d84fb8a72a",
+  "release_sha": "a10f05001e96a8e435f441202c033178b00253b95102c1256e7f2841e259a464"
+}

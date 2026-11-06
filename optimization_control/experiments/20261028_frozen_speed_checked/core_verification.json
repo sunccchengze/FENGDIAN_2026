@@ -1,0 +1,101 @@
+{
+  "seed": 42,
+  "paired": [
+    {
+      "run_id": 0,
+      "common_parent_networks_critics_optimizers_replay_rng_exact": true,
+      "trainable_actor_moments_empty": true
+    },
+    {
+      "run_id": 1,
+      "common_parent_networks_critics_optimizers_replay_rng_exact": true,
+      "trainable_actor_moments_empty": true
+    },
+    {
+      "run_id": 2,
+      "common_parent_networks_critics_optimizers_replay_rng_exact": true,
+      "trainable_actor_moments_empty": true
+    }
+  ],
+  "checks": [
+    {
+      "arm": "baseline",
+      "run_id": 0,
+      "retained_transitions": 32768,
+      "new_steps": 8192,
+      "updates_added": 3841,
+      "replay_commands_rewards_termination_rates_envelope": true,
+      "frozen_parent_and_target_path": false
+    },
+    {
+      "arm": "speed",
+      "run_id": 0,
+      "retained_transitions": 32768,
+      "new_steps": 8192,
+      "updates_added": 3841,
+      "replay_commands_rewards_termination_rates_envelope": true,
+      "frozen_parent_and_target_path": true
+    },
+    {
+      "arm": "baseline",
+      "run_id": 1,
+      "retained_transitions": 32768,
+      "new_steps": 8192,
+      "updates_added": 3841,
+      "replay_commands_rewards_termination_rates_envelope": true,
+      "frozen_parent_and_target_path": false
+    },
+    {
+      "arm": "speed",
+      "run_id": 1,
+      "retained_transitions": 32768,
+      "new_steps": 8192,
+      "updates_added": 3841,
+      "replay_commands_rewards_termination_rates_envelope": true,
+      "frozen_parent_and_target_path": true
+    },
+    {
+      "arm": "baseline",
+      "run_id": 2,
+      "retained_transitions": 32768,
+      "new_steps": 8192,
+      "updates_added": 3841,
+      "replay_commands_rewards_termination_rates_envelope": true,
+      "frozen_parent_and_target_path": false
+    },
+    {
+      "arm": "speed",
+      "run_id": 2,
+      "retained_transitions": 32768,
+      "new_steps": 8192,
+      "updates_added": 3841,
+      "replay_commands_rewards_termination_rates_envelope": true,
+      "frozen_parent_and_target_path": true
+    }
+  ],
+  "recovery": [
+    {
+      "source": ".\\optimization_control\\experiments\\20261028_frozen_speed_checked\\formal\\baseline_run_0\\segment_000\\step_00002048.pth",
+      "forks": 2,
+      "environment_steps": 256,
+      "exact_actions_rewards_losses_noise_networks": true,
+      "actual_resumed_actions_match": true,
+      "discarded": true,
+      "formal_steps_added": 0
+    },
+    {
+      "source": ".\\optimization_control\\experiments\\20261028_frozen_speed_checked\\formal\\speed_run_0\\segment_000\\step_00002048.pth",
+      "forks": 2,
+      "environment_steps": 256,
+      "exact_actions_rewards_losses_noise_networks": true,
+      "actual_resumed_actions_match": true,
+      "discarded": true,
+      "formal_steps_added": 0
+    }
+  ],
+  "formal_steps": 49152,
+  "smoke_steps": 2048,
+  "retained_transitions": 196608,
+  "training_wind_rows": 192,
+  "selection_sha256": "dd6501c48a17d20eee17758e19e5f9d1caed141d37dfe139921c2ec54f0407f5"
+}

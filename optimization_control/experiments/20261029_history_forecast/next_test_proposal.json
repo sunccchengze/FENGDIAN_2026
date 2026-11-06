@@ -1,0 +1,38 @@
+{
+  "status": "proposal_not_released_or_generated",
+  "seed": 42,
+  "split": "test",
+  "episode_offset": 66000000,
+  "families": [
+    "stationary",
+    "ramp",
+    "gust"
+  ],
+  "targets_w": [
+    2750000,
+    3350000,
+    3850000
+  ],
+  "initial_pitch_rad": [
+    0.025,
+    0.055
+  ],
+  "unique_wind_trajectories": 18,
+  "parent_stream_cases": 54,
+  "horizon": 128,
+  "controllers": [
+    "history17",
+    "persistence17",
+    "parent",
+    "p",
+    "pi"
+  ],
+  "PINN_rows_before_prechecks": 370710,
+  "training_or_refitting_allowed": false,
+  "namespace_collision_check": "no match across three worktree source/config/document/json files",
+  "primary_parent_gate": "all 3 stream means improve and overall case mean improves at least 1 percent",
+  "forecast_increment_gate": "all 3 stream means improve persistence17 and overall case mean improves at least 1 percent",
+  "engineering_report": "pooled/worst/bias, every case 5 percent noninferiority, 400/500 kW, motion and timing; no test tuning",
+  "timing_instrumentation": "record CPU and wall time plus suspension evidence; preserve all long calls",
+  "candidate_manifest_sha256": "d011d783777f108ad8371c95ba8ac8be2d30131958541f503aafa2cdb6cbd849"
+}

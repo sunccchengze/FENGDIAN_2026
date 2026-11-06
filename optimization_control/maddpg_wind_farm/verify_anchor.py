@@ -1,0 +1,310 @@
+"""Audit frozen residual checkpoints, physical replay, recovery and held-out CSV."""
+from __future__ import annotations
+
+import argparse
+from copy import deepcopy
+from dataclasses import replace
+import csv
+import hashlib
+import io
+import json
+from pathlib import Path
+
+from .fixed_pinn_demo import activate_runtime, digest
+from .progressive_random_control import verify_hashes
+from . import random_wind_training as shared
+
+
+def comparable(value):
+    """Convert nested optimizer tensors for exact structural assertions."""
+    import torch
+    if isinstance(value, torch.Tensor):
+        return value.detach().cpu().numpy()
+    if isinstance(value, dict):
+        return {k: comparable(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [comparable(v) for v in value]
+    return value
+
+
+def recovery_fork(root, p, result):
+    """Two disposable identical forks; no experiment checkpoint is changed."""
+    import numpy as np
+    import torch
+    from .anchor_algorithm import AnchoredMADDPG as ResidualMADDPG
+    from .residual_algorithm import ResidualMADDPG as LegacyResidual
+    from .residual_random_control import scales
+    from .stable_workflow import Exploration
+    from .benchmark import seed_for
+    from .workflow import build_env
+    from ..environments.farm_inflow import generate_inflow
+    job = root / f"{result['stage']}_run_{result['run_id']}"
+    path = next(job.glob("segment_000/step_00002048.pth"))
+    original_sha = digest(path)
+    outputs = []
+    for _ in range(2):
+        agent, meta = ResidualMADDPG.load(path)
+        cfg = meta["config"]
+        identity = meta["identity"]
+        stage, control, run = identity["stage"], identity["control"], identity["run_id"]
+        phase = 0
+        env = build_env(cfg)
+        noise_std = p["stage_noise_std"]["pitch" if control and stage == "pitch_speed" else "pitch_speed" if control else stage]
+        noise = Exploration(seed_for(42, p["noise_seed_namespace"], run), noise_std, [10., 3., 5.], env.dt, "white", p["noise_end_fraction"])
+        noise.load_state_dict(meta["noise"])
+        episode, step = meta["episode"], meta["step"]
+        family, target, pitch = shared.episode_design(p, run, episode)
+        inflow = deepcopy(p["inflow"])
+        inflow["speed"]["scenario"] = family
+        wind = generate_inflow(inflow, dt_s=env.dt, horizon=env.horizon, seed=42, split="train",
+            episode=p["training_episode_offset"] + run * 1000 + episode)
+        env.initial = np.asarray(cfg["environment"]["initial_operating_point"], dtype=float).copy()
+        env.initial[1] = pitch
+        obs, _ = env.reset(seed=42, options=dict(wind_trajectory=wind.values, target_w=target))
+        noise.reset()
+        actions, rewards, losses = [], [], []
+        for _ in range(env.horizon):
+            agent.config = replace(agent.config, residual_scales=scales(p, cfg, stage, step, control))
+            action = agent.act(obs, noise=noise.sample(step / p["steps_per_run"]))
+            nxt, reward, done, _, info = env.step(action)
+            agent.replay.add(obs, info["executed_action"], reward, nxt, done)
+            step += 1
+            if step % p["update_every"] == 0:
+                losses.append(agent.update())
+            actions.append(info["executed_action"])
+            rewards.append(reward)
+            obs = nxt
+        outputs.append((agent, np.asarray(actions), np.asarray(rewards), losses, noise.state_dict()))
+    left, right = outputs
+    np.testing.assert_array_equal(left[1], right[1])
+    np.testing.assert_array_equal(left[2], right[2])
+    assert left[3] == right[3]
+    np.testing.assert_equal(left[4], right[4])
+    for kind in ("actors", "target_actors", "critics", "target_critics"):
+        assert all(torch.equal(v, getattr(right[0], kind).state_dict()[key]) for key, v in getattr(left[0], kind).state_dict().items())
+    # For the actual resumed worker, also compare against its saved replay tail.
+    final, _ = ResidualMADDPG.load(result["final"])
+    size, position = final.replay.size, final.replay.position
+    order = (np.arange(size) + position) % final.replay.capacity if size == final.replay.capacity else np.arange(size)
+    new = order[-result["steps"]:]
+    actual_indices = new[2048:2176]
+    np.testing.assert_array_equal(left[1], final.replay.data["actions"][actual_indices])
+    assert digest(path) == original_sha
+    return dict(source_checkpoint=str(path), fork_steps=128, fork_count=2, actions_rewards_losses_noise_networks_exact=True,
+        actual_resumed_replay_next_episode_exact=True, source_unchanged=True, experiment_steps_added=0)
+
+
+def verify(root):
+    import numpy as np
+    import torch
+    import yaml
+    from .anchor_algorithm import AnchoredMADDPG as ResidualMADDPG
+    from .residual_algorithm import ResidualMADDPG as LegacyResidual
+    from .residual_random_control import scales
+    from .anchor_training import configure_actor_lr, assert_actor_lr
+    root = Path(root)
+    saved = yaml.safe_load((root / "config.yaml").read_text(encoding="utf-8"))
+    selection = json.loads((root / "selection.json").read_text(encoding="utf-8"))
+    p = saved["protocol"]
+    verify_hashes(saved["source_hashes"])
+    verify_hashes(selection["hashes"])
+    assert digest(root / "config.yaml") == selection["root_config_sha256"]
+    assert digest(root / "bank/manifest.json") == selection["bank_sha256"]
+    torch.set_num_threads(1)
+    torch.use_deterministic_algorithms(True)
+    pairing = audit_pairing(root)
+    checks, replay_rows = [], []
+    for r in selection["results"]:
+        initial, meta = ResidualMADDPG.load(r["initial"])
+        identity = meta["identity"]
+        original, _ = LegacyResidual.load(identity["parent"]["checkpoint"])
+        reconstructed = deepcopy(original)
+        configure_actor_lr(reconstructed, identity["actor_lr"])
+        assert_actor_lr(initial, identity["actor_lr"])
+        assert initial.anchor_weight == identity["anchor_weight"]
+        assert initial.anchor_scales == tuple(p["anchor_scales"])
+        assert initial.teacher_config == original.config
+        for key, value in original.actors.state_dict().items():
+            assert torch.equal(value, initial.teacher_actors.state_dict()[key])
+        assert all(not optimizer.state for optimizer in initial.actor_optimizers)
+        np.testing.assert_equal(comparable(initial.critic_optimizers[0].state_dict()), comparable(original.critic_optimizers[0].state_dict()))
+        for kind in ("actors", "target_actors", "critics", "target_critics"):
+            assert all(torch.equal(v, getattr(reconstructed, kind).state_dict()[key]) for key, v in getattr(initial, kind).state_dict().items())
+        np.testing.assert_equal(initial.replay.state_dict(), original.replay.state_dict())
+        for label, path in (("initial", r["initial"]), ("selected", r["best"]["checkpoint"]), ("final", r["final"])):
+            before = digest(path)
+            agent, metadata = ResidualMADDPG.load(path)
+            assert_actor_lr(agent, identity["actor_lr"])
+            assert agent.anchor_weight == identity["anchor_weight"]
+            assert agent.anchor_scales == tuple(p["anchor_scales"])
+            assert agent.teacher_config == original.config
+            assert all(not v.requires_grad for v in agent.teacher_actors.parameters())
+            for key, value in original.actors.state_dict().items():
+                assert torch.equal(value, agent.teacher_actors.state_dict()[key])
+            buffer = io.BytesIO()
+            agent.save(buffer, metadata)
+            buffer.seek(0)
+            other, other_meta = ResidualMADDPG.load(buffer)
+            assert_actor_lr(other, identity["actor_lr"])
+            np.testing.assert_equal(metadata, other_meta)
+            obs = agent.replay.data["obs"][0]
+            np.testing.assert_array_equal(agent.act(obs, .15), other.act(obs, .15))
+            assert agent.update() == other.update()
+            assert digest(path) == before
+            assert tuple(agent.config.residual_scales) == tuple(metadata["evaluation_scales"])
+        final, metadata = ResidualMADDPG.load(r["final"])
+        data = final.replay.state_dict()["data"]
+        n = len(data["obs"])
+        np.testing.assert_array_equal(data["actions"], data["next_obs"][:, :, 5:8])
+        envcfg = r["config"]["environment"]
+        width = np.asarray(envcfg["action_high"]) - envcfg["action_low"]
+        gamma_old = (data["obs"][:, :, 2] + 1) * width[0] / 2 + envcfg["action_low"][0]
+        gamma_new = (data["next_obs"][:, :, 2] + 1) * width[0] / 2 + envcfg["action_low"][0]
+        theta_old = np.arctan2(data["obs"][:, 0, 11], data["obs"][:, 0, 12])
+        theta_new = np.arctan2(data["next_obs"][:, 0, 11], data["next_obs"][:, 0, 12])
+        heading_delta = (gamma_new - gamma_old + (theta_new - theta_old)[:, None] + np.pi) % (2 * np.pi) - np.pi
+        delta = np.concatenate((heading_delta[..., None], (data["next_obs"][:, :, 3:5] - data["obs"][:, :, 3:5]) * width[1:] / 2), axis=-1)
+        assert np.all(np.abs(delta).max(axis=(0, 1)) <= np.asarray(envcfg["rate_limits"]) * envcfg["dt_s"] + 1e-6)
+        expected = envcfg["reward_scale"] * (-data["next_obs"][:, 0, 9] ** 2 - envcfg["action_change_weight"] * np.mean((data["actions"] - data["obs"][:, :, 5:8]) ** 2, axis=(1, 2)))
+        np.testing.assert_allclose(data["rewards"], np.repeat(expected[:, None], 3, axis=1), atol=5e-6, rtol=4e-6)
+        assert n == min(final.replay.capacity, r["inherited_replay_size"] + r["steps"])
+        order = (np.arange(n) + final.replay.position) % final.replay.capacity if n == final.replay.capacity else np.arange(n)
+        new = order[-r["steps"]:]
+        current = data["obs"][new]
+        scale, slope, low, high = final.config.residual_speed_schedule
+        baseline = np.clip(2 * (current[:, :, 1] * scale * slope - low) / (high - low) - 1, -1, 1)
+        correction = np.abs(data["actions"][new, :, 2] - baseline)
+        envelopes = np.array([scales(p, r["config"], identity["stage"], step, identity["control"])[2] for step in range(r["steps"])])
+        assert np.all(correction <= envelopes[:, None] + 4e-6)
+        yaw_correction = np.abs(data["actions"][new, :, 0] - final.config.fixed_action[0])
+        yaw_envelopes = np.array([scales(p, r["config"], identity["stage"], step, identity["control"])[0] for step in range(r["steps"])])
+        assert np.all(yaw_correction <= yaw_envelopes[:, None] + 4e-6)
+        assert r["stability_pass"] == (r["stable_ratio_pass"] and r["final_parent_noninferior"])
+        checks.append(dict(stage=r["stage"], run_id=r["run_id"], parent_state_and_common_actor_reset_exact=True,
+            actor_lr=identity["actor_lr"], load_noise_and_next_update_exact=True, resume_segments=r["resume_segments"]))
+        replay_rows.append(dict(stage=r["stage"], run_id=r["run_id"], retained_transitions=n, new_transitions=r["steps"],
+            total_action_next_command_exact=True, physical_rates_reward_verified=True, dynamic_residual_envelope_verified=True))
+    grouped = {}
+    with (root / "test/trajectories.csv").open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            key = tuple(row[k] for k in ("stage", "run_id", "controller", "case_id"))
+            grouped.setdefault(key, []).append(float(row["farm_power_w"]) - float(row["target_w"]))
+    maximum = 0.
+    count = 0
+    with (root / "test/metrics.csv").open(encoding="utf-8") as f:
+        test_metrics = list(csv.DictReader(f))
+    for row in test_metrics:
+        key = tuple(row[k] for k in ("stage", "run_id", "controller", "case_id"))
+        maximum = max(maximum, abs(float(np.sqrt(np.mean(np.square(grouped[key])))) - float(row["rmse_w"])))
+        count += 1
+    assert maximum < 1e-7
+    fork_result = next(r for r in selection["results"] if r["stage"] == "baseline" and r["run_id"] == 0)
+    recovery = recovery_fork(root, p, fork_result)
+    aggregate = []
+    for stage in dict.fromkeys(r["stage"] for r in test_metrics):
+        for controller in ("initial", "selected", "final", "parent", "fixed", "p", "pi"):
+            rows = [r for r in test_metrics if r["stage"] == stage and r["controller"] == controller and r["family"] in shared.FAMILIES]
+            means = [np.mean([float(r["rmse_w"]) for r in rows if r["run_id"] == run]) for run in sorted(set(r["run_id"] for r in rows))]
+            aggregate.append(dict(stage=stage, controller=controller, mean_rmse_w=float(np.mean(means)),
+                std_across_runs_w=float(np.std(means, ddof=1)) if len(means) > 1 else 0.))
+    shared.write_csv(root / "test/aggregate.csv", aggregate)
+    shared.write_csv(root / "replay_audit.csv", replay_rows)
+    report = dict(seed=42, protected_files=len(saved["source_hashes"]), protected_unchanged=True,
+        pairing=pairing,
+        checkpoint_audit=checks, replay_audit=replay_rows, recovery_fork=recovery,
+        test_metrics=count, test_trace_rows=sum(map(len, grouped.values())), max_rmse_recompute_difference_w=maximum,
+        experiment_training_steps=sum(r["steps"] for r in selection["results"]), physical_validation=False)
+    shared.write_json(root / "verification.json", report)
+    summary = json.loads((root / "summary.txt").read_text(encoding="utf-8"))
+    summary.update(verification=report, aggregate=aggregate, results=[dict(stage=r["stage"], run_id=r["run_id"],
+        selected_step=r["best"]["step"], mean_w=r["best"]["score_w"], worst_w=max(v["rmse_w"] for v in r["best"]["validation"]),
+        final_over_selected=r["final_over_selected"], stability_pass=r["stability_pass"], strict_accuracy_pass=r["strict_accuracy_pass"],
+        lineage=r["lineage"], paired_final_noninferior=r["paired_final_noninferior"]) for r in selection["results"]])
+    with (root / "test/corrections.csv").open(encoding="utf-8") as f:
+        summary["test_corrections"] = list(csv.DictReader(f))
+    shared.write_json(root / "summary.txt", summary)
+    plot(root, selection, aggregate)
+    verify_hashes(saved["source_hashes"])
+    print(json.dumps(report, ensure_ascii=False, indent=2), flush=True)
+
+
+def audit_pairing(root):
+    import numpy as np
+    import torch
+    pairs = []
+    fields = ("actors", "target_actors", "critics", "target_critics", "teacher_actors", "teacher_config",
+              "config", "actor_optimizers", "critic_optimizers", "replay", "rng", "torch_rng", "updates", "anchor_scales")
+    for run in range(3):
+        left = torch.load(root / f"baseline_run_{run}/segment_000/step_00000000.pth", weights_only=False)
+        right = torch.load(root / f"anchor_run_{run}/segment_000/step_00000000.pth", weights_only=False)
+        assert left["anchor_weight"] == 0 and right["anchor_weight"] == 1
+        for key in fields:
+            np.testing.assert_equal(comparable(left[key]), comparable(right[key]))
+        np.testing.assert_equal(left["metadata"]["noise"], right["metadata"]["noise"])
+        pairs.append(dict(run_id=run,initial_exact_except_lambda=True))
+    count = 0
+    for path in root.glob("*_run_*/segment_*/step_*.pth"):
+        state = torch.load(path, weights_only=False)
+        expected = 1. if path.parent.parent.name.startswith("anchor") else 0.
+        assert state["version"] == 3 and state["anchor_weight"] == expected
+        assert state["config"]["actor_lr"] == 1e-4
+        assert all(g["lr"] == 1e-4 for o in state["actor_optimizers"] for g in o["param_groups"])
+        initial = torch.load(path.parent.parent / "segment_000/step_00000000.pth", weights_only=False)
+        for key in ("teacher_actors", "teacher_config", "anchor_scales"):
+            np.testing.assert_equal(comparable(state[key]), comparable(initial[key]))
+        count += 1
+    assert count == 30
+    return dict(pairs=pairs,checkpoints=count,teacher_and_lr_unchanged=True)
+
+
+def plot(root, selection, aggregate):
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5), layout="constrained")
+    for result in selection["results"]:
+        _, meta = __import__("optimization_control.maddpg_wind_farm.anchor_algorithm", fromlist=["AnchoredMADDPG"]).AnchoredMADDPG.load(result["final"])
+        rows = meta["history"]
+        axes[0].plot([r["steps"] for r in rows], [r["validation_rmse_w"] / 1000 for r in rows],
+            linestyle="--" if result["stage"] == "anchor" else "-", label=f"{result['stage']} / stream{result['run_id']}")
+    for stage in dict.fromkeys(r["stage"] for r in aggregate):
+        rows = [r for r in aggregate if r["stage"] == stage]
+        axes[1].errorbar([r["controller"] for r in rows], [r["mean_rmse_w"] / 1000 for r in rows],
+            yerr=[r["std_across_runs_w"] / 1000 for r in rows], fmt="o", capsize=3, label=stage)
+    axes[0].set(xlabel="Additional training steps", ylabel="Validation RMSE [kW]", title="Always evaluated at full residual authority")
+    axes[1].set(xlabel="Frozen test controller", ylabel="Routine test RMSE [kW]", title="Mean +/- SD across training streams")
+    for ax in axes:
+        ax.grid(alpha=.2)
+        ax.legend(fontsize=7)
+    fig.suptitle("Frozen parent-action penalty | synthetic PINN")
+    fig.savefig(root / "anchor_validation_test.png", dpi=180)
+    fig.savefig(root / "anchor_validation_test.pdf")
+    plt.close(fig)
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4), layout="constrained")
+    from .anchor_algorithm import AnchoredMADDPG
+    for result in selection["results"]:
+        _, meta = AnchoredMADDPG.load(result["final"])
+        rows = meta["history"]
+        for ax, key, factor, title in zip(axes, ("drift_yaw_rad", "drift_pitch_rad", "drift_speed_rad_s"),
+                (180 / 3.141592653589793, 180 / 3.141592653589793, 1), ("Yaw [deg]", "Pitch [deg]", "Speed [rad/s]")):
+            ax.plot([r["steps"] for r in rows], [r[key] * factor for r in rows],
+                linestyle="--" if result["stage"] == "anchor" else "-", label=f"{result['stage']} / {result['run_id']}")
+            ax.set(xlabel="Training steps", ylabel="Parent-action drift RMS", title=title)
+            ax.grid(alpha=.2)
+    axes[0].legend(fontsize=7)
+    fig.suptitle("Current-state action drift on validation rollouts | full authority")
+    fig.savefig(root / "anchor_action_drift.png", dpi=180)
+    fig.savefig(root / "anchor_action_drift.pdf")
+    plt.close(fig)
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--output", required=True)
+    args = ap.parse_args()
+    activate_runtime(".venv/pinn_tf216")
+    verify(args.output)
+
+
+if __name__ == "__main__":
+    main()

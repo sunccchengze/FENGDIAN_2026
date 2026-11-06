@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "markdown": [
+    {
+      "path": "optimization_control\\maddpg_wind_farm\\SPEED_NSTEP_PROTOCOL.md",
+      "sha256": "d5bf5f0a56094bb62cf6b6660b5e5a7eeceb2af26e456b7ed6c48cc0ace0f1f2",
+      "lines": 42
+    },
+    {
+      "path": "optimization_control\\maddpg_wind_farm\\SPEED_NSTEP_RESULTS.md",
+      "sha256": "34057b0739ac1abd3f596fadc17470e2857c8b6a1d668b1301dcdbe7d8639514",
+      "lines": 145
+    }
+  ],
+  "links_and_fences_and_tables": true,
+  "python_ast_files": 3,
+  "new_contract_tests_passed_before_freeze": 3,
+  "tests_repeated": false
+}

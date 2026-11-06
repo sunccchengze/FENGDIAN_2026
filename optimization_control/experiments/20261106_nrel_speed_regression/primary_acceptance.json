@@ -1,0 +1,61 @@
+{
+  "kind": "used_test_bank_configuration_regression",
+  "criterion": "each_family_equal_case_and_stream_mean_new_Y_strictly_below_new_PI",
+  "families": [
+    {
+      "family": "stationary",
+      "rule": "nrel",
+      "unique_winds": 6,
+      "Y_policy_cases": 18,
+      "baseline_cases": 6,
+      "Y_kW": 432.0505523901449,
+      "P_kW": 549.7432905471658,
+      "PI_kW": 488.04186757355694,
+      "Y_minus_PI_kW": -55.99131518341205,
+      "Y_at400": 10,
+      "Y_at500": 14,
+      "passed": true
+    },
+    {
+      "family": "ramp",
+      "rule": "nrel",
+      "unique_winds": 6,
+      "Y_policy_cases": 18,
+      "baseline_cases": 6,
+      "Y_kW": 459.6266970442913,
+      "P_kW": 622.074412474048,
+      "PI_kW": 532.2000974569214,
+      "Y_minus_PI_kW": -72.57340041263005,
+      "Y_at400": 6,
+      "Y_at500": 8,
+      "passed": true
+    },
+    {
+      "family": "gust",
+      "rule": "nrel",
+      "unique_winds": 6,
+      "Y_policy_cases": 18,
+      "baseline_cases": 6,
+      "Y_kW": 454.08032097728574,
+      "P_kW": 621.7661217931708,
+      "PI_kW": 523.0879146562044,
+      "Y_minus_PI_kW": -69.00759367891861,
+      "Y_at400": 9,
+      "Y_at500": 12,
+      "passed": true
+    }
+  ],
+  "passed_families": 3,
+  "passed": true,
+  "new_unseen_test": false,
+  "unique_winds": 18,
+  "new_rollouts": 90,
+  "new_model_rows": 11610,
+  "old_referenced_rollouts": 90,
+  "old_reference_historical_rows": 11610,
+  "old_reference_new_rows": 0,
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "new_winds": 0,
+  "new_pressure_cases": 0
+}

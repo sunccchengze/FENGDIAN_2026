@@ -1,0 +1,4 @@
+run,episodes,old_update_exact,effective_clip_calls,short_loop_exact,real_memory_gradients
+0,256,True,4,True,True
+1,256,True,3,True,True
+2,224,True,3,True,True

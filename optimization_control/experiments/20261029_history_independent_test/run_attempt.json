@@ -1,0 +1,16 @@
+{
+  "started": {
+    "utc_ns": 1793293436104381600,
+    "perf_ns": 43172714485400,
+    "process_cpu_ns": 7156250000,
+    "pid": 17084,
+    "uptime_ms": 43172671,
+    "awake_100ns": 394691124925,
+    "machine_idle_100ns": 6530177812500,
+    "machine_kernel_100ns": 7162621406250,
+    "machine_user_100ns": 608402968750
+  },
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": ".\\.venv\\Scripts\\python.exe"
+}

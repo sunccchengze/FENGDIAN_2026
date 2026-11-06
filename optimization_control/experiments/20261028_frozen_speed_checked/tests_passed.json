@@ -1,0 +1,16 @@
+{
+  "unique_tests": 37,
+  "groups": {
+    "frozen_speed": 8,
+    "progressive_legacy": 7,
+    "random_reference_legacy": 8,
+    "maddpg_adapter_environment_algorithm": 14
+  },
+  "commands": [
+    "python -B -X utf8 -m unittest optimization_control.tests.test_frozen_speed.FrozenSpeedTests -v",
+    "python -B -X utf8 -m unittest optimization_control.tests.test_frozen_speed.FrozenSpeedTests optimization_control.tests.test_random_wind_training optimization_control.tests.test_maddpg -v"
+  ],
+  "duplicate_reruns_not_added": true,
+  "real_three_stream_strict_gate_passed": true,
+  "smoke_steps": 2048
+}

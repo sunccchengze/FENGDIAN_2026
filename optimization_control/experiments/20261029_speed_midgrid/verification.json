@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "formal_RL_steps": 0,
+  "model_rows": 120785,
+  "hard_cap": 170000,
+  "repeated_parent_improvement": false,
+  "metrics": 324,
+  "trace_rows": 41472,
+  "maximum_metric_recompute_error": 0.0,
+  "forecast_min_never_above_same_state_prefix9": true,
+  "positive_same_state_prediction_advantage_decisions": 106,
+  "decisions": 576,
+  "middle_decisions": 106,
+  "zero_decisions": 2,
+  "endpoint_decisions": 468,
+  "new_test_released": false,
+  "source_and_execution_hashes_unchanged": true
+}

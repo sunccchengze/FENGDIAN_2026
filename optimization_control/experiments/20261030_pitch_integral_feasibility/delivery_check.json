@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "frozen_inputs": 122,
+  "independently_recomputed_episodes": 432,
+  "max_rmse_residual_w": 0.0,
+  "integral_recurrence_all_20736_steps_checked": true,
+  "decision_error_float32_units_checked": true,
+  "current_wind_and_same_heading_checked": true,
+  "all_motion_metrics_and_hard_bounds_checked": true,
+  "formal_training_steps": 0,
+  "new_test_steps": 0,
+  "actual_real_inputs": 21285,
+  "actual_mock_inputs": 0,
+  "input_limit": 60000,
+  "engineering_zero_trace_difference": 0,
+  "images": {
+    "all_case_paired_differences.png": {
+      "dimensions": [
+        1650,
+        2250
+      ],
+      "sha256": "6be6507a7f174ea579dbece1cd6fcb9407aa2248776fbd3c8872df316e2ffb29",
+      "visually_checked": true
+    },
+    "full_integral_timeseries.png": {
+      "dimensions": [
+        2250,
+        1500
+      ],
+      "sha256": "7d79d96818c0f0c19f91817bc2aafebf8055778dc22eb8c7ce86a5fecb373ac6",
+      "visually_checked": true
+    },
+    "primary_decomposition.png": {
+      "dimensions": [
+        2250,
+        750
+      ],
+      "sha256": "2cab35e759b4c616bd65f47037380ef7f2d5d546f14409955b890485fc5b116e",
+      "visually_checked": true
+    }
+  },
+  "screening_passed": true,
+  "source_sha256": "f8cc839def05cf9283e4a1296d372d7c27e872e877344da7789b953b89702bad",
+  "experiment_bytes_before_verifier": 8508937,
+  "storage_limit": 536870912
+}

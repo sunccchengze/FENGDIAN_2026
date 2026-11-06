@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "actual_episode_fields_scanned": true,
+  "JSON_files": 6893,
+  "roots": [
+    ".\\optimization_control",
+    ".\\optimization_control",
+    ".\\optimization_control"
+  ],
+  "range": [
+    66000000,
+    66000017
+  ],
+  "collisions": []
+}

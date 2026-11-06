@@ -1,0 +1,63 @@
+{
+  "rows": 432,
+  "all_anchors_flow_order_T1_T2_T3": true,
+  "model_query_rows": 0,
+  "teacher_calls": 0,
+  "directions_zero_band_w": 2.0,
+  "matrix": [
+    {
+      "varied_turbine": 1,
+      "output_turbine": 1,
+      "model_mean_slope_kW_per_rad_s": -346.3432205877766,
+      "label_mean_slope_kW_per_rad_s": -284.4465509817984
+    },
+    {
+      "varied_turbine": 1,
+      "output_turbine": 2,
+      "model_mean_slope_kW_per_rad_s": 41.889166104972894,
+      "label_mean_slope_kW_per_rad_s": 46.488617526775464
+    },
+    {
+      "varied_turbine": 1,
+      "output_turbine": 3,
+      "model_mean_slope_kW_per_rad_s": -19.826643114170626,
+      "label_mean_slope_kW_per_rad_s": 44.40010573882174
+    },
+    {
+      "varied_turbine": 2,
+      "output_turbine": 1,
+      "model_mean_slope_kW_per_rad_s": -17.61772513490531,
+      "label_mean_slope_kW_per_rad_s": 0.0
+    },
+    {
+      "varied_turbine": 2,
+      "output_turbine": 2,
+      "model_mean_slope_kW_per_rad_s": 66.12317503914042,
+      "label_mean_slope_kW_per_rad_s": 188.52306390418744
+    },
+    {
+      "varied_turbine": 2,
+      "output_turbine": 3,
+      "model_mean_slope_kW_per_rad_s": -68.09205712514603,
+      "label_mean_slope_kW_per_rad_s": -45.42335061074951
+    },
+    {
+      "varied_turbine": 3,
+      "output_turbine": 1,
+      "model_mean_slope_kW_per_rad_s": -6.951959754905467,
+      "label_mean_slope_kW_per_rad_s": 0.0
+    },
+    {
+      "varied_turbine": 3,
+      "output_turbine": 2,
+      "model_mean_slope_kW_per_rad_s": -2.721486970412226,
+      "label_mean_slope_kW_per_rad_s": 0.0
+    },
+    {
+      "varied_turbine": 3,
+      "output_turbine": 3,
+      "model_mean_slope_kW_per_rad_s": 322.37706525522736,
+      "label_mean_slope_kW_per_rad_s": 410.0453129246835
+    }
+  ]
+}

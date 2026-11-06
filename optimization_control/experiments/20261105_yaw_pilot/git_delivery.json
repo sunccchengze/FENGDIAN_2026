@@ -1,0 +1,45 @@
+{
+  "commit": "eec78180f2679d65ab4a71ee074d9f57a98375e5",
+  "parent": "a12288fd1dfdd2b299e4d949288d8a5908bcbe3f",
+  "branch": "codex/speed-nstep-engineering-20261028",
+  "worktree_clean": true,
+  "staged_files": 8,
+  "manifest_files_verified": 275,
+  "protected_inputs": 64,
+  "formal_lock_sha": "1ae777e80e197803cda5ab7a1fa9931f16970f7013669628048fd2d38905408f",
+  "manifest_sha256": "3cce474b8709e9b98dd36686dc8d4c6f25a2b0e453366868118e7528441140cc",
+  "new_training_steps": 12288,
+  "new_formal_joint_updates": 582,
+  "model_rows": 37023,
+  "engineering_rows": 3399,
+  "cumulative_rows": 40422,
+  "hard_cap": 42000,
+  "unused_rows": 1578,
+  "pilot_bytes_before_receipt": 18325332,
+  "engineering_bytes": 5725533,
+  "combined_cap_bytes": 134217728,
+  "original_C_selected": [
+    0,
+    0,
+    4096
+  ],
+  "selected_Y": [
+    2048,
+    0,
+    2048
+  ],
+  "selected_S": [
+    2048,
+    1024,
+    1024
+  ],
+  "validation_family_mean_criterion_passed": true,
+  "independent_test_released": false,
+  "old_engineering_and_failure_evidence_preserved": true,
+  "two_dtype_failures_additional_rows": 0,
+  "new_test_proposal_rows": 53406,
+  "new_test_proposal_cap": 55000,
+  "merged_master": false,
+  "pushed": false,
+  "shared_status_files_untouched": true
+}

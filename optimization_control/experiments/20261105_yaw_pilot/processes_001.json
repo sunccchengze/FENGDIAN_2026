@@ -1,0 +1,53 @@
+[
+  {
+    "part": 0,
+    "jobs": [
+      {
+        "arm": "Y",
+        "run": 0,
+        "pid": 34424,
+        "status": 0
+      },
+      {
+        "arm": "S",
+        "run": 0,
+        "pid": 22452,
+        "status": 0
+      }
+    ]
+  },
+  {
+    "part": 1,
+    "jobs": [
+      {
+        "arm": "Y",
+        "run": 1,
+        "pid": 12228,
+        "status": 0
+      },
+      {
+        "arm": "S",
+        "run": 1,
+        "pid": 7452,
+        "status": 0
+      }
+    ]
+  },
+  {
+    "part": 2,
+    "jobs": [
+      {
+        "arm": "Y",
+        "run": 2,
+        "pid": 22904,
+        "status": 0
+      },
+      {
+        "arm": "S",
+        "run": 2,
+        "pid": 22292,
+        "status": 0
+      }
+    ]
+  }
+]

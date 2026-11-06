@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "unique_tests": 3,
+  "test_executions": 4,
+  "mock_model_rows": 540,
+  "mock_api_calls": 540,
+  "runs": [
+    {
+      "tests": 3,
+      "rows": 535
+    },
+    {
+      "tests": 1,
+      "rows": 5,
+      "reason": "module-alias fixture import and default discovery count check"
+    }
+  ],
+  "test_source_sha256": "ccc5765625dd498ca0f8663361d6e26785cbad99933c5ca75f00938687890a74"
+}

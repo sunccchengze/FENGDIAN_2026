@@ -1,0 +1,34 @@
+{
+  "core_correct": true,
+  "validation_passed": false,
+  "formal_steps": 98304,
+  "updates": 47622,
+  "full_states": 104,
+  "light_commits": 774,
+  "engineering_full_states": 1,
+  "actual_training_plant_rows": 99072,
+  "recomputed_learning_steps": 0,
+  "first512_paired": true,
+  "sample_indices_and_m_paired": true,
+  "native_reward_residual_max": 1.2017987138790431e-07,
+  "storage_bytes": 2166489879,
+  "postprocessor_sha256": "49ec5b60fb5eb82c536508a7349ddd2b6b252cb876e4759d0fa0a809bd03bbf2",
+  "validation_bank_regenerated": true,
+  "known_parent_and_baseline_metric_difference_max": 0.0,
+  "postprocessor_hashes": {
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_review.py": "49ec5b60fb5eb82c536508a7349ddd2b6b252cb876e4759d0fa0a809bd03bbf2",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_figures.py": "f2fbe7ff1fa23c95d1f39708f9144908cea144c28ac0d4a2164ee0ae7dd62a11",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_reproduce.py": "74e1b5c417c679ed38fbe0754b30eaaa29ca5ec2ce43229254b29429ea714f23",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_finish.py": "64f6e835582b5484e7d807113dcbf067e6e6b389af64c61444236efc2b9ffe8a",
+    ".\\optimization_control\\tests\\test_pitch_actor_context_reporting.py": "13476c054019dbdb4538118f0cb1ed6478b59ca735d1316afda0b3c5c7865a9f",
+    ".\\optimization_control\\tests\\test_pitch_actor_context_bounds.py": "befe40a388804481ae20179ffb6009f01304bc56edbcffcf221e286a41b50dab"
+  },
+  "hashes": {
+    ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\selection.json": "e3e209ccafafef214bf5cd79e56f4db9b294abcc0d8c7474a1339224b07ba910",
+    ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\config.yaml": "7035d9c0aae7506563a2c3faf6a3baeb2468996b11ce77d2a16035ab2bfec92a",
+    ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\validation_acceptance.json": "120ae7f764ea6e6137d356b657af59b205f4b61e11c5087f749e71be46291808",
+    ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\checkpoint_manifest.csv": "595345b4f36067df20f3c38229214bb5b3e077d09d0c3249455f3c90415cff48",
+    ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\validation_bank\\manifest.json": "6280eb2e17a5b93dce1df34c18d320da11ec54e7db3abd49de42505e023f98da",
+    ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\analysis_code_freeze.json": "a1b128811b94474e90cc3d6f66cd3689161a0fa79691c3345c7ede02a9a4e765"
+  }
+}

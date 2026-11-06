@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "Python_AST_files": 3,
+  "read_only_timing_references": [
+    "https://docs.python.org/3.12/library/time.html#time.process_time",
+    "https://learn.microsoft.com/en-us/windows/win32/api/realtimeapiset/nf-realtimeapiset-queryunbiasedinterrupttime",
+    "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getsystemtimes"
+  ],
+  "PINN_calls": 0
+}

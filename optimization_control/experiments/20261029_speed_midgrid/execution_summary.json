@@ -1,0 +1,8 @@
+{
+  "status": "executed",
+  "seed": 42,
+  "formal_RL_steps": 0,
+  "model_rows": 120785,
+  "metrics": 324,
+  "trace_rows": 41472
+}

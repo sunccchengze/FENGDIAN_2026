@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "pngs_visually_inspected": [
+    "grid_case_comparison.png",
+    "forecast_choices_cost.png",
+    "grid_actual_controls.png"
+  ],
+  "pdfs_same_matplotlib_figures": true,
+  "figure_groups": 3,
+  "title_units_legends_axes_checked": true,
+  "negative_cases_preserved": true,
+  "source_hashes": {
+    "grid_case_comparison.png": "899b85262a09e0a9ddb5589422b43fe5b62fece472010a369709514e2e5951e9",
+    "grid_case_comparison.pdf": "f001e1b44c4ed2ac5a62a1f530eaddbbc8a98f4967592076795bb68876fdd85e",
+    "forecast_choices_cost.png": "8243b98f11635d809aab6f59c27694922cf60d8faf6ee6b50279813c5e8146f7",
+    "forecast_choices_cost.pdf": "ed9cc68b1967a55de040081b7b1036977dc8ce2d61307fa5e424a7d54145ec19",
+    "grid_actual_controls.png": "2d75db9dfab76230dd82c7db0203f4a447e9d021633a02c69d0a974cdb9e4cff",
+    "grid_actual_controls.pdf": "382ff939ad2d206f59f5f9fb1d15d5397a790de665f264f6546543e04b6774d0"
+  }
+}

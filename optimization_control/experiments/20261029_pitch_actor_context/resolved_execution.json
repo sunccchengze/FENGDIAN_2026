@@ -1,0 +1,72 @@
+{
+  "python": "3.12.14",
+  "numpy": "1.26.4",
+  "torch": "2.13.0+cpu",
+  "tensorflow": "2.16.1",
+  "device": "cpu",
+  "training_torch_threads": 1,
+  "training_tensorflow_intra_threads": 1,
+  "training_tensorflow_inter_threads": 1,
+  "training_runtime_source": "pitch_actor_context_trial.main and launch, frozen SHA in config",
+  "seed": 42,
+  "arms": [
+    "replay",
+    "current_pitch"
+  ],
+  "n": 8,
+  "gamma": 0.99,
+  "actual_steps_per_job": 16384,
+  "actual_update_calls_per_job": 7937,
+  "actual_warmup_steps": 512,
+  "actual_update_every": 2,
+  "actual_noise_kind": "white",
+  "actual_noise_std": [
+    0.0,
+    0.03,
+    0.0
+  ],
+  "actual_noise_end_fraction": 0.2,
+  "unused_base_training_template": {
+    "total_steps": 2048,
+    "warmup_steps": 256,
+    "update_every": 2,
+    "noise_std": 0.15,
+    "episode_target_fractions": [
+      0.18440761875,
+      0.23014487916666668,
+      0.27588213958333335
+    ]
+  },
+  "actual_exploration_streams": [
+    {
+      "run": 0,
+      "entropy": [
+        42,
+        20261029,
+        6103,
+        0
+      ],
+      "integer_seed": 2400279337
+    },
+    {
+      "run": 1,
+      "entropy": [
+        42,
+        20261029,
+        6103,
+        1
+      ],
+      "integer_seed": 594427830
+    },
+    {
+      "run": 2,
+      "entropy": [
+        42,
+        20261029,
+        6103,
+        2
+      ],
+      "integer_seed": 4274659687
+    }
+  ]
+}

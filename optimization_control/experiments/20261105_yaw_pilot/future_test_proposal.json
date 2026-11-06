@@ -1,0 +1,188 @@
+{
+  "released": false,
+  "namespace": [
+    71000000,
+    71000001,
+    71000002,
+    71000003,
+    71000004,
+    71000005,
+    71000006,
+    71000007,
+    71000008,
+    71000009,
+    71000010,
+    71000011,
+    71000012,
+    71000013,
+    71000014,
+    71000015,
+    71000016,
+    71000017
+  ],
+  "seed": 42,
+  "families": [
+    "stationary",
+    "ramp",
+    "gust"
+  ],
+  "targets_w": [
+    2750000,
+    3350000,
+    3850000
+  ],
+  "pitch_rad": [
+    0.025,
+    0.055
+  ],
+  "horizon": 128,
+  "selected_roles_frozen": [
+    {
+      "arm": "Y",
+      "run": 0,
+      "role": "selected",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\inference.pt",
+        "sha256": "32fd20fba2283da7db75580d4dea937e0c9e06161680f9e3fabc38adfd0b40e5",
+        "bytes": 24959
+      }
+    },
+    {
+      "arm": "Y",
+      "run": 0,
+      "role": "final",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\inference.pt",
+        "sha256": "32fd20fba2283da7db75580d4dea937e0c9e06161680f9e3fabc38adfd0b40e5",
+        "bytes": 24959
+      }
+    },
+    {
+      "arm": "Y",
+      "run": 1,
+      "role": "selected",
+      "step": 0,
+      "snapshot": {
+        "initial": true,
+        "arm": "Y",
+        "run": 1,
+        "step": 0,
+        "contract_sha": "5d5b8d153079c39c5b791f360fab4be4218fa6521e61569344592939ba16b2e3"
+      }
+    },
+    {
+      "arm": "Y",
+      "run": 1,
+      "role": "final",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\inference.pt",
+        "sha256": "379d36a507d649e745e0d55e46b2f34c6d8a01ec139890f2fa1575e3c83573c6",
+        "bytes": 24959
+      }
+    },
+    {
+      "arm": "Y",
+      "run": 2,
+      "role": "selected",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\inference.pt",
+        "sha256": "e893cb8590df776a931e0dc3de23f7f3cf57d35b46d1ed1d61a72687b51d6817",
+        "bytes": 24959
+      }
+    },
+    {
+      "arm": "Y",
+      "run": 2,
+      "role": "final",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\inference.pt",
+        "sha256": "e893cb8590df776a931e0dc3de23f7f3cf57d35b46d1ed1d61a72687b51d6817",
+        "bytes": 24959
+      }
+    },
+    {
+      "arm": "S",
+      "run": 0,
+      "role": "selected",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\inference.pt",
+        "sha256": "49d4ee17e8b4ffc972abb37c5a640cc352da33e773d6fef93c3155144b778489",
+        "bytes": 24959
+      }
+    },
+    {
+      "arm": "S",
+      "run": 0,
+      "role": "final",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\inference.pt",
+        "sha256": "49d4ee17e8b4ffc972abb37c5a640cc352da33e773d6fef93c3155144b778489",
+        "bytes": 24959
+      }
+    },
+    {
+      "arm": "S",
+      "run": 1,
+      "role": "selected",
+      "step": 1024,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\inference.pt",
+        "sha256": "5edf1b22a8fe57ec7cb499546a0910fa7707447ee3406fdd1c340d4ad8c28052",
+        "bytes": 24959
+      }
+    },
+    {
+      "arm": "S",
+      "run": 1,
+      "role": "final",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\inference.pt",
+        "sha256": "b884a1495dba34e8fe56c9f72f387ea0f1684009d2e20a861fb722cf0d17a85c",
+        "bytes": 24959
+      }
+    },
+    {
+      "arm": "S",
+      "run": 2,
+      "role": "selected",
+      "step": 1024,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\inference.pt",
+        "sha256": "7e405deb52b7c3db812ccbd684057b7c014b72da8bca81253a845c3aaa339996",
+        "bytes": 24959
+      }
+    },
+    {
+      "arm": "S",
+      "run": 2,
+      "role": "final",
+      "step": 2048,
+      "snapshot": {
+        "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\inference.pt",
+        "sha256": "0af207307d930b6cafd6fc8b8c0e7b4cc01c383e2021065a9d9183774c612135",
+        "bytes": 24959
+      }
+    }
+  ],
+  "selection_sha": "ec95ad95c06050832f1ae4be6550c8e3754449bb52df196f5d18f8d84fb8a72a",
+  "run_lock_sha": "1ae777e80e197803cda5ab7a1fa9931f16970f7013669628048fd2d38905408f",
+  "roles_count": 23,
+  "roles_description": "Y/S selected+final 12, fixed C 3, P/PI 2, Y selected/final yaw disabled 6",
+  "rollouts": 414,
+  "planned_rows": 53406,
+  "proposed_row_cap": 55000,
+  "proposed_disk_MiB": 128,
+  "main_criterion": "each family equal-case/parent mean Y_selected strictly below common PI",
+  "query_rows_released": 0,
+  "new_training_steps": 0,
+  "all_candidate_steps_frozen": true,
+  "interpretation": "validation screening only; no overall yaw advantage over same-budget S established"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "arm": "p",
+    "run": -1,
+    "role": "p",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\validation\\p\\cases.json"
+  },
+  {
+    "arm": "pi",
+    "run": -1,
+    "role": "pi",
+    "cases": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\evaluations\\validation\\pi\\cases.json"
+  }
+]

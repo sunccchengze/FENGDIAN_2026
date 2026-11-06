@@ -1,0 +1,20 @@
+{
+  "seed": 42,
+  "formal_training_steps": 0,
+  "new_environment_steps": 0,
+  "discarded_memory_updates": 4,
+  "reviewed_commit": "c3e9cc07b004ae5fc3f2033d00a25f756c0edb03",
+  "reviewed_core_unchanged_at_delivery": true,
+  "files": {
+    ".\\optimization_control\\maddpg_wind_farm\\SPEED_NSTEP_INDEPENDENT_REVIEW.md": "b7ec316eec6bf2da9498b5872e0dedba77c29889532194c0445f782378cdeaa4",
+    ".\\optimization_control\\maddpg_wind_farm\\MADDPG_STAGE_HANDOFF_20261029.md": "3b9205fc46ec15fb76dee3bd82addbd9854b011e0a8acf7d437e318e27306f55",
+    ".\\optimization_control\\experiments\\20261029_speed_nstep_independent_review\\config.yaml": "3051bddfb85a673563a69bb1c8b2b66e6bec9e0267161d5236e60f2b4cde735e",
+    ".\\optimization_control\\experiments\\20261029_speed_nstep_independent_review\\metrics.csv": "16f08da7851a1704a159d6360cb7f63fb32c56d05713f746bbb3c185cd0a8c2a",
+    ".\\optimization_control\\experiments\\20261029_speed_nstep_independent_review\\summary.txt": "368eca463b487b4d2fe2aa3d30e2be6be100052214bfe40fb71b7085c99b80c0",
+    ".\\optimization_control\\experiments\\20261029_speed_nstep_independent_review\\review_probe.py": "d3996aee6f045e077b0a6ea750176c327845e7b860f6581bf486b631124e3f9a",
+    ".\\optimization_control\\experiments\\20261029_speed_nstep_independent_review\\probe.json": "f45c7821b0168a3db0a7df5c6109d43fbd49d8fdf77a63ea8c0ffac3ad2a4500",
+    ".\\optimization_control\\experiments\\20261029_speed_nstep_independent_review\\unittest.txt": "faf42ffadf59f98ab9a031a0467fc8e7503c2b5865e378647324aa735514745f"
+  },
+  "markdown_link_count": 21,
+  "ast_passed": true
+}

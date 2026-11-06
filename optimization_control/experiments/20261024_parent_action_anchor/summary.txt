@@ -1,0 +1,5 @@
+{
+  "status": "prepared",
+  "seed": 42,
+  "test_locked": true
+}

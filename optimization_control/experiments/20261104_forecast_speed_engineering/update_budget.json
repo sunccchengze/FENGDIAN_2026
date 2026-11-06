@@ -1,0 +1,73 @@
+{
+  "limit": 24,
+  "scopes": [
+    {
+      "name": "attempt_000/B_first_boundary",
+      "reserve": 1,
+      "actual": 1,
+      "api_calls": 1,
+      "status": "complete",
+      "kinds": {
+        "joint_engineering_update": 1
+      }
+    },
+    {
+      "name": "attempt_000/B_continuous",
+      "reserve": 1,
+      "actual": 1,
+      "api_calls": 1,
+      "status": "complete",
+      "kinds": {
+        "joint_engineering_update": 1
+      }
+    },
+    {
+      "name": "attempt_000/B_disk_resume",
+      "reserve": 1,
+      "actual": 1,
+      "api_calls": 1,
+      "status": "complete",
+      "kinds": {
+        "joint_engineering_update": 1
+      }
+    },
+    {
+      "name": "attempt_000/C_first_boundary",
+      "reserve": 1,
+      "actual": 1,
+      "api_calls": 1,
+      "status": "complete",
+      "kinds": {
+        "joint_engineering_update": 1
+      }
+    },
+    {
+      "name": "attempt_000/C_continuous",
+      "reserve": 1,
+      "actual": 1,
+      "api_calls": 1,
+      "status": "complete",
+      "kinds": {
+        "joint_engineering_update": 1
+      }
+    },
+    {
+      "name": "attempt_000/C_disk_resume",
+      "reserve": 1,
+      "actual": 1,
+      "api_calls": 1,
+      "status": "complete",
+      "kinds": {
+        "joint_engineering_update": 1
+      }
+    },
+    {
+      "name": "attempt_000/real_takeover",
+      "reserve": 0,
+      "actual": 0,
+      "api_calls": 0,
+      "status": "complete",
+      "kinds": {}
+    }
+  ]
+}

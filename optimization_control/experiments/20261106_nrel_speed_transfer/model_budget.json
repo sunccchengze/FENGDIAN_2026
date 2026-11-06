@@ -1,0 +1,385 @@
+{
+  "limit": 10000,
+  "scopes": [
+    {
+      "name": "engineering/Y0_selected_legacy",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "PINN": 20
+      }
+    },
+    {
+      "name": "engineering/Y0_selected_nrel",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "PINN": 20
+      }
+    },
+    {
+      "name": "engineering/Y1_selected_legacy",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "PINN": 20
+      }
+    },
+    {
+      "name": "engineering/Y1_selected_nrel",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "PINN": 20
+      }
+    },
+    {
+      "name": "engineering/Y2_selected_legacy",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "PINN": 20
+      }
+    },
+    {
+      "name": "engineering/Y2_selected_nrel",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "PINN": 20
+      }
+    },
+    {
+      "name": "engineering/mock_reset0",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "mock": 20
+      }
+    },
+    {
+      "name": "engineering/mock_reset1",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "mock": 20
+      }
+    },
+    {
+      "name": "performance/Y0_selected/0",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y0_selected/1",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y0_selected/2",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y0_selected/3",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y0_selected/4",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y0_selected/5",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y1_selected/0",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y1_selected/1",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y1_selected/2",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y1_selected/3",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y1_selected/4",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y1_selected/5",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y2_selected/0",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y2_selected/1",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y2_selected/2",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y2_selected/3",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y2_selected/4",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/Y2_selected/5",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/p/0",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/p/1",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/p/2",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/p/3",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/p/4",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/p/5",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/pi/0",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/pi/1",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/pi/2",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/pi/3",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/pi/4",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    },
+    {
+      "name": "performance/pi/5",
+      "reserve": 129,
+      "actual": 129,
+      "api_calls": 129,
+      "status": "complete",
+      "kinds": {
+        "PINN": 129
+      }
+    }
+  ]
+}

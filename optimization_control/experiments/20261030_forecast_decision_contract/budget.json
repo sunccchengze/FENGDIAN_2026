@@ -1,0 +1,53 @@
+{
+  "limit": 4096,
+  "scopes": [
+    {
+      "name": "run0_direct",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "new_deterministic_mock_forward": 20
+      }
+    },
+    {
+      "name": "run0_zero_B",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "new_deterministic_mock_forward": 20
+      }
+    },
+    {
+      "name": "run0_zero_C",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "new_deterministic_mock_forward": 20
+      }
+    },
+    {
+      "name": "run0_explore_C",
+      "reserve": 20,
+      "actual": 20,
+      "api_calls": 20,
+      "status": "complete",
+      "kinds": {
+        "new_deterministic_mock_forward": 20
+      }
+    },
+    {
+      "name": "run0_resume_t5",
+      "reserve": 14,
+      "actual": 0,
+      "api_calls": 0,
+      "status": "running",
+      "kinds": {}
+    }
+  ]
+}

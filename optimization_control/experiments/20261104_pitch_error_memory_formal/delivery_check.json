@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "frozen_dependency_hashes": 95,
+  "formal_rows": 336948,
+  "combined_rows": 337245,
+  "paired_training_steps": 98304,
+  "updates": 47622,
+  "unique_test_controller_runs": 19,
+  "semantic_metric_rows": {
+    "known": 612,
+    "validation": 360,
+    "test": 880
+  },
+  "gate_arithmetic_independently_checked": true,
+  "mse_decomposition_checked": true,
+  "test_released_after_lock": true,
+  "full_states": 102,
+  "light_fragments": 768,
+  "max_state_bytes": 20478169,
+  "runtime_stage_seconds": 6927.868292093277,
+  "figure_checks": {
+    "validation_and_decomposition.png": {
+      "dimensions": [
+        2250,
+        1350
+      ],
+      "sha256": "f1ec48e39f277469fb6bbaaceb235c0701b2d7a26e97d45824fa40e94c4e4c12"
+    },
+    "independent_test.png": {
+      "dimensions": [
+        2250,
+        1350
+      ],
+      "sha256": "7736fa57782e6b90f01a14fb66d9dc877c2a4e643b0ea9371ff739f1e4f99b46"
+    },
+    "known_full_timeseries_v2.png": {
+      "dimensions": [
+        2424,
+        1463
+      ],
+      "sha256": "bc481c0401d055a13dcfccdaba0c9c004631c8835a45529abb4d37f0d2c2133d"
+    },
+    "test_full_timeseries_v2.png": {
+      "dimensions": [
+        2424,
+        1463
+      ],
+      "sha256": "2595ff7c78424ef6779f7e88022b289d3e2e83a34d5bf1a486f034c27c8f4809"
+    }
+  },
+  "layout_revision_model_rows": 0,
+  "formal_bytes_before_this_proof": 2216732351,
+  "formal_cap_bytes": 2889875456,
+  "engineering_bytes": 81881145,
+  "formal_bytes_including_this_proof": 2216733855
+}

@@ -1,0 +1,15 @@
+{
+  "commit": "1a7221a3bcbceb351b5555111c1a58a687bdf1f6",
+  "branch": "codex/speed-nstep-engineering-20261028",
+  "base_commit": "2273d0af71fe258db25f3b2bba0ea1913e4b35ab",
+  "tracked_files": 9,
+  "worktree_clean": true,
+  "model_rows": 120785,
+  "formal_RL_steps": 0,
+  "new_independent_test_released": false,
+  "old_source_inventory_unchanged": true,
+  "source_and_execution_hashes_unchanged": true,
+  "merged_master": false,
+  "pushed": false,
+  "shared_project_status_written": false
+}

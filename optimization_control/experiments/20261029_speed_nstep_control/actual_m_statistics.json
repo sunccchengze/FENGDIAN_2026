@@ -1,0 +1,89 @@
+[
+  {
+    "arm": "n1",
+    "run_id": 0,
+    "sampled_starts": 245824,
+    "actual_m_histogram": [
+      0,
+      245824
+    ],
+    "actual_m_mean": 1.0,
+    "full_horizon_fraction": 1.0
+  },
+  {
+    "arm": "n8",
+    "run_id": 0,
+    "sampled_starts": 245824,
+    "actual_m_histogram": [
+      0,
+      1869,
+      1941,
+      1951,
+      1896,
+      1862,
+      1965,
+      1982,
+      232358
+    ],
+    "actual_m_mean": 7.7820961338193175,
+    "full_horizon_fraction": 0.9452209711012757
+  },
+  {
+    "arm": "n1",
+    "run_id": 1,
+    "sampled_starts": 245824,
+    "actual_m_histogram": [
+      0,
+      245824
+    ],
+    "actual_m_mean": 1.0,
+    "full_horizon_fraction": 1.0
+  },
+  {
+    "arm": "n8",
+    "run_id": 1,
+    "sampled_starts": 245824,
+    "actual_m_histogram": [
+      0,
+      1938,
+      1964,
+      1956,
+      1914,
+      1990,
+      1961,
+      1907,
+      232194
+    ],
+    "actual_m_mean": 7.777950891694871,
+    "full_horizon_fraction": 0.944553827128352
+  },
+  {
+    "arm": "n1",
+    "run_id": 2,
+    "sampled_starts": 245824,
+    "actual_m_histogram": [
+      0,
+      245824
+    ],
+    "actual_m_mean": 1.0,
+    "full_horizon_fraction": 1.0
+  },
+  {
+    "arm": "n8",
+    "run_id": 2,
+    "sampled_starts": 245824,
+    "actual_m_histogram": [
+      0,
+      1890,
+      1942,
+      1984,
+      1865,
+      1945,
+      1947,
+      1884,
+      232367
+    ],
+    "actual_m_mean": 7.780839136943504,
+    "full_horizon_fraction": 0.9452575826607654
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "model_sha256": "7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451",
+  "unchanged_against_prior_frozen_model_contract": true,
+  "prior_lock": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\config.yaml",
+  "prior_lock_sha256": "396cb7f00d6d6d89fd8e2d0036e23f53b7ab5cd0cdc2632dce0ebfcd0d08314a",
+  "files": {
+    ".\\optimization_control\\experiments\\20261022_wind_pinn_integration\\model\\config_used.json": "658163d05742215bf304839218115d2c7f75d5e4cd79ba0a043b1da8d9876034",
+    ".\\optimization_control\\experiments\\20261022_wind_pinn_integration\\model\\training_report.json": "3996fbec8618e74e307d85a43224d667732d06ab2c39725a0dded98df74a25aa"
+  }
+}

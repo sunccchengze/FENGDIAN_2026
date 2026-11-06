@@ -1,0 +1,12 @@
+{
+  "first_report_completed": false,
+  "stage": "saved_data_audit",
+  "reason": "legacy validation bank float64 compared against actual float32 wind from env.reset",
+  "observed_max_abs_difference": 4.72199423e-07,
+  "extra_model_rows": 0,
+  "extra_updates": 0,
+  "original_frozen_report_sha": "76c3e2480ed9304ef791d5a53009cd4d0109fced65b103ba700bb6f9a650795a",
+  "verified_entry_sha": "0921dbdfa92ecc0de592a5a256818e2c9c4b0f66bd7184d2b36328935902275a",
+  "fixed_by": "same np.float32 conversion as env.reset; all numerical assertions retained",
+  "original_frozen_training_and_reporting_sources_retained": true
+}

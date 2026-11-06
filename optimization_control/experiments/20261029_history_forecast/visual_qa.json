@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "pngs_visually_inspected": [
+    "forecast_information.png",
+    "forecast_control_value.png",
+    "forecast_actual_controls.png"
+  ],
+  "figure_groups": 3,
+  "pdf_same_matplotlib_figures": true,
+  "titles_units_axes_legends_checked": true,
+  "negative_cases_preserved": true,
+  "sha256": {
+    "forecast_information.png": "3bc67adcc80ae2ce54e83bc36a20c4964d8de9d2fd8971f0ac3a9743bc5d3394",
+    "forecast_information.pdf": "61206b53b62833322ffb11053017c272bcc4825b8be357229049056e232b1fb8",
+    "forecast_control_value.png": "ad1625a91847af193b888ab8f905892560fb2d3b32b0154f396712a7427cb400",
+    "forecast_control_value.pdf": "6c747f6266712dccf98a1ccd6afe92a79fe018a84e2d3e91d85e9e15d2501ac0",
+    "forecast_actual_controls.png": "f2437d9e773ea01156bed150ceffae534f7b5e91df152caea2d221b5a1e144be",
+    "forecast_actual_controls.pdf": "cb5fca4e9d92c7cef024e45c98f02e359cbcbada7333ee8dff71b76b1008d1f3"
+  }
+}

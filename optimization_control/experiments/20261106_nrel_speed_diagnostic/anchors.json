@@ -1,0 +1,962 @@
+[
+  {
+    "id": 0,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 0,
+    "case_id": "val_stationary_2850000",
+    "family": "stationary",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2740411.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "1f2f390e082c148653fcdf01639ce2db6b34ede06ba9710829a96a9229e3ee5c",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 1,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 0,
+    "case_id": "val_stationary_2850000",
+    "family": "stationary",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2319781.75,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "949bb5d4fe8075c8246d9fa7a234b7016d9471fa189786c227f8c55bdef928a9",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 2,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 1,
+    "case_id": "val_stationary_3450000",
+    "family": "stationary",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3367477.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "ca6a8f51946f10a11931e56db6910644e8240c2d623e6f24a344fee516a364dd",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 3,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 1,
+    "case_id": "val_stationary_3450000",
+    "family": "stationary",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 4143715.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "57dd8d1f978c2f037181db0900d95808d97913fd26e91f468ac78d0b7af25bf8",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 4,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 2,
+    "case_id": "val_ramp_2850000",
+    "family": "ramp",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2699898.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "d16925f4036799c0f86ba2f609829fd370b04001f3749826be47a7b52bf65da8",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 5,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 2,
+    "case_id": "val_ramp_2850000",
+    "family": "ramp",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2449288.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "b429bdf86b72699e2fa0f5d49815abace3a5af1a0df61c6a61084c30511bce81",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 6,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 3,
+    "case_id": "val_ramp_3450000",
+    "family": "ramp",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3411875.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "0daac30fd7c02f231620ab91e0082db75d72d5d24410ad0536c37398236ac58c",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 7,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 3,
+    "case_id": "val_ramp_3450000",
+    "family": "ramp",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3397800.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "ebfad8f07631782af9cbb8012d6b939f9c7cb79a9fcb44e1af55d46bea27e8a3",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 8,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 4,
+    "case_id": "val_gust_2850000",
+    "family": "gust",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2802636.75,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "992c0bd99b9e8e3ed93736456700f9310a418cc2c36decfd8b437189ee8b75ac",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 9,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 4,
+    "case_id": "val_gust_2850000",
+    "family": "gust",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2772312.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "613c0c8887d09643b7ea939f612ba5b7539ce92ecb9a34529ea025c18dcb7c9d",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 10,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 5,
+    "case_id": "val_gust_3450000",
+    "family": "gust",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3422044.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "16ba5967bb753a5f9b9be6f714648a8856cec3cfeffae3b66cc36a98f0ec166f",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 11,
+    "rule": "legacy",
+    "controller": "Y2_selected",
+    "case_index": 5,
+    "case_id": "val_gust_3450000",
+    "family": "gust",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3371066.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\trace.npz",
+      "sha256": "e52bc4d56c2a46bae47a384d1a821e54d5122a1b1e7c948ac314ba2a088cf49d",
+      "bytes": 163658
+    },
+    "source_row_sha": "decba4afd818728079ce7ab7da42bb7e56b714dfdd9c7be85e4734518315d732",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 12,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 0,
+    "case_id": "val_stationary_2850000",
+    "family": "stationary",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 3135990.75,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "2ec8b5cb7b2563f0eb083df2a0089f6750f73b51284e6fb0320e8db94ba765fb",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 13,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 0,
+    "case_id": "val_stationary_2850000",
+    "family": "stationary",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2520117.25,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "0d5618779af3d18655e5d0a0114997f12ba8a1ba1b8248d934289787ae428ca9",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 14,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 1,
+    "case_id": "val_stationary_3450000",
+    "family": "stationary",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3726642.25,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "13bfe979991d4de841dca5e7079bfb4f246217cfe274e5f17607577531383b42",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 15,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 1,
+    "case_id": "val_stationary_3450000",
+    "family": "stationary",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 4288159.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "80a9359309eb7304f7cf9a56ac431c315d41e68f9c7307218dac97519e5b7236",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 16,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 2,
+    "case_id": "val_ramp_2850000",
+    "family": "ramp",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 3211408.75,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "50caea60b5ef512dd5908ff1eef740da3859171b0ba095a7b372d0a8b723294f",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 17,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 2,
+    "case_id": "val_ramp_2850000",
+    "family": "ramp",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2609528.75,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "b340e97130b6154a1c90ca072a5ca95ac2c206955fb6459a1aa960e33c38eac2",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 18,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 3,
+    "case_id": "val_ramp_3450000",
+    "family": "ramp",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3480829.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "2ae2ce7bae4ae6af5edd85cf4e77d161ba61b9fe406663e90ac08ff652b7732d",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 19,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 3,
+    "case_id": "val_ramp_3450000",
+    "family": "ramp",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3302084.25,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "893a82ee831d39fc656da3d6380a59ca747559f3c245514228144b01ba351bde",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 20,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 4,
+    "case_id": "val_gust_2850000",
+    "family": "gust",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 3145752.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "9f754a80e043020d9b1ce6ef07d354b0e6b1c4f3c382917b4fe37f270eeddb11",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 21,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 4,
+    "case_id": "val_gust_2850000",
+    "family": "gust",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2872444.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "94dc8385e9492eac7c73dca6e1c4b958c481f5dda8cbd04c8660ba45cc03a188",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 22,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 5,
+    "case_id": "val_gust_3450000",
+    "family": "gust",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3752381.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "858f70f45fc4ed8b49eefdca815054b2b44586dfaad6e8031d4bb417175bd94d",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 23,
+    "rule": "legacy",
+    "controller": "pi",
+    "case_index": 5,
+    "case_id": "val_gust_3450000",
+    "family": "gust",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3466971.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\diagnostics\\pi\\validation\\trace.npz",
+      "sha256": "a25a9da9eaa67f84980357a6453c564c82c0ac74036394f540af353018763712",
+      "bytes": 109708
+    },
+    "source_row_sha": "68a7377b67349ec63d1fcb62bd491236f607bb4018a2b1100883fb8a553d2471",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 24,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 0,
+    "case_id": "val_stationary_2850000",
+    "family": "stationary",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2694758.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "3b35e76f539ade7d1a855333dc2e86cc63d049a485d1fb5f2b196a24b0a4fb5b",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 25,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 0,
+    "case_id": "val_stationary_2850000",
+    "family": "stationary",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2363527.25,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "2367d6a7248b4abb8874222490d20bb5de42708c1b5fa1797f9c74779f183ca8",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 26,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 1,
+    "case_id": "val_stationary_3450000",
+    "family": "stationary",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3354646.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "263e0414b42f016cb0b0a7ccf731209447d74a529fd1da9dafb1a68260a52f0f",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 27,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 1,
+    "case_id": "val_stationary_3450000",
+    "family": "stationary",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 4379546.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "d5badce0c97db64029c5e72df20ec868e530d0c62a20e69d1a00c6e9dc2f1035",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 28,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 2,
+    "case_id": "val_ramp_2850000",
+    "family": "ramp",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2786684.25,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "6cd12da5419844e60a942178a99f6f309fcee6399c763316554c160dc489d1ea",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 29,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 2,
+    "case_id": "val_ramp_2850000",
+    "family": "ramp",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2504296.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "f6c4c13c766d79be9d6fd5120e8c4db2a2a4e5a04ab6e29064631075e0bec3ff",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 30,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 3,
+    "case_id": "val_ramp_3450000",
+    "family": "ramp",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3318622.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "dca95a26ccb973bf3d208a6e7d9ed7dc3e64e5b64c8cdae54b269268a791bfe2",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 31,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 3,
+    "case_id": "val_ramp_3450000",
+    "family": "ramp",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3332199.75,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "64176bb4eb0225ed72f826dc7f78eec026abf4067940affc2f54786e40a3e92d",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 32,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 4,
+    "case_id": "val_gust_2850000",
+    "family": "gust",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2830734.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "c32f2052e013b03a5a180d023a10692dcc44112af32b18ae418c6a8aeb16144c",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 33,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 4,
+    "case_id": "val_gust_2850000",
+    "family": "gust",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2810435.25,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "faebbfc63fc8a07e66c2bca2b42fd7d7373dbe60fcbc536d8704d7d41382a48e",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 34,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 5,
+    "case_id": "val_gust_3450000",
+    "family": "gust",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3466854.75,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "7074f26275c27a18d1bda010a8634c0902f882df33976778a18d4391f6cf8b5e",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 35,
+    "rule": "nrel",
+    "controller": "Y2_selected",
+    "case_index": 5,
+    "case_id": "val_gust_3450000",
+    "family": "gust",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3426379.25,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\Y2_selected\\trace.npz",
+      "sha256": "daa7fff0082cd427ca2e38d7dcb549994f3fe3dadb329bcd368b37e45f5020fe",
+      "bytes": 241050
+    },
+    "source_row_sha": "5ebf687015e2014d850cf28c781cd642c1b7d726d20d8e0c6731b9413a5fdf93",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 36,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 0,
+    "case_id": "val_stationary_2850000",
+    "family": "stationary",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 3125807.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "2f834c81f18dbf8acb7d2a8dea5ca7815fc3413fc051c1c61b4d9329fb41e82b",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 37,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 0,
+    "case_id": "val_stationary_2850000",
+    "family": "stationary",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2449846.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "4e60dfdf68396480934d13b1cd825f353223c3f9ebc0d6f9a00d46967a38dc4f",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 38,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 1,
+    "case_id": "val_stationary_3450000",
+    "family": "stationary",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3734594.25,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "f5dc2a8fdc69500ca1fa0049abe3104d635404b1356d198da7b433fd8c30f97b",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 39,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 1,
+    "case_id": "val_stationary_3450000",
+    "family": "stationary",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 4455740.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "d7f5a5d4eebe3a2f86f994b2a3f804df5b6d6408bb13b2d4e59a72615dbed36c",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 40,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 2,
+    "case_id": "val_ramp_2850000",
+    "family": "ramp",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 3246849.75,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "11f8b9f9ca7e44bf96dc053fcad9d6b2c124d6b7639963afa88b647d5039d6ef",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 41,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 2,
+    "case_id": "val_ramp_2850000",
+    "family": "ramp",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2563385.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "695e46d5f0995c0bf4a1dcb3a13fe834a3ab9c0d3d7ffe5d8a8105c5f34fed7f",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 42,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 3,
+    "case_id": "val_ramp_3450000",
+    "family": "ramp",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3475041.0,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "7376e291a407a44e58e23973401e99ce947eb0fe993b8cbbbd6e4bac73b9ade6",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 43,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 3,
+    "case_id": "val_ramp_3450000",
+    "family": "ramp",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3316066.75,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "dc05df568f3a70ee1f05cd0954326f417f73837f5426136def82d7f36029b7d9",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 44,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 4,
+    "case_id": "val_gust_2850000",
+    "family": "gust",
+    "t": 32,
+    "target_w": 2850000.0,
+    "saved_farm_w": 3165347.75,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "3b3f77ca79484a88d659f3dd9458c9fffc4185184423e04f9ee3c3cf0f381c8d",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 45,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 4,
+    "case_id": "val_gust_2850000",
+    "family": "gust",
+    "t": 96,
+    "target_w": 2850000.0,
+    "saved_farm_w": 2869534.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "01c915332699aab7363108096d8de317d7c01ff568289ef982a537e8b30d68fe",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 46,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 5,
+    "case_id": "val_gust_3450000",
+    "family": "gust",
+    "t": 32,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3782715.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "56797fdc025f9e9dface3d7bcc2782ce67d1f7a4a6750db3fe76a04aafbfe4b0",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  },
+  {
+    "id": 47,
+    "rule": "nrel",
+    "controller": "pi",
+    "case_index": 5,
+    "case_id": "val_gust_3450000",
+    "family": "gust",
+    "t": 96,
+    "target_w": 3450000.0,
+    "saved_farm_w": 3454647.5,
+    "source_trace": {
+      "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_transfer\\new\\pi\\trace.npz",
+      "sha256": "7edf99c6bb8352ef2dec636ef6776e4036bd6538b9862e211d58622dfd1e5458",
+      "bytes": 173558
+    },
+    "source_row_sha": "d1bb76e5f2911eca2c73b15eef13e02369b5fd6f257e087bce02def0dbe222d3",
+    "request_count": 30,
+    "unique_rows": 30,
+    "duplicates": 0
+  }
+]

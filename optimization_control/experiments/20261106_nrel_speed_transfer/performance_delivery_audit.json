@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "new_performance_cases": 30,
+  "old_saved_cases": 30,
+  "new_performance_rows": 3870,
+  "engineering_PINN_rows": 120,
+  "engineering_mock_rows": 40,
+  "cumulative_new_rows": 4030,
+  "cumulative_PINN_rows": 3990,
+  "row_hard_cap": 10000,
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "new_wind_generation": 0,
+  "report_queries": 0,
+  "old_historical_rows": 3870,
+  "old_reference_new_cost": 0,
+  "engineering_receipt_files_verified": 24,
+  "old_1720_archive_not_rechecked": true,
+  "source_guards_verified": 110,
+  "review_sha256": "eb9737e37fc1d49c181b7e2fd2a59f968f909709151a1fcb1a171f2f7f298c6f",
+  "performance_code_commit": "faeb02940c4819796a2914d7991249d3826525aa",
+  "base_TSR_min": 7.549999999999998,
+  "base_TSR_max": 7.550000000000001,
+  "actual_TSR_min": 6.349875243528936,
+  "actual_TSR_max": 9.025256802643609,
+  "boundary_samples": {
+    "base_floor_samples": 0,
+    "base_ceiling_samples": 0,
+    "command_floor_samples": 0,
+    "command_ceiling_samples": 0,
+    "actual_floor_samples": 0,
+    "actual_ceiling_samples": 0
+  },
+  "family_changes": [
+    {
+      "family": "stationary",
+      "Y_new_minus_old_kW": 61.463159470257665,
+      "P_new_minus_old_kW": 56.387567493685765,
+      "PI_new_minus_old_kW": 64.6038738556872
+    },
+    {
+      "family": "ramp",
+      "Y_new_minus_old_kW": 57.116682377068344,
+      "P_new_minus_old_kW": 38.519637883065684,
+      "PI_new_minus_old_kW": 48.37495105950643
+    },
+    {
+      "family": "gust",
+      "Y_new_minus_old_kW": 21.786505097786687,
+      "P_new_minus_old_kW": 18.97628003514302,
+      "PI_new_minus_old_kW": 27.01499645268757
+    },
+    {
+      "family": "overall",
+      "Y_new_minus_old_kW": 46.78878231503751,
+      "P_new_minus_old_kW": 37.96116180396484,
+      "PI_new_minus_old_kW": 46.66460712262705
+    }
+  ]
+}

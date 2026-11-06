@@ -1,0 +1,18 @@
+因果误差记忆单因素正式配对对照完成。
+开发验收通过 = False
+正式训练 98304 步，47622 次联合更新。模型输入 {'train': 99072, 'validation': 74304, 'known': 55728, 'test': 88236, 'pressure': 19608}。
+一次常规新测试和已知低风压力分列。所有场景与三流保留。
+检查点角色、配对差、偏差和波动分解、完整时序、跨流离散详见清单及 CSV。
+默认策略沿用既有配置。
+selected stationary memory=347.81 kW PI=398.55 kW wins=24/36
+selected ramp memory=363.24 kW PI=454.46 kW wins=32/36
+selected gust memory=351.95 kW PI=442.21 kW wins=26/36
+selected routine memory=354.33 kW PI=431.74 kW wins=82/108
+selected low_wind_stress memory=1427.48 kW PI=1321.09 kW wins=0/24
+selected all_including_pressure memory=549.45 kW PI=593.44 kW wins=82/132
+final stationary memory=366.47 kW PI=398.55 kW wins=23/36
+final ramp memory=384.67 kW PI=454.46 kW wins=26/36
+final gust memory=372.83 kW PI=442.21 kW wins=24/36
+final routine memory=374.66 kW PI=431.74 kW wins=73/108
+final low_wind_stress memory=1449.97 kW PI=1321.09 kW wins=0/24
+final all_including_pressure memory=570.17 kW PI=593.44 kW wins=73/132

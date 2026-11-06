@@ -1,0 +1,73 @@
+{
+  "base": "eec78180f2679d65ab4a71ee074d9f57a98375e5",
+  "staged_files": [
+    {
+      "path": "optimization_control/experiments/20261105_yaw_independent/config.yaml",
+      "bytes": 1305,
+      "sha256": "1f06659b9a4fdaebab85cf9a659a1b306ffb7b01022089d31f27e9ddd599a7fa"
+    },
+    {
+      "path": "optimization_control/experiments/20261105_yaw_independent/metrics.csv",
+      "bytes": 150011,
+      "sha256": "c08045f5d2dc1d262bc9de0547a8652ddc68ced6ef05913eb1f74fe8f2007f5e"
+    },
+    {
+      "path": "optimization_control/experiments/20261105_yaw_independent/summary.txt",
+      "bytes": 391,
+      "sha256": "ad18440f826cc172c06dcf2a45ebf7f6fa119f1fe14426a23f193fc60a9367a5"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/YAW_INDEPENDENT_TEST_PROTOCOL.md",
+      "bytes": 4175,
+      "sha256": "4d4398d4356fc5f48887800e43ce4adfd437d63ecef31258d25c0bc13da1e15b"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/YAW_INDEPENDENT_TEST_RESULTS.md",
+      "bytes": 10416,
+      "sha256": "f767395deffaaeda1be4da49bf0f0f0a99fa5cd3af0a18cf60186ca845704f92"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/yaw_independent_report.py",
+      "bytes": 11808,
+      "sha256": "ff779166a2bd07134ead4af7141db93df39e4b32b63569a12773008d8d968118"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/yaw_independent_test.py",
+      "bytes": 17668,
+      "sha256": "0f53ad775601c16cbb3bd58265587aaa06c52f92b95bde4593414e04a72a4e06"
+    }
+  ],
+  "reviewed_staged_diff": true,
+  "cached_whitespace_check": true,
+  "numerical_rows_reviewed": 414,
+  "manifest_files": 1720,
+  "source_guards": 90,
+  "actual_namespace": [
+    74000000,
+    74000001,
+    74000002,
+    74000003,
+    74000004,
+    74000005,
+    74000006,
+    74000007,
+    74000008,
+    74000009,
+    74000010,
+    74000011,
+    74000012,
+    74000013,
+    74000014,
+    74000015,
+    74000016,
+    74000017
+  ],
+  "namespace_correction_before_release": true,
+  "model_rows": 53406,
+  "row_cap": 55000,
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "primary_three_families_passed": true,
+  "case_retries": 0,
+  "all_failures_and_negative_results_preserved": true
+}

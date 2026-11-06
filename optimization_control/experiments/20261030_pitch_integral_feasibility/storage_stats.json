@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "inventory_before_this_file": true,
+  "experiment_bytes_before_this_file": 8636034,
+  "experiment_bytes_including_this_file": 8638370,
+  "conservative_source_document_bytes_outside_experiment": 85130,
+  "conservative_combined_bytes": 8723500,
+  "output_limit_bytes": 536870912,
+  "file_count_before_this_file": 237,
+  "groups_before_this_file": {
+    "metrics_config_sources_and_proof": {
+      "files": 27,
+      "bytes": 912786
+    },
+    "figures": {
+      "files": 3,
+      "bytes": 1367505
+    },
+    "compressed_full_traces": {
+      "files": 165,
+      "bytes": 6028598
+    },
+    "registered_wind_files": {
+      "files": 42,
+      "bytes": 327145
+    }
+  },
+  "weight_files": 0,
+  "actual_real_inputs": 21285,
+  "actual_mock_inputs": 0,
+  "formal_training_steps": 0,
+  "optimizer_updates": 0,
+  "new_test_steps": 0,
+  "source_and_document_sha256": {
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_integral_controller.py": "47c8a6b9a52b3fe7f64ae141e318b08898084ab7499b59543d615dabcddb0290",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_integral_diagnostic.py": "901d3b671db3ed35d95e7ae1a1238ebd32410afceea855691715cf5d3c807e84",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_integral_report.py": "0cf5093033088e8f4189334fd50fac2e271195e8618d5e7c6ca591b84d06a21d",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_INTEGRAL_DIAGNOSTIC_PROTOCOL.md": "061717fc75c8cd313f6bcd5fafe9521aec8eb7c3189d8323984023c5d2d70d6b",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_INTEGRAL_DIAGNOSTIC_RESULTS.md": "2504a2d4059bf2b45ff60b60e3b206f0d5daa35e37712748570ef675e6fe0611",
+    ".\\optimization_control\\maddpg_wind_farm\\PITCH_ERROR_MEMORY_CANDIDATE.md": "245b8fd082a971ca9f5acab82a947b836c7b6bdad05560c269817d76d0b64825",
+    ".\\optimization_control\\maddpg_wind_farm\\MADDPG_STAGE_HANDOFF_20261029.md": "cf568637fc2490a15ca7fb873543765f1c571f8273ad8e8fd51ee0a9a6398262",
+    ".\\optimization_control\\tests\\test_pitch_integral_diagnostic.py": "f6eb86aee7789fb93b8a7b8528e88360459cfbcb56c16720f8bd462564919d5f"
+  }
+}

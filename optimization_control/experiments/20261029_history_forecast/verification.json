@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "forecast_metric_recompute_max_error": 0.0,
+  "loop_metric_recompute_max_error": 0.0,
+  "forecast_screen_passed": true,
+  "repeated_parent_improvement": true,
+  "formal_RL_steps": 0,
+  "PINN_mock_rows": 121366,
+  "new_independent_test_released": false,
+  "metrics": 360,
+  "trace_rows": 46080,
+  "all_plan_histories_forecasts_exact": true,
+  "source_and_execution_hashes_unchanged": true
+}

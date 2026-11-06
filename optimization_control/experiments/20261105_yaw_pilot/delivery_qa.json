@@ -1,0 +1,28 @@
+{
+  "AST_files": 3,
+  "document_links": 17,
+  "all_links_valid": true,
+  "numerical_records_recomputed": 191,
+  "figures": {
+    "validation_curves": [
+      1800,
+      720
+    ],
+    "yaw_actual_trajectories": [
+      1800,
+      1440
+    ]
+  },
+  "figures_visually_checked": true,
+  "source_guards": 64,
+  "original_failed_dispatch_rows": 0,
+  "report_failure_rows": 0,
+  "total_model_rows": 40422,
+  "total_physical_training_steps": 12288,
+  "total_formal_joint_updates": 582,
+  "formal_lock_sha": "1ae777e80e197803cda5ab7a1fa9931f16970f7013669628048fd2d38905408f",
+  "pilot_bytes_before_receipt": 18294667,
+  "engineering_bytes": 5725533,
+  "combined_disk_cap_bytes": 134217728,
+  "new_independent_test": false
+}

@@ -1,0 +1,345 @@
+{
+  "seed": 42,
+  "results": [
+    {
+      "n": 1,
+      "run": 0,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run0\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run0\\step_00000000\\attempt_000\\state.pth",
+      "selected_step": 0,
+      "final": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run0\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 418547.40669004177,
+          "best_rmse_w": 418547.40669004177,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 433076.02246256545,
+          "best_rmse_w": 418547.40669004177,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 437574.5252097622,
+          "best_rmse_w": 418547.40669004177,
+          "selected_step": 0
+        },
+        {
+          "step": 12288,
+          "rmse_w": 464373.1231585115,
+          "best_rmse_w": 418547.40669004177,
+          "selected_step": 0
+        },
+        {
+          "step": 16384,
+          "rmse_w": 437729.3222079005,
+          "best_rmse_w": 418547.40669004177,
+          "selected_step": 0
+        }
+      ],
+      "final_over_selected": 1.045829732095471,
+      "updates": 23811,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        507968
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run0\\step_00000000\\attempt_000\\state.pth": "63302cf2ef711e27f60f9e85587ffd2e233dc04ca0fbd82a6010b2eaf78a0932",
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run0\\step_00016384\\attempt_000\\state.pth": "4cb0ea4b5e58bc713f7968de436d92f093d6fe579600fa8a7436dbb05464fa80"
+      }
+    },
+    {
+      "n": 1,
+      "run": 1,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run1\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run1\\step_00000000\\attempt_000\\state.pth",
+      "selected_step": 0,
+      "final": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run1\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 418862.90006872977,
+          "best_rmse_w": 418862.90006872977,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 501626.63882648305,
+          "best_rmse_w": 418862.90006872977,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 432702.8603471347,
+          "best_rmse_w": 418862.90006872977,
+          "selected_step": 0
+        },
+        {
+          "step": 12288,
+          "rmse_w": 431550.19086558715,
+          "best_rmse_w": 418862.90006872977,
+          "selected_step": 0
+        },
+        {
+          "step": 16384,
+          "rmse_w": 432873.7768491043,
+          "best_rmse_w": 418862.90006872977,
+          "selected_step": 0
+        }
+      ],
+      "final_over_selected": 1.0334497917530427,
+      "updates": 21763,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        507968
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run1\\step_00016384\\attempt_000\\state.pth": "41cf8dc2c99b1e00154e3b8a9e3a066e1fa4958478d06524a6ef94c33c9d2ead",
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run1\\step_00000000\\attempt_000\\state.pth": "1b3935503b841c79a18c8e19b3a08592ba0a0bf96005a0ece07878008978e06f"
+      }
+    },
+    {
+      "n": 1,
+      "run": 2,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run2\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run2\\step_00012288\\attempt_000\\state.pth",
+      "selected_step": 12288,
+      "final": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run2\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 405501.6444768579,
+          "best_rmse_w": 405501.6444768579,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 404033.45157719194,
+          "best_rmse_w": 404033.45157719194,
+          "selected_step": 4096
+        },
+        {
+          "step": 8192,
+          "rmse_w": 414343.18606663763,
+          "best_rmse_w": 404033.45157719194,
+          "selected_step": 4096
+        },
+        {
+          "step": 12288,
+          "rmse_w": 402112.42860196496,
+          "best_rmse_w": 402112.42860196496,
+          "selected_step": 12288
+        },
+        {
+          "step": 16384,
+          "rmse_w": 414613.1555150328,
+          "best_rmse_w": 402112.42860196496,
+          "selected_step": 12288
+        }
+      ],
+      "final_over_selected": 1.0310876412264338,
+      "updates": 19715,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        507968
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run2\\step_00000000\\attempt_000\\state.pth": "32677c7d00464a0d1656990213fdc05e68f371f39f71c3f89a8fcbb715c3a5a7",
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run2\\step_00016384\\attempt_000\\state.pth": "a54fbc0552ae5cf4efc1d42c9e1cd3bedc96d3e66e269e095d151cad3ead386e",
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n1_run2\\step_00012288\\attempt_000\\state.pth": "cdf432614a23f38c8ac466309d30b599930f8894fcd44eb4879eb8848a17d5c4"
+      }
+    },
+    {
+      "n": 8,
+      "run": 0,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth",
+      "selected_step": 16384,
+      "final": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 418547.40669004177,
+          "best_rmse_w": 418547.40669004177,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 453805.13247747725,
+          "best_rmse_w": 418547.40669004177,
+          "selected_step": 0
+        },
+        {
+          "step": 8192,
+          "rmse_w": 431995.1283869199,
+          "best_rmse_w": 418547.40669004177,
+          "selected_step": 0
+        },
+        {
+          "step": 12288,
+          "rmse_w": 420801.30648013134,
+          "best_rmse_w": 418547.40669004177,
+          "selected_step": 0
+        },
+        {
+          "step": 16384,
+          "rmse_w": 411973.58632113255,
+          "best_rmse_w": 411973.58632113255,
+          "selected_step": 16384
+        }
+      ],
+      "final_over_selected": 1.0,
+      "updates": 23811,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        3931,
+        3964,
+        3986,
+        3980,
+        3972,
+        4064,
+        4117,
+        479954
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00000000\\attempt_000\\state.pth": "9334ebbd99eec50d9a6494eace963ac856c330c7f5fb7a469f9fdf78c1db8fc1",
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run0\\step_00016384\\attempt_000\\state.pth": "1f91cdba7676f1c32434e7e1e130cac6df155e4c41798ef6b88c6c58b032678a"
+      }
+    },
+    {
+      "n": 8,
+      "run": 1,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth",
+      "selected_step": 12288,
+      "final": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 418862.90006872977,
+          "best_rmse_w": 418862.90006872977,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 416683.747777537,
+          "best_rmse_w": 416683.747777537,
+          "selected_step": 4096
+        },
+        {
+          "step": 8192,
+          "rmse_w": 451723.27305089834,
+          "best_rmse_w": 416683.747777537,
+          "selected_step": 4096
+        },
+        {
+          "step": 12288,
+          "rmse_w": 411547.91283185023,
+          "best_rmse_w": 411547.91283185023,
+          "selected_step": 12288
+        },
+        {
+          "step": 16384,
+          "rmse_w": 413956.8695717882,
+          "best_rmse_w": 411547.91283185023,
+          "selected_step": 12288
+        }
+      ],
+      "final_over_selected": 1.0058534053140058,
+      "updates": 21763,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        3990,
+        4021,
+        3985,
+        4087,
+        4047,
+        4030,
+        3935,
+        479873
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00016384\\attempt_000\\state.pth": "2ffb8f11a15022f6683f72e1a392501d49eaa2a7c8d964518017e1cfaab6f28f",
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00012288\\attempt_000\\state.pth": "cc0b37ebd7da662ce435658891d660c2699bca438280d0ae51da992557a3a957",
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run1\\step_00000000\\attempt_000\\state.pth": "1a6df63acfe16df6c9f2e0226de68941dbea653ff61224aebda11a0c4a9a8d2a"
+      }
+    },
+    {
+      "n": 8,
+      "run": 2,
+      "steps": 16384,
+      "initial": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00000000\\attempt_000\\state.pth",
+      "selected": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth",
+      "selected_step": 4096,
+      "final": ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00016384\\attempt_000\\state.pth",
+      "history": [
+        {
+          "step": 0,
+          "rmse_w": 405501.6444768579,
+          "best_rmse_w": 405501.6444768579,
+          "selected_step": 0
+        },
+        {
+          "step": 4096,
+          "rmse_w": 403349.58210116025,
+          "best_rmse_w": 403349.58210116025,
+          "selected_step": 4096
+        },
+        {
+          "step": 8192,
+          "rmse_w": 408981.89534228994,
+          "best_rmse_w": 403349.58210116025,
+          "selected_step": 4096
+        },
+        {
+          "step": 12288,
+          "rmse_w": 445822.4421566298,
+          "best_rmse_w": 403349.58210116025,
+          "selected_step": 4096
+        },
+        {
+          "step": 16384,
+          "rmse_w": 413372.06642396294,
+          "best_rmse_w": 403349.58210116025,
+          "selected_step": 4096
+        }
+      ],
+      "final_over_selected": 1.0248481336477226,
+      "updates": 19715,
+      "added_updates": 7937,
+      "m_histogram": [
+        0,
+        3915,
+        4029,
+        4081,
+        3965,
+        4000,
+        3966,
+        3918,
+        480094
+      ],
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00016384\\attempt_000\\state.pth": "4bafdba8048bcf9035fd0772caf1c839eb026b30ea2079a18740f1949c276d5b",
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00000000\\attempt_000\\state.pth": "593d139ed8c50348f4eca5d1667cc023b4bdd0367059897dd19d6aa5f75d1d9d",
+        ".\\optimization_control\\experiments\\20261028_pitch_nstep\\n8_run2\\step_00004096\\attempt_000\\state.pth": "0e19dd05fcdd58701aa1fd17e87739f05e60fe71a2a9bc60c162918607733b5b"
+      }
+    }
+  ],
+  "config_sha256": "396cb7f00d6d6d89fd8e2d0036e23f53b7ab5cd0cdc2632dce0ebfcd0d08314a",
+  "validation_manifest_sha256": "73414505d297a677fae0173d34c628598e78bb6421dc404e3bd63029f8656064",
+  "new_training_steps": 98304,
+  "test_used_for_selection": false
+}

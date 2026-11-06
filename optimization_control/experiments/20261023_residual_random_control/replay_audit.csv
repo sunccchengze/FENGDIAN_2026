@@ -1,0 +1,13 @@
+stage,run_id,retained_transitions,new_transitions,total_action_next_command_exact,physical_rates_reward_verified,dynamic_residual_envelope_verified
+pitch_speed,0,32768,8192,True,True,True
+pitch_speed_control,0,32768,8192,True,True,True
+pitch_speed,1,32768,8192,True,True,True
+pitch_speed_control,1,32768,8192,True,True,True
+pitch_speed,2,32768,8192,True,True,True
+pitch_speed_control,2,32768,8192,True,True,True
+all,0,32768,8192,True,True,True
+all_control,0,32768,8192,True,True,True
+all,1,32768,8192,True,True,True
+all_control,1,32768,8192,True,True,True
+all,2,32768,8192,True,True,True
+all_control,2,32768,8192,True,True,True

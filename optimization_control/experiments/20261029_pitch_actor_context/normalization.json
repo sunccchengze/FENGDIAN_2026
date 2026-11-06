@@ -1,0 +1,125 @@
+{
+  "kind": "fixed_physical_no_running_scaler",
+  "observation_shape": [
+    3,
+    15
+  ],
+  "observation_fields": [
+    "power_fraction",
+    "effective_wind_scaled",
+    "yaw_scaled",
+    "pitch_scaled",
+    "speed_scaled",
+    "previous_yaw_action",
+    "previous_pitch_action",
+    "previous_speed_action",
+    "farm_target_fraction",
+    "farm_error_fraction",
+    "ambient_wind_scaled",
+    "wind_direction_sin",
+    "wind_direction_cos",
+    "turbulence_intensity",
+    "remaining_fraction"
+  ],
+  "action_shape": [
+    3,
+    3
+  ],
+  "action_mask": [
+    0,
+    1,
+    0
+  ],
+  "action_low": [
+    -0.25,
+    0.0,
+    0.6
+  ],
+  "action_high": [
+    0.25,
+    0.22,
+    1.267
+  ],
+  "farm_rating_w": 15000000.0,
+  "wind_scale_m_s": 25.0,
+  "dt_s": 1,
+  "horizon": 128,
+  "source_contract": ".\\optimization_control\\experiments\\20261028_pitch_nstep_mechanism\\candidate_normalization.json",
+  "source_contract_sha256": "bf539f0fe628f6b3b31c80ad935c64b227ba3a33a317e0847f6644a99250a6d9",
+  "original_contract": {
+    "features": [
+      "power_fraction",
+      "effective_wind_scaled",
+      "yaw_scaled",
+      "pitch_scaled",
+      "speed_scaled",
+      "previous_yaw_action",
+      "previous_pitch_action",
+      "previous_speed_action",
+      "farm_target_fraction",
+      "farm_error_fraction",
+      "ambient_wind_scaled",
+      "wind_direction_sin",
+      "wind_direction_cos",
+      "turbulence_intensity",
+      "remaining_fraction"
+    ],
+    "rated_power_w": [
+      5000000.0,
+      5000000.0,
+      5000000.0
+    ],
+    "wind_scale_m_s": 25.0,
+    "action_low": [
+      -0.25,
+      0.0,
+      0.6
+    ],
+    "action_high": [
+      0.25,
+      0.22,
+      1.267
+    ],
+    "method": "fixed_physical_scales_no_running_statistics",
+    "yaw_frame": "nacelle_heading",
+    "control_mask": [
+      false,
+      true,
+      false
+    ],
+    "reference_schedule": {
+      "yaw_offset_rad": 0.0,
+      "speed_per_wind_rad_m": 0.11114035087719298
+    }
+  },
+  "model_version": "wind12-synthetic-7506554ac981",
+  "model_sha256": "7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451",
+  "power_semantics": "synthetic_test_power_w_not_physical_validation",
+  "rated_power_w": [
+    5000000,
+    5000000,
+    5000000
+  ],
+  "reference_schedule": {
+    "yaw_offset_rad": 0.0,
+    "speed_per_wind_rad_m": 0.11114035087719298
+  },
+  "reference_mode": "legacy_physical",
+  "action_semantics": "normalized total reference, not actual actuator state",
+  "action_order": [
+    "yaw_offset_rad",
+    "pitch_rad",
+    "speed_rad_s"
+  ],
+  "time_constants_s": [
+    5.0,
+    2.0,
+    5.0
+  ],
+  "rate_limits": [
+    0.005,
+    0.00872664626,
+    0.1
+  ],
+  "yaw_frame": "nacelle_heading"
+}

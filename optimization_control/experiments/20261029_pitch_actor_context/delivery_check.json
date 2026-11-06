@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "independent_acceptance_recomputed": true,
+  "validation_performance_passed": false,
+  "component_gates": {
+    "known": {
+      "retention_pass": false,
+      "pi_count_pass": false,
+      "motion_pass": true,
+      "stability_pass": false,
+      "physical_pass": true
+    },
+    "validation": {
+      "retention_pass": false,
+      "pi_count_pass": false,
+      "motion_pass": false,
+      "stability_pass": false,
+      "physical_pass": true
+    },
+    "test": {
+      "retention_pass": false,
+      "pi_count_pass": false,
+      "motion_pass": true,
+      "stability_pass": false,
+      "physical_pass": true
+    }
+  },
+  "frozen_inputs": 85,
+  "all_frozen_sources_unchanged": true,
+  "formal_learning_steps": 98304,
+  "formal_updates": 47622,
+  "engineering_discarded_updates": 8,
+  "evaluation_transition_steps": 217088,
+  "actual_plant_rows": 317856,
+  "actual_training_plant_rows": 99072,
+  "independent_raw_metric_episodes": 1696,
+  "max_rmse_residual_w": 0.0,
+  "recomputed_learning_steps": 0,
+  "planned_new_process_restores": 4,
+  "full_formal_states": 104,
+  "engineering_full_states": 1,
+  "weight_bytes": 2053774941,
+  "largest_weight_bytes": 19690453,
+  "experiment_bytes_before_verification": 2188144473,
+  "storage_cap_bytes": 3221225472,
+  "images": {
+    "validation_and_decomposition.png": {
+      "dimensions": [
+        2250,
+        1350
+      ],
+      "sha256": "ae9f2409eb7e4aa3adc717bf8eb97f6d01f90078ff0bb8923b747794b12e0708",
+      "visually_checked": true
+    },
+    "test_comparison.png": {
+      "dimensions": [
+        2250,
+        1350
+      ],
+      "sha256": "050c42a95d61f84c0fa513f506a341cd8702976fc8d49fe4b2c765af4d0fdee7",
+      "visually_checked": true
+    },
+    "full_timeseries.png": {
+      "dimensions": [
+        2250,
+        1500
+      ],
+      "sha256": "86ac2144f727557bbeda8190617190de8919baea262e8c27daaffc714ed9a0e5",
+      "visually_checked": true
+    }
+  },
+  "source_sha256": {
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_algorithm.py": "5b71de540a9026c6319e73f09644e77617da573e33f1fec3837990d3207bf758",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_engineering.py": "35059b6b05f97e31ffbfa1debb18bd8d633858761680b03d928db84546ae69ad",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_figures.py": "f2fbe7ff1fa23c95d1f39708f9144908cea144c28ac0d4a2164ee0ae7dd62a11",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_finish.py": "64f6e835582b5484e7d807113dcbf067e6e6b389af64c61444236efc2b9ffe8a",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_reproduce.py": "74e1b5c417c679ed38fbe0754b30eaaa29ca5ec2ce43229254b29429ea714f23",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_review.py": "49ec5b60fb5eb82c536508a7349ddd2b6b252cb876e4759d0fa0a809bd03bbf2",
+    ".\\optimization_control\\maddpg_wind_farm\\pitch_actor_context_trial.py": "fd16e783688bc77b10e276886efa920e7581bd1776462262ab16f9db62afe3da",
+    ".\\optimization_control\\tests\\test_pitch_actor_context.py": "c599b1de16cc718b9c8621e9eb8cfa6e3d3c2d6bc68348ad41f396ca1fd18e1c",
+    ".\\optimization_control\\tests\\test_pitch_actor_context_bounds.py": "befe40a388804481ae20179ffb6009f01304bc56edbcffcf221e286a41b50dab",
+    ".\\optimization_control\\tests\\test_pitch_actor_context_reporting.py": "13476c054019dbdb4538118f0cb1ed6478b59ca735d1316afda0b3c5c7865a9f",
+    ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\verify_delivery.py": "2b16bc6c392857b59630a77b91b70d9f46eaa7700893c75e04ae2df6121baf9c"
+  },
+  "test_not_used_for_selection": true,
+  "default_policy_changed": false
+}

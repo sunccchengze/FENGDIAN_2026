@@ -1,0 +1,53 @@
+{
+  "AST_files": 2,
+  "document_links": 20,
+  "links_valid": true,
+  "tables_and_fences_checked": true,
+  "figures": {
+    "family_means": [
+      1980,
+      900
+    ],
+    "actual_controls_case17": [
+      1980,
+      1440
+    ],
+    "selected_final": [
+      1620,
+      720
+    ]
+  },
+  "figures_visually_checked": true,
+  "primary_acceptance": true,
+  "source_guards": 90,
+  "waveforms": 18,
+  "physical_rollouts": 414,
+  "input_rows": 53406,
+  "row_cap": 55000,
+  "new_training_steps": 0,
+  "new_optimizer_updates": 0,
+  "no_failed_or_retried_cases": true,
+  "namespace_corrected_before_release": [
+    74000000,
+    74000001,
+    74000002,
+    74000003,
+    74000004,
+    74000005,
+    74000006,
+    74000007,
+    74000008,
+    74000009,
+    74000010,
+    74000011,
+    74000012,
+    74000013,
+    74000014,
+    74000015,
+    74000016,
+    74000017
+  ],
+  "statistical_model_frozen_before_release": true,
+  "bytes_before_QA": 14397557,
+  "disk_cap_bytes": 134217728
+}

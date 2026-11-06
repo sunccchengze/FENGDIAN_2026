@@ -1,0 +1,1 @@
+{"tests": 24, "failures": 0, "errors": 0, "successful": true, "modules": ["test_forecast_decision_contract", "test_history_forecast", "test_pitch_nstep", "test_speed_nstep", "test_pitch_error_memory"]}

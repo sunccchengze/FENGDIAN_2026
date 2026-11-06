@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "new_source_guard_count": 110,
+  "old_frozen_guard_count": 90,
+  "old_independent_output_files_unchanged": 1720,
+  "actual_PINN_rows": 120,
+  "actual_mock_rows": 40,
+  "total_rows": 160,
+  "all_scopes_complete": true,
+  "failures": 0,
+  "retries": 0,
+  "full_performance_rollouts": 0,
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "new_wind_generation": 0,
+  "old_rollouts_verified_reused": 30,
+  "old_rollouts_historical_rows": 3870,
+  "report_model_queries": 0,
+  "storage_bytes_before_receipt": 1038125,
+  "storage_cap_bytes": 134217728
+}

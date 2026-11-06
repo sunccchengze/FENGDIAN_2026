@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "performance_screening_passed": true,
+  "primary_ratio": 0.9386664153375222,
+  "improved_parent_flows": 3,
+  "all_18_family_gates": true,
+  "physical": true,
+  "formal_training_steps": 0,
+  "plant_rows": 0
+}

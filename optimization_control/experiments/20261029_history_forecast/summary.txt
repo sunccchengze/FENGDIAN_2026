@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "forecast_metric_recompute_max_error": 0.0,
+  "loop_metric_recompute_max_error": 0.0,
+  "forecast_screen_passed": true,
+  "repeated_parent_improvement": true,
+  "formal_RL_steps": 0,
+  "PINN_mock_rows": 121366,
+  "new_independent_test_released": false,
+  "metrics": 360,
+  "trace_rows": 46080,
+  "all_plan_histories_forecasts_exact": true,
+  "source_and_execution_hashes_unchanged": true,
+  "status": "verified",
+  "seed": 42,
+  "streams": [
+    {
+      "split": "train",
+      "run_id": 0,
+      "history17_mean_w": 421084.1209457609,
+      "grid17_mean_w": 422121.68344850023,
+      "parent_mean_w": 438340.2479690658,
+      "history_over_grid17": 0.9975420298377875,
+      "history_over_parent": 0.9606330308401827,
+      "improved_grid17_cases": 4,
+      "improved_parent_cases": 6
+    },
+    {
+      "split": "train",
+      "run_id": 1,
+      "history17_mean_w": 317586.61783575406,
+      "grid17_mean_w": 326824.26094993687,
+      "parent_mean_w": 349634.3988413874,
+      "history_over_grid17": 0.9717351365307674,
+      "history_over_parent": 0.9083391648195007,
+      "improved_grid17_cases": 4,
+      "improved_parent_cases": 6
+    },
+    {
+      "split": "train",
+      "run_id": 2,
+      "history17_mean_w": 354284.76235313545,
+      "grid17_mean_w": 365254.04722144787,
+      "parent_mean_w": 381949.64741449826,
+      "history_over_grid17": 0.9699680675635007,
+      "history_over_parent": 0.9275692876047077,
+      "improved_grid17_cases": 6,
+      "improved_parent_cases": 6
+    },
+    {
+      "split": "validation",
+      "run_id": 0,
+      "history17_mean_w": 351667.14899503323,
+      "grid17_mean_w": 353685.4328921182,
+      "parent_mean_w": 364337.8407931975,
+      "history_over_grid17": 0.9942935622748688,
+      "history_over_parent": 0.9652226851578771,
+      "improved_grid17_cases": 3,
+      "improved_parent_cases": 4
+    },
+    {
+      "split": "validation",
+      "run_id": 1,
+      "history17_mean_w": 352361.7365871188,
+      "grid17_mean_w": 367832.77153438184,
+      "parent_mean_w": 360060.2835971525,
+      "history_over_grid17": 0.9579400310561591,
+      "history_over_parent": 0.9786187275832758,
+      "improved_grid17_cases": 5,
+      "improved_parent_cases": 4
+    },
+    {
+      "split": "validation",
+      "run_id": 2,
+      "history17_mean_w": 318318.58663823834,
+      "grid17_mean_w": 331243.4196903067,
+      "parent_mean_w": 336134.99461641826,
+      "history_over_grid17": 0.9609808609506799,
+      "history_over_parent": 0.9469962715470575,
+      "improved_grid17_cases": 5,
+      "improved_parent_cases": 5
+    }
+  ],
+  "forecast_screen": {
+    "passed": true,
+    "primary_split": "decision_validation",
+    "primary_interval": "1_8",
+    "improved_families": 3,
+    "maximum_family_ratio": 0.7700755383974879,
+    "overall_ratio": 0.7461047928313902,
+    "exploratory_only": true,
+    "final_control_gate_unchanged": true
+  },
+  "report": "../../maddpg_wind_farm/HISTORY_FORECAST_RESULTS.md"
+}

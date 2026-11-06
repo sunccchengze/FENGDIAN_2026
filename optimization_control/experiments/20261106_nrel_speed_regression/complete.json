@@ -1,0 +1,502 @@
+{
+  "results": [
+    {
+      "controller": "Y0_selected",
+      "cases": [
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\00\\complete.json",
+          "sha256": "30c216e02fe9a4410569d389e7891d3680eaaf08b076d103f2d99c9c6b22f8e5",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\01\\complete.json",
+          "sha256": "37fa86b22503e0fd5bc3039b51348b1568b2d757a68b3ec268448f512315ffb1",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\02\\complete.json",
+          "sha256": "51381a631cecd768465897e1222bca97c31144d94a15022128b143060900e5af",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\03\\complete.json",
+          "sha256": "3dd3e2b7ca229150ffaa2c62cbccad0d3cc301a91d81c82cd556c1ce05e7d947",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\04\\complete.json",
+          "sha256": "b63317f797022f0f3d1b957e49105407371329466733581f457690ce0cf78d31",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\05\\complete.json",
+          "sha256": "da8d3d626b196ae5748d9a82e5d1d5ab4f6ab0e248f002c34ef47a5aad426549",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\06\\complete.json",
+          "sha256": "62fa7e1e969d8c8d396006b5d55b66f4ccb7b92cb943e6021452da98ccb899bd",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\07\\complete.json",
+          "sha256": "e7d04c7ead9c922a93092fa27073e1f0764998b5e2f09e0eaaba9a985749d23f",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\08\\complete.json",
+          "sha256": "f756865c1199d54bc90b530e1be7e7f36a1ba6531a3a47220b87a6d50a9894ce",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\09\\complete.json",
+          "sha256": "329484cb829caf3e7fa6bffad8ef9a4e5af4505cbd6063b490a303bd231be79e",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\10\\complete.json",
+          "sha256": "f3b6aae97540fd1fc05607badb28b7809bc23bf82bb437d70c8f13e6f1db3299",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\11\\complete.json",
+          "sha256": "b39a3454d277baaaed516c802cacc8b2dfa67304121ee57de93bc55d88be9893",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\12\\complete.json",
+          "sha256": "70ebc88b28a9cbd5f0e5a95f133e350e538a9c07505c7f338fbfc47aaa29a45c",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\13\\complete.json",
+          "sha256": "c1ef903e4444306e051cabdb1a8f2c5c1e9a976959cf8fe0ba02b910a89ab43a",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\14\\complete.json",
+          "sha256": "ce24285acf66ea86b154ed97ece57e0e6df1c941caddaeae24065682a1e2f2c0",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\15\\complete.json",
+          "sha256": "e3a4859ba35206e03fe086bfc407c69d5d6f806475ce58299df26ea615c31a0c",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\16\\complete.json",
+          "sha256": "7dbbefbdde1572e9d46e55e2e9325d4f53eccbf6a031f2fd280a126c7fdee05e",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y0_selected\\17\\complete.json",
+          "sha256": "d43e8b8c0010f45ea8f42073577998d15c85f2def1a49eb2d22f721a89fd862b",
+          "bytes": 2571
+        }
+      ],
+      "rollouts": 18,
+      "input_rows": 2322
+    },
+    {
+      "controller": "Y1_selected",
+      "cases": [
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\00\\complete.json",
+          "sha256": "cf9bfa9b1478fd11790ac690a7c42da02a79c7094632b1e5024dc4b411985b97",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\01\\complete.json",
+          "sha256": "1ed4e95bc2829a015607b2a216f708840f974c70ecb2fd3e12a1a4c5f04048bd",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\02\\complete.json",
+          "sha256": "d52e8bc6a133847a1ab13ec792a9cfc993ecf54c0cd3e395b6bde437157fc067",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\03\\complete.json",
+          "sha256": "97f965ee8675391ea315e9415085cb546c5fb064bbc723a5645ff1e0e0da4b96",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\04\\complete.json",
+          "sha256": "7396f0973e691721e7cb9872ab5123019f679a91ec5197d39935df96fa235fc3",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\05\\complete.json",
+          "sha256": "5ed165c8b5d1a8c78fe281025fabc925fc20c132ed3c979b973fc1985758ddb0",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\06\\complete.json",
+          "sha256": "c8eb550a9f0b6e542945c03823b8d7c306b494baa738a48d3effde77632ac67b",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\07\\complete.json",
+          "sha256": "0aeaccd0aa50f57c1a3e16be096d198c97d427b5f484ac0136829e8aea299367",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\08\\complete.json",
+          "sha256": "7ab021860da2ec6aafdd408da11ccf7371943127ce5855b6d7c8144b2a9b5708",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\09\\complete.json",
+          "sha256": "9935d8c9900572037cf99e5a195a5a322ef27614de44276665994e5c6c3552c8",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\10\\complete.json",
+          "sha256": "d3e8113178f61dd4b4676cb87b6dac86047137e5253fee41f9f77c1c5ad58763",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\11\\complete.json",
+          "sha256": "90a8b81a267916cb11e2822d077d287242c45c4d4d4f8a0581ae784e7fb6dc26",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\12\\complete.json",
+          "sha256": "051a36d21ed2b921c83ded9895bde7fa59c7762b321d737c13974d293259e97f",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\13\\complete.json",
+          "sha256": "8034057a86e904fd445e4141651d29ca83551545ae358575c764ed57e72ea7bf",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\14\\complete.json",
+          "sha256": "dd01d8db10655ae0de0fde5c951db2cd21609a90cf887e94d9d14f8ec74e7d36",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\15\\complete.json",
+          "sha256": "867f9e6b7f1562ec22eb55ebf07793dca8d971cde58c9881394bcfe8cc6c7f47",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\16\\complete.json",
+          "sha256": "ec85108c07a5be6d190c222055132bafee02bc50d3173c40fb41ec7393b7e4f0",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y1_selected\\17\\complete.json",
+          "sha256": "9d5b407c762d2bdbf89f92724e8415f928bcf736572760dd55b5f8fc44027422",
+          "bytes": 2571
+        }
+      ],
+      "rollouts": 18,
+      "input_rows": 2322
+    },
+    {
+      "controller": "Y2_selected",
+      "cases": [
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\00\\complete.json",
+          "sha256": "c988cd3ca5e538a1f5cd14c71f006c694cd9b26952aa1f7428267392ed0adc5a",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\01\\complete.json",
+          "sha256": "0ffbbec3b184f1f54639ba669d036f5ae8f70c1c5d67df181919744dff0cd227",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\02\\complete.json",
+          "sha256": "b8914d40cfb6668c1fe4f57143d170692894b4072f713b4c05ebcee73625a9d3",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\03\\complete.json",
+          "sha256": "08201c1eabc864c8392be329cea46e5eff070e23c0a60458e93e9c99fe281892",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\04\\complete.json",
+          "sha256": "5e3f81f4aafc89163f455e48e9b0cb1590105e369fe4ad5a09f79bb93e266c52",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\05\\complete.json",
+          "sha256": "3d35d9e153d1ebbae53ea29b08507b034a3bac8bb445fdbc29bc6a979bd6cd3a",
+          "bytes": 2583
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\06\\complete.json",
+          "sha256": "c6a7822fe2a8a7daad055b3d9380bafd3c6c2f727c387ea6e4d1560c807c51f6",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\07\\complete.json",
+          "sha256": "de5b7573c5d3e43e5bb0127afc3ce143a4dd9d30818d7888340dbd36c1fb8489",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\08\\complete.json",
+          "sha256": "7e393da4163cfffd2e7c29537e88f2189539f5c669e6b89c55cab1a9ba717443",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\09\\complete.json",
+          "sha256": "f1c4ad782ec509977e27058ff593aa3d412a180234b5257ac10574082c973284",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\10\\complete.json",
+          "sha256": "e3e4b40a43da59542418275dc233d28cc5f11ca8dacc0691fd917e6ead5b2086",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\11\\complete.json",
+          "sha256": "6d3fff0ba0fff8e2e4d244324bbcbc2d871825488836cd3b6625fe353556f895",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\12\\complete.json",
+          "sha256": "c17bf4f44cba60a1a474cd736034a0d42d19aa6d6efc5acc2212108e98023c51",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\13\\complete.json",
+          "sha256": "cc1858844c5b20310c0890f914452eef241ef8695dff88b2f144a11aac93dc87",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\14\\complete.json",
+          "sha256": "008aadbdf703758026aaa053fb09bf91b873f2c3031fae3a14840ac494834d67",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\15\\complete.json",
+          "sha256": "f5cacb231c1e89727ae51cba401a8b19c0556ed5150b82b8e792090ea9e789ff",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\16\\complete.json",
+          "sha256": "37d1816aef0bfc1dd413f91542d9f2f94b0df578512cd213803983753f62012c",
+          "bytes": 2571
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\Y2_selected\\17\\complete.json",
+          "sha256": "23d3bc2ed4d97373e7ad04eddfd433df01398126b7f1ef0183f0df06b10a68ad",
+          "bytes": 2571
+        }
+      ],
+      "rollouts": 18,
+      "input_rows": 2322
+    },
+    {
+      "controller": "p",
+      "cases": [
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\00\\complete.json",
+          "sha256": "a4621c81a6f315b8c7ee1eacde8f22b1464697ff310e8ade69ffbec63b04f946",
+          "bytes": 2544
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\01\\complete.json",
+          "sha256": "5f474ee5adb83510bd86cf142bb2737b20dee85f64f745bdc142d31d4d47bdeb",
+          "bytes": 2544
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\02\\complete.json",
+          "sha256": "967be0d132639e1ed9803b8d47861b845a0366aa582366a05c623b217bc2fe65",
+          "bytes": 2544
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\03\\complete.json",
+          "sha256": "3dea6b8211289e8172ba626f554b7ed7633c4a61fa32b52f30b2fcac4a580070",
+          "bytes": 2544
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\04\\complete.json",
+          "sha256": "0a1a0156cddb40c27074ef183bcef22fc6338dcf102e4a867daa790f6494cc17",
+          "bytes": 2544
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\05\\complete.json",
+          "sha256": "10da3ada2f292ac681a7c0a95cf57c3e6a63cd55eb6b845133acb9ae4f55e01e",
+          "bytes": 2544
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\06\\complete.json",
+          "sha256": "e9e1f567109cf97f6922acf247784feb1c01371276081e4893e262d6c8e6bda7",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\07\\complete.json",
+          "sha256": "6558c5a70595db48a60eb816e006342eb1b6a260f03e9fb2dbf876986ef215e6",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\08\\complete.json",
+          "sha256": "e915c19b17c95bd7eb487be84b507f2fe16e1aea7aa683cac878745b6eedadb9",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\09\\complete.json",
+          "sha256": "fe36b46961b0cdc70c516dfc4b2e8378c74f5b05103bf0d40956bfe01e147ea7",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\10\\complete.json",
+          "sha256": "8aae2f0dd3ca5ec1a1d7fa5e26c879a21444eec4513e9426bd8ff6e2ea36dc6f",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\11\\complete.json",
+          "sha256": "f5b430eb4b0ed8b049c77449c3bf8592a3a41dcac3ab1d76b4382f10f006b4a0",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\12\\complete.json",
+          "sha256": "d46d47efb8dd5756282fb24726f9438cb525b94f7264ed01c34caaa270ee04a2",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\13\\complete.json",
+          "sha256": "4fc4649a071bb42b648989da809591d4efee0e2f5f23cb8f7a74c769f619cb4e",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\14\\complete.json",
+          "sha256": "9b177baa95e57eb198a3d63acb4a8ccfcd864bbbeedd82ec7a9d0b68626ad01e",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\15\\complete.json",
+          "sha256": "eb06a09a60f36b7c9f2e70861bdb919ec38775ad80e9f1bc77e2b7abf299c7ed",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\16\\complete.json",
+          "sha256": "be2d8c845bb61473e5a78680c4a9c6a29778da7339710d3c5078c60c394e2703",
+          "bytes": 2532
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\p\\17\\complete.json",
+          "sha256": "5d2782ebd3ff140aed69f308f5d01e207737bc9bf8f2514f9b9f2a5acf94e25d",
+          "bytes": 2532
+        }
+      ],
+      "rollouts": 18,
+      "input_rows": 2322
+    },
+    {
+      "controller": "pi",
+      "cases": [
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\00\\complete.json",
+          "sha256": "d98e9a92ab188ad38ae92cad2afb9b321ba632b80f454a460954d5fe6e0b15cf",
+          "bytes": 2548
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\01\\complete.json",
+          "sha256": "2221ae2e5f51d81598ea8445a4cc321f5a247f7ab1a95e63bdd3f168a72d9288",
+          "bytes": 2548
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\02\\complete.json",
+          "sha256": "b43210c743b49020a3068d0d9c2ec2c0173faf2754e1641c5be19f9fb0115561",
+          "bytes": 2548
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\03\\complete.json",
+          "sha256": "c3ab65b9bc5b7d5bd45e70396e5197ebed4e348611be6aa6ab89df67ab215435",
+          "bytes": 2548
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\04\\complete.json",
+          "sha256": "a1d6266c7486caf81a7577af7adff6bc0fcd9ec53bda9ffb7904b949d6215e85",
+          "bytes": 2548
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\05\\complete.json",
+          "sha256": "e088924c20dee6f04216dee4680666f554bc7dbe064bafb19d8b8f24978a1470",
+          "bytes": 2548
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\06\\complete.json",
+          "sha256": "3ca1e5e7621d304994c5f7b3c2ec3f877bf934d9307d8768507a1c0a19eafb17",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\07\\complete.json",
+          "sha256": "25cc1f7d60f4cd87b29f8db1ef9960aa66b7c852fc74e15f06cb1f0b5867d0ca",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\08\\complete.json",
+          "sha256": "492ca401d8d8257a8df96ce775d0b90273f1ef0104b7362436152def3dfd6cbc",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\09\\complete.json",
+          "sha256": "5886fcff7f777f79de52c7150965376fa25c92c5864daf2e1ea10ad3ca7eb8e6",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\10\\complete.json",
+          "sha256": "46fdfae0b586dd54f2c0fd7645211798156b1ca16804a0612288573358dc5ec6",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\11\\complete.json",
+          "sha256": "f2a99e3960d773632ba012671d053dffc2a03cb2a5a86fea2673353a9171c431",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\12\\complete.json",
+          "sha256": "58f53ba6d11331618d05e93a71af45b387ac2e22ff97315e60d726ad49a672f8",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\13\\complete.json",
+          "sha256": "faa443b9b7109399438133d770ae2281568ab97df417e5a8294e4436eead9f2f",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\14\\complete.json",
+          "sha256": "feaf0336dd0f8bad59341bc1c874f473d990b63f0bdf3b1bee0974e7bd414542",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\15\\complete.json",
+          "sha256": "6ab6ca27e0cfe69bcb0c513a48bd65818b43eafeeaf7a312d54f11da8f201e65",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\16\\complete.json",
+          "sha256": "379f9000e11b35613bcdb026fae085c4cb1bdb9712d9fa07fdce537285b22c0d",
+          "bytes": 2536
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_regression\\new\\pi\\17\\complete.json",
+          "sha256": "e1bb4dc0d41142a9ae14a72d01f793f39db868a83df0b6bf1b2444343aa5d3aa",
+          "bytes": 2536
+        }
+      ],
+      "rollouts": 18,
+      "input_rows": 2322
+    }
+  ],
+  "new_model_rows": 11610,
+  "charged_model_rows": 11610,
+  "failed_scopes": 0,
+  "new_rollouts": 90,
+  "old_referenced_rollouts": 90,
+  "unique_winds": 18,
+  "old_reference_new_rows": 0,
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "new_winds": 0,
+  "new_pressure_cases": 0,
+  "schema": "nrel_speed_transfer_old_coordinates_v1",
+  "kind": "used_test_bank_configuration_regression_not_new_independent_test"
+}

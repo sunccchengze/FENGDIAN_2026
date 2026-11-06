@@ -1,0 +1,27 @@
+seed: 42
+stage: engineering_only
+formal_RL_steps: 0
+new_independent_winds: 0
+mock_rows_planned: 1548
+real_PINN_rows_planned: 180
+joint_updates_planned: 6
+model_row_hard_cap: 4096
+joint_update_hard_cap: 24
+disk_cap_bytes: 268435456
+first_attempt: attempt_000
+parent_refs:
+- path: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_0\segment_000\step_00016384.pth
+  sha256: 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+- path: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00012288.pth
+  sha256: 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+- path: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00008192.pth
+  sha256: e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+forecast_ref:
+  path: .\optimization_control\experiments\20261029_history_forecast\forecast_model.npz
+  sha256: a5571a19354015c8b5997823748fafd7f0a6a355a0422d35b539e4faa3992877
+resume_at_step: 512
+full_episode_steps: 128
+short_episode_steps: 19
+wind_formula: U=9+.0015*t+.06*sin(t/3+e/5), direction=.0003*t, TI=.08
+engineering_target_w: 3200000
+pitch_rad: 0.04

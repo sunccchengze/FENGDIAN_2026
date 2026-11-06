@@ -1,0 +1,20 @@
+version: causal_speed_search_v1
+seed: 42
+source_experiment: 20261029_speed_nstep_control
+prediction_steps: 12
+decision_interval: 8
+speed_radius_rad_s: 0.10
+candidate_order: [zero, common_minus, common_plus, t1_minus, t1_plus, t2_minus, t2_plus, t3_minus, t3_plus]
+tracking_cost: mean_squared_error_MW2
+strict_cost_tolerance: 1.0e-12
+wind_forecast: current_speed_direction_TI_persistence
+inference: sequential_single_sample
+train_targets_w: [2600000.0, 3800000.0]
+validation_targets_w: [2850000.0, 3450000.0]
+streams: [0, 1, 2]
+families: [stationary, ramp, gust]
+horizon: 128
+precheck_reserve: 1000
+conservative_total_reserve: 84106
+model_row_hard_cap: 100000
+formal_RL_steps: 0

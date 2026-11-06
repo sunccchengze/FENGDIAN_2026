@@ -1,0 +1,416 @@
+{
+  "cases": [
+    {
+      "id": "train_episode_0_initial_0.025",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb.csv",
+      "wave_sha256": "4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb"
+    },
+    {
+      "id": "train_episode_0_initial_0.055",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb.csv",
+      "wave_sha256": "4492d43310b4391eb9e781d9454ee51ff97cc926f894658a16c030adad4281eb"
+    },
+    {
+      "id": "train_episode_1_initial_0.025",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4.csv",
+      "wave_sha256": "2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4"
+    },
+    {
+      "id": "train_episode_1_initial_0.055",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4.csv",
+      "wave_sha256": "2b10452bbabf6f86578f087546bb9d2893a2402e8a930d2bc20954ae683123a4"
+    },
+    {
+      "id": "train_episode_2_initial_0.025",
+      "split": "train",
+      "family": "gust",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1.csv",
+      "wave_sha256": "2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1"
+    },
+    {
+      "id": "train_episode_2_initial_0.055",
+      "split": "train",
+      "family": "gust",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1.csv",
+      "wave_sha256": "2461ee847bb023ab54abba04394be8bbee69d0a62a8215c8e80e28f5609551d1"
+    },
+    {
+      "id": "train_episode_3_initial_0.025",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d.csv",
+      "wave_sha256": "7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d"
+    },
+    {
+      "id": "train_episode_3_initial_0.055",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d.csv",
+      "wave_sha256": "7126fa46fd4ba4001f0ceccac972af74a624af8b286d7b16491f461ca6eb6f4d"
+    },
+    {
+      "id": "train_episode_4_initial_0.025",
+      "split": "train",
+      "family": "gust",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de.csv",
+      "wave_sha256": "bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de"
+    },
+    {
+      "id": "train_episode_4_initial_0.055",
+      "split": "train",
+      "family": "gust",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de.csv",
+      "wave_sha256": "bb688c9a5cf270165da40a69d79aae7be9610085a06d64b85f9af3de65cec4de"
+    },
+    {
+      "id": "train_episode_5_initial_0.025",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b.csv",
+      "wave_sha256": "c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b"
+    },
+    {
+      "id": "train_episode_5_initial_0.055",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 3200000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b.csv",
+      "wave_sha256": "c6862b9975736d1eaf051f899b4719d708c4c7df2b09a6f84f0ec0e500558f9b"
+    },
+    {
+      "id": "train_episode_6_initial_0.025",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd.csv",
+      "wave_sha256": "9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd"
+    },
+    {
+      "id": "train_episode_6_initial_0.055",
+      "split": "train",
+      "family": "ramp",
+      "target_w": 2600000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd.csv",
+      "wave_sha256": "9bcc2dfae91bd40507589689738e6daf17092e457b268d0ba843040dcdd876fd"
+    },
+    {
+      "id": "train_episode_7_initial_0.025",
+      "split": "train",
+      "family": "gust",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f.csv",
+      "wave_sha256": "a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f"
+    },
+    {
+      "id": "train_episode_7_initial_0.055",
+      "split": "train",
+      "family": "gust",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f.csv",
+      "wave_sha256": "a5b38f6ee5db08470a8b8c37795802222bd426aa44180025cb568c6aa2724a2f"
+    },
+    {
+      "id": "train_episode_8_initial_0.025",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b.csv",
+      "wave_sha256": "e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b"
+    },
+    {
+      "id": "train_episode_8_initial_0.055",
+      "split": "train",
+      "family": "stationary",
+      "target_w": 3800000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b.csv",
+      "wave_sha256": "e62ab85c3aefcbfce366dcc119f2c24879b77fe082eddfaf1fd941df05f6ec8b"
+    },
+    {
+      "id": "validation_stationary_0_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1.csv",
+      "wave_sha256": "7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1"
+    },
+    {
+      "id": "validation_stationary_0_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1.csv",
+      "wave_sha256": "7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1"
+    },
+    {
+      "id": "validation_stationary_0_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1.csv",
+      "wave_sha256": "7f5217a66fe0c9ca1111fc8916ed9f7d0975fda923764d53ddfcd621b2aafcc1"
+    },
+    {
+      "id": "validation_stationary_1_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98.csv",
+      "wave_sha256": "f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98"
+    },
+    {
+      "id": "validation_stationary_1_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98.csv",
+      "wave_sha256": "f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98"
+    },
+    {
+      "id": "validation_stationary_1_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "stationary",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98.csv",
+      "wave_sha256": "f74a1e10a36723aece7640610c2057ddf0f953b3724124a23867355f90933f98"
+    },
+    {
+      "id": "validation_ramp_0_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1.csv",
+      "wave_sha256": "d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1"
+    },
+    {
+      "id": "validation_ramp_0_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1.csv",
+      "wave_sha256": "d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1"
+    },
+    {
+      "id": "validation_ramp_0_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1.csv",
+      "wave_sha256": "d16eeb3ebed01b821532c8feca157fb53e33c3f51daf16f9d5b8650b3c996ca1"
+    },
+    {
+      "id": "validation_ramp_1_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb.csv",
+      "wave_sha256": "ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb"
+    },
+    {
+      "id": "validation_ramp_1_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb.csv",
+      "wave_sha256": "ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb"
+    },
+    {
+      "id": "validation_ramp_1_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "ramp",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb.csv",
+      "wave_sha256": "ca10f57cd6facf0206c93a1dc9af0d24bf4b9003727a09d0286b6352303ededb"
+    },
+    {
+      "id": "validation_gust_0_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c.csv",
+      "wave_sha256": "14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c"
+    },
+    {
+      "id": "validation_gust_0_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c.csv",
+      "wave_sha256": "14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c"
+    },
+    {
+      "id": "validation_gust_0_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 2850000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c.csv",
+      "wave_sha256": "14a3b2405b05692b2876883268a7e4901bc04c32cd02f3e6ae090e56d769202c"
+    },
+    {
+      "id": "validation_gust_1_pitch0.04_initial_0.025",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.025,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8.csv",
+      "wave_sha256": "084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8"
+    },
+    {
+      "id": "validation_gust_1_pitch0.04_initial_0.04",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.04,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8.csv",
+      "wave_sha256": "084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8"
+    },
+    {
+      "id": "validation_gust_1_pitch0.04_initial_0.055",
+      "split": "validation",
+      "family": "gust",
+      "target_w": 3450000.0,
+      "initial_pitch_rad": 0.055,
+      "collection": "known",
+      "path": ".\\optimization_control\\experiments\\20261030_pitch_integral_feasibility\\winds\\084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8.csv",
+      "wave_sha256": "084b8114854642c83b6194596f7a038d0b1e0d2f07e9f519f0cafaa505af94c8"
+    }
+  ],
+  "references": [
+    {
+      "arm": "parent",
+      "run": 0,
+      "collection": "known",
+      "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run0_initial\\attempt_000\\metrics.csv",
+      "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run0_initial\\attempt_000\\traces.csv.gz",
+      "metrics_sha256": "a62c38ef1549a792d64f7b8002d76f22d83c6161dd60462e36e96af5dea7d821",
+      "traces_sha256": "21d1ef4910b6adaca9f6c5c5a7e528d75ba50fab3dab8090381411ce51c547ae",
+      "cases": 36
+    },
+    {
+      "arm": "parent",
+      "run": 1,
+      "collection": "known",
+      "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run1_initial\\attempt_000\\metrics.csv",
+      "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run1_initial\\attempt_000\\traces.csv.gz",
+      "metrics_sha256": "ad35842907d08cc0bfd82017ce42adf712da269beba6c6a7c4017b12854a96c7",
+      "traces_sha256": "1195e34fdb88f5911abc47e31aa512bc1dbf49443dc653e47b3213eb89658147",
+      "cases": 36
+    },
+    {
+      "arm": "parent",
+      "run": 2,
+      "collection": "known",
+      "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run2_initial\\attempt_000\\metrics.csv",
+      "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\replay_run2_initial\\attempt_000\\traces.csv.gz",
+      "metrics_sha256": "47e44b9cfde431d614eb66ce52c378fc1337944d276b7fae11dc2ce05d2689a4",
+      "traces_sha256": "8cb376d7a29c0ab3942ff11fa588b059b5716666807ad225f621c83ca3dd0b92",
+      "cases": 36
+    },
+    {
+      "arm": "p",
+      "run": -1,
+      "collection": "known",
+      "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\p\\attempt_000\\metrics.csv",
+      "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\p\\attempt_000\\traces.csv.gz",
+      "metrics_sha256": "0da908c67218845efb61db961ea6c34d067f879e3fe251b974552d26b2d5cd69",
+      "traces_sha256": "bf862ed4430c57ec62f8ef34ee4f24292adda102f7268d0197ff7891214a7e0c",
+      "cases": 36
+    },
+    {
+      "arm": "pi",
+      "run": -1,
+      "collection": "known",
+      "metrics": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\pi\\attempt_000\\metrics.csv",
+      "traces": ".\\optimization_control\\experiments\\20261029_pitch_actor_context\\evaluations\\known\\pi\\attempt_000\\traces.csv.gz",
+      "metrics_sha256": "33e0ba5c803cec01edfb72cb3510d3ad4ffc682b5e72211dddfc543da82a7553",
+      "traces_sha256": "696f14167277eb301d160b9a8fa2f38d8dabe94b06f73b5a1d618279254eb4cd",
+      "cases": 36
+    }
+  ]
+}

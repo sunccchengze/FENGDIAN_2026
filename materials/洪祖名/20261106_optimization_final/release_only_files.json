@@ -1,0 +1,25 @@
+{
+  "note": "Large per-step tables remain in the ZIP; these generated local navigation copies are not committed.",
+  "paths": [
+    "optimization_control/experiments/20261023_progressive_random_replay/trajectories.csv",
+    "optimization_control/experiments/20261027_midterm_best_cases/03_two_favorable_cases.png",
+    "optimization_control/experiments/20261027_midterm_best_cases_checked/03_two_favorable_cases.png",
+    "optimization_control/experiments/20261027_midterm_best_cases_labels/03_two_favorable_cases.png",
+    "optimization_control/experiments/20261027_pitch_cross_wind_diagnostic/trajectories.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/fork_metrics.csv",
+    "optimization_control/experiments/20261028_pitch_action_diagnostic/fork_paired.csv",
+    "optimization_control/experiments/20261028_pitch_nstep_mechanism/metrics.csv",
+    "optimization_control/experiments/20261028_speed_value_diagnostic/pairwise.csv",
+    "optimization_control/experiments/20261029_history_forecast/loop_trajectories.csv",
+    "optimization_control/experiments/20261029_history_forecast/predictions.csv",
+    "optimization_control/experiments/20261029_pitch_actor_context/full_timeseries.png",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/pairs.csv",
+    "optimization_control/experiments/20261029_pitch_reward_alignment/trajectory_metrics.csv",
+    "optimization_control/experiments/20261029_speed_causal_search/trajectories.csv",
+    "optimization_control/experiments/20261029_speed_midgrid/trajectories.csv",
+    "optimization_control/experiments/20261029_speed_nstep_control/validation_trajectories.csv",
+    "optimization_control/experiments/20261104_pitch_error_memory_formal/known_full_timeseries.png",
+    "optimization_control/experiments/20261105_pitch_memory_ablation/aggregate.csv",
+    "optimization_control/experiments/20261105_yaw_independent/prior_waveforms.json"
+  ]
+}

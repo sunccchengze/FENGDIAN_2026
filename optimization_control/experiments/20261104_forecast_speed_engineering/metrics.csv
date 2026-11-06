@@ -1,0 +1,4 @@
+check,cases,rows,updates,passed
+mock_boundary_resume,2,1548,6,True
+real_zero_takeover,6,180,0,True
+cumulative_charged,0,1728,6,True

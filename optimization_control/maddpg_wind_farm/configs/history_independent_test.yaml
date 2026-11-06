@@ -1,0 +1,22 @@
+version: history_independent_test_v1
+seed: 42
+source_commit: 6e91ccc2900b303c14f6028eaa756f30cd827f89
+forecast_model_sha256: a5571a19354015c8b5997823748fafd7f0a6a355a0422d35b539e4faa3992877
+test_episode_offset: 66000000
+families: [stationary, ramp, gust]
+targets_w: [2750000, 3350000, 3850000]
+initial_pitch_rad: [0.025, 0.055]
+horizon: 128
+search_rows_per_rollout: 3325
+direct_rows_per_rollout: 129
+formal_model_rows: 370710
+precheck_mock_reserve: 2000
+conservative_model_rows: 372710
+model_row_hard_cap: 375000
+expected_artifact_bytes: 67108864
+artifact_byte_hard_cap: 1073741824
+mean_gain_fraction: 0.01
+case_noninferior_ratio: 1.05
+bootstrap_samples: 2000
+formal_RL_steps: 0
+forecast_refits: 0

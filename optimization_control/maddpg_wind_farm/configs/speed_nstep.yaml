@@ -1,0 +1,23 @@
+version: frozen_speed_nstep_control_v1
+seed: 42
+origin: .
+steps_per_run: 8192
+eval_every: 2048
+warmup_steps: 512
+update_every: 2
+training_episode_offset: 41000000
+validation_episode_offset: 42000000
+test_episode_offset: 43000000
+stress_episode: 43009000
+design_entropy: [42, 20261028, 8405001]
+head_namespace: 8405
+arms: {n1: 1, n8: 8}
+review_path: ./optimization_control/maddpg_wind_farm/SPEED_NSTEP_INDEPENDENT_REVIEW.md
+pitch_mechanism_commit: dd6f40072a19005c630f106944e540a5cfe6c2a9
+gate:
+  action_atol: 2.0e-6
+  applied_atol: 1.0e-6
+  power_atol_w: 1.0
+  max_final_selected: 1.25
+  max_noninferior_ratio: 1.05
+  min_mean_gain_fraction: 0.01

@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "optimizer_updates_in_this_check": 0,
+  "environment_steps_in_this_check": 0,
+  "copied_class_exact": true,
+  "source_blobs": [
+    "optimization_control/maddpg_wind_farm/nstep_algorithm.py",
+    "optimization_control/tests/test_pitch_nstep.py",
+    "optimization_control/maddpg_wind_farm/PITCH_NSTEP_PROTOCOL.md"
+  ],
+  "old_and_execution_hashes_unchanged": true,
+  "historical_inventories_unchanged": true,
+  "coordination": {
+    ".\\PROJECT_STATUS.md": true,
+    ".\\README.md": true,
+    ".\\optimization_control\\TASKFLOW.md": true
+  },
+  "reward_checks": [
+    {
+      "source": "pitch_parent",
+      "run_id": 0,
+      "retained": 32768,
+      "insertion_count": 32768,
+      "reward_scale": 100.0,
+      "action_change_weight": 0.001,
+      "max_abs_reward_reconstruction_error": 4.76837158203125e-07,
+      "sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea"
+    },
+    {
+      "source": "pitch_parent",
+      "run_id": 1,
+      "retained": 28672,
+      "insertion_count": 28672,
+      "reward_scale": 100.0,
+      "action_change_weight": 0.001,
+      "max_abs_reward_reconstruction_error": 4.76837158203125e-07,
+      "sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821"
+    },
+    {
+      "source": "pitch_parent",
+      "run_id": 2,
+      "retained": 24576,
+      "insertion_count": 24576,
+      "reward_scale": 100.0,
+      "action_change_weight": 0.001,
+      "max_abs_reward_reconstruction_error": 4.76837158203125e-07,
+      "sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05"
+    },
+    {
+      "source": "old_speed_final",
+      "run_id": 0,
+      "retained": 32768,
+      "insertion_count": 40960,
+      "reward_scale": 100.0,
+      "action_change_weight": 0.001,
+      "max_abs_reward_reconstruction_error": 4.76837158203125e-07,
+      "sha256": "418a65fc6c7924bcf7b30c4eaf078a2770f65d0b2a2e464a294dd36e477b700f"
+    },
+    {
+      "source": "old_speed_final",
+      "run_id": 1,
+      "retained": 32768,
+      "insertion_count": 36864,
+      "reward_scale": 100.0,
+      "action_change_weight": 0.001,
+      "max_abs_reward_reconstruction_error": 4.76837158203125e-07,
+      "sha256": "64f14d7f611033b8ac52a912b67200d666983e2e268867d2a9dbe98f19bc7ced"
+    },
+    {
+      "source": "old_speed_final",
+      "run_id": 2,
+      "retained": 32768,
+      "insertion_count": 32768,
+      "reward_scale": 100.0,
+      "action_change_weight": 0.001,
+      "max_abs_reward_reconstruction_error": 4.76837158203125e-07,
+      "sha256": "eae67659f9cfcb51dea18b3a5b90d1de8f32334ce278dcd0a39984ecc41e08a2"
+    }
+  ],
+  "real_discarded_updates_verified": 39,
+  "n1_exact_paired_updates_verified": 9,
+  "migration_proofs_verified": 6,
+  "new_policy_files": 0,
+  "missing_v4_metadata_rejected": true,
+  "python_ast_files": 4
+}

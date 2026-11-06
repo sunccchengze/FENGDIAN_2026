@@ -1,0 +1,597 @@
+{
+  "roles": [
+    {
+      "controller": "Y0_selected",
+      "kind": "policy",
+      "arm": "Y",
+      "run": 0,
+      "new_step": 2048,
+      "source": {
+        "arm": "Y",
+        "run": 0,
+        "role": "selected",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\inference.pt",
+          "sha256": "32fd20fba2283da7db75580d4dea937e0c9e06161680f9e3fabc38adfd0b40e5",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "Y0_selected"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.06279570609331131,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": true,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004331245386576481,
+      "max_heading_rate": 0.001971219867239249
+    },
+    {
+      "controller": "Y0_final",
+      "kind": "policy",
+      "arm": "Y",
+      "run": 0,
+      "new_step": 2048,
+      "source": {
+        "arm": "Y",
+        "run": 0,
+        "role": "final",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\inference.pt",
+          "sha256": "32fd20fba2283da7db75580d4dea937e0c9e06161680f9e3fabc38adfd0b40e5",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "Y0_final"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.06279570609331131,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": true,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004331245386576481,
+      "max_heading_rate": 0.001971219867239249
+    },
+    {
+      "controller": "Y1_selected",
+      "kind": "policy",
+      "arm": "Y",
+      "run": 1,
+      "new_step": 0,
+      "source": {
+        "arm": "Y",
+        "run": 1,
+        "role": "selected",
+        "step": 0,
+        "snapshot": {
+          "initial": true,
+          "arm": "Y",
+          "run": 1,
+          "step": 0,
+          "contract_sha": "5d5b8d153079c39c5b791f360fab4be4218fa6521e61569344592939ba16b2e3"
+        },
+        "kind": "policy",
+        "id": "Y1_selected"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "Y1_final",
+      "kind": "policy",
+      "arm": "Y",
+      "run": 1,
+      "new_step": 2048,
+      "source": {
+        "arm": "Y",
+        "run": 1,
+        "role": "final",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\inference.pt",
+          "sha256": "379d36a507d649e745e0d55e46b2f34c6d8a01ec139890f2fa1575e3c83573c6",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "Y1_final"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.06780918687582016,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": true,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004297306753730325,
+      "max_heading_rate": 0.0019720294104184077
+    },
+    {
+      "controller": "Y2_selected",
+      "kind": "policy",
+      "arm": "Y",
+      "run": 2,
+      "new_step": 2048,
+      "source": {
+        "arm": "Y",
+        "run": 2,
+        "role": "selected",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\inference.pt",
+          "sha256": "e893cb8590df776a931e0dc3de23f7f3cf57d35b46d1ed1d61a72687b51d6817",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "Y2_selected"
+      },
+      "speed_z_abs_max": 0.23996835947036743,
+      "yaw_z_abs_max": 0.09511153399944305,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": true,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.0043088910210377675,
+      "max_heading_rate": 0.001972033554658026
+    },
+    {
+      "controller": "Y2_final",
+      "kind": "policy",
+      "arm": "Y",
+      "run": 2,
+      "new_step": 2048,
+      "source": {
+        "arm": "Y",
+        "run": 2,
+        "role": "final",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\inference.pt",
+          "sha256": "e893cb8590df776a931e0dc3de23f7f3cf57d35b46d1ed1d61a72687b51d6817",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "Y2_final"
+      },
+      "speed_z_abs_max": 0.23996835947036743,
+      "yaw_z_abs_max": 0.09511153399944305,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": true,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.0043088910210377675,
+      "max_heading_rate": 0.001972033554658026
+    },
+    {
+      "controller": "S0_selected",
+      "kind": "policy",
+      "arm": "S",
+      "run": 0,
+      "new_step": 2048,
+      "source": {
+        "arm": "S",
+        "run": 0,
+        "role": "selected",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\inference.pt",
+          "sha256": "49d4ee17e8b4ffc972abb37c5a640cc352da33e773d6fef93c3155144b778489",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "S0_selected"
+      },
+      "speed_z_abs_max": 0.07921347767114639,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "S0_final",
+      "kind": "policy",
+      "arm": "S",
+      "run": 0,
+      "new_step": 2048,
+      "source": {
+        "arm": "S",
+        "run": 0,
+        "role": "final",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S0\\s2048\\inference.pt",
+          "sha256": "49d4ee17e8b4ffc972abb37c5a640cc352da33e773d6fef93c3155144b778489",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "S0_final"
+      },
+      "speed_z_abs_max": 0.07921347767114639,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "S1_selected",
+      "kind": "policy",
+      "arm": "S",
+      "run": 1,
+      "new_step": 1024,
+      "source": {
+        "arm": "S",
+        "run": 1,
+        "role": "selected",
+        "step": 1024,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s1024\\inference.pt",
+          "sha256": "5edf1b22a8fe57ec7cb499546a0910fa7707447ee3406fdd1c340d4ad8c28052",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "S1_selected"
+      },
+      "speed_z_abs_max": 0.016488004475831985,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "S1_final",
+      "kind": "policy",
+      "arm": "S",
+      "run": 1,
+      "new_step": 2048,
+      "source": {
+        "arm": "S",
+        "run": 1,
+        "role": "final",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S1\\s2048\\inference.pt",
+          "sha256": "b884a1495dba34e8fe56c9f72f387ea0f1684009d2e20a861fb722cf0d17a85c",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "S1_final"
+      },
+      "speed_z_abs_max": 0.07482688874006271,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "S2_selected",
+      "kind": "policy",
+      "arm": "S",
+      "run": 2,
+      "new_step": 1024,
+      "source": {
+        "arm": "S",
+        "run": 2,
+        "role": "selected",
+        "step": 1024,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s1024\\inference.pt",
+          "sha256": "7e405deb52b7c3db812ccbd684057b7c014b72da8bca81253a845c3aaa339996",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "S2_selected"
+      },
+      "speed_z_abs_max": 0.3115270137786865,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "S2_final",
+      "kind": "policy",
+      "arm": "S",
+      "run": 2,
+      "new_step": 2048,
+      "source": {
+        "arm": "S",
+        "run": 2,
+        "role": "final",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\S2\\s2048\\inference.pt",
+          "sha256": "0af207307d930b6cafd6fc8b8c0e7b4cc01c383e2021065a9d9183774c612135",
+          "bytes": 24959
+        },
+        "kind": "policy",
+        "id": "S2_final"
+      },
+      "speed_z_abs_max": 0.33263951539993286,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "fixed0",
+      "kind": "fixed",
+      "arm": "",
+      "run": 0,
+      "new_step": "",
+      "source": {
+        "kind": "fixed",
+        "run": 0,
+        "id": "fixed0"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "fixed1",
+      "kind": "fixed",
+      "arm": "",
+      "run": 1,
+      "new_step": "",
+      "source": {
+        "kind": "fixed",
+        "run": 1,
+        "id": "fixed1"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "fixed2",
+      "kind": "fixed",
+      "arm": "",
+      "run": 2,
+      "new_step": "",
+      "source": {
+        "kind": "fixed",
+        "run": 2,
+        "id": "fixed2"
+      },
+      "speed_z_abs_max": 0.23999908566474915,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "p",
+      "kind": "baseline",
+      "arm": "",
+      "run": "",
+      "new_step": "",
+      "source": {
+        "kind": "baseline",
+        "mode": "p",
+        "id": "p"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "pi",
+      "kind": "baseline",
+      "arm": "",
+      "run": "",
+      "new_step": "",
+      "source": {
+        "kind": "baseline",
+        "mode": "pi",
+        "id": "pi"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "Y0_selected_zero",
+      "kind": "yaw_disabled",
+      "arm": "Y",
+      "run": 0,
+      "new_step": 2048,
+      "source": {
+        "arm": "Y",
+        "run": 0,
+        "role": "selected",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\inference.pt",
+          "sha256": "32fd20fba2283da7db75580d4dea937e0c9e06161680f9e3fabc38adfd0b40e5",
+          "bytes": 24959
+        },
+        "kind": "yaw_disabled",
+        "id": "Y0_selected_zero"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "Y0_final_zero",
+      "kind": "yaw_disabled",
+      "arm": "Y",
+      "run": 0,
+      "new_step": 2048,
+      "source": {
+        "arm": "Y",
+        "run": 0,
+        "role": "final",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y0\\s2048\\inference.pt",
+          "sha256": "32fd20fba2283da7db75580d4dea937e0c9e06161680f9e3fabc38adfd0b40e5",
+          "bytes": 24959
+        },
+        "kind": "yaw_disabled",
+        "id": "Y0_final_zero"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "Y1_selected_zero",
+      "kind": "yaw_disabled",
+      "arm": "Y",
+      "run": 1,
+      "new_step": 0,
+      "source": {
+        "arm": "Y",
+        "run": 1,
+        "role": "selected",
+        "step": 0,
+        "snapshot": {
+          "initial": true,
+          "arm": "Y",
+          "run": 1,
+          "step": 0,
+          "contract_sha": "5d5b8d153079c39c5b791f360fab4be4218fa6521e61569344592939ba16b2e3"
+        },
+        "kind": "yaw_disabled",
+        "id": "Y1_selected_zero"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "Y1_final_zero",
+      "kind": "yaw_disabled",
+      "arm": "Y",
+      "run": 1,
+      "new_step": 2048,
+      "source": {
+        "arm": "Y",
+        "run": 1,
+        "role": "final",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y1\\s2048\\inference.pt",
+          "sha256": "379d36a507d649e745e0d55e46b2f34c6d8a01ec139890f2fa1575e3c83573c6",
+          "bytes": 24959
+        },
+        "kind": "yaw_disabled",
+        "id": "Y1_final_zero"
+      },
+      "speed_z_abs_max": 0.0,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": false,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "Y2_selected_zero",
+      "kind": "yaw_disabled",
+      "arm": "Y",
+      "run": 2,
+      "new_step": 2048,
+      "source": {
+        "arm": "Y",
+        "run": 2,
+        "role": "selected",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\inference.pt",
+          "sha256": "e893cb8590df776a931e0dc3de23f7f3cf57d35b46d1ed1d61a72687b51d6817",
+          "bytes": 24959
+        },
+        "kind": "yaw_disabled",
+        "id": "Y2_selected_zero"
+      },
+      "speed_z_abs_max": 0.23999908566474915,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    },
+    {
+      "controller": "Y2_final_zero",
+      "kind": "yaw_disabled",
+      "arm": "Y",
+      "run": 2,
+      "new_step": 2048,
+      "source": {
+        "arm": "Y",
+        "run": 2,
+        "role": "final",
+        "step": 2048,
+        "snapshot": {
+          "path": ".\\optimization_control\\experiments\\20261105_yaw_pilot\\jobs\\Y2\\s2048\\inference.pt",
+          "sha256": "e893cb8590df776a931e0dc3de23f7f3cf57d35b46d1ed1d61a72687b51d6817",
+          "bytes": 24959
+        },
+        "kind": "yaw_disabled",
+        "id": "Y2_final_zero"
+      },
+      "speed_z_abs_max": 0.23999908566474915,
+      "yaw_z_abs_max": 0.0,
+      "speed_residual_nonzero": true,
+      "yaw_residual_nonzero": false,
+      "yaw_z_saturation": 0.0,
+      "actual_yaw_mean_abs": 0.004279586725606304,
+      "max_heading_rate": 0.0019714818084439756
+    }
+  ],
+  "source_selection_sha": "ec95ad95c06050832f1ae4be6550c8e3754449bb52df196f5d18f8d84fb8a72a",
+  "actual_role_rollouts": 414,
+  "aliases_reused": false,
+  "exact_duplicate_policy_roles": [
+    "Y0",
+    "Y2",
+    "S0"
+  ]
+}

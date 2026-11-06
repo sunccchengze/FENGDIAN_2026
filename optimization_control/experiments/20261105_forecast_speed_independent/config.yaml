@@ -1,0 +1,62 @@
+seed: 42
+source_head: 3941510c785771ab569771bce974399285fdb983
+primary: C_selected
+comparator: shared_PI
+primary_metric: equal_case_and_parent_stream_mean_RMSE_W_each_family_strictly_below_PI
+families:
+- stationary
+- ramp
+- gust
+targets_w:
+- 2750000.0
+- 3350000.0
+- 3850000.0
+initial_pitch_rad:
+- 0.025
+- 0.055
+episode_range:
+- 69000000
+- 69000001
+- 69000002
+- 69000003
+- 69000004
+- 69000005
+- 69000006
+- 69000007
+- 69000008
+- 69000009
+- 69000010
+- 69000011
+- 69000012
+- 69000013
+- 69000014
+- 69000015
+- 69000016
+- 69000017
+horizon: 128
+dt_s: 1
+split: test
+n_roles: 23
+physical_rollouts: 414
+planned_rows: 53406
+precheck_rows: 0
+row_hard_cap: 55000
+disk_hard_cap_MiB: 128
+shared_partition_MiB: 36
+role_partition_MiB: 4
+bootstrap_samples: 2000
+bootstrap_seed: 42
+plot_case: 17
+plot_parent_stream: 2
+formal_RL_steps: 0
+optimizer_updates: 0
+fixed_PI:
+  three_channel: true
+  yaw_offset_rad: 0.0
+  speed_per_wind_rad_m: 0.11114035087719298
+  pitch_bias_rad: 0.04
+  kp: 1.5
+  ki: 0.08
+  antiwindup_gain: 0.2
+  integral_limit_rad: 0.3
+test_release_once: true

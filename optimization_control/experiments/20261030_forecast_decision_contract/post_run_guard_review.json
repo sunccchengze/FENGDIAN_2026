@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "additional_mock_rows": 0,
+  "real_PINN_rows": 0,
+  "parameter_updates": 0,
+  "current_source_sha256": "a0f95b6a3a95e4e66a355797877f0e8f2b66e0cf8f70b413092b42bf888dbe37",
+  "passing_executed_source_sha256": "19bbdc248d4a06ebe35ecc4cee7a85986725e67236539a94423b41dc5114199c",
+  "failed_executed_source_sha256": "24bf525e0c2e83ef4a70225f2df7e88651a9baf07caf5e0f4930c9b9eb392ef0",
+  "ast_changed_objects_only": [
+    "prepare",
+    "audit"
+  ],
+  "all_contract_functions_AST_identical": true,
+  "completed_attempt_repeat_rejected": true,
+  "rejection": "a review attempt already passed; no implicit repeat",
+  "new_prepare_reached_first_write_without_writing": true,
+  "prior_budget_files_verified": true,
+  "cumulative_model_rows": 427,
+  "historical_failed_lock_preserved": true,
+  "all_protected_old_inputs_unchanged": true,
+  "current_tests_sha256": "99fba6c6362bafe494aaa49fba8aff2f1f399617e22da239caec5196bfd2f551",
+  "original_executed_tests_sha256": "a35948cb94957fcc6f88d3532a8a3d2bd01637097861f77740619fb0aad31609",
+  "all_six_test_methods_AST_identical": true,
+  "unbudgeted_discovery_pure_tests": 4,
+  "unbudgeted_discovery_passed": true,
+  "budgeted_loader_test_count": 6,
+  "no_skipped_or_bypassed_assertions": true,
+  "descendant_commit_prepare_guard_passed": "dc7a448c3637f9a1d8025657bbf164bd3d79d723"
+}

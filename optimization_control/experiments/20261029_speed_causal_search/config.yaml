@@ -1,0 +1,1988 @@
+seed: 42
+protocol:
+  version: causal_speed_search_v1
+  seed: 42
+  source_experiment: 20261029_speed_nstep_control
+  prediction_steps: 12
+  decision_interval: 8
+  speed_radius_rad_s: 0.1
+  candidate_order:
+  - zero
+  - common_minus
+  - common_plus
+  - t1_minus
+  - t1_plus
+  - t2_minus
+  - t2_plus
+  - t3_minus
+  - t3_plus
+  tracking_cost: mean_squared_error_MW2
+  strict_cost_tolerance: 1.0e-12
+  wind_forecast: current_speed_direction_TI_persistence
+  inference: sequential_single_sample
+  train_targets_w:
+  - 2600000.0
+  - 3800000.0
+  validation_targets_w:
+  - 2850000.0
+  - 3450000.0
+  streams:
+  - 0
+  - 1
+  - 2
+  families:
+  - stationary
+  - ramp
+  - gust
+  horizon: 128
+  precheck_reserve: 1000
+  conservative_total_reserve: 84106
+  model_row_hard_cap: 100000
+  formal_RL_steps: 0
+base_config:
+  schema_version: 1
+  seed: 42
+  purpose: frozen_parent_speed_software_only
+  plant:
+    kind: pinn
+    source: teammate_20261021_synthetic_test
+    power_semantics: synthetic_test_power_w_not_physical_validation
+    turbine_ids:
+    - T01
+    - T02
+    - T03
+    rated_power_w:
+    - 5000000
+    - 5000000
+    - 5000000
+    layout:
+      kind: fixed_collinear_equal_spacing
+      spacing_m: 378.0
+      source: demonstration_assumption_not_team_calibration
+    features:
+    - ambient_wind_speed_m_s
+    - ambient_wind_direction_rad
+    - turbulence_intensity
+    - gamma_1
+    - gamma_2
+    - gamma_3
+    - beta_1
+    - beta_2
+    - beta_3
+    - omega_1
+    - omega_2
+    - omega_3
+    bounds:
+      ambient_wind_speed_m_s:
+      - 7.499999
+      - 10.500001
+      ambient_wind_direction_rad:
+      - 0.0
+      - 6.283186307179586
+      turbulence_intensity:
+      - 0.019998999552965163
+      - 0.15000100596046448
+      gamma_1:
+      - -0.40000100596046445
+      - 0.40000100596046445
+      gamma_2:
+      - -0.40000100596046445
+      - 0.40000100596046445
+      gamma_3:
+      - -0.40000100596046445
+      - 0.40000100596046445
+      beta_1:
+      - -1.0e-06
+      - 0.2200009988079071
+      beta_2:
+      - -1.0e-06
+      - 0.2200009988079071
+      beta_3:
+      - -1.0e-06
+      - 0.2200009988079071
+      omega_1:
+      - 0.5999990238418579
+      - 1.2670009599456786
+      omega_2:
+      - 0.5999990238418579
+      - 1.2670009599456786
+      omega_3:
+      - 0.5999990238418579
+      - 1.2670009599456786
+    model_version: wind12-synthetic-7506554ac981
+    factory: optimization_control.environments.wind_pinn_backend:create_predictor
+    backend:
+      run_dir: .\optimization_control\experiments\20261022_wind_pinn_integration\model
+      script: .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\modify_pinn_wind_io.py
+      allow_synthetic_demo: true
+      model_sha256: 7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451
+      script_sha256: 4db850074b62a7f86720534f6286b48c2a024efd9218f1b243c376fd54d5a270
+  environment:
+    parameter_source:
+      kind: assumption
+      reference: configs/wind_pinn_demo.yaml
+      note: synthetic integration limits, not calibrated actuators
+    dt_s: 1.0
+    yaw_frame: nacelle_heading
+    heading_bounds_rad:
+    - -314.1592653589793
+    - 314.1592653589793
+    control_mask:
+    - 0
+    - 1
+    - 1
+    horizon: 128
+    wind_scale_m_s: 25.0
+    action_low:
+    - -0.25
+    - 0.0
+    - 0.6
+    action_high:
+    - 0.25
+    - 0.22
+    - 1.267
+    initial_operating_point:
+    - 0.0
+    - 0.04
+    - 0.9
+    rate_limits:
+    - 0.005
+    - 0.00872664626
+    - 0.1
+    time_constants_s:
+    - 5.0
+    - 2.0
+    - 5.0
+    target_w: 3452173.1875
+    wind_base_m_s: 9.0
+    wind_amplitude_m_s: 0.0
+    wind_period_steps: 128
+    wind_noise_std_m_s: 0.0
+    wind_direction_rad: 0.0
+    turbulence_intensity: 0.1
+    action_change_weight: 0.001
+    reward_scale: 100.0
+    inflow:
+      speed:
+        mean_min_m_s: 8.7
+        mean_max_m_s: 9.3
+        ti_values:
+        - 0.04
+        - 0.08
+        scenario: mixed
+        length_scale_m: 100.0
+        padding_factor: 8
+        ramp_amplitude_m_s: 0.35
+        gust_amplitude_m_s: 0.5
+        gust_duration_s: 32.0
+        speed_min_m_s: 7.5
+        speed_max_m_s: 10.5
+        max_attempts: 100
+      direction:
+        mean_rad: 0.0
+        amplitude_rad: 0.035
+        period_s: 180.0
+        ramp_rad: 0.04
+    reference_schedule:
+      yaw_offset_rad: 0.0
+      speed_per_wind_rad_m: 0.11114035087719298
+    speed_reference_mode: observation_float32_v1
+  algorithm:
+    hidden: 64
+    actor_lr: 0.0001
+    critic_lr: 0.001
+    gamma: 0.99
+    tau: 0.01
+    batch_size: 64
+    capacity: 32768
+    grad_clip: 1.0
+    actor_initial_action:
+    - 0.0
+    - -0.6363636363636364
+    - -0.10044977511244357
+  training:
+    total_steps: 2048
+    warmup_steps: 256
+    update_every: 2
+    noise_std: 0.15
+    episode_target_fractions:
+    - 0.18440761875
+    - 0.23014487916666668
+    - 0.27588213958333335
+  evaluation:
+    seed_offset: 10000
+    scenarios:
+    - name: fixed_0
+      target_w: 2766114.28125
+      wind_trajectory: &id001
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+      - - 9.0
+        - 0.0
+        - 0.1
+    - name: fixed_1
+      target_w: 3452173.1875
+      wind_trajectory: *id001
+    - name: fixed_2
+      target_w: 4138232.09375
+      wind_trajectory: *id001
+    - name: stationary
+      target_w: 3452173.1875
+      inflow:
+        speed:
+          scenario: stationary
+    - name: ramp
+      target_w: 3452173.1875
+      inflow:
+        speed:
+          scenario: ramp
+    - name: gust
+      target_w: 3452173.1875
+      inflow:
+        speed:
+          scenario: gust
+  baselines:
+    three_channel: true
+    yaw_offset_rad: 0.0
+    speed_per_wind_rad_m: 0.11114035087719298
+    pitch_bias_rad: 0.04
+    kp: 1.5
+    ki: 0.08
+    antiwindup_gain: 0.2
+    integral_limit_rad: 0.3
+parents:
+- run_id: 0
+  checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_0\segment_000\step_00016384.pth
+  sha256: 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+  cumulative_parent_steps: 32768
+- run_id: 1
+  checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00012288.pth
+  sha256: 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+  cumulative_parent_steps: 28672
+- run_id: 2
+  checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00008192.pth
+  sha256: e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+  cumulative_parent_steps: 24576
+selection:
+  seed: 42
+  results:
+  - arm: n1
+    run_id: 0
+    initial: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000000.pth
+    selected: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00002048.pth
+    selected_step: 2048
+    final: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00008192.pth
+    initial_mean_w: 364337.8407931975
+    initial_worst_w: 470038.3772396744
+    selected_mean_w: 362273.4769012311
+    selected_worst_w: 471220.8520677331
+    final_mean_w: 375893.35995637655
+    final_worst_w: 510655.8711956042
+    final_over_selected: 1.037595584340442
+    history:
+    - step: 0
+      mean_rmse_w: 364337.8407931975
+      worst_rmse_w: 470038.3772396744
+      best_mean_w: 364337.8407931975
+      actor_loss: 0.0
+      critic_loss: 0.0
+    - step: 2048
+      mean_rmse_w: 362273.4769012311
+      worst_rmse_w: 471220.8520677331
+      best_mean_w: 362273.4769012311
+      actor_loss: 3.516066564540094
+      critic_loss: 0.13239606440642152
+    - step: 4096
+      mean_rmse_w: 363335.6066431971
+      worst_rmse_w: 460761.63996582624
+      best_mean_w: 362273.4769012311
+      actor_loss: 3.4447753452695906
+      critic_loss: 0.11859843180718599
+    - step: 6144
+      mean_rmse_w: 372150.3286202352
+      worst_rmse_w: 495605.08410463744
+      best_mean_w: 362273.4769012311
+      actor_loss: 3.0711719536532955
+      critic_loss: 0.09555719811032759
+    - step: 8192
+      mean_rmse_w: 375893.35995637655
+      worst_rmse_w: 510655.8711956042
+      best_mean_w: 362273.4769012311
+      actor_loss: 3.0086634344576546
+      critic_loss: 0.08367800023764478
+    parent:
+      run_id: 0
+      checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_0\segment_000\step_00016384.pth
+      sha256: 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+      cumulative_parent_steps: 32768
+    hashes:
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00008192.pth
+      : 17cdc2329aee37942d0f0c383ac1254a0d7b3ef01c1c10b08a0ee9a2cba7612c
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000000.pth
+      : c5b0dc506a9084f0123d372618f83d85b1b536d97107ebceaa5db539f287f0b9
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00002048.pth
+      : 7b7e65bb713d8fda49a0d6c70b323ad6dd2e748162cb33d029d9cdd9b5fd90dd
+    steps: 8192
+  - arm: n8
+    run_id: 0
+    initial: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000000.pth
+    selected: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000000.pth
+    selected_step: 0
+    final: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00008192.pth
+    initial_mean_w: 364337.8407931975
+    initial_worst_w: 470038.3772396744
+    selected_mean_w: 364337.8407931975
+    selected_worst_w: 470038.3772396744
+    final_mean_w: 379449.7543497223
+    final_worst_w: 516338.32183317037
+    final_over_selected: 1.0414777491232443
+    history:
+    - step: 0
+      mean_rmse_w: 364337.8407931975
+      worst_rmse_w: 470038.3772396744
+      best_mean_w: 364337.8407931975
+      actor_loss: 0.0
+      critic_loss: 0.0
+    - step: 2048
+      mean_rmse_w: 367463.58148014295
+      worst_rmse_w: 484087.4679585932
+      best_mean_w: 364337.8407931975
+      actor_loss: 3.789692719467388
+      critic_loss: 1.0204998200777862
+    - step: 4096
+      mean_rmse_w: 369413.6483244199
+      worst_rmse_w: 480980.6987538727
+      best_mean_w: 364337.8407931975
+      actor_loss: 3.6728955842942623
+      critic_loss: 0.8424631386927406
+    - step: 6144
+      mean_rmse_w: 375086.7046688338
+      worst_rmse_w: 490888.81337738055
+      best_mean_w: 364337.8407931975
+      actor_loss: 3.243505008984357
+      critic_loss: 0.658340922309435
+    - step: 8192
+      mean_rmse_w: 379449.7543497223
+      worst_rmse_w: 516338.32183317037
+      best_mean_w: 364337.8407931975
+      actor_loss: 3.5249697092610104
+      critic_loss: 0.5393225592076003
+    parent:
+      run_id: 0
+      checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_0\segment_000\step_00016384.pth
+      sha256: 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+      cumulative_parent_steps: 32768
+    hashes:
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000000.pth
+      : 556ef7a90043abee04732dd0d77cf34203d030cb94bc7a833dc7bd8d8129ce70
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00008192.pth
+      : 3c3a89ec8fec431721da721b8735ed1338627db78a66417dd662833ad331cc4a
+    steps: 8192
+  - arm: n1
+    run_id: 1
+    initial: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000000.pth
+    selected: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004096.pth
+    selected_step: 4096
+    final: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00008192.pth
+    initial_mean_w: 360060.2835971525
+    initial_worst_w: 483319.04054231726
+    selected_mean_w: 342875.3241331165
+    selected_worst_w: 477012.10830141784
+    final_mean_w: 348005.56893825554
+    final_worst_w: 524975.9824151054
+    final_over_selected: 1.0149624205769536
+    history:
+    - step: 0
+      mean_rmse_w: 360060.2835971525
+      worst_rmse_w: 483319.04054231726
+      best_mean_w: 360060.2835971525
+      actor_loss: 0.0
+      critic_loss: 0.0
+    - step: 2048
+      mean_rmse_w: 345825.5412798485
+      worst_rmse_w: 518125.7451055173
+      best_mean_w: 345825.5412798485
+      actor_loss: 2.4453509448150252
+      critic_loss: 0.11550349623811003
+    - step: 4096
+      mean_rmse_w: 342875.3241331165
+      worst_rmse_w: 477012.10830141784
+      best_mean_w: 342875.3241331165
+      actor_loss: 1.9280203744225823
+      critic_loss: 0.1562028925248645
+    - step: 6144
+      mean_rmse_w: 343512.8102755425
+      worst_rmse_w: 508131.4727453385
+      best_mean_w: 342875.3241331165
+      actor_loss: 2.3743123912718147
+      critic_loss: 0.1267583839811171
+    - step: 8192
+      mean_rmse_w: 348005.56893825554
+      worst_rmse_w: 524975.9824151054
+      best_mean_w: 342875.3241331165
+      actor_loss: 2.3112185121281072
+      critic_loss: 0.09982729679601712
+    parent:
+      run_id: 1
+      checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00012288.pth
+      sha256: 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+      cumulative_parent_steps: 28672
+    hashes:
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004096.pth
+      : d11032c91f0f5e261500812da0444e4e6d5f11b5e0bb47380078c3df769eca20
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000000.pth
+      : 039b9dbcd36241cdb0513b21ec5816558673b1de9f244f7b686a7f7449f50bce
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00008192.pth
+      : abbf7a53f5a0c1faa5849cb8b3f2ff341d91942f3299de8c6a2131ffae0e4e71
+    steps: 8192
+  - arm: n8
+    run_id: 1
+    initial: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000000.pth
+    selected: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004096.pth
+    selected_step: 4096
+    final: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00008192.pth
+    initial_mean_w: 360060.2835971525
+    initial_worst_w: 483319.04054231726
+    selected_mean_w: 338906.80989625206
+    selected_worst_w: 471910.90340260643
+    final_mean_w: 342193.27656583925
+    final_worst_w: 504598.41171994584
+    final_over_selected: 1.0096972576933265
+    history:
+    - step: 0
+      mean_rmse_w: 360060.2835971525
+      worst_rmse_w: 483319.04054231726
+      best_mean_w: 360060.2835971525
+      actor_loss: 0.0
+      critic_loss: 0.0
+    - step: 2048
+      mean_rmse_w: 343577.4304931134
+      worst_rmse_w: 512639.28703485074
+      best_mean_w: 343577.4304931134
+      actor_loss: 3.07499384068802
+      critic_loss: 0.8986316865522415
+    - step: 4096
+      mean_rmse_w: 338906.80989625206
+      worst_rmse_w: 471910.90340260643
+      best_mean_w: 338906.80989625206
+      actor_loss: 3.3096476141363382
+      critic_loss: 0.8567327076695317
+    - step: 6144
+      mean_rmse_w: 339578.8251756768
+      worst_rmse_w: 493816.0727285651
+      best_mean_w: 338906.80989625206
+      actor_loss: 3.146116846163447
+      critic_loss: 0.670692776805178
+    - step: 8192
+      mean_rmse_w: 342193.27656583925
+      worst_rmse_w: 504598.41171994584
+      best_mean_w: 338906.80989625206
+      actor_loss: 2.7866133698262274
+      critic_loss: 0.48380130860217224
+    parent:
+      run_id: 1
+      checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00012288.pth
+      sha256: 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+      cumulative_parent_steps: 28672
+    hashes:
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00008192.pth
+      : 1c49fe0cbb5f4cde3e81c9cab8a243e856779690a8718b5401bb4dcc7559ea3a
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004096.pth
+      : 2f2aff153d786bcc937907b2d6f4156fb508a82cd15659e5d562b67cd19c2863
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000000.pth
+      : 1342b445078575aa7d74d256127856d85b90da602d249081ec487c23e6ae6450
+    steps: 8192
+  - arm: n1
+    run_id: 2
+    initial: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000000.pth
+    selected: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002048.pth
+    selected_step: 2048
+    final: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00008192.pth
+    initial_mean_w: 336134.99461641826
+    initial_worst_w: 446246.6488727902
+    selected_mean_w: 307961.43305224215
+    selected_worst_w: 432724.0562041563
+    final_mean_w: 321838.26987237
+    final_worst_w: 453287.3851816213
+    final_over_selected: 1.0450603073332685
+    history:
+    - step: 0
+      mean_rmse_w: 336134.99461641826
+      worst_rmse_w: 446246.6488727902
+      best_mean_w: 336134.99461641826
+      actor_loss: 0.0
+      critic_loss: 0.0
+    - step: 2048
+      mean_rmse_w: 307961.43305224215
+      worst_rmse_w: 432724.0562041563
+      best_mean_w: 307961.43305224215
+      actor_loss: 2.4308409277474046
+      critic_loss: 0.13625793510867912
+    - step: 4096
+      mean_rmse_w: 322760.319611615
+      worst_rmse_w: 449924.3634467361
+      best_mean_w: 307961.43305224215
+      actor_loss: 1.8037988492675747
+      critic_loss: 0.12225088311121605
+    - step: 6144
+      mean_rmse_w: 324070.5490478718
+      worst_rmse_w: 453015.8225323888
+      best_mean_w: 307961.43305224215
+      actor_loss: 1.4881502634185986
+      critic_loss: 0.11079647571599102
+    - step: 8192
+      mean_rmse_w: 321838.26987237
+      worst_rmse_w: 453287.3851816213
+      best_mean_w: 307961.43305224215
+      actor_loss: 1.7251691697941471
+      critic_loss: 0.10857542208395898
+    parent:
+      run_id: 2
+      checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00008192.pth
+      sha256: e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+      cumulative_parent_steps: 24576
+    hashes:
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002048.pth
+      : 17e2f9721fd094f4fdb354bad971ff7eda13b454e21233af7cf5ea1a70d88a94
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00008192.pth
+      : 1d2063a6e6a1989643f083e589826d3ce6f058af023827354423b01d1afa4fb5
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000000.pth
+      : 182152e9753f5a91da050f1d89ca77de79e88e426190d99eb82a38cb54dabc02
+    steps: 8192
+  - arm: n8
+    run_id: 2
+    initial: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000000.pth
+    selected: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002048.pth
+    selected_step: 2048
+    final: .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00008192.pth
+    initial_mean_w: 336134.99461641826
+    initial_worst_w: 446246.6488727902
+    selected_mean_w: 306753.78503041185
+    selected_worst_w: 427912.3064632253
+    final_mean_w: 315305.2033888873
+    final_worst_w: 432623.8832831614
+    final_over_selected: 1.0278771404813396
+    history:
+    - step: 0
+      mean_rmse_w: 336134.99461641826
+      worst_rmse_w: 446246.6488727902
+      best_mean_w: 336134.99461641826
+      actor_loss: 0.0
+      critic_loss: 0.0
+    - step: 2048
+      mean_rmse_w: 306753.78503041185
+      worst_rmse_w: 427912.3064632253
+      best_mean_w: 306753.78503041185
+      actor_loss: 3.2152479459674113
+      critic_loss: 1.7559627742479513
+    - step: 4096
+      mean_rmse_w: 319975.9955504979
+      worst_rmse_w: 448690.6613938954
+      best_mean_w: 306753.78503041185
+      actor_loss: 3.266397858426596
+      critic_loss: 1.5492490162820711
+    - step: 6144
+      mean_rmse_w: 313412.01010981575
+      worst_rmse_w: 436870.14331603015
+      best_mean_w: 306753.78503041185
+      actor_loss: 2.759247301573244
+      critic_loss: 1.3755876358191017
+    - step: 8192
+      mean_rmse_w: 315305.2033888873
+      worst_rmse_w: 432623.8832831614
+      best_mean_w: 306753.78503041185
+      actor_loss: 2.7633077988478663
+      critic_loss: 1.287124593174667
+    parent:
+      run_id: 2
+      checkpoint: .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00008192.pth
+      sha256: e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+      cumulative_parent_steps: 24576
+    hashes:
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00008192.pth
+      : a41bc00aaae5990c045c66ab4508daa20c504de496b3574553ff3ec58f6fc239
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002048.pth
+      : 00d524793b7848c1890afc9d37c27e40f85bfa2ba5b87e5936dd2415aa4adb2b
+      ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000000.pth
+      : 9c2efd68b7855a0aa7e30cb6dd5abee771777acec9620e4e73f1bf8388e993ca
+    steps: 8192
+  hashes:
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00008192.pth
+    : 17cdc2329aee37942d0f0c383ac1254a0d7b3ef01c1c10b08a0ee9a2cba7612c
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000000.pth
+    : c5b0dc506a9084f0123d372618f83d85b1b536d97107ebceaa5db539f287f0b9
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00002048.pth
+    : 7b7e65bb713d8fda49a0d6c70b323ad6dd2e748162cb33d029d9cdd9b5fd90dd
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000000.pth
+    : 556ef7a90043abee04732dd0d77cf34203d030cb94bc7a833dc7bd8d8129ce70
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00008192.pth
+    : 3c3a89ec8fec431721da721b8735ed1338627db78a66417dd662833ad331cc4a
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004096.pth
+    : d11032c91f0f5e261500812da0444e4e6d5f11b5e0bb47380078c3df769eca20
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000000.pth
+    : 039b9dbcd36241cdb0513b21ec5816558673b1de9f244f7b686a7f7449f50bce
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00008192.pth
+    : abbf7a53f5a0c1faa5849cb8b3f2ff341d91942f3299de8c6a2131ffae0e4e71
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00008192.pth
+    : 1c49fe0cbb5f4cde3e81c9cab8a243e856779690a8718b5401bb4dcc7559ea3a
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004096.pth
+    : 2f2aff153d786bcc937907b2d6f4156fb508a82cd15659e5d562b67cd19c2863
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000000.pth
+    : 1342b445078575aa7d74d256127856d85b90da602d249081ec487c23e6ae6450
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002048.pth
+    : 17e2f9721fd094f4fdb354bad971ff7eda13b454e21233af7cf5ea1a70d88a94
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00008192.pth
+    : 1d2063a6e6a1989643f083e589826d3ce6f058af023827354423b01d1afa4fb5
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000000.pth
+    : 182152e9753f5a91da050f1d89ca77de79e88e426190d99eb82a38cb54dabc02
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00008192.pth
+    : a41bc00aaae5990c045c66ab4508daa20c504de496b3574553ff3ec58f6fc239
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002048.pth
+    : 00d524793b7848c1890afc9d37c27e40f85bfa2ba5b87e5936dd2415aa4adb2b
+    ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000000.pth
+    : 9c2efd68b7855a0aa7e30cb6dd5abee771777acec9620e4e73f1bf8388e993ca
+  root_config_sha256: 314a8fc345a8a2e6bfdcaf110f0b41a38ea199b1baa88e8f3de43b10fe182923
+  bank_sha256: 5d3e4a8d500a120d98d1bd966c62e9ea99bbfe19db481e30f2055915208e1760
+  locked_at: '2026-10-28T16:45:25.686652+00:00'
+source: .\optimization_control\experiments\20261029_speed_nstep_control
+worktree: .
+source_hashes:
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_0\segment_000\step_00016384.pth
+  : 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_1\segment_000\step_00012288.pth
+  : 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+  ? .\optimization_control\experiments\20261023_progressive_random_control\pitch_run_2\segment_000\step_00008192.pth
+  : e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\modify_pinn_io.py: ae841a99bc1d27ef64d6e061e7457fc171d168f530017e706abf61984af26c8c
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\modify_pinn_wind_io.py: 4db850074b62a7f86720534f6286b48c2a024efd9218f1b243c376fd54d5a270
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\prepare_pinn_outputchange.py: 768af5bc0b8e0b236943bbcc50d93f74600596d0a241a484ccc8ecd88845b832
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\gitignore.txt: 5e2c671ddc9e301dafc241ad1a7c07aa85a91fef560a17721b41977b9eddba17
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\README_pinn_wind_zh.txt: 683414be7f2af902b0824ae30efb1e95a2e315e8f37891f1d607b69492b2407c
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\requirements.txt: 20f1b0519d5d21e7f705dc9c1c67cc5bbbe10cf3755052d092bb58c7770f8892
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\iochanged_9ms\build_report.json
+  : 0c4ffc38228777435d8735cfea36d1c2ac18328b1b4a69573126e8a4805823da
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\prepared_9ms\preparation_report.json
+  : 09bc88328734398b320f0e10a4ea54ee2c6b019adbfc5bb745d1790a9bd81233
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\project_config.json: 2aecb320606021ba089fd0440fdf9aadc651db0f594bb7e757d12b7b4b310a6d
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\wind_iochanged_9ms\build_report.json
+  : 2c2311286f5311df13fae6b7025ab2dfede0c5a11154383dcdf03d971f2696b2
+  .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\wind_project_config.json: 7a62dd9e641eeb0e2cc9b87ca15690877de566923a6b38f2d8e35cb071859fe2
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\iochanged_9ms\untrained.keras
+  : 430742626cd4dc7cfc6f11f6f923db621d4789010a4a7f8456e959b40f690b12
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\prepared_9ms\original_frozen.keras
+  : 41ce925edb83ae0e38d73ebdc1c19bdfa21974ebb3800d7674a2c960a7aae303
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\prepared_9ms\original_frozen_features.keras
+  : f87b9f483510c7490bb6a7449a3645ee0819c3ae5c7751513704dccfc2de86fe
+  ? .\pinn\2026_1021\PINNs_multi_turbine_wake_simulation-outputchange\OutputChange\wind_iochanged_9ms\untrained.keras
+  : 9e93883785b3f5ea5d75b97eb101d36d85e98de13120dba99b753545683ed163
+  .\optimization_control\experiments\20261022_wind_pinn_integration\model\trained.keras: 7506554ac98157e220444e45eb6b19b28a02a57af165bc97237faed28108d451
+  .\optimization_control\experiments\20261022_wind_pinn_integration\model\training_report.json: 3996fbec8618e74e307d85a43224d667732d06ab2c39725a0dded98df74a25aa
+  .\optimization_control\experiments\20261022_wind_pinn_integration\model\config_used.json: 658163d05742215bf304839218115d2c7f75d5e4cd79ba0a043b1da8d9876034
+  .\optimization_control\environments\maddpg_farm_env.py: b1522730113bb14f62a51950f1dfa7ca7add05c93d268153466258acd75abae1
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00008192.pth
+  : 17cdc2329aee37942d0f0c383ac1254a0d7b3ef01c1c10b08a0ee9a2cba7612c
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000000.pth
+  : c5b0dc506a9084f0123d372618f83d85b1b536d97107ebceaa5db539f287f0b9
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00002048.pth
+  : 7b7e65bb713d8fda49a0d6c70b323ad6dd2e748162cb33d029d9cdd9b5fd90dd
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000000.pth
+  : 556ef7a90043abee04732dd0d77cf34203d030cb94bc7a833dc7bd8d8129ce70
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00008192.pth
+  : 3c3a89ec8fec431721da721b8735ed1338627db78a66417dd662833ad331cc4a
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004096.pth
+  : d11032c91f0f5e261500812da0444e4e6d5f11b5e0bb47380078c3df769eca20
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000000.pth
+  : 039b9dbcd36241cdb0513b21ec5816558673b1de9f244f7b686a7f7449f50bce
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00008192.pth
+  : abbf7a53f5a0c1faa5849cb8b3f2ff341d91942f3299de8c6a2131ffae0e4e71
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00008192.pth
+  : 1c49fe0cbb5f4cde3e81c9cab8a243e856779690a8718b5401bb4dcc7559ea3a
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004096.pth
+  : 2f2aff153d786bcc937907b2d6f4156fb508a82cd15659e5d562b67cd19c2863
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000000.pth
+  : 1342b445078575aa7d74d256127856d85b90da602d249081ec487c23e6ae6450
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002048.pth
+  : 17e2f9721fd094f4fdb354bad971ff7eda13b454e21233af7cf5ea1a70d88a94
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00008192.pth
+  : 1d2063a6e6a1989643f083e589826d3ce6f058af023827354423b01d1afa4fb5
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000000.pth
+  : 182152e9753f5a91da050f1d89ca77de79e88e426190d99eb82a38cb54dabc02
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00008192.pth
+  : a41bc00aaae5990c045c66ab4508daa20c504de496b3574553ff3ec58f6fc239
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002048.pth
+  : 00d524793b7848c1890afc9d37c27e40f85bfa2ba5b87e5936dd2415aa4adb2b
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000000.pth
+  : 9c2efd68b7855a0aa7e30cb6dd5abee771777acec9620e4e73f1bf8388e993ca
+  .\optimization_control\experiments\20261029_speed_nstep_control\config.yaml: 314a8fc345a8a2e6bfdcaf110f0b41a38ea199b1baa88e8f3de43b10fe182923
+  .\optimization_control\experiments\20261029_speed_nstep_control\selection.json: 1eaebb7a0b6f8e1a79fc73d149c7eded9979ddf886463958b11748196c3841c9
+  .\optimization_control\experiments\20261029_speed_nstep_control\validation_metrics.csv: 541f111df31197e8d9c151c4f37922ff48858761e629a66299b7ba0ab6e4a953
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\validation_trajectories.csv
+  : d2aa810425db1eda25ae8be3d0172cec7be41ec1dd66109d94bb4ee474f862fd
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\training_wind_preflight.csv
+  : cb0e491125c30c56c532550e3c1855f117272ae3fb5dff390e59dee7a375eae2
+  .\optimization_control\experiments\20261029_speed_nstep_control\bank\manifest.json: 5d3e4a8d500a120d98d1bd966c62e9ea99bbfe19db481e30f2055915208e1760
+  .\optimization_control\experiments\20261029_speed_nstep_control\git_delivery.json: 9b9529a519c1c602d7e306e67723a070504b5252a09b476d8fd60ab19b4560e9
+  .\optimization_control\experiments\20261029_speed_nstep_control\output_manifest.csv: e00171f8efb7c86c05a2dca34280d761d328ef78f8e95f1f4df809929622f096
+  .\optimization_control\maddpg_wind_farm\algorithm.py: ee89948d8d98aa33b9b4ee20675ccc588c2005a6f8bec01b41cd555ba271febb
+  .\optimization_control\maddpg_wind_farm\anchor_algorithm.py: f5033e0823601c10abd65c1ec375cddb37e665cadf506b657400745d7cef7b50
+  .\optimization_control\maddpg_wind_farm\anchor_closeout.py: ddfd451f4f67567e8ba438fe12332a2cce9c3a78e1387f25c8e11b8c998505ec
+  .\optimization_control\maddpg_wind_farm\anchor_closeout_diagnostic.py: f2fb4767b0a784e03015befe1e98da39a44c4b962aff91cf27444ef84d9e8e35
+  .\optimization_control\maddpg_wind_farm\anchor_closeout_figures.py: bd570081e17b0dc990ab2da83aab0e93290eb9ef59c6f3334d5159720c7b53f0
+  .\optimization_control\maddpg_wind_farm\anchor_closeout_final_checks.py: 753af09f5f99729330d6e8f60612fa47398b64458c7dc2e93b13a66ee68091c1
+  .\optimization_control\maddpg_wind_farm\anchor_heading_figures.py: 1ae15c8165c72ba2cad26eb52ed368d3967f42204e354cbb5088bdff4aca9cf4
+  .\optimization_control\maddpg_wind_farm\anchor_response_reference.py: fd97affc162859804552600a8466fdc07ec4ea95c0f8c88ab3e2f86a4f8b0da1
+  .\optimization_control\maddpg_wind_farm\anchor_takeover_precision.py: 4204c235a26172caf17caa965ef90dbc64c4c3b9293829cb24f5af058665184c
+  .\optimization_control\maddpg_wind_farm\anchor_training.py: a9b0da31ca1c21ec61610abec59d23796aaad3c0f4c3c4c0892fc9786a9ea33a
+  .\optimization_control\maddpg_wind_farm\audit_handover.py: 4b0c63534ee361edfe197fefbaf7e4ab1fbeb4b263451a77ac100315dea6b59d
+  .\optimization_control\maddpg_wind_farm\benchmark.py: bffe236acf9cdf47ddcc52cbd3a5aeaa0818593006b6b0e39a7054027b0d15a5
+  .\optimization_control\maddpg_wind_farm\controllers.py: c5696565c783487d365c7306002e0c7b259b01027a7d4f50453e95ae4df63bfb
+  .\optimization_control\maddpg_wind_farm\diagnose_fixed_pinn.py: 81b8bf86e09c8363ab70ed6db8679cca973a4ff361ced46ee76a856c0234265e
+  .\optimization_control\maddpg_wind_farm\diagnostics.py: eeeb0a19a00e9922ade5237ca543600382f1490ad67e274cbf50205010f8c68f
+  .\optimization_control\maddpg_wind_farm\fixed_curriculum.py: 624bd25fe43e4e3c2b21b9da78464a4844348f238d21e433655d58d9d6c7a63b
+  .\optimization_control\maddpg_wind_farm\fixed_pinn_demo.py: 74b040df4c6fdd4e31199f24400b79bed5e785d7c4aa77f40ce83215582ab6df
+  .\optimization_control\maddpg_wind_farm\frozen_speed_algorithm.py: eab8d8091174b268a5d37d97a1dfcc5b9f35224edc204e27cfc528b20a7db0f8
+  .\optimization_control\maddpg_wind_farm\frozen_speed_delivery.py: 9e44653fe14d680f068fb2a587e5c90b92b73c20d3306fe6b428d9d33460bb02
+  .\optimization_control\maddpg_wind_farm\frozen_speed_figures.py: 908393906b2971d72ad8a4e271e23102b3fa54a5502f97dbbf9757df849f2d19
+  .\optimization_control\maddpg_wind_farm\frozen_speed_training.py: d576ba89edeba83001b177c0f4cccdaf9f8da477414f1490a326127f900e7fc3
+  .\optimization_control\maddpg_wind_farm\frozen_speed_verify.py: f364cc1b80ddd538e47053d47046c05125f523a1f5fb4e49624ffe9e62c43278
+  .\optimization_control\maddpg_wind_farm\handoff_replay.py: f9900f7c746495eb74e937061137ac8a51699783c1e5c1c64b5dda0178322948
+  .\optimization_control\maddpg_wind_farm\inflow_workflow.py: 48265c9d6959a9eda4e44f88485c86fa1e1691d8d1b6bf42c71e3f706bdbb57b
+  .\optimization_control\maddpg_wind_farm\joint_distillation.py: 71db4c891b7c4852fa3bbea4477f971fe141e46678b56a5cff37d938bb40d22e
+  .\optimization_control\maddpg_wind_farm\midterm_best_cases.py: fa7094c2c7e401d1ce4209fe625fd16c77adff232935019c4ee94117185f656e
+  .\optimization_control\maddpg_wind_farm\midterm_figures.py: 967d06d1927dc81df5b6b6ac58c8fc9a7d2eae7fb154bf302a6d987d0c72389b
+  .\optimization_control\maddpg_wind_farm\mixed_stability.py: 71cf144b32f0c306b950b0efff2daaeabebe13c01002a65ee272f8ae6ba1a38e
+  .\optimization_control\maddpg_wind_farm\nstep_replay_core.py: 20f979700fcbe2f2aa479148fb1c12e2095431aa8da199fa47c704f79e44e8da
+  .\optimization_control\maddpg_wind_farm\portable_random_replay.py: c759fa1efce82d3da5badbd4def19c79b6f323813408ccd498c0d8d4bd5de5a4
+  .\optimization_control\maddpg_wind_farm\progressive_figures.py: 639fb0ee94abf7bf2fee71346b77e4926b6d1c50eeb5c240821462ccb4576101
+  .\optimization_control\maddpg_wind_farm\progressive_random_control.py: 21ae98c90ddfbe90a4fdcc0a88b445951a83b096c9e8f2d2d4be2ac64625fbe8
+  .\optimization_control\maddpg_wind_farm\random_wind_training.py: a1085f37dcb9bf9435da03f66bd2821bb4e4a305455f3c4ab499503453608917
+  .\optimization_control\maddpg_wind_farm\reachability.py: e6f3b581308a4ef9cae6087845a8a6658a704007a9d5da593c60995d83d7d3ce
+  .\optimization_control\maddpg_wind_farm\residual_algorithm.py: 0e88d7bc4480244cd300c0c20801ef114b3bdb12aa6df7e26c0c1b6e5fd0e497
+  .\optimization_control\maddpg_wind_farm\residual_figures.py: 02f003659e44ae3c77e29277e429881b8d925f3f902a928827492772a61b9da9
+  .\optimization_control\maddpg_wind_farm\residual_random_control.py: c45ae99f4df9b6bdea255d1d12afb20e0aba35af3699f9733e6665177e9685ef
+  .\optimization_control\maddpg_wind_farm\residual_stability.py: 6057ba3e5501f4b77aa1336c9650b450ce4b172d8fb8e5c346ef4e33f71d3188
+  .\optimization_control\maddpg_wind_farm\residual_stability_diagnostic.py: bc3e73ad34f7c3025c3c3cd7fe60c02e001dc33cb5b2193931119de89e5c47ac
+  .\optimization_control\maddpg_wind_farm\retrospective.py: f73b690c697d76c24b4ac442f21ea629d0661ebb6a62880b62168b22645327ba
+  .\optimization_control\maddpg_wind_farm\speed_nstep_algorithm.py: a85b3f2a134c64a8403bfdf556f01eced1c81f8b12b635f724df9303338d5274
+  .\optimization_control\maddpg_wind_farm\speed_nstep_audit.py: 753cae3a38d23f3f95817061000c83d309ab5cfff8d01a8241b7141a7ebaba4a
+  .\optimization_control\maddpg_wind_farm\speed_nstep_engineering.py: a620c11c1ee60978996c13d82413a1fbb424c48a962eca8b8a1e48dc4dbd6e18
+  .\optimization_control\maddpg_wind_farm\speed_nstep_training.py: 148612633392fa641d99edd14c48c387a9b6a6a792af6cfce06adff67fab4451
+  .\optimization_control\maddpg_wind_farm\speed_value_analysis.py: 9203ec2c369763573f69af2d408c52c0f8c98fcc30df858f6d9fd2469ddf9c0e
+  .\optimization_control\maddpg_wind_farm\speed_value_diagnostic.py: 0160a0fec523727fc986c6d74b6c8b663f5aa33a664cbde7fd7466d497da2c7e
+  .\optimization_control\maddpg_wind_farm\stable_workflow.py: 407a37cc2e11f4f4b3cee40a19fbb4f57ffafe06ad1eadaeec8298d8f6c52cb5
+  .\optimization_control\maddpg_wind_farm\tracking_study.py: c5d125b6f0e820975a4f020d20f52f55e4e381ebf5a000f076f504a7c6d0a5c3
+  .\optimization_control\maddpg_wind_farm\value_baseline_diagnostic.py: 778c04952f1c587e93ffe45f2a06a5a32911eaa254ff4a573dba83ed622bfad4
+  .\optimization_control\maddpg_wind_farm\verify_anchor.py: 1f1ca73b8c3b3ac984c981e143924e21246acf8d52fe7875604b4bff5257d58b
+  .\optimization_control\maddpg_wind_farm\verify_joint_distillation.py: 9218dac8a1c44161042e6dc958dcc9f9003cc87d376ed67533ab902a3e8fdaae
+  .\optimization_control\maddpg_wind_farm\verify_progressive.py: a78be4053279f8e06274ab489319d44ad282c8e71e602be4adc0a91b6297a412
+  .\optimization_control\maddpg_wind_farm\verify_residual.py: c924519d9abac8b2bdec0f5a09fa5ca454f2d1ab798804f2ed7d65a86581b5c7
+  .\optimization_control\maddpg_wind_farm\verify_residual_stability.py: fddf19a802ca743317fda778fbed761ee50612767186e2ed44ec650670b135c2
+  .\optimization_control\maddpg_wind_farm\verify_stable.py: 9591c029aba6bb15aebb705dbd70c0dee82559c44a6a3cbc8c9b59bb3ca3b022
+  .\optimization_control\maddpg_wind_farm\verify_workflow.py: 442ad722b22c0407edf3eb419354c862acc16569d0b85ffc49ae5e96e62c47df
+  .\optimization_control\maddpg_wind_farm\wind_pinn_curriculum.py: 0c3ca5aa93781ebf5fd05fce1f5dedcbae4e46fc62d281f61def16ae281d05be
+  .\optimization_control\maddpg_wind_farm\wind_pinn_demo.py: c1d78a658b09a322dd4cb90b03bfa3fac2ddb3930f0f56e50f14517aecdcbee5
+  .\optimization_control\maddpg_wind_farm\workflow.py: 37bdc49828d8008ea238d86cb849e941d66cc5db221878dca18b6a406ebe09a2
+  .\optimization_control\maddpg_wind_farm\__init__.py: a6a5747834cc2db1e24109f8d64322a6d8088bd5ff6d3551c2fae838b8075e6f
+  .\optimization_control\environments\farm_inflow.py: 9d34a780bead6f7bfe651df52b500363808a14ee5515e831b420ce65ea65c92f
+  .\optimization_control\environments\maddpg_farm_env.py: aa50e20134e1767b9b2df8afe4bfe8ad278eef027271edd94e460eea83a008f7
+  .\optimization_control\environments\mock_quasi_static_plant.py: ee28394bf253a714a86412079a517f77342043f9541deea845c52fb22d2cafee
+  .\optimization_control\environments\pinn_adapter.py: 45e28c8f5c6fd37c1ec13e1e2806629e35f6c0a372829070dc7555dab00f93df
+  .\optimization_control\environments\plant_model.py: 2a111ff0655f5af61bd2f3074e28e4c67de946a94a9feab410936014de356854
+  .\optimization_control\environments\quasi_static_wind_farm_env.py: 45f39149a663b0a148dcc2802b5d6f035db0f48c6ff9a49f9401ba20ed56d114
+  .\optimization_control\environments\simplified_turbine_env.py: 8e7d1fcdf5ef6a7e38808543dd2287c6629f8b1051d3836d7b9ef99576e1c5fc
+  .\optimization_control\environments\stochastic_turbine_env.py: 878a48a0c09a611cb42c6b166a77441f1f64f3d24116d240f565776c3f28d620
+  .\optimization_control\environments\teammate_pinn_backend.py: fc352eff2bea97a49bb015d7ebd174ca7fd3fe91d45bd358b314da4be5d5774c
+  .\optimization_control\environments\wind_generator.py: 0b91f8474077de49cb8477537c2b9b6910767228f472c980b5839f01213518a3
+  .\optimization_control\environments\wind_pinn_backend.py: a0ed3821aa308c14bc10370db328ad9d9c578a0223a41883ffeae7325ee5186e
+  .\optimization_control\environments\__init__.py: 626cc85c95eedebaaeddd1cba540e7083e2c43a99275ff43de424c4c0f25941d
+  .\optimization_control\utils\action_mapper.py: c2652387035770a14f3d87808384589b7a09b0e9ff6d4865a4909daadce38c9b
+  .\optimization_control\utils\actuator_model.py: f9557caa229e2be4992034712914f21fe668f9cfb678d38c5ba8467efe05c3cd
+  .\optimization_control\utils\reference_power.py: ff837c86e325e1ff42fe845f46f74dafd30ca44c21db2d36eeae2baa3fc7ad9d
+  .\optimization_control\utils\reference_schedule.py: 1059e2dfb175630ac3d39aae4c626446ffac4147157b39815490b2c9e308df23
+  .\optimization_control\utils\reward.py: 0fdd6f5147800a21b64110ce820329aa711eb1160c1010a5d409ecedd05bcf65
+  .\optimization_control\utils\state_pipeline.py: 22a82caa1600eb15771d63c21f37e4613b91fee050414abcabc8e64238ed062c
+  .\optimization_control\utils\__init__.py: 625f8e4d4b8052ba03a41fe70fcc972568931b645a1734666028a1f5abb9c12b
+  .\optimization_control\maddpg_wind_farm\configs\speed_nstep.yaml: 1ac66b3e1c261e2751ffaaa159f6c093fa25550946c4dae45a495aacbb67ba73
+  .\optimization_control\maddpg_wind_farm\SPEED_NSTEP_PROTOCOL.md: d5bf5f0a56094bb62cf6b6660b5e5a7eeceb2af26e456b7ed6c48cc0ace0f1f2
+  .\optimization_control\tests\test_speed_nstep_training.py: bd267a13f4ecabeeccd39d20cae685dce1daddc22322738c7acc897b1c66e900
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_0.csv
+  : cf6eac0699233465121617b7a6bd923f260d0098115d6a9b04d10a29a410d69a
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_0.json
+  : 92bdb2f0d2301f84eb356573b5c37d2c2dc36e265c322683dd9ae2732bc726c1
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_1.csv
+  : 3d34fc1eacf8330bf63178990584f8a870f6b23b75263b1b03ccf50c94f1d677
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_1.json
+  : 46f9de73c8eb7c837b954ac470a1c6b904b65748810bb8a4981462c3ab2e63b6
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_0.csv
+  : 4cc55a5ef451f3d76d46094ed0eb46fac2e6f78393f68352b422e916bd4caf97
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_0.json
+  : 72926dde4a068d875bb10009afd81d2dd842002588a84d395fe962b8d294082f
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_1.csv
+  : a58a89d83e544cff35457916e18d8927e01909fc4832f460e99a997f839f639d
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_1.json
+  : 6615f0c4c9cf20177b6354553de0894a81afb8e0c64abd1a35f269a1b8e88141
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_0.csv
+  : 67662c437c7ad39c29ea7083c9a4a1f6612859a26d49931bd4a5560555958ee2
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_0.json
+  : f600be3307bee6f1864b55527ee65b3ae325da1c085885d2d2d956bddb46bdf5
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_1.csv
+  : 6a4bbe3dc1d21357778d470913fbce01266980ba72025ee8e10b99342ff79243
+  ? .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_1.json
+  : 5b1a8125a879790423a38ce6c1a9ada39ca90d341283425989ef32cd792d7144
+executed_code_hashes:
+  .\optimization_control\maddpg_wind_farm\causal_speed_search.py: 0db7f25c3da04f2f3e604678c1775b32a1476b23903641e5d89b38f815ec1d0d
+  .\optimization_control\maddpg_wind_farm\causal_speed_report.py: eb4474e79094c0b9b1dc2383609a523135318bb112a32b7586d6bd339717195c
+  .\optimization_control\maddpg_wind_farm\configs\causal_speed_search.yaml: ef8cf787a1f97ec13b5bb4a3cee2c71ba31ae64ca37a9ddcac825e010612b70e
+  .\optimization_control\maddpg_wind_farm\SPEED_CAUSAL_SEARCH_PROTOCOL.md: bb5c0648e4f1654d7753e91e206327cfab5e53f34332aca5ca9f3e5035a3c92b
+  .\optimization_control\tests\test_causal_speed_search.py: 81f8ac5b5708a86b78f3e4097ef82782b67e10610cdf7fe3bfaddc2033123f3f
+  .\optimization_control\environments\farm_inflow.py: 9d34a780bead6f7bfe651df52b500363808a14ee5515e831b420ce65ea65c92f
+  .\optimization_control\environments\maddpg_farm_env.py: aa50e20134e1767b9b2df8afe4bfe8ad278eef027271edd94e460eea83a008f7
+  .\optimization_control\environments\mock_quasi_static_plant.py: ee28394bf253a714a86412079a517f77342043f9541deea845c52fb22d2cafee
+  .\optimization_control\environments\pinn_adapter.py: 45e28c8f5c6fd37c1ec13e1e2806629e35f6c0a372829070dc7555dab00f93df
+  .\optimization_control\environments\plant_model.py: 2a111ff0655f5af61bd2f3074e28e4c67de946a94a9feab410936014de356854
+  .\optimization_control\environments\quasi_static_wind_farm_env.py: 45f39149a663b0a148dcc2802b5d6f035db0f48c6ff9a49f9401ba20ed56d114
+  .\optimization_control\environments\simplified_turbine_env.py: 8e7d1fcdf5ef6a7e38808543dd2287c6629f8b1051d3836d7b9ef99576e1c5fc
+  .\optimization_control\environments\stochastic_turbine_env.py: 878a48a0c09a611cb42c6b166a77441f1f64f3d24116d240f565776c3f28d620
+  .\optimization_control\environments\teammate_pinn_backend.py: fc352eff2bea97a49bb015d7ebd174ca7fd3fe91d45bd358b314da4be5d5774c
+  .\optimization_control\environments\wind_generator.py: 0b91f8474077de49cb8477537c2b9b6910767228f472c980b5839f01213518a3
+  .\optimization_control\environments\wind_pinn_backend.py: a0ed3821aa308c14bc10370db328ad9d9c578a0223a41883ffeae7325ee5186e
+  .\optimization_control\environments\__init__.py: 626cc85c95eedebaaeddd1cba540e7083e2c43a99275ff43de424c4c0f25941d
+  .\optimization_control\utils\action_mapper.py: c2652387035770a14f3d87808384589b7a09b0e9ff6d4865a4909daadce38c9b
+  .\optimization_control\utils\actuator_model.py: f9557caa229e2be4992034712914f21fe668f9cfb678d38c5ba8467efe05c3cd
+  .\optimization_control\utils\reference_power.py: ff837c86e325e1ff42fe845f46f74dafd30ca44c21db2d36eeae2baa3fc7ad9d
+  .\optimization_control\utils\reference_schedule.py: 1059e2dfb175630ac3d39aae4c626446ffac4147157b39815490b2c9e308df23
+  .\optimization_control\utils\reward.py: 0fdd6f5147800a21b64110ce820329aa711eb1160c1010a5d409ecedd05bcf65
+  .\optimization_control\utils\state_pipeline.py: 22a82caa1600eb15771d63c21f37e4613b91fee050414abcabc8e64238ed062c
+  .\optimization_control\utils\__init__.py: 625f8e4d4b8052ba03a41fe70fcc972568931b645a1734666028a1f5abb9c12b
+bank_sha256: e4358b3ad12888f5793eea6c9ae9a2730a76cafc4892c0cff0660692adf4d66b
+source_inventory:
+- .\optimization_control\experiments\20261029_speed_nstep_control\actual_m_statistics.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\manifest.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_0.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_0.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_1.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_gust_1.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_0.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_0.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_1.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_ramp_1.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_0.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_0.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_1.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\bank\validation_stationary_1.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\build_report.py
+- .\optimization_control\experiments\20261029_speed_nstep_control\checkpoint_manifest.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\config.yaml
+- .\optimization_control\experiments\20261029_speed_nstep_control\core_verification.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\delivery_check.py
+- .\optimization_control\experiments\20261029_speed_nstep_control\delivery_files.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\delivery_verification.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\direction.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\direction.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\direction_summary.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\entry_static_check.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\figures\actual_controls.pdf
+- .\optimization_control\experiments\20261029_speed_nstep_control\figures\actual_controls.png
+- .\optimization_control\experiments\20261029_speed_nstep_control\figures\manifest.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\figures\test_comparison.pdf
+- .\optimization_control\experiments\20261029_speed_nstep_control\figures\test_comparison.png
+- .\optimization_control\experiments\20261029_speed_nstep_control\figures\validation_stability.pdf
+- .\optimization_control\experiments\20261029_speed_nstep_control\figures\validation_stability.png
+- .\optimization_control\experiments\20261029_speed_nstep_control\finalize_delivery.py
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\finished.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\started.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000000.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000128.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000256.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000384.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000512.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000640.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000768.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00000896.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00001024.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00001152.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00001280.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00001408.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00001536.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00001664.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00001792.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00001920.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\step_00002048.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\validation_00000000\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\validation_00000000\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\validation_00000000\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\validation_00002048\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\validation_00002048\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_000\validation_00002048\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\finished.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\recovery.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\started.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00002176.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00002304.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00002432.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00002560.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00002688.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00002816.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00002944.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00003072.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00003200.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00003328.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00003456.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00003584.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00003712.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00003840.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00003968.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00004096.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00004224.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00004352.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00004480.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00004608.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00004736.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00004864.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00004992.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00005120.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00005248.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00005376.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00005504.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00005632.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00005760.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00005888.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00006016.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00006144.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00006272.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00006400.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00006528.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00006656.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00006784.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00006912.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00007040.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00007168.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00007296.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00007424.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00007552.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00007680.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00007808.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00007936.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00008064.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\step_00008192.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\validation_00004096\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\validation_00004096\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\validation_00004096\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\validation_00006144\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\validation_00006144\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\validation_00006144\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\validation_00008192\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\validation_00008192\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\attempt_001\validation_00008192\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\result.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_0\state.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\finished.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\started.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000000.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000128.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000256.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000384.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000512.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000640.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000768.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00000896.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00001024.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00001152.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00001280.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00001408.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00001536.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00001664.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00001792.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00001920.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00002048.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00002176.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00002304.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00002432.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00002560.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00002688.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00002816.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00002944.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00003072.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00003200.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00003328.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00003456.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00003584.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00003712.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00003840.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00003968.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004096.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004224.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004352.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004480.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004608.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004736.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004864.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00004992.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00005120.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00005248.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00005376.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00005504.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00005632.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00005760.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00005888.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00006016.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00006144.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00006272.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00006400.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00006528.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00006656.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00006784.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00006912.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00007040.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00007168.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00007296.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00007424.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00007552.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00007680.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00007808.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00007936.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00008064.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\step_00008192.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00000000\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00000000\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00000000\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00002048\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00002048\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00002048\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00004096\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00004096\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00004096\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00006144\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00006144\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00006144\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00008192\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00008192\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\attempt_000\validation_00008192\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\result.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_1\state.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\finished.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\started.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000000.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000128.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000256.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000384.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000512.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000640.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000768.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00000896.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00001024.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00001152.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00001280.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00001408.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00001536.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00001664.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00001792.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00001920.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002048.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002176.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002304.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002432.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002560.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002688.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002816.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00002944.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00003072.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00003200.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00003328.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00003456.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00003584.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00003712.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00003840.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00003968.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00004096.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00004224.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00004352.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00004480.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00004608.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00004736.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00004864.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00004992.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00005120.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00005248.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00005376.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00005504.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00005632.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00005760.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00005888.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00006016.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00006144.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00006272.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00006400.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00006528.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00006656.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00006784.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00006912.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00007040.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00007168.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00007296.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00007424.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00007552.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00007680.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00007808.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00007936.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00008064.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\step_00008192.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00000000\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00000000\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00000000\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00002048\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00002048\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00002048\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00004096\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00004096\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00004096\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00006144\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00006144\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00006144\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00008192\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00008192\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\attempt_000\validation_00008192\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\result.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n1_run_2\state.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\finished.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\started.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000000.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000128.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000256.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000384.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000512.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000640.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000768.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00000896.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00001024.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00001152.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00001280.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00001408.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00001536.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00001664.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00001792.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00001920.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\step_00002048.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\validation_00000000\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\validation_00000000\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\validation_00000000\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\validation_00002048\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\validation_00002048\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_000\validation_00002048\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\finished.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\recovery.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\started.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00002176.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00002304.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00002432.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00002560.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00002688.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00002816.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00002944.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00003072.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00003200.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00003328.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00003456.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00003584.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00003712.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00003840.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00003968.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00004096.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00004224.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00004352.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00004480.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00004608.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00004736.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00004864.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00004992.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00005120.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00005248.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00005376.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00005504.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00005632.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00005760.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00005888.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00006016.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00006144.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00006272.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00006400.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00006528.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00006656.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00006784.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00006912.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00007040.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00007168.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00007296.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00007424.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00007552.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00007680.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00007808.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00007936.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00008064.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\step_00008192.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\validation_00004096\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\validation_00004096\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\validation_00004096\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\validation_00006144\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\validation_00006144\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\validation_00006144\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\validation_00008192\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\validation_00008192\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\attempt_001\validation_00008192\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\result.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_0\state.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\finished.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\started.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000000.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000128.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000256.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000384.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000512.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000640.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000768.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00000896.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00001024.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00001152.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00001280.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00001408.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00001536.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00001664.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00001792.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00001920.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00002048.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00002176.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00002304.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00002432.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00002560.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00002688.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00002816.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00002944.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00003072.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00003200.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00003328.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00003456.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00003584.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00003712.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00003840.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00003968.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004096.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004224.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004352.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004480.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004608.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004736.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004864.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00004992.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00005120.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00005248.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00005376.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00005504.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00005632.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00005760.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00005888.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00006016.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00006144.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00006272.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00006400.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00006528.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00006656.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00006784.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00006912.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00007040.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00007168.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00007296.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00007424.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00007552.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00007680.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00007808.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00007936.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00008064.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\step_00008192.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00000000\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00000000\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00000000\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00002048\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00002048\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00002048\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00004096\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00004096\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00004096\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00006144\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00006144\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00006144\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00008192\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00008192\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\attempt_000\validation_00008192\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\result.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_1\state.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\finished.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\started.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000000.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000128.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000256.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000384.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000512.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000640.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000768.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00000896.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00001024.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00001152.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00001280.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00001408.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00001536.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00001664.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00001792.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00001920.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002048.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002176.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002304.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002432.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002560.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002688.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002816.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00002944.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00003072.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00003200.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00003328.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00003456.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00003584.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00003712.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00003840.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00003968.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00004096.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00004224.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00004352.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00004480.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00004608.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00004736.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00004864.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00004992.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00005120.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00005248.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00005376.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00005504.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00005632.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00005760.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00005888.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00006016.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00006144.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00006272.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00006400.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00006528.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00006656.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00006784.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00006912.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00007040.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00007168.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00007296.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00007424.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00007552.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00007680.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00007808.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00007936.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00008064.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\step_00008192.pth
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00000000\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00000000\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00000000\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00002048\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00002048\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00002048\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00004096\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00004096\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00004096\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00006144\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00006144\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00006144\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00008192\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00008192\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\attempt_000\validation_00008192\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\result.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\formal\n8_run_2\state.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\gate\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\gate\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\gate\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\git_delivery.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\handover.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\handover.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\history.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\independent_review_read.md
+- .\optimization_control\experiments\20261029_speed_nstep_control\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\namespace_audit.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\normalization_n1.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\normalization_n8.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\output_manifest.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\plot_cache\fontlist-v3.11.0.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\prelaunch_entry_check.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\processes.jsonl
+- .\optimization_control\experiments\20261029_speed_nstep_control\qa_documents.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\resolved_execution.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\review_acceptance.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\run_formal.py
+- .\optimization_control\experiments\20261029_speed_nstep_control\selection.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\staged_review.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\summary.txt
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\aggregate.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\manifest.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_gust_0.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_gust_0.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_gust_1.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_gust_1.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_gust_2.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_gust_2.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_low_wind_stress.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_low_wind_stress.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_ramp_0.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_ramp_0.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_ramp_1.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_ramp_1.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_ramp_2.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_ramp_2.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_stationary_0.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_stationary_0.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_stationary_1.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_stationary_1.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_stationary_2.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\bank\test_stationary_2.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\channel_diagnostics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_fixed\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_fixed\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_fixed\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_fixed\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_p\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_p\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_p\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_p\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_pi\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_pi\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_pi\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\common_pi\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\corrections.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\delivery_verification.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_initial\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_initial\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_initial\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_initial\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_zero_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_zero_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_zero_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_zero_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_zero_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_zero_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_zero_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_0_zero_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_initial\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_initial\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_initial\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_initial\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_zero_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_zero_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_zero_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_zero_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_zero_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_zero_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_zero_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_1_zero_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_initial\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_initial\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_initial\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_initial\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_zero_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_zero_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_zero_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_zero_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_zero_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_zero_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_zero_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n1_2_zero_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_initial\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_initial\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_initial\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_initial\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_zero_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_zero_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_zero_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_zero_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_zero_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_zero_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_zero_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_0_zero_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_initial\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_initial\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_initial\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_initial\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_zero_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_zero_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_zero_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_zero_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_zero_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_zero_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_zero_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_1_zero_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_initial\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_initial\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_initial\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_initial\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_zero_final\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_zero_final\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_zero_final\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_zero_final\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_zero_selected\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_zero_selected\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_zero_selected\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\n8_2_zero_selected\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\paired_results.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_0\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_0\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_0\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_0\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_1\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_1\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_1\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_1\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_2\complete.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_2\corrections.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_2\metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\parent_2\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\release.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\test\verification.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\training_wind_preflight.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\validation_metrics.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\validation_trajectories.csv
+- .\optimization_control\experiments\20261029_speed_nstep_control\visual_qa.json
+- .\optimization_control\experiments\20261029_speed_nstep_control\waiting_point.json
+source_manifest_sha256: e00171f8efb7c86c05a2dca34280d761d328ef78f8e95f1f4df809929622f096
+conservative_reserve: 84106

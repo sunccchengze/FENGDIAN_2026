@@ -1,0 +1,10 @@
+{
+  "seed": 42,
+  "status": "executed",
+  "formal_RL_steps": 0,
+  "model_rows": 82449,
+  "api_calls": 82438,
+  "full_cases": 36,
+  "metrics": 288,
+  "trace_rows": 36864
+}

@@ -1,0 +1,10 @@
+{
+  "stage_complete": true,
+  "reason": "new_configuration_fixed_used_bank_goal_met_3_of_3",
+  "acceptance": "primary_acceptance.json",
+  "handoff": "handoff.md",
+  "interface_note": "pinn_response_interface.md",
+  "examples_passed": true,
+  "remaining_required_work": false,
+  "no_further_training_or_diagnostics": true
+}

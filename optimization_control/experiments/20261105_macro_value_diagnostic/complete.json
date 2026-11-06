@@ -1,0 +1,156 @@
+{
+  "groups": [
+    {
+      "group": "B0_selected",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\B0_selected.npz",
+        "sha256": "794f38a2572baf9d2bc47750dc17331d269779a710d70f61cd622a397d03a699",
+        "bytes": 474708
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "B0_final",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\B0_final.npz",
+        "sha256": "394aca2160aad3a9770be38a3ecaa357f46b6140f294f557218c78d105f62c79",
+        "bytes": 600338
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "B1_selected",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\B1_selected.npz",
+        "sha256": "53c1be670f92b27311a807dbc9d5ee1bdad2b78c32ed7872f218c5358866b9dc",
+        "bytes": 472440
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "B1_final",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\B1_final.npz",
+        "sha256": "b14d89c36ec0c8e37422965d19278e3fb6d5af68b1dffee6b18a6760fe448f07",
+        "bytes": 594313
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "B2_selected",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\B2_selected.npz",
+        "sha256": "d727826d99ca8b9c5a4c8cd4dafe8629e0a66d71bafcf51e341ae545f77c8e04",
+        "bytes": 591837
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "B2_final",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\B2_final.npz",
+        "sha256": "99f30a2ec4a5024f5b454b24b0d40be2ecf87697e7f1cc02621b4bb073aebf8e",
+        "bytes": 591664
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "C0_selected",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\C0_selected.npz",
+        "sha256": "8c1c5430bc2ea6f27cb92115bae4302be163402ac8376790b800e6880d3c6954",
+        "bytes": 482627
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "C0_final",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\C0_final.npz",
+        "sha256": "3222853f247c4823f3828d1fca9958fce0b19b99627fa06c5bb68a92c2b940d1",
+        "bytes": 606595
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "C1_selected",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\C1_selected.npz",
+        "sha256": "e990b6075330151fd7ce5ec876e91ffec264004316888ecd2b3de7482d66404d",
+        "bytes": 480315
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "C1_final",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\C1_final.npz",
+        "sha256": "266dae11bde21786654b9123b978df086b7d9d95e3151a44995a595ecc87352f",
+        "bytes": 601845
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "C2_selected",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\C2_selected.npz",
+        "sha256": "216c2a1204850d751097be1962d468d17b4381a142c634e2b2cea63f782977cb",
+        "bytes": 600079
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    },
+    {
+      "group": "C2_final",
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261105_macro_value_diagnostic\\anchors\\C2_final.npz",
+        "sha256": "c1ea457e2ebe4ef77e1f1b8887061701801cc26271135f4a9f7614dcdfbd703e",
+        "bytes": 598560
+      },
+      "rows": 2502,
+      "anchors": 12,
+      "source_parameters_rng_unchanged": true,
+      "original_and_own_rollout_exact": true
+    }
+  ],
+  "anchors": 144,
+  "branches": 1296,
+  "mock_rows": 65,
+  "real_PINN_rows": 30024,
+  "total_rows": 30089,
+  "formal_RL_steps": 0,
+  "optimizer_updates": 0,
+  "new_test": 0
+}

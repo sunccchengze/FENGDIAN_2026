@@ -1,0 +1,1219 @@
+{
+  "outcomes": [
+    {
+      "anchor": 0,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a00.npz",
+        "sha256": "41914e623eb4196869c272f89667b2ae39144d3fef0a92a4021f11fa3649bd36",
+        "bytes": 2160
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor00",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 1,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a01.npz",
+        "sha256": "f0f5982aee212c3df6f260e3669fff212eb102c898999b528e2c47d1a0388ca6",
+        "bytes": 2152
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor01",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 2,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a02.npz",
+        "sha256": "12f50d88d1c9c633155a16776c960ad1990a9afe630000f3dbe143cb5496cb92",
+        "bytes": 2153
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor02",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 3,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a03.npz",
+        "sha256": "491e6584b0df4c1fe6342ed26c72a75938aae306d931b2031b7d1545acbda7d3",
+        "bytes": 2162
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor03",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 4,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a04.npz",
+        "sha256": "8f66380b91d7c4affa4d924e3fbc0630524d665f767a08db5101b70bf5eaa64c",
+        "bytes": 2155
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor04",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 5,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a05.npz",
+        "sha256": "fb203a2450a5b59d7ac06403608ee650d2a22dcca645735790b87ade75092ceb",
+        "bytes": 2155
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor05",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 6,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a06.npz",
+        "sha256": "b8f29fba846a8d381d12fafe6aba5ec60af63cf59e5a0cdc69da88f017ed5afc",
+        "bytes": 2158
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor06",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 7,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a07.npz",
+        "sha256": "57b5bdcafd3a5cae54ebdbd8f7cee2d63b723d88c0c59721a6faa55d0d6b717d",
+        "bytes": 2139
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor07",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 8,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a08.npz",
+        "sha256": "d31c664a7e81fcf6d16d35c8739b03d06c9d22cecb760b20c5290fceeff77aea",
+        "bytes": 2167
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor08",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 9,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a09.npz",
+        "sha256": "a4804365447c4f3cc13d1d7983af49c1d298385c3c8deda0728ae8bf552568ed",
+        "bytes": 2139
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor09",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 10,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a10.npz",
+        "sha256": "4dd6f21d384cd1168fa837968b8deeb62ea2e7e294e7186d997243811156425a",
+        "bytes": 2166
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor10",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 11,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a11.npz",
+        "sha256": "04c3bbbf322edf94aed3fb9c75571f0da5e5ab7498d94770087116703a855fe0",
+        "bytes": 2162
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor11",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 12,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a12.npz",
+        "sha256": "b5c0d4100ca13bf1acdd3c9a6bbbf688d54c0b612e1e96b94c2c3dc3a8f22b2c",
+        "bytes": 2138
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor12",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 13,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a13.npz",
+        "sha256": "ec96d44b439b19a47420c22d7ad4b214e0fc0b701b07e3661fbb0bdc47cbd634",
+        "bytes": 2142
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor13",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 14,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a14.npz",
+        "sha256": "db18e99bff68f7e4de55bf3e407e9fe9edb2b15a033f4ac3634c36feaac45608",
+        "bytes": 2132
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor14",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 15,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a15.npz",
+        "sha256": "8fcad102c6013c6ef2537741eaa341ffa66f2a933c639782a265c0722fdba16a",
+        "bytes": 2157
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor15",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 16,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a16.npz",
+        "sha256": "1446416e36cbcc7720f5dade7a841587899e679625686a3fbb91436c7ae09402",
+        "bytes": 2143
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor16",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 17,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a17.npz",
+        "sha256": "d662c1329b1b67dff09ebf19b994e284b35e3bf4c7f95c9320234b73a83574e8",
+        "bytes": 2135
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor17",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 18,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a18.npz",
+        "sha256": "55cf90ebd829edbcb8e057e21c612f7b64042daf2bd1bdbd4b5e4e16812ef8d9",
+        "bytes": 2136
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor18",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 19,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a19.npz",
+        "sha256": "a5d7ff788f2601b41b622a3e65d5005688b651763c9f937441852d674858bfb6",
+        "bytes": 2135
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor19",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 20,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a20.npz",
+        "sha256": "43834902f47629b31551863f2b80749b69099cc4776148a0aedbcb180c937ac2",
+        "bytes": 2135
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor20",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 21,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a21.npz",
+        "sha256": "c0b60873a993240d53ab8513f60d6afcd4b41d11f5fad3c99a58922248763ca6",
+        "bytes": 2125
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor21",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 22,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a22.npz",
+        "sha256": "8610b00eb942581de1cb6ca2a05fca5aebf34b0206ab17666bd2b0f800b65dee",
+        "bytes": 2160
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor22",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 23,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a23.npz",
+        "sha256": "5135c2e3fe78e4fe14828b69ec68f06e8c7166fd4f2c2625b6cf8ea3dd00fa36",
+        "bytes": 2138
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor23",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 24,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a24.npz",
+        "sha256": "1e217c0215e0cb23eb7c2bc151532fadc48223f53324bd49541ed9d2ce69f28a",
+        "bytes": 2143
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor24",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 25,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a25.npz",
+        "sha256": "35186f0a6a9b62270d3eb053be2c86f40e7cad8bb70a8cf02e269a9ca80cfc6f",
+        "bytes": 2156
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor25",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 26,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a26.npz",
+        "sha256": "1fca793b5fcd332c988a2d210696b8f17a20d59c188c3b0ed2df06aca28671b7",
+        "bytes": 2157
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor26",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 27,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a27.npz",
+        "sha256": "b2a30bcde044ec7c64849d21287b5f8548602660640f4dd8d4082b317776da3d",
+        "bytes": 2162
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor27",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 28,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a28.npz",
+        "sha256": "e44f0de614966e7360bee95d84fbe6b2b49ca5c509e7a9e83c7e9da1b0d3bf14",
+        "bytes": 2152
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor28",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 29,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a29.npz",
+        "sha256": "ad65d8f4c7c5c8dbc1c7a16016ff50cc9f131694abb4c01b2b7937ac1a6a8506",
+        "bytes": 2157
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor29",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 30,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a30.npz",
+        "sha256": "62463c29986c094e98a7016a52234f8b98a8a72686fb2b70dd74ba814368f960",
+        "bytes": 2160
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor30",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 31,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a31.npz",
+        "sha256": "98831bdcaa20b20857f6ff354bb66b05cd52d68b0f938dcfcd2b926c0bf90c33",
+        "bytes": 2140
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor31",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 32,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a32.npz",
+        "sha256": "7e403a682ed9952f2b7f6284aed80d6969087ae7d60b579489c1c7c0202378a5",
+        "bytes": 2163
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor32",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 33,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a33.npz",
+        "sha256": "ca08fc83c180bc50c2442bd5fd864e5dcaad42271939e2a5af98406d709c5bda",
+        "bytes": 2152
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor33",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 34,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a34.npz",
+        "sha256": "25b1c881b552bf246cdefa236781081e614b49da8da0fbb4abe75f5bfd3a591a",
+        "bytes": 2153
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor34",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 35,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a35.npz",
+        "sha256": "7c127ed8d0295f7890f4837dca9cf926a6b2b3c5bc74251bede706b4c169fd0a",
+        "bytes": 2160
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor35",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 36,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a36.npz",
+        "sha256": "fbb83fb86da40d61692af19a779e1d5470114ff0df3c7df6de88567d26494833",
+        "bytes": 2144
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor36",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 37,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a37.npz",
+        "sha256": "a32d136484e619893c41be608ddd197322c44c5d95f369c78be2369ec99aff70",
+        "bytes": 2146
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor37",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 38,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a38.npz",
+        "sha256": "9fe9151e71b553dc08651aadf540cbd8b1b8437381d0719f29a9531100584b10",
+        "bytes": 2137
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor38",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 39,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a39.npz",
+        "sha256": "e772cb7cd5a27163cf1c7df8af1ebf6046b98253b620e259f843f8cf293db115",
+        "bytes": 2137
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor39",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 40,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a40.npz",
+        "sha256": "6ed2e27eacc6d821b5daa246a43eb6b848759a6b89cf1b7d799d3a2c2c1a4895",
+        "bytes": 2144
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor40",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 41,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a41.npz",
+        "sha256": "7b8011d2a3bcac287493712cb8e819c15a4939e25e282fbbc3ffac9ce4fe7c46",
+        "bytes": 2150
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor41",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 42,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a42.npz",
+        "sha256": "be42963a16c95c4c9209635fb941e373a79166b15d80d38725a64cadfb9ec10e",
+        "bytes": 2150
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor42",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 43,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a43.npz",
+        "sha256": "dbfae2eb4b8bfe7b0edb55bab039a68ba406a4042c475fc6ac0c11455c383706",
+        "bytes": 2138
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor43",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 44,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a44.npz",
+        "sha256": "7ed1e9ad7b91324cd04c10b2308f116676056f7ef3889f1c51e6c28e438aed64",
+        "bytes": 2148
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor44",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 45,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a45.npz",
+        "sha256": "f25ec95839b32aa546cdf7fc84d8fab1a91f0b05ae81d46aaa0a5a25a2e8477b",
+        "bytes": 2139
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor45",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 46,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a46.npz",
+        "sha256": "cf5c05957d746a8e8b0a71437f8b53900dfce85212ceaff3bbccd13b773c4869",
+        "bytes": 2141
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor46",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    },
+    {
+      "anchor": 47,
+      "artifact": {
+        "path": ".\\optimization_control\\experiments\\20261106_nrel_speed_diagnostic\\anchors\\a47.npz",
+        "sha256": "e2e1627e1d7f1018c403d7ed3c4debf8e89d8bfbaebbc4d95e84f62a087c4f74",
+        "bytes": 2148
+      },
+      "replay": {
+        "power_max_abs_w": 0.0,
+        "ueff_max_abs_m_s": 0.0,
+        "farm_abs_w": 0.0
+      },
+      "budget": {
+        "name": "anchor47",
+        "reserve": 30,
+        "actual": 30,
+        "api_calls": 2,
+        "status": "complete",
+        "kinds": {
+          "PINN": 30
+        }
+      },
+      "label_calls": 1,
+      "label_rows": 30
+    }
+  ],
+  "PINN_rows": 1440,
+  "model_api_calls": 96,
+  "label_calls": 48,
+  "label_input_rows": 1440,
+  "labels_not_physical_truth": true,
+  "replay_passed": 48,
+  "environment_steps": 0,
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "new_winds": 0,
+  "combined_rows": 5470,
+  "row_hard_cap": 2048,
+  "combined_hard_cap": 6078,
+  "failed_scopes": 0,
+  "retries": 0
+}

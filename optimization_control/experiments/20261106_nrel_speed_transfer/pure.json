@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "rows": 0,
+  "updates": 0,
+  "lower_intersection_m_s": 6.029361264969021,
+  "upper_intersection_m_s": 10.572317880794701,
+  "old_coordinate_lower_for_new_min": -0.6324847936630249,
+  "marked_physical_speeds": [
+    0.7225663213133813,
+    0.8999999989904464,
+    1.267
+  ],
+  "old_identity_checks": [
+    {
+      "run": 0,
+      "old_current_target_coordinates": true,
+      "old_command_exact": true,
+      "new_speed_physical_radius_and_clamp": true,
+      "pitch_yaw_same_input_commands_exact": true,
+      "three_physical_markers_old_coordinates": true
+    },
+    {
+      "run": 1,
+      "old_current_target_coordinates": true,
+      "old_command_exact": true,
+      "new_speed_physical_radius_and_clamp": true,
+      "pitch_yaw_same_input_commands_exact": true,
+      "three_physical_markers_old_coordinates": true
+    },
+    {
+      "run": 2,
+      "old_current_target_coordinates": true,
+      "old_command_exact": true,
+      "new_speed_physical_radius_and_clamp": true,
+      "pitch_yaw_same_input_commands_exact": true,
+      "three_physical_markers_old_coordinates": true
+    }
+  ],
+  "error_normalization_unchanged": true,
+  "no_new_target_training_path": true
+}

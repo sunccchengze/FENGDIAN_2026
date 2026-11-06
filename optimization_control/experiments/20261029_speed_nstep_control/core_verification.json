@@ -1,0 +1,34 @@
+{
+  "selection_sha256": "1eaebb7a0b6f8e1a79fc73d149c7eded9979ddf886463958b11748196c3841c9",
+  "formal_steps": 49152,
+  "checkpoints": 390,
+  "pairing": [
+    {
+      "run_id": 0,
+      "common_initial_exact": true,
+      "paired_episode_weather_target_pitch_noise": true,
+      "episodes": 64
+    },
+    {
+      "run_id": 1,
+      "common_initial_exact": true,
+      "paired_episode_weather_target_pitch_noise": true,
+      "episodes": 64
+    },
+    {
+      "run_id": 2,
+      "common_initial_exact": true,
+      "paired_episode_weather_target_pitch_noise": true,
+      "episodes": 64
+    }
+  ],
+  "retained_final_transitions": 196608,
+  "episode_saves_per_job": 65,
+  "run0_new_process_restart": true,
+  "declared_n8_gain_passed": false,
+  "n8_over_n1_ratios": {
+    "selected": 0.9969284701091448,
+    "final": 0.9915954367187894
+  },
+  "n8_stable_streams": 2
+}

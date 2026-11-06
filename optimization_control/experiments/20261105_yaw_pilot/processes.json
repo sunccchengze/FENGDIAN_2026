@@ -1,0 +1,35 @@
+[
+  {
+    "part": 0,
+    "jobs": [
+      {
+        "arm": "Y",
+        "run": 0,
+        "pid": 43012,
+        "status": 1
+      }
+    ]
+  },
+  {
+    "part": 1,
+    "jobs": [
+      {
+        "arm": "Y",
+        "run": 1,
+        "pid": 42560,
+        "status": 1
+      }
+    ]
+  },
+  {
+    "part": 2,
+    "jobs": [
+      {
+        "arm": "Y",
+        "run": 2,
+        "pid": 24620,
+        "status": 1
+      }
+    ]
+  }
+]

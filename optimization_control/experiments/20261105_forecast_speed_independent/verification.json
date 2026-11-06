@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "rows": 53406,
+  "rollouts": 414,
+  "trace_rows": 53406,
+  "unique_winds": 18,
+  "recompute_rmse_max_diff_w": 0,
+  "closed_loop_initial_matches_parent": [
+    "A0_selected",
+    "A1_selected",
+    "B0_selected",
+    "B1_selected",
+    "C0_selected",
+    "C1_selected"
+  ],
+  "verified_actuator_rates": true,
+  "whole_macro_hold_verified": true,
+  "max_heading_rate": 0.0019566631140115476,
+  "max_pitch_rate": 0.008726646260000012,
+  "max_speed_rate": 0.04303141236913999,
+  "prior_close_speed_groups_reused": 21,
+  "new_close_speed_queries": 0,
+  "optimizer_updates": 0,
+  "released_wind_manifest_sha": "819cdfd24b3d9051b9e576f812fe4dc6d72b0b09607adac2018c61d318820230",
+  "primary_gate": true
+}

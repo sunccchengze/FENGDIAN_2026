@@ -1,0 +1,5 @@
+Yaw software engineering acceptance passed. seed=42, original C selected=0/0/4096.
+3399 total model rows (2580 PINN, 819 mock), 3 isolated engineering joint updates.
+9 full zero-takeover pairs exact, +1/-1 degree physical yaw connected, disk next update exact.
+No formal learning experiment or new independent test. Yaw weak/sign model limitation retained.
+See YAW_ENGINEERING_RESULTS.md and YAW_ENGINEERING_PROTOCOL.md for references and reproduction.

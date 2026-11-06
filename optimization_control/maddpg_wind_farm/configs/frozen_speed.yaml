@@ -1,0 +1,28 @@
+version: frozen_parent_speed_v1
+seed: 42
+origin: .
+steps_per_run: 8192
+eval_every: 2048
+warmup_steps: 512
+update_every: 2
+smoke_steps_per_arm: 1024
+training_episode_offset: 8400000
+validation_episode_offset: 8510000
+test_episode_offset: 8620000
+stress_episode: 8639000
+smoke_episode_offset: 8450000
+noise_namespace: 8404
+smoke_noise_namespace: 8454
+head_namespace: 8405
+parent_steps: [16384, 12288, 8192]
+parent_sha256:
+- 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+- 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+- e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+gate:
+  action_atol: 2.0e-6
+  applied_atol: 1.0e-6
+  power_atol_w: 1.0
+  max_final_selected: 1.25
+  max_noninferior_ratio: 1.05
+  min_mean_gain_fraction: 0.01

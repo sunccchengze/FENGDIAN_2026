@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "saved_formal_training_steps": 2048,
+  "paired_exploration_targets_anchors_exact": true,
+  "maximum_reward_reconstruction_difference": 2.384185791015625e-07,
+  "protected_files": 86,
+  "protected_files_unchanged": true,
+  "interrupted_uncommitted_attempts": [],
+  "max_possible_recomputed_steps": 0,
+  "all_complete": true
+}

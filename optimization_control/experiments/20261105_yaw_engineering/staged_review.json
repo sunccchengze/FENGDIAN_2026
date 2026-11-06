@@ -1,0 +1,58 @@
+{
+  "base": "c6a27774ec7cd34113ed7e37b47947b279fef86a",
+  "reviewed_staged_diff": true,
+  "whitespace_check": true,
+  "staged_files": [
+    {
+      "path": "optimization_control/experiments/20261105_yaw_engineering/config.yaml",
+      "bytes": 2880,
+      "sha256": "f72f7d4ed717afdea4ef545a88c575b5f99d79b19a134a04590abd5c96efa770"
+    },
+    {
+      "path": "optimization_control/experiments/20261105_yaw_engineering/metrics.csv",
+      "bytes": 222,
+      "sha256": "8aff99e0c9bcfea0210ee580de4a44ab252a3eabe89d12f69bdf94db129dddc9"
+    },
+    {
+      "path": "optimization_control/experiments/20261105_yaw_engineering/summary.txt",
+      "bytes": 453,
+      "sha256": "5f09900c855471afab04f9cd0b083c06908396d9b12e2a0c3aa9db554cb2d3d3"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/YAW_ENGINEERING_PROTOCOL.md",
+      "bytes": 4065,
+      "sha256": "8df4e8ca035af579f862beae5317dc42131b889ea7b38e059dff1479518755f5"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/YAW_ENGINEERING_RESULTS.md",
+      "bytes": 9611,
+      "sha256": "8c4b5a5e98272aaf0fbf818b35185b4f483bdd1beeb7422982482b9122bdcbac"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/yaw_engineering_report.py",
+      "bytes": 7811,
+      "sha256": "ccb766ea4d1f7fe95136ce9632d8624e1884396e354906b97fcb29de96b72053"
+    },
+    {
+      "path": "optimization_control/maddpg_wind_farm/yaw_macro.py",
+      "bytes": 12612,
+      "sha256": "43a2182a51187a5321938bc877e87a057598b1109c1de05f70c82562e147bb9a"
+    },
+    {
+      "path": "optimization_control/tests/verify_yaw_takeover.py",
+      "bytes": 26772,
+      "sha256": "9ce55a252fd25d2f5930a459ea44856263dd34c96cc07a452f7ce1956990dbbe"
+    }
+  ],
+  "manifest_files": 42,
+  "original_C_selected_means_kW": {
+    "stationary": 339.34202316913724,
+    "ramp": 419.69361768499,
+    "gust": 322.8496681204799
+  },
+  "source_guard_passed": true,
+  "no_shared_edits": true,
+  "formal_training_steps": 0,
+  "engineering_rows": 3399,
+  "engineering_updates": 3
+}

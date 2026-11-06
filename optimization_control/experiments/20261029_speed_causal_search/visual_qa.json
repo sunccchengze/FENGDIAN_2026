@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "figures": [
+    "parent_case_ratios.png",
+    "controller_comparison.png",
+    "causal_controls.png"
+  ],
+  "findings": [
+    "All streams and negative case ratios shown; legends/axes readable, no clipping.",
+    "Turbine 1/2/3 use solid/dashed/dotted lines; actual states separated from total normalized commands."
+  ],
+  "surrogate_calls": 0
+}

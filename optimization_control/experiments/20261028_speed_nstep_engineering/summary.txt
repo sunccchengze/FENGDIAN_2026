@@ -1,0 +1,15 @@
+{
+  "seed": 42,
+  "status": "engineering_verified",
+  "formal_training_steps": 0,
+  "new_environment_steps": 0,
+  "real_replay_discarded_update_calls": 39,
+  "new_policy_files": 0,
+  "test_states_used": false,
+  "n1_precision": "exact",
+  "real_parent_streams": 3,
+  "old_final_replays": 3,
+  "performance_support": false,
+  "formal_start_allowed": false,
+  "draft": "../../maddpg_wind_farm/SPEED_NSTEP_DRAFT.md"
+}

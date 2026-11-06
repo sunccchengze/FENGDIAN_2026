@@ -1,0 +1,7 @@
+run_id,source,insertion_count,replay_size,n1_exact_updates,paired_n1_n8_anchors,n8_restore_exact,future_total_actions_and_actual_m_targets,current_radius_checked,discarded_updates
+0,pitch_parent,32768,32768,3,True,True,True,0.02/0.06/0.10,11
+0,old_speed_final_plus_8_train_copies,40968,32768,0,True,True,True,0.02,2
+1,pitch_parent,28672,28672,3,True,True,True,0.02/0.06/0.10,11
+1,old_speed_final_plus_8_train_copies,36872,32768,0,True,True,True,0.02,2
+2,pitch_parent,24576,24576,3,True,True,True,0.02/0.06/0.10,11
+2,old_speed_final_plus_8_train_copies,32776,32768,0,True,True,True,0.02,2

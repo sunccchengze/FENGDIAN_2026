@@ -1,0 +1,43 @@
+{
+  "seed": 42,
+  "passed": true,
+  "surrogate_calls": 0,
+  "training_steps_added": 0,
+  "python_files_syntax_checked": 9,
+  "documentation_links_checked": 5,
+  "images": {
+    "actual_controls_0.png": [
+      2040,
+      2210
+    ],
+    "actual_controls_1.png": [
+      2040,
+      2210
+    ],
+    "actual_controls_2.png": [
+      2040,
+      2210
+    ],
+    "paired_test.png": [
+      2040,
+      765
+    ],
+    "paired_validation.png": [
+      2550,
+      765
+    ]
+  },
+  "pdf_page_counts": {
+    "actual_controls_0.pdf": 1,
+    "actual_controls_1.pdf": 1,
+    "actual_controls_2.pdf": 1,
+    "paired_test.pdf": 1,
+    "paired_validation.pdf": 1
+  },
+  "visual_review_completed_all_five_png": true,
+  "source_hash_count": 26,
+  "frozen_execution_hash_count": 73,
+  "related_unique_tests": 37,
+  "report_sha256": "de8544b80dabd4a3e42c0ed6ed52219fba12f1343dc6120feda983b31899f0e8",
+  "qa_script_sha256": "e0a918589c1b1d253a67b16040cb8b4f04cbffb99bf148a8e3ee96d441033721"
+}

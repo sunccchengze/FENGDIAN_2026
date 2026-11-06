@@ -1,0 +1,297 @@
+{
+  "jobs": [
+    {
+      "run": 0,
+      "case_id": "validation_stationary_t2.9e+06_r0_p0.04",
+      "unique_actors": 3,
+      "roles": 6,
+      "actual_environment_steps": 288,
+      "reused_tail_steps": 96,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case0\\attempt_000\\full_trajectories.csv.gz": "14fd0e1994480353ba74bad8269562313cdc980f37c95869e1782a517b8313ef",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case0\\attempt_000\\roles.csv": "a40a62b4d523cfba6b93a1f3d1a35f03862832a51812058f4398594d69b06341"
+      }
+    },
+    {
+      "run": 0,
+      "case_id": "validation_stationary_t3.5e+06_r0_p0.04",
+      "unique_actors": 3,
+      "roles": 6,
+      "actual_environment_steps": 288,
+      "reused_tail_steps": 96,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case1\\attempt_000\\full_trajectories.csv.gz": "7a422527258942e43da655e9f5e05bd2d01e252f4139e12ca57bfd0ba2e8126b",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case1\\attempt_000\\roles.csv": "f40c3783c50d2c98bc4c6d7d9a5e09bc6c5d0140e7903a3a6c6e2182131749c9"
+      }
+    },
+    {
+      "run": 0,
+      "case_id": "validation_ramp_t2.9e+06_r0_p0.04",
+      "unique_actors": 3,
+      "roles": 6,
+      "actual_environment_steps": 288,
+      "reused_tail_steps": 96,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case2\\attempt_000\\full_trajectories.csv.gz": "62de74e99ee78bd5f548989bb23a3d15b7ddeebd71b4564244be5d1a5e22d511",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case2\\attempt_000\\roles.csv": "9aab80527d80d77357851589a5093716b0b7dc3b5d8749d343593915226c1c36"
+      }
+    },
+    {
+      "run": 0,
+      "case_id": "validation_ramp_t3.5e+06_r0_p0.04",
+      "unique_actors": 3,
+      "roles": 6,
+      "actual_environment_steps": 288,
+      "reused_tail_steps": 96,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case3\\attempt_000\\full_trajectories.csv.gz": "6e31f72dbb3b3c09ef2c84f56fbc709ec4970bb3f917c43abc505e138e7d28ef",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case3\\attempt_000\\roles.csv": "7abd44885c1c3f1197d77f1189764cdf846139edcb55508a4e4b2a22d5a95f43"
+      }
+    },
+    {
+      "run": 0,
+      "case_id": "validation_gust_t2.9e+06_r0_p0.04",
+      "unique_actors": 3,
+      "roles": 6,
+      "actual_environment_steps": 288,
+      "reused_tail_steps": 96,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case4\\attempt_000\\full_trajectories.csv.gz": "6bdcf4df9f6476e40893eee71e16e81763d375932fd99477cc9ce372a1de1885",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case4\\attempt_000\\roles.csv": "197f01792eaa5b7ae3b848526cea1d0ccaf91420ea8cdb2dd307dfb6f439fba9"
+      }
+    },
+    {
+      "run": 0,
+      "case_id": "validation_gust_t3.5e+06_r0_p0.04",
+      "unique_actors": 3,
+      "roles": 6,
+      "actual_environment_steps": 288,
+      "reused_tail_steps": 96,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case5\\attempt_000\\full_trajectories.csv.gz": "a0fe05ebbd34d8ea6b3b5ad1487703508e24c92dea53ebdd80f652e14973f803",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case5\\attempt_000\\roles.csv": "e623e9165ed20cf4b30a9b13620eaed4e6bd42a5fd384dc605a032952355ba3d"
+      }
+    },
+    {
+      "run": 1,
+      "case_id": "validation_stationary_t2.9e+06_r0_p0.04",
+      "unique_actors": 4,
+      "roles": 6,
+      "actual_environment_steps": 384,
+      "reused_tail_steps": 128,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case0\\attempt_000\\full_trajectories.csv.gz": "096740c4c76905adc665ef2f151573730313563ee825acfc447ce2d9e84dce3d",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case0\\attempt_000\\roles.csv": "4120ce45a1286d57b258c86c4a930c87578218fde305af6bea28d94b07e1b685"
+      }
+    },
+    {
+      "run": 1,
+      "case_id": "validation_stationary_t3.5e+06_r0_p0.04",
+      "unique_actors": 4,
+      "roles": 6,
+      "actual_environment_steps": 384,
+      "reused_tail_steps": 128,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case1\\attempt_000\\full_trajectories.csv.gz": "8e7d8576c99d2e71dbf37e9fc0a5baa66f26354293b00a127e4a7d257211dc4a",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case1\\attempt_000\\roles.csv": "8297ec34b20a9e9fac652572780b86fe8ef49c1805cb240d68536611e8159f73"
+      }
+    },
+    {
+      "run": 1,
+      "case_id": "validation_ramp_t2.9e+06_r0_p0.04",
+      "unique_actors": 4,
+      "roles": 6,
+      "actual_environment_steps": 384,
+      "reused_tail_steps": 128,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case2\\attempt_000\\full_trajectories.csv.gz": "9c9403c6e05b67d9249ee6e7f1c115b0415ba00dfffcc34357b5802e2d306c15",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case2\\attempt_000\\roles.csv": "c5e66b5799488d02e7cddc93d15f160272347c8c79caef7a7329a9781da8803c"
+      }
+    },
+    {
+      "run": 1,
+      "case_id": "validation_ramp_t3.5e+06_r0_p0.04",
+      "unique_actors": 4,
+      "roles": 6,
+      "actual_environment_steps": 384,
+      "reused_tail_steps": 128,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case3\\attempt_000\\full_trajectories.csv.gz": "8e6e2e9a89782f6702fe25a44aecd14720bb49b582905ff2b3c19e362bdf1ab9",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case3\\attempt_000\\roles.csv": "4e3eb56f4b9b7d2f80af656ebee320afcc4123e0dd55750a7b5a619485474e40"
+      }
+    },
+    {
+      "run": 1,
+      "case_id": "validation_gust_t2.9e+06_r0_p0.04",
+      "unique_actors": 4,
+      "roles": 6,
+      "actual_environment_steps": 384,
+      "reused_tail_steps": 128,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case4\\attempt_000\\full_trajectories.csv.gz": "f5539dd29b7e40381751f97278ca3da9f3304c95bb77b19caed059253443025d",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case4\\attempt_000\\roles.csv": "d7a398e31ca0611fb86cb76b430b732d7de2130ba8cd38dc3c31352a6ec1e8c7"
+      }
+    },
+    {
+      "run": 1,
+      "case_id": "validation_gust_t3.5e+06_r0_p0.04",
+      "unique_actors": 4,
+      "roles": 6,
+      "actual_environment_steps": 384,
+      "reused_tail_steps": 128,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case5\\attempt_000\\full_trajectories.csv.gz": "92bbdb8af37f52490a68a7ffb7abaaeda1cdae21425a2bf3cbe706341d5d1b9f",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case5\\attempt_000\\roles.csv": "91a3cccf149bab83b152bdfa3ac64ce0129fa0c1a6ec8ac08371c4a2344747f1"
+      }
+    },
+    {
+      "run": 2,
+      "case_id": "validation_stationary_t2.9e+06_r0_p0.04",
+      "unique_actors": 5,
+      "roles": 6,
+      "actual_environment_steps": 480,
+      "reused_tail_steps": 160,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case0\\attempt_000\\full_trajectories.csv.gz": "12325b4e6ad631cce9576b08d487b0b6d172576a4112927dc776da504f977793",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case0\\attempt_000\\roles.csv": "8647a8c25dd4fcac098761cf5014526aaef6e7aee6fe078dead0a5e0bd353e49"
+      }
+    },
+    {
+      "run": 2,
+      "case_id": "validation_stationary_t3.5e+06_r0_p0.04",
+      "unique_actors": 5,
+      "roles": 6,
+      "actual_environment_steps": 480,
+      "reused_tail_steps": 160,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case1\\attempt_000\\full_trajectories.csv.gz": "ed504e0405d13ea28913bfa971bb3c7cb3f22cc2eea6b39c43cb7933ee478cca",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case1\\attempt_000\\roles.csv": "6e7d97d41d48d5250bd6971a139fa60cc80fce2d03272d262f4421d1c8ba1b79"
+      }
+    },
+    {
+      "run": 2,
+      "case_id": "validation_ramp_t2.9e+06_r0_p0.04",
+      "unique_actors": 5,
+      "roles": 6,
+      "actual_environment_steps": 480,
+      "reused_tail_steps": 160,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case2\\attempt_000\\full_trajectories.csv.gz": "1bfc5bd20b08c874dfef05228a7c77c5b9030e4ed7b7587cc52550453c55b8ea",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case2\\attempt_000\\roles.csv": "d8dd353db9d96e5be0ebf6045dbee69fa34b4694d3d1896af31dce28591eb185"
+      }
+    },
+    {
+      "run": 2,
+      "case_id": "validation_ramp_t3.5e+06_r0_p0.04",
+      "unique_actors": 5,
+      "roles": 6,
+      "actual_environment_steps": 480,
+      "reused_tail_steps": 160,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case3\\attempt_000\\full_trajectories.csv.gz": "d6b1b1f4c70cdcbabb16ab85bd2b4be538f8b67fe1bd9d675b5dfe742d64be3c",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case3\\attempt_000\\roles.csv": "8ec33cd79a56cd2cb6870a9466f354e30bb449e9bdd078858b1c972093348643"
+      }
+    },
+    {
+      "run": 2,
+      "case_id": "validation_gust_t2.9e+06_r0_p0.04",
+      "unique_actors": 5,
+      "roles": 6,
+      "actual_environment_steps": 480,
+      "reused_tail_steps": 160,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case4\\attempt_000\\full_trajectories.csv.gz": "75103d69a4c24ccf5afd26471d1ce8d411c50c112d8044f76e9cde79370e940a",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case4\\attempt_000\\roles.csv": "46ecd7dbf0b1afbc338bdab489682752c1e4a98a6365e71d5a7cb0b689b6c4a1"
+      }
+    },
+    {
+      "run": 2,
+      "case_id": "validation_gust_t3.5e+06_r0_p0.04",
+      "unique_actors": 5,
+      "roles": 6,
+      "actual_environment_steps": 480,
+      "reused_tail_steps": 160,
+      "max_power_difference_w": 0.0,
+      "max_normalized_pitch_difference": 1.3546510176225143e-07,
+      "hashes": {
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case5\\attempt_000\\full_trajectories.csv.gz": "323cecf2e95e9203b3e59d1c67d6afaadae1f16500d470a772d9acaa8d244dad",
+        ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case5\\attempt_000\\roles.csv": "f7693b5985ece98e089061009602766e1248a8504394efd970eaa83de474dff6"
+      }
+    }
+  ],
+  "actual_environment_steps": 6912,
+  "hashes": {
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case0\\attempt_000\\full_trajectories.csv.gz": "14fd0e1994480353ba74bad8269562313cdc980f37c95869e1782a517b8313ef",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case0\\attempt_000\\roles.csv": "a40a62b4d523cfba6b93a1f3d1a35f03862832a51812058f4398594d69b06341",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case1\\attempt_000\\full_trajectories.csv.gz": "7a422527258942e43da655e9f5e05bd2d01e252f4139e12ca57bfd0ba2e8126b",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case1\\attempt_000\\roles.csv": "f40c3783c50d2c98bc4c6d7d9a5e09bc6c5d0140e7903a3a6c6e2182131749c9",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case2\\attempt_000\\full_trajectories.csv.gz": "62de74e99ee78bd5f548989bb23a3d15b7ddeebd71b4564244be5d1a5e22d511",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case2\\attempt_000\\roles.csv": "9aab80527d80d77357851589a5093716b0b7dc3b5d8749d343593915226c1c36",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case3\\attempt_000\\full_trajectories.csv.gz": "6e31f72dbb3b3c09ef2c84f56fbc709ec4970bb3f917c43abc505e138e7d28ef",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case3\\attempt_000\\roles.csv": "7abd44885c1c3f1197d77f1189764cdf846139edcb55508a4e4b2a22d5a95f43",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case4\\attempt_000\\full_trajectories.csv.gz": "6bdcf4df9f6476e40893eee71e16e81763d375932fd99477cc9ce372a1de1885",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case4\\attempt_000\\roles.csv": "197f01792eaa5b7ae3b848526cea1d0ccaf91420ea8cdb2dd307dfb6f439fba9",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case5\\attempt_000\\full_trajectories.csv.gz": "a0fe05ebbd34d8ea6b3b5ad1487703508e24c92dea53ebdd80f652e14973f803",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run0_case5\\attempt_000\\roles.csv": "e623e9165ed20cf4b30a9b13620eaed4e6bd42a5fd384dc605a032952355ba3d",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case0\\attempt_000\\full_trajectories.csv.gz": "096740c4c76905adc665ef2f151573730313563ee825acfc447ce2d9e84dce3d",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case0\\attempt_000\\roles.csv": "4120ce45a1286d57b258c86c4a930c87578218fde305af6bea28d94b07e1b685",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case1\\attempt_000\\full_trajectories.csv.gz": "8e7d8576c99d2e71dbf37e9fc0a5baa66f26354293b00a127e4a7d257211dc4a",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case1\\attempt_000\\roles.csv": "8297ec34b20a9e9fac652572780b86fe8ef49c1805cb240d68536611e8159f73",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case2\\attempt_000\\full_trajectories.csv.gz": "9c9403c6e05b67d9249ee6e7f1c115b0415ba00dfffcc34357b5802e2d306c15",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case2\\attempt_000\\roles.csv": "c5e66b5799488d02e7cddc93d15f160272347c8c79caef7a7329a9781da8803c",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case3\\attempt_000\\full_trajectories.csv.gz": "8e6e2e9a89782f6702fe25a44aecd14720bb49b582905ff2b3c19e362bdf1ab9",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case3\\attempt_000\\roles.csv": "4e3eb56f4b9b7d2f80af656ebee320afcc4123e0dd55750a7b5a619485474e40",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case4\\attempt_000\\full_trajectories.csv.gz": "f5539dd29b7e40381751f97278ca3da9f3304c95bb77b19caed059253443025d",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case4\\attempt_000\\roles.csv": "d7a398e31ca0611fb86cb76b430b732d7de2130ba8cd38dc3c31352a6ec1e8c7",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case5\\attempt_000\\full_trajectories.csv.gz": "92bbdb8af37f52490a68a7ffb7abaaeda1cdae21425a2bf3cbe706341d5d1b9f",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run1_case5\\attempt_000\\roles.csv": "91a3cccf149bab83b152bdfa3ac64ce0129fa0c1a6ec8ac08371c4a2344747f1",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case0\\attempt_000\\full_trajectories.csv.gz": "12325b4e6ad631cce9576b08d487b0b6d172576a4112927dc776da504f977793",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case0\\attempt_000\\roles.csv": "8647a8c25dd4fcac098761cf5014526aaef6e7aee6fe078dead0a5e0bd353e49",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case1\\attempt_000\\full_trajectories.csv.gz": "ed504e0405d13ea28913bfa971bb3c7cb3f22cc2eea6b39c43cb7933ee478cca",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case1\\attempt_000\\roles.csv": "6e7d97d41d48d5250bd6971a139fa60cc80fce2d03272d262f4421d1c8ba1b79",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case2\\attempt_000\\full_trajectories.csv.gz": "1bfc5bd20b08c874dfef05228a7c77c5b9030e4ed7b7587cc52550453c55b8ea",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case2\\attempt_000\\roles.csv": "d8dd353db9d96e5be0ebf6045dbee69fa34b4694d3d1896af31dce28591eb185",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case3\\attempt_000\\full_trajectories.csv.gz": "d6b1b1f4c70cdcbabb16ab85bd2b4be538f8b67fe1bd9d675b5dfe742d64be3c",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case3\\attempt_000\\roles.csv": "8ec33cd79a56cd2cb6870a9466f354e30bb449e9bdd078858b1c972093348643",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case4\\attempt_000\\full_trajectories.csv.gz": "75103d69a4c24ccf5afd26471d1ce8d411c50c112d8044f76e9cde79370e940a",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case4\\attempt_000\\roles.csv": "46ecd7dbf0b1afbc338bdab489682752c1e4a98a6365e71d5a7cb0b689b6c4a1",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case5\\attempt_000\\full_trajectories.csv.gz": "323cecf2e95e9203b3e59d1c67d6afaadae1f16500d470a772d9acaa8d244dad",
+    ".\\optimization_control\\experiments\\20261029_pitch_reward_alignment\\supplement\\run2_case5\\attempt_000\\roles.csv": "f7693b5985ece98e089061009602766e1248a8504394efd970eaa83de474dff6"
+  },
+  "parameters_unchanged": true,
+  "formal_training_steps": 0
+}

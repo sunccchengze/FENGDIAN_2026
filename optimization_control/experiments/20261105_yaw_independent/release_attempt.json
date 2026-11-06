@@ -1,0 +1,336 @@
+{
+  "lock_sha": "ca461e9a1abaff5ea5d1aec13843d0c5757ed5a9fd21d9538093690c0320b55a",
+  "namespace": {
+    "scanned_json": 10623,
+    "occupied": {
+      "71000000": [
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000017.json",
+          "episode": 71000017
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000017.json",
+          "episode": 71000017
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000016.json",
+          "episode": 71000016
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000016.json",
+          "episode": 71000016
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000015.json",
+          "episode": 71000015
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000015.json",
+          "episode": 71000015
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000014.json",
+          "episode": 71000014
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000014.json",
+          "episode": 71000014
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000013.json",
+          "episode": 71000013
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000013.json",
+          "episode": 71000013
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000012.json",
+          "episode": 71000012
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000012.json",
+          "episode": 71000012
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000011.json",
+          "episode": 71000011
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000011.json",
+          "episode": 71000011
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000010.json",
+          "episode": 71000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000010.json",
+          "episode": 71000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000009.json",
+          "episode": 71000009
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000009.json",
+          "episode": 71000009
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000008.json",
+          "episode": 71000008
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000008.json",
+          "episode": 71000008
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000007.json",
+          "episode": 71000007
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000007.json",
+          "episode": 71000007
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000006.json",
+          "episode": 71000006
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000006.json",
+          "episode": 71000006
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000005.json",
+          "episode": 71000005
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000005.json",
+          "episode": 71000005
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000004.json",
+          "episode": 71000004
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000004.json",
+          "episode": 71000004
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000003.json",
+          "episode": 71000003
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000003.json",
+          "episode": 71000003
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000002.json",
+          "episode": 71000002
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000002.json",
+          "episode": 71000002
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000001.json",
+          "episode": 71000001
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000001.json",
+          "episode": 71000001
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000000.json",
+          "episode": 71000000
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\train_bank\\71000000.json",
+          "episode": 71000000
+        }
+      ],
+      "72000000": [
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\manifest.json",
+          "episode": 72000000
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\manifest.json",
+          "episode": 72000000
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\manifest.json",
+          "episode": 72000000
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\manifest.json",
+          "episode": 72000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\manifest.json",
+          "episode": 72000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\manifest.json",
+          "episode": 72000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000010.json",
+          "episode": 72000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000010.json",
+          "episode": 72000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000000.json",
+          "episode": 72000000
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\validation_bank\\72000000.json",
+          "episode": 72000000
+        }
+      ],
+      "73000000": [
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_spec.json",
+          "episode": 73000000
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_spec.json",
+          "episode": 73000000
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_spec.json",
+          "episode": 73000001
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_spec.json",
+          "episode": 73000001
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_spec.json",
+          "episode": 73000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_spec.json",
+          "episode": 73000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_spec.json",
+          "episode": 73000011
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_spec.json",
+          "episode": 73000011
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\manifest.json",
+          "episode": 73000000
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\manifest.json",
+          "episode": 73000000
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\manifest.json",
+          "episode": 73000001
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\manifest.json",
+          "episode": 73000001
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\manifest.json",
+          "episode": 73000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\manifest.json",
+          "episode": 73000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\manifest.json",
+          "episode": 73000011
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\manifest.json",
+          "episode": 73000011
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\73000011.json",
+          "episode": 73000011
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\73000011.json",
+          "episode": 73000011
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\73000010.json",
+          "episode": 73000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\73000010.json",
+          "episode": 73000010
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\73000001.json",
+          "episode": 73000001
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\73000001.json",
+          "episode": 73000001
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\73000000.json",
+          "episode": 73000000
+        },
+        {
+          "path": ".\\optimization_control\\experiments\\20261104_pitch_error_memory_formal\\test_bank\\73000000.json",
+          "episode": 73000000
+        }
+      ],
+      "74000000": []
+    },
+    "chosen": [
+      74000000,
+      74000001,
+      74000002,
+      74000003,
+      74000004,
+      74000005,
+      74000006,
+      74000007,
+      74000008,
+      74000009,
+      74000010,
+      74000011,
+      74000012,
+      74000013,
+      74000014,
+      74000015,
+      74000016,
+      74000017
+    ],
+    "original": [
+      71000000,
+      71000001,
+      71000002,
+      71000003,
+      71000004,
+      71000005,
+      71000006,
+      71000007,
+      71000008,
+      71000009,
+      71000010,
+      71000011,
+      71000012,
+      71000013,
+      71000014,
+      71000015,
+      71000016,
+      71000017
+    ]
+  },
+  "model_rows": 0
+}

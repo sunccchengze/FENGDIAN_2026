@@ -1,0 +1,1072 @@
+{
+  "patterns": [
+    "41000000",
+    "42000000",
+    "43000000",
+    "43009000",
+    "8405001"
+  ],
+  "checked": [
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\__init__.py",
+      "sha256": "a6a5747834cc2db1e24109f8d64322a6d8088bd5ff6d3551c2fae838b8075e6f"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\algorithm.py",
+      "sha256": "ee89948d8d98aa33b9b4ee20675ccc588c2005a6f8bec01b41cd555ba271febb"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\anchor_algorithm.py",
+      "sha256": "f5033e0823601c10abd65c1ec375cddb37e665cadf506b657400745d7cef7b50"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\anchor_closeout.py",
+      "sha256": "ddfd451f4f67567e8ba438fe12332a2cce9c3a78e1387f25c8e11b8c998505ec"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\anchor_closeout_diagnostic.py",
+      "sha256": "f2fb4767b0a784e03015befe1e98da39a44c4b962aff91cf27444ef84d9e8e35"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\anchor_closeout_figures.py",
+      "sha256": "bd570081e17b0dc990ab2da83aab0e93290eb9ef59c6f3334d5159720c7b53f0"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\anchor_closeout_final_checks.py",
+      "sha256": "753af09f5f99729330d6e8f60612fa47398b64458c7dc2e93b13a66ee68091c1"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\ANCHOR_CLOSEOUT_PROTOCOL.md",
+      "sha256": "200f114a13587e5d62b98dd1b9d131faf643e82ca1f1645290c66b7ab420ad66"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\ANCHOR_CLOSEOUT_RESULTS.md",
+      "sha256": "3d15a921a92b6589ef4e3bbee908bacbee2ab01f861ec3da4783fb3e7823a5cc"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\anchor_heading_figures.py",
+      "sha256": "1ae15c8165c72ba2cad26eb52ed368d3967f42204e354cbb5088bdff4aca9cf4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\ANCHOR_NEXT_CANDIDATE.md",
+      "sha256": "21ab1c4f66d53ae0d590a216e18bf38734454f9be1b83aeb9d3c2cbad015f6e2"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\ANCHOR_PROTOCOL.md",
+      "sha256": "402295363c62bef73cf8fb1eff4056f39a84b0746d2fa11330e2549c71860420"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\anchor_response_reference.py",
+      "sha256": "fd97affc162859804552600a8466fdc07ec4ea95c0f8c88ab3e2f86a4f8b0da1"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\ANCHOR_RESULTS.md",
+      "sha256": "748e2f42ab59d52e3567ecfe998947e16e55926f4c12415aaa063462adcad0ad"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\ANCHOR_TAKEOVER_PRECISION.md",
+      "sha256": "0b65ead503f7d4dcbac0bce63fa794cffccf020933e6e780b4b667f38c89238e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\anchor_takeover_precision.py",
+      "sha256": "4204c235a26172caf17caa965ef90dbc64c4c3b9293829cb24f5af058665184c"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\anchor_training.py",
+      "sha256": "a9b0da31ca1c21ec61610abec59d23796aaad3c0f4c3c4c0892fc9786a9ea33a"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\audit_handover.py",
+      "sha256": "4b0c63534ee361edfe197fefbaf7e4ab1fbeb4b263451a77ac100315dea6b59d"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\benchmark.py",
+      "sha256": "bffe236acf9cdf47ddcc52cbd3a5aeaa0818593006b6b0e39a7054027b0d15a5"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\anchor_training.yaml",
+      "sha256": "44e3f3d5c5e7302ddd3ad6332453a6726e5619aa7ecdf09fdcb8018642312331"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\default.yaml",
+      "sha256": "e63e0188598d24ef3a95a58927c401d8d1395de08b7f233f44956ff8910b4e6d"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_all_probe.yaml",
+      "sha256": "053db0b9a4f528361f825bc2865e8b56152d7a708b4ee504e64a323ac56533a8"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_curriculum.yaml",
+      "sha256": "c4493eed2d1709c321d36f25d25f85aa135e3f65bd085c64be936cd0417389c4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_pinn_demo.yaml",
+      "sha256": "15e10cdf34f00fd0c6929382eb3d90b75d70ee5452aa909bfc472aa0fe760621"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_pitch_speed_probe.yaml",
+      "sha256": "bc0121ad14795cedfce312c58b64f5df4d44736413f70fbee5775f5b7dc2d87e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\frozen_speed.yaml",
+      "sha256": "e0d4deb711f293de73e6fcb3661e8442fd19f0dfbba72c258a1689f2bcbad6bd"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\joint_distillation.yaml",
+      "sha256": "1cb18f58f5d819b985c5ef63d8c4a9b8c00b96d95c2ce98bcab737a10c4e39fd"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\mixed_stability.yaml",
+      "sha256": "b3879f4531cc65a52ee04050771daedf93cf33483f7e16c60298a6a62a71f638"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\progressive_random_control.yaml",
+      "sha256": "fae38a0262c2c8b727ee0bbdbe1db215316314e2e734601fc32f0d86d436cadc"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\random_wind_training.yaml",
+      "sha256": "733018c651e514594f3c996ffe6c987b5188e90998edc437e0f49e4611bf2317"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_random_control.yaml",
+      "sha256": "30e32e6af7c7082370b7d53eeb86dcbd8a21788f9664558c1055daa0d2c18410"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_stability.yaml",
+      "sha256": "77a62c60167428c73cfea54ca72b69e67d1272205abd405a12c352b1486cd019"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_stability_diagnostic.yaml",
+      "sha256": "3d7750ad2845e3d393ffd981f59c1d27f68d0fd7e30c167074777567e574cb13"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\stable_training.yaml",
+      "sha256": "ad15dd62756a9cd23e62a38d3ac646d3d9e13ea99d5836c583c562034e74a3c2"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\stochastic_inflow.yaml",
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\tracking_study.yaml",
+      "sha256": "f22b07adfe9fc7fbf4d54d5021eb93ff2731246cb1eec9a2b74e704f516b0731"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\wind_pinn_curriculum.yaml",
+      "sha256": "3c3672a84871704f960e6d354a0dc1a4861e005805d3c8fc8a6a42f76045b959"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\wind_pinn_demo.yaml",
+      "sha256": "d9beac274ad228bdd4bba73417cf5d2621755dff308997dc1e0654c49a8cd30b"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\controllers.py",
+      "sha256": "c5696565c783487d365c7306002e0c7b259b01027a7d4f50453e95ae4df63bfb"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\diagnose_fixed_pinn.py",
+      "sha256": "81b8bf86e09c8363ab70ed6db8679cca973a4ff361ced46ee76a856c0234265e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\DIAGNOSTIC_REPORT.md",
+      "sha256": "c00e9e0dd6a170979831d7ce30b9e6cf056074ebdf30f0d335b9b19c5751293a"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\diagnostics.py",
+      "sha256": "eeeb0a19a00e9922ade5237ca543600382f1490ad67e274cbf50205010f8c68f"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\FIXED_CURRICULUM.md",
+      "sha256": "40b5c04b882f6d834234820016d17f16b7fa148aeabbae9d8f3791591322b43f"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\fixed_curriculum.py",
+      "sha256": "624bd25fe43e4e3c2b21b9da78464a4844348f238d21e433655d58d9d6c7a63b"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\FIXED_PINN_DEMO.md",
+      "sha256": "30a20b848e462d2d2254c9fa1d9b83b05fb6e593a11af5b3715497c2e9a540ea"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\fixed_pinn_demo.py",
+      "sha256": "74b040df4c6fdd4e31199f24400b79bed5e785d7c4aa77f40ce83215582ab6df"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\FIXED_PINN_DIAGNOSTIC.md",
+      "sha256": "092cfe8d8a506b299d0a714a80011bc337b6b8e529d930ab56924d732ebc99ab"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\frozen_speed_algorithm.py",
+      "sha256": "eab8d8091174b268a5d37d97a1dfcc5b9f35224edc204e27cfc528b20a7db0f8"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\frozen_speed_delivery.py",
+      "sha256": "9e44653fe14d680f068fb2a587e5c90b92b73c20d3306fe6b428d9d33460bb02"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\frozen_speed_figures.py",
+      "sha256": "908393906b2971d72ad8a4e271e23102b3fa54a5502f97dbbf9757df849f2d19"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\FROZEN_SPEED_PROTOCOL.md",
+      "sha256": "358e606ae6da1855405b389bf1bb43e60d5391978d6fd8280c2738f7f1e146e1"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\FROZEN_SPEED_RESULTS.md",
+      "sha256": "de8544b80dabd4a3e42c0ed6ed52219fba12f1343dc6120feda983b31899f0e8"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\frozen_speed_training.py",
+      "sha256": "d576ba89edeba83001b177c0f4cccdaf9f8da477414f1490a326127f900e7fc3"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\frozen_speed_verify.py",
+      "sha256": "f364cc1b80ddd538e47053d47046c05125f523a1f5fb4e49624ffe9e62c43278"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\handoff_replay.py",
+      "sha256": "f9900f7c746495eb74e937061137ac8a51699783c1e5c1c64b5dda0178322948"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\inflow_workflow.py",
+      "sha256": "48265c9d6959a9eda4e44f88485c86fa1e1691d8d1b6bf42c71e3f706bdbb57b"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\JOINT_DISTILLATION.md",
+      "sha256": "51b68bdb734ead88097d8b292f60174eb503e385ee2ac4505bd292572c2b1345"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\joint_distillation.py",
+      "sha256": "71db4c891b7c4852fa3bbea4477f971fe141e46678b56a5cff37d938bb40d22e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\JOINT_DISTILLATION_RESULTS.md",
+      "sha256": "a79e140379545c61ee1de656e509a31037103a1bc535a49b2c6f519a7e7641b4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\midterm_best_cases.py",
+      "sha256": "fa7094c2c7e401d1ce4209fe625fd16c77adff232935019c4ee94117185f656e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\MIDTERM_FIGURES.md",
+      "sha256": "73a5e3c0eb4dc9b7c53002e3773077404e0aba358d5d292deb6d5ba6dd7b89b3"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\midterm_figures.py",
+      "sha256": "967d06d1927dc81df5b6b6ac58c8fc9a7d2eae7fb154bf302a6d987d0c72389b"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\MIXED_STABILITY.md",
+      "sha256": "447c8e73e71e4d135a20be6005da7d252476b38c161ff7f3691ab09da1dd7ebd"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\mixed_stability.py",
+      "sha256": "71cf144b32f0c306b950b0efff2daaeabebe13c01002a65ee272f8ae6ba1a38e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\nstep_replay_core.py",
+      "sha256": "20f979700fcbe2f2aa479148fb1c12e2095431aa8da199fa47c704f79e44e8da"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PINN_HANDOVER_REVIEW.md",
+      "sha256": "d3f6b21551c814dc1b8f7500c8e8e06c2e9cc8b385534d2f86cb258d08ff57f5"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PINN_YAW_RESPONSE_QUESTIONS.md",
+      "sha256": "63e12aa1b0653346d04a997812f3f26b174ce993690d602dc83f430e33f5abc4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PINN输入扩展建议_20261011.md",
+      "sha256": "145a8d9e364d0e5a4bbed39bf5fb119f3c6a151fccb0bd946c25571a5b7dabd9"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\portable_random_replay.py",
+      "sha256": "c759fa1efce82d3da5badbd4def19c79b6f323813408ccd498c0d8d4bd5de5a4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\progressive_figures.py",
+      "sha256": "639fb0ee94abf7bf2fee71346b77e4926b6d1c50eeb5c240821462ccb4576101"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PROGRESSIVE_RANDOM_CONTROL.md",
+      "sha256": "6815f2f2a11454db87e2db2a54230aed861b986ee84c3389b5cc5be2d8ef1f31"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\progressive_random_control.py",
+      "sha256": "21ae98c90ddfbe90a4fdcc0a88b445951a83b096c9e8f2d2d4be2ac64625fbe8"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RANDOM_WIND_TRAINING.md",
+      "sha256": "bcd4dd93863d5404fb69237af1d438e047beac384dec0ebe134592da4e2482fc"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\random_wind_training.py",
+      "sha256": "a1085f37dcb9bf9435da03f66bd2821bb4e4a305455f3c4ab499503453608917"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\reachability.py",
+      "sha256": "e6f3b581308a4ef9cae6087845a8a6658a704007a9d5da593c60995d83d7d3ce"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\REACHABILITY_TRACKING.md",
+      "sha256": "5df1438b997eacc4eaacb429d383f9ba5ab9d8ac4a7442e639df0b70f2a776f0"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\README.md",
+      "sha256": "a9c23edf438f266e42ce5c5744ee28cefab5b655b517b8d8b411bf341ac1c6b5"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\residual_algorithm.py",
+      "sha256": "0e88d7bc4480244cd300c0c20801ef114b3bdb12aa6df7e26c0c1b6e5fd0e497"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\residual_figures.py",
+      "sha256": "02f003659e44ae3c77e29277e429881b8d925f3f902a928827492772a61b9da9"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_RANDOM_CONTROL.md",
+      "sha256": "862b8a5c0e4a718a11cad4803930d2d26c7410f4a1599226990e2f69712287a6"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\residual_random_control.py",
+      "sha256": "c45ae99f4df9b6bdea255d1d12afb20e0aba35af3699f9733e6665177e9685ef"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_RANDOM_RESULTS.md",
+      "sha256": "27fd1ba7d43be826631fdf8ef27d2d3a9fef115a616f9924eb98ecbd6b3e5d42"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\residual_stability.py",
+      "sha256": "6057ba3e5501f4b77aa1336c9650b450ce4b172d8fb8e5c346ef4e33f71d3188"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_STABILITY_DIAGNOSTIC.md",
+      "sha256": "c1963d0cc95cc2e30c9c21bd537cdb1c6e6a5245a722d9680f0c22c189564188"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\residual_stability_diagnostic.py",
+      "sha256": "bc3e73ad34f7c3025c3c3cd7fe60c02e001dc33cb5b2193931119de89e5c47ac"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_STABILITY_DIAGNOSTIC_RESULTS.md",
+      "sha256": "dc30c29bfa0318f90e0b3f078be4c9277bc18ae2ed50e4f047be75f2d9b37120"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_STABILITY_PROTOCOL.md",
+      "sha256": "4f81587df9305b8cf43967ff167c859255535f29a8ff2f606d9b4d09f815f58f"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_STABILITY_RESULTS.md",
+      "sha256": "9ce06051ccef30790b8c8d0132a62aa48c830a77c663e228404842a0765225fa"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\retrospective.py",
+      "sha256": "f73b690c697d76c24b4ac442f21ea629d0661ebb6a62880b62168b22645327ba"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\speed_nstep_algorithm.py",
+      "sha256": "a85b3f2a134c64a8403bfdf556f01eced1c81f8b12b635f724df9303338d5274"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\speed_nstep_engineering.py",
+      "sha256": "a620c11c1ee60978996c13d82413a1fbb424c48a962eca8b8a1e48dc4dbd6e18"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\speed_value_analysis.py",
+      "sha256": "9203ec2c369763573f69af2d408c52c0f8c98fcc30df858f6d9fd2469ddf9c0e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\speed_value_diagnostic.py",
+      "sha256": "0160a0fec523727fc986c6d74b6c8b663f5aa33a664cbde7fd7466d497da2c7e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\SPEED_VALUE_PROTOCOL.md",
+      "sha256": "0a21aeafdfffb828aad672acb77c0c6d32396bf65039630f1f80924cd45271bb"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\SPEED_VALUE_RESULTS.md",
+      "sha256": "9a8c48c0dfc83ec65c76d3631a575d80961394730136c9865637a816509de0d6"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\STABLE_TRAINING.md",
+      "sha256": "e046771651cd1fb5a47645231b80a6dea6c103ecac946475ee515b9cb65ec016"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\stable_workflow.py",
+      "sha256": "407a37cc2e11f4f4b3cee40a19fbb4f57ffafe06ad1eadaeec8298d8f6c52cb5"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\tracking_study.py",
+      "sha256": "c5d125b6f0e820975a4f020d20f52f55e4e381ebf5a000f076f504a7c6d0a5c3"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\VALUE_BASELINE_DIAGNOSTIC.md",
+      "sha256": "dda04a7c80f355f5ce3922b884ddf267e04035d9c8e7773e0e653e30f524d3ad"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\value_baseline_diagnostic.py",
+      "sha256": "778c04952f1c587e93ffe45f2a06a5a32911eaa254ff4a573dba83ed622bfad4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_anchor.py",
+      "sha256": "1f1ca73b8c3b3ac984c981e143924e21246acf8d52fe7875604b4bff5257d58b"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_joint_distillation.py",
+      "sha256": "9218dac8a1c44161042e6dc958dcc9f9003cc87d376ed67533ab902a3e8fdaae"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_progressive.py",
+      "sha256": "a78be4053279f8e06274ab489319d44ad282c8e71e602be4adc0a91b6297a412"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_residual.py",
+      "sha256": "c924519d9abac8b2bdec0f5a09fa5ca454f2d1ab798804f2ed7d65a86581b5c7"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_residual_stability.py",
+      "sha256": "fddf19a802ca743317fda778fbed761ee50612767186e2ed44ec650670b135c2"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_stable.py",
+      "sha256": "9591c029aba6bb15aebb705dbd70c0dee82559c44a6a3cbc8c9b59bb3ca3b022"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_workflow.py",
+      "sha256": "442ad722b22c0407edf3eb419354c862acc16569d0b85ffc49ae5e96e62c47df"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\wind_pinn_curriculum.py",
+      "sha256": "0c3ca5aa93781ebf5fd05fce1f5dedcbae4e46fc62d281f61def16ae281d05be"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\wind_pinn_demo.py",
+      "sha256": "c1d78a658b09a322dd4cb90b03bfa3fac2ddb3930f0f56e50f14517aecdcbee5"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\WIND_PINN_INTEGRATION.md",
+      "sha256": "ab687af9d3fa9694165ab7fc62630918ebd485ab2721ba99a57a42979704a38a"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\workflow.py",
+      "sha256": "37bdc49828d8008ea238d86cb849e941d66cc5db221878dca18b6a406ebe09a2"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_action_mapper.py",
+      "sha256": "6af417ad3c620ab3a15826e0817989603bb1e8d93f068e8708b7df591b5ebbd6"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_actuator_model.py",
+      "sha256": "366c157cf69c0fbe42d33882a082abc5756f4f1ee3c06e38e0500b64dc63ef17"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_anchor_closeout.py",
+      "sha256": "1a1809462094b88aac88439b3ae18fa44d6180023ca9d90d2d6963c33322ceab"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_anchor_control.py",
+      "sha256": "2b0077544b73b699646239ca7b6560dc443f8c99a84844f9cb02f6913093262a"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_anchor_heading_figures.py",
+      "sha256": "6742df35bd881db5f37342f7d4f36d5202990053a0e9a81d2638f29c0609ffd3"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_farm_inflow.py",
+      "sha256": "834bb53d0da99eefbc91a7ef29bc93c233d706397c4a3eafce7edef871a9b749"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_fixed_curriculum.py",
+      "sha256": "9b99615f082735f0a3af1c39976cc2c9407ab56883849bd5c64202f8ba108f0f"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_fixed_pinn_demo.py",
+      "sha256": "0216985b526bcf3405e8fb858a680fd78c3089b4497f4ffe0b65eb2574f87fd6"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_frozen_speed.py",
+      "sha256": "a51bdf8ea7fc8741f220c59144153cb20e43925d056c520ed0465886c7b7f27e"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_joint_distillation.py",
+      "sha256": "258e8ed99545da6dac91083671dbe0f49a5ed1c7e05f21326eca78ec860e73f7"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_maddpg.py",
+      "sha256": "bd4c28a6a1fe7eb880524e028451e911a4311417041ba7301e73aaf0c828066c"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_mixed_stability.py",
+      "sha256": "2d23b05551ce6f53436bb1579aeff3d2e0812a84b7d8204bdf728afbc5247b4d"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_pinn_handover.py",
+      "sha256": "48b67c7520e0d8832c58d5b66c77ed8248c325c64e99f5c1b4b3f0be18f52fd3"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_plant_contract.py",
+      "sha256": "a02675b7a5be7f7c3ad293edc212dbca7d5b62b4de122b753295730a6cea0eb6"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_progressive_random_control.py",
+      "sha256": "9334ae3a5c72dd2f1485fa706643248d1af981abfc90985050053a2dd005e4c6"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_quasi_static_env.py",
+      "sha256": "d69082c1a675ab7fc040ce3a637d887a1a98a12594582d528d4b2fb5d5ed6287"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_random_wind_training.py",
+      "sha256": "cbb1d9a4aaa9c63932695ca1e82d24ef9bd4328d6094b4cee916938148eec1d9"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_reachability.py",
+      "sha256": "8523eb31f4290b90146fc488dae4b5c1f3122f3c29f1874ecace53cd14b56a4f"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_reference_power.py",
+      "sha256": "f673ee3550f297ac516a896652555e8219e646506b3b77ee5a2fa2227a8aea74"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_residual_control.py",
+      "sha256": "72286b4b46f4a8f1fa73e348cb62fdafc1ddeec6dbdb889531db96ed97781cfc"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_residual_stability.py",
+      "sha256": "c4491888b204cf5ca10a2e54c1aafe940ca3a701898d1a10d73924bb1d61831e"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_residual_stability_diagnostic.py",
+      "sha256": "d8abca4bcc7e7df9bf38f4ef6dd24cb7675a9455e1291b8e28ccea367fa8667a"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_speed_nstep.py",
+      "sha256": "8198dee6330bb3060c98c11682ae557e370b9b3c4e4a78a32ca420387b7c65d7"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_speed_value_diagnostic.py",
+      "sha256": "f79c4d38c07ae386143ec288f0253af5a66c41f5bd2a38278db0a5d910a6969f"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_stable_training.py",
+      "sha256": "e40dddb1254de85c2f73d4ea0dcf4d2104b1a1cd07dbb73d3f1259e7c8466655"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_state_reward.py",
+      "sha256": "6ab1d5b96dca44184537599a4773551faa1918a262d1f0f7a893cd44da62cf8e"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_stochastic_wind.py",
+      "sha256": "5c3e5753419431d3862ab4e68f930221494142fc0c6a95365459f9c51865777c"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_tracking_study.py",
+      "sha256": "9eb2eee6029854ab65bb4d39590fc2d411d0e5a09a1b8f8d44a6fbe440bd151b"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_value_baseline_diagnostic.py",
+      "sha256": "a4f2be0c9db97fd960ad122e167fdf05c2298ca0725c5f69e48d0586e23261c0"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_wind_pinn.py",
+      "sha256": "c498886d8a8a93e374e4a81027de6fa512717c60780783cc0ebfa3bf8ef66c8e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\__init__.py",
+      "sha256": "a6a5747834cc2db1e24109f8d64322a6d8088bd5ff6d3551c2fae838b8075e6f"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\algorithm.py",
+      "sha256": "ee89948d8d98aa33b9b4ee20675ccc588c2005a6f8bec01b41cd555ba271febb"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\audit_handover.py",
+      "sha256": "4b0c63534ee361edfe197fefbaf7e4ab1fbeb4b263451a77ac100315dea6b59d"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\benchmark.py",
+      "sha256": "bffe236acf9cdf47ddcc52cbd3a5aeaa0818593006b6b0e39a7054027b0d15a5"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\default.yaml",
+      "sha256": "e63e0188598d24ef3a95a58927c401d8d1395de08b7f233f44956ff8910b4e6d"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_all_probe.yaml",
+      "sha256": "053db0b9a4f528361f825bc2865e8b56152d7a708b4ee504e64a323ac56533a8"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_curriculum.yaml",
+      "sha256": "c4493eed2d1709c321d36f25d25f85aa135e3f65bd085c64be936cd0417389c4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_pinn_demo.yaml",
+      "sha256": "15e10cdf34f00fd0c6929382eb3d90b75d70ee5452aa909bfc472aa0fe760621"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\fixed_pitch_speed_probe.yaml",
+      "sha256": "bc0121ad14795cedfce312c58b64f5df4d44736413f70fbee5775f5b7dc2d87e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\joint_distillation.yaml",
+      "sha256": "1cb18f58f5d819b985c5ef63d8c4a9b8c00b96d95c2ce98bcab737a10c4e39fd"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\mixed_stability.yaml",
+      "sha256": "b3879f4531cc65a52ee04050771daedf93cf33483f7e16c60298a6a62a71f638"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\progressive_random_control.yaml",
+      "sha256": "fae38a0262c2c8b727ee0bbdbe1db215316314e2e734601fc32f0d86d436cadc"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\random_wind_training.yaml",
+      "sha256": "733018c651e514594f3c996ffe6c987b5188e90998edc437e0f49e4611bf2317"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_random_control.yaml",
+      "sha256": "30e32e6af7c7082370b7d53eeb86dcbd8a21788f9664558c1055daa0d2c18410"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_stability.yaml",
+      "sha256": "77a62c60167428c73cfea54ca72b69e67d1272205abd405a12c352b1486cd019"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\residual_stability_diagnostic.yaml",
+      "sha256": "3d7750ad2845e3d393ffd981f59c1d27f68d0fd7e30c167074777567e574cb13"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\stable_training.yaml",
+      "sha256": "ad15dd62756a9cd23e62a38d3ac646d3d9e13ea99d5836c583c562034e74a3c2"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\stochastic_inflow.yaml",
+      "sha256": "05319ebfc2165c982746685d97eb1a38827dfc911743de039dffc3779190b185"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\tracking_study.yaml",
+      "sha256": "f22b07adfe9fc7fbf4d54d5021eb93ff2731246cb1eec9a2b74e704f516b0731"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\wind_pinn_curriculum.yaml",
+      "sha256": "3c3672a84871704f960e6d354a0dc1a4861e005805d3c8fc8a6a42f76045b959"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\configs\\wind_pinn_demo.yaml",
+      "sha256": "d9beac274ad228bdd4bba73417cf5d2621755dff308997dc1e0654c49a8cd30b"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\controllers.py",
+      "sha256": "10b69e09ee99a0b7516ebb1c8b4c9ca875442b236aeab0c6c2c98c255ed27a70"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\diagnose_fixed_pinn.py",
+      "sha256": "81b8bf86e09c8363ab70ed6db8679cca973a4ff361ced46ee76a856c0234265e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\DIAGNOSTIC_REPORT.md",
+      "sha256": "c00e9e0dd6a170979831d7ce30b9e6cf056074ebdf30f0d335b9b19c5751293a"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\diagnostics.py",
+      "sha256": "eeeb0a19a00e9922ade5237ca543600382f1490ad67e274cbf50205010f8c68f"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\FIXED_CURRICULUM.md",
+      "sha256": "40b5c04b882f6d834234820016d17f16b7fa148aeabbae9d8f3791591322b43f"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\fixed_curriculum.py",
+      "sha256": "624bd25fe43e4e3c2b21b9da78464a4844348f238d21e433655d58d9d6c7a63b"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\FIXED_PINN_DEMO.md",
+      "sha256": "30a20b848e462d2d2254c9fa1d9b83b05fb6e593a11af5b3715497c2e9a540ea"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\fixed_pinn_demo.py",
+      "sha256": "74b040df4c6fdd4e31199f24400b79bed5e785d7c4aa77f40ce83215582ab6df"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\FIXED_PINN_DIAGNOSTIC.md",
+      "sha256": "092cfe8d8a506b299d0a714a80011bc337b6b8e529d930ab56924d732ebc99ab"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\handoff_replay.py",
+      "sha256": "f9900f7c746495eb74e937061137ac8a51699783c1e5c1c64b5dda0178322948"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\inflow_workflow.py",
+      "sha256": "48265c9d6959a9eda4e44f88485c86fa1e1691d8d1b6bf42c71e3f706bdbb57b"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\JOINT_DISTILLATION.md",
+      "sha256": "51b68bdb734ead88097d8b292f60174eb503e385ee2ac4505bd292572c2b1345"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\joint_distillation.py",
+      "sha256": "71db4c891b7c4852fa3bbea4477f971fe141e46678b56a5cff37d938bb40d22e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\JOINT_DISTILLATION_RESULTS.md",
+      "sha256": "a79e140379545c61ee1de656e509a31037103a1bc535a49b2c6f519a7e7641b4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\midterm_best_cases.py",
+      "sha256": "fa7094c2c7e401d1ce4209fe625fd16c77adff232935019c4ee94117185f656e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\MIDTERM_FIGURES.md",
+      "sha256": "73a5e3c0eb4dc9b7c53002e3773077404e0aba358d5d292deb6d5ba6dd7b89b3"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\midterm_figures.py",
+      "sha256": "967d06d1927dc81df5b6b6ac58c8fc9a7d2eae7fb154bf302a6d987d0c72389b"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\MIXED_STABILITY.md",
+      "sha256": "447c8e73e71e4d135a20be6005da7d252476b38c161ff7f3691ab09da1dd7ebd"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\mixed_stability.py",
+      "sha256": "71cf144b32f0c306b950b0efff2daaeabebe13c01002a65ee272f8ae6ba1a38e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\nstep_algorithm.py",
+      "sha256": "17badc54c0be33dfb97447c6c17eee448d8d3c2c788cf27b94e4561662f73590"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PINN_HANDOVER_REVIEW.md",
+      "sha256": "d3f6b21551c814dc1b8f7500c8e8e06c2e9cc8b385534d2f86cb258d08ff57f5"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PINN输入扩展建议_20261011.md",
+      "sha256": "145a8d9e364d0e5a4bbed39bf5fb119f3c6a151fccb0bd946c25571a5b7dabd9"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\pitch_action_diagnostic.py",
+      "sha256": "017f8a1fc7c65a07dbf483d14cfbcbca21b49340250a2a56ced529142f054fbc"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PITCH_ACTION_DIAGNOSTIC_PROTOCOL.md",
+      "sha256": "c9ca4de818d37aaa63dcc3983b0c0e418af7df93f4433dd1d546d31558d043c6"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PITCH_ACTION_DIAGNOSTIC_RESULTS.md",
+      "sha256": "28c9d708d04f5fdc594972b6fdda86e9e67f965ded3a1c971682a7a33956b288"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\pitch_action_review.py",
+      "sha256": "be197adc4e7c22688804fe687ab353df5b9ea28564749ab752698fb56669acaa"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\pitch_cross_wind_diagnostic.py",
+      "sha256": "db315a4b8f90fdbdaabc3fd2bfc304ea29aca1934ecfa2628d5978f31147ad5a"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PITCH_CROSS_WIND_PROTOCOL.md",
+      "sha256": "d070823651dfd983163206825ac1f881e4a6b56921b9221273eea0e984e865c7"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PITCH_CROSS_WIND_RESULTS.md",
+      "sha256": "11554ffe4ed12d4f56277283626f842347541b08263d01911e772a77253c3df4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\pitch_cross_wind_review.py",
+      "sha256": "f2e29159625a25b17e7193568f8f7b9dfcb7c2fee04ce5b7f69c8f7dd30cfd40"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\pitch_nstep_handoff.py",
+      "sha256": "8f598eeb4a7c898ecb82b0e452fea0362778f133c53139f6c391ae6f64edab63"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\pitch_nstep_mechanism.py",
+      "sha256": "ec3a468158040c90caba8ce60507d76f8d20ef32d051d5a9bc42f0951092a89e"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PITCH_NSTEP_MECHANISM_PROTOCOL.md",
+      "sha256": "5a2d66d9a363116ee4f4fadc8d344dc993ea21e6ecd3116a948d07dba13517ac"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PITCH_NSTEP_MECHANISM_RESULTS.md",
+      "sha256": "50bd0e7eefb063e6bdd18a8b9312f9a7386961bd7bda37d75c291600ab268662"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\pitch_nstep_mechanism_review.py",
+      "sha256": "688da508ae80a799b3ac0676807fbef1264d325d9980ab4946117b07ec78c26b"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PITCH_NSTEP_PROTOCOL.md",
+      "sha256": "6f553d9f914ca8af98dbfd63be585931e9c493e9030922b82fd80a3aa475182a"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PITCH_NSTEP_RESULTS.md",
+      "sha256": "b489c0ee0b1847abd899134191094f915df67be7ae9d876ab1185daf51aea040"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\pitch_nstep_review.py",
+      "sha256": "558646b33708ffcda7b0234169cdbe6bf14ea3cfd214a0af537efb9324434f8f"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\pitch_nstep_trial.py",
+      "sha256": "2ba3a50908768017246b613c9c81c2557dfaa1a189e40f0bba0fefd055d4930c"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\portable_random_replay.py",
+      "sha256": "c759fa1efce82d3da5badbd4def19c79b6f323813408ccd498c0d8d4bd5de5a4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\progressive_figures.py",
+      "sha256": "639fb0ee94abf7bf2fee71346b77e4926b6d1c50eeb5c240821462ccb4576101"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\PROGRESSIVE_RANDOM_CONTROL.md",
+      "sha256": "6815f2f2a11454db87e2db2a54230aed861b986ee84c3389b5cc5be2d8ef1f31"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\progressive_random_control.py",
+      "sha256": "21ae98c90ddfbe90a4fdcc0a88b445951a83b096c9e8f2d2d4be2ac64625fbe8"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RANDOM_WIND_TRAINING.md",
+      "sha256": "bcd4dd93863d5404fb69237af1d438e047beac384dec0ebe134592da4e2482fc"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\random_wind_training.py",
+      "sha256": "a1085f37dcb9bf9435da03f66bd2821bb4e4a305455f3c4ab499503453608917"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\reachability.py",
+      "sha256": "e6f3b581308a4ef9cae6087845a8a6658a704007a9d5da593c60995d83d7d3ce"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\REACHABILITY_TRACKING.md",
+      "sha256": "5df1438b997eacc4eaacb429d383f9ba5ab9d8ac4a7442e639df0b70f2a776f0"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\README.md",
+      "sha256": "a9c23edf438f266e42ce5c5744ee28cefab5b655b517b8d8b411bf341ac1c6b5"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\residual_algorithm.py",
+      "sha256": "0e88d7bc4480244cd300c0c20801ef114b3bdb12aa6df7e26c0c1b6e5fd0e497"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\residual_figures.py",
+      "sha256": "02f003659e44ae3c77e29277e429881b8d925f3f902a928827492772a61b9da9"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_RANDOM_CONTROL.md",
+      "sha256": "862b8a5c0e4a718a11cad4803930d2d26c7410f4a1599226990e2f69712287a6"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\residual_random_control.py",
+      "sha256": "c45ae99f4df9b6bdea255d1d12afb20e0aba35af3699f9733e6665177e9685ef"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_RANDOM_RESULTS.md",
+      "sha256": "27fd1ba7d43be826631fdf8ef27d2d3a9fef115a616f9924eb98ecbd6b3e5d42"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\residual_stability.py",
+      "sha256": "6057ba3e5501f4b77aa1336c9650b450ce4b172d8fb8e5c346ef4e33f71d3188"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_STABILITY_DIAGNOSTIC.md",
+      "sha256": "c1963d0cc95cc2e30c9c21bd537cdb1c6e6a5245a722d9680f0c22c189564188"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\residual_stability_diagnostic.py",
+      "sha256": "bc3e73ad34f7c3025c3c3cd7fe60c02e001dc33cb5b2193931119de89e5c47ac"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_STABILITY_DIAGNOSTIC_RESULTS.md",
+      "sha256": "dc30c29bfa0318f90e0b3f078be4c9277bc18ae2ed50e4f047be75f2d9b37120"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_STABILITY_PROTOCOL.md",
+      "sha256": "4f81587df9305b8cf43967ff167c859255535f29a8ff2f606d9b4d09f815f58f"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\RESIDUAL_STABILITY_RESULTS.md",
+      "sha256": "9ce06051ccef30790b8c8d0132a62aa48c830a77c663e228404842a0765225fa"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\retrospective.py",
+      "sha256": "f73b690c697d76c24b4ac442f21ea629d0661ebb6a62880b62168b22645327ba"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\STABLE_TRAINING.md",
+      "sha256": "e046771651cd1fb5a47645231b80a6dea6c103ecac946475ee515b9cb65ec016"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\stable_workflow.py",
+      "sha256": "407a37cc2e11f4f4b3cee40a19fbb4f57ffafe06ad1eadaeec8298d8f6c52cb5"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\tracking_study.py",
+      "sha256": "c5d125b6f0e820975a4f020d20f52f55e4e381ebf5a000f076f504a7c6d0a5c3"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\VALUE_BASELINE_DIAGNOSTIC.md",
+      "sha256": "dda04a7c80f355f5ce3922b884ddf267e04035d9c8e7773e0e653e30f524d3ad"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\value_baseline_diagnostic.py",
+      "sha256": "778c04952f1c587e93ffe45f2a06a5a32911eaa254ff4a573dba83ed622bfad4"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_joint_distillation.py",
+      "sha256": "9218dac8a1c44161042e6dc958dcc9f9003cc87d376ed67533ab902a3e8fdaae"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_progressive.py",
+      "sha256": "a78be4053279f8e06274ab489319d44ad282c8e71e602be4adc0a91b6297a412"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_residual.py",
+      "sha256": "c924519d9abac8b2bdec0f5a09fa5ca454f2d1ab798804f2ed7d65a86581b5c7"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_residual_stability.py",
+      "sha256": "fddf19a802ca743317fda778fbed761ee50612767186e2ed44ec650670b135c2"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_stable.py",
+      "sha256": "9591c029aba6bb15aebb705dbd70c0dee82559c44a6a3cbc8c9b59bb3ca3b022"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\verify_workflow.py",
+      "sha256": "442ad722b22c0407edf3eb419354c862acc16569d0b85ffc49ae5e96e62c47df"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\wind_pinn_curriculum.py",
+      "sha256": "0c3ca5aa93781ebf5fd05fce1f5dedcbae4e46fc62d281f61def16ae281d05be"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\wind_pinn_demo.py",
+      "sha256": "c1d78a658b09a322dd4cb90b03bfa3fac2ddb3930f0f56e50f14517aecdcbee5"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\WIND_PINN_INTEGRATION.md",
+      "sha256": "ab687af9d3fa9694165ab7fc62630918ebd485ab2721ba99a57a42979704a38a"
+    },
+    {
+      "path": ".\\optimization_control\\maddpg_wind_farm\\workflow.py",
+      "sha256": "37bdc49828d8008ea238d86cb849e941d66cc5db221878dca18b6a406ebe09a2"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_action_mapper.py",
+      "sha256": "6af417ad3c620ab3a15826e0817989603bb1e8d93f068e8708b7df591b5ebbd6"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_actuator_model.py",
+      "sha256": "366c157cf69c0fbe42d33882a082abc5756f4f1ee3c06e38e0500b64dc63ef17"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_farm_inflow.py",
+      "sha256": "834bb53d0da99eefbc91a7ef29bc93c233d706397c4a3eafce7edef871a9b749"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_fixed_curriculum.py",
+      "sha256": "9b99615f082735f0a3af1c39976cc2c9407ab56883849bd5c64202f8ba108f0f"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_fixed_pinn_demo.py",
+      "sha256": "0216985b526bcf3405e8fb858a680fd78c3089b4497f4ffe0b65eb2574f87fd6"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_joint_distillation.py",
+      "sha256": "258e8ed99545da6dac91083671dbe0f49a5ed1c7e05f21326eca78ec860e73f7"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_maddpg.py",
+      "sha256": "bd4c28a6a1fe7eb880524e028451e911a4311417041ba7301e73aaf0c828066c"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_mixed_stability.py",
+      "sha256": "2d23b05551ce6f53436bb1579aeff3d2e0812a84b7d8204bdf728afbc5247b4d"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_pinn_handover.py",
+      "sha256": "48b67c7520e0d8832c58d5b66c77ed8248c325c64e99f5c1b4b3f0be18f52fd3"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_pitch_action_diagnostic.py",
+      "sha256": "8ddf00744ff988b9ff4c4d9ecb2c1aa6a47f0015233996dea4f9d3eed66e089b"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_pitch_cross_wind_diagnostic.py",
+      "sha256": "b5679323b733356aa315e4754b61d1748b0ea8d7472510021cee4bd63abbcd92"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_pitch_nstep.py",
+      "sha256": "4e8d8557ebbbe49559177e522f864b5f7fddf9dec89c384ead1e88011bbbc56d"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_pitch_nstep_mechanism.py",
+      "sha256": "3d9780fac6054c87a9894fe94b3f5cc5625b8846299b56c1d58022a592dd2740"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_plant_contract.py",
+      "sha256": "a02675b7a5be7f7c3ad293edc212dbca7d5b62b4de122b753295730a6cea0eb6"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_progressive_random_control.py",
+      "sha256": "9334ae3a5c72dd2f1485fa706643248d1af981abfc90985050053a2dd005e4c6"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_quasi_static_env.py",
+      "sha256": "d69082c1a675ab7fc040ce3a637d887a1a98a12594582d528d4b2fb5d5ed6287"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_random_wind_training.py",
+      "sha256": "cbb1d9a4aaa9c63932695ca1e82d24ef9bd4328d6094b4cee916938148eec1d9"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_reachability.py",
+      "sha256": "8523eb31f4290b90146fc488dae4b5c1f3122f3c29f1874ecace53cd14b56a4f"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_reference_power.py",
+      "sha256": "f673ee3550f297ac516a896652555e8219e646506b3b77ee5a2fa2227a8aea74"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_residual_control.py",
+      "sha256": "72286b4b46f4a8f1fa73e348cb62fdafc1ddeec6dbdb889531db96ed97781cfc"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_residual_stability.py",
+      "sha256": "c4491888b204cf5ca10a2e54c1aafe940ca3a701898d1a10d73924bb1d61831e"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_residual_stability_diagnostic.py",
+      "sha256": "d8abca4bcc7e7df9bf38f4ef6dd24cb7675a9455e1291b8e28ccea367fa8667a"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_stable_training.py",
+      "sha256": "e40dddb1254de85c2f73d4ea0dcf4d2104b1a1cd07dbb73d3f1259e7c8466655"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_state_reward.py",
+      "sha256": "6ab1d5b96dca44184537599a4773551faa1918a262d1f0f7a893cd44da62cf8e"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_stochastic_wind.py",
+      "sha256": "5c3e5753419431d3862ab4e68f930221494142fc0c6a95365459f9c51865777c"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_tracking_study.py",
+      "sha256": "9eb2eee6029854ab65bb4d39590fc2d411d0e5a09a1b8f8d44a6fbe440bd151b"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_value_baseline_diagnostic.py",
+      "sha256": "a4f2be0c9db97fd960ad122e167fdf05c2298ca0725c5f69e48d0586e23261c0"
+    },
+    {
+      "path": ".\\optimization_control\\tests\\test_wind_pinn.py",
+      "sha256": "c498886d8a8a93e374e4a81027de6fa512717c60780783cc0ebfa3bf8ef66c8e"
+    }
+  ],
+  "collisions": []
+}

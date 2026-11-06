@@ -1,0 +1,15 @@
+{
+  "seed": 42,
+  "metrics": 1760,
+  "trajectories": 225280,
+  "validation_metric_rows": 540,
+  "validation_trace_rows": 69120,
+  "all_validation_scores_and_selections_recomputed": true,
+  "maximum_recomputed_metric_difference": 0.0,
+  "maximum_known_parent_rmse_difference_w": 0.0,
+  "all_labels_and_44_cases_present": true,
+  "paired_weather_targets_initials_exact": true,
+  "initial_arms_rmse_exact": true,
+  "test_used_for_selection": false,
+  "selection_sha256": "d8081f0525987b8d6057a6902ad22c88460b1f5a103be36ce0531472d686f8e7"
+}

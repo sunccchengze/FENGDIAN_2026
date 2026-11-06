@@ -1,0 +1,21 @@
+seed: 42
+new_training: false
+source_hashes:
+  optimization_control\experiments\20261022_random_wind_training\test\metrics.csv: 019562e8b4e71610fd45005d22e835c2a35da10cebdfdda269e062ff885e09c9
+  optimization_control\experiments\20261022_random_wind_training\test\trajectories.csv: d4cce13ecec3bd26995e11f7d0973a74808a956111286bad491c1c8a0187e03c
+selection: 'Post-hoc minimum selected-policy full-episode RMSE: all 54 routine run/case
+  pairs; separately 18 ramp pairs.'
+choices:
+- run_id: '1'
+  case_id: test_gust_2_pitch0.025
+  family: gust
+  target_w: '3900000.0'
+  initial_pitch_rad: '0.025'
+- run_id: '1'
+  case_id: test_ramp_0_pitch0.055
+  family: ramp
+  target_w: '2700000.0'
+  initial_pitch_rad: '0.055'
+font: Microsoft YaHei
+scope: Frozen 20261022 synthetic-label proxy; no physical accuracy or stable superiority
+  claim.

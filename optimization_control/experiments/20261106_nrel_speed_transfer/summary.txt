@@ -1,0 +1,20 @@
+NREL frozen speed transfer COMPLETE, seed=42.
+Engineering compatibility PASS; frozen-transfer performance benefit NOT observed in current proxy.
+Y overall old=377.391556476 kW, new=424.180338791 kW, delta=46.788782315 kW.
+PI overall old=483.177915033 kW, new=529.842522156 kW. All 30 paired changes positive (worse).
+Original mean400/worst500 threshold: Y old 2/3, new 0/3; not an engineering or feasibility judgment.
+New performance 30*129=3870 PINN rows; engineering 120 PINN+40 mock; total4030 (3990 PINN+40 mock).
+Old30 reference historical rows3870; current reference cost0. No old model rerun, no repeated1720 archive audit.
+Training steps=0; optimizer updates=0; new winds=0; pressure cases=0; model failures/retries=0.
+Report serialization failure1, repaired by private scalar-safe saved-data wrapper; exact partial output bytes retained; extra model rows0.
+Implementation code unchanged at faeb02940c4819796a2914d7991249d3826525aa.
+Review SHA256 eb9737e37fc1d49c181b7e2fd2a59f968f909709151a1fcb1a171f2f7f298c6f; review_admission.json and review_at_performance.md preserved.
+All new base/command/actual speed floor/ceiling counts0; actual TSR range6.349875..9.025257; max speed rate.0454404504<.1.
+Network/command/reward old .6..1.267 coordinates, new physical low separate. Original gains/actuators/model/weights unchanged.
+Y selected steps2048/0/2048; C parent0/0/4096; Y1 selected remains initial.
+metrics.csv=60 old/new case rows; paired.csv=30 pairs; new_case_physical_audit.csv=30 new-case audits.
+Engineering mutable receipts archived under engineering_stage; original engineering static files retained.
+Reproduction: nrel_speed_transfer performance -> nrel_speed_transfer_saved_report -> nrel_speed_transfer_delivery; already executed, do not overwrite/re-run sampling.
+One follow-up recommendation: finite fixed-point proxy speed-response audit near old/new reference before deciding retraining; not started.
+Full report: optimization_control/maddpg_wind_farm/NREL_SPEED_TRANSFER_RESULTS_20261106.md; local copy final_report.md.
+Old validation migration only, no new independent test or physical-performance claim. Hard caps10000rows/128MiB respected.

@@ -1,0 +1,68 @@
+seed: 42
+base_commit: 03a769459c1d538792904afa2c83ade95d6e090e
+start_commit: 7656428641538fb63e0d6872dfbc930a92177cf6
+purpose: used_test_bank_configuration_regression_not_new_independent_test
+controllers:
+- Y0_selected
+- Y1_selected
+- Y2_selected
+- p
+- pi
+wind_namespace:
+- 74000000
+- 74000001
+- 74000002
+- 74000003
+- 74000004
+- 74000005
+- 74000006
+- 74000007
+- 74000008
+- 74000009
+- 74000010
+- 74000011
+- 74000012
+- 74000013
+- 74000014
+- 74000015
+- 74000016
+- 74000017
+unique_winds: 18
+rollouts_new: 90
+rollouts_old_referenced: 90
+horizon: 128
+dt_s: 1
+planned_model_rows: 11610
+model_row_hard_cap: 12000
+disk_cap_MiB: 32
+old_reference_historical_rows: 11610
+old_reference_new_rows: 0
+prior_transfer_rows: 4030
+prior_diagnostic_rows: 1440
+schema: nrel_speed_transfer_old_coordinates_v1
+radius_m: 63
+lambda_ref: 7.55
+speed_slope: 0.11984126984126983
+physical_speed_bounds:
+- 0.7225663103256524
+- 1.267
+network_command_reward_speed_coordinates:
+- 0.6
+- 1.267
+Y_selected_steps:
+- 2048
+- 0
+- 2048
+C_selected_steps:
+- 0
+- 0
+- 4096
+training_steps: 0
+optimizer_updates: 0
+new_winds: 0
+new_pressure_cases: 0
+criterion: each_family_equal_case_and_stream_mean_new_Y_strictly_below_new_PI
+pitch_rate_boundary_tolerance_rad: 1.0e-07
+plot_case: 17
+plot_stream: 2
+initial_worktree_status: []

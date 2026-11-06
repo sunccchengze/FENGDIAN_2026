@@ -1,0 +1,12 @@
+{
+  "metrics_recomputed": 240,
+  "trace_rows": 30720,
+  "max_rmse_difference_w": 0.0,
+  "ranked_candidates": 54,
+  "selected_trace_steps": 128,
+  "same_inputs_across_controllers": true,
+  "source_hashes_unchanged": true,
+  "new_training": false,
+  "maddpg_below_both_pairs": 35,
+  "pair_count_not_independent_samples": true
+}

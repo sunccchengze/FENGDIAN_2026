@@ -1,0 +1,45 @@
+version: private_forecast_decision_contract_review_v1
+seed: 42
+source_commit: 5e312a81955926cef7cd4cdb79d16a0fac4c6d3f
+source_experiment: optimization_control/experiments/20261029_history_independent_test
+forecast_sha256: a5571a19354015c8b5997823748fafd7f0a6a355a0422d35b539e4faa3992877
+parent_sha256:
+  - 28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea
+  - 0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821
+  - e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05
+formal_RL_steps: 0
+parameter_updates: 0
+real_PINN_rows: 0
+mock_row_hard_cap: 4096
+expected_mock_rows_first_attempt: 333
+new_file_hard_cap_bytes: 268435456
+mock_case:
+  horizon: 19
+  reset_horizon: 5
+  decision_interval: 8
+  gamma: 0.99
+  target_w: 3200000.0
+  initial_pitch_rad: 0.04
+  speed_formula: 9 + .02*t + .06*sin(t/3)
+  direction_formula: .002*t
+  TI: 0.08
+  recovery_steps: [5, 8]
+  parent_runs: [0, 1, 2]
+forecast_features: [delta_U_divided_by_3, delta_direction_sin, delta_direction_cos]
+recommended_dimensions: {speed_head_input: 51, critic_input: 84}
+future_proposal_only:
+  approval_to_implement: false
+  arms: [A_pitch_continuation, B_zero_forecast_speed, C_true_forecast_speed]
+  steps_per_run: 8192
+  runs: 3
+  total_training_steps: 73728
+  B_C_macro_updates_per_run: 481
+  A_joint_updates_per_run: 3841
+  formal_query_subtotal: 125259
+  engineering_query_reserve: 4096
+  all_query_reserved: 129355
+  all_query_hard_cap: 130000
+  reserved_train_episode_base: 67000000
+  reserved_validation_episode_base: 68000000
+  reserved_future_test_episode_base: 69000000
+  sealed_test_episode_range: [66000000, 66000017]

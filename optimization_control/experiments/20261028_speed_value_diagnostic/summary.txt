@@ -1,0 +1,62 @@
+{
+  "seed": 42,
+  "status": "completed",
+  "formal_training_steps": 0,
+  "optimizer_updates": 0,
+  "checkpoints": 15,
+  "canonical_states": 18,
+  "additional_own_states": 30,
+  "branches": 1902,
+  "horizon_rows": 3804,
+  "pair_rows": 21600,
+  "counterfactual_environment_steps": 64512,
+  "source_test_performance_read": false,
+  "physical_validation": false,
+  "interpretation": "Finite deterministic returns and model-local directions; not long-run expected Q.",
+  "verification": "verification.json",
+  "next_proposal": "Use already-running pitch n=1 vs n=8 results as prerequisite. Only after review may a speed-only Critic target comparison be proposed. No new training here.",
+  "purpose": "speed_head_value_ordering_and_feedback_no_training",
+  "diagonal_online_mismatch_32": [
+    {
+      "run": 0,
+      "initial": "25/70",
+      "final": "32/68"
+    },
+    {
+      "run": 1,
+      "initial": "19/69",
+      "final": "37/63"
+    },
+    {
+      "run": 2,
+      "initial": "17/68",
+      "final": "37/62"
+    }
+  ],
+  "final_tracking_backed_useful_but_downranked": [
+    14,
+    18,
+    15
+  ],
+  "final_useful_downranked_both_horizons": [
+    13,
+    17,
+    14
+  ],
+  "state_feedback_replay_delta_return_32": [
+    0.09881068577170314,
+    0.07338664862909203,
+    0.16732907039025202
+  ],
+  "limitations": [
+    "Finite realized returns are not long-run expected Q.",
+    "Mismatch is not monotonic and fixed-final-policy flow0 is a counterexample.",
+    "Radius0.02 harms flow1; no universal shrinkage candidate.",
+    "Offline future parent pitch replay is not deployable.",
+    "Current-action conditional gradients differ from historical replay-other-action gradients."
+  ],
+  "report": "../../maddpg_wind_farm/SPEED_VALUE_RESULTS.md",
+  "commands": "speed_value_diagnostic prepare/run/verify/figures --output <fresh_output>; see protocol and report.",
+  "source_test_used_for_selection": false,
+  "previous_summary": "summary_before_review.json"
+}

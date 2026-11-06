@@ -1,0 +1,9 @@
+{
+  "representative_rule": "eligible_recurrent_at_least_2_runs_max_mean_delta_pi_rmse",
+  "representative_case": "train_episode_8_initial_0.055",
+  "files": {
+    "decomposition_and_updates.png": "8aee73d91b145b576db77f5e20da674b8518b4fc197d4ebb2fcbb25754f48c52",
+    "failure_map.png": "396019874d0a7f5ffda40cf2de1ae04b7583de235b941e48c22b930e2e8e7941",
+    "full_failure_timeseries.png": "e9d714719e332c4295b9102debbc0760a360aa95fc35684229f0672d907ae01b"
+  }
+}

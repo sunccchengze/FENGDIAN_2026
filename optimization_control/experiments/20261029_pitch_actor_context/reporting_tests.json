@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "tests": 2,
+  "plant_rows": 0,
+  "optimizer_updates": 0,
+  "source_sha256": "13476c054019dbdb4538118f0cb1ed6478b59ca735d1316afda0b3c5c7865a9f",
+  "fixtures": [
+    "single_stream_family_regression_hidden_by_mean",
+    "motion_failure_with_hard_limits_satisfied"
+  ]
+}

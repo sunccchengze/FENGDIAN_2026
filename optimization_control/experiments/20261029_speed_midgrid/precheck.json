@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "original9_costs_exact": true,
+  "fine_min_not_higher_same_state": true,
+  "future_invariant": true,
+  "zero_means_current_reference_not_hold": true,
+  "state_and_parent_rng_unchanged": true,
+  "budget": {
+    "name": "real_precheck",
+    "reserve": 960,
+    "actual": 545,
+    "api_calls": 545,
+    "status": "complete",
+    "kinds": {
+      "precheck_external": 5,
+      "internal_forecast": 516,
+      "precheck_zero_semantics": 24
+    }
+  },
+  "batch_calls": 0
+}

@@ -1,0 +1,30 @@
+{
+  "seed": 42,
+  "protected_files": 30,
+  "protected_unchanged": true,
+  "root_config_and_bank_locked": true,
+  "checkpoints": [
+    {
+      "checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_0\\segment_000\\step_00016384.pth",
+      "sha256": "28e221e6f6e74096ef74e9a9375c638823a055c38232ef4d3b5e16a5026996ea",
+      "noise_actions_and_next_update_exact": true
+    },
+    {
+      "checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_1\\segment_000\\step_00012288.pth",
+      "sha256": "0fcb0b9d474db0d04b3ac2d86c91d2f39d66bb3c025e30d911ce79b2ba445821",
+      "noise_actions_and_next_update_exact": true
+    },
+    {
+      "checkpoint": ".\\optimization_control\\experiments\\20261023_progressive_random_control\\pitch_run_2\\segment_000\\step_00008192.pth",
+      "sha256": "e2897be535e5c9bae27acbecc5edd57460a8a038ba28719e366ab4c904309a05",
+      "noise_actions_and_next_update_exact": true
+    }
+  ],
+  "distillation_network_candidate_rows": 36,
+  "distillation_optimizer_updates": 143400,
+  "test_metric_rows": 0,
+  "max_rmse_recompute_difference_w": 0.0,
+  "independent_test_released": false,
+  "automatic_cli_resume_supported": false,
+  "physical_validation": false
+}

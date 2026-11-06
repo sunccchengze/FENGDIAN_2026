@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "jobs": [
+    {
+      "run": 0,
+      "new_rows": 6966,
+      "full_frozen_state_unchanged": true
+    },
+    {
+      "run": 1,
+      "new_rows": 6966,
+      "full_frozen_state_unchanged": true
+    },
+    {
+      "run": 2,
+      "new_rows": 6966,
+      "full_frozen_state_unchanged": true
+    }
+  ],
+  "actual_plant_rows": 21285,
+  "mock_rows": 0,
+  "training_steps": 0,
+  "optimizer_updates": 0,
+  "new_test_steps": 0,
+  "storage_bytes": 6693011,
+  "config_sha256": "d7ec075b804b1112d9be53f5bb241e4b47a4293b3ab3324cb79c761276692ccd"
+}

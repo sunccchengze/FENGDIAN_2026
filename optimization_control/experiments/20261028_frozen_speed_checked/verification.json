@@ -1,0 +1,8 @@
+{
+  "metric_rows": 660,
+  "trace_rows": 84480,
+  "max_rmse_difference_w": 0.0,
+  "max_zero_speed_rmse_difference_w": 0.0,
+  "max_heading_gamma_relation_error": 0.0,
+  "max_power_sum_error_w": 0.0
+}

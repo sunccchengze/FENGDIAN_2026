@@ -1,0 +1,3 @@
+Engineering passed. 297 real Plant rows, 0 mock, 13 discarded joint updates.
+Three original/zero comparisons, three zero-initialized memory takeovers, both arm restarts.
+Formal steps and new test rows: 0. See verification.json and the engineering protocol.

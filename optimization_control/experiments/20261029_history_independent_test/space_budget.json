@@ -1,0 +1,7 @@
+{
+  "user_report_existing_D_VSCODE_GiB": 67.93,
+  "expected_new_bytes": 67108864,
+  "hard_cap_bytes": 1073741824,
+  "available_drive_bytes": 82339262464,
+  "old_models_worktrees_replays_copied": 0
+}

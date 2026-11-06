@@ -1,0 +1,32 @@
+{
+  "status": "complete",
+  "screening_passed": true,
+  "component_pass": {
+    "primary": true,
+    "retention": true,
+    "pi_count": true,
+    "motion": true,
+    "physical": true
+  },
+  "primary_mean_ratio": 0.9386664153375223,
+  "primary_improved_runs": 3,
+  "formal_training_steps": 0,
+  "optimizer_updates": 0,
+  "new_test_steps": 0,
+  "actual_real_plant_rows": 21285,
+  "actual_mock_plant_rows": 0,
+  "engineering_rows": 387,
+  "hybrid_rows": 20898,
+  "reused_metric_slots": 270,
+  "hybrid_metric_slots": 162,
+  "independent_saved_metric_episodes": 432,
+  "max_rmse_recompute_residual_w": 0.0,
+  "slots_per_parent": 54,
+  "unique_waveforms": 21,
+  "repeated_waveforms_not_independent": true,
+  "frozen_sources_unchanged": true,
+  "default_changed": false,
+  "storage_bytes_before_summary": 8506792,
+  "storage_limit_bytes": 536870912,
+  "config_sha256": "d7ec075b804b1112d9be53f5bb241e4b47a4293b3ab3324cb79c761276692ccd"
+}
